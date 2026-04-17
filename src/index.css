@@ -1,0 +1,96 @@
+@import url('https://fonts.googleapis.com/css2?family=Geist:wght@700;800;900&family=Roboto:wght@400;500;700&display=swap');
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --font-sans: "Roboto", ui-sans-serif, system-ui, sans-serif;
+  --font-heading: "Geist", sans-serif;
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  --radius-lg: var(--radius);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-sm: calc(var(--radius) * 0.6);
+
+  /* Custom Palette Variables */
+  --color-deep-blue: #1f4f6e;
+  --color-deep-green: #037971;
+  --color-copper-orange: #C06721;
+  --color-bordeaux: #70280D;
+  --color-dark-violet: #473853;
+  --color-bordeaux-alt: #A63119;
+  --color-turquoise: #02Adab;
+}
+
+:root {
+  --background: #FDFCFB;
+  --foreground: #1f4f6e;
+
+  --card: #FDFCFB;
+  --card-foreground: #1f4f6e;
+
+  --popover: #FDFCFB;
+  --popover-foreground: #1f4f6e;
+
+  --primary: #1f4f6e;
+  --primary-foreground: #FDFCFB;
+
+  --secondary: #037971;
+  --secondary-foreground: #FDFCFB;
+
+  --muted: #F3F1EF;
+  --muted-foreground: #473853;
+
+  --accent: #C06721;
+  --accent-foreground: #FDFCFB;
+
+  --destructive: #70280D;
+  --destructive-foreground: #FDFCFB;
+
+  --border: #E5E1DE;
+  --input: #E5E1DE;
+  --ring: #02Adab;
+
+  --radius: 0.5rem;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground font-sans;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading font-bold text-deep-blue;
+  }
+}
