@@ -10,6 +10,8 @@ import GenerateurIA from './pages/GenerateurIA';
 import Alchimistes from './pages/Alchimistes';
 import Partenaires from './pages/Partenaires';
 import Contact from './pages/Contact';
+import FAQ from './pages/FAQ';
+import JoinUs from './pages/JoinUs';
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -37,6 +39,8 @@ export default function App() {
             <Route path="/ressources" element={<Ressources />} />
             <Route path="/partenaires" element={<Partenaires />} />
             <Route path="/contact" element={<Contact />} />
+            <Route path="/faq" element={<FAQ />} />
+            <Route path="/rejoindre" element={<JoinUs />} />
           </Routes>
         </main>
         <Footer />

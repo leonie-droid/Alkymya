@@ -50,39 +50,63 @@ export default function GenerateurIA() {
         >
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-accent/10 text-accent mb-8">
             <Sparkles className="h-4 w-4" />
-            <span className="text-sm font-bold uppercase tracking-widest">Étude 2024</span>
+            <span className="text-sm font-bold uppercase tracking-widest">Étude 2025</span>
           </div>
           
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
-            <div className="lg:col-span-8 space-y-8">
+            <div className="lg:col-span-8 space-y-12">
               <h1 className="text-5xl md:text-8xl font-heading font-black text-deep-blue leading-tight selection:bg-accent selection:text-white">
                 Génération <span className="text-accent">IA</span>
               </h1>
               
-              <div className="space-y-6 text-xl md:text-2xl text-muted-foreground font-normal leading-relaxed text-left border-l-4 border-accent/20 pl-8">
-                <p>
-                  Ils ne sont pas simplement nés avec le digital : la <span className="text-deep-blue font-bold">Génération IA</span>, c’est celle qui grandit avec ChatGPT, qui apprivoise le pouvoir des intelligences artificielles au quotidien.
-                </p>
-                <p>
-                  Mon étude le montre : ces jeunes font de l’IA leur nouvel outil, avec talent et inventivité. Mais derrière les superpouvoirs, il y a aussi le vertige — risque de perte d’emplois, transformation des métiers, et nécessité de se réinventer en continu.
-                </p>
-                <p>
-                  Les accompagner, c’est essentiel : leur donner les clés pour rester humains, développer leur esprit critique et construire leur propre trajectoire dans un monde où tout s’accélère.
-                </p>
-                <p>
-                  C’est aux entreprises, aussi, d’inventer de nouvelles stratégies, de créer du lien et de miser sur les talents de cette génération frontalière du futur.
-                </p>
-                <p className="text-deep-blue font-medium italic">
-                  Chez Alkymya, j’aide les organisations et les jeunes à inventer ensemble un monde où l’IA est un levier, pas juste un défi.
-                </p>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
+                <motion.div 
+                  initial={{ opacity: 0, x: -20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ delay: 0.2 }}
+                  className="rounded-[2.5rem] overflow-hidden shadow-2xl border border-accent/10 bg-white"
+                >
+                  <img 
+                    src="https://res.cloudinary.com/dokzioyu4/image/upload/v1777491204/Capture_GENERATION_IA_lrxvdx.png" 
+                    alt="Génération IA Illustration" 
+                    className="w-full h-full object-cover"
+                    referrerPolicy="no-referrer"
+                  />
+                </motion.div>
+
+                <div className="space-y-6 text-lg text-muted-foreground font-normal leading-relaxed text-left">
+                  <p>
+                    L'étude <span className="text-deep-blue font-bold">Génération IA</span> repose sur une approche empirique menée par <span className="text-deep-blue font-bold">Alkymya</span> pour analyser l'évolution des usages de l'IA générative dans l'enseignement supérieur.
+                  </p>
+                  <p>
+                    Sa méthodologie s'articule autour de trois piliers :
+                  </p>
+                  <div className="space-y-4 pl-4 border-l-2 border-accent/20">
+                    <p>
+                      <span className="text-deep-blue font-bold uppercase text-xs tracking-wider block mb-1">Collecte de données terrain</span>
+                      Enquêtes directes réalisées entre 2024 et 2025 auprès de 320 à 387 répondants (étudiants et enseignants) issus d'écoles comme l'IESEG, HETIC, ISCOM ou Ynov.
+                    </p>
+                    <p>
+                      <span className="text-deep-blue font-bold uppercase text-xs tracking-wider block mb-1">Analyse comportementale par Personas</span>
+                      Segmentation des utilisateurs en 5 profils types (Explorateurs, Pragmatiques, Apprentis, Créatifs, Observateurs) pour refléter la diversité des usages et des niveaux de maîtrise.
+                    </p>
+                    <p>
+                      <span className="text-deep-blue font-bold uppercase text-xs tracking-wider block mb-1">Approche hybride et pédagogique</span>
+                      Combinaison de statistiques quantitatives et de retours qualitatifs (verbatims) pour identifier les outils de référence, les besoins en fiabilité et l'impact sur les compétences futures.
+                    </p>
+                  </div>
+                  <p className="text-deep-blue font-medium italic">
+                    Cette méthode permet de transformer des observations de terrain en recommandations stratégiques pour adapter les cursus à la révolution de l'IA.
+                  </p>
+                </div>
               </div>
             </div>
 
             {/* Study PDF Card */}
             <div className="lg:col-span-4 mt-8 lg:mt-0 flex flex-col gap-6">
               <motion.a
-                href="#"
-                download="Synthese_Generation_IA_2025.pdf"
+                href="https://res.cloudinary.com/dokzioyu4/image/upload/v1777491668/Generation_IA-2024-V1_Mars_2025_2_cxtaeh_ygnyce.pdf"
+                download="Synthese_Generation_IA_2024.pdf"
                 className="block"
                 initial={{ opacity: 0, scale: 0.9 }}
                 animate={{ opacity: 1, scale: 1 }}
@@ -96,12 +120,12 @@ export default function GenerateurIA() {
                       <FileText className="h-6 w-6 text-accent" />
                     </div>
                     <div className="flex justify-between items-start mb-2">
-                      <span className="text-xs font-bold uppercase tracking-[0.2em] text-accent">Synthèse 2025</span>
+                      <span className="text-xs font-bold uppercase tracking-[0.2em] text-accent">Synthèse 2024</span>
                       <Download className="h-4 w-4 text-accent/50 group-hover:text-accent transition-colors" />
                     </div>
-                    <h3 className="text-2xl font-heading font-black mb-6 leading-tight">Génération IA 2025 : L'Enquête</h3>
+                    <h3 className="text-2xl font-heading font-black mb-6 leading-tight">Génération IA 2024 : L'Enquête</h3>
                     <p className="text-sm text-white/70 mb-4 font-normal leading-relaxed">
-                      Analyse approfondie de l’utilisation de l’IA générative : tendances, outils, besoins et enjeux critiques. (387 répondants)
+                      Analyse approfondie de l’utilisation de l’IA générative : tendances, outils, besoins et enjeux critiques. (320+ répondants)
                     </p>
                     <span className="text-[10px] font-black uppercase tracking-[0.3em] text-accent mt-auto group-hover:translate-x-2 transition-transform">
                       Télécharger la synthèse →
@@ -111,8 +135,8 @@ export default function GenerateurIA() {
               </motion.a>
 
               <motion.a
-                href="#"
-                download="Generation_IA_2025_Full.pdf"
+                href="https://res.cloudinary.com/dokzioyu4/image/upload/v1777491985/generation_ia_2025_personas_20251105051526_qvl18j_1_jjn9s4.pdf"
+                download="Generation_IA_2025.pdf"
                 className="block"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -124,8 +148,8 @@ export default function GenerateurIA() {
                       <Download className="h-7 w-7 text-accent group-hover:text-white" />
                     </div>
                     <div className="flex-1">
-                      <p className="text-sm font-black text-deep-blue uppercase tracking-wider">Document PDF</p>
-                      <p className="text-xs text-muted-foreground font-medium">Génération_IA_2025.pdf</p>
+                      <p className="text-sm font-black text-deep-blue uppercase tracking-wider">Génération IA 2025</p>
+                      <p className="text-xs text-muted-foreground font-medium">Les Personas de l'IA.pdf</p>
                     </div>
                     <Button 
                       variant="ghost" 
@@ -137,6 +161,77 @@ export default function GenerateurIA() {
                   </div>
                 </Card>
               </motion.a>
+
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.55 }}
+              >
+                <Card className="p-8 rounded-[2.5rem] bg-accent/5 border-2 border-dashed border-accent/20 relative overflow-hidden group">
+                  <div className="relative z-10 space-y-4">
+                    <div>
+                      <h4 className="text-xl font-heading font-black text-deep-blue leading-tight mb-1">Génération IA 2025 : 5 Personas</h4>
+                      <p className="text-[10px] font-black text-accent uppercase tracking-[0.2em]">Décideurs, managers et formateurs</p>
+                    </div>
+                    <p className="text-xs text-muted-foreground font-normal leading-relaxed">
+                      387 répondants analysés pour décrypter les nouveaux visages de l'IA. Découvrez les Explorateurs, Pragmatiques, Apprentis, Créatifs et Observateurs.
+                    </p>
+                    <audio 
+                      controls 
+                      className="w-full h-10 mt-4 rounded-full"
+                      src="https://res.cloudinary.com/dokzioyu4/video/upload/v1777492353/audio-1762320210342_qdmbjp_x0cnml.mp3"
+                    />
+                  </div>
+                </Card>
+              </motion.div>
+
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.6 }}
+              >
+                <Card className="p-8 rounded-[2.5rem] bg-muted/30 border-2 border-dashed border-accent/20 relative overflow-hidden group">
+                  <div className="relative z-10 space-y-4">
+                    <div>
+                      <h4 className="text-xl font-heading font-black text-deep-blue leading-tight mb-1">Étude Génération IA 2024</h4>
+                      <p className="text-[10px] font-black text-accent uppercase tracking-[0.2em]">Professionnels RH, DRH, responsables formation</p>
+                    </div>
+                    <p className="text-xs text-muted-foreground font-normal leading-relaxed">
+                      Rapport complet sur les comportements, attentes et compétences des jeunes face à l'intelligence artificielle.
+                    </p>
+                    <audio 
+                      controls 
+                      className="w-full h-10 mt-4 rounded-full"
+                      src="https://res.cloudinary.com/dokzioyu4/video/upload/v1777492141/4a3a2fb2-5f2e-467f-a9c9-75867d11d184_uw4iwp.mp3"
+                    />
+                  </div>
+                </Card>
+              </motion.div>
+
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.65 }}
+              >
+                <Card className="p-8 rounded-[2.5rem] bg-accent text-white shadow-xl hover:shadow-2xl transition-all relative overflow-hidden group border-none">
+                  <div className="absolute top-0 right-0 w-32 h-32 bg-white/20 blur-3xl -mr-16 -mt-16 group-hover:bg-white/30 transition-colors" />
+                  <div className="relative z-10 space-y-4">
+                    <div>
+                      <h4 className="text-xl font-heading font-black text-white leading-tight mb-1">Participer à l'étude 2026</h4>
+                      <p className="text-[10px] font-black text-deep-blue uppercase tracking-[0.2em]">Futurs talents, RH, managers, formateurs</p>
+                    </div>
+                    <p className="text-xs text-white/90 font-normal leading-relaxed">
+                      Contribuez à notre prochaine grande enquête sur les futurs talents et l'intelligence artificielle.
+                    </p>
+                    <Button 
+                      className="w-full mt-4 rounded-full bg-deep-blue hover:bg-white hover:text-deep-blue font-bold transition-all border-none"
+                      size="lg"
+                    >
+                      Participer à l'étude
+                    </Button>
+                  </div>
+                </Card>
+              </motion.div>
             </div>
           </div>
         </motion.div>
@@ -189,6 +284,21 @@ export default function GenerateurIA() {
               </motion.div>
             ))}
           </div>
+
+          <motion.div 
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="mt-20 text-center"
+          >
+            <Button 
+              size="lg" 
+              className="rounded-full bg-accent hover:bg-deep-blue text-white px-10 py-7 text-xl font-black shadow-2xl hover:scale-105 transition-all duration-300"
+              onClick={() => window.open('https://maturiteia.alkymya.co/', '_blank')}
+            >
+              Quel persona je suis ?
+            </Button>
+          </motion.div>
         </section>
       </div>
     </div>

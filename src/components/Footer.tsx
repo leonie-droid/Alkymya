@@ -1,4 +1,5 @@
-import { Instagram, Facebook, Linkedin, Mail, ArrowUp } from "lucide-react";
+import { Instagram, Linkedin, Mail, ArrowUp, Youtube } from "lucide-react";
+import { FaTiktok } from "react-icons/fa";
 import { Button } from "../../components/ui/button";
 import { Separator } from "../../components/ui/separator";
 import { Link } from 'react-router-dom';
@@ -21,10 +22,13 @@ export default function Footer() {
               "Explorer la beauté, partager la conscience, transformer le futur."
             </p>
             <div className="flex gap-6">
-              <a href="#" className="hover:text-accent transition-colors"><Instagram className="h-6 w-6" /></a>
-              <a href="#" className="hover:text-accent transition-colors"><Facebook className="h-6 w-6" /></a>
-              <a href="#" className="hover:text-accent transition-colors"><Linkedin className="h-6 w-6" /></a>
-              <a href="#" className="hover:text-accent transition-colors"><Mail className="h-6 w-6" /></a>
+              <a href="https://www.instagram.com/alkymya_cyril" target="_blank" rel="noopener noreferrer" className="hover:text-accent transition-colors"><Instagram className="h-6 w-6" /></a>
+              <a href="https://www.tiktok.com/@cyrilgarnierphoto" target="_blank" rel="noopener noreferrer" className="hover:text-accent transition-colors">
+                <FaTiktok size={24} />
+              </a>
+              <a href="https://www.youtube.com/@cyrilgarnier9475" target="_blank" rel="noopener noreferrer" className="hover:text-accent transition-colors"><Youtube className="h-6 w-6" /></a>
+              <a href="https://www.linkedin.com/in/cyril-garnier-89697b1/" target="_blank" rel="noopener noreferrer" className="hover:text-accent transition-colors"><Linkedin className="h-6 w-6" /></a>
+              <a href="mailto:cyril@alkymya.co" className="hover:text-accent transition-colors"><Mail className="h-6 w-6" /></a>
             </div>
           </div>
 
@@ -37,6 +41,8 @@ export default function Footer() {
               <li><Link to="/ateliers" className="hover:text-accent transition-colors text-lg font-heading font-bold">Nos ateliers</Link></li>
               <li><Link to="/ressources" className="hover:text-accent transition-colors text-lg font-heading font-bold">Nos ressources</Link></li>
               <li><Link to="/partenaires" className="hover:text-accent transition-colors text-lg font-heading font-bold">Nos partenaires</Link></li>
+              <li><Link to="/rejoindre" className="hover:text-accent transition-colors text-lg font-heading font-bold">Nous rejoindre</Link></li>
+              <li><Link to="/faq" className="hover:text-accent transition-colors text-lg font-heading font-bold">FAQ</Link></li>
               <li><Link to="/contact" className="hover:text-accent transition-colors text-lg font-heading font-bold">Contact</Link></li>
             </ul>
           </div>
@@ -53,7 +59,7 @@ export default function Footer() {
             <div className="mt-8 md:mt-0 text-left md:text-right">
               <h4 className="text-sm uppercase tracking-[0.2em] font-bold mb-4 opacity-50">Engagement</h4>
               <p className="text-xs text-primary-foreground/60 leading-relaxed max-w-[200px]">
-                <Logo className="h-[1.2em]" variant="white" /> s'engage pour une empreinte numérique minimale et une éthique de production responsable.
+                Alkymya s'engage pour une empreinte numérique minimale et une éthique de production responsable.
               </p>
             </div>
           </div>
@@ -62,12 +68,12 @@ export default function Footer() {
         <Separator className="bg-primary-foreground/10 mb-12" />
 
         <div className="flex flex-col md:flex-row justify-between items-center gap-6 text-[10px] uppercase tracking-[0.2em] text-primary-foreground/40 font-bold">
-          <p>© 2024 <Logo className="h-[1.2em]" variant="white" />. Tous droits réservés.</p>
+          <p>© 2024 Alkymya. Tous droits réservés.</p>
           <div className="flex gap-8">
             <a href="#" className="hover:text-primary-foreground transition-colors">Mentions Légales</a>
             <a href="#" className="hover:text-primary-foreground transition-colors">Politique de Confidentialité</a>
           </div>
-          <p>Design & Code par <Logo className="h-[1.2em]" variant="white" /> Studio</p>
+          <p>Design & Code par Alkymya Studio</p>
         </div>
       </div>
     </footer>

@@ -18,6 +18,8 @@ const navItems = [
   { name: 'Nos ateliers', href: '/ateliers' },
   { name: 'Nos ressources', href: '/ressources' },
   { name: 'Nos partenaires', href: '/partenaires' },
+  { name: 'Nous rejoindre', href: '/rejoindre' },
+  { name: 'FAQ', href: '/faq' },
   { name: 'Contact', href: '/contact' },
 ];
 

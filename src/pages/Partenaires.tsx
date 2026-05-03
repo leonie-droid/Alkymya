@@ -53,11 +53,11 @@ const partenaires = [
   },
   {
     name: "SNCF",
-    logo: "https://res.cloudinary.com/dokzioyu4/image/upload/v1762337100/Logo_SNCF_becplr.png"
+    logo: "https://res.cloudinary.com/dokzioyu4/image/upload/v1777819108/t%C3%A9l%C3%A9chargement_16_j060qu.jpg"
   },
   {
     name: "INATEC",
-    logo: "https://res.cloudinary.com/dokzioyu4/image/upload/v1773845453/LOGO_INATEC_blanc-6942adc4b64b0_cmflee.png"
+    logo: "https://res.cloudinary.com/dokzioyu4/image/upload/v1777818451/WhatsApp_Image_2026-02-27_at_15.38.53_utvfxs.jpg"
   }
 ];
 

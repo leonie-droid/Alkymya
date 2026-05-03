@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
+import { Link } from 'react-router-dom';
 import Logo from '../components/Logo';
 import { cn } from '../../lib/utils';
 
@@ -12,7 +13,7 @@ const works = [
     category: "Les chemins interdits",
     type: "image",
     url: "https://res.cloudinary.com/dokzioyu4/image/upload/v1772112521/e23iKTwc_u35aql.png",
-    description: "Angela Davis est une figure emblématique de la lutte contre le racisme, le patriarcat et le système carcéral aux États-Unis."
+    description: "Angela Davis est une figure emblématique de la lutte contre le racisme, le patriarcat et le système carcéral, devenue une icône mondiale de la résistance politique et de la justice sociale."
   },
   {
     id: 2,
@@ -20,7 +21,7 @@ const works = [
     category: "Les chemins interdits",
     type: "image",
     url: "https://res.cloudinary.com/dokzioyu4/image/upload/v1772112520/grq2NVff_rcr9vi.png",
-    description: "Shirley Chisholm fut la première femme noire élue au Congrès américain et la première à briguer l'investiture d'un grand parti pour la présidence des États-Unis."
+    description: "Shirley Chisholm fut la première femme noire élue au Congrès et la première à briguer l'investiture présidentielle, restant une icône de l'indépendance."
   },
   {
     id: 3,
@@ -28,7 +29,7 @@ const works = [
     category: "Les chemins interdits",
     type: "image",
     url: "https://res.cloudinary.com/dokzioyu4/image/upload/v1772112521/d9eRiVt6_pmcd6l.png",
-    description: "Joséphine Baker fut une militante infatigable des droits civiques et la première femme noire à entrer au Panthéon."
+    description: "Joséphine Baker fut une militante humaniste infatigable et la première femme noire à entrer au Panthéon. Icône mondiale du music-hall, espionne et héroïne de la Résistance française."
   },
   {
     id: 4,
@@ -84,7 +85,7 @@ const works = [
     category: "Culture pop",
     type: "image",
     url: "https://res.cloudinary.com/dokzioyu4/image/upload/v1767127553/MVpvT2RW_s1n5ul.png",
-    description: "Le Wakanda prospère grâce au précieux vibranium sous la protection de son souverain légendaire, le Black Panther."
+    description: "Le Wakanda prospère grâce au précieux vibranium, mêlant traditions ancestrales et futurisme sous la protection de son souverain, le Black Panther."
   },
   {
     id: 11,
@@ -121,9 +122,17 @@ export default function Oeuvres() {
       <div className="container mx-auto px-4">
         <div className="max-w-3xl mb-16">
           <h1 className="text-5xl md:text-7xl font-heading font-black mb-8 text-deep-blue">Nos Œuvres</h1>
-          <p className="text-xl text-muted-foreground font-normal leading-relaxed">
-            Les visuels présentés sur ce site sont des créations numériques générées par IA. Ce projet explore la fusion entre la culture pop, l'histoire et les nouveaux outils de création digitale pour célébrer des figures inspirantes.
-          </p>
+          <div className="space-y-6 text-xl text-muted-foreground font-normal leading-relaxed">
+            <p>
+              Nos œuvres naissent d'une rencontre entre la photographie réelle et la puissance de l'intelligence artificielle.
+            </p>
+            <p>
+              Le processus est une alchimie moderne : chaque création débute par une capture photographique authentique, qui sert de base à une métamorphose numérique. Grâce à l'IA, nous transcendons les limites du réel pour sculpter des textures inédites, réinventer les décors et sublimer chaque détail.
+            </p>
+            <p>
+              Le résultat est une œuvre unique, où l'émotion humaine rencontre l'infini technologique.
+            </p>
+          </div>
         </div>
 
         {/* Filter Buttons */}
@@ -200,6 +209,24 @@ export default function Oeuvres() {
           </AnimatePresence>
         </motion.div>
 
+        {/* Creators and Model Section */}
+        <div className="mt-24 border-t border-deep-blue/10 pt-16">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-3xl font-heading font-black text-deep-blue mb-8">Nos créateurs et le modèle</h2>
+            <div className="grid md:grid-cols-2 gap-12 text-balance">
+              <div className="space-y-4">
+                <p className="text-lg text-deep-blue font-medium leading-relaxed">
+                  Le projet est né de la rencontre entre deux talents : <Link to="/alchimistes#cyril-garnier" className="text-copper-orange hover:underline">Cyril Garnier</Link>, créateur de mondes numériques, et Léonie Egesipe, dont le visage et le mouvement inspirent chaque composition.
+                </p>
+              </div>
+              <div className="space-y-4">
+                <p className="text-lg text-muted-foreground leading-relaxed border-l-2 border-copper-orange/20 pl-6">
+                  Le processus créatif est une danse technologique : Cyril utilise des techniques d'IA avancées pour sublimer les portraits de Léonie, créant ainsi des pièces uniques et intemporelles. Bienvenue dans une galerie où la réalité est réinventée.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </motion.div>
   );

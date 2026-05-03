@@ -1,5 +1,4 @@
 import Hero from '../components/Hero';
-import Logo from '../components/Logo';
 import { motion } from 'motion/react';
 import { ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
@@ -19,7 +18,7 @@ export default function Home() {
           >
             <h2 className="text-4xl md:text-5xl font-serif mb-8">Une approche holistique de la création</h2>
             <p className="text-lg text-muted-foreground mb-12 leading-relaxed">
-              Chez <Logo className="h-[1.2em]" />, nous croyons que l'art est un catalyseur de changement. Chaque œuvre, chaque atelier et chaque ressource est conçu pour nourrir votre créativité tout en respectant notre environnement.
+              Chez Alkymya, nous croyons que l'art est un catalyseur de changement. Chaque œuvre, chaque atelier et chaque ressource est conçu pour nourrir votre créativité tout en respectant notre environnement.
             </p>
             <div className="flex flex-wrap justify-center gap-6">
               <Link to="/oeuvres" className="inline-flex items-center gap-2 text-accent font-medium hover:underline">

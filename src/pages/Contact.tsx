@@ -1,109 +1,158 @@
+import React, { useState } from 'react';
 import { motion } from 'motion/react';
-import { Mail, Instagram, Linkedin, MessageSquare } from 'lucide-react';
+import { Mail, MessageSquare } from 'lucide-react';
 import { Card } from '@/components/ui/card';
 
-const contacts = [
-  {
-    name: "Cyril Garnier",
-    email: "cyril@alkymya.co",
-    photo: "https://res.cloudinary.com/dokzioyu4/image/upload/v1758811810/23-IMG_2569_1_ayyspn.jpg",
-    instagram: "https://www.instagram.com/cyrilgarnierconsulting?igsh=NXVma21qdjFxM3Fp",
-    linkedin: "https://www.linkedin.com/in/cyril-garnier-89697b1/"
-  },
-  {
-    name: "Léonie Egesipe",
-    email: "leonie@alkymya.co",
-    photo: "https://res.cloudinary.com/dokzioyu4/image/upload/v1758110454/725879fe-afa3-4afa-a900-229030c002de_1_xoep2v.png",
-    instagram: "https://www.instagram.com/alkymya_leonie?igsh=YnRicG01NDBka3lx",
-    linkedin: "https://www.linkedin.com/in/l%C3%A9onie-egesipe-96a283291/"
-  }
-];
-
 export default function Contact() {
+  const [formData, setFormData] = useState({
+    firstName: '',
+    lastName: '',
+    email: '',
+    subject: '',
+    message: ''
+  });
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    
+    const body = `Nom: ${formData.firstName} ${formData.lastName}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`;
+    const mailtoUrl = `mailto:cyril@alkymya.co,leonie@alkymya.co?subject=${encodeURIComponent(formData.subject || 'Message de Alkymya.co')}&body=${encodeURIComponent(body)}`;
+    
+    window.location.href = mailtoUrl;
+  };
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    setFormData(prev => ({
+      ...prev,
+      [e.target.name]: e.target.value
+    }));
+  };
+
   return (
     <div className="min-h-screen py-24 px-4 bg-background">
-      <div className="container mx-auto max-w-5xl">
+      <div className="container mx-auto max-w-4xl">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-24"
+          className="text-center mb-16"
         >
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-turquoise/10 text-turquoise mb-6">
             <MessageSquare className="h-4 w-4" />
-            <span className="text-sm font-medium uppercase tracking-widest">Prendre contact</span>
+            <span className="text-sm font-bold uppercase tracking-widest">Nous contacter</span>
           </div>
           <h1 className="text-5xl md:text-7xl font-heading font-black text-deep-blue mb-8">
-            L'Équipe <span className="text-turquoise">Alkymya</span>
+            Prenons <span className="text-turquoise">Contact</span>
           </h1>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto font-normal">
-            Rencontrez les visages derrière la transformation. Nous sommes là pour répondre à vos questions et explorer de nouvelles synergies créatives.
+            Une question ? Un projet ? N'hésitez pas à nous laisser un message, nous vous répondrons dans les plus brefs délais.
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-16">
-          {contacts.map((contact, index) => (
-            <motion.div
-              key={contact.name}
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: index * 0.2 }}
-            >
-              <Card className="group relative overflow-hidden rounded-[3rem] border-border/50 bg-white/50 backdrop-blur-sm hover:shadow-[0_32px_64px_-16px_rgba(0,0,0,0.1)] transition-all duration-700 h-full">
-                <div className="relative aspect-[4/4] overflow-hidden">
-                  <img 
-                    src={contact.photo} 
-                    alt={contact.name}
-                    className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
-                    referrerPolicy="no-referrer"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-deep-blue/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                </div>
-                
-                <div className="p-10 flex flex-col items-center text-center">
-                  <h3 className="text-3xl font-heading font-black text-deep-blue mb-2 group-hover:text-turquoise transition-colors duration-300">
-                    {contact.name}
-                  </h3>
-                  <a 
-                    href={`mailto:${contact.email}`}
-                    className="text-lg text-muted-foreground hover:text-deep-blue flex items-center gap-2 mb-8 transition-colors font-medium"
-                  >
-                    <Mail className="h-4 w-4 text-turquoise" />
-                    {contact.email}
-                  </a>
-                  
-                  <div className="flex gap-4">
-                    <a 
-                      href={contact.instagram}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="w-12 h-12 rounded-full border border-border/50 flex items-center justify-center text-deep-blue hover:bg-turquoise hover:text-white hover:border-turquoise transition-all duration-300"
-                    >
-                      <Instagram className="h-5 w-5" />
-                    </a>
-                    <a 
-                      href={contact.linkedin}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="w-12 h-12 rounded-full border border-border/50 flex items-center justify-center text-deep-blue hover:bg-deep-blue hover:text-white hover:border-deep-blue transition-all duration-300"
-                    >
-                      <Linkedin className="h-5 w-5" />
-                    </a>
-                  </div>
-                </div>
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+        >
+          <Card className="p-8 md:p-12 rounded-[3rem] border-none shadow-2xl bg-white/80 backdrop-blur-md relative overflow-hidden">
+            {/* Decorative background element */}
+            <div className="absolute top-0 right-0 w-64 h-64 bg-turquoise/10 blur-[100px] -mr-32 -mt-32" />
+            <div className="absolute bottom-0 left-0 w-64 h-64 bg-deep-blue/5 blur-[100px] -ml-32 -mb-32" />
 
-                {/* Decorative background element */}
-                <div className="absolute -bottom-10 -right-10 w-32 h-32 bg-turquoise/5 rounded-full blur-3xl group-hover:bg-turquoise/10 transition-colors" />
-              </Card>
-            </motion.div>
-          ))}
-        </div>
+            <form onSubmit={handleSubmit} className="relative z-10 grid grid-cols-1 md:grid-cols-2 gap-8">
+              <div className="space-y-2">
+                <label className="text-sm font-black text-deep-blue uppercase tracking-wider ml-1">Prénom</label>
+                <input 
+                  type="text" 
+                  name="firstName"
+                  value={formData.firstName}
+                  onChange={handleChange}
+                  placeholder="Votre prénom"
+                  required
+                  className="w-full px-6 py-4 bg-background border-2 border-border/50 rounded-2xl focus:border-turquoise focus:ring-0 transition-all outline-none"
+                />
+              </div>
+              <div className="space-y-2">
+                <label className="text-sm font-black text-deep-blue uppercase tracking-wider ml-1">Nom</label>
+                <input 
+                  type="text" 
+                  name="lastName"
+                  value={formData.lastName}
+                  onChange={handleChange}
+                  placeholder="Votre nom"
+                  required
+                  className="w-full px-6 py-4 bg-background border-2 border-border/50 rounded-2xl focus:border-turquoise focus:ring-0 transition-all outline-none"
+                />
+              </div>
+              <div className="space-y-2">
+                <label className="text-sm font-black text-deep-blue uppercase tracking-wider ml-1">Email</label>
+                <input 
+                  type="email" 
+                  name="email"
+                  value={formData.email}
+                  onChange={handleChange}
+                  placeholder="votre@email.com"
+                  required
+                  className="w-full px-6 py-4 bg-background border-2 border-border/50 rounded-2xl focus:border-turquoise focus:ring-0 transition-all outline-none"
+                />
+              </div>
+              <div className="space-y-2">
+                <label className="text-sm font-black text-deep-blue uppercase tracking-wider ml-1">Sujet</label>
+                <input 
+                  type="text" 
+                  name="subject"
+                  value={formData.subject}
+                  onChange={handleChange}
+                  placeholder="L'objet de votre message"
+                  required
+                  className="w-full px-6 py-4 bg-background border-2 border-border/50 rounded-2xl focus:border-turquoise focus:ring-0 transition-all outline-none"
+                />
+              </div>
+              <div className="space-y-2 md:col-span-2">
+                <label className="text-sm font-black text-deep-blue uppercase tracking-wider ml-1">Message</label>
+                <textarea 
+                  name="message"
+                  value={formData.message}
+                  onChange={handleChange}
+                  rows={6}
+                  placeholder="Comment pouvons-nous vous aider ?"
+                  required
+                  className="w-full px-6 py-4 bg-background border-2 border-border/50 rounded-2xl focus:border-turquoise focus:ring-0 transition-all outline-none resize-none"
+                />
+              </div>
+              <div className="md:col-span-2 pt-4">
+                <button 
+                  type="submit"
+                  className="w-full md:w-auto px-12 py-5 bg-deep-blue text-white rounded-full font-black uppercase tracking-widest hover:bg-turquoise transition-all shadow-xl hover:shadow-turquoise/20 flex items-center justify-center gap-3"
+                >
+                  Envoyer <Mail className="h-5 w-5" />
+                </button>
+              </div>
+            </form>
+          </Card>
+        </motion.div>
+
+        <motion.div 
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.8, delay: 0.4 }}
+          className="mt-20 grid grid-cols-1 md:grid-cols-2 gap-8 text-center md:text-left"
+        >
+          <div className="p-8 rounded-3xl bg-muted/30 border border-border/50">
+            <h3 className="font-black text-deep-blue uppercase tracking-wider mb-4">Cyril Garnier</h3>
+            <a href="mailto:cyril@alkymya.co" className="text-turquoise font-medium hover:underline">cyril@alkymya.co</a>
+          </div>
+          <div className="p-8 rounded-3xl bg-muted/30 border border-border/50">
+            <h3 className="font-black text-deep-blue uppercase tracking-wider mb-4">Léonie Egesipe</h3>
+            <a href="mailto:leonie@alkymya.co" className="text-turquoise font-medium hover:underline">leonie@alkymya.co</a>
+          </div>
+        </motion.div>
 
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1, delay: 0.6 }}
-          className="mt-32 text-center"
+          className="mt-20 text-center"
         >
           <p className="text-sm uppercase tracking-[0.4em] font-bold text-muted-foreground/50 italic">
             "Chaque rencontre est une opportunité de transmutation."
