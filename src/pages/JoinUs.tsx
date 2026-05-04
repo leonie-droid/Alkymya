@@ -120,10 +120,10 @@ export default function JoinUs() {
               className="inline-block"
             >
               <a
-                href="mailto:cyril@alkymya.co,leonie@alkymya.co"
+                href="/contact"
                 className="px-12 py-5 bg-copper-orange text-white rounded-full font-black uppercase tracking-widest hover:bg-white hover:text-copper-orange transition-all shadow-2xl flex items-center gap-3"
               >
-                <Mail className="h-5 w-5" /> Écrivez-nous
+                <Mail className="h-5 w-5" /> Contactez-nous
               </a>
             </motion.div>
           </div>

@@ -12,13 +12,35 @@ export default function Contact() {
     message: ''
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
+  const [errorMessage, setErrorMessage] = useState<string | null>(null);
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    setStatus('loading');
+    setErrorMessage(null);
     
-    const body = `Nom: ${formData.firstName} ${formData.lastName}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`;
-    const mailtoUrl = `mailto:cyril@alkymya.co,leonie@alkymya.co?subject=${encodeURIComponent(formData.subject || 'Message de Alkymya.co')}&body=${encodeURIComponent(body)}`;
-    
-    window.location.href = mailtoUrl;
+    try {
+      const response = await fetch('/api/send-contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ ...formData, type: 'Contact' }),
+      });
+
+      const result = await response.json();
+
+      if (response.ok) {
+        setStatus('success');
+        setFormData({ firstName: '', lastName: '', email: '', subject: '', message: '' });
+      } else {
+        setStatus('error');
+        setErrorMessage(result.error || 'Une erreur est survenue.');
+      }
+    } catch (error) {
+      console.error('Submit error:', error);
+      setStatus('error');
+      setErrorMessage('Impossible de contacter le serveur.');
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -123,10 +145,31 @@ export default function Contact() {
               <div className="md:col-span-2 pt-4">
                 <button 
                   type="submit"
-                  className="w-full md:w-auto px-12 py-5 bg-deep-blue text-white rounded-full font-black uppercase tracking-widest hover:bg-copper-orange transition-all shadow-xl hover:shadow-copper-orange/20 flex items-center justify-center gap-3"
+                  disabled={status === 'loading'}
+                  className="w-full md:w-auto px-12 py-5 bg-deep-blue text-white rounded-full font-black uppercase tracking-widest hover:bg-copper-orange transition-all shadow-xl hover:shadow-copper-orange/20 flex items-center justify-center gap-3 disabled:opacity-50 disabled:cursor-not-allowed"
                 >
-                  Envoyer <Mail className="h-5 w-5" />
+                  {status === 'loading' ? 'Envoi en cours...' : 'Envoyer'} <Mail className="h-5 w-5" />
                 </button>
+                
+                {status === 'success' && (
+                  <motion.p 
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    className="mt-4 text-green-600 font-bold"
+                  >
+                    Merci ! Votre message a été envoyé avec succès.
+                  </motion.p>
+                )}
+                
+                {status === 'error' && (
+                  <motion.p 
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    className="mt-4 text-red-600 font-bold"
+                  >
+                    {errorMessage || 'Une erreur est survenue. Veuillez réessayer ou nous contacter par email directement.'}
+                  </motion.p>
+                )}
               </div>
             </form>
           </Card>
