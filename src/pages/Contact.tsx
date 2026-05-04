@@ -37,12 +37,12 @@ export default function Contact() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-turquoise/10 text-turquoise mb-6">
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-copper-orange/10 text-copper-orange mb-6">
             <MessageSquare className="h-4 w-4" />
             <span className="text-sm font-bold uppercase tracking-widest">Nous contacter</span>
           </div>
           <h1 className="text-5xl md:text-7xl font-heading font-black text-deep-blue mb-8">
-            Prenons <span className="text-turquoise">Contact</span>
+            Prenons <span className="text-copper-orange">Contact</span>
           </h1>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto font-normal">
             Une question ? Un projet ? N'hésitez pas à nous laisser un message, nous vous répondrons dans les plus brefs délais.
@@ -56,7 +56,7 @@ export default function Contact() {
         >
           <Card className="p-8 md:p-12 rounded-[3rem] border-none shadow-2xl bg-white/80 backdrop-blur-md relative overflow-hidden">
             {/* Decorative background element */}
-            <div className="absolute top-0 right-0 w-64 h-64 bg-turquoise/10 blur-[100px] -mr-32 -mt-32" />
+            <div className="absolute top-0 right-0 w-64 h-64 bg-copper-orange/10 blur-[100px] -mr-32 -mt-32" />
             <div className="absolute bottom-0 left-0 w-64 h-64 bg-deep-blue/5 blur-[100px] -ml-32 -mb-32" />
 
             <form onSubmit={handleSubmit} className="relative z-10 grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -69,7 +69,7 @@ export default function Contact() {
                   onChange={handleChange}
                   placeholder="Votre prénom"
                   required
-                  className="w-full px-6 py-4 bg-background border-2 border-border/50 rounded-2xl focus:border-turquoise focus:ring-0 transition-all outline-none"
+                  className="w-full px-6 py-4 bg-background border-2 border-border/50 rounded-2xl focus:border-copper-orange focus:ring-0 transition-all outline-none"
                 />
               </div>
               <div className="space-y-2">
@@ -81,7 +81,7 @@ export default function Contact() {
                   onChange={handleChange}
                   placeholder="Votre nom"
                   required
-                  className="w-full px-6 py-4 bg-background border-2 border-border/50 rounded-2xl focus:border-turquoise focus:ring-0 transition-all outline-none"
+                  className="w-full px-6 py-4 bg-background border-2 border-border/50 rounded-2xl focus:border-copper-orange focus:ring-0 transition-all outline-none"
                 />
               </div>
               <div className="space-y-2">
@@ -93,7 +93,7 @@ export default function Contact() {
                   onChange={handleChange}
                   placeholder="votre@email.com"
                   required
-                  className="w-full px-6 py-4 bg-background border-2 border-border/50 rounded-2xl focus:border-turquoise focus:ring-0 transition-all outline-none"
+                  className="w-full px-6 py-4 bg-background border-2 border-border/50 rounded-2xl focus:border-copper-orange focus:ring-0 transition-all outline-none"
                 />
               </div>
               <div className="space-y-2">
@@ -105,7 +105,7 @@ export default function Contact() {
                   onChange={handleChange}
                   placeholder="L'objet de votre message"
                   required
-                  className="w-full px-6 py-4 bg-background border-2 border-border/50 rounded-2xl focus:border-turquoise focus:ring-0 transition-all outline-none"
+                  className="w-full px-6 py-4 bg-background border-2 border-border/50 rounded-2xl focus:border-copper-orange focus:ring-0 transition-all outline-none"
                 />
               </div>
               <div className="space-y-2 md:col-span-2">
@@ -117,13 +117,13 @@ export default function Contact() {
                   rows={6}
                   placeholder="Comment pouvons-nous vous aider ?"
                   required
-                  className="w-full px-6 py-4 bg-background border-2 border-border/50 rounded-2xl focus:border-turquoise focus:ring-0 transition-all outline-none resize-none"
+                  className="w-full px-6 py-4 bg-background border-2 border-border/50 rounded-2xl focus:border-copper-orange focus:ring-0 transition-all outline-none resize-none"
                 />
               </div>
               <div className="md:col-span-2 pt-4">
                 <button 
                   type="submit"
-                  className="w-full md:w-auto px-12 py-5 bg-deep-blue text-white rounded-full font-black uppercase tracking-widest hover:bg-turquoise transition-all shadow-xl hover:shadow-turquoise/20 flex items-center justify-center gap-3"
+                  className="w-full md:w-auto px-12 py-5 bg-deep-blue text-white rounded-full font-black uppercase tracking-widest hover:bg-copper-orange transition-all shadow-xl hover:shadow-copper-orange/20 flex items-center justify-center gap-3"
                 >
                   Envoyer <Mail className="h-5 w-5" />
                 </button>
@@ -140,11 +140,11 @@ export default function Contact() {
         >
           <div className="p-8 rounded-3xl bg-muted/30 border border-border/50">
             <h3 className="font-black text-deep-blue uppercase tracking-wider mb-4">Cyril Garnier</h3>
-            <a href="mailto:cyril@alkymya.co" className="text-turquoise font-medium hover:underline">cyril@alkymya.co</a>
+            <a href="mailto:cyril@alkymya.co" className="text-copper-orange font-medium hover:underline">cyril@alkymya.co</a>
           </div>
           <div className="p-8 rounded-3xl bg-muted/30 border border-border/50">
             <h3 className="font-black text-deep-blue uppercase tracking-wider mb-4">Léonie Egesipe</h3>
-            <a href="mailto:leonie@alkymya.co" className="text-turquoise font-medium hover:underline">leonie@alkymya.co</a>
+            <a href="mailto:leonie@alkymya.co" className="text-copper-orange font-medium hover:underline">leonie@alkymya.co</a>
           </div>
         </motion.div>
 

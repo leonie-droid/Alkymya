@@ -242,7 +242,7 @@ export default function FAQ() {
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mb-16">
           <h1 className="text-5xl md:text-7xl font-heading font-black mb-8 text-deep-blue">
-            FAQ - Toutes vos questions sur la <span className="text-copper-orange">Génération IA</span>
+            Toutes vos questions sur <span className="text-copper-orange">Alkymya</span>
           </h1>
           <p className="text-xl text-muted-foreground font-normal leading-relaxed">
             Découvrez comment Alkymya accompagne la Génération IA vers l'excellence : formations, outils gratuits, et expertise en intelligence artificielle pour grandes écoles et entreprises.
