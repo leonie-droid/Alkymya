@@ -1,6 +1,7 @@
 import { motion } from "motion/react";
 import { Plus, Minus, HelpCircle, BookOpen, Wrench, BarChart, Users, Zap, Mail } from "lucide-react";
-import { useState, ReactNode } from "react";
+import { useState, ReactNode, useMemo } from "react";
+import { SEO } from "../components/SEO";
 
 interface FAQData {
   question: string;
@@ -226,6 +227,15 @@ function FAQItem({ question, answer, isOpen, onClick }: { question: string, answ
 export default function FAQ() {
   const [openStates, setOpenStates] = useState<{ [key: string]: number | null }>({});
 
+  const flattenedFaq = useMemo(() => {
+    return faqCategories.flatMap(cat => 
+      cat.items.map(item => ({
+        question: item.question,
+        answer: typeof item.answer === 'string' ? item.answer : 'Consultez notre FAQ pour plus de détails.'
+      }))
+    );
+  }, []);
+
   const toggleItem = (categoryTitle: string, index: number) => {
     setOpenStates(prev => ({
       ...prev,
@@ -239,6 +249,7 @@ export default function FAQ() {
       animate={{ opacity: 1 }}
       className="pt-32 pb-24"
     >
+      <SEO type="FAQPage" faqData={flattenedFaq} />
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mb-16">
           <h1 className="text-5xl md:text-7xl font-heading font-black mb-8 text-deep-blue">

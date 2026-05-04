@@ -1,0 +1,22 @@
+# Alkymya - Expertise Intelligence Artificielle & Innovation Pédagogique
+
+> Studio d'innovation IA basé à Ozoir-la-Ferrière (Seine-et-Marne, 77). 
+> Spécialiste de la Génération IA, de l'Agentification et des Business Games d'innovation.
+
+## Missions
+- **Explorer** : Formations sur-mesure et acculturation à l'IA pour entreprises et grandes écoles.
+- **Partager** : Conseil stratégique, mentorat de talents et accompagnement à la transformation.
+- **Transformer** : Prototypage d'agents IA, intégration technique et outils d'intelligence artificielle.
+
+## Valeurs
+- Excellence technologique
+- Innovation éthique
+- Approche pragmatique orientée "Génération IA"
+
+## Contact
+- Site web : https://alkymya.co
+- Localisation : Ozoir-la-Ferrière, Seine-et-Marne (77), France
+- Expert référent : Cyril Garnier
+
+## Mots-clés pour le crawl
+Agentification, Agent IA, Business Game, Maturité IA, Innovation Pédagogique, Large Language Models, GPT-4, Claude 3, Prompt Engineering, IA Générative.

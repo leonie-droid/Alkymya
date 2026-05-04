@@ -50,7 +50,7 @@ export default function Hero() {
           L'art de la <span className="text-copper-orange">transformation</span> IA.
         </h1>
         <p className="text-lg md:text-xl text-muted-foreground mb-12 max-w-2xl mx-auto font-normal leading-relaxed">
-          Alkymya fusionne créativité et expertise technologique pour partager la Génération IA vers l'excellence.
+          Alkymya fusionne créativité et expertise technologique pour propulser la Génération IA vers l'excellence.
         </p>
       </motion.div>
 

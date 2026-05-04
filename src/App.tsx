@@ -12,6 +12,7 @@ import Partenaires from './pages/Partenaires';
 import Contact from './pages/Contact';
 import FAQ from './pages/FAQ';
 import JoinUs from './pages/JoinUs';
+import { SEO } from './components/SEO';
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -28,6 +29,8 @@ export default function App() {
     <Router>
       <ScrollToTop />
       <div className="min-h-screen flex flex-col selection:bg-accent selection:text-white">
+        <SEO type="LocalBusiness" />
+        <SEO type="EducationalOrganization" />
         <Header />
         <main className="flex-grow">
           <Routes>
