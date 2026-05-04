@@ -50,24 +50,48 @@ export function createApiApp(): Express {
         subject: `[${type || 'Contact'}] ${subject || 'Nouveau message'}`,
         replyTo: email,
         html: `
-          <div style="font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; max-width: 600px; margin: 0 auto; color: #1e293b; line-height: 1.6; border: 1px solid #e2e8f0; border-radius: 12px; overflow: hidden;">
-            <div style="background-color: #0c1b44; padding: 30px; text-align: center;">
-              <h1 style="color: #ffffff; margin: 0; font-size: 24px; letter-spacing: 1px;">ALKYMYA</h1>
-              <p style="color: #fb923c; margin: 10px 0 0 0; text-transform: uppercase; font-size: 12px; font-weight: bold; letter-spacing: 2px;">Formulaire de Contact</p>
+          <div style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; max-width: 600px; margin: 0 auto; color: #334155; line-height: 1.6; border: 1px solid #f1f5f9; border-radius: 16px; overflow: hidden; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);">
+            <div style="background-color: #1f4f6e; padding: 40px 30px; text-align: center;">
+              <h1 style="color: #ffffff; margin: 0; font-size: 28px; font-weight: 800; letter-spacing: 3px; text-transform: uppercase;">ALKYMYA</h1>
+              <div style="width: 40px; height: 3px; background-color: #c06721; margin: 15px auto;"></div>
+              <p style="color: #cbd5e1; margin: 0; text-transform: uppercase; font-size: 13px; font-weight: 600; letter-spacing: 2px;">Nouveau Message de Contact</p>
             </div>
-            <div style="padding: 40px;">
-              <p style="font-size: 16px;">Vous avez reçu un nouveau message depuis le site <strong>alkymya.co</strong> :</p>
-              <div style="background-color: #f8fafc; padding: 25px; border-radius: 8px; margin-bottom: 30px; border-left: 4px solid #fb923c;">
-                <p><strong>Expéditeur :</strong> ${firstName} ${lastName}</p>
-                <p><strong>Email :</strong> <a href="mailto:${email}" style="color: #fb923c; text-decoration: none;">${email}</a></p>
-                <p><strong>Sujet :</strong> ${subject}</p>
-                <hr style="border: 0; border-top: 1px solid #e2e8f0; margin: 20px 0;" />
-                <p style="white-space: pre-wrap;">${message}</p>
+            
+            <div style="padding: 40px 35px; background-color: #ffffff;">
+              <p style="font-size: 16px; color: #475569; margin-bottom: 30px;">Bonjour Cyril,</p>
+              <p style="font-size: 16px; color: #475569; margin-bottom: 30px;">Vous avez reçu une nouvelle demande via le site <strong>alkymya.co</strong> :</p>
+              
+              <div style="background-color: #f8fafc; padding: 30px; border-radius: 12px; margin-bottom: 30px; border-top: 4px solid #c06721;">
+                <div style="margin-bottom: 20px;">
+                  <span style="display: block; font-size: 12px; text-transform: uppercase; color: #94a3b8; font-weight: 700; margin-bottom: 4px;">Expéditeur</span>
+                  <span style="font-size: 16px; color: #1e293b; font-weight: 600;">${firstName} ${lastName}</span>
+                </div>
+                
+                <div style="margin-bottom: 20px;">
+                  <span style="display: block; font-size: 12px; text-transform: uppercase; color: #94a3b8; font-weight: 700; margin-bottom: 4px;">Email</span>
+                  <a href="mailto:${email}" style="font-size: 16px; color: #c06721; text-decoration: none; font-weight: 600;">${email}</a>
+                </div>
+                
+                <div style="margin-bottom: 25px;">
+                  <span style="display: block; font-size: 12px; text-transform: uppercase; color: #94a3b8; font-weight: 700; margin-bottom: 4px;">Sujet</span>
+                  <span style="font-size: 16px; color: #1e293b; font-weight: 600;">${subject}</span>
+                </div>
+                
+                <div style="padding-top: 20px; border-top: 1px solid #e2e8f0;">
+                  <span style="display: block; font-size: 12px; text-transform: uppercase; color: #94a3b8; font-weight: 700; margin-bottom: 12px;">Message</span>
+                  <div style="font-size: 15px; color: #334155; white-space: pre-wrap; font-style: italic; line-height: 1.8;">${message}</div>
+                </div>
               </div>
+              
+              <p style="font-size: 14px; color: #94a3b8; text-align: center;">Ce message a été généré automatiquement par le système Alkymya.</p>
             </div>
-            <div style="background-color: #f8fafc; padding: 40px; text-align: center; border-top: 1px solid #e2e8f0;">
-              <img src="https://res.cloudinary.com/dokzioyu4/image/upload/v1758096912/logo_principal_bleu_gbnyuu.png" alt="Alkymya Logo" style="max-width: 180px;" />
-              <p style="font-size: 12px; color: #94a3b8; margin-top: 10px;">© ${new Date().getFullYear()} Alkymya. Créateurs d'avenir par l'IA</p>
+            
+            <div style="background-color: #f8fafc; padding: 45px 30px; text-align: center; border-top: 1px solid #f1f5f9;">
+              <img src="https://res.cloudinary.com/dokzioyu4/image/upload/v1758096912/logo_principal_bleu_gbnyuu.png" alt="Alkymya Logo" style="max-width: 160px; height: auto; margin-bottom: 25px;" />
+              <div style="font-size: 12px; color: #64748b; letter-spacing: 0.5px;">
+                <p style="margin: 4px 0; font-weight: 600; color: #1f4f6e;">© ${new Date().getFullYear()} Alkymya</p>
+                <p style="margin: 4px 0;">Créateurs d'avenir par l'IA</p>
+              </div>
             </div>
           </div>
         `,
