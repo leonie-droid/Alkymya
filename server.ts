@@ -25,15 +25,24 @@ async function startServer() {
 
   app.use(express.json());
 
+  // Health check route to verify API availability
+  app.get('/api/health', (req, res) => {
+    res.json({ 
+      status: 'ok', 
+      env: process.env.NODE_ENV,
+      resendKeySet: !!process.env.RESEND_API_KEY 
+    });
+  });
+
   // API Route for Contact Form
   app.post('/api/send-contact', async (req, res) => {
     try {
       const { firstName, lastName, email, subject, message, type } = req.body;
       
-      console.log(`Tentative d'envoi d'email de ${email} via Resend...`);
+      console.log(`[${new Date().toISOString()}] Tentative d'envoi d'email de ${email}`);
 
       if (!process.env.RESEND_API_KEY) {
-        console.error('RESEND_API_KEY is missing in environment variables');
+        console.error('ERREUR : RESEND_API_KEY est manquante dans les variables d\'environnement.');
         return res.status(500).json({ error: 'Configuration serveur incomplète (RESEND_API_KEY manquante)' });
       }
 
@@ -78,14 +87,14 @@ async function startServer() {
       });
 
       if (error) {
-        console.error('Erreur API Resend:', error);
+        console.error('Erreur API Resend:', JSON.stringify(error, null, 2));
         return res.status(400).json({ error: error.message || 'Erreur lors de l\'envoi via Resend' });
       }
 
       console.log('Email envoyé avec succès:', data);
       res.status(200).json({ success: true, data });
     } catch (error: any) {
-      console.error('Erreur Critique Serveur:', error);
+      console.error('Erreur Critique Serveur:', error.message, error.stack);
       res.status(500).json({ error: error.message || 'Erreur Interne Serveur' });
     }
   });

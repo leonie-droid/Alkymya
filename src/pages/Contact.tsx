@@ -34,12 +34,18 @@ export default function Contact() {
         setFormData({ firstName: '', lastName: '', email: '', subject: '', message: '' });
       } else {
         setStatus('error');
-        setErrorMessage(result.error || 'Une erreur est survenue.');
+        // Capture des erreurs spécifiques retournées par le serveur ou Resend
+        setErrorMessage(result.error || `Erreur serveur : ${response.status}`);
+        console.error('Server error response:', result);
       }
-    } catch (error) {
-      console.error('Submit error:', error);
+    } catch (error: any) {
+      console.error('Network or client error:', error);
       setStatus('error');
-      setErrorMessage('Impossible de contacter le serveur.');
+      // Distinction entre erreur de réseau et erreur de code
+      const msg = error instanceof TypeError && error.message.includes('fetch') 
+        ? 'Impossible de joindre le serveur. Vérifiez que les routes API sont bien configurées.' 
+        : `Erreur : ${error.message}`;
+      setErrorMessage(msg);
     }
   };
 
