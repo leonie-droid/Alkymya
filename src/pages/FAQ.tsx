@@ -31,7 +31,7 @@ const faqCategories: FAQCategory[] = [
               <li><span className="font-bold">Vision pragmatique :</span> Pour eux, l'IA n'est ni une menace ni une magie, mais un levier de productivité à maîtriser.</li>
             </ul>
             <p className="font-bold text-deep-blue">Les défis à relever :</p>
-            <p>Mais derrière les superpouvoirs, il y a aussi le vertige : risque de perte d'emplois, transformation des métiers, et nécessité de se réinventer en continu. Les accompagner, c'est essentiel : leur donner les clés pour rester humains, développer leur esprit critique et construire leur propre trajectoire dans un monde où tout s'accélère.</p>
+            <p>Mais derrière les superpouvoirs, il y a aussi le vertige : risque de perte d'emplois, transformation des métiers, et nécessité de se réinventer en continu. Partager avec eux, c'est essentiel : leur donner les clés pour rester humains, développer leur esprit critique et construire leur propre trajectoire dans un monde où tout s'accélère.</p>
             <p><a href="/ia" className="text-copper-orange hover:underline">En savoir plus : Consultez notre Étude Génération IA 2024 pour approfondir.</a></p>
           </div>
         )
@@ -63,7 +63,7 @@ const faqCategories: FAQCategory[] = [
               <li><span className="font-bold">Nouvelles attentes professionnelles :</span> Cette génération recherche des environnements de travail qui intègrent l'IA de manière éthique et productive. Comprendre leurs attentes permet d'améliorer votre attractivité employeur.</li>
               <li><span className="font-bold">Innovation accélérée :</span> En maîtrisant l'IA dès leur formation, ces jeunes talents peuvent devenir des catalyseurs d'innovation dans vos équipes, à condition de leur donner le bon cadre.</li>
             </ul>
-            <p><span className="font-bold">Notre approche chez Alkymya :</span> Nous aidons les organisations et les jeunes à inventer ensemble un monde où l'IA est un levier, pas juste un défi. Notre accompagnement passe par trois piliers : Explorer, Accompagner, Transformer.</p>
+            <p><span className="font-bold">Notre approche chez Alkymya :</span> Nous aidons les organisations et les jeunes à inventer ensemble un monde où l'IA est un levier, pas juste un défi. Notre mission de partage passe par trois piliers : Explorer, Partager, Transformer.</p>
           </div>
         )
       }
@@ -75,7 +75,7 @@ const faqCategories: FAQCategory[] = [
     items: [
       {
         question: "Quels types de formations propose Alkymya ?",
-        answer: "Alkymya propose une expertise complète pour transformer votre organisation avec l'IA, structurée autour de trois piliers : Explorer (formations sur-mesure), Accompagner (conseil stratégique et mentorat), et Transformer (prototypage et intégration de l'IA)."
+        answer: "Alkymya propose une expertise complète pour transformer votre organisation avec l'IA, structurée autour de trois piliers : Explorer (formations sur-mesure), Partager (conseil stratégique et mentorat), et Transformer (prototypage et intégration de l'IA)."
       },
       {
         question: "Qu'est-ce que l'atelier \"Ateliers d'Innovation IA\" ?",
@@ -245,7 +245,7 @@ export default function FAQ() {
             Toutes vos questions sur <span className="text-copper-orange">Alkymya</span>
           </h1>
           <p className="text-xl text-muted-foreground font-normal leading-relaxed">
-            Découvrez comment Alkymya accompagne la Génération IA vers l'excellence : formations, outils gratuits, et expertise en intelligence artificielle pour grandes écoles et entreprises.
+            Découvrez comment Alkymya partage avec la Génération IA le chemin vers l'excellence : formations, outils gratuits, et expertise en intelligence artificielle pour grandes écoles et entreprises.
           </p>
         </div>
 
