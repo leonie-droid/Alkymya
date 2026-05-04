@@ -101,7 +101,7 @@ export default function Ateliers() {
               Une formation d'excellence, 100% financée.
             </h2>
             <p className="text-white/70 text-lg mb-12 max-w-2xl">
-              Parce que la montée en compétences ne doit pas être un frein financier, nous avons mis en place un cadre rigoureux pour vous accompagner :
+              Parce que la montée en compétences ne doit pas être un frein financier, nous avons mis en place un cadre rigoureux pour vous partager notre expertise :
             </p>
             
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">

@@ -21,7 +21,10 @@ export default function Contact() {
     setErrorMessage(null);
     
     try {
-      const response = await fetch('/api/send-contact', {
+      const apiUrl = `${window.location.origin}/api/send-contact`;
+      console.log(`Fetching: ${apiUrl}`);
+      
+      const response = await fetch(apiUrl, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ ...formData, type: 'Contact' }),
@@ -34,7 +37,7 @@ export default function Contact() {
       } else {
         const text = await response.text();
         console.error("Non-JSON response from server:", text);
-        result = { error: `Réponse inattendue (HTML/Texte) au lieu de JSON. Status: ${response.status}` };
+        result = { error: `Réponse non-JSON (${response.status}). Le serveur a renvoyé du texte/HTML au lieu d'un objet JSON. URL: ${apiUrl}` };
       }
 
       if (response.ok) {
@@ -51,7 +54,7 @@ export default function Contact() {
       setStatus('error');
       // Distinction entre erreur de réseau et erreur de code
       const msg = error instanceof TypeError && error.message.includes('fetch') 
-        ? 'Impossible de joindre le serveur. Vérifiez que les routes API sont bien configurées.' 
+        ? `Impossible de joindre le serveur à ${window.location.origin}/api/send-contact. Vérifiez la configuration du serveur (Proxy/Functions).` 
         : `Erreur client : ${error.message}`;
       setErrorMessage(msg);
     }

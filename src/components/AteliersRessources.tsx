@@ -84,7 +84,7 @@ export default function AteliersRessources() {
             <div className="max-w-xl">
               <h2 className="text-4xl md:text-5xl font-serif mb-6">Nos ressources</h2>
               <p className="text-muted-foreground leading-relaxed">
-                Des outils et des connaissances partagés pour accompagner votre propre transformation vers une pratique plus éthique.
+                Des outils et des connaissances partagés pour partager votre propre transformation vers une pratique plus éthique.
               </p>
             </div>
           </div>
