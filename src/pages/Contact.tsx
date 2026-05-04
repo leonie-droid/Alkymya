@@ -27,7 +27,15 @@ export default function Contact() {
         body: JSON.stringify({ ...formData, type: 'Contact' }),
       });
 
-      const result = await response.json();
+      let result;
+      const contentType = response.headers.get("content-type");
+      if (contentType && contentType.indexOf("application/json") !== -1) {
+        result = await response.json();
+      } else {
+        const text = await response.text();
+        console.error("Non-JSON response from server:", text);
+        result = { error: `Réponse inattendue (HTML/Texte) au lieu de JSON. Status: ${response.status}` };
+      }
 
       if (response.ok) {
         setStatus('success');
@@ -44,7 +52,7 @@ export default function Contact() {
       // Distinction entre erreur de réseau et erreur de code
       const msg = error instanceof TypeError && error.message.includes('fetch') 
         ? 'Impossible de joindre le serveur. Vérifiez que les routes API sont bien configurées.' 
-        : `Erreur : ${error.message}`;
+        : `Erreur client : ${error.message}`;
       setErrorMessage(msg);
     }
   };

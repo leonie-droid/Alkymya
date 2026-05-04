@@ -99,6 +99,12 @@ async function startServer() {
     }
   });
 
+  // Catch-all pour les routes API non trouvées (évite de renvoyer l'index.html pour l'API)
+  app.use('/api/*', (req, res) => {
+    console.warn(`[404] API Route non trouvée : ${req.method} ${req.originalUrl}`);
+    res.status(404).json({ error: `Route API non trouvée : ${req.originalUrl}` });
+  });
+
   // Vite middleware for development
   if (process.env.NODE_ENV !== 'production') {
     const vite = await createViteServer({
