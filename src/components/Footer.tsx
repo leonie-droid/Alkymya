@@ -26,7 +26,7 @@ export default function Footer() {
               <a href="https://www.tiktok.com/@cyrilgarnierphoto" target="_blank" rel="noopener noreferrer" className="hover:text-accent transition-colors">
                 <FaTiktok size={24} />
               </a>
-              <a href="https://www.youtube.com/@cyrilgarnier9475" target="_blank" rel="noopener noreferrer" className="hover:text-accent transition-colors"><Youtube className="h-6 w-6" /></a>
+              <a href="https://www.youtube.com/channel/UCon0sR5rVfTCuHOWG7LhAig" target="_blank" rel="noopener noreferrer" className="hover:text-accent transition-colors"><Youtube className="h-6 w-6" /></a>
               <a href="https://www.linkedin.com/in/cyril-garnier-89697b1/" target="_blank" rel="noopener noreferrer" className="hover:text-accent transition-colors"><Linkedin className="h-6 w-6" /></a>
               <a href="mailto:cyril@alkymya.co" className="hover:text-accent transition-colors"><Mail className="h-6 w-6" /></a>
             </div>
@@ -67,13 +67,14 @@ export default function Footer() {
 
         <Separator className="bg-primary-foreground/10 mb-12" />
 
-        <div className="flex flex-col md:flex-row justify-between items-center gap-6 text-[10px] uppercase tracking-[0.2em] text-primary-foreground/40 font-bold">
-          <p>© 2024 Alkymya. Tous droits réservés.</p>
-          <div className="flex gap-8">
-            <a href="#" className="hover:text-primary-foreground transition-colors">Mentions Légales</a>
-            <a href="#" className="hover:text-primary-foreground transition-colors">Politique de Confidentialité</a>
+        <div className="flex flex-col md:flex-row justify-between items-center gap-6 text-[11px] uppercase tracking-[0.2em] text-primary-foreground/40 font-bold whitespace-nowrap">
+          <p>© 2026 Alkymya.co. Tous droits réservés.</p>
+          <div className="flex flex-wrap justify-center gap-x-8 gap-y-4">
+            <button onClick={scrollToTop} className="hover:text-primary-foreground transition-colors cursor-pointer">Remonter en haut</button>
+            <Link to="/mentions-legales" className="hover:text-primary-foreground transition-colors">Mentions Légales</Link>
+            <Link to="/contact" className="hover:text-primary-foreground transition-colors">Contact</Link>
           </div>
-          <p>Design & Code par Alkymya Studio</p>
+          <p>26/02/2026 - v1.6</p>
         </div>
       </div>
     </footer>

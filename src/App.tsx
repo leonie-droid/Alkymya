@@ -12,7 +12,9 @@ import Partenaires from './pages/Partenaires';
 import Contact from './pages/Contact';
 import FAQ from './pages/FAQ';
 import JoinUs from './pages/JoinUs';
+import MentionsLegales from './pages/MentionsLegales';
 import { SEO } from './components/SEO';
+import { Chatbot } from './components/Chatbot';
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -44,9 +46,11 @@ export default function App() {
             <Route path="/contact" element={<Contact />} />
             <Route path="/faq" element={<FAQ />} />
             <Route path="/rejoindre" element={<JoinUs />} />
+            <Route path="/mentions-legales" element={<MentionsLegales />} />
           </Routes>
         </main>
         <Footer />
+        <Chatbot />
       </div>
     </Router>
   );

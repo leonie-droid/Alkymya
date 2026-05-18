@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Menu, Instagram, Facebook, Linkedin } from 'lucide-react';
+import { Menu, Instagram, Facebook, Linkedin, Youtube } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import {
   Sheet,
@@ -29,7 +29,7 @@ export default function Header() {
 
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-background/80 backdrop-blur-md">
-      <div className="max-w-[1600px] mx-auto flex h-20 items-center justify-between px-6 lg:px-10 relative">
+      <div className="max-w-[1440px] mx-auto flex h-20 items-center justify-between px-6 lg:px-10 relative">
         {/* Left column: Logo */}
         <div className="flex-none z-10">
           <Link to="/" className="flex items-center">
@@ -38,7 +38,7 @@ export default function Header() {
         </div>
 
         {/* Center column: Navigation, widely spaced */}
-        <nav className="hidden md:flex items-center justify-center gap-3 lg:gap-6 xl:gap-10 mx-auto px-4">
+        <nav className="hidden lg:flex items-center justify-center gap-3 lg:gap-6 xl:gap-8 mx-auto px-4">
           {navItems.map((item) => (
             <Link
               key={item.name}
@@ -59,11 +59,18 @@ export default function Header() {
 
         {/* Right column: Socials or Menu */}
         <div className="flex-none flex items-center gap-4 z-10 min-w-[40px] justify-end">
-          <div className="hidden lg:flex items-center gap-4 text-muted-foreground border-l border-border pl-6 ml-2">
-            <Instagram className="h-4 w-4 hover:text-accent cursor-pointer transition-colors" />
-            <Linkedin className="h-4 w-4 hover:text-accent cursor-pointer transition-colors" />
+          <div className="hidden xl:flex items-center gap-4 text-muted-foreground border-l border-border pl-6 ml-2">
+            <a href="https://www.instagram.com/alkymya_cyril" target="_blank" rel="noopener noreferrer">
+              <Instagram className="h-4 w-4 hover:text-accent cursor-pointer transition-colors" />
+            </a>
+            <a href="https://www.youtube.com/channel/UCon0sR5rVfTCuHOWG7LhAig" target="_blank" rel="noopener noreferrer">
+              <Youtube className="h-4 w-4 hover:text-accent cursor-pointer transition-colors" />
+            </a>
+            <a href="https://www.linkedin.com/in/cyril-garnier-89697b1/" target="_blank" rel="noopener noreferrer">
+              <Linkedin className="h-4 w-4 hover:text-accent cursor-pointer transition-colors" />
+            </a>
           </div>
-          <div className="md:hidden">
+          <div className="lg:hidden">
             <Sheet open={isOpen} onOpenChange={setIsOpen}>
               <SheetTrigger asChild>
                 <Button variant="ghost" size="icon" className="text-primary">
@@ -86,9 +93,18 @@ export default function Header() {
                     </Link>
                   ))}
                   <div className="flex gap-4 mt-8">
-                    <Instagram className="h-6 w-6 text-muted-foreground hover:text-accent cursor-pointer" />
-                    <Facebook className="h-6 w-6 text-muted-foreground hover:text-accent cursor-pointer" />
-                    <Linkedin className="h-6 w-6 text-muted-foreground hover:text-accent cursor-pointer" />
+                    <a href="https://www.instagram.com/alkymya_cyril" target="_blank" rel="noopener noreferrer">
+                      <Instagram className="h-6 w-6 text-muted-foreground hover:text-accent cursor-pointer" />
+                    </a>
+                    <a href="https://www.youtube.com/channel/UCon0sR5rVfTCuHOWG7LhAig" target="_blank" rel="noopener noreferrer">
+                      <Youtube className="h-6 w-6 text-muted-foreground hover:text-accent cursor-pointer" />
+                    </a>
+                    <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer">
+                      <Facebook className="h-6 w-6 text-muted-foreground hover:text-accent cursor-pointer" />
+                    </a>
+                    <a href="https://www.linkedin.com/in/cyril-garnier-89697b1/" target="_blank" rel="noopener noreferrer">
+                      <Linkedin className="h-6 w-6 text-muted-foreground hover:text-accent cursor-pointer" />
+                    </a>
                   </div>
                 </nav>
               </SheetContent>

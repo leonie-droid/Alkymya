@@ -1,13 +1,14 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Zap, ShieldCheck, Euro, GraduationCap, ArrowRight, PlayCircle } from "lucide-react";
-import { motion } from 'motion/react';
+import { Zap, ShieldCheck, Euro, GraduationCap, ArrowRight, Quote, X } from "lucide-react";
+import { motion, AnimatePresence } from 'motion/react';
+import { useState, useEffect } from "react";
 
 const ateliers = [
   {
     title: "1. Formation Core : Le Programme Complet IA",
     subtitle: "C'est notre offre \"Meilleure Valeur\" pour une autonomie totale.",
-    price: "2 000 € HT",
+    price: "2 500 € HT",
     format: "14 heures de formation intensive réparties sur 4 demi-journées.",
     content: "Maîtrise de la stack complète (Images, Contenus, Vidéo, Web).",
     included: "Supports pédagogiques, accès Drive illimité, suivi post-formation pendant 1 mois, et délivrance de l'attestation Qualiopi.",
@@ -63,9 +64,61 @@ const testimonials = [
 ];
 
 export default function Ateliers() {
+  const [isVideoOpen, setIsVideoOpen] = useState(false);
+
+  // Lock scroll when video is open
+  useEffect(() => {
+    if (isVideoOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+    return () => {
+      document.body.style.overflow = 'unset';
+    };
+  }, [isVideoOpen]);
+
   return (
     <div className="pt-32 pb-24">
-      <div className="container mx-auto px-4">
+      {/* Video Lightbox */}
+      <AnimatePresence>
+        {isVideoOpen && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 z-[100] flex items-center justify-center bg-black/95 backdrop-blur-md p-4 md:p-8"
+            onClick={() => setIsVideoOpen(false)}
+          >
+            <motion.div
+              initial={{ scale: 0.95, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.95, opacity: 0 }}
+              className="relative w-full max-w-4xl h-auto max-h-[90vh] aspect-video md:aspect-[9/16] md:w-[450px] flex flex-col items-center justify-center"
+              onClick={(e) => e.stopPropagation()}
+            >
+              <button
+                className="absolute -top-14 right-0 text-white bg-copper-orange rounded-full p-3 shadow-xl hover:scale-110 transition-transform z-[110]"
+                onClick={() => setIsVideoOpen(false)}
+                aria-label="Fermer la vidéo"
+              >
+                <X className="h-6 w-6" />
+              </button>
+              <div className="w-full h-full rounded-3xl overflow-hidden shadow-2xl bg-black border border-white/10">
+                <video
+                  src="https://res.cloudinary.com/dokzioyu4/video/upload/v1773762338/DraftResource_1763735958.541805_atgbsl.mov"
+                  className="w-full h-full object-contain"
+                  controls
+                  autoPlay
+                  playsInline
+                />
+              </div>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+
+      <div className="container mx-auto px-4 max-w-[1440px]">
         {/* Hero Section */}
         <div className="max-w-4xl mb-24">
           <motion.div
@@ -234,19 +287,19 @@ export default function Ateliers() {
             </div>
           </div>
           <div className="flex justify-center lg:justify-end">
-            <div className="relative aspect-[9/16] w-full max-w-[320px] rounded-[3rem] overflow-hidden shadow-2xl bg-black group border-8 border-white/10">
+            <button 
+              onClick={() => setIsVideoOpen(true)}
+              className="relative aspect-[9/16] w-full max-w-[320px] rounded-[3rem] overflow-hidden shadow-2xl bg-black group border-8 border-white/10 text-left outline-none cursor-zoom-in"
+            >
               <video 
                 src="https://res.cloudinary.com/dokzioyu4/video/upload/v1773762338/DraftResource_1763735958.541805_atgbsl.mov"
-                className="w-full h-full object-cover opacity-90 group-hover:opacity-100 transition-opacity duration-700"
+                className="w-full h-full object-cover opacity-90 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none"
                 autoPlay
                 muted
                 loop
                 playsInline
               />
-              <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-                <PlayCircle className="h-16 w-16 text-white/30 group-hover:text-white/60 transition-all scale-90 group-hover:scale-100" />
-              </div>
-            </div>
+            </button>
           </div>
         </div>
         
@@ -257,7 +310,7 @@ export default function Ateliers() {
             <h2 className="text-4xl font-heading font-black text-deep-blue">Ce qu'ils en <span className="text-copper-orange">disent</span></h2>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8">
             {testimonials.map((t, index) => (
               <motion.div
                 key={index}
@@ -268,7 +321,7 @@ export default function Ateliers() {
                 className="p-8 bg-white border border-deep-blue/5 shadow-xl shadow-deep-blue/5 rounded-[2.5rem] flex flex-col h-full hover:border-copper-orange/30 transition-all duration-500"
               >
                 <div className="mb-6">
-                  <PlayCircle className="h-8 w-8 text-copper-orange/20 rotate-180" />
+                  <Quote className="h-8 w-8 text-copper-orange/20 fill-copper-orange/10" />
                 </div>
                 <p className="text-deep-blue/80 font-medium italic leading-relaxed mb-8 flex-grow">
                   "{t.quote}"

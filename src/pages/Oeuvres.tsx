@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { Link } from 'react-router-dom';
 import Logo from '../components/Logo';
@@ -107,6 +107,19 @@ const works = [
 
 export default function Oeuvres() {
   const [activeCategory, setActiveCategory] = useState("Toutes");
+  const [selectedVideo, setSelectedVideo] = useState<string | null>(null);
+
+  // Lock scroll when video is open
+  useEffect(() => {
+    if (selectedVideo) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+    return () => {
+      document.body.style.overflow = 'unset';
+    };
+  }, [selectedVideo]);
 
   const filteredWorks = activeCategory === "Toutes" 
     ? works 
@@ -119,8 +132,44 @@ export default function Oeuvres() {
       transition={{ duration: 0.5 }}
       className="pt-12 pb-24"
     >
-      <div className="container mx-auto px-4">
-        <div className="max-w-3xl mb-16">
+      <AnimatePresence>
+        {selectedVideo && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 z-[100] flex items-center justify-center bg-black/95 backdrop-blur-md p-4 md:p-8"
+            onClick={() => setSelectedVideo(null)}
+          >
+            <motion.div
+              initial={{ scale: 0.95, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.95, opacity: 0 }}
+              className="relative w-full max-w-4xl h-auto max-h-[90vh] aspect-video md:aspect-[9/16] md:w-[450px] flex flex-col items-center justify-center"
+              onClick={(e) => e.stopPropagation()}
+            >
+              <button
+                className="absolute -top-14 right-0 text-white bg-copper-orange rounded-full p-3 shadow-xl hover:scale-110 transition-transform z-[110]"
+                onClick={() => setSelectedVideo(null)}
+                aria-label="Fermer la vidéo"
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-x"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+              </button>
+              <div className="w-full h-full rounded-3xl overflow-hidden shadow-2xl bg-black border border-white/10">
+                <video
+                  src={selectedVideo}
+                  className="w-full h-full object-contain"
+                  controls
+                  autoPlay
+                  playsInline
+                />
+              </div>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+      <div className="container mx-auto px-4 max-w-[1440px]">
+        <div className="max-w-4xl mb-16">
           <h1 className="text-5xl md:text-7xl font-heading font-black mb-8 text-deep-blue">Nos Œuvres</h1>
           <div className="space-y-6 text-xl text-muted-foreground font-normal leading-relaxed">
             <p>
@@ -156,7 +205,7 @@ export default function Oeuvres() {
         {/* Gallery Grid */}
         <motion.div 
           layout
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12"
+          className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-12"
         >
           <AnimatePresence mode="popLayout">
             {filteredWorks.map((work) => (
@@ -169,12 +218,18 @@ export default function Oeuvres() {
                 transition={{ duration: 0.4 }}
                 className="group"
               >
-                <div className="relative aspect-[9/16] overflow-hidden rounded-3xl bg-muted mb-6 shadow-xl transition-transform duration-500 group-hover:-translate-y-2">
+                <div 
+                  className={cn(
+                    "relative aspect-[9/16] overflow-hidden rounded-3xl bg-muted mb-6 shadow-xl transition-transform duration-500 group-hover:-translate-y-2",
+                    work.type === 'video' && "cursor-zoom-in"
+                  )}
+                  onClick={() => work.type === 'video' && setSelectedVideo(work.url)}
+                >
                   {work.type === 'video' ? (
                     <video 
                       src={work.url} 
-                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                      controls
+                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 pointer-events-none"
+                      autoPlay
                       muted
                       loop
                       playsInline

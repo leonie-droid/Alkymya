@@ -250,7 +250,7 @@ export default function FAQ() {
       className="pt-32 pb-24"
     >
       <SEO type="FAQPage" faqData={flattenedFaq} />
-      <div className="container mx-auto px-4">
+      <div className="container mx-auto px-4 max-w-[1440px]">
         <div className="max-w-4xl mb-16">
           <h1 className="text-5xl md:text-7xl font-heading font-black mb-8 text-deep-blue">
             Toutes vos questions sur <span className="text-copper-orange">Alkymya</span>

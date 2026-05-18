@@ -1,6 +1,7 @@
-import { motion } from 'motion/react';
+import React, { useState } from 'react';
+import { motion, AnimatePresence } from 'motion/react';
 import { Link } from 'react-router-dom';
-import { Mail, Linkedin, Instagram, Twitter, ExternalLink, Zap, Youtube } from 'lucide-react';
+import { Mail, Linkedin, Instagram, Twitter, ExternalLink, Zap, Youtube, ChevronDown } from 'lucide-react';
 import { FaTiktok } from 'react-icons/fa';
 import { Card } from '@/components/ui/card';
 
@@ -54,10 +55,118 @@ const alchimistes = [
   }
 ];
 
+const WorksAccordion = ({ works, handleWorkClick }: { works: any[], handleWorkClick: (e: React.MouseEvent, url: string, label: string) => void }) => {
+  const [isOpen, setIsOpen] = useState(false);
+  
+  return (
+    <div className="pt-6 mt-auto border-t border-deep-blue/5">
+      <button 
+        onClick={() => setIsOpen(!isOpen)}
+        className="flex items-center justify-between w-full group/btn py-2"
+      >
+        <div className="flex items-center gap-2">
+          <Zap className={`h-4 w-4 transition-colors duration-300 ${isOpen ? 'text-copper-orange' : 'text-deep-blue/30'}`} />
+          <h3 className="text-xs font-black uppercase tracking-widest text-deep-blue group-hover/btn:text-copper-orange transition-colors">
+            Leurs Œuvres
+          </h3>
+        </div>
+        <div className={`p-1 rounded-full transition-all duration-300 ${isOpen ? 'bg-copper-orange/10 text-copper-orange rotate-180' : 'bg-deep-blue/5 text-deep-blue/30'}`}>
+          <ChevronDown className="h-4 w-4" />
+        </div>
+      </button>
+      
+      <AnimatePresence>
+        {isOpen && (
+          <motion.div
+            initial={{ height: 0, opacity: 0 }}
+            animate={{ height: 'auto', opacity: 1 }}
+            exit={{ height: 0, opacity: 0 }}
+            transition={{ duration: 0.4, ease: [0.23, 1, 0.32, 1] }}
+            className="overflow-hidden"
+          >
+            <div className="space-y-2 pt-4 pb-2">
+              {works.map((work, idx) => (
+                <a
+                  key={idx}
+                  href={work.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={(e) => handleWorkClick(e, work.url, work.label)}
+                  className="flex items-center justify-between p-3 rounded-xl bg-white border border-deep-blue/5 hover:border-copper-orange/30 hover:bg-copper-orange/5 transition-all group/link"
+                >
+                  <span className="text-xs font-bold text-deep-blue group-hover/link:text-copper-orange transition-colors line-clamp-1">{work.label}</span>
+                  <ExternalLink className="h-3 w-3 text-deep-blue/30 group-hover/link:text-copper-orange transition-colors flex-shrink-0" />
+                </a>
+              ))}
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </div>
+  );
+};
+
 export default function Alchimistes() {
+  const [selectedVideo, setSelectedVideo] = useState<string | null>(null);
+
+  // Lock scroll when video is open
+  React.useEffect(() => {
+    if (selectedVideo) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+    return () => {
+      document.body.style.overflow = 'unset';
+    };
+  }, [selectedVideo]);
+
+  const handleWorkClick = (e: React.MouseEvent, url: string, label: string) => {
+    if (label.toLowerCase().includes('vidéo') || url.endsWith('.mov') || url.endsWith('.mp4')) {
+      e.preventDefault();
+      setSelectedVideo(url);
+    }
+  };
+
   return (
     <div className="min-h-screen py-32 px-4 bg-background">
-      <div className="container mx-auto">
+      <AnimatePresence>
+        {selectedVideo && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 z-[100] flex items-center justify-center bg-black/95 backdrop-blur-md p-4 md:p-8"
+            onClick={() => setSelectedVideo(null)}
+          >
+            <motion.div
+              initial={{ scale: 0.95, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.95, opacity: 0 }}
+              className="relative w-full max-w-4xl h-auto max-h-[90vh] aspect-video md:aspect-[9/16] md:w-[450px] flex flex-col items-center justify-center"
+              onClick={(e) => e.stopPropagation()}
+            >
+              <button
+                className="absolute -top-14 right-0 text-white bg-copper-orange rounded-full p-3 shadow-xl hover:scale-110 transition-transform z-[110]"
+                onClick={() => setSelectedVideo(null)}
+                aria-label="Fermer la vidéo"
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-x"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+              </button>
+              <div className="w-full h-full rounded-3xl overflow-hidden shadow-2xl bg-black border border-white/10">
+                <video
+                  src={selectedVideo}
+                  className="w-full h-full object-contain"
+                  controls
+                  autoPlay
+                  playsInline
+                />
+              </div>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+      <div className="container mx-auto px-4 max-w-[1440px]">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -141,26 +250,7 @@ export default function Alchimistes() {
 
                   {/* Lab Works / Portfolio section */}
                   {'works' in person && person.works && (
-                    <div className="pt-6 mt-auto">
-                      <div className="flex items-center gap-2 mb-4">
-                        <Zap className="h-4 w-4 text-copper-orange" />
-                        <h3 className="text-xs font-black uppercase tracking-widest text-deep-blue">Leurs Œuvres</h3>
-                      </div>
-                      <div className="space-y-2">
-                        {person.works.map((work, idx) => (
-                          <a
-                            key={idx}
-                            href={work.url}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="flex items-center justify-between p-3 rounded-xl bg-white border border-deep-blue/5 hover:border-copper-orange/30 hover:bg-copper-orange/5 transition-all group/link"
-                          >
-                            <span className="text-xs font-bold text-deep-blue group-hover/link:text-copper-orange transition-colors line-clamp-1">{work.label}</span>
-                            <ExternalLink className="h-3 w-3 text-deep-blue/30 group-hover/link:text-copper-orange transition-colors flex-shrink-0" />
-                          </a>
-                        ))}
-                      </div>
-                    </div>
+                    <WorksAccordion works={person.works} handleWorkClick={handleWorkClick} />
                   )}
                 </div>
               </Card>

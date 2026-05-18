@@ -1,8 +1,9 @@
-import { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { cn } from '../../lib/utils';
+import { Volume2, VolumeX, Maximize2 } from 'lucide-react';
 
-const categories = ["Toutes", "Nos Analyseurs"];
+const categories = ["Toutes", "Nos Analyseurs", "Business Game", "Agents"];
 
 const resources = [
   {
@@ -10,26 +11,75 @@ const resources = [
     title: "Analyseur de photo",
     category: "Nos Analyseurs",
     description: "Analyseur de photo vous permet d'explorer, de retoucher et de métamorphoser vos images en un instant.",
-    url: "https://res.cloudinary.com/dokzioyu4/video/upload/v1773761166/46b26247d1084cb39b354fe4c9842b29_aszzay_f48sjs.mov"
+    url: "https://res.cloudinary.com/dokzioyu4/video/upload/v1773761166/46b26247d1084cb39b354fe4c9842b29_aszzay_f48sjs.mov",
+    appUrl: "https://analyseurdephoto.alkymya.co/",
+    type: "video"
   },
   {
     id: 2,
     title: "Analyseur de CV",
     category: "Nos Analyseurs",
-    description: "Analyseur de CV, avec cet outil analyser et modifier votre CV.",
-    url: "https://res.cloudinary.com/dokzioyu4/video/upload/v1773762096/c599dc6cd0ef4e6196a739c87b2cb773_gxn0lj.mov"
+    description: "Outil IA gratuit pour optimiser votre CV et maximiser vos chances de décrocher le poste de vos rêves.",
+    url: "https://res.cloudinary.com/dokzioyu4/video/upload/v1773762096/c599dc6cd0ef4e6196a739c87b2cb773_gxn0lj.mov",
+    appUrl: "https://analysercvpro.alkymya.co/",
+    type: "video"
   },
   {
     id: 3,
     title: "Analyseur de mémoire",
     category: "Nos Analyseurs",
-    description: "Analyseur de mémoire, parfait pour analyser tout le contenu d'un mémoire.",
-    url: "https://res.cloudinary.com/dokzioyu4/video/upload/v1776374160/bac00848173641fd882d43dc3b970835_jtyspz.mov"
+    description: "Outil puissant pour analyser en profondeur les mémoires et thèses. (Bientôt en version payante)",
+    url: "https://res.cloudinary.com/dokzioyu4/video/upload/v1776374160/bac00848173641fd882d43dc3b970835_jtyspz.mov",
+    appUrl: "https://analyseurdememoire.alkymya.co/",
+    type: "video"
+  },
+  {
+    id: 4,
+    title: "NoNo BanaBa",
+    category: "Business Game",
+    description: "Au travers de la marque fashion de la Gen Z, explorez la data, le web-marketing et les business modèles...",
+    url: "https://res.cloudinary.com/dokzioyu4/video/upload/v1777905236/Vide%CC%81o_publicitaire_e%CC%81lectro_pop_cre%CC%81e%CC%81e_oydyo3_xxtwtb.mp4",
+    appUrl: "https://nonobanaba.netlify.app/",
+    type: "video"
+  },
+  {
+    id: 5,
+    title: "SODA",
+    category: "Agents",
+    description: "SODA est une IA spécialisée conçue pour l'accompagnement et l'analyse stratégique. Découvrez notre agent super-intelligent.",
+    url: "https://res.cloudinary.com/dokzioyu4/video/upload/v1779116439/f_ea_e_f_f_a_f_a_e_cbe_f_cmp__gxlwhw.mp4",
+    appUrl: "https://www.genspark.ai/agents?type=custom_super_agent&agent_id=20503058-4b49-40f7-b277-b38c21724a41",
+    type: "video"
   }
 ];
 
 export default function Ressources() {
   const [activeCategory, setActiveCategory] = useState("Toutes");
+  const [selectedResource, setSelectedResource] = useState<{url: string, type: string} | null>(null);
+
+  // Lock scroll when video or app is open
+  useEffect(() => {
+    if (selectedResource) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+    return () => {
+      document.body.style.overflow = 'unset';
+    };
+  }, [selectedResource]);
+
+  const [unmutedIds, setUnmutedIds] = useState<Set<number>>(new Set());
+
+  const toggleMute = (e: React.MouseEvent, id: number) => {
+    e.stopPropagation();
+    setUnmutedIds(prev => {
+      const next = new Set(prev);
+      if (next.has(id)) next.delete(id);
+      else next.add(id);
+      return next;
+    });
+  };
 
   const filteredResources = activeCategory === "Toutes" 
     ? resources 
@@ -41,8 +91,56 @@ export default function Ressources() {
       animate={{ opacity: 1 }}
       className="pt-12 pb-24"
     >
-      <div className="container mx-auto px-4">
-        <div className="max-w-3xl mb-16 pt-12">
+      <AnimatePresence>
+        {selectedResource && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 z-[100] flex items-center justify-center bg-black/95 backdrop-blur-md p-4 md:p-8"
+            onClick={() => setSelectedResource(null)}
+          >
+            <motion.div
+              initial={{ scale: 0.95, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.95, opacity: 0 }}
+              className={cn(
+                "relative w-full max-w-4xl h-auto max-h-[90vh] flex flex-col items-center justify-center",
+                selectedResource.type === "video" ? "aspect-video md:aspect-[9/16] md:w-[450px]" : "h-[85vh] md:h-[90vh] max-w-6xl"
+              )}
+              onClick={(e) => e.stopPropagation()}
+            >
+              <button
+                className="absolute -top-14 right-0 text-white bg-copper-orange rounded-full p-3 shadow-xl hover:scale-110 transition-transform z-[110]"
+                onClick={() => setSelectedResource(null)}
+                aria-label="Fermer"
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-x"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+              </button>
+              <div className="w-full h-full rounded-3xl overflow-hidden shadow-2xl bg-black border border-white/10">
+                {selectedResource.type === "video" ? (
+                  <video
+                    src={selectedResource.url}
+                    className="w-full h-full object-contain"
+                    controls
+                    autoPlay
+                    playsInline
+                  />
+                ) : (
+                  <iframe
+                    src={selectedResource.url}
+                    className="w-full h-full bg-white"
+                    title="Business Game App"
+                  />
+                )}
+              </div>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+
+      <div className="container mx-auto px-4 max-w-[1440px]">
+        <div className="max-w-4xl mb-16 pt-12">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -81,7 +179,7 @@ export default function Ressources() {
         {/* resources Grid */}
         <motion.div 
           layout
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12"
+          className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-12"
         >
           <AnimatePresence mode="popLayout">
             {filteredResources.map((item) => (
@@ -94,16 +192,48 @@ export default function Ressources() {
                 transition={{ duration: 0.4 }}
                 className="group"
               >
-                <div className="relative aspect-[9/16] overflow-hidden rounded-3xl bg-black mb-6 shadow-xl transition-transform duration-500 group-hover:-translate-y-2 border-8 border-white/5 ring-1 ring-deep-blue/5">
-                  <video 
-                    src={item.url} 
-                    className="w-full h-full object-cover opacity-90 group-hover:opacity-100 transition-all duration-700 group-hover:scale-110"
-                    controls
-                    muted
-                    loop
-                    playsInline
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-deep-blue/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-8 pointer-events-none">
+                <div 
+                  className="relative aspect-[9/16] w-full overflow-hidden rounded-3xl bg-black mb-6 shadow-xl transition-transform duration-500 group-hover:-translate-y-2 border-8 border-white/5 ring-1 ring-deep-blue/5 text-left outline-none cursor-pointer"
+                  onClick={() => setSelectedResource({ url: item.url, type: item.type || 'video' })}
+                >
+                  {item.type === 'app' ? (
+                    <div className="w-full h-full bg-deep-blue flex flex-col items-center justify-center p-8 text-center">
+                      <div className="w-20 h-20 rounded-2xl bg-turquoise/20 flex items-center justify-center mb-6">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-turquoise"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="M3 9h18"/><path d="M9 21V9"/></svg>
+                      </div>
+                      <span className="text-white text-xl font-bold font-heading mb-2">Application Interactive</span>
+                      <span className="text-turquoise text-sm font-medium">Lancer le Business Game</span>
+                    </div>
+                  ) : (
+                    <>
+                      <video 
+                        src={item.url} 
+                        className="w-full h-full object-cover opacity-90 group-hover:opacity-100 transition-all duration-700 group-hover:scale-110 pointer-events-none"
+                        autoPlay
+                        muted={!unmutedIds.has(item.id)}
+                        loop
+                        playsInline
+                      />
+                      {/* Audio Toggle */}
+                      <button
+                        onClick={(e) => toggleMute(e, item.id)}
+                        className="absolute bottom-4 left-4 z-20 bg-black/40 backdrop-blur-md text-white p-2.5 rounded-full border border-white/10 hover:bg-copper-orange transition-all duration-300 opacity-0 group-hover:opacity-100"
+                        title={unmutedIds.has(item.id) ? "Couper le son" : "Activer le son"}
+                      >
+                        {unmutedIds.has(item.id) ? (
+                          <Volume2 className="w-5 h-5" />
+                        ) : (
+                          <VolumeX className="w-5 h-5" />
+                        )}
+                      </button>
+                      
+                      {/* Zoom Indicator */}
+                      <div className="absolute bottom-4 right-4 z-20 bg-white/10 backdrop-blur-md text-white p-2.5 rounded-full border border-white/10 opacity-0 group-hover:opacity-100 transition-opacity">
+                        <Maximize2 className="w-5 h-5" />
+                      </div>
+                    </>
+                  )}
+                  <div className="absolute inset-0 bg-gradient-to-t from-deep-blue/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-8 pb-16">
                     <span className="text-turquoise text-xs font-bold tracking-widest uppercase mb-2">
                       {item.category}
                     </span>
@@ -116,9 +246,35 @@ export default function Ressources() {
                   <h3 className="text-2xl font-heading font-black text-deep-blue mb-3 group-hover:text-copper-orange transition-colors">
                     {item.title}
                   </h3>
-                  <p className="text-base text-muted-foreground leading-relaxed font-medium italic border-l-2 border-copper-orange/30 pl-4">
-                    "{item.description}"
-                  </p>
+                  <div className="space-y-4">
+                    <p className="text-base text-muted-foreground leading-relaxed font-medium italic border-l-2 border-copper-orange/30 pl-4">
+                      "{item.description}"
+                    </p>
+                    {item.appUrl && (
+                      <a 
+                        href={item.appUrl} 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center text-sm font-black text-copper-orange hover:text-deep-blue transition-colors group/link"
+                      >
+                        Lancer l'application
+                        <svg 
+                          xmlns="http://www.w3.org/2000/svg" 
+                          width="16" 
+                          height="16" 
+                          viewBox="0 0 24 24" 
+                          fill="none" 
+                          stroke="currentColor" 
+                          strokeWidth="3" 
+                          strokeLinecap="round" 
+                          strokeLinejoin="round" 
+                          className="ml-2 transition-transform group-hover/link:translate-x-1"
+                        >
+                          <path d="M5 12h14"/><path d="m12 5 7 7-7 7"/>
+                        </svg>
+                      </a>
+                    )}
+                  </div>
                 </div>
               </motion.div>
             ))}

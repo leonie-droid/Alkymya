@@ -69,7 +69,7 @@ export default function Contact() {
 
   return (
     <div className="min-h-screen py-24 px-4 bg-background">
-      <div className="container mx-auto max-w-4xl">
+      <div className="container mx-auto px-4 max-w-[1200px]">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}

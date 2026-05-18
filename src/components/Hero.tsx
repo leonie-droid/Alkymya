@@ -12,16 +12,6 @@ const pillars = [
     ]
   },
   { 
-    name: 'Partager', 
-    description: "Conseil stratégique et mentorat pour intégrer l'IA, développer les talents et partager la transformation de vos équipes.",
-    points: [
-      "Recrutement et évaluation de talents",
-      "Programme de mentorat personnalisé",
-      "Développement des compétences IA",
-      "Conduite du changement"
-    ]
-  },
-  { 
     name: 'Transformer', 
     description: "Du conseil à la réalisation. Nous vous aidons à passer de l'idée au prototype fonctionnel en intégrant l'IA au cœur de vos processus.",
     points: [
@@ -29,6 +19,16 @@ const pillars = [
       "Ateliers de prototypage rapide",
       "Stratégie d'intégration de l'IA",
       "Transformation digitale sur-mesure"
+    ]
+  },
+  { 
+    name: 'Partager', 
+    description: "Conseil stratégique et mentorat pour intégrer l'IA, développer les talents et partager la transformation de vos équipes.",
+    points: [
+      "Recrutement et évaluation de talents",
+      "Programme de mentorat personnalisé",
+      "Développement des compétences IA",
+      "Conduite du changement"
     ]
   },
 ];
@@ -64,7 +64,7 @@ export default function Hero() {
             className="flex flex-col p-10 rounded-[2.5rem] bg-white shadow-xl shadow-deep-blue/5 border border-deep-blue/5 hover:border-copper-orange/30 transition-all group"
           >
             <span className="text-xs font-black uppercase tracking-[0.3em] text-copper-orange mb-6 text-center">
-              Pillier {index + 1}
+              Pilier {index + 1}
             </span>
             <h3 className="text-3xl font-heading font-black mb-6 text-deep-blue text-center">{pillar.name}</h3>
             <p className="text-base text-muted-foreground leading-relaxed font-medium mb-8 text-center px-2">

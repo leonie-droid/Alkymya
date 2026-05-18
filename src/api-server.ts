@@ -1,5 +1,6 @@
 import express, { Express } from 'express';
 import { Resend } from 'resend';
+import { GoogleGenAI } from "@google/genai";
 
 export function createApiApp(): Express {
   const app = express();
@@ -16,6 +17,26 @@ export function createApiApp(): Express {
       resend = new Resend(apiKey);
     }
     return resend;
+  };
+
+  // Initialize Gemini lazily
+  let genAI: GoogleGenAI | null = null;
+  const getGenAI = () => {
+    if (!genAI) {
+      const apiKey = process.env.GEMINI_API_KEY;
+      if (!apiKey) {
+        throw new Error('GEMINI_API_KEY is missing');
+      }
+      genAI = new GoogleGenAI({
+        apiKey,
+        httpOptions: {
+          headers: {
+            'User-Agent': 'aistudio-build',
+          }
+        }
+      });
+    }
+    return genAI;
   };
 
   // Logging middleware
@@ -105,6 +126,34 @@ export function createApiApp(): Express {
       res.status(200).json({ success: true, data });
     } catch (error: any) {
       console.error('Critical Server Error:', error);
+      res.status(500).json({ error: error.message });
+    }
+  });
+
+  // Chat API
+  app.post('/api/chat', async (req, res) => {
+    try {
+      const { message, history } = req.body;
+      
+      const ai = getGenAI();
+      const model = "gemini-3-flash-preview";
+      
+      const chat = ai.chats.create({
+        model,
+        config: {
+          systemInstruction: `Tu es l'assistant Alkymya, une agence spécialisée dans l'IA générative et l'enseignement supérieur. 
+          Tes réponses doivent être professionnelles, inspirantes et tournées vers l'avenir. 
+          Alkymya aide les écoles (comme l'IESEG, HETIC, ISCOM, Ynov) à intégrer l'IA dans leurs cursus.
+          Tu connais l'étude "Génération IA" réalisée par Alkymya qui analyse les usages de l'IA chez les étudiants et enseignants.
+          Réponds de manière concise et utile. Si l'utilisateur pose une question sur Alkymya, mets en avant son expertise pédagogique et stratégique.`,
+        },
+        history: history || [],
+      });
+
+      const response = await chat.sendMessage({ message });
+      res.json({ text: response.text });
+    } catch (error: any) {
+      console.error('Chat API Error:', error);
       res.status(500).json({ error: error.message });
     }
   });
