@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from 'motion/react';
 import { cn } from '../../lib/utils';
 import { Volume2, VolumeX, Maximize2 } from 'lucide-react';
 
-const categories = ["Toutes", "Nos Analyseurs", "Business Game", "Agents"];
+const categories = ["Toutes", "Nos Analyseurs", "Nos études", "Business Game", "Agents"];
 
 const resources = [
   {
@@ -32,6 +32,30 @@ const resources = [
     url: "https://res.cloudinary.com/dokzioyu4/video/upload/v1776374160/bac00848173641fd882d43dc3b970835_jtyspz.mov",
     appUrl: "https://analyseurdememoire.alkymya.co/",
     type: "video"
+  },
+  {
+    id: 6,
+    title: "Génération IA 2026",
+    category: "Nos études",
+    description: "Notre tout nouveau rapport complet sur l'impact futur, les usages et l'évolution de l'intelligence artificielle générative pour 2026.",
+    url: "https://res.cloudinary.com/dokzioyu4/image/upload/v1780148789/rapport-generation-ia-2026_v10_20260528_tymyph.pdf",
+    type: "pdf"
+  },
+  {
+    id: 7,
+    title: "Génération IA 2025",
+    category: "Nos études",
+    description: "Une segmentation approfondie en 5 profils types (personas) pour refléter la diversité des usages et des niveaux de maîtrise de l'IA générative.",
+    url: "https://res.cloudinary.com/dokzioyu4/image/upload/v1777491985/generation_ia_2025_personas_20251105051526_qvl18j_1_jjn9s4.pdf",
+    type: "pdf"
+  },
+  {
+    id: 8,
+    title: "Génération IA 2024",
+    category: "Nos études",
+    description: "Une analyse empirique détaillée sur l'introduction et l'usage des outils d'intelligence artificielle auprès de centaines d'étudiants de l'enseignement supérieur.",
+    url: "https://res.cloudinary.com/dokzioyu4/image/upload/v1777491668/Generation_IA-2024-V1_Mars_2025_2_cxtaeh_ygnyce.pdf",
+    type: "pdf"
   },
   {
     id: 4,
@@ -194,9 +218,24 @@ export default function Ressources() {
               >
                 <div 
                   className="relative aspect-[9/16] w-full overflow-hidden rounded-3xl bg-black mb-6 shadow-xl transition-transform duration-500 group-hover:-translate-y-2 border-8 border-white/5 ring-1 ring-deep-blue/5 text-left outline-none cursor-pointer"
-                  onClick={() => setSelectedResource({ url: item.url, type: item.type || 'video' })}
+                  onClick={() => {
+                    if (item.type === 'pdf') {
+                      window.open(item.url, '_blank');
+                    } else {
+                      setSelectedResource({ url: item.url, type: item.type || 'video' });
+                    }
+                  }}
                 >
-                  {item.type === 'app' ? (
+                  {item.type === 'pdf' ? (
+                    <div className="w-full h-full bg-deep-blue flex flex-col items-center justify-center p-8 text-center relative overflow-hidden">
+                      <div className="absolute top-0 right-0 w-48 h-48 bg-accent/20 blur-[100px] -mr-24 -mt-24 group-hover:bg-accent/45 transition-colors" />
+                      <div className="w-20 h-20 rounded-2xl bg-accent/25 flex items-center justify-center mb-6 relative z-10 transition-transform duration-500 group-hover:scale-110">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="text-accent"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"/><polyline points="14 2 14 8 20 8"/></svg>
+                      </div>
+                      <span className="text-white text-3xl font-heading font-black mb-3 relative z-10 block leading-tight">{item.title}</span>
+                      <span className="text-accent text-[10px] font-black uppercase tracking-[0.25em] relative z-10">Lancer l'étude (.pdf) →</span>
+                    </div>
+                  ) : item.type === 'app' ? (
                     <div className="w-full h-full bg-deep-blue flex flex-col items-center justify-center p-8 text-center">
                       <div className="w-20 h-20 rounded-2xl bg-turquoise/20 flex items-center justify-center mb-6">
                         <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-turquoise"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="M3 9h18"/><path d="M9 21V9"/></svg>
@@ -250,7 +289,30 @@ export default function Ressources() {
                     <p className="text-base text-muted-foreground leading-relaxed font-medium italic border-l-2 border-copper-orange/30 pl-4">
                       "{item.description}"
                     </p>
-                    {item.appUrl && (
+                    {item.type === 'pdf' ? (
+                      <a 
+                        href={item.url} 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center text-sm font-black text-copper-orange hover:text-deep-blue transition-colors group/link"
+                      >
+                        Télécharger le rapport (PDF)
+                        <svg 
+                          xmlns="http://www.w3.org/2000/svg" 
+                          width="16" 
+                          height="16" 
+                          viewBox="0 0 24 24" 
+                          fill="none" 
+                          stroke="currentColor" 
+                          strokeWidth="3" 
+                          strokeLinecap="round" 
+                          strokeLinejoin="round" 
+                          className="ml-2 transition-transform group-hover/link:translate-x-1"
+                        >
+                          <path d="M5 12h14"/><path d="m12 5 7 7-7 7"/>
+                        </svg>
+                      </a>
+                    ) : item.appUrl && (
                       <a 
                         href={item.appUrl} 
                         target="_blank" 

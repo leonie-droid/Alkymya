@@ -98,10 +98,7 @@ export default function GenerateurIA() {
           transition={{ duration: 0.8 }}
           className="mb-32"
         >
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-accent/10 text-accent mb-8">
-            <Sparkles className="h-4 w-4" />
-            <span className="text-sm font-bold uppercase tracking-widest">Étude 2025</span>
-          </div>
+          {/* Removed Etude 2025 badge */}
           
           <div className="space-y-12">
             <h1 className="text-5xl md:text-8xl font-heading font-black text-deep-blue leading-tight selection:bg-accent selection:text-white">
@@ -264,16 +261,17 @@ export default function GenerateurIA() {
                   <div className="absolute top-0 right-0 w-64 h-64 bg-white/20 blur-[120px] -mr-32 -mt-32 group-hover:bg-white/30 transition-colors" />
                   <div className="relative z-10 flex flex-col items-center gap-8 text-center">
                     <div className="max-w-2xl mx-auto">
-                      <h4 className="text-3xl md:text-4xl font-heading font-black text-white leading-tight mb-4 text-center">Participer à l'étude 2026</h4>
+                      <h4 className="text-3xl md:text-4xl font-heading font-black text-white leading-tight mb-4 text-center">Étude Génération IA 2026</h4>
                       <p className="text-base md:text-lg text-white/90 font-normal leading-relaxed text-center">
-                        Contribuez à notre prochaine grande enquête sur les futurs talents et l'intelligence artificielle pour 2026.
+                        Découvrez et téléchargez notre nouveau rapport complet sur l'impact futur, les usages et l'évolution de l'intelligence artificielle générative pour 2026.
                       </p>
                     </div>
                     <Button 
                       className="px-12 py-8 rounded-full bg-deep-blue hover:bg-white hover:text-deep-blue font-black transition-all border-none text-xl shadow-2xl"
                       size="lg"
+                      onClick={() => window.open('https://res.cloudinary.com/dokzioyu4/image/upload/v1780148789/rapport-generation-ia-2026_v10_20260528_tymyph.pdf', '_blank')}
                     >
-                      Participer →
+                      Télécharger le rapport →
                     </Button>
                   </div>
                 </Card>

@@ -130,10 +130,10 @@ export default function Ateliers() {
               Formations de Haute Précision
             </span>
             <h1 className="text-5xl md:text-7xl font-heading font-black mb-8 text-deep-blue leading-tight">
-              Devenez une agence <span className="text-copper-orange">IA-native</span>
+              Devenez une entreprise <span className="text-copper-orange">IA-native</span>
             </h1>
             <p className="text-xl text-muted-foreground font-medium leading-relaxed mb-8">
-              À l’heure où l’intelligence artificielle redéfinit les métiers du conseil et de la création, Alkymya s'associe à l'école <span className="text-deep-blue font-bold">INATEC</span> pour vous proposer un parcours de formation de haute précision. Notre objectif : transformer votre structure en une agence "IA-native" capable de produire plus vite, sans jamais compromettre l’excellence de votre signature.
+              À l’heure où l’intelligence artificielle redéfinit les métiers du conseil et de la création, Alkymya s'associe à l'école <span className="text-deep-blue font-bold">INATEC</span> pour vous proposer un parcours de formation de haute précision. Notre objectif : transformer votre structure en une entreprise "IA-native" capable de produire plus vite, sans jamais compromettre l’excellence de votre signature.
             </p>
           </motion.div>
         </div>
@@ -262,7 +262,7 @@ export default function Ateliers() {
             className="mt-16 p-8 bg-copper-orange/10 rounded-[2.5rem] text-center border border-copper-orange/20"
           >
             <p className="text-xl text-deep-blue font-bold">
-              <span className="text-copper-orange">Le conseil Alkymya :</span> Pour une transformation radicale de votre agence, vous avez la possibilité de combiner le Programme Core avec nos Options spécialisées.
+              <span className="text-copper-orange">Le conseil Alkymya :</span> Pour une transformation radicale de votre entreprise, vous avez la possibilité de combiner le Programme Core avec nos Options spécialisées.
             </p>
           </motion.div>
         </div>
@@ -275,7 +275,7 @@ export default function Ateliers() {
             </h2>
             <div className="space-y-6 text-lg text-muted-foreground">
               <p>
-                Oubliez la théorie abstraite. Notre pédagogie repose sur le <span className="text-deep-blue font-bold italic">"Learning by Doing"</span> : 50% de la formation est dédiée à la pratique immédiate sur vos propres projets d'agence.
+                Oubliez la théorie abstraite. Notre pédagogie repose sur le <span className="text-deep-blue font-bold italic">"Learning by Doing"</span> : 50% de la formation est dédiée à la pratique immédiate sur vos propres projets d'entreprise.
               </p>
               <p>
                 Vous ne repartez pas seulement avec des connaissances, mais avec des livrables concrets et exploitables dès le premier jour.

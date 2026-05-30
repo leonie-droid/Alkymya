@@ -5,8 +5,8 @@
 
 ## Missions
 - **Explorer** : Formations sur-mesure et acculturation à l'IA pour entreprises et grandes écoles.
-- **Partager** : Conseil stratégique, mentorat de talents et accompagnement à la transformation.
 - **Transformer** : Prototypage d'agents IA, intégration technique et outils d'intelligence artificielle.
+- **Partager** : Conseil stratégique, mentorat de talents et accompagnement à la transformation.
 
 ## Valeurs
 - Excellence technologique

@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import Logo from '../components/Logo';
 import { cn } from '../../lib/utils';
 
-const categories = ["Toutes", "Les chemins interdits", "Culture pop"];
+const categories = ["Toutes", "Les chemins interdits", "Culture pop", "Les princesses", "Léonia"];
 
 const works = [
   {
@@ -102,6 +102,102 @@ const works = [
     type: "image",
     url: "https://res.cloudinary.com/dokzioyu4/image/upload/v1767010924/WhatsApp_Image_2025-12-10_at_19.10.09_btr5iu.jpg",
     description: "Kill Bill suit la quête sanglante de « La Mariée » pour éliminer ses anciens complices et leur chef, Bill, après avoir survécu à une tentative d'assassinat."
+  },
+  {
+    id: 13,
+    name: "La Grenouille et le Nénuphar",
+    category: "Les princesses",
+    type: "image",
+    url: "https://res.cloudinary.com/dokzioyu4/image/upload/c_fill,g_auto,w_900,h_1600/v1780150189/Grenouille_sur_n_nuphar_v2_mdqmh4.png",
+    description: "Un instant magique et suspendu au cœur de l'étang, où le fantastique rencontre la délicatesse de la nature."
+  },
+  {
+    id: 14,
+    name: "La Princesse du Château",
+    category: "Les princesses",
+    type: "image",
+    url: "https://res.cloudinary.com/dokzioyu4/image/upload/c_fill,g_auto,w_900,h_1600/v1780149343/Princesse_ch_teau_A_vn3qdo.png",
+    description: "Une silhouette royale contemplant l'immensité de son empire depuis les remparts d'un royaume oublié."
+  },
+  {
+    id: 15,
+    name: "Splendeur Lunaire",
+    category: "Les princesses",
+    type: "image",
+    url: "https://res.cloudinary.com/dokzioyu4/image/upload/c_fill,g_auto,w_900,h_1600/v1780149314/1NnfFRMx_hv8wpz.png",
+    description: "Un portrait empreint de mystère et d'élégance, mêlant la noblesse d'une souveraine à la pureté de la nuit."
+  },
+  {
+    id: 16,
+    name: "L'Éclat d'Ambre",
+    category: "Les princesses",
+    type: "image",
+    url: "https://res.cloudinary.com/dokzioyu4/image/upload/c_fill,g_auto,w_900,h_1600/v1780149268/Kkz4vEfu_g7eoxy.png",
+    description: "La parure étincelante et d'or d'une reine de légende, illuminant son destin grandiose."
+  },
+  {
+    id: 17,
+    name: "Le Songe Floral",
+    category: "Les princesses",
+    type: "image",
+    url: "https://res.cloudinary.com/dokzioyu4/image/upload/c_fill,g_auto,w_900,h_1600/v1780149266/Ek3zYa7Q_tydsr1.png",
+    description: "Une union délicate entre la grâce féminine et la beauté éphémère d'une éclosion printanière."
+  },
+  {
+    id: 18,
+    name: "La Reine Sylvestre",
+    category: "Les princesses",
+    type: "image",
+    url: "https://res.cloudinary.com/dokzioyu4/image/upload/c_fill,g_auto,w_900,h_1600/v1780149210/fNqSTVBm_tgtklu.jpg",
+    description: "Un secret murmuré au fond des bois, mariant la majesté sauvage de la nature à la douceur d'un songe."
+  },
+  {
+    id: 19,
+    name: "Rêverie",
+    category: "Léonia",
+    type: "image",
+    url: "https://res.cloudinary.com/dokzioyu4/image/upload/v1770044605/IMG_2525_jsdqwk.jpg",
+    description: "Une métamorphose magique entre ombre et lumière, sublimant l'expression d'un instant suspendu."
+  },
+  {
+    id: 20,
+    name: "L'Étudiante",
+    category: "Léonia",
+    type: "image",
+    url: "https://res.cloudinary.com/dokzioyu4/image/upload/v1770044605/etudiante_tbrydi.jpg",
+    description: "Un regard vif tourné vers l'avenir, où l'éclat de la jeunesse s'accorde à la contemplation créative."
+  },
+  {
+    id: 21,
+    name: "Douce Clarté",
+    category: "Léonia",
+    type: "image",
+    url: "https://res.cloudinary.com/dokzioyu4/image/upload/v1770044606/4333e2ce-3ca9-43ca-9498-5149956f55a8_pzltlj.jpg",
+    description: "La délicatesse d'un portrait épuré, révélant la grâce naturelle à travers le prisme de l'alchimie moderne."
+  },
+  {
+    id: 22,
+    name: "Silhouette Dorée",
+    category: "Léonia",
+    type: "image",
+    url: "https://res.cloudinary.com/dokzioyu4/image/upload/c_fill,g_auto,w_900,h_1600/v1770044606/d54d1975-3bf2-43bf-83da-c03d78f7ab96_f0jcm2.jpg",
+    description: "Des teintes chaudes et enveloppantes créant un équilibre parfait entre modernité et classicisme pictural."
+  },
+  {
+    id: 23,
+    name: "Regard Captivant",
+    category: "Léonia",
+    type: "image",
+    url: "https://res.cloudinary.com/dokzioyu4/image/upload/v1770044606/IMG_2742_yfl8fu.jpg",
+    description: "Une présence intense magnifiée par la subtilité des textures et des contrastes alchimiques."
+  },
+  {
+    id: 24,
+    name: "Sérénité",
+    category: "Léonia",
+    type: "image",
+    url: "https://res.cloudinary.com/dokzioyu4/image/upload/v1770044606/1e9ba31e-8c38-48c3-ab3c-26b3337a305d_ynksne.jpg",
+    description: "Un instant d'harmonie intemporelle où le portrait photographique fusionne avec l'art de l'IA générative."
   }
 ];
 

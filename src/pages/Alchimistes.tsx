@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { Link } from 'react-router-dom';
-import { Mail, Linkedin, Instagram, Twitter, ExternalLink, Zap, Youtube, ChevronDown } from 'lucide-react';
+import { Mail, Linkedin, Instagram, Twitter, ExternalLink, Zap, Youtube, ChevronDown, MoreHorizontal } from 'lucide-react';
 import { FaTiktok } from 'react-icons/fa';
 import { Card } from '@/components/ui/card';
+import { cn } from '@/lib/utils';
 
 const alchimistes = [
   {
@@ -55,6 +56,51 @@ const alchimistes = [
   }
 ];
 
+const nouveauxAlchimistes = [
+  {
+    name: "Alex Le Bloch Moan",
+    role: "Nouvel Alchimiste",
+    initials: "AL",
+    url: "https://e-portfolio-alexleblochmoan-2026.netlify.app",
+    description: "Concepteur et développeur de solutions innovantes et interactives."
+  },
+  {
+    name: "Imane Zagour",
+    role: "Nouvelle Alchimiste",
+    initials: "IZ",
+    url: "https://imanezagour.netlify.app/#hero",
+    description: "Créatrice digitale spécialisée dans l'intégration et l'expérience utilisateur."
+  },
+  {
+    name: "Inès Laghzou",
+    role: "Nouvelle Alchimiste",
+    initials: "IL",
+    url: "https://e-portfolioines.netlify.app",
+    description: "Experte en projets digitaux et en nouvelles technologies."
+  },
+  {
+    name: "Laura Louit",
+    role: "Nouvelle Alchimiste",
+    initials: "LL",
+    url: "https://laura-louit.netlify.app",
+    description: "Pilote de projets innovants alliant design et technologie."
+  },
+  {
+    name: "Nancy Ghanem",
+    role: "Nouvelle Alchimiste",
+    initials: "NG",
+    url: "https://nancy-ghanem.vercel.app/#presentation",
+    description: "Développeuse et intégratrice de dispositifs web modernes."
+  },
+  {
+    name: "Apolline Bellaclas",
+    role: "Nouvelle Alchimiste",
+    initials: "AB",
+    url: "https://e-portefolio.vercel.app",
+    description: "Découvrez nos travaux, expérimentations et portfolios créatifs d'alchimie web."
+  }
+];
+
 const WorksAccordion = ({ works, handleWorkClick }: { works: any[], handleWorkClick: (e: React.MouseEvent, url: string, label: string) => void }) => {
   const [isOpen, setIsOpen] = useState(false);
   
@@ -67,7 +113,7 @@ const WorksAccordion = ({ works, handleWorkClick }: { works: any[], handleWorkCl
         <div className="flex items-center gap-2">
           <Zap className={`h-4 w-4 transition-colors duration-300 ${isOpen ? 'text-copper-orange' : 'text-deep-blue/30'}`} />
           <h3 className="text-xs font-black uppercase tracking-widest text-deep-blue group-hover/btn:text-copper-orange transition-colors">
-            Leurs Œuvres
+            Ses Œuvres
           </h3>
         </div>
         <div className={`p-1 rounded-full transition-all duration-300 ${isOpen ? 'bg-copper-orange/10 text-copper-orange rotate-180' : 'bg-deep-blue/5 text-deep-blue/30'}`}>
@@ -103,6 +149,122 @@ const WorksAccordion = ({ works, handleWorkClick }: { works: any[], handleWorkCl
         )}
       </AnimatePresence>
     </div>
+  );
+};
+
+const AlchimisteCard: React.FC<{ person: any, index: number, handleWorkClick: (e: React.MouseEvent, url: string, label: string) => void }> = ({ person, index, handleWorkClick }) => {
+  const [isExpanded, setIsExpanded] = useState(false);
+
+  return (
+    <motion.div
+      key={person.name}
+      id={person.name === "Cyril Garnier" ? "cyril-garnier" : undefined}
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.8, delay: index * 0.1 }}
+      className="flex flex-col h-full"
+    >
+      <Card className="group flex flex-col h-full overflow-hidden border-none shadow-2xl transition-all duration-500 rounded-[2.5rem] bg-white/70 backdrop-blur-md hover:shadow-copper-orange/10 border border-white/20">
+        {/* Profile Header: Image & Role */}
+        <div className="relative aspect-[4/5] overflow-hidden">
+          <img
+            src={person.image}
+            alt={person.name}
+            className="object-cover w-full h-full transition-transform duration-700 group-hover:scale-105"
+            referrerPolicy="no-referrer"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-deep-blue/90 via-deep-blue/20 to-transparent p-8 flex flex-col justify-end">
+            <div className="flex flex-wrap gap-2 mb-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+              {person.socials.instagram && (
+                <a href={person.socials.instagram} target="_blank" rel="noopener noreferrer" className="p-2 rounded-full bg-white/10 hover:bg-copper-orange text-white backdrop-blur-md transition-all">
+                  <Instagram className="h-4 w-4" />
+                </a>
+              )}
+              {person.socials.tiktok && (
+                <a href={person.socials.tiktok} target="_blank" rel="noopener noreferrer" className="p-2 rounded-full bg-white/10 hover:bg-copper-orange text-white backdrop-blur-md transition-all">
+                  <FaTiktok size={16} />
+                </a>
+              )}
+              {"youtube" in person.socials && person.socials.youtube && (
+                <a href={person.socials.youtube as string} target="_blank" rel="noopener noreferrer" className="p-2 rounded-full bg-white/10 hover:bg-copper-orange text-white backdrop-blur-md transition-all">
+                  <Youtube className="h-4 w-4" />
+                </a>
+              )}
+              {person.socials.linkedin && (
+                <a href={person.socials.linkedin} target="_blank" rel="noopener noreferrer" className="p-2 rounded-full bg-white/10 hover:bg-copper-orange text-white backdrop-blur-md transition-all">
+                  <Linkedin className="h-4 w-4" />
+                </a>
+              )}
+              {person.socials.mail && (
+                <a href={`mailto:${person.socials.mail}`} className="p-2 rounded-full bg-white/10 hover:bg-copper-orange text-white backdrop-blur-md transition-all">
+                  <Mail className="h-4 w-4" />
+                </a>
+              )}
+            </div>
+            <p className="text-copper-orange font-black uppercase tracking-[0.2em] text-xs mb-2">L'Alchimiste</p>
+            <h2 className="text-3xl font-heading font-black text-white">{person.name}</h2>
+          </div>
+        </div>
+        
+        {/* Profile Content */}
+        <div className="p-8 flex flex-col flex-grow space-y-6">
+          <div className="relative">
+            <p className="text-sm font-bold text-deep-blue/60 uppercase tracking-widest mb-3">{person.role}</p>
+            
+            <div className="relative">
+              <p className={cn(
+                "text-base leading-relaxed text-muted-foreground font-medium transition-all duration-500",
+                !isExpanded && "line-clamp-3"
+              )}>
+                {person.bio}
+              </p>
+              
+              {!isExpanded && (
+                <button 
+                  onClick={() => setIsExpanded(true)}
+                  className="inline-flex items-center gap-1.5 mt-2 text-copper-orange font-bold hover:gap-3 transition-all group/expand"
+                  title="Lire la suite"
+                >
+                  <span className="text-lg leading-none">...</span>
+                  <span className="text-[10px] uppercase tracking-widest opacity-0 group-hover/expand:opacity-100 transition-opacity whitespace-nowrap">Lire la suite</span>
+                </button>
+              )}
+            </div>
+          </div>
+
+          <AnimatePresence>
+            {isExpanded && (
+              <motion.div
+                initial={{ height: 0, opacity: 0 }}
+                animate={{ height: 'auto', opacity: 1 }}
+                exit={{ height: 0, opacity: 0 }}
+                transition={{ duration: 0.5, ease: [0.23, 1, 0.32, 1] }}
+                className="overflow-hidden space-y-6"
+              >
+                <p className="text-sm leading-relaxed text-muted-foreground/80 italic border-l-2 border-copper-orange/30 pl-4 py-1">
+                  {person.details}
+                </p>
+                
+                <button 
+                  onClick={() => setIsExpanded(false)}
+                  className="text-[10px] uppercase tracking-[0.2em] font-black text-deep-blue/40 hover:text-copper-orange transition-colors"
+                >
+                  Réduire
+                </button>
+              </motion.div>
+            )}
+          </AnimatePresence>
+
+          {/* Lab Works / Portfolio section */}
+          {'works' in person && person.works && (
+            <div className="mt-auto">
+              <WorksAccordion works={person.works} handleWorkClick={handleWorkClick} />
+            </div>
+          )}
+        </div>
+      </Card>
+    </motion.div>
   );
 };
 
@@ -184,79 +346,72 @@ export default function Alchimistes() {
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
           {alchimistes.map((person, index) => (
-            <motion.div
-              key={person.name}
-              id={person.name === "Cyril Garnier" ? "cyril-garnier" : undefined}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8, delay: index * 0.1 }}
-              className="flex flex-col h-full"
-            >
-              <Card className="group flex flex-col h-full overflow-hidden border-none shadow-2xl transition-all duration-500 rounded-[2.5rem] bg-white/70 backdrop-blur-md hover:shadow-copper-orange/10 border border-white/20">
-                {/* Profile Header: Image & Role */}
-                <div className="relative aspect-[4/5] overflow-hidden">
-                  <img
-                    src={person.image}
-                    alt={person.name}
-                    className="object-cover w-full h-full transition-transform duration-700 group-hover:scale-105"
-                    referrerPolicy="no-referrer"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-deep-blue/90 via-deep-blue/20 to-transparent p-8 flex flex-col justify-end">
-                    <div className="flex flex-wrap gap-2 mb-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                      {person.socials.instagram && (
-                        <a href={person.socials.instagram} target="_blank" rel="noopener noreferrer" className="p-2 rounded-full bg-white/10 hover:bg-copper-orange text-white backdrop-blur-md transition-all">
-                          <Instagram className="h-4 w-4" />
-                        </a>
-                      )}
-                      {person.socials.tiktok && (
-                        <a href={person.socials.tiktok} target="_blank" rel="noopener noreferrer" className="p-2 rounded-full bg-white/10 hover:bg-copper-orange text-white backdrop-blur-md transition-all">
-                          <FaTiktok size={16} />
-                        </a>
-                      )}
-                      {"youtube" in person.socials && person.socials.youtube && (
-                        <a href={person.socials.youtube as string} target="_blank" rel="noopener noreferrer" className="p-2 rounded-full bg-white/10 hover:bg-copper-orange text-white backdrop-blur-md transition-all">
-                          <Youtube className="h-4 w-4" />
-                        </a>
-                      )}
-                      {person.socials.linkedin && (
-                        <a href={person.socials.linkedin} target="_blank" rel="noopener noreferrer" className="p-2 rounded-full bg-white/10 hover:bg-copper-orange text-white backdrop-blur-md transition-all">
-                          <Linkedin className="h-4 w-4" />
-                        </a>
-                      )}
-                      {person.socials.mail && (
-                        <a href={`mailto:${person.socials.mail}`} className="p-2 rounded-full bg-white/10 hover:bg-copper-orange text-white backdrop-blur-md transition-all">
-                          <Mail className="h-4 w-4" />
-                        </a>
-                      )}
-                    </div>
-                    <p className="text-copper-orange font-black uppercase tracking-[0.2em] text-xs mb-2">L'Alchimiste</p>
-                    <h2 className="text-3xl font-heading font-black text-white">{person.name}</h2>
-                  </div>
-                </div>
-                
-                {/* Profile Content */}
-                <div className="p-8 flex flex-col flex-grow space-y-6">
-                  <div>
-                    <p className="text-sm font-bold text-deep-blue/60 uppercase tracking-widest mb-3">{person.role}</p>
-                    <p className="text-base leading-relaxed text-muted-foreground font-medium">
-                      {person.bio}
-                    </p>
-                  </div>
-
-                  <p className="text-sm leading-relaxed text-muted-foreground/80 italic border-l-2 border-copper-orange/30 pl-4 py-1">
-                    {person.details}
-                  </p>
-
-                  {/* Lab Works / Portfolio section */}
-                  {'works' in person && person.works && (
-                    <WorksAccordion works={person.works} handleWorkClick={handleWorkClick} />
-                  )}
-                </div>
-              </Card>
-            </motion.div>
+            <AlchimisteCard 
+              key={person.name} 
+              person={person} 
+              index={index} 
+              handleWorkClick={handleWorkClick} 
+            />
           ))}
         </div>
+
+        {/* Section Nos Nouveaux Alchimistes */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+          className="mt-32 max-w-7xl mx-auto"
+        >
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-heading font-black text-deep-blue mb-4">
+              Nos <span className="text-copper-orange">6 Nouveaux Alchimistes</span>
+            </h2>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              Découvrez les e-portfolios et les projets innovants réalisés par notre nouvelle vague d'alchimistes en herbe.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {nouveauxAlchimistes.map((nouveau, index) => (
+              <motion.div
+                key={nouveau.name}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: index * 0.05 }}
+              >
+                <Card className="group relative overflow-hidden border-none shadow-xl transition-all duration-500 rounded-[2rem] bg-white/50 backdrop-blur-md border border-white/20 p-8 flex flex-col h-full hover:shadow-copper-orange/5 hover:-translate-y-1">
+                  <div className="absolute top-0 right-0 w-32 h-32 bg-copper-orange/5 blur-2xl rounded-full" />
+                  
+                  <div className="flex items-center gap-4 mb-6">
+                    <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-copper-orange/20 to-copper-orange/5 border border-copper-orange/15 flex items-center justify-center font-heading font-bold text-lg text-copper-orange shadow-inner group-hover:scale-105 transition-transform duration-300">
+                      {nouveau.initials}
+                    </div>
+                    <div>
+                      <h3 className="text-xl font-heading font-black text-deep-blue group-hover:text-copper-orange transition-colors duration-300">{nouveau.name}</h3>
+                      <p className="text-xs font-bold text-deep-blue/40 uppercase tracking-widest">{nouveau.role}</p>
+                    </div>
+                  </div>
+
+                  <p className="text-sm text-muted-foreground font-medium leading-relaxed mb-6 flex-grow">
+                    {nouveau.description}
+                  </p>
+
+                  <a
+                    href={nouveau.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 text-sm font-black text-copper-orange hover:text-deep-blue transition-colors self-start mt-auto"
+                  >
+                    Voir l'e-portfolio
+                    <ExternalLink className="h-4 w-4" />
+                  </a>
+                </Card>
+              </motion.div>
+            ))}
+          </div>
+        </motion.div>
 
         <motion.div
           initial={{ opacity: 0, scale: 0.9 }}

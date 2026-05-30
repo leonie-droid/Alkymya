@@ -11,10 +11,10 @@ export default function Footer() {
   };
 
   return (
-    <footer id="reseaux" className="bg-primary text-primary-foreground pt-24 pb-12">
+    <footer id="reseaux" className="bg-primary text-primary-foreground pt-12 pb-8">
       <div className="container mx-auto px-4">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-16 mb-24">
-          <div className="md:col-span-2">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+          <div className="md:col-span-3">
             <Link to="/" className="mb-8 block">
               <Logo className="h-16" variant="white" />
             </Link>
@@ -30,21 +30,6 @@ export default function Footer() {
               <a href="https://www.linkedin.com/in/cyril-garnier-89697b1/" target="_blank" rel="noopener noreferrer" className="hover:text-accent transition-colors"><Linkedin className="h-6 w-6" /></a>
               <a href="mailto:cyril@alkymya.co" className="hover:text-accent transition-colors"><Mail className="h-6 w-6" /></a>
             </div>
-          </div>
-
-          <div>
-            <h4 className="text-sm uppercase tracking-[0.2em] font-bold mb-8 opacity-50">Navigation</h4>
-            <ul className="space-y-4">
-              <li><Link to="/ia" className="hover:text-accent transition-colors text-lg font-heading font-bold">Génération IA</Link></li>
-              <li><Link to="/oeuvres" className="hover:text-accent transition-colors text-lg font-heading font-bold">Nos œuvres</Link></li>
-              <li><Link to="/alchimistes" className="hover:text-accent transition-colors text-lg font-heading font-bold">Nos alchimistes</Link></li>
-              <li><Link to="/ateliers" className="hover:text-accent transition-colors text-lg font-heading font-bold">Nos ateliers</Link></li>
-              <li><Link to="/ressources" className="hover:text-accent transition-colors text-lg font-heading font-bold">Nos ressources</Link></li>
-              <li><Link to="/partenaires" className="hover:text-accent transition-colors text-lg font-heading font-bold">Nos partenaires</Link></li>
-              <li><Link to="/rejoindre" className="hover:text-accent transition-colors text-lg font-heading font-bold">Nous rejoindre</Link></li>
-              <li><Link to="/faq" className="hover:text-accent transition-colors text-lg font-heading font-bold">FAQ</Link></li>
-              <li><Link to="/contact" className="hover:text-accent transition-colors text-lg font-heading font-bold">Contact</Link></li>
-            </ul>
           </div>
 
           <div className="flex flex-col items-start md:items-end justify-between">
@@ -65,15 +50,10 @@ export default function Footer() {
           </div>
         </div>
 
-        <Separator className="bg-primary-foreground/10 mb-12" />
+        <Separator className="bg-primary-foreground/10 mb-8" />
 
         <div className="flex flex-col md:flex-row justify-between items-center gap-6 text-[11px] uppercase tracking-[0.2em] text-primary-foreground/40 font-bold whitespace-nowrap">
           <p>© 2026 Alkymya.co. Tous droits réservés.</p>
-          <div className="flex flex-wrap justify-center gap-x-8 gap-y-4">
-            <button onClick={scrollToTop} className="hover:text-primary-foreground transition-colors cursor-pointer">Remonter en haut</button>
-            <Link to="/mentions-legales" className="hover:text-primary-foreground transition-colors">Mentions Légales</Link>
-            <Link to="/contact" className="hover:text-primary-foreground transition-colors">Contact</Link>
-          </div>
           <p>26/02/2026 - v1.6</p>
         </div>
       </div>

@@ -64,7 +64,7 @@ const faqCategories: FAQCategory[] = [
               <li><span className="font-bold">Nouvelles attentes professionnelles :</span> Cette génération recherche des environnements de travail qui intègrent l'IA de manière éthique et productive. Comprendre leurs attentes permet d'améliorer votre attractivité employeur.</li>
               <li><span className="font-bold">Innovation accélérée :</span> En maîtrisant l'IA dès leur formation, ces jeunes talents peuvent devenir des catalyseurs d'innovation dans vos équipes, à condition de leur donner le bon cadre.</li>
             </ul>
-            <p><span className="font-bold">Notre approche chez Alkymya :</span> Nous aidons les organisations et les jeunes à inventer ensemble un monde où l'IA est un levier, pas juste un défi. Notre mission de partage passe par trois piliers : Explorer, Partager, Transformer.</p>
+            <p><span className="font-bold">Notre approche chez Alkymya :</span> Nous aidons les organisations et les jeunes à inventer ensemble un monde où l'IA est un levier, pas juste un défi. Notre mission de partage passe par trois piliers : Explorer, Transformer, Partager.</p>
           </div>
         )
       }
@@ -76,7 +76,7 @@ const faqCategories: FAQCategory[] = [
     items: [
       {
         question: "Quels types de formations propose Alkymya ?",
-        answer: "Alkymya propose une expertise complète pour transformer votre organisation avec l'IA, structurée autour de trois piliers : Explorer (formations sur-mesure), Partager (conseil stratégique et mentorat), et Transformer (prototypage et intégration de l'IA)."
+        answer: "Alkymya propose une expertise complète pour transformer votre organisation avec l'IA, structurée autour de trois piliers : Explorer (formations sur-mesure), Transformer (prototypage et intégration de l'IA), et Partager (conseil stratégique et mentorat)."
       },
       {
         question: "Qu'est-ce que l'atelier \"Ateliers d'Innovation IA\" ?",

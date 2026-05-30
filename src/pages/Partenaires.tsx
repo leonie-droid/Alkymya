@@ -58,6 +58,10 @@ const partenaires = [
   {
     name: "INATEC",
     logo: "https://res.cloudinary.com/dokzioyu4/image/upload/v1777818451/WhatsApp_Image_2026-02-27_at_15.38.53_utvfxs.jpg"
+  },
+  {
+    name: "Morning",
+    logo: "https://res.cloudinary.com/dokzioyu4/image/upload/v1779185919/Logo_Morning_sma32y.png"
   }
 ];
 
