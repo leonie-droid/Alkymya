@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from 'motion/react';
 import { cn } from '../../lib/utils';
 import { Volume2, VolumeX, Maximize2 } from 'lucide-react';
 
-const categories = ["Toutes", "Nos Analyseurs", "Nos études", "Business Game", "Agents"];
+const categories = ["Toutes", "Nos Analyseurs", "Nos études", "Business Game", "Agents", "Alkymya x Inatec"];
 
 const resources = [
   {
@@ -73,6 +73,46 @@ const resources = [
     description: "SODA est une IA spécialisée conçue pour l'accompagnement et l'analyse stratégique. Découvrez notre agent super-intelligent.",
     url: "https://res.cloudinary.com/dokzioyu4/video/upload/v1779116439/f_ea_e_f_f_a_f_a_e_cbe_f_cmp__gxlwhw.mp4",
     appUrl: "https://www.genspark.ai/agents?type=custom_super_agent&agent_id=20503058-4b49-40f7-b277-b38c21724a41",
+    type: "video"
+  },
+  {
+    id: 10,
+    title: "Partenariat d'Avenir",
+    category: "Alkymya x Inatec",
+    description: "Découvrez l'introduction de notre collaboration révolutionnaire avec Inatec, alliant excellence industrielle et IA de pointe.",
+    url: "https://res.cloudinary.com/dokzioyu4/video/upload/v1780954428/reel_01_v2_3_zwqjnw.mp4",
+    type: "video"
+  },
+  {
+    id: 11,
+    title: "Efficacité Augmentée",
+    category: "Alkymya x Inatec",
+    description: "Optimisation des processus et automatisation intelligente : plongez au cœur de l'industrie de demain.",
+    url: "https://res.cloudinary.com/dokzioyu4/video/upload/v1780954633/reel_02_p2_2_ggfpvz.mp4",
+    type: "video"
+  },
+  {
+    id: 12,
+    title: "Synergie Créative",
+    category: "Alkymya x Inatec",
+    description: "Exploration de l'intégration créative des nouvelles technologies au sein des environnements de travail collaboratifs.",
+    url: "https://res.cloudinary.com/dokzioyu4/video/upload/v1780954632/reel_03_v2_2_bms3f4.mp4",
+    type: "video"
+  },
+  {
+    id: 13,
+    title: "Le Futur en Marche",
+    category: "Alkymya x Inatec",
+    description: "Comment nous transformons les défis industriels complexes en opportunités grâce à la puissance des algorithmes génératifs.",
+    url: "https://res.cloudinary.com/dokzioyu4/video/upload/v1780954634/reel_01_p2_2_stdxyh.mp4",
+    type: "video"
+  },
+  {
+    id: 14,
+    title: "Performance Digitale",
+    category: "Alkymya x Inatec",
+    description: "Visualisez la mise en œuvre concrète de nos solutions digitales de pointe et leur impact direct sur la performance.",
+    url: "https://res.cloudinary.com/dokzioyu4/video/upload/v1780954634/reel_04_v2_2_ozedom.mp4",
     type: "video"
   }
 ];

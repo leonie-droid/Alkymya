@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import Logo from '../components/Logo';
 import { cn } from '../../lib/utils';
 
-const categories = ["Toutes", "Les chemins interdits", "Culture pop", "Les princesses", "Léonia"];
+const categories = ["Toutes", "Les chemins interdits", "Culture pop", "Les princesses", "Metropolia"];
 
 const works = [
   {
@@ -154,7 +154,7 @@ const works = [
   {
     id: 19,
     name: "Rêverie",
-    category: "Léonia",
+    category: "Metropolia",
     type: "image",
     url: "https://res.cloudinary.com/dokzioyu4/image/upload/v1770044605/IMG_2525_jsdqwk.jpg",
     description: "Une métamorphose magique entre ombre et lumière, sublimant l'expression d'un instant suspendu."
@@ -162,7 +162,7 @@ const works = [
   {
     id: 20,
     name: "L'Étudiante",
-    category: "Léonia",
+    category: "Metropolia",
     type: "image",
     url: "https://res.cloudinary.com/dokzioyu4/image/upload/v1770044605/etudiante_tbrydi.jpg",
     description: "Un regard vif tourné vers l'avenir, où l'éclat de la jeunesse s'accorde à la contemplation créative."
@@ -170,7 +170,7 @@ const works = [
   {
     id: 21,
     name: "Douce Clarté",
-    category: "Léonia",
+    category: "Metropolia",
     type: "image",
     url: "https://res.cloudinary.com/dokzioyu4/image/upload/v1770044606/4333e2ce-3ca9-43ca-9498-5149956f55a8_pzltlj.jpg",
     description: "La délicatesse d'un portrait épuré, révélant la grâce naturelle à travers le prisme de l'alchimie moderne."
@@ -178,7 +178,7 @@ const works = [
   {
     id: 22,
     name: "Silhouette Dorée",
-    category: "Léonia",
+    category: "Metropolia",
     type: "image",
     url: "https://res.cloudinary.com/dokzioyu4/image/upload/c_fill,g_auto,w_900,h_1600/v1770044606/d54d1975-3bf2-43bf-83da-c03d78f7ab96_f0jcm2.jpg",
     description: "Des teintes chaudes et enveloppantes créant un équilibre parfait entre modernité et classicisme pictural."
@@ -186,7 +186,7 @@ const works = [
   {
     id: 23,
     name: "Regard Captivant",
-    category: "Léonia",
+    category: "Metropolia",
     type: "image",
     url: "https://res.cloudinary.com/dokzioyu4/image/upload/v1770044606/IMG_2742_yfl8fu.jpg",
     description: "Une présence intense magnifiée par la subtilité des textures et des contrastes alchimiques."
@@ -194,10 +194,28 @@ const works = [
   {
     id: 24,
     name: "Sérénité",
-    category: "Léonia",
+    category: "Metropolia",
     type: "image",
     url: "https://res.cloudinary.com/dokzioyu4/image/upload/v1770044606/1e9ba31e-8c38-48c3-ab3c-26b3337a305d_ynksne.jpg",
     description: "Un instant d'harmonie intemporelle où le portrait photographique fusionne avec l'art de l'IA générative."
+  },
+  {
+    id: 25,
+    name: "Metropolia",
+    category: "Metropolia",
+    type: "youtube",
+    url: "https://www.youtube.com/embed/FffB2RAGuH0?si=0oi7xzCS3Ni3PARg",
+    youtubeId: "FffB2RAGuH0",
+    description: "Découvrez notre immersion dans Metropolia, un projet visionnaire mêlant créativité, innovation et technologies futures."
+  },
+  {
+    id: 26,
+    name: "Metropolia - Vision",
+    category: "Metropolia",
+    type: "youtube",
+    url: "https://www.youtube.com/embed/fONrLbN4uoQ?si=4d44oO_d4796sxPV",
+    youtubeId: "fONrLbN4uoQ",
+    description: "Une exploration captivante de Metropolia, révélant la synergie entre architecture moderne, art et intelligence artificielle."
   }
 ];
 
@@ -241,7 +259,10 @@ export default function Oeuvres() {
               initial={{ scale: 0.95, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               exit={{ scale: 0.95, opacity: 0 }}
-              className="relative w-full max-w-4xl h-auto max-h-[90vh] aspect-video md:aspect-[9/16] md:w-[450px] flex flex-col items-center justify-center"
+              className={cn(
+                "relative w-full h-auto max-h-[90vh] flex flex-col items-center justify-center",
+                selectedVideo.includes("youtube.com") ? "aspect-video w-full max-w-4xl" : "aspect-[9/16] md:w-[450px]"
+              )}
               onClick={(e) => e.stopPropagation()}
             >
               <button
@@ -252,13 +273,25 @@ export default function Oeuvres() {
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-x"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
               </button>
               <div className="w-full h-full rounded-3xl overflow-hidden shadow-2xl bg-black border border-white/10">
-                <video
-                  src={selectedVideo}
-                  className="w-full h-full object-contain"
-                  controls
-                  autoPlay
-                  playsInline
-                />
+                {selectedVideo.includes("youtube.com") ? (
+                  <iframe
+                    src={selectedVideo}
+                    className="w-full h-full"
+                    title="YouTube video player"
+                    frameBorder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerPolicy="strict-origin-when-cross-origin"
+                    allowFullScreen
+                  />
+                ) : (
+                  <video
+                    src={selectedVideo}
+                    className="w-full h-full object-contain"
+                    controls
+                    autoPlay
+                    playsInline
+                  />
+                )}
               </div>
             </motion.div>
           </motion.div>
@@ -316,10 +349,11 @@ export default function Oeuvres() {
               >
                 <div 
                   className={cn(
-                    "relative aspect-[9/16] overflow-hidden rounded-3xl bg-muted mb-6 shadow-xl transition-transform duration-500 group-hover:-translate-y-2",
-                    work.type === 'video' && "cursor-zoom-in"
+                    "relative overflow-hidden rounded-3xl bg-muted mb-6 shadow-xl transition-transform duration-500 group-hover:-translate-y-2",
+                    work.type === 'youtube' ? "aspect-video" : "aspect-[9/16]",
+                    (work.type === 'video' || work.type === 'youtube') && "cursor-zoom-in"
                   )}
-                  onClick={() => work.type === 'video' && setSelectedVideo(work.url)}
+                  onClick={() => (work.type === 'video' || work.type === 'youtube') && setSelectedVideo(work.url)}
                 >
                   {work.type === 'video' ? (
                     <video 
@@ -330,6 +364,23 @@ export default function Oeuvres() {
                       loop
                       playsInline
                     />
+                  ) : work.type === 'youtube' ? (
+                    <div className="w-full h-full relative">
+                      <img 
+                        src={`https://img.youtube.com/vi/${(work as any).youtubeId}/maxresdefault.jpg`} 
+                        alt={work.name}
+                        className="w-full h-full object-cover opacity-90 group-hover:opacity-100 transition-all duration-700 group-hover:scale-110"
+                        referrerPolicy="no-referrer"
+                      />
+                      {/* Play Button Overlay */}
+                      <div className="absolute inset-0 flex items-center justify-center bg-black/20 group-hover:bg-black/10 transition-colors duration-300">
+                        <div className="w-16 h-16 rounded-full bg-copper-orange/95 flex items-center justify-center text-white shadow-2xl transition-all duration-300 group-hover:scale-110">
+                          <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="currentColor" className="ml-1 text-white">
+                            <path d="M8 5v14l11-7z" />
+                          </svg>
+                        </div>
+                      </div>
+                    </div>
                   ) : (
                     <img 
                       src={work.url} 
