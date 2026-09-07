@@ -1,0 +1,7 @@
+# Robots.txt - Alkymya (https://alkymya.co)
+User-agent: *
+Allow: /
+Disallow: /api/
+
+# Sitemaps & LLM Context
+Sitemap: https://alkymya.co/sitemap.xml
