@@ -1,9 +1,9 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { cn } from '../../lib/utils';
-import { Volume2, VolumeX, Maximize2 } from 'lucide-react';
+import { Volume2, VolumeX, Maximize2, ExternalLink } from 'lucide-react';
 
-const categories = ["Toutes", "Nos Analyseurs", "Nos études", "Business Game", "Agents", "Alkymya x Inatec"];
+const categories = ["Toutes", "Nos Analyseurs", "Nos études", "Business Game", "Agents", "Alkymya x Inatec", "Nos sites"];
 
 const resources = [
   {
@@ -114,6 +114,26 @@ const resources = [
     description: "Visualisez la mise en œuvre concrète de nos solutions digitales de pointe et leur impact direct sur la performance.",
     url: "https://res.cloudinary.com/dokzioyu4/video/upload/v1780954634/reel_04_v2_2_ozedom.mp4",
     type: "video"
+  },
+  {
+    id: 15,
+    title: "Thelittle77.fr",
+    category: "Nos sites",
+    description: "Le média et guide local de Seine-et-Marne (77), mettant en lumière les initiatives, commerces et innovations du territoire.",
+    url: "https://thelittle77.fr/",
+    appUrl: "https://thelittle77.fr/",
+    imageUrl: "https://res.cloudinary.com/dokzioyu4/image/upload/v1788941703/PHOTO-2026-09-08-06-54-57_ynrbkt.jpg",
+    type: "site"
+  },
+  {
+    id: 16,
+    title: "Thelittle75.fr",
+    category: "Nos sites",
+    description: "Le guide urbain et média digital de référence dédié aux actualités, adresses et pépites incontournables de Paris (75).",
+    url: "https://thelittle75.fr/",
+    appUrl: "https://thelittle75.fr/",
+    imageUrl: "https://res.cloudinary.com/dokzioyu4/image/upload/v1788941670/Logo_thelittle75.fr_d1tmes.jpg",
+    type: "site"
   }
 ];
 
@@ -261,6 +281,8 @@ export default function Ressources() {
                   onClick={() => {
                     if (item.type === 'pdf') {
                       window.open(item.url, '_blank');
+                    } else if (item.type === 'site') {
+                      window.open(item.appUrl || item.url, '_blank');
                     } else {
                       setSelectedResource({ url: item.url, type: item.type || 'video' });
                     }
@@ -282,6 +304,19 @@ export default function Ressources() {
                       </div>
                       <span className="text-white text-xl font-bold font-heading mb-2">Application Interactive</span>
                       <span className="text-turquoise text-sm font-medium">Lancer le Business Game</span>
+                    </div>
+                  ) : item.type === 'site' ? (
+                    <div className="w-full h-full relative bg-slate-900 flex items-center justify-center overflow-hidden">
+                      <img 
+                        src={item.imageUrl || item.url} 
+                        alt={item.title}
+                        referrerPolicy="no-referrer"
+                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-deep-blue/80 via-transparent to-transparent opacity-60 group-hover:opacity-40 transition-opacity duration-300" />
+                      <div className="absolute bottom-4 right-4 z-20 bg-deep-blue/80 backdrop-blur-md text-white p-2.5 rounded-full border border-white/10 opacity-0 group-hover:opacity-100 transition-opacity">
+                        <ExternalLink className="w-5 h-5" />
+                      </div>
                     </div>
                   ) : (
                     <>
@@ -312,7 +347,7 @@ export default function Ressources() {
                       </div>
                     </>
                   )}
-                  <div className="absolute inset-0 bg-gradient-to-t from-deep-blue/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-8 pb-16">
+                  <div className="absolute inset-0 bg-gradient-to-t from-deep-blue/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-8 pb-16 pointer-events-none">
                     <span className="text-turquoise text-xs font-bold tracking-widest uppercase mb-2">
                       {item.category}
                     </span>
@@ -351,6 +386,16 @@ export default function Ressources() {
                         >
                           <path d="M5 12h14"/><path d="m12 5 7 7-7 7"/>
                         </svg>
+                      </a>
+                    ) : item.type === 'site' ? (
+                      <a 
+                        href={item.appUrl || item.url} 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center text-sm font-black text-copper-orange hover:text-deep-blue transition-colors group/link"
+                      >
+                        Visiter le site web
+                        <ExternalLink className="w-4 h-4 ml-2 transition-transform group-hover/link:translate-x-1" />
                       </a>
                     ) : item.appUrl && (
                       <a 

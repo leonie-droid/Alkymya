@@ -53,6 +53,14 @@ const alchimistes = [
       { label: "Vidéo analyseur de cv", url: "https://res.cloudinary.com/dokzioyu4/video/upload/v1773762096/c599dc6cd0ef4e6196a739c87b2cb773_gxn0lj.mov" },
       { label: "Vidéo analyseur de mémoire", url: "https://res.cloudinary.com/dokzioyu4/video/upload/v1776374160/bac00848173641fd882d43dc3b970835_jtyspz.mov" },
     ]
+  },
+  {
+    name: "Kendra Martine",
+    role: "Fondatrice d'Objectif Alternance & Formatrice",
+    bio: "Fondatrice d’« Objectif Alternance », Kendra Martine est spécialisée dans le recrutement d’alternants et de profils en reconversion, ainsi que dans le coaching emploi et alternance ciblant principalement les TPE et PME. Passionnée par l'humain et l'insertion professionnelle, elle bâtit des passerelles solides entre talents émergents et entreprises en développement.",
+    details: "Forte de 7 ans d’expérience en stratégie marketing en entreprise, Kendra mène en parallèle une activité d’enseignante et formatrice avec une réelle passion pour la transmission. Elle dispense des formations et cours de marketing destinés à des lycéens, étudiants et adultes, en présentiel comme en ligne.",
+    image: "https://res.cloudinary.com/dokzioyu4/image/upload/v1788941994/0c39dd0a7f91200361816f2b88d68802_cwzov0.jpg",
+    socials: { linkedin: "", instagram: "", mail: "" }
   }
 ];
 
@@ -104,6 +112,8 @@ const nouveauxAlchimistes = [
 const WorksAccordion = ({ works, handleWorkClick }: { works: any[], handleWorkClick: (e: React.MouseEvent, url: string, label: string) => void }) => {
   const [isOpen, setIsOpen] = useState(false);
   
+  if (!works || works.length === 0) return null;
+
   return (
     <div className="pt-6 mt-auto border-t border-deep-blue/5">
       <button 
@@ -257,7 +267,7 @@ const AlchimisteCard: React.FC<{ person: any, index: number, handleWorkClick: (e
           </AnimatePresence>
 
           {/* Lab Works / Portfolio section */}
-          {'works' in person && person.works && (
+          {'works' in person && person.works && person.works.length > 0 && (
             <div className="mt-auto">
               <WorksAccordion works={person.works} handleWorkClick={handleWorkClick} />
             </div>
@@ -344,7 +354,7 @@ export default function Alchimistes() {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-8 max-w-7xl mx-auto">
           {alchimistes.map((person, index) => (
             <AlchimisteCard 
               key={person.name} 
