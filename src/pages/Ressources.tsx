@@ -22,7 +22,15 @@ const resources = [
     description: "Outil IA gratuit pour optimiser votre CV et maximiser vos chances de décrocher le poste de vos rêves.",
     url: "https://res.cloudinary.com/dokzioyu4/video/upload/v1773762096/c599dc6cd0ef4e6196a739c87b2cb773_gxn0lj.mov",
     appUrl: "https://analysercvpro.alkymya.co/",
-    type: "video"
+    type: "video",
+    expert: {
+      name: "Kendra Martine",
+      role: "Fondatrice d'Objectif Alternance & Coach Emploi",
+      avatar: "https://res.cloudinary.com/dokzioyu4/image/upload/v1788941994/0c39dd0a7f91200361816f2b88d68802_cwzov0.jpg",
+      hook: "Boostez vos candidatures : associez l'optimisation IA de votre CV à un coaching humain sur-mesure pour décrocher l'alternance ou le poste fait pour vous.",
+      siteUrl: "https://www.objectifalternance.fr/",
+      siteLabel: "Découvrir Objectif Alternance"
+    }
   },
   {
     id: 3,
@@ -139,7 +147,20 @@ const resources = [
 
 export default function Ressources() {
   const [activeCategory, setActiveCategory] = useState("Toutes");
-  const [selectedResource, setSelectedResource] = useState<{url: string, type: string} | null>(null);
+  const [selectedResource, setSelectedResource] = useState<{
+    url: string;
+    type: string;
+    title?: string;
+    expert?: {
+      name: string;
+      role: string;
+      avatar: string;
+      hook: string;
+      siteUrl: string;
+      siteLabel: string;
+    };
+    appUrl?: string;
+  } | null>(null);
 
   // Lock scroll when video or app is open
   useEffect(() => {
@@ -218,6 +239,39 @@ export default function Ressources() {
                   />
                 )}
               </div>
+
+              {selectedResource.expert && (
+                <div className="mt-4 w-full bg-deep-blue/95 border border-white/15 rounded-2xl p-4 text-white flex flex-col sm:flex-row items-center justify-between gap-4 backdrop-blur-md shadow-2xl">
+                  <div className="flex items-center gap-3 text-left">
+                    <img
+                      src={selectedResource.expert.avatar}
+                      alt={selectedResource.expert.name}
+                      referrerPolicy="no-referrer"
+                      className="w-12 h-12 rounded-full object-cover border-2 border-copper-orange shrink-0"
+                    />
+                    <div>
+                      <span className="text-[10px] font-black uppercase tracking-wider text-copper-orange block">
+                        Accompagnement Personnalisé
+                      </span>
+                      <h4 className="font-heading font-bold text-sm text-white">
+                        {selectedResource.expert.name} — <span className="text-white/70 font-normal text-xs">{selectedResource.expert.role}</span>
+                      </h4>
+                      <p className="text-xs text-white/80 max-w-xl italic mt-0.5">
+                        "{selectedResource.expert.hook}"
+                      </p>
+                    </div>
+                  </div>
+                  <a
+                    href={selectedResource.expert.siteUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="shrink-0 inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-copper-orange text-white text-xs font-bold uppercase tracking-wider hover:bg-white hover:text-deep-blue transition-colors shadow-lg"
+                  >
+                    <span>{selectedResource.expert.siteLabel}</span>
+                    <ExternalLink className="w-3.5 h-3.5" />
+                  </a>
+                </div>
+              )}
             </motion.div>
           </motion.div>
         )}
@@ -284,10 +338,29 @@ export default function Ressources() {
                     } else if (item.type === 'site') {
                       window.open(item.appUrl || item.url, '_blank');
                     } else {
-                      setSelectedResource({ url: item.url, type: item.type || 'video' });
+                      setSelectedResource({ 
+                        url: item.url, 
+                        type: item.type || 'video',
+                        title: item.title,
+                        expert: 'expert' in item ? (item as any).expert : undefined,
+                        appUrl: item.appUrl
+                      });
                     }
                   }}
                 >
+                  {'expert' in item && (item as any).expert && (
+                    <div className="absolute top-4 left-4 z-20 flex items-center gap-2 bg-deep-blue/85 backdrop-blur-md px-3 py-1.5 rounded-full border border-white/15 shadow-md pointer-events-none">
+                      <img 
+                        src={(item as any).expert.avatar} 
+                        alt={(item as any).expert.name} 
+                        referrerPolicy="no-referrer"
+                        className="w-5 h-5 rounded-full object-cover border border-copper-orange" 
+                      />
+                      <span className="text-[11px] font-bold text-white tracking-wide">
+                        Avec {(item as any).expert.name}
+                      </span>
+                    </div>
+                  )}
                   {item.type === 'pdf' ? (
                     <div className="w-full h-full bg-deep-blue flex flex-col items-center justify-center p-8 text-center relative overflow-hidden">
                       <div className="absolute top-0 right-0 w-48 h-48 bg-accent/20 blur-[100px] -mr-24 -mt-24 group-hover:bg-accent/45 transition-colors" />
@@ -364,6 +437,44 @@ export default function Ressources() {
                     <p className="text-base text-muted-foreground leading-relaxed font-medium italic border-l-2 border-copper-orange/30 pl-4">
                       "{item.description}"
                     </p>
+
+                    {'expert' in item && (item as any).expert && (
+                      <div className="p-4 rounded-2xl bg-gradient-to-br from-slate-50 to-deep-blue/5 border border-deep-blue/10 shadow-sm space-y-3">
+                        <div className="flex items-center gap-3">
+                          <img
+                            src={(item as any).expert.avatar}
+                            alt={(item as any).expert.name}
+                            referrerPolicy="no-referrer"
+                            className="w-12 h-12 rounded-full object-cover border-2 border-copper-orange shadow-md shrink-0"
+                          />
+                          <div className="min-w-0 flex-1">
+                            <span className="text-[10px] font-black uppercase tracking-wider text-copper-orange block">
+                              Accompagnement & Alternance
+                            </span>
+                            <h4 className="text-sm font-bold text-deep-blue font-heading leading-tight">
+                              {(item as any).expert.name}
+                            </h4>
+                            <p className="text-[11px] text-muted-foreground truncate">
+                              {(item as any).expert.role}
+                            </p>
+                          </div>
+                        </div>
+
+                        <p className="text-xs text-deep-blue/90 font-medium leading-relaxed bg-white p-3 rounded-xl border border-deep-blue/5 italic">
+                          "{(item as any).expert.hook}"
+                        </p>
+
+                        <a
+                          href={(item as any).expert.siteUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center justify-center w-full gap-2 px-4 py-2.5 rounded-xl bg-copper-orange text-white text-xs font-black uppercase tracking-wider hover:bg-deep-blue transition-colors duration-300 shadow-md group/kendra-btn"
+                        >
+                          <span>{(item as any).expert.siteLabel}</span>
+                          <ExternalLink className="w-3.5 h-3.5 transition-transform group-hover/kendra-btn:translate-x-0.5" />
+                        </a>
+                      </div>
+                    )}
                     {item.type === 'pdf' ? (
                       <a 
                         href={item.url} 

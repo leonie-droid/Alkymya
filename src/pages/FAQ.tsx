@@ -106,7 +106,11 @@ const faqCategories: FAQCategory[] = [
       },
       {
         question: "Qu'est-ce que l'Analyseur de CV d'Alkymya ?",
-        answer: "L'Analyseur de CV est un outil IA gratuit pour optimiser votre CV et maximiser vos chances de décrocher le poste de vos rêves."
+        answer: (
+          <span>
+            L'Analyseur de CV est un outil IA gratuit pour optimiser votre CV et maximiser vos chances de décrocher le poste de vos rêves. Pour aller plus loin avec un accompagnement sur-mesure en recrutement et alternance, découvrez les programmes de notre Alchimiste <strong>Kendra Martine</strong> sur son site <a href="https://www.objectifalternance.fr/" target="_blank" rel="noopener noreferrer" className="text-copper-orange font-bold hover:underline">Objectif Alternance</a>.
+          </span>
+        )
       },
       {
         question: "Qu'est-ce que le Business Game 'NoNo BanaBa' ?",

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { Link } from 'react-router-dom';
-import { Mail, Linkedin, Instagram, Twitter, ExternalLink, Zap, Youtube, ChevronDown, MoreHorizontal } from 'lucide-react';
+import { Mail, Linkedin, Instagram, Twitter, ExternalLink, Zap, Youtube, ChevronDown, MoreHorizontal, Globe } from 'lucide-react';
 import { FaTiktok } from 'react-icons/fa';
 import { Card } from '@/components/ui/card';
 import { cn } from '@/lib/utils';
@@ -57,10 +57,15 @@ const alchimistes = [
   {
     name: "Kendra Martine",
     role: "Fondatrice d'Objectif Alternance & Formatrice",
+    website: "https://www.objectifalternance.fr/",
+    websiteLabel: "objectifalternance.fr",
     bio: "Fondatrice d’« Objectif Alternance », Kendra Martine est spécialisée dans le recrutement d’alternants et de profils en reconversion, ainsi que dans le coaching emploi et alternance ciblant principalement les TPE et PME. Passionnée par l'humain et l'insertion professionnelle, elle bâtit des passerelles solides entre talents émergents et entreprises en développement.",
     details: "Forte de 7 ans d’expérience en stratégie marketing en entreprise, Kendra mène en parallèle une activité d’enseignante et formatrice avec une réelle passion pour la transmission. Elle dispense des formations et cours de marketing destinés à des lycéens, étudiants et adultes, en présentiel comme en ligne.",
     image: "https://res.cloudinary.com/dokzioyu4/image/upload/v1788941994/0c39dd0a7f91200361816f2b88d68802_cwzov0.jpg",
-    socials: { linkedin: "", instagram: "", mail: "" }
+    socials: { website: "https://www.objectifalternance.fr/", linkedin: "", instagram: "", mail: "" },
+    works: [
+      { label: "Site Objectif Alternance", url: "https://www.objectifalternance.fr/" }
+    ]
   }
 ];
 
@@ -206,6 +211,17 @@ const AlchimisteCard: React.FC<{ person: any, index: number, handleWorkClick: (e
                   <Linkedin className="h-4 w-4" />
                 </a>
               )}
+              {("website" in person.socials && person.socials.website || "website" in person && person.website) && (
+                <a 
+                  href={(person.socials.website || person.website) as string} 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="p-2 rounded-full bg-white/10 hover:bg-copper-orange text-white backdrop-blur-md transition-all"
+                  title={person.websiteLabel || "Site web officiel"}
+                >
+                  <Globe className="h-4 w-4" />
+                </a>
+              )}
               {person.socials.mail && (
                 <a href={`mailto:${person.socials.mail}`} className="p-2 rounded-full bg-white/10 hover:bg-copper-orange text-white backdrop-blur-md transition-all">
                   <Mail className="h-4 w-4" />
@@ -265,6 +281,31 @@ const AlchimisteCard: React.FC<{ person: any, index: number, handleWorkClick: (e
               </motion.div>
             )}
           </AnimatePresence>
+
+          {/* Website direct CTA banner */}
+          {'website' in person && person.website && (
+            <a
+              href={person.website}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-between w-full p-3.5 rounded-2xl bg-gradient-to-r from-copper-orange/15 via-copper-orange/5 to-transparent border border-copper-orange/30 hover:border-copper-orange hover:bg-copper-orange text-deep-blue hover:text-white transition-all duration-300 group/site shadow-sm"
+            >
+              <div className="flex items-center gap-2.5">
+                <div className="p-2 rounded-xl bg-copper-orange/20 text-copper-orange group-hover/site:bg-white/20 group-hover/site:text-white transition-colors">
+                  <Globe className="w-4 h-4" />
+                </div>
+                <div className="text-left">
+                  <span className="text-[10px] font-black uppercase tracking-wider text-copper-orange group-hover/site:text-white block">
+                    Site officiel
+                  </span>
+                  <span className="text-xs font-bold font-heading line-clamp-1">
+                    {person.websiteLabel || "Objectif Alternance"}
+                  </span>
+                </div>
+              </div>
+              <ExternalLink className="w-4 h-4 opacity-60 group-hover/site:opacity-100 group-hover/site:translate-x-0.5 transition-all shrink-0 ml-2" />
+            </a>
+          )}
 
           {/* Lab Works / Portfolio section */}
           {'works' in person && person.works && person.works.length > 0 && (
