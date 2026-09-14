@@ -3,5 +3,23 @@ User-agent: *
 Allow: /
 Disallow: /api/
 
+# AI Search Engines & LLM Context (GEO)
+# Standards: https://llmstxt.org
+User-agent: GPTBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
 # Sitemaps & LLM Context
 Sitemap: https://alkymya.co/sitemap.xml
+# LLM knowledge files:
+# https://alkymya.co/llm.txt
+# https://alkymya.co/llms.txt
+# https://alkymya.co/llms-full.txt
