@@ -2,7 +2,8 @@ import React from 'react';
 import { motion } from 'motion/react';
 import Logo from '../components/Logo';
 import { Link } from 'react-router-dom';
-import { Mail, Shield, User, Globe, Info } from 'lucide-react';
+import { Mail, Shield, User, Globe, Info, Cookie, Settings2 } from 'lucide-react';
+import { openCookiePreferencesModal } from '../utils/cookieConsent';
 
 const MentionsLegales: React.FC = () => {
   return (
@@ -118,6 +119,45 @@ const MentionsLegales: React.FC = () => {
               </p>
             </motion.section>
           </div>
+
+          {/* Section Cookies & Protection des données (RGPD / CNIL) */}
+          <motion.section
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.5 }}
+            className="p-8 md:p-10 rounded-[2.5rem] bg-slate-50 border border-slate-200 space-y-6"
+          >
+            <div className="flex items-center justify-between flex-wrap gap-4">
+              <div className="flex items-center gap-3 text-deep-blue">
+                <Cookie className="w-7 h-7 text-deep-green" />
+                <h2 className="text-2xl md:text-3xl font-heading font-black">Cookies & Mesure d'audience (Google Tag)</h2>
+              </div>
+              <button
+                type="button"
+                onClick={openCookiePreferencesModal}
+                className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-deep-blue hover:bg-deep-blue/90 text-white text-xs font-bold transition-all shadow-sm"
+              >
+                <Settings2 className="w-4 h-4" />
+                <span>Modifier mes préférences de cookies</span>
+              </button>
+            </div>
+
+            <div className="space-y-4 text-slate-600 text-sm md:text-base leading-relaxed">
+              <p>
+                Alkymya applique une politique stricte de respect de la vie privée conforme au Règlement Général sur la Protection des Données (RGPD) et aux recommandations de la CNIL.
+              </p>
+              <p>
+                Ce site utilise le tag d’analyse <strong className="text-deep-blue">Google Analytics (ID : G-87HJ0K59JX)</strong> afin d'établir des statistiques de fréquentation anonymisées et d’améliorer la qualité de nos ateliers et œuvres.
+              </p>
+              <ul className="list-disc list-inside space-y-2 text-slate-700">
+                <li><strong>Cookies techniques indispensables :</strong> nécessaires au bon fonctionnement de la navigation, conservés sans recueil préalable de consentement.</li>
+                <li><strong>Cookies de mesure d'audience (Google Analytics) :</strong> soumis à votre consentement préalable via le bandeau de consentement (Google Consent Mode v2). L’adresse IP est systématiquement anonymisée.</li>
+              </ul>
+              <p className="text-xs text-slate-500">
+                Vous pouvez retirer ou modifier votre consentement à tout instant à l'aide du bouton ci-dessus ou via le lien « Gestion des cookies » présent en pied de page.
+              </p>
+            </div>
+          </motion.section>
 
           {/* Bottom Link */}
           <div className="pt-12 text-center">

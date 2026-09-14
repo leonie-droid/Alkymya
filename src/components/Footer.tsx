@@ -1,9 +1,10 @@
-import { Instagram, Linkedin, Mail, ArrowUp, Youtube } from "lucide-react";
+import { Instagram, Linkedin, Mail, ArrowUp, Youtube, Cookie } from "lucide-react";
 import { FaTiktok } from "react-icons/fa";
 import { Button } from "../../components/ui/button";
 import { Separator } from "../../components/ui/separator";
 import { Link } from 'react-router-dom';
 import Logo from './Logo';
+import { openCookiePreferencesModal } from '../utils/cookieConsent';
 
 export default function Footer() {
   const scrollToTop = () => {
@@ -52,9 +53,22 @@ export default function Footer() {
 
         <Separator className="bg-primary-foreground/10 mb-8" />
 
-        <div className="flex flex-col md:flex-row justify-between items-center gap-6 text-[11px] uppercase tracking-[0.2em] text-primary-foreground/40 font-bold whitespace-nowrap">
-          <p>© 2026 Alkymya.co. Tous droits réservés.</p>
-          <p>26/02/2026 - v1.6</p>
+        <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-[11px] uppercase tracking-[0.2em] text-primary-foreground/50 font-bold">
+          <div className="flex flex-wrap items-center justify-center md:justify-start gap-4 sm:gap-6">
+            <p>© 2026 Alkymya.co. Tous droits réservés.</p>
+            <Link to="/mentions-legales" className="hover:text-accent transition-colors">
+              Mentions Légales
+            </Link>
+            <button
+              type="button"
+              onClick={openCookiePreferencesModal}
+              className="inline-flex items-center gap-1.5 hover:text-accent transition-colors cursor-pointer"
+            >
+              <Cookie className="w-3 h-3" />
+              <span>Gestion des cookies</span>
+            </button>
+          </div>
+          <p className="text-primary-foreground/30">v2.0 • 2026</p>
         </div>
       </div>
     </footer>

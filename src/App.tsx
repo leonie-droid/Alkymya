@@ -15,6 +15,8 @@ import JoinUs from './pages/JoinUs';
 import MentionsLegales from './pages/MentionsLegales';
 import { SEO } from './components/SEO';
 import { Chatbot } from './components/Chatbot';
+import CookieBanner from './components/CookieBanner';
+import { AnalyticsTracker } from './components/AnalyticsTracker';
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -29,29 +31,31 @@ function ScrollToTop() {
 export default function App() {
   return (
     <Router>
-      <ScrollToTop />
-      <div className="min-h-screen flex flex-col selection:bg-accent selection:text-white">
-        <SEO type="LocalBusiness" />
-        <SEO type="EducationalOrganization" />
-        <Header />
-        <main className="flex-grow">
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/ia" element={<GenerateurIA />} />
-            <Route path="/oeuvres" element={<Oeuvres />} />
-            <Route path="/alchimistes" element={<Alchimistes />} />
-            <Route path="/ateliers" element={<Ateliers />} />
-            <Route path="/ressources" element={<Ressources />} />
-            <Route path="/partenaires" element={<Partenaires />} />
-            <Route path="/contact" element={<Contact />} />
-            <Route path="/faq" element={<FAQ />} />
-            <Route path="/rejoindre" element={<JoinUs />} />
-            <Route path="/mentions-legales" element={<MentionsLegales />} />
-          </Routes>
-        </main>
-        <Footer />
-        <Chatbot />
-      </div>
+       <ScrollToTop />
+       <AnalyticsTracker />
+       <div className="min-h-screen flex flex-col selection:bg-accent selection:text-white">
+         <SEO type="LocalBusiness" />
+         <SEO type="EducationalOrganization" />
+         <Header />
+         <main className="flex-grow">
+           <Routes>
+             <Route path="/" element={<Home />} />
+             <Route path="/ia" element={<GenerateurIA />} />
+             <Route path="/oeuvres" element={<Oeuvres />} />
+             <Route path="/alchimistes" element={<Alchimistes />} />
+             <Route path="/ateliers" element={<Ateliers />} />
+             <Route path="/ressources" element={<Ressources />} />
+             <Route path="/partenaires" element={<Partenaires />} />
+             <Route path="/contact" element={<Contact />} />
+             <Route path="/faq" element={<FAQ />} />
+             <Route path="/rejoindre" element={<JoinUs />} />
+             <Route path="/mentions-legales" element={<MentionsLegales />} />
+           </Routes>
+         </main>
+         <Footer />
+         <Chatbot />
+         <CookieBanner />
+       </div>
     </Router>
   );
 }

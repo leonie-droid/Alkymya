@@ -11,6 +11,46 @@
     <meta property="og:description" content="Studio d'innovation IA à Ozoir-la-Ferrière. Explorer, Transformer, Partager la Génération IA." />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://alkymya.co" />
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-87HJ0K59JX"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+
+      // Initialisation RGPD / Consent Mode v2 par défaut
+      try {
+        var rawConsent = localStorage.getItem('alkymya_cookie_consent');
+        var consent = rawConsent ? JSON.parse(rawConsent) : null;
+        if (consent && consent.analytics === true) {
+          gtag('consent', 'default', {
+            'analytics_storage': 'granted',
+            'ad_storage': 'denied',
+            'ad_user_data': 'denied',
+            'ad_personalization': 'denied'
+          });
+        } else {
+          gtag('consent', 'default', {
+            'analytics_storage': 'denied',
+            'ad_storage': 'denied',
+            'ad_user_data': 'denied',
+            'ad_personalization': 'denied'
+          });
+        }
+      } catch (e) {
+        gtag('consent', 'default', {
+          'analytics_storage': 'denied',
+          'ad_storage': 'denied',
+          'ad_user_data': 'denied',
+          'ad_personalization': 'denied'
+        });
+      }
+
+      gtag('js', new Date());
+      gtag('config', 'G-87HJ0K59JX', {
+        anonymize_ip: true
+      });
+    </script>
   </head>
   <body>
     <div id="root"></div>
