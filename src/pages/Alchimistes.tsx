@@ -10,10 +10,12 @@ const alchimistes = [
   {
     name: "Cyril Garnier",
     role: "Directeur Associé",
+    website: "https://cyrilgarnier.fr/",
+    websiteLabel: "cyrilgarnier.fr",
     bio: "Expert reconnu de l'accompagnement entrepreneurial, Cyril Garnier occupe aujourd'hui le poste de Directeur Associé chez Alkymya. Fort d'une expérience marquante à la tête de SNCF Développement, où il a soutenu la création de milliers d'emplois, il met désormais son savoir-faire au service de l'innovation de rupture. Au sein d'Alkymya, il agit comme un architecte de la croissance, spécialisé dans la transformation d'idées complexes en succès commerciaux concrets.",
     details: "Son rôle consiste à sécuriser le \"Go-to-Market\" des projets et à structurer des modèles économiques robustes, faisant de lui un pont stratégique entre l'agilité des startups et la puissance des grands groupes. En résumé, Cyril Garnier est un accélérateur de business qui transforme l'innovation théorique en réalité industrielle et économique.",
     image: "https://res.cloudinary.com/dokzioyu4/image/upload/v1758192982/66cffcd8-15f1-415f-b423-9f428d63e22f_gqjd53.png",
-    socials: { linkedin: "https://www.linkedin.com/in/cyril-garnier-89697b1/", instagram: "https://www.instagram.com/alkymya_cyril", tiktok: "https://www.tiktok.com/@cyrilgarnierphoto", youtube: "https://www.youtube.com/@cyrilgarnier9475", mail: "cyril@alkymya.co" },
+    socials: { website: "https://cyrilgarnier.fr/", linkedin: "https://www.linkedin.com/in/cyril-garnier-89697b1/", instagram: "https://www.instagram.com/alkymya_cyril", tiktok: "https://www.tiktok.com/@cyrilgarnierphoto", youtube: "https://www.youtube.com/@cyrilgarnier9475", mail: "cyril@alkymya.co" },
     works: [
       { label: "Doctrine IAG : Dialogue sur la Stratégie Cachée", url: "https://res.cloudinary.com/dokzioyu4/image/upload/v1777500626/La_Doctrine_IAG___Dialogue_sur_la_Strate%CC%81gie_Cache%CC%81e_de_l_E%CC%80re_Trump_zwxlqi_vlfkkw.pdf" },
       { label: "Quiz Maturité IA Entreprise", url: "https://maturiteia.alkymya.co/" },
@@ -29,10 +31,12 @@ const alchimistes = [
   {
     name: "Olivier Dion",
     role: "Fondateur de Onecub & Expert Data",
+    website: "https://onecub.com/",
+    websiteLabel: "onecub.com",
     bio: "Pionnier des Espaces de Données et expert en gouvernance numérique, le fondateur de Onecub est une figure centrale de la conformité réglementaire européenne. Entrepreneur engagé (notamment via Themy-x), il accompagne la transformation digitale de secteurs stratégiques comme la mobilité, l'énergie et l'agriculture en bâtissant des Data Spaces souverains.",
     details: "Expert auprès des instances de régulation et intervenant régulier pour la Commission Européenne, GAIA-X ou encore le gouvernement coréen, il contribue activement à définir les standards mondiaux de la donnée à travers ses publications et ses conférences internationales.",
     image: "https://res.cloudinary.com/dokzioyu4/image/upload/v1760374889/Photo_Olivier_Dion_reve_dk2c5e.png",
-    socials: { linkedin: "https://www.linkedin.com/in/olivierdion/", instagram: "", mail: "" },
+    socials: { website: "https://onecub.com/", linkedin: "https://www.linkedin.com/in/olivierdion/", instagram: "", mail: "" },
     works: [
       { label: "Lab Postal 2017", url: "https://www.youtube.com/watch?v=bubawgP2gU0" },
       { label: "TEDxLaBaule", url: "https://www.youtube.com/watch?v=u6Eh26k6O8U" },
@@ -44,10 +48,12 @@ const alchimistes = [
   {
     name: "Léonie Egesipe",
     role: "Chef de Projet Digital",
+    website: "https://leonieegesipe.netlify.app/",
+    websiteLabel: "leonieegesipe.netlify.app",
     bio: "Etudiante en chef de Projet Digital. Au sein d’Alkymya, Léonie occupe un rôle central dans le déploiement opérationnel des stratégies d’innovation. En binôme étroit avec Cyril Garnier, elle assure la direction des projets numériques, transformant les visions stratégiques du studio en dispositifs digitaux concrets et performants.",
     details: "À la fois organisatrice et stratège, elle pilote la présence numérique d'Alkymya et optimise les outils de communication pour renforcer l'influence du studio. Sa mission est double : garantir une rigueur de pilotage irréprochable et apporter une agilité digitale indispensable pour partager avec les porteurs de projets leur transformation.",
     image: "https://res.cloudinary.com/dokzioyu4/image/upload/v1762252984/725879fe-afa3-4afa-a900-229030c002de_1_xoep2v.png",
-    socials: { instagram: "https://www.instagram.com/alkymya_leonie?igsh=YnRicG01NDBka3lx", linkedin: "https://www.linkedin.com/in/l%C3%A9onie-egesipe-96a283291/", mail: "leonie@alkymya.co" },
+    socials: { website: "https://leonieegesipe.netlify.app/", instagram: "https://www.instagram.com/alkymya_leonie?igsh=YnRicG01NDBka3lx", linkedin: "https://www.linkedin.com/in/l%C3%A9onie-egesipe-96a283291/", mail: "leonie@alkymya.co" },
     works: [
       { label: "Vidéo analyseur de photo", url: "https://res.cloudinary.com/dokzioyu4/video/upload/v1773761166/46b26247d1084cb39b354fe4c9842b29_aszzay_f48sjs.mov" },
       { label: "Vidéo analyseur de cv", url: "https://res.cloudinary.com/dokzioyu4/video/upload/v1773762096/c599dc6cd0ef4e6196a739c87b2cb773_gxn0lj.mov" },
@@ -299,7 +305,7 @@ const AlchimisteCard: React.FC<{ person: any, index: number, handleWorkClick: (e
                     Site officiel
                   </span>
                   <span className="text-xs font-bold font-heading line-clamp-1">
-                    {person.websiteLabel || "Objectif Alternance"}
+                    {person.websiteLabel || "Visiter le site"}
                   </span>
                 </div>
               </div>

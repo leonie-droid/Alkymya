@@ -59,6 +59,9 @@ export default function Footer() {
             <Link to="/mentions-legales" className="hover:text-accent transition-colors">
               Mentions Légales
             </Link>
+            <a href="/cohorte-fondatrice.html" className="hover:text-accent transition-colors">
+              Cohorte Fondatrice
+            </a>
             <button
               type="button"
               onClick={openCookiePreferencesModal}
