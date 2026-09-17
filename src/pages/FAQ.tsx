@@ -76,23 +76,43 @@ const faqCategories: FAQCategory[] = [
     items: [
       {
         question: "Quels types de formations propose Alkymya ?",
-        answer: "Alkymya propose une expertise complète pour transformer votre organisation avec l'IA, structurée autour de trois piliers : Explorer (formations sur-mesure), Transformer (prototypage et intégration de l'IA), et Partager (conseil stratégique et mentorat)."
+        answer: "Alkymya propose une expertise complète pour transformer votre organisation avec l'IA, structurée autour de trois piliers : Explorer (formations sur-mesure et acculturation), Transformer (prototypage rapide, agents IA et intégration no-code), et Partager (conseil stratégique, mentorat et transmission)."
       },
       {
-        question: "Qu'est-ce que l'atelier \"Ateliers d'Innovation IA\" ?",
-        answer: "Les Ateliers d'Innovation IA sont des sprints intensifs de 2 jours pour transformer vos idées en prototypes fonctionnels grâce à l'IA générative."
+        question: "Qu'est-ce que le programme \"Formation Core IA\" (Best Value) ?",
+        answer: "La Formation Core est notre programme complet de 14h réparties sur 4 demi-journées pour maîtriser la stack IA (prompt engineering avancé, studio graphique & branding, rédaction stratégique, synthèse décisionnelle et prototypage audiovisuel). Elle est certifiée Qualiopi via notre partenaire INATEC et finançable jusqu'à 100% par votre OPCO."
       },
       {
-        question: "En quoi consiste la formation \"L'IA pour les Pros\" ?",
-        answer: "\"L'IA pour les Pros\" est une formation 100% opérationnelle pour gagner en productivité avec les versions professionnelles des outils d'IA."
+        question: "En quoi consistent les options \"Agents IA\" et \"App No-Code\" ?",
+        answer: "Ce sont deux ateliers intensifs de 3h30 (500 € HT chacun) : l'Option A permet de concevoir et déployer 3 agents intelligents autonomes interconnectés à vos outils (Slack, Notion, CRM via Make/Zapier) ; l'Option B permet de concevoir une application web interne sur-mesure dopée aux API d'IA (Gemini/GPT) sans écrire de code."
+      },
+      {
+        question: "Qu'est-ce que l'offre \"New business\" (studio new business) ?",
+        answer: (
+          <div className="space-y-3">
+            <p>
+              Le programme <strong>New business</strong> est un accompagnement opérationnel de 6 mois réservé aux créateurs d'entreprise, solopreneurs et indépendants. Il permet de passer de l'idée à un écosystème digital autonome complet : site web en ligne, offres clarifiées, identité visuelle et plan d'acquisition.
+            </p>
+            <p>
+              Tarif de lancement : <strong>100 € / mois</strong> pour les 10 premières places (puis 200 € / mois). Ce parcours comprend du mentorat individuel avec Cyril Garnier et des ateliers collectifs hebdomadaires de studio new business.
+            </p>
+            <p className="text-sm bg-copper-orange/10 p-3 rounded-xl text-deep-blue font-medium">
+              * Note pratique : il convient de prévoir un portefeuille d'environ 50 € pour les abonnements aux outils d'IA utilisés durant le programme.
+            </p>
+          </div>
+        )
+      },
+      {
+        question: "Les formations Alkymya sont-elles finançables par un OPCO ?",
+        answer: "Oui ! Portée en partenariat avec l'école INATEC et disposant de la certification d'État Qualiopi, votre formation chez Alkymya est finançable jusqu'à 100% par votre OPCO, selon vos droits et votre budget de formation disponible."
+      },
+      {
+        question: "Quels établissements et entreprises font confiance à Alkymya ?",
+        answer: "Alkymya collabore avec des établissements prestigieux (HETIC, Ynov, IÉSEG, CFA Itis, Paris École de Management, etc.) et de nombreuses entreprises et institutions (SNCF, Fondation GRDF, Morning, Sealester, INATEC, Objectif Alternance)."
       },
       {
         question: "Qu'est-ce que le projet Métropolia ?",
-        answer: "Métropolia est un projet pédagogique et créatif sous la forme d'une dystopie cyberpunk. C'est une série narrative qui suit un personnage nommé LEONIE & LEONIA, explorant une dualité mystérieuse, inspirée par l'univers de Fritz Lang. Le projet est visible sur YouTube."
-      },
-      {
-        question: "Quels établissements font confiance à Alkymya ?",
-        answer: "Alkymya collabore avec les plus grandes écoles françaises (HEC Paris, ESCP, emlyon, IÉSEG, HETIC, etc.) et des entreprises innovantes."
+        answer: "Métropolia est un projet pédagogique et créatif sous la forme d'une dystopie cyberpunk. C'est une série narrative créée avec l'IA qui suit un personnage nommé LEONIE & LEONIA, explorant une dualité mystérieuse inspirée par l'univers de Fritz Lang, visible sur notre chaîne YouTube."
       }
     ]
   },

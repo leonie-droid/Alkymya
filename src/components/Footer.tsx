@@ -60,7 +60,7 @@ export default function Footer() {
               Mentions Légales
             </Link>
             <a href="/cohorte-fondatrice.html" className="hover:text-accent transition-colors">
-              Cohorte Fondatrice
+              New business
             </a>
             <button
               type="button"

@@ -27,7 +27,7 @@
 
 - [Accueil Alkymya](https://alkymya.co/): Présentation du studio d'innovation IA, vision, impact pédagogique et métriques de satisfaction.
 - [Ateliers & Formations IA](https://alkymya.co/ateliers): Catalogue complet d'ateliers pratiques : acculturation IA, prompt engineering avancé, création d'agents IA, éthique et conformité IA Act.
-- [Cohorte Fondatrice — Accompagnement Digital](https://alkymya.co/cohorte-fondatrice.html): Accompagnement opérationnel de 6 mois pour lancer votre site, clarifier votre offre et piloter votre présence digitale en toute autonomie (10 places tarif fondateur).
+- [New Business — Accompagnement Digital](https://alkymya.co/cohorte-fondatrice.html): Accompagnement opérationnel de 6 mois pour lancer votre site, clarifier votre offre et piloter votre présence digitale en toute autonomie (10 places tarif fondateur).
 - [Générateur IA Alkymya](https://alkymya.co/ia): Démonstrateurs interactifs, tests d'outils génératifs et cas d'usage pratiques de l'intelligence artificielle.
 - [Galerie des Œuvres Numériques](https://alkymya.co/oeuvres): Créations artistiques hybrides mêlant art visuel, photographie et IA générative (collaboration Cyril Garnier et Léonie Egesipe).
 - [Les Alchimistes](https://alkymya.co/alchimistes): Présentation des experts, parcours de Cyril Garnier, Léonie Egesipe et gouvernance du studio.

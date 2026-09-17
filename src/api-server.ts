@@ -205,7 +205,7 @@ export function createApiApp(): Express {
       const priceText = isFounder ? '100 € / mois (Tarif Fondateur)' : '200 € / mois (Tarif Standard)';
       const quotaStatusText = isFounder 
         ? `Candidature #${totalCount} sur 10 • Tarif Fondateur (100 €/mois)` 
-        : `Candidature #${totalCount} (Cohorte fondatrice complète) • Tarif Standard (200 €/mois)`;
+        : `Candidature #${totalCount} (Programme New business complet) • Tarif Standard (200 €/mois)`;
 
       if (!process.env.RESEND_API_KEY) {
         console.warn('RESEND_API_KEY non configuré - candidature enregistrée dans les logs et le fichier local');
@@ -223,7 +223,7 @@ export function createApiApp(): Express {
 
       const resendClient = getResend();
       const { data, error } = await resendClient.emails.send({
-        from: 'Alkymya Cohorte <onboarding@resend.dev>',
+        from: 'Alkymya New Business <onboarding@resend.dev>',
         to: ['cyril@alkymya.co'],
         subject: `[${quotaStatusText}] ${firstName} ${lastName} - ${activity || 'Nouveau projet'}`,
         replyTo: email,
@@ -232,7 +232,7 @@ export function createApiApp(): Express {
             <div style="background: linear-gradient(135deg, #1F4F6E 0%, #037971 100%); padding: 35px 30px; text-align: center;">
               <h1 style="color: #ffffff; margin: 0; font-size: 24px; font-weight: 800; letter-spacing: 2px;">ALKYMYA</h1>
               <div style="width: 40px; height: 3px; background-color: #c06721; margin: 12px auto;"></div>
-              <p style="color: #f1f5f9; margin: 0; font-size: 14px; font-weight: 600;">Candidature • Accompagnement Digital</p>
+              <p style="color: #f1f5f9; margin: 0; font-size: 14px; font-weight: 600;">Candidature • Accompagnement New Business</p>
               <div style="display: inline-block; margin-top: 10px; background-color: ${isFounder ? '#c06721' : '#1F4F6E'}; color: #ffffff; padding: 6px 14px; border-radius: 20px; font-size: 13px; font-weight: bold;">
                 ${quotaStatusText}
               </div>
@@ -243,7 +243,7 @@ export function createApiApp(): Express {
               <p style="font-size: 15px; margin-bottom: 25px;">
                 ${isFounder 
                   ? `Une nouvelle candidature éligible au <strong>Tarif Fondateur</strong> vient d'être déposée (Place ${totalCount} / 10).` 
-                  : `Les 10 places fondatrices étant désormais pourvues, cette candidature a été enregistrée au <strong>Tarif Standard (200 € / mois)</strong> pour la prochaine promotion.`
+                  : `Les 10 places fondatrices étant désormais pourvues, cette candidature a été enregistrée au <strong>Tarif Standard (200 € / mois)</strong> pour le programme New business.`
                 }
               </p>
               
@@ -267,7 +267,7 @@ export function createApiApp(): Express {
 
               ${isSoldOut ? `
               <div style="background-color: #fef3c7; border: 1px solid #f59e0b; padding: 15px 20px; border-radius: 8px; color: #92400e; font-size: 14px; margin-bottom: 20px;">
-                ⚠️ <strong>Alerte quota atteinte :</strong> Les 10 places de la cohorte fondatrice ont été atteintes (${totalCount} reçues). L'offre commerciale fondatrice est automatiquement clôturée et le tarif bascule à 200 € / mois sur le site.
+                ⚠️ <strong>Alerte quota atteinte :</strong> Les 10 places à tarif fondateur ont été atteintes (${totalCount} reçues). L'offre commerciale fondatrice est automatiquement clôturée et le tarif bascule à 200 € / mois sur le site.
               </div>
               ` : `
               <p style="font-size: 13px; color: #64748b;">Places fondatrices restantes : <strong>${remainingPlaces} sur 10</strong>.</p>
@@ -275,7 +275,7 @@ export function createApiApp(): Express {
             </div>
             
             <div style="background-color: #f1f5f9; padding: 20px 30px; text-align: center; font-size: 12px; color: #64748b;">
-              Alkymya.co • Système automatique de gestion des cohortes
+              Alkymya.co • Système automatique de gestion New business
             </div>
           </div>
         `,

@@ -21,7 +21,8 @@ import {
   Lightbulb,
   Layers,
   Sparkle,
-  PackageCheck
+  PackageCheck,
+  Wallet
 } from "lucide-react";
 import { motion, AnimatePresence } from 'motion/react';
 import { useState, useEffect } from "react";
@@ -101,23 +102,23 @@ const ateliers = [
     }
   },
   {
-    id: "cohorte-fondatrice",
-    title: "4. Cohorte Fondatrice : De l'idée à une présence digitale autonome",
+    id: "new-business",
+    title: "4. New business : De l'idée à une présence digitale autonome",
     subtitle: "Un accompagnement opérationnel de 6 mois pour lancer votre site, clarifier votre offre et créer une stratégie digitale que vous pilotez vous-même.",
     price: "100 € / mois",
     priceNote: "Tarif fondateur (10 places) · 6 mois",
     format: "Accompagnement opérationnel sur 6 mois (3 à 4h de travail personnel par semaine).",
     content: "Parcours complet : Cadrer (M1) · Concevoir (M2) · Construire (M3) · Publier (M4) · Diffuser (M5) · Convertir (M6).",
     deliverables: "Le Kit de Lancement : Site web complet publié, charte graphique opérationnelle, 3 fiches offres irrésistibles, modèle de pitch, compteurs analytics, boîte à outils gratuite et grille d'actions.",
-    included: "Mentorat opérationnel par Cyril Garnier, ateliers collectifs de cohorte, revues individuelles régulières et accès continu aux ressources.",
+    included: "Mentorat opérationnel par Cyril Garnier, ateliers collectifs de studio new business, revues individuelles régulières et accès continu aux ressources.",
     link: "/cohorte-fondatrice.html",
     linkText: "Déposer ma candidature (10 places)",
     icon: Rocket,
-    tag: "Nouveau • Cohorte Fondatrice",
+    tag: "Nouveau • New business",
     highlight: true,
     presentation: {
       tagline: "Le parcours d'accompagnement privilégié pour lancer votre écosystème digital sans jamais dépendre d'une agence.",
-      description: "Vous avez une expertise solide, une entreprise en création ou un projet innovant, mais vous ne savez pas comment le présenter en ligne de manière percutante ? La Cohorte Fondatrice réunit 10 porteurs de projets dans un format d'accompagnement hybride combinant mentorat individuel de haut vol par Cyril Garnier, émulation de groupe et ateliers d'application hebdomadaires. En 6 mois, vous passez de l'idée abstraite à un site web professionnel publié, une offre irrésistible et une stratégie d'acquisition claire.",
+      description: "Vous avez une expertise solide, une entreprise en création ou un projet innovant, mais vous ne savez pas comment le présenter en ligne de manière percutante ? Le programme New business réunit 10 créateurs d'entreprise et porteurs de projets dans un format d'accompagnement hybride combinant mentorat individuel de haut vol par Cyril Garnier, émulation de groupe et ateliers d'application hebdomadaires. En 6 mois, vous passez de l'idée abstraite à un site web professionnel publié, une offre irrésistible et une stratégie d'acquisition claire.",
       target: "Solopreneurs, consultants, créateurs d'entreprise, experts indépendants et professionnels en transition qui veulent une présence digitale de haut standing sans budget d'agence exorbitant.",
       keyPoints: [
         "Mois 1 — Cadrer : Définition de votre proposition de valeur unique et structuration de 3 offres commerciales irrésistibles",
@@ -127,8 +128,9 @@ const ateliers = [
         "Mois 5 — Diffuser : Stratégie de publication de contenus percutants et rituels de visibilité sur les canaux pertinents",
         "Mois 6 — Convertir : Optimisation du parcours client, mise en place des formulaires de captation et plan d'action d'acquisition sur 12 mois"
       ],
-      pedagogy: "Accompagnement intensif de 6 mois pour garantir une attention personnalisée de l'équipe Alkymya à chaque étape de votre progression.",
-      deliverablesDetailed: "Le 'Kit de Lancement' complet : votre site web en ligne, vos fiches offres finalisées, vos templates de communication et un tableau de bord de pilotage personnalisé."
+      pedagogy: "Accompagnement intensif de 6 mois pour garantir une attention personnalisée de l'équipe Alkymya à chaque étape de votre progression dans ce studio new business.",
+      deliverablesDetailed: "Le 'Kit de Lancement' complet : votre site web en ligne, vos fiches offres finalisées, vos templates de communication et un tableau de bord de pilotage personnalisé.",
+      toolBudgetNote: "À prévoir : néanmoins, il faut prévoir un portefeuille d'environ 50€ pour les outils d'IA nécessaires aux étapes pratiques."
     }
   }
 ];
@@ -276,7 +278,7 @@ export default function Ateliers() {
           
           <div className="relative z-10">
             <h2 className="text-3xl md:text-4xl font-heading font-black text-white mb-6">
-              Une formation d'excellence, 100% financée.
+              Une formation d'excellence, finançable.
             </h2>
             <p className="text-white/70 text-lg mb-12 max-w-2xl">
               Parce que la montée en compétences ne doit pas être un frein financier, nous avons mis en place un cadre rigoureux pour vous partager notre expertise :
@@ -307,7 +309,7 @@ export default function Ateliers() {
                 </div>
                 <h3 className="text-white font-black uppercase tracking-widest text-sm">Prise en charge OPCO</h3>
                 <p className="text-white/60 text-sm leading-relaxed">
-                  Grâce à ce cadre certifié, votre formation peut être prise en charge jusqu'à 100% par votre OPCO, selon votre budget de formation disponible.
+                  Grâce à ce cadre certifié, votre formation est finançable jusqu'à 100% par votre OPCO, selon votre budget de formation disponible.
                 </p>
               </div>
             </div>
@@ -316,6 +318,76 @@ export default function Ateliers() {
 
         {/* Modules Section */}
         <div className="mb-24">
+          {/* Bannière animée de promotion pour l'offre à 100€ */}
+          <motion.div
+            initial={{ opacity: 0, y: -15, scale: 0.98 }}
+            animate={{ opacity: 1, y: 0, scale: 1 }}
+            transition={{ duration: 0.5, ease: "easeOut" }}
+            className="mb-10"
+          >
+            <motion.div
+              animate={{ 
+                boxShadow: [
+                  "0 10px 30px -10px rgba(192, 103, 33, 0.2)",
+                  "0 20px 40px -10px rgba(192, 103, 33, 0.4)",
+                  "0 10px 30px -10px rgba(192, 103, 33, 0.2)"
+                ] 
+              }}
+              transition={{ repeat: Infinity, duration: 3, ease: "easeInOut" }}
+              className="relative overflow-hidden rounded-[2.5rem] bg-gradient-to-r from-deep-blue via-[#1F4F6E] to-copper-orange p-1"
+            >
+              <div className="bg-deep-blue/95 rounded-[2.4rem] p-6 md:p-8 flex flex-col md:flex-row items-center justify-between gap-6 backdrop-blur-sm">
+                <div className="flex items-center gap-5 text-center md:text-left">
+                  <motion.div
+                    animate={{ rotate: [0, -10, 10, -5, 5, 0], scale: [1, 1.1, 1] }}
+                    transition={{ repeat: Infinity, duration: 4, ease: "easeInOut" }}
+                    className="h-16 w-16 rounded-2xl bg-copper-orange text-white flex items-center justify-center flex-shrink-0 shadow-lg shadow-copper-orange/30 mx-auto md:mx-0"
+                  >
+                    <Rocket className="h-8 w-8" />
+                  </motion.div>
+                  <div>
+                    <div className="flex flex-wrap items-center justify-center md:justify-start gap-2 mb-2">
+                      <span className="px-3 py-1 rounded-full bg-copper-orange text-white text-[11px] font-black uppercase tracking-wider shadow-sm flex items-center gap-1">
+                        <Sparkles className="h-3 w-3" /> Offre Spéciale Lancement
+                      </span>
+                      <span className="px-3 py-1 rounded-full bg-white/10 text-white text-[11px] font-bold">
+                        {cohorteStatus?.isSoldOut ? "Tarif Standard : 200 € / mois" : `${cohorteStatus?.remainingPlaces ?? 10} places disponibles à 100 € / mois`}
+                      </span>
+                    </div>
+                    <h3 className="text-xl md:text-2xl font-heading font-black text-white">
+                      New business : Lancez votre activité avec notre accompagnement à 100 € / mois
+                    </h3>
+                    <p className="text-white/75 text-sm font-medium mt-1">
+                      Programme opérationnel de 6 mois pour créateurs d'entreprise. Cliquez pour accéder directement à l'offre et postuler.
+                    </p>
+                  </div>
+                </div>
+
+                <div className="flex-shrink-0 flex items-center gap-3 w-full md:w-auto">
+                  <motion.a
+                    href="#atelier-new-business"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      scrollToAndOpenAtelier('new-business');
+                    }}
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                    className="w-full md:w-auto px-8 py-4 rounded-full bg-copper-orange text-white font-black text-xs uppercase tracking-widest hover:bg-white hover:text-deep-blue transition-all shadow-xl flex items-center justify-center gap-2 cursor-pointer"
+                  >
+                    <span>Voir l'offre à 100 €</span>
+                    <ArrowRight className="h-4 w-4" />
+                  </motion.a>
+                  <a
+                    href="/cohorte-fondatrice.html"
+                    className="hidden sm:inline-flex px-6 py-4 rounded-full bg-white/10 hover:bg-white/20 text-white font-bold text-xs uppercase tracking-wider transition-all items-center justify-center text-center"
+                  >
+                    Candidature directe
+                  </a>
+                </div>
+              </div>
+            </motion.div>
+          </motion.div>
+
           <div className="text-center mb-10">
             <h2 className="text-4xl font-heading font-black text-deep-blue mb-4">Parcours de Formation</h2>
             <p className="text-muted-foreground font-medium max-w-2xl mx-auto mb-6">
@@ -365,11 +437,11 @@ export default function Ateliers() {
                 : atelier.price;
 
               const displayPriceNote = isCohorte
-                ? (isSoldOut ? "Tarif standard · 6 mois (Cohorte fondatrice complète)" : `Tarif fondateur (${remaining} place${remaining > 1 ? 's' : ''} restante${remaining > 1 ? 's' : ''}) · 6 mois`)
+                ? (isSoldOut ? "Tarif standard · 6 mois (New business complet)" : `Tarif fondateur (${remaining} place${remaining > 1 ? 's' : ''} restante${remaining > 1 ? 's' : ''}) · 6 mois`)
                 : atelier.priceNote || "Tarif HT";
 
               const displayTag = isCohorte
-                ? (isSoldOut ? "Programme Continu • Tarif Standard" : "Nouveau • Cohorte Fondatrice")
+                ? (isSoldOut ? "Programme Continu • Tarif Standard" : "Nouveau • New business")
                 : atelier.tag;
 
               const displayBadge = isCohorte
@@ -461,6 +533,12 @@ export default function Ateliers() {
                             <p className="text-deep-blue/80 font-medium leading-relaxed text-xs md:text-sm">
                               {atelier.included || atelier.deliverables}
                             </p>
+                            {atelier.presentation.toolBudgetNote && (
+                              <div className="mt-3 pt-3 border-t border-deep-blue/10 flex items-center gap-2 text-copper-orange text-xs font-semibold">
+                                <Wallet className="h-3.5 w-3.5 flex-shrink-0" />
+                                <span>* Prévoir un portefeuille de ~50 € pour les outils d'IA</span>
+                              </div>
+                            )}
                           </div>
                           {atelier.link && (
                             <div className="mt-4 pt-4 border-t border-deep-blue/10" onClick={(e) => e.stopPropagation()}>
@@ -613,6 +691,18 @@ export default function Ateliers() {
                                 </div>
                               </div>
                             </div>
+
+                            {/* Note budget outils IA le cas échéant */}
+                            {atelier.presentation.toolBudgetNote && (
+                              <div className="bg-amber-500/10 border border-amber-500/30 p-4 md:p-5 rounded-2xl flex items-center gap-3 text-deep-blue">
+                                <div className="h-8 w-8 rounded-xl bg-amber-500/20 text-amber-700 flex items-center justify-center flex-shrink-0 font-black">
+                                  *
+                                </div>
+                                <p className="text-xs md:text-sm font-medium text-deep-blue/90">
+                                  <span className="font-bold text-deep-blue">Note pratique :</span> Néanmoins, il faut prévoir un portefeuille d'environ 50€ pour les abonnements et crédits aux outils d'IA utilisés durant le programme.
+                                </p>
+                              </div>
+                            )}
 
                             {/* Barre d'action finale */}
                             <div className="p-6 md:p-8 bg-deep-blue text-white rounded-3xl flex flex-col sm:flex-row items-center justify-between gap-6">
