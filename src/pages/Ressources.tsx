@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { cn } from '../../lib/utils';
-import { Volume2, VolumeX, Maximize2, ExternalLink } from 'lucide-react';
+import { Volume2, VolumeX, Maximize2, ExternalLink, Headphones, Play, FileText } from 'lucide-react';
 
 const categories = ["Toutes", "Nos Analyseurs", "Nos études", "Business Game", "Agents", "Alkymya x Inatec", "Nos sites"];
 
@@ -40,6 +40,24 @@ const resources = [
     url: "https://res.cloudinary.com/dokzioyu4/video/upload/v1776374160/bac00848173641fd882d43dc3b970835_jtyspz.mov",
     appUrl: "https://analyseurdememoire.alkymya.co/",
     type: "video"
+  },
+  {
+    id: 17,
+    title: "La Doctrine IAG",
+    category: "Nos études",
+    description: "Dialogue sur la Stratégie Cachée de l'Ère Trump. Analyse prospective et décryptage approfondi des enjeux géopolitiques, technologiques et industriels de l'intelligence artificielle générale.",
+    url: "https://res.cloudinary.com/dyooqwryq/image/upload/v1762315350/La_Doctrine_IAG___Dialogue_sur_la_Strat%C3%A9gie_Cach%C3%A9e_de_l_%C3%88re_Trump_zwxlqi.pdf",
+    audioUrl: "https://res.cloudinary.com/dyooqwryq/video/upload/v1762315917/merged_audio.19bea92d_cunpbi.mp3",
+    type: "pdf"
+  },
+  {
+    id: 18,
+    title: "Podcast • La Doctrine IAG",
+    category: "Nos études",
+    description: "Dialogue et synthèse audio immersive : explorez en profondeur la thèse, les stratégies cachées et les implications de la Doctrine IAG sous l'ère Trump (5 min 43).",
+    url: "https://res.cloudinary.com/dyooqwryq/video/upload/v1762315917/merged_audio.19bea92d_cunpbi.mp3",
+    pdfUrl: "https://res.cloudinary.com/dyooqwryq/image/upload/v1762315350/La_Doctrine_IAG___Dialogue_sur_la_Strat%C3%A9gie_Cach%C3%A9e_de_l_%C3%88re_Trump_zwxlqi.pdf",
+    type: "audio"
   },
   {
     id: 6,
@@ -211,7 +229,7 @@ export default function Ressources() {
               exit={{ scale: 0.95, opacity: 0 }}
               className={cn(
                 "relative w-full max-w-4xl h-auto max-h-[90vh] flex flex-col items-center justify-center",
-                selectedResource.type === "video" ? "aspect-video md:aspect-[9/16] md:w-[450px]" : "h-[85vh] md:h-[90vh] max-w-6xl"
+                selectedResource.type === "video" ? "aspect-video md:aspect-[9/16] md:w-[450px]" : selectedResource.type === "audio" ? "max-w-xl" : "h-[85vh] md:h-[90vh] max-w-6xl"
               )}
               onClick={(e) => e.stopPropagation()}
             >
@@ -231,6 +249,38 @@ export default function Ressources() {
                     autoPlay
                     playsInline
                   />
+                ) : selectedResource.type === "audio" ? (
+                  <div className="p-8 md:p-12 bg-gradient-to-br from-[#0F1E36] via-deep-blue to-black text-white text-center flex flex-col items-center justify-center">
+                    <div className="w-20 h-20 md:w-24 md:h-24 rounded-full bg-copper-orange/20 border border-copper-orange/40 flex items-center justify-center mb-6 shadow-xl animate-pulse">
+                      <Headphones className="w-10 h-10 md:w-12 md:h-12 text-copper-orange" />
+                    </div>
+                    <span className="text-xs font-black uppercase tracking-[0.25em] text-copper-orange mb-2">
+                      Podcast & Dialogue Audio
+                    </span>
+                    <h3 className="text-2xl md:text-3xl font-heading font-black mb-3 text-white max-w-lg">
+                      {selectedResource.title || "La Doctrine IAG"}
+                    </h3>
+                    <p className="text-sm text-white/75 max-w-md mb-6 leading-relaxed">
+                      Dialogue sur la Stratégie Cachée de l'Ère Trump — Décryptage audio immersif des enjeux géopolitiques et technologiques de l'IAG.
+                    </p>
+                    <audio
+                      src={selectedResource.url}
+                      className="w-full max-w-md h-12 rounded-full mb-6"
+                      controls
+                      autoPlay
+                    />
+                    {selectedResource.appUrl && (
+                      <a
+                        href={selectedResource.appUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-copper-orange text-white text-xs font-bold uppercase tracking-wider hover:bg-white hover:text-deep-blue transition-colors shadow-lg"
+                      >
+                        <FileText className="w-4 h-4" />
+                        Consulter l'étude PDF associée
+                      </a>
+                    )}
+                  </div>
                 ) : (
                   <iframe
                     src={selectedResource.url}
@@ -337,6 +387,13 @@ export default function Ressources() {
                       window.open(item.url, '_blank');
                     } else if (item.type === 'site') {
                       window.open(item.appUrl || item.url, '_blank');
+                    } else if (item.type === 'audio') {
+                      setSelectedResource({
+                        url: item.url,
+                        type: 'audio',
+                        title: item.title,
+                        appUrl: (item as any).pdfUrl
+                      });
                     } else {
                       setSelectedResource({ 
                         url: item.url, 
@@ -369,6 +426,24 @@ export default function Ressources() {
                       </div>
                       <span className="text-white text-3xl font-heading font-black mb-3 relative z-10 block leading-tight">{item.title}</span>
                       <span className="text-accent text-[10px] font-black uppercase tracking-[0.25em] relative z-10">Lancer l'étude (.pdf) →</span>
+                      {'audioUrl' in item && (item as any).audioUrl && (
+                        <span className="inline-flex items-center gap-1.5 mt-4 text-[10px] font-black uppercase tracking-wider text-copper-orange bg-copper-orange/20 px-3 py-1 rounded-full border border-copper-orange/30 relative z-10 shadow-sm">
+                          <Headphones className="w-3.5 h-3.5" /> Audio / Podcast inclus
+                        </span>
+                      )}
+                    </div>
+                  ) : item.type === 'audio' ? (
+                    <div className="w-full h-full bg-gradient-to-br from-deep-blue via-[#0d1c31] to-black flex flex-col items-center justify-center p-8 text-center relative overflow-hidden">
+                      <div className="absolute top-0 right-0 w-48 h-48 bg-copper-orange/25 blur-[100px] -mr-24 -mt-24 group-hover:bg-copper-orange/45 transition-colors" />
+                      <div className="w-20 h-20 rounded-2xl bg-copper-orange/25 border border-copper-orange/30 flex items-center justify-center mb-6 relative z-10 transition-transform duration-500 group-hover:scale-110 shadow-lg">
+                        <Headphones className="w-10 h-10 text-copper-orange" />
+                      </div>
+                      <span className="text-copper-orange text-[10px] font-black uppercase tracking-[0.25em] mb-2 relative z-10">Podcast • Dialogue Audio</span>
+                      <span className="text-white text-2xl md:text-3xl font-heading font-black mb-4 relative z-10 block leading-tight">{item.title}</span>
+                      <span className="inline-flex items-center gap-2 text-white bg-copper-orange px-4 py-2 rounded-full text-xs font-bold uppercase tracking-wider relative z-10 shadow-md group-hover:bg-white group-hover:text-deep-blue transition-colors">
+                        <Play className="w-3.5 h-3.5 fill-current" />
+                        Écouter le podcast
+                      </span>
                     </div>
                   ) : item.type === 'app' ? (
                     <div className="w-full h-full bg-deep-blue flex flex-col items-center justify-center p-8 text-center">
@@ -476,28 +551,77 @@ export default function Ressources() {
                       </div>
                     )}
                     {item.type === 'pdf' ? (
-                      <a 
-                        href={item.url} 
-                        target="_blank" 
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center text-sm font-black text-copper-orange hover:text-deep-blue transition-colors group/link"
-                      >
-                        Télécharger le rapport (PDF)
-                        <svg 
-                          xmlns="http://www.w3.org/2000/svg" 
-                          width="16" 
-                          height="16" 
-                          viewBox="0 0 24 24" 
-                          fill="none" 
-                          stroke="currentColor" 
-                          strokeWidth="3" 
-                          strokeLinecap="round" 
-                          strokeLinejoin="round" 
-                          className="ml-2 transition-transform group-hover/link:translate-x-1"
+                      <div className="space-y-3">
+                        <a 
+                          href={item.url} 
+                          target="_blank" 
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center text-sm font-black text-copper-orange hover:text-deep-blue transition-colors group/link"
                         >
-                          <path d="M5 12h14"/><path d="m12 5 7 7-7 7"/>
-                        </svg>
-                      </a>
+                          Télécharger le rapport (PDF)
+                          <svg 
+                            xmlns="http://www.w3.org/2000/svg" 
+                            width="16" 
+                            height="16" 
+                            viewBox="0 0 24 24" 
+                            fill="none" 
+                            stroke="currentColor" 
+                            strokeWidth="3" 
+                            strokeLinecap="round" 
+                            strokeLinejoin="round" 
+                            className="ml-2 transition-transform group-hover/link:translate-x-1"
+                          >
+                            <path d="M5 12h14"/><path d="m12 5 7 7-7 7"/>
+                          </svg>
+                        </a>
+                        {'audioUrl' in item && (item as any).audioUrl && (
+                          <div className="pt-2 border-t border-deep-blue/10" onClick={(e) => e.stopPropagation()}>
+                            <div className="flex items-center justify-between mb-1.5">
+                              <span className="text-[11px] font-black uppercase tracking-wider text-copper-orange flex items-center gap-1.5">
+                                <Headphones className="w-3.5 h-3.5" />
+                                Dialogue audio (Podcast)
+                              </span>
+                              <span className="text-[10px] text-muted-foreground font-semibold">5 min 43</span>
+                            </div>
+                            <audio 
+                              controls 
+                              src={(item as any).audioUrl} 
+                              className="w-full h-9 rounded-xl bg-slate-100/90" 
+                              preload="none"
+                            />
+                          </div>
+                        )}
+                      </div>
+                    ) : item.type === 'audio' ? (
+                      <div className="space-y-3">
+                        <div className="pt-1" onClick={(e) => e.stopPropagation()}>
+                          <div className="flex items-center justify-between mb-1.5">
+                            <span className="text-[11px] font-black uppercase tracking-wider text-copper-orange flex items-center gap-1.5">
+                              <Headphones className="w-3.5 h-3.5" />
+                              Lecteur audio (Podcast)
+                            </span>
+                            <span className="text-[10px] text-muted-foreground font-semibold">5 min 43</span>
+                          </div>
+                          <audio 
+                            controls 
+                            src={item.url} 
+                            className="w-full h-9 rounded-xl bg-slate-100/90" 
+                            preload="none"
+                          />
+                        </div>
+                        {'pdfUrl' in item && (item as any).pdfUrl && (
+                          <a 
+                            href={(item as any).pdfUrl} 
+                            target="_blank" 
+                            rel="noopener noreferrer"
+                            className="inline-flex items-center text-sm font-black text-copper-orange hover:text-deep-blue transition-colors group/link pt-1"
+                            onClick={(e) => e.stopPropagation()}
+                          >
+                            Consulter l'étude PDF associée
+                            <ExternalLink className="w-4 h-4 ml-2 transition-transform group-hover/link:translate-x-1" />
+                          </a>
+                        )}
+                      </div>
                     ) : item.type === 'site' ? (
                       <a 
                         href={item.appUrl || item.url} 
