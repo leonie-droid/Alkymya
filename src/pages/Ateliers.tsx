@@ -110,7 +110,7 @@ const ateliers = [
     format: "Accompagnement opérationnel sur 6 mois (3 à 4h de travail personnel par semaine).",
     content: "Parcours complet : Cadrer (M1) · Concevoir (M2) · Construire (M3) · Publier (M4) · Diffuser (M5) · Convertir (M6).",
     deliverables: "Le Kit de Lancement : Site web complet publié, charte graphique opérationnelle, 3 fiches offres irrésistibles, modèle de pitch, compteurs analytics, boîte à outils gratuite et grille d'actions.",
-    included: "Mentorat opérationnel par Cyril Garnier, ateliers collectifs de studio new business, revues individuelles régulières et accès continu aux ressources.",
+    included: "Mentorat opérationnel par Cyril Garnier & Léonie Egesipe, ateliers collectifs de studio new business, revues individuelles régulières et accès continu aux ressources.",
     link: "/cohorte-fondatrice.html",
     linkText: "Déposer ma candidature (10 places)",
     icon: Rocket,
@@ -118,7 +118,7 @@ const ateliers = [
     highlight: true,
     presentation: {
       tagline: "Le parcours d'accompagnement privilégié pour lancer votre écosystème digital sans jamais dépendre d'une agence.",
-      description: "Vous avez une expertise solide, une entreprise en création ou un projet innovant, mais vous ne savez pas comment le présenter en ligne de manière percutante ? Le programme New business réunit 10 créateurs d'entreprise et porteurs de projets dans un format d'accompagnement hybride combinant mentorat individuel de haut vol par Cyril Garnier, émulation de groupe et ateliers d'application hebdomadaires. En 6 mois, vous passez de l'idée abstraite à un site web professionnel publié, une offre irrésistible et une stratégie d'acquisition claire.",
+      description: "Vous avez une expertise solide, une entreprise en création ou un projet innovant, mais vous ne savez pas comment le présenter en ligne de manière percutante ? Le programme New business réunit 10 créateurs d'entreprise et porteurs de projets dans un format d'accompagnement hybride combinant mentorat individuel de haut vol par Cyril Garnier et Léonie Egesipe, émulation de groupe et ateliers d'application hebdomadaires. En 6 mois, vous passez de l'idée abstraite à un site web professionnel publié, une offre irrésistible et une stratégie d'acquisition claire.",
       target: "Solopreneurs, consultants, créateurs d'entreprise, experts indépendants et professionnels en transition qui veulent une présence digitale de haut standing sans budget d'agence exorbitant.",
       keyPoints: [
         "Mois 1 — Cadrer : Définition de votre proposition de valeur unique et structuration de 3 offres commerciales irrésistibles",
