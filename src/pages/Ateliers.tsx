@@ -103,33 +103,33 @@ const ateliers = [
   },
   {
     id: "new-business",
-    title: "4. New business : De l'idée à une présence digitale autonome",
-    subtitle: "Un accompagnement opérationnel de 6 mois pour lancer votre site, clarifier votre offre et créer une stratégie digitale que vous pilotez vous-même.",
-    price: "100 € / mois",
-    priceNote: "Tarif fondateur (10 places) · 6 mois",
+    title: "4. New business MVP : De l'idée à la validation client",
+    subtitle: "L'accompagnement opérationnel pour construire votre MVP, cibler vos clients idéaux, tester la traction avant d'investir et décider avec lucidité : Continuer, Pivoter ou Accélérer.",
+    price: "200 € / mois",
+    priceNote: "Programme intensif · 6 mois",
     format: "Accompagnement opérationnel sur 6 mois (3 à 4h de travail personnel par semaine).",
-    content: "Parcours complet : Cadrer (M1) · Concevoir (M2) · Construire (M3) · Publier (M4) · Diffuser (M5) · Convertir (M6).",
-    deliverables: "Le Kit de Lancement : Site web complet publié, charte graphique opérationnelle, 3 fiches offres irrésistibles, modèle de pitch, compteurs analytics, boîte à outils gratuite et grille d'actions.",
-    included: "Mentorat opérationnel par Cyril Garnier & Léonie Egesipe, ateliers collectifs de studio new business, revues individuelles régulières et accès continu aux ressources.",
+    content: "Méthodologie MVP en 6 étapes : Cadrer l'ICP (M1) · Proposition de valeur & Arbitrage (M2) · Construction du MVP (M3) · Pricing & Routine entrepreneuriale (M4) · Pitch partenaires & investisseurs (M5) · Décision data-driven Continuer / Pivoter / Accélérer (M6).",
+    deliverables: "Le Kit MVP Complet : Fiche Profil ICP & Habitudes de dépenses, MVP opérationnel déployé, Grille de pricing testée, Pitch Deck investisseurs & partenaires, et Matrice décisionnelle Continuer / Pivoter / Accélérer.",
+    included: "Mentorat opérationnel par Cyril Garnier & Léonie Egesipe, ateliers collectifs de studio New business MVP, revues individuelles régulières et accès continu aux ressources.",
     link: "/cohorte-fondatrice.html",
-    linkText: "Déposer ma candidature (10 places)",
+    linkText: "Déposer ma candidature",
     icon: Rocket,
-    tag: "Nouveau • New business",
+    tag: "Nouveau • New business MVP",
     highlight: true,
     presentation: {
-      tagline: "Le parcours d'accompagnement privilégié pour lancer votre écosystème digital sans jamais dépendre d'une agence.",
-      description: "Vous avez une expertise solide, une entreprise en création ou un projet innovant, mais vous ne savez pas comment le présenter en ligne de manière percutante ? Le programme New business réunit 10 créateurs d'entreprise et porteurs de projets dans un format d'accompagnement hybride combinant mentorat individuel de haut vol par Cyril Garnier et Léonie Egesipe, émulation de groupe et ateliers d'application hebdomadaires. En 6 mois, vous passez de l'idée abstraite à un site web professionnel publié, une offre irrésistible et une stratégie d'acquisition claire.",
-      target: "Solopreneurs, consultants, créateurs d'entreprise, experts indépendants et professionnels en transition qui veulent une présence digitale de haut standing sans budget d'agence exorbitant.",
+      tagline: "Testez votre offre sur le terrain avec de vrais clients avant d'engager des investissements lourds.",
+      description: "Vous avez une idée d'entreprise, une nouvelle offre ou un projet innovant ? Le plus grand danger est de passer des mois dans votre coin à concevoir un produit sans savoir si un marché existe. Le programme New business MVP accompagne les porteurs de projets dans un format d'accompagnement hybride combinant le mentorat stratégique et opérationnel de Cyril Garnier et Léonie Egesipe. Vous apprenez à définir avec précision votre profil client idéal (ICP), analyser ses habitudes de dépenses actuelles, distinguer l'essentiel du superflu pour bâtir votre produit minimum viable (MVP), instaurer une routine entrepreneuriale rigoureuse, pitcher avec force auprès d'investisseurs ou partenaires, et piloter vos décisions stratégiques grâce aux données du marché : continuer, pivoter ou accélérer.",
+      target: "Porteurs de projets, créateurs d'entreprise, consultants, solopreneurs et indépendants souhaitant confronter leur offre à de vrais clients, tester la viabilité commerciale de leur concept et minimiser les risques financiers avant d'investir.",
       keyPoints: [
-        "Mois 1 — Cadrer : Définition de votre proposition de valeur unique et structuration de 3 offres commerciales irrésistibles",
-        "Mois 2 — Concevoir : Identité visuelle, charte graphique, ton de marque et rédaction des textes fondateurs avec l'appui de l'IA",
-        "Mois 3 — Construire : Assemblage et personnalisation de votre site web grâce aux outils no-code modernes sans friction technique",
-        "Mois 4 — Publier : Mise en ligne officielle, nom de domaine, conformité RGPD, sécurisation et branchement des outils de mesure d'audience",
-        "Mois 5 — Diffuser : Stratégie de publication de contenus percutants et rituels de visibilité sur les canaux pertinents",
-        "Mois 6 — Convertir : Optimisation du parcours client, mise en place des formulaires de captation et plan d'action d'acquisition sur 12 mois"
+        "Mois 1 — Cadrer le Marché & l'ICP : Définition chirurgicale du profil client idéal (ICP), cartographie des alternatives existantes et analyse détaillée des habitudes de dépenses actuelles du marché pour résoudre ce problème.",
+        "Mois 2 — Proposition de Valeur & Arbitrage : Pourquoi vous choisir ? Élagage impitoyable de l'offre : distinguer le cœur d'usage indispensable du superflu pour bâtir un MVP ultra-focalisé et percutant.",
+        "Mois 3 — Construction du MVP Opérationnel : Assemblage rapide de votre premier produit ou service testable et déploiement de votre présence digitale sans friction technique ni coûts superflus.",
+        "Mois 4 — Tarification & Routine Entrepreneuriale : Modélisation tarifaire optimale, tests d'acceptabilité prix et structuration de vos rituels hebdomadaires de travail et de pilotage fondateur.",
+        "Mois 5 — Pitch Partenaires & Investisseurs : Construction d'un pitch deck percutant et argumentaire commercial solidement appuyé sur vos premiers retours utilisateurs et données de traction concrètes.",
+        "Mois 6 — Décision Data-Driven & Demo Day : Analyse des métriques d'usage réelles et activation du cadre décisionnel stratégique : Continuer, Pivoter ou Accélérer pour pérenniser votre activité."
       ],
-      pedagogy: "Accompagnement intensif de 6 mois pour garantir une attention personnalisée de l'équipe Alkymya à chaque étape de votre progression dans ce studio new business.",
-      deliverablesDetailed: "Le 'Kit de Lancement' complet : votre site web en ligne, vos fiches offres finalisées, vos templates de communication et un tableau de bord de pilotage personnalisé.",
+      pedagogy: "Accompagnement intensif de 6 mois en binôme avec Cyril Garnier et Léonie Egesipe. Alternance de mentorat individuel, d'ateliers de confrontation terrain, de revues de livrables et de co-développement entre pairs.",
+      deliverablesDetailed: "Le Pack New Business MVP : Cartographie ICP & Habitudes de dépenses, MVP opérationnel en ligne, Grille de tarification testée, Pitch deck partenaires & investisseurs, et Matrice d'arbitrage 'Continuer, Pivoter, Accélérer'.",
       toolBudgetNote: "À prévoir : néanmoins, il faut prévoir un portefeuille d'environ 50€ pour les outils d'IA nécessaires aux étapes pratiques."
     }
   }
@@ -318,7 +318,7 @@ export default function Ateliers() {
 
         {/* Modules Section */}
         <div className="mb-24">
-          {/* Bannière animée de promotion pour l'offre à 100€ */}
+          {/* Bannière animée de promotion pour l'accompagnement New Business MVP */}
           <motion.div
             initial={{ opacity: 0, y: -15, scale: 0.98 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
@@ -348,17 +348,17 @@ export default function Ateliers() {
                   <div>
                     <div className="flex flex-wrap items-center justify-center md:justify-start gap-2 mb-2">
                       <span className="px-3 py-1 rounded-full bg-copper-orange text-white text-[11px] font-black uppercase tracking-wider shadow-sm flex items-center gap-1">
-                        <Sparkles className="h-3 w-3" /> Offre Spéciale Lancement
+                        <Sparkles className="h-3 w-3" /> Programme New Business MVP
                       </span>
                       <span className="px-3 py-1 rounded-full bg-white/10 text-white text-[11px] font-bold">
-                        {cohorteStatus?.isSoldOut ? "Tarif Standard : 200 € / mois" : `${cohorteStatus?.remainingPlaces ?? 10} places disponibles à 100 € / mois`}
+                        Tarif : 200 € / mois · 6 mois
                       </span>
                     </div>
                     <h3 className="text-xl md:text-2xl font-heading font-black text-white">
-                      New business : Lancez votre activité avec notre accompagnement à 100 € / mois
+                      New business MVP : Validez votre offre auprès de vrais clients avant d'investir
                     </h3>
                     <p className="text-white/75 text-sm font-medium mt-1">
-                      Programme opérationnel de 6 mois pour créateurs d'entreprise. Cliquez pour accéder directement à l'offre et postuler.
+                      Programme opérationnel de 6 mois à 200 € / mois guidé par Cyril Garnier & Léonie Egesipe pour tester l'ICP, concevoir votre MVP et décider : Continuer, Pivoter ou Accélérer.
                     </p>
                   </div>
                 </div>
@@ -374,7 +374,7 @@ export default function Ateliers() {
                     whileTap={{ scale: 0.95 }}
                     className="w-full md:w-auto px-8 py-4 rounded-full bg-copper-orange text-white font-black text-xs uppercase tracking-widest hover:bg-white hover:text-deep-blue transition-all shadow-xl flex items-center justify-center gap-2 cursor-pointer"
                   >
-                    <span>Voir l'offre à 100 €</span>
+                    <span>Voir l'offre (200 €)</span>
                     <ArrowRight className="h-4 w-4" />
                   </motion.a>
                   <a
@@ -428,28 +428,24 @@ export default function Ateliers() {
           <div className="grid grid-cols-1 gap-12">
             {ateliers.map((atelier, index) => {
               const isCohorte = atelier.highlight;
-              const isSoldOut = isCohorte && cohorteStatus?.isSoldOut;
-              const remaining = cohorteStatus?.remainingPlaces ?? 10;
               const isExpanded = expandedAtelierId === atelier.id;
               
               const displayPrice = isCohorte 
-                ? (isSoldOut ? "200 € / mois" : "100 € / mois")
+                ? "200 € / mois"
                 : atelier.price;
 
               const displayPriceNote = isCohorte
-                ? (isSoldOut ? "Tarif standard · 6 mois (New business complet)" : `Tarif fondateur (${remaining} place${remaining > 1 ? 's' : ''} restante${remaining > 1 ? 's' : ''}) · 6 mois`)
+                ? "Programme complet · 6 mois"
                 : atelier.priceNote || "Tarif HT";
 
-              const displayTag = isCohorte
-                ? (isSoldOut ? "Programme Continu • Tarif Standard" : "Nouveau • New business")
-                : atelier.tag;
+              const displayTag = atelier.tag;
 
               const displayBadge = isCohorte
-                ? (isSoldOut ? "10/10 Attribuées" : `${remaining} place${remaining > 1 ? 's' : ''} restante${remaining > 1 ? 's' : ''}`)
-                : "10 places";
+                ? "Accompagnement 6 mois"
+                : "Formation certifiée";
 
               const displayLinkText = isCohorte
-                ? (isSoldOut ? "Déposer ma candidature (Tarif standard 200€/mois)" : `Déposer ma candidature (${remaining} place${remaining > 1 ? 's' : ''} restante${remaining > 1 ? 's' : ''})`)
+                ? "Déposer ma candidature (200 € / mois)"
                 : (atelier.linkText || "Découvrir le programme");
 
               return (
@@ -487,7 +483,7 @@ export default function Ateliers() {
                               {displayTag}
                             </span>
                             {atelier.highlight && (
-                              <span className={`inline-flex items-center gap-1 text-[10px] font-black uppercase tracking-wider px-2.5 py-0.5 rounded-full ${isSoldOut ? 'bg-slate-500 text-white' : 'bg-copper-orange text-white'}`}>
+                              <span className="inline-flex items-center gap-1 text-[10px] font-black uppercase tracking-wider px-2.5 py-0.5 rounded-full bg-copper-orange text-white">
                                 <Sparkles className="h-3 w-3" /> {displayBadge}
                               </span>
                             )}

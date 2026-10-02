@@ -87,17 +87,27 @@ const faqCategories: FAQCategory[] = [
         answer: "Ce sont deux ateliers intensifs de 3h30 (500 € HT chacun) : l'Option A permet de concevoir et déployer 3 agents intelligents autonomes interconnectés à vos outils (Slack, Notion, CRM via Make/Zapier) ; l'Option B permet de concevoir une application web interne sur-mesure dopée aux API d'IA (Gemini/GPT) sans écrire de code."
       },
       {
-        question: "Qu'est-ce que l'offre \"New business\" (studio new business) ?",
+        question: "Qu'est-ce que l'offre \"New business MVP\" (studio new business) ?",
         answer: (
           <div className="space-y-3">
             <p>
-              Le programme <strong>New business</strong> est un accompagnement opérationnel de 6 mois réservé aux créateurs d'entreprise, solopreneurs et indépendants. Il permet de passer de l'idée à un écosystème digital autonome complet : site web en ligne, offres clarifiées, identité visuelle et plan d'acquisition.
+              Le programme <strong>New business MVP</strong> est un accompagnement opérationnel de 6 mois conçu pour permettre aux porteurs de projets, créateurs d'entreprise et indépendants de tester et valider leur offre auprès de vrais clients avant d'engager des investissements lourds.
             </p>
             <p>
-              Tarif de lancement : <strong>100 € / mois</strong> pour les 10 premières places (puis 200 € / mois). Ce parcours comprend du mentorat individuel avec Cyril Garnier et des ateliers collectifs hebdomadaires de studio new business.
+              Guidé en binôme par <strong>Cyril Garnier</strong> et <strong>Léonie Egesipe</strong>, ce parcours pas à pas vous permet de :
+            </p>
+            <ul className="list-disc pl-5 space-y-1 text-sm text-deep-blue/85">
+              <li>Définir avec précision votre <strong>profil client idéal (ICP)</strong> et ses habitudes réelles de dépenses.</li>
+              <li>Distinguer l'essentiel du superflu pour bâtir un <strong>MVP (produit minimum viable)</strong> percutant.</li>
+              <li>Mettre en place un <strong>pricing optimal</strong> et structurer votre <strong>routine entrepreneuriale</strong>.</li>
+              <li>Construire un <strong>pitch convaincant pour investisseurs et partenaires</strong> fondé sur des retours terrain concrets.</li>
+              <li>Piloter vos décisions stratégiques grâce au cadre <strong>« Continuer, Pivoter ou Accélérer »</strong>.</li>
+            </ul>
+            <p>
+              Tarif : <strong>200 € / mois</strong> pendant 6 mois, avec mentorat direct en binôme par <strong>Cyril Garnier</strong> et <strong>Léonie Egesipe</strong>.
             </p>
             <p className="text-sm bg-copper-orange/10 p-3 rounded-xl text-deep-blue font-medium">
-              * Note pratique : il convient de prévoir un portefeuille d'environ 50 € pour les abonnements aux outils d'IA utilisés durant le programme.
+              * Note pratique : il convient de prévoir un portefeuille d'environ 50 € pour les abonnements aux outils d'IA utilisés durant les ateliers pratiques.
             </p>
           </div>
         )

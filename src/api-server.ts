@@ -4,9 +4,7 @@ import fs from 'node:fs';
 import { Resend } from 'resend';
 import { GoogleGenAI } from "@google/genai";
 
-const MAX_FOUNDER_PLACES = 10;
-const FOUNDER_PRICE = 100;
-const STANDARD_PRICE = 200;
+const PROGRAM_PRICE = 200;
 
 interface CohorteCandidature {
   id: string;
@@ -55,32 +53,26 @@ function saveNewCandidature(data: Omit<CohorteCandidature, 'id' | 'createdAt' | 
 } {
   ensureDataDir();
   const existing = getStoredCandidatures();
-  const nextIndex = existing.length + 1;
-  const isFounder = nextIndex <= MAX_FOUNDER_PLACES;
-  const pricingApplied = isFounder ? FOUNDER_PRICE : STANDARD_PRICE;
 
   const newCand: CohorteCandidature = {
     ...data,
     id: 'cand_' + Date.now() + '_' + Math.random().toString(36).substring(2, 7),
     createdAt: new Date().toISOString(),
-    pricingApplied,
-    isFounder,
+    pricingApplied: PROGRAM_PRICE,
+    isFounder: false,
   };
 
   existing.push(newCand);
   fs.writeFileSync(CANDIDATURES_FILE, JSON.stringify(existing, null, 2), 'utf-8');
 
   const totalCount = existing.length;
-  const isSoldOut = totalCount >= MAX_FOUNDER_PLACES;
-  const remainingPlaces = Math.max(0, MAX_FOUNDER_PLACES - totalCount);
-  const currentPrice = isSoldOut ? STANDARD_PRICE : FOUNDER_PRICE;
 
   return {
     candidature: newCand,
     totalCount,
-    isSoldOut,
-    remainingPlaces,
-    currentPrice,
+    isSoldOut: false,
+    remainingPlaces: 0,
+    currentPrice: PROGRAM_PRICE,
   };
 }
 
@@ -140,31 +132,13 @@ export function createApiApp(): Express {
   app.get('/api/cohorte-status', (req, res) => {
     try {
       const candidatures = getStoredCandidatures();
-      let count = candidatures.length;
-
-      // Allow test override via query param ?test_count=X for preview/verification
-      if (req.query.test_count !== undefined) {
-        const parsed = parseInt(String(req.query.test_count), 10);
-        if (!isNaN(parsed)) {
-          count = parsed;
-        }
-      }
-
-      const isSoldOut = count >= MAX_FOUNDER_PLACES;
-      const remainingPlaces = Math.max(0, MAX_FOUNDER_PLACES - count);
-      const currentPrice = isSoldOut ? STANDARD_PRICE : FOUNDER_PRICE;
+      const count = candidatures.length;
 
       res.json({
         count,
-        maxPlaces: MAX_FOUNDER_PLACES,
-        remainingPlaces,
-        isSoldOut,
-        currentPrice,
-        founderPrice: FOUNDER_PRICE,
-        standardPrice: STANDARD_PRICE,
-        message: isSoldOut 
-          ? "Offre commerciale terminée : la cohorte fondatrice (10 places) est complète. La formation est désormais à son prix standard de 200 € / mois."
-          : `Offre commerciale active : ${remainingPlaces} place(s) restante(s) sur 10 au tarif fondateur de 100 € / mois.`
+        currentPrice: PROGRAM_PRICE,
+        price: PROGRAM_PRICE,
+        message: "Inscriptions ouvertes pour le programme New Business MVP au tarif de 200 € / mois."
       });
     } catch (err: any) {
       console.error('Error fetching cohorte status:', err);
@@ -182,13 +156,13 @@ export function createApiApp(): Express {
   app.post('/api/candidature-cohorte', async (req, res) => {
     try {
       const { firstName, lastName, email, activity, stage, blocker, availability, motivation } = req.body;
-      console.log(`[${new Date().toISOString()}] Candidature Cohorte from ${firstName} ${lastName} (${email})`);
+      console.log(`[${new Date().toISOString()}] Candidature New Business MVP from ${firstName} ${lastName} (${email})`);
 
       if (!firstName || !lastName || !email) {
         return res.status(400).json({ error: 'Prénom, nom et email sont requis.' });
       }
 
-      // Save to persistent storage and check threshold
+      // Save to persistent storage
       const saveResult = saveNewCandidature({
         firstName,
         lastName,
@@ -200,12 +174,9 @@ export function createApiApp(): Express {
         motivation: motivation || '',
       });
 
-      const { candidature, totalCount, isSoldOut, remainingPlaces, currentPrice } = saveResult;
-      const isFounder = candidature.isFounder;
-      const priceText = isFounder ? '100 € / mois (Tarif Fondateur)' : '200 € / mois (Tarif Standard)';
-      const quotaStatusText = isFounder 
-        ? `Candidature #${totalCount} sur 10 • Tarif Fondateur (100 €/mois)` 
-        : `Candidature #${totalCount} (Programme New business complet) • Tarif Standard (200 €/mois)`;
+      const { candidature, totalCount } = saveResult;
+      const priceText = '200 € / mois';
+      const quotaStatusText = `Candidature #${totalCount} • Programme New Business MVP (200 €/mois)`;
 
       if (!process.env.RESEND_API_KEY) {
         console.warn('RESEND_API_KEY non configuré - candidature enregistrée dans les logs et le fichier local');
@@ -213,11 +184,8 @@ export function createApiApp(): Express {
           success: true, 
           message: 'Candidature reçue et enregistrée avec succès.',
           candidatureNumber: totalCount,
-          isFounder,
           priceApplied: candidature.pricingApplied,
-          isSoldOut,
-          remainingPlaces,
-          currentPrice
+          currentPrice: PROGRAM_PRICE
         });
       }
 
@@ -225,15 +193,15 @@ export function createApiApp(): Express {
       const { data, error } = await resendClient.emails.send({
         from: 'Alkymya New Business <onboarding@resend.dev>',
         to: ['cyril@alkymya.co'],
-        subject: `[${quotaStatusText}] ${firstName} ${lastName} - ${activity || 'Nouveau projet'}`,
+        subject: `[${quotaStatusText}] ${firstName} ${lastName} - ${activity || 'Nouveau projet MVP'}`,
         replyTo: email,
         html: `
           <div style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; max-width: 650px; margin: 0 auto; color: #1e293b; line-height: 1.6; border: 1px solid #e2e8f0; border-radius: 12px; overflow: hidden;">
             <div style="background: linear-gradient(135deg, #1F4F6E 0%, #037971 100%); padding: 35px 30px; text-align: center;">
               <h1 style="color: #ffffff; margin: 0; font-size: 24px; font-weight: 800; letter-spacing: 2px;">ALKYMYA</h1>
               <div style="width: 40px; height: 3px; background-color: #c06721; margin: 12px auto;"></div>
-              <p style="color: #f1f5f9; margin: 0; font-size: 14px; font-weight: 600;">Candidature • Accompagnement New Business</p>
-              <div style="display: inline-block; margin-top: 10px; background-color: ${isFounder ? '#c06721' : '#1F4F6E'}; color: #ffffff; padding: 6px 14px; border-radius: 20px; font-size: 13px; font-weight: bold;">
+              <p style="color: #f1f5f9; margin: 0; font-size: 14px; font-weight: 600;">Candidature • Accompagnement New Business MVP</p>
+              <div style="display: inline-block; margin-top: 10px; background-color: #c06721; color: #ffffff; padding: 6px 14px; border-radius: 20px; font-size: 13px; font-weight: bold;">
                 ${quotaStatusText}
               </div>
             </div>
@@ -241,10 +209,7 @@ export function createApiApp(): Express {
             <div style="padding: 35px 30px; background-color: #ffffff;">
               <p style="font-size: 16px; margin-bottom: 20px;">Bonjour Cyril,</p>
               <p style="font-size: 15px; margin-bottom: 25px;">
-                ${isFounder 
-                  ? `Une nouvelle candidature éligible au <strong>Tarif Fondateur</strong> vient d'être déposée (Place ${totalCount} / 10).` 
-                  : `Les 10 places fondatrices étant désormais pourvues, cette candidature a été enregistrée au <strong>Tarif Standard (200 € / mois)</strong> pour le programme New business.`
-                }
+                Une nouvelle candidature a été enregistrée pour le programme <strong>New Business MVP (200 € / mois)</strong>.
               </p>
               
               <div style="background-color: #f8fafc; padding: 25px; border-radius: 10px; border-left: 4px solid #c06721; margin-bottom: 25px;">
@@ -252,7 +217,7 @@ export function createApiApp(): Express {
                 <p style="margin: 0 0 12px 0;"><strong>Tarif appliqué :</strong> <strong style="color: #c06721;">${priceText}</strong></p>
                 <p style="margin: 0 0 12px 0;"><strong>Candidat :</strong> ${firstName} ${lastName}</p>
                 <p style="margin: 0 0 12px 0;"><strong>Email :</strong> <a href="mailto:${email}" style="color: #c06721;">${email}</a></p>
-                <p style="margin: 0 0 12px 0;"><strong>Activité :</strong> ${activity || 'Non précisé'}</p>
+                <p style="margin: 0 0 12px 0;"><strong>Activité / Projet MVP :</strong> ${activity || 'Non précisé'}</p>
                 <p style="margin: 0 0 12px 0;"><strong>Stade actuel :</strong> ${stage || 'Non précisé'}</p>
                 <p style="margin: 0 0 12px 0;"><strong>Disponibilité (3-4h/semaine) :</strong> ${availability === 'oui' ? '✅ Oui, s\'y engage' : '⚠️ Non'}</p>
                 <div style="margin-top: 15px; padding-top: 15px; border-top: 1px solid #e2e8f0;">
@@ -264,14 +229,6 @@ export function createApiApp(): Express {
                   <p style="margin: 6px 0 0 0; color: #475569; font-style: italic;">${motivation || 'Non renseigné'}</p>
                 </div>
               </div>
-
-              ${isSoldOut ? `
-              <div style="background-color: #fef3c7; border: 1px solid #f59e0b; padding: 15px 20px; border-radius: 8px; color: #92400e; font-size: 14px; margin-bottom: 20px;">
-                ⚠️ <strong>Alerte quota atteinte :</strong> Les 10 places à tarif fondateur ont été atteintes (${totalCount} reçues). L'offre commerciale fondatrice est automatiquement clôturée et le tarif bascule à 200 € / mois sur le site.
-              </div>
-              ` : `
-              <p style="font-size: 13px; color: #64748b;">Places fondatrices restantes : <strong>${remainingPlaces} sur 10</strong>.</p>
-              `}
             </div>
             
             <div style="background-color: #f1f5f9; padding: 20px 30px; text-align: center; font-size: 12px; color: #64748b;">
@@ -290,11 +247,8 @@ export function createApiApp(): Express {
         success: true, 
         data, 
         candidatureNumber: totalCount,
-        isFounder,
         priceApplied: candidature.pricingApplied,
-        isSoldOut,
-        remainingPlaces,
-        currentPrice
+        currentPrice: PROGRAM_PRICE
       });
     } catch (error: any) {
       console.error('Candidature Server Error:', error);
