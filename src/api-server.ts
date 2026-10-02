@@ -146,40 +146,74 @@ export function createApiApp(): Express {
     }
   });
 
-  // Serve pre-rendered HTML files from dist if available (for curl, bots, and SEO crawlers)
-  app.use((req, res, next) => {
-    if (req.method === 'GET' && !req.path.startsWith('/api') && !req.path.startsWith('/src') && !req.path.startsWith('/@') && !req.path.startsWith('/node_modules')) {
-      const cleanPath = req.path.replace(/^\//, '').replace(/\/$/, '');
-      const possibleFile = cleanPath === ''
-        ? path.join(process.cwd(), 'dist', 'index.html')
-        : path.join(process.cwd(), 'dist', cleanPath, 'index.html');
-      
-      const userAgent = (req.headers['user-agent'] || '').toLowerCase();
-      const isBotOrCurl = userAgent.includes('curl') || userAgent.includes('bot') || userAgent.includes('crawler') || userAgent.includes('spider') || req.query.prerender === 'true';
+  // 301 Permanent Redirects to the unique canonical /newbusiness/
+  app.get([
+    '/new-business',
+    '/new-business/',
+    '/new-business.html',
+    '/cohorte-fondatrice',
+    '/cohorte-fondatrice/',
+    '/cohorte-fondatrice.html',
+    '/cohorte',
+    '/cohorte/'
+  ], (req, res) => {
+    return res.redirect(301, '/newbusiness/');
+  });
 
-      if (isBotOrCurl && fs.existsSync(possibleFile)) {
-        return res.sendFile(possibleFile);
+  // Valid routes set for the site (12 routes)
+  const validSiteRoutes = new Set([
+    '',
+    'ia',
+    'oeuvres',
+    'ateliers',
+    'ressources',
+    'alchimistes',
+    'partenaires',
+    'contact',
+    'faq',
+    'rejoindre',
+    'newbusiness',
+    'mentions-legales'
+  ]);
+
+  // Serve pre-rendered HTML files from dist for valid routes (or handle 404 for unknown routes)
+  app.use((req, res, next) => {
+    if (
+      req.method === 'GET' &&
+      !req.path.startsWith('/api') &&
+      !req.path.startsWith('/src') &&
+      !req.path.startsWith('/@') &&
+      !req.path.startsWith('/node_modules') &&
+      !req.path.startsWith('/assets') &&
+      !req.path.includes('.')
+    ) {
+      const cleanPath = req.path.replace(/^\//, '').replace(/\/$/, '');
+
+      // Check if it's a known valid route
+      if (validSiteRoutes.has(cleanPath)) {
+        const possibleFile = cleanPath === ''
+          ? path.join(process.cwd(), 'dist', 'index.html')
+          : path.join(process.cwd(), 'dist', cleanPath, 'index.html');
+
+        const userAgent = (req.headers['user-agent'] || '').toLowerCase();
+        const isBotOrCurl = userAgent.includes('curl') || userAgent.includes('bot') || userAgent.includes('crawler') || userAgent.includes('spider') || req.query.prerender === 'true';
+
+        if (fs.existsSync(possibleFile) && (isBotOrCurl || cleanPath === 'newbusiness')) {
+          return res.sendFile(possibleFile);
+        }
+      } else {
+        // Unknown route -> return true 404 Not Found (fixes soft 404)
+        const notFoundFile = path.join(process.cwd(), 'dist', '404.html');
+        const fallback404 = path.join(process.cwd(), 'public', '404.html');
+        const fileToSend = fs.existsSync(notFoundFile) ? notFoundFile : fallback404;
+
+        if (fs.existsSync(fileToSend)) {
+          return res.status(404).sendFile(fileToSend);
+        }
+        return res.status(404).send('404 Not Found');
       }
     }
     next();
-  });
-
-  // Standalone page route: New Business MVP
-  app.get(['/new-business', '/new-business.html', '/newbusiness', '/newbusiness/'], (req, res, next) => {
-    const prerenderFile = path.join(process.cwd(), 'dist', 'newbusiness', 'index.html');
-    if (fs.existsSync(prerenderFile) && (req.headers['user-agent'] || '').toLowerCase().includes('curl')) {
-      return res.sendFile(prerenderFile);
-    }
-    const filePath = path.join(process.cwd(), 'public', 'new-business.html');
-    if (fs.existsSync(filePath)) {
-      return res.sendFile(filePath);
-    }
-    next();
-  });
-
-  // Redirect legacy cohorte routes
-  app.get(['/cohorte-fondatrice', '/cohorte-fondatrice.html', '/cohorte'], (req, res) => {
-    res.redirect(301, '/new-business.html');
   });
 
   // Candidature Cohorte Fondatrice API

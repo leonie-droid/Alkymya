@@ -1,5 +1,36 @@
 [build]
   functions = "netlify/functions"
+  publish = "dist"
+
+[[redirects]]
+  from = "/new-business.html"
+  to = "/newbusiness/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/new-business"
+  to = "/newbusiness/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/cohorte-fondatrice.html"
+  to = "/newbusiness/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/cohorte-fondatrice"
+  to = "/newbusiness/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/cohorte"
+  to = "/newbusiness/"
+  status = 301
+  force = true
 
 [[redirects]]
   from = "/api/*"
@@ -8,5 +39,5 @@
 
 [[redirects]]
   from = "/*"
-  to = "/index.html"
-  status = 200
+  to = "/404.html"
+  status = 404

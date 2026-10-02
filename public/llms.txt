@@ -27,7 +27,7 @@
 
 - [Accueil Alkymya](https://alkymya.co/): Présentation du studio d'innovation IA, vision, impact pédagogique et métriques de satisfaction.
 - [Ateliers & Formations IA](https://alkymya.co/ateliers): Catalogue complet d'ateliers pratiques : acculturation IA, prompt engineering avancé, création d'agents IA, éthique et conformité IA Act.
-- [New Business MVP — Validation Offre & Marché](https://alkymya.co/new-business.html): Accompagnement opérationnel de 6 mois pour concevoir votre MVP, tester l'ICP auprès de vrais clients et décider selon la boussole Continuer, Pivoter ou Accélérer (Tarif : 200 € / mois).
+- [New Business MVP — Validation Offre & Marché](https://alkymya.co/newbusiness/): Accompagnement opérationnel de 6 mois pour concevoir votre MVP, tester l'ICP auprès de vrais clients et décider selon la boussole Continuer, Pivoter ou Accélérer (Tarif : 200 € / mois).
 - [Générateur IA Alkymya](https://alkymya.co/ia): Démonstrateurs interactifs, tests d'outils génératifs et cas d'usage pratiques de l'intelligence artificielle.
 - [Galerie des Œuvres Numériques](https://alkymya.co/oeuvres): Créations artistiques hybrides mêlant art visuel, photographie et IA générative (collaboration Cyril Garnier et Léonie Egesipe).
 - [Les Alchimistes](https://alkymya.co/alchimistes): Présentation des experts, parcours de Cyril Garnier, Léonie Egesipe et gouvernance du studio.

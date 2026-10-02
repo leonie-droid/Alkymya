@@ -1,0 +1,12 @@
+# Redirections 301 historiques vers l'URL canonique unique /newbusiness/
+/new-business.html        /newbusiness/    301!
+/new-business             /newbusiness/    301!
+/cohorte-fondatrice.html  /newbusiness/    301!
+/cohorte-fondatrice       /newbusiness/    301!
+/cohorte                  /newbusiness/    301!
+
+# API proxy vers la fonction serverless Netlify
+/api/*                    /.netlify/functions/server/:splat    200
+
+# Règle anti-soft-404 : toute URL inconnue renvoie 404 vers /404.html
+/*                        /404.html        404

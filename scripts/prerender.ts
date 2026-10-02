@@ -134,7 +134,7 @@ function buildJsonLd(route: RouteData, canonicalUrl: string) {
         "name": "Alkymya",
         "url": "https://alkymya.co/",
         "logo": "https://res.cloudinary.com/dokzioyu4/image/upload/v1758096912/logo_principal_bleu_gbnyuu.png",
-        "image": "https://res.cloudinary.com/dokzioyu4/image/upload/v1758096912/logo_principal_bleu_gbnyuu.png",
+        "image": "https://alkymya.co/og-image.jpg",
         "description": "Studio d'innovation et organisme de formation certifié Qualiopi en IA.",
         "address": {
           "@type": "PostalAddress",
@@ -146,6 +146,43 @@ function buildJsonLd(route: RouteData, canonicalUrl: string) {
       }
     ]
   };
+}
+
+function generateRedirectHtml(targetUrl: string, title: string): string {
+  return `<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="refresh" content="0; url=${targetUrl}">
+  <script>window.location.replace('${targetUrl}');</script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>${escapeHtml(title)}</title>
+  <meta name="robots" content="noindex, follow">
+  <link rel="canonical" href="https://alkymya.co${targetUrl}">
+</head>
+<body style="font-family: system-ui, sans-serif; text-align: center; padding: 3rem; color: #1e293b;">
+  <p>Redirection vers <a href="${targetUrl}">New Business MVP</a>...</p>
+</body>
+</html>`;
+}
+
+function generateSitemapXml(allRoutes: RouteData[]): string {
+  const urlEntries = allRoutes.map(r => {
+    const loc = `https://alkymya.co${r.path === '/' ? '/' : `${r.path}/`}`;
+    const priority = r.path === '/' ? '1.0' : (r.path === '/newbusiness' || r.path === '/ateliers' ? '0.9' : '0.8');
+    const changefreq = r.path === '/' ? 'daily' : (r.path === '/newbusiness' || r.path === '/ateliers' || r.path === '/ressources' ? 'weekly' : 'monthly');
+    return `  <url>
+    <loc>${loc}</loc>
+    <lastmod>${r.lastmod}</lastmod>
+    <changefreq>${changefreq}</changefreq>
+    <priority>${priority}</priority>
+  </url>`;
+  }).join('\n');
+
+  return `<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+${urlEntries}
+</urlset>`;
 }
 
 async function prerender() {
@@ -160,6 +197,7 @@ async function prerender() {
   const baseHtml = fs.readFileSync(templatePath, 'utf-8');
   console.log(`[prerender] Template de base chargé (${baseHtml.length} octets).`);
 
+  // 1. Pré-rendre chacune des 12 routes canoniques
   for (const route of routes) {
     const canonicalUrl = route.path === '/' 
       ? 'https://alkymya.co/' 
@@ -170,10 +208,10 @@ async function prerender() {
 
     let html = baseHtml;
 
-    // 1. Remplacer <title>
+    // Remplacer <title>
     html = html.replace(/<title>.*?<\/title>/is, `<title>${escapeHtml(route.title)}</title>`);
 
-    // 2. Remplacer / injecter <meta name="description">
+    // Remplacer / injecter <meta name="description">
     if (html.includes('<meta name="description"')) {
       html = html.replace(
         /<meta\s+name="description"\s+content=".*?"\s*\/?>/is,
@@ -183,7 +221,7 @@ async function prerender() {
       html = html.replace('</head>', `  <meta name="description" content="${escapeHtml(route.description)}" />\n</head>`);
     }
 
-    // 3. Remplacer / injecter <link rel="canonical">
+    // Remplacer / injecter <link rel="canonical"> (avec slash final obligatoire)
     if (html.includes('<link rel="canonical"')) {
       html = html.replace(
         /<link\s+rel="canonical"\s+href=".*?"\s*\/?>/is,
@@ -193,23 +231,29 @@ async function prerender() {
       html = html.replace('</head>', `  <link rel="canonical" href="${canonicalUrl}" />\n</head>`);
     }
 
-    // 4. Balises Open Graph & Twitter
+    // Balises Open Graph & Twitter Cards 1200x630
     const metaTags = `
-    <!-- Open Graph / Facebook -->
+    <!-- Open Graph / Facebook / LinkedIn (1200x630) -->
     <meta property="og:type" content="website" />
     <meta property="og:url" content="${canonicalUrl}" />
     <meta property="og:title" content="${escapeHtml(route.title)}" />
     <meta property="og:description" content="${escapeHtml(route.description)}" />
     <meta property="og:image" content="${route.ogImage}" />
+    <meta property="og:image:secure_url" content="${route.ogImage}" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:type" content="image/jpeg" />
+    <meta property="og:image:alt" content="Alkymya — Studio d'Innovation & Formations IA" />
     <meta property="og:site_name" content="Alkymya" />
     <meta property="og:locale" content="fr_FR" />
 
-    <!-- Twitter -->
+    <!-- Twitter Cards (summary_large_image) -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:url" content="${canonicalUrl}" />
     <meta name="twitter:title" content="${escapeHtml(route.title)}" />
     <meta name="twitter:description" content="${escapeHtml(route.description)}" />
     <meta name="twitter:image" content="${route.ogImage}" />
+    <meta name="twitter:image:alt" content="Alkymya — Studio d'Innovation & Formations IA" />
 
     <!-- JSON-LD Structured Data -->
     <script type="application/ld+json">
@@ -223,25 +267,25 @@ ${JSON.stringify(jsonLd, null, 2)}
       .replace(/<meta\s+property="og:title"[^>]*>/gi, '')
       .replace(/<meta\s+property="og:description"[^>]*>/gi, '')
       .replace(/<meta\s+property="og:url"[^>]*>/gi, '')
-      .replace(/<meta\s+property="og:image"[^>]*>/gi, '')
+      .replace(/<meta\s+property="og:image[^"]*"[^>]*>/gi, '')
       .replace(/<meta\s+property="og:type"[^>]*>/gi, '')
       .replace(/<meta\s+property="og:site_name"[^>]*>/gi, '')
       .replace(/<meta\s+property="og:locale"[^>]*>/gi, '')
       .replace(/<meta\s+name="twitter:card"[^>]*>/gi, '')
       .replace(/<meta\s+name="twitter:title"[^>]*>/gi, '')
       .replace(/<meta\s+name="twitter:description"[^>]*>/gi, '')
-      .replace(/<meta\s+name="twitter:image"[^>]*>/gi, '')
+      .replace(/<meta\s+name="twitter:image[^"]*"[^>]*>/gi, '')
       .replace(/<meta\s+name="twitter:url"[^>]*>/gi, '');
 
     html = html.replace('</head>', `${metaTags}\n</head>`);
 
-    // 5. Remplacer <div id="root"></div> par le contenu statique riche
+    // Remplacer <div id="root"></div> par le contenu statique riche
     html = html.replace(
       /<div id="root"><\/div>/is,
       `<div id="root">${bodyHtml}</div>`
     );
 
-    // Déterminer le chemin de sortie
+    // Déterminer le dossier de sortie
     let targetDir = distDir;
     if (route.path !== '/') {
       const cleanPath = route.path.replace(/^\//, '');
@@ -254,19 +298,59 @@ ${JSON.stringify(jsonLd, null, 2)}
     const targetFile = path.join(targetDir, 'index.html');
     fs.writeFileSync(targetFile, html, 'utf-8');
     console.log(`[prerender] Route générée : ${route.path} -> ${path.relative(process.cwd(), targetFile)} (${html.length} octets)`);
-
-    // Si route /newbusiness, générer également un alias pour /new-business
-    if (route.path === '/newbusiness') {
-      const aliasDir = path.join(distDir, 'new-business');
-      if (!fs.existsSync(aliasDir)) {
-        fs.mkdirSync(aliasDir, { recursive: true });
-      }
-      fs.writeFileSync(path.join(aliasDir, 'index.html'), html, 'utf-8');
-      console.log(`[prerender] Alias généré : /new-business -> ${path.relative(process.cwd(), path.join(aliasDir, 'index.html'))}`);
-    }
   }
 
-  console.log(`[prerender] Succès : 12 routes pré-rendues avec succès pour Google, IA et Netlify !`);
+  // 2. Générer les redirections 301 statiques vers /newbusiness/
+  const redirectHtml = generateRedirectHtml('/newbusiness/', 'Redirection — New Business MVP | Alkymya');
+
+  // /new-business.html
+  fs.writeFileSync(path.join(distDir, 'new-business.html'), redirectHtml, 'utf-8');
+  // /new-business/index.html
+  const newBusinessAliasDir = path.join(distDir, 'new-business');
+  if (!fs.existsSync(newBusinessAliasDir)) fs.mkdirSync(newBusinessAliasDir, { recursive: true });
+  fs.writeFileSync(path.join(newBusinessAliasDir, 'index.html'), redirectHtml, 'utf-8');
+
+  // /cohorte-fondatrice.html
+  fs.writeFileSync(path.join(distDir, 'cohorte-fondatrice.html'), redirectHtml, 'utf-8');
+  // /cohorte-fondatrice/index.html
+  const cohorteAliasDir = path.join(distDir, 'cohorte-fondatrice');
+  if (!fs.existsSync(cohorteAliasDir)) fs.mkdirSync(cohorteAliasDir, { recursive: true });
+  fs.writeFileSync(path.join(cohorteAliasDir, 'index.html'), redirectHtml, 'utf-8');
+
+  // /cohorte/index.html
+  const cohorteShortDir = path.join(distDir, 'cohorte');
+  if (!fs.existsSync(cohorteShortDir)) fs.mkdirSync(cohorteShortDir, { recursive: true });
+  fs.writeFileSync(path.join(cohorteShortDir, 'index.html'), redirectHtml, 'utf-8');
+
+  console.log(`[prerender] Redirections 301 statiques créées pour new-business et cohorte-fondatrice.`);
+
+  // 3. Générer le sitemap.xml avec les 12 URL canoniques et slash final
+  const sitemapXml = generateSitemapXml(routes);
+  fs.writeFileSync(path.join(distDir, 'sitemap.xml'), sitemapXml, 'utf-8');
+  fs.writeFileSync(path.join(process.cwd(), 'public', 'sitemap.xml'), sitemapXml, 'utf-8');
+  console.log(`[prerender] Sitemap XML généré avec les 12 URL canoniques (dist/sitemap.xml & public/sitemap.xml).`);
+
+  // 4. Copier 404.html et _redirects vers dist/
+  const public404 = path.join(process.cwd(), 'public', '404.html');
+  if (fs.existsSync(public404)) {
+    fs.copyFileSync(public404, path.join(distDir, '404.html'));
+    console.log(`[prerender] Page 404 copiée dans dist/404.html.`);
+  }
+
+  const publicRedirects = path.join(process.cwd(), 'public', '_redirects');
+  if (fs.existsSync(publicRedirects)) {
+    fs.copyFileSync(publicRedirects, path.join(distDir, '_redirects'));
+    console.log(`[prerender] Fichier _redirects copié dans dist/_redirects.`);
+  }
+
+  // Copier également l'image og-image.jpg dans dist si elle existe
+  const publicOgImage = path.join(process.cwd(), 'public', 'og-image.jpg');
+  if (fs.existsSync(publicOgImage)) {
+    fs.copyFileSync(publicOgImage, path.join(distDir, 'og-image.jpg'));
+    console.log(`[prerender] Image 1200x630 copiée dans dist/og-image.jpg.`);
+  }
+
+  console.log(`[prerender] Succès complet du build SEO !`);
 }
 
 prerender().catch(err => {

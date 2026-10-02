@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Page non trouvée (404) | Alkymya</title>
+    <meta name="description" content="La page que vous recherchez n'existe pas ou a été déplacée sur le site officiel d'Alkymya." />
+    <meta name="robots" content="noindex, follow" />
+    <link rel="icon" type="image/png" href="https://res.cloudinary.com/dokzioyu4/image/upload/v1758096485/logo_icon_bleu_pkhbr7.png" />
+    <style>
+      :root {
+        --color-primary: #1F4F6E;
+        --color-accent: #D97706;
+        --color-bg: #F8FAFC;
+        --color-text: #1E293B;
+        --color-muted: #64748B;
+      }
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        background-color: var(--color-bg);
+        color: var(--color-text);
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+      }
+      header {
+        background: #ffffff;
+        border-bottom: 1px solid #e2e8f0;
+        padding: 1.25rem 2rem;
+      }
+      .header-content {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+      .logo {
+        height: 38px;
+        width: auto;
+      }
+      main {
+        max-width: 700px;
+        margin: auto;
+        padding: 4rem 1.5rem;
+        text-align: center;
+      }
+      .badge-404 {
+        display: inline-block;
+        font-size: 5rem;
+        font-weight: 900;
+        color: var(--color-accent);
+        line-height: 1;
+        margin-bottom: 1rem;
+        letter-spacing: -0.05em;
+      }
+      h1 {
+        font-size: 2.25rem;
+        font-weight: 900;
+        color: var(--color-primary);
+        margin-bottom: 1rem;
+      }
+      p {
+        font-size: 1.125rem;
+        color: var(--color-muted);
+        line-height: 1.6;
+        margin-bottom: 2.5rem;
+      }
+      .btn-group {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+        justify-content: center;
+      }
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0.875rem 1.75rem;
+        font-size: 0.875rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        border-radius: 9999px;
+        text-decoration: none;
+        transition: all 0.2s ease;
+      }
+      .btn-primary {
+        background: var(--color-accent);
+        color: #ffffff;
+        box-shadow: 0 4px 12px rgba(217, 119, 6, 0.25);
+      }
+      .btn-primary:hover {
+        background: var(--color-primary);
+      }
+      .btn-secondary {
+        background: #ffffff;
+        color: var(--color-primary);
+        border: 1px solid #cbd5e1;
+      }
+      .btn-secondary:hover {
+        background: #f1f5f9;
+      }
+      footer {
+        background: var(--color-primary);
+        color: #cbd5e1;
+        padding: 2rem;
+        text-align: center;
+        font-size: 0.875rem;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="header-content">
+        <a href="/" aria-label="Retour à l'accueil Alkymya">
+          <img src="https://res.cloudinary.com/dokzioyu4/image/upload/v1758096912/logo_principal_bleu_gbnyuu.png" alt="Alkymya Logo" class="logo" />
+        </a>
+      </div>
+    </header>
+
+    <main>
+      <div class="badge-404">404</div>
+      <h1>Page introuvable</h1>
+      <p>
+        La page que vous recherchez n'existe pas ou a été déplacée. Vous pouvez retourner à l'accueil ou explorer nos formations et ateliers en intelligence artificielle.
+      </p>
+      <div class="btn-group">
+        <a href="/" class="btn btn-primary">Retour à l'accueil</a>
+        <a href="/ateliers/" class="btn btn-secondary">Nos Ateliers IA</a>
+        <a href="/newbusiness/" class="btn btn-secondary">New Business MVP</a>
+        <a href="/contact/" class="btn btn-secondary">Nous contacter</a>
+      </div>
+    </main>
+
+    <footer>
+      <p>© 2026 Alkymya.co — Studio d'innovation et formations en IA générative.</p>
+    </footer>
+  </body>
+</html>
