@@ -111,7 +111,7 @@ const ateliers = [
     content: "Méthodologie MVP en 6 étapes : Cadrer l'ICP (M1) · Proposition de valeur & Arbitrage (M2) · Construction du MVP (M3) · Pricing & Routine entrepreneuriale (M4) · Pitch partenaires & investisseurs (M5) · Décision data-driven Continuer / Pivoter / Accélérer (M6).",
     deliverables: "Le Kit MVP Complet : Fiche Profil ICP & Habitudes de dépenses, MVP opérationnel déployé, Grille de pricing testée, Pitch Deck investisseurs & partenaires, et Matrice décisionnelle Continuer / Pivoter / Accélérer.",
     included: "Mentorat opérationnel par Cyril Garnier & Léonie Egesipe, ateliers collectifs de studio New business MVP, revues individuelles régulières et accès continu aux ressources.",
-    link: "/cohorte-fondatrice.html",
+    link: "/new-business.html",
     linkText: "Déposer ma candidature",
     icon: Rocket,
     tag: "Nouveau • New business MVP",
@@ -378,7 +378,7 @@ export default function Ateliers() {
                     <ArrowRight className="h-4 w-4" />
                   </motion.a>
                   <a
-                    href="/cohorte-fondatrice.html"
+                    href="/new-business.html"
                     className="hidden sm:inline-flex px-6 py-4 rounded-full bg-white/10 hover:bg-white/20 text-white font-bold text-xs uppercase tracking-wider transition-all items-center justify-center text-center"
                   >
                     Candidature directe

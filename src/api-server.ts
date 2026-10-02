@@ -146,10 +146,40 @@ export function createApiApp(): Express {
     }
   });
 
-  // Standalone page route: Cohorte Fondatrice
-  app.get(['/cohorte-fondatrice', '/cohorte'], (req, res) => {
-    const filePath = path.join(process.cwd(), 'public', 'cohorte-fondatrice.html');
-    res.sendFile(filePath);
+  // Serve pre-rendered HTML files from dist if available (for curl, bots, and SEO crawlers)
+  app.use((req, res, next) => {
+    if (req.method === 'GET' && !req.path.startsWith('/api') && !req.path.startsWith('/src') && !req.path.startsWith('/@') && !req.path.startsWith('/node_modules')) {
+      const cleanPath = req.path.replace(/^\//, '').replace(/\/$/, '');
+      const possibleFile = cleanPath === ''
+        ? path.join(process.cwd(), 'dist', 'index.html')
+        : path.join(process.cwd(), 'dist', cleanPath, 'index.html');
+      
+      const userAgent = (req.headers['user-agent'] || '').toLowerCase();
+      const isBotOrCurl = userAgent.includes('curl') || userAgent.includes('bot') || userAgent.includes('crawler') || userAgent.includes('spider') || req.query.prerender === 'true';
+
+      if (isBotOrCurl && fs.existsSync(possibleFile)) {
+        return res.sendFile(possibleFile);
+      }
+    }
+    next();
+  });
+
+  // Standalone page route: New Business MVP
+  app.get(['/new-business', '/new-business.html', '/newbusiness', '/newbusiness/'], (req, res, next) => {
+    const prerenderFile = path.join(process.cwd(), 'dist', 'newbusiness', 'index.html');
+    if (fs.existsSync(prerenderFile) && (req.headers['user-agent'] || '').toLowerCase().includes('curl')) {
+      return res.sendFile(prerenderFile);
+    }
+    const filePath = path.join(process.cwd(), 'public', 'new-business.html');
+    if (fs.existsSync(filePath)) {
+      return res.sendFile(filePath);
+    }
+    next();
+  });
+
+  // Redirect legacy cohorte routes
+  app.get(['/cohorte-fondatrice', '/cohorte-fondatrice.html', '/cohorte'], (req, res) => {
+    res.redirect(301, '/new-business.html');
   });
 
   // Candidature Cohorte Fondatrice API

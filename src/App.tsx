@@ -13,6 +13,7 @@ import Contact from './pages/Contact';
 import FAQ from './pages/FAQ';
 import JoinUs from './pages/JoinUs';
 import MentionsLegales from './pages/MentionsLegales';
+import NewBusiness from './pages/NewBusiness';
 import { SEO } from './components/SEO';
 import { Chatbot } from './components/Chatbot';
 import CookieBanner from './components/CookieBanner';
@@ -49,6 +50,8 @@ export default function App() {
              <Route path="/contact" element={<Contact />} />
              <Route path="/faq" element={<FAQ />} />
              <Route path="/rejoindre" element={<JoinUs />} />
+             <Route path="/newbusiness" element={<NewBusiness />} />
+             <Route path="/new-business" element={<NewBusiness />} />
              <Route path="/mentions-legales" element={<MentionsLegales />} />
            </Routes>
          </main>
