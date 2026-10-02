@@ -130,7 +130,7 @@ const ateliers = [
       ],
       pedagogy: "Accompagnement intensif de 6 mois en binôme avec Cyril Garnier et Léonie Egesipe. Alternance de mentorat individuel, d'ateliers de confrontation terrain, de revues de livrables et de co-développement entre pairs.",
       deliverablesDetailed: "Le Pack New Business MVP : Cartographie ICP & Habitudes de dépenses, MVP opérationnel en ligne, Grille de tarification testée, Pitch deck partenaires & investisseurs, et Matrice d'arbitrage 'Continuer, Pivoter, Accélérer'.",
-      toolBudgetNote: "À prévoir : néanmoins, il faut prévoir un portefeuille d'environ 50€ pour les outils d'IA nécessaires aux étapes pratiques."
+      toolBudgetNote: "À prévoir : néanmoins, il faut prévoir un portefeuille d'environ 50€ à 150€ pour les outils d'IA nécessaires aux étapes pratiques."
     }
   }
 ];
@@ -532,7 +532,7 @@ export default function Ateliers() {
                             {atelier.presentation.toolBudgetNote && (
                               <div className="mt-3 pt-3 border-t border-deep-blue/10 flex items-center gap-2 text-copper-orange text-xs font-semibold">
                                 <Wallet className="h-3.5 w-3.5 flex-shrink-0" />
-                                <span>* Prévoir un portefeuille de ~50 € pour les outils d'IA</span>
+                                <span>* Prévoir un portefeuille d'environ 50€ à 150€ pour les outils d'IA</span>
                               </div>
                             )}
                           </div>
@@ -695,7 +695,7 @@ export default function Ateliers() {
                                   *
                                 </div>
                                 <p className="text-xs md:text-sm font-medium text-deep-blue/90">
-                                  <span className="font-bold text-deep-blue">Note pratique :</span> Néanmoins, il faut prévoir un portefeuille d'environ 50€ pour les abonnements et crédits aux outils d'IA utilisés durant le programme.
+                                  <span className="font-bold text-deep-blue">Note pratique :</span> Néanmoins, il faut prévoir un portefeuille d'environ 50€ à 150€ pour les abonnements et crédits aux outils d'IA utilisés durant le programme.
                                 </p>
                               </div>
                             )}

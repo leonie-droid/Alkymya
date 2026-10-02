@@ -107,7 +107,7 @@ const faqCategories: FAQCategory[] = [
               Tarif : <strong>200 € / mois</strong> pendant 6 mois, avec mentorat direct en binôme par <strong>Cyril Garnier</strong> et <strong>Léonie Egesipe</strong>.
             </p>
             <p className="text-sm bg-copper-orange/10 p-3 rounded-xl text-deep-blue font-medium">
-              * Note pratique : il convient de prévoir un portefeuille d'environ 50 € pour les abonnements aux outils d'IA utilisés durant les ateliers pratiques.
+              * Note pratique : il convient de prévoir un portefeuille d'environ 50 € à 150 € pour les abonnements et crédits aux outils d'IA utilisés durant les ateliers pratiques.
             </p>
           </div>
         )
