@@ -11,8 +11,8 @@ export interface InternalLink {
 
 export interface RouteData {
   path: string;
-  title: string; // <= 60 characters
-  description: string; // 140-155 characters
+  title: string; // strictly <= 60 characters
+  description: string; // strictly 140-155 characters
   h1: string;
   ogImage: string;
   lastmod: string;
@@ -27,12 +27,12 @@ export interface RouteData {
 export const routes: RouteData[] = [
   {
     path: '/',
-    title: "Alkymya | Studio d'Innovation & Formation IA en France",
-    description: "Studio d'innovation et formation en IA générative à Ozoir-la-Ferrière. Accompagnement sur-mesure des entreprises et grandes écoles vers l'excellence IA.",
+    title: "Alkymya | Studio d'Innovation et Formations IA",
+    description: "Studio d'innovation et formations en IA générative à Ozoir-la-Ferrière. Accompagnement sur-mesure des entreprises et grandes écoles vers l'IA.",
     h1: "L'art de la transformation IA.",
     ogImage: "https://alkymya.co/og-image.jpg",
-    lastmod: "2026-10-02",
-    schemaType: "EducationalOrganization",
+    lastmod: "2026-10-15",
+    schemaType: "WebPage",
     content: {
       leadParagraph: "Alkymya fusionne créativité et expertise technologique pour propulser la Génération IA vers l'excellence opérationnelle et stratégique en France et en Europe.",
       sections: [
@@ -65,11 +65,11 @@ export const routes: RouteData[] = [
   },
   {
     path: '/ia',
-    title: "Générateur IA | Outil Interactif d'Idéation Alkymya",
-    description: "Explorez notre générateur d'idées et cas d'usage IA. Testez des prompts avancés, explorez des personas et accélérez votre créativité avec les outils IA.",
+    title: "Générateur IA | Outils d'Idéation Alkymya",
+    description: "Explorez notre générateur d'idées IA. Testez des prompts avancés, générez des personas métiers et accélérez votre créativité avec les outils Alkymya.",
     h1: "Le Générateur d'Idées IA.",
-    ogImage: "https://alkymya.co/og-image.jpg",
-    lastmod: "2026-10-02",
+    ogImage: "https://alkymya.co/og-ia.jpg",
+    lastmod: "2026-10-15",
     schemaType: "WebApplication",
     content: {
       leadParagraph: "Explorez en direct la puissance créative de l'intelligence artificielle grâce à notre suite d'outils interactifs d'idéation, de génération de personas et de cas d'usage métiers.",
@@ -102,11 +102,11 @@ export const routes: RouteData[] = [
   },
   {
     path: '/oeuvres',
-    title: "Galerie Numérique | Art Visuel & IA Générative Alkymya",
+    title: "Galerie Numérique | Art Visuel et IA Alkymya",
     description: "Découvrez notre collection d'œuvres visuelles nées de la synergie entre direction artistique humaine et puissance créative de l'intelligence artificielle.",
     h1: "Nos Œuvres",
     ogImage: "https://alkymya.co/og-image.jpg",
-    lastmod: "2026-10-02",
+    lastmod: "2026-10-15",
     schemaType: "CollectionPage",
     content: {
       leadParagraph: "Une exploration artistique où la sensibilité humaine guide la machine pour créer des univers visuels immersifs, des récits cyberpunk et des identités visuelles singulières.",
@@ -139,11 +139,11 @@ export const routes: RouteData[] = [
   },
   {
     path: '/ateliers',
-    title: "Ateliers & Formations IA | Programmes Certifiés Alkymya",
+    title: "Ateliers et Formations IA | Studio Alkymya",
     description: "Formations opérationnelles et ateliers en IA générative, création d'agents autonomes, prompt engineering et conformité européenne de l'IA Act en France.",
     h1: "Nos Ateliers & Formations IA",
-    ogImage: "https://alkymya.co/og-image.jpg",
-    lastmod: "2026-10-02",
+    ogImage: "https://alkymya.co/og-ateliers.jpg",
+    lastmod: "2026-10-15",
     schemaType: "Course",
     content: {
       leadParagraph: "Des programmes de formation intensifs, immédiatement actionnables et finançables par les OPCO grâce à notre certification d'État Qualiopi en partenariat avec INATEC.",
@@ -177,11 +177,11 @@ export const routes: RouteData[] = [
   },
   {
     path: '/ressources',
-    title: "Ressources & Guides IA | Méthodes et Frameworks Alkymya",
+    title: "Ressources et Guides IA | Studio Alkymya",
     description: "Accédez librement à notre veille technologique, guides d'agentification, fiches pratiques et frameworks stratégiques pour maîtriser l'IA en entreprise.",
     h1: "Ressources & Guides IA",
     ogImage: "https://alkymya.co/og-image.jpg",
-    lastmod: "2026-10-02",
+    lastmod: "2026-10-15",
     schemaType: "CollectionPage",
     content: {
       leadParagraph: "Une bibliothèque ouverte de savoirs pratiques, méthodologies d'adoption de l'IA, frameworks d'agentification et veilles technologiques mises à jour chaque semaine.",
@@ -214,11 +214,11 @@ export const routes: RouteData[] = [
   },
   {
     path: '/alchimistes',
-    title: "Les Alchimistes | Experts & Fondateurs du Studio Alkymya",
+    title: "Les Alchimistes | Fondateurs du Studio Alkymya",
     description: "Rencontrez l'équipe Alkymya : Cyril Garnier et Léonie Egesipe, experts passionnés de la transmission pédagogique et de la transformation IA en entreprise.",
     h1: "Nos Alchimistes",
     ogImage: "https://alkymya.co/og-image.jpg",
-    lastmod: "2026-10-02",
+    lastmod: "2026-10-15",
     schemaType: "AboutPage",
     content: {
       leadParagraph: "Derrière Alkymya, deux personnalités complémentaires réunissent la vision stratégique d'entreprise, la rigueur pédagogique et l'audace de la direction artistique.",
@@ -247,11 +247,11 @@ export const routes: RouteData[] = [
   },
   {
     path: '/partenaires',
-    title: "Partenaires | Grandes Écoles & Entreprises Alkymya",
+    title: "Nos Partenaires d'Excellence | Studio Alkymya",
     description: "Découvrez notre écosystème d'excellence : HETIC, Ynov, IÉSEG, SNCF, Morning, Fondation GRDF et notre alliance stratégique avec Objectif Alternance.",
     h1: "Nos Partenaires d'Excellence",
     ogImage: "https://alkymya.co/og-image.jpg",
-    lastmod: "2026-10-02",
+    lastmod: "2026-10-15",
     schemaType: "WebPage",
     content: {
       leadParagraph: "Alkymya tisse des liens solides et durables avec les acteurs majeurs de l'enseignement supérieur, les grands groupes industriels et les pionniers de l'alternance.",
@@ -285,11 +285,11 @@ export const routes: RouteData[] = [
   },
   {
     path: '/contact',
-    title: "Contactez Alkymya | Échangez avec Nos Experts en IA",
+    title: "Contactez Alkymya | Experts en IA Générative",
     description: "Un projet d'acculturation IA, de formation ou de transformation numérique ? Contactez le studio Alkymya à Ozoir-la-Ferrière pour un échange personnalisé.",
     h1: "Contactez Alkymya",
     ogImage: "https://alkymya.co/og-image.jpg",
-    lastmod: "2026-10-02",
+    lastmod: "2026-10-15",
     schemaType: "ContactPage",
     content: {
       leadParagraph: "Discutons de votre projet d'acculturation, de formation certifiante ou de transformation opérationnelle par l'intelligence artificielle.",
@@ -323,11 +323,11 @@ export const routes: RouteData[] = [
   },
   {
     path: '/faq',
-    title: "FAQ Alkymya | Réponses sur Nos Formations & Ateliers IA",
+    title: "FAQ Alkymya | Réponses sur Nos Formations IA",
     description: "Toutes les réponses sur nos formations IA, la prise en charge OPCO Qualiopi, la création d'agents intelligents et l'offre New Business MVP Alkymya.",
     h1: "Foire Aux Questions",
     ogImage: "https://alkymya.co/og-image.jpg",
-    lastmod: "2026-10-02",
+    lastmod: "2026-10-15",
     schemaType: "FAQPage",
     content: {
       leadParagraph: "Retrouvez ici toutes les informations essentielles concernant nos modalités pédagogiques, les financements OPCO et nos parcours d'accompagnement.",
@@ -360,11 +360,11 @@ export const routes: RouteData[] = [
   },
   {
     path: '/rejoindre',
-    title: "Rejoindre Alkymya | Opportunités & Partenariats IA",
+    title: "Rejoindre Alkymya | Opportunités et Partenariats",
     description: "Rejoignez le collectif Alkymya : devenez intervenant expert, formateur en intelligence artificielle ou partenaire pour bâtir le futur de la pédagogie IA.",
     h1: "Rejoignez l'Aventure Alkymya",
     ogImage: "https://alkymya.co/og-image.jpg",
-    lastmod: "2026-10-02",
+    lastmod: "2026-10-15",
     schemaType: "WebPage",
     content: {
       leadParagraph: "Participez à la diffusion d'une intelligence artificielle responsable, créative et résolument pragmatique en intégrant notre réseau d'experts et d'intervenants.",
@@ -397,11 +397,11 @@ export const routes: RouteData[] = [
   },
   {
     path: '/newbusiness',
-    title: "New Business MVP | Accompagnement Validation Client IA",
+    title: "New Business MVP | Validation Client et Offre IA",
     description: "Programme opérationnel de 6 mois pour bâtir votre MVP, tester votre offre auprès de vrais clients et piloter vos décisions selon la boussole stratégique.",
     h1: "New Business MVP — De l'idée à la validation client",
-    ogImage: "https://alkymya.co/og-image.jpg",
-    lastmod: "2026-10-02",
+    ogImage: "https://alkymya.co/og-newbusiness.jpg",
+    lastmod: "2026-10-15",
     schemaType: "EducationalOccupationalProgram",
     content: {
       leadParagraph: "L'accompagnement opérationnel de 6 mois pour concevoir votre MVP, tester votre offre auprès de vrais clients avant d'investir et décider avec lucidité : Continuer, Pivoter ou Accélérer.",
@@ -437,11 +437,11 @@ export const routes: RouteData[] = [
   },
   {
     path: '/mentions-legales',
-    title: "Mentions Légales & RGPD | Studio d'Innovation Alkymya",
+    title: "Mentions Légales et RGPD | Studio Alkymya",
     description: "Informations légales, hébergement, conditions d'utilisation et politique de protection des données personnelles RGPD du studio d'innovation IA Alkymya.co.",
     h1: "Mentions Légales",
     ogImage: "https://alkymya.co/og-image.jpg",
-    lastmod: "2026-10-02",
+    lastmod: "2026-10-15",
     schemaType: "WebPage",
     content: {
       leadParagraph: "Consultez l'ensemble des informations légales régissant l'utilisation du site alkymya.co, ainsi que nos engagements stricts en matière de confidentialité et de conformité RGPD.",

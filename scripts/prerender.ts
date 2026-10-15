@@ -7,8 +7,7 @@ function escapeHtml(str: string): string {
     .replace(/&/g, '&amp;')
     .replace(/</g, '&lt;')
     .replace(/>/g, '&gt;')
-    .replace(/"/g, '&quot;')
-    .replace(/'/g, '&#039;');
+    .replace(/"/g, '&quot;');
 }
 
 function generatePageBody(route: RouteData): string {
@@ -108,43 +107,267 @@ function generatePageBody(route: RouteData): string {
   `.trim();
 }
 
+const breadcrumbNames: Record<string, string> = {
+  '/': 'Accueil',
+  '/ia': 'Génération IA',
+  '/oeuvres': 'Nos Œuvres',
+  '/alchimistes': 'Nos Alchimistes',
+  '/ateliers': 'Nos Ateliers',
+  '/ressources': 'Nos Ressources',
+  '/partenaires': 'Nos Partenaires',
+  '/contact': 'Contact',
+  '/faq': 'FAQ',
+  '/rejoindre': 'Nous Rejoindre',
+  '/newbusiness': 'New Business MVP',
+  '/mentions-legales': 'Mentions Légales'
+};
+
+const faqQuestions = [
+  {
+    name: "Quel est le format des ateliers d'agents IA ?",
+    answer: "Des sessions intensives de 3h30 pour concevoir et déployer 3 agents intelligents autonomes connectés à vos outils métiers (Slack, Notion, CRM via Make/Zapier)."
+  },
+  {
+    name: "Les formations Alkymya sont-elles finançables par un OPCO ?",
+    answer: "Oui ! Portée en partenariat avec l'école INATEC et disposant de la certification d'État Qualiopi, votre formation chez Alkymya est finançable jusqu'à 100% par votre OPCO, selon vos droits et votre budget de formation disponible."
+  },
+  {
+    name: "Qu'est-ce que l'offre New Business MVP (studio new business) ?",
+    answer: "Un accompagnement opérationnel de 6 mois à 200 € / mois guidé en binôme par Cyril Garnier et Léonie Egesipe pour concevoir votre MVP, tester l'ICP auprès de vrais clients et piloter selon la boussole Continuer, Pivoter ou Accélérer."
+  },
+  {
+    name: "Qu'est-ce que le programme Formation Core IA (Best Value) ?",
+    answer: "La Formation Core est notre programme complet de 14h réparties sur 4 demi-journées pour maîtriser la stack IA (prompt engineering avancé, studio graphique & branding, rédaction stratégique et prototypage). Finançable jusqu'à 100% OPCO via Qualiopi."
+  },
+  {
+    name: "Quels établissements et entreprises font confiance à Alkymya ?",
+    answer: "HETIC, Ynov Campus, IÉSEG School of Management, CFA Itis, Paris École de Management, SNCF, Morning Coworking, Fondation GRDF et notre partenaire officiel Objectif Alternance."
+  }
+];
+
 function buildJsonLd(route: RouteData, canonicalUrl: string) {
-  return {
-    "@context": "https://schema.org",
-    "@graph": [
+  // 1. Déterminer le type précis du document WebPage
+  let webpageType = 'WebPage';
+  if (route.path === '/faq') webpageType = 'FAQPage';
+  else if (route.path === '/alchimistes') webpageType = 'AboutPage';
+  else if (route.path === '/contact') webpageType = 'ContactPage';
+  else if (route.path === '/oeuvres' || route.path === '/ressources') webpageType = 'CollectionPage';
+
+  const webpageNode: Record<string, any> = {
+    "@type": webpageType,
+    "@id": `${canonicalUrl}#webpage`,
+    "url": canonicalUrl,
+    "name": route.title,
+    "headline": route.h1,
+    "description": route.description,
+    "inLanguage": "fr-FR",
+    "isPartOf": {
+      "@type": "WebSite",
+      "@id": "https://alkymya.co/#website",
+      "url": "https://alkymya.co/",
+      "name": "Alkymya",
+      "description": "Studio d'innovation et organisme de formation en Intelligence Artificielle générative."
+    },
+    "publisher": {
+      "@id": "https://alkymya.co/#organization"
+    },
+    "about": {
+      "@id": "https://alkymya.co/#organization"
+    },
+    "breadcrumb": {
+      "@id": `${canonicalUrl}#breadcrumb`
+    }
+  };
+
+  // Si FAQPage, injecter les questions/réponses enrichies dans mainEntity
+  if (route.path === '/faq') {
+    webpageNode.mainEntity = faqQuestions.map(q => ({
+      "@type": "Question",
+      "name": q.name,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": q.answer
+      }
+    }));
+  }
+
+  // 2. Fil d'Ariane (BreadcrumbList)
+  const breadcrumbNode: Record<string, any> = {
+    "@type": "BreadcrumbList",
+    "@id": `${canonicalUrl}#breadcrumb`,
+    "itemListElement": route.path === '/'
+      ? [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Accueil",
+            "item": "https://alkymya.co/"
+          }
+        ]
+      : [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Accueil",
+            "item": "https://alkymya.co/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": breadcrumbNames[route.path] || route.h1,
+            "item": canonicalUrl
+          }
+        ]
+  };
+
+  // 3. Fiche Organization enrichie (LocalBusiness + EducationalOrganization)
+  const organizationNode: Record<string, any> = {
+    "@type": ["EducationalOrganization", "ProfessionalService", "LocalBusiness"],
+    "@id": "https://alkymya.co/#organization",
+    "name": "Alkymya",
+    "alternateName": ["Alkymya.co", "Studio Alkymya"],
+    "url": "https://alkymya.co/",
+    "logo": "https://res.cloudinary.com/dokzioyu4/image/upload/v1758096912/logo_principal_bleu_gbnyuu.png",
+    "image": "https://alkymya.co/og-image.jpg",
+    "description": "Studio d'innovation et organisme de formation certifié Qualiopi en Intelligence Artificielle générative, agentification et prompt engineering.",
+    "telephone": "+33 1 89 71 32 40",
+    "email": "contact@alkymya.co",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Ozoir-la-Ferrière",
+      "addressLocality": "Ozoir-la-Ferrière",
+      "postalCode": "77330",
+      "addressRegion": "Seine-et-Marne",
+      "addressCountry": "FR"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 48.7667,
+      "longitude": 2.6833
+    },
+    "areaServed": [
+      { "@type": "AdministrativeArea", "name": "Seine-et-Marne" },
+      { "@type": "AdministrativeArea", "name": "Île-de-France" },
+      { "@type": "Country", "name": "France" }
+    ],
+    "sameAs": [
+      "https://www.linkedin.com/company/alkymya/",
+      "https://www.youtube.com/@alkymya",
+      "https://www.instagram.com/alkymya.co/"
+    ],
+    "openingHoursSpecification": [
       {
-        "@type": route.schemaType,
-        "@id": `${canonicalUrl}#webpage`,
-        "url": canonicalUrl,
-        "name": route.title,
-        "headline": route.h1,
-        "description": route.description,
-        "inLanguage": "fr-FR",
-        "isPartOf": {
-          "@type": "WebSite",
-          "@id": "https://alkymya.co/#website",
-          "url": "https://alkymya.co/",
-          "name": "Alkymya",
-          "description": "Studio d'innovation et organisme de formation en Intelligence Artificielle générative."
-        }
-      },
-      {
-        "@type": "EducationalOrganization",
-        "@id": "https://alkymya.co/#organization",
-        "name": "Alkymya",
-        "url": "https://alkymya.co/",
-        "logo": "https://res.cloudinary.com/dokzioyu4/image/upload/v1758096912/logo_principal_bleu_gbnyuu.png",
-        "image": "https://alkymya.co/og-image.jpg",
-        "description": "Studio d'innovation et organisme de formation certifié Qualiopi en IA.",
-        "address": {
-          "@type": "PostalAddress",
-          "addressLocality": "Ozoir-la-Ferrière",
-          "postalCode": "77330",
-          "addressRegion": "Seine-et-Marne",
-          "addressCountry": "FR"
-        }
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+        "opens": "09:00",
+        "closes": "18:30"
       }
     ]
+  };
+
+  const graphNodes: any[] = [webpageNode, breadcrumbNode, organizationNode];
+
+  // 4. Schéma Course spécifique pour /ateliers/ avec hasCourseInstance
+  if (route.path === '/ateliers') {
+    graphNodes.push({
+      "@type": "Course",
+      "@id": "https://alkymya.co/ateliers/#course-ia",
+      "name": "Formations & Ateliers Pratiques en Intelligence Artificielle Générative",
+      "description": "Formations opérationnelles et ateliers certifiés Qualiopi en IA générative, création d'agents autonomes, prompt engineering et conformité européenne de l'IA Act en France.",
+      "provider": {
+        "@id": "https://alkymya.co/#organization"
+      },
+      "hasCourseInstance": [
+        {
+          "@type": "CourseInstance",
+          "name": "Formation Core IA (14h - 4 demi-journées)",
+          "description": "Programme intensif certifié Qualiopi éligible OPCO pour maîtriser la stack d'IA générative et de prompt engineering.",
+          "courseMode": ["blended", "onsite", "online"],
+          "courseWorkload": "PT14H",
+          "instructor": [
+            { "@type": "Person", "name": "Cyril Garnier" },
+            { "@type": "Person", "name": "Léonie Egesipe" }
+          ]
+        },
+        {
+          "@type": "CourseInstance",
+          "name": "Option A : Création & Déploiement d'Agents IA",
+          "description": "Atelier pratique de 3h30 pour concevoir et déployer 3 agents intelligents autonomes connectés à vos outils métiers.",
+          "courseMode": ["blended", "onsite", "online"],
+          "courseWorkload": "PT3H30M",
+          "instructor": [
+            { "@type": "Person", "name": "Cyril Garnier" }
+          ]
+        },
+        {
+          "@type": "CourseInstance",
+          "name": "Option B : Application Web Interne Dopée à l'IA",
+          "description": "Atelier pratique de 3h30 pour concevoir une application web interne sans code connectée aux modèles d'IA générative.",
+          "courseMode": ["blended", "onsite", "online"],
+          "courseWorkload": "PT3H30M",
+          "instructor": [
+            { "@type": "Person", "name": "Cyril Garnier" }
+          ]
+        }
+      ]
+    });
+  }
+
+  // 5. Schéma Person pour /alchimistes/ (Cyril Garnier & Léonie Egesipe)
+  if (route.path === '/alchimistes') {
+    graphNodes.push(
+      {
+        "@type": "Person",
+        "@id": "https://alkymya.co/#cyril-garnier",
+        "name": "Cyril Garnier",
+        "jobTitle": "Fondateur & Consultant Stratégie IA",
+        "image": "https://res.cloudinary.com/dokzioyu4/image/upload/v1758192982/66cffcd8-15f1-415f-b423-9f428d63e22f_gqjd53.png",
+        "worksFor": {
+          "@id": "https://alkymya.co/#organization"
+        },
+        "sameAs": [
+          "https://www.linkedin.com/in/cyrilgarnier/"
+        ]
+      },
+      {
+        "@type": "Person",
+        "@id": "https://alkymya.co/#leonie-egesipe",
+        "name": "Léonie Egesipe",
+        "jobTitle": "Co-Fondatrice & Directrice Artistique IA",
+        "image": "https://res.cloudinary.com/dokzioyu4/image/upload/v1758192982/c4f25b29-1634-44bf-a6d1-41f2378fbb4d_j10d8m.png",
+        "worksFor": {
+          "@id": "https://alkymya.co/#organization"
+        },
+        "sameAs": [
+          "https://www.linkedin.com/in/leonie-egesipe/"
+        ]
+      }
+    );
+  }
+
+  // 6. Schéma EducationalOccupationalProgram pour /newbusiness/
+  if (route.path === '/newbusiness') {
+    graphNodes.push({
+      "@type": "EducationalOccupationalProgram",
+      "@id": "https://alkymya.co/newbusiness/#program",
+      "name": "Programme New Business MVP — De l'idée à la validation client",
+      "description": "Accompagnement opérationnel de 6 mois pour concevoir votre MVP, tester votre offre auprès de vrais clients avant d'investir et décider avec lucidité : Continuer, Pivoter ou Accélérer.",
+      "provider": {
+        "@id": "https://alkymya.co/#organization"
+      },
+      "timeToComplete": "P6M",
+      "offers": {
+        "@type": "Offer",
+        "price": "1200",
+        "priceCurrency": "EUR",
+        "description": "200 € / mois sur 6 mois"
+      }
+    });
+  }
+
+  return {
+    "@context": "https://schema.org",
+    "@graph": graphNodes
   };
 }
 
@@ -167,13 +390,14 @@ function generateRedirectHtml(targetUrl: string, title: string): string {
 }
 
 function generateSitemapXml(allRoutes: RouteData[]): string {
+  const today = new Date().toISOString().split('T')[0];
   const urlEntries = allRoutes.map(r => {
     const loc = `https://alkymya.co${r.path === '/' ? '/' : `${r.path}/`}`;
     const priority = r.path === '/' ? '1.0' : (r.path === '/newbusiness' || r.path === '/ateliers' ? '0.9' : '0.8');
     const changefreq = r.path === '/' ? 'daily' : (r.path === '/newbusiness' || r.path === '/ateliers' || r.path === '/ressources' ? 'weekly' : 'monthly');
     return `  <url>
     <loc>${loc}</loc>
-    <lastmod>${r.lastmod}</lastmod>
+    <lastmod>${today}</lastmod>
     <changefreq>${changefreq}</changefreq>
     <priority>${priority}</priority>
   </url>`;
@@ -231,8 +455,11 @@ async function prerender() {
       html = html.replace('</head>', `  <link rel="canonical" href="${canonicalUrl}" />\n</head>`);
     }
 
-    // Balises Open Graph & Twitter Cards 1200x630
+    // Balises Meta Robots, Open Graph & Twitter Cards 1200x630
     const metaTags = `
+    <!-- Robots Directive for Google Discover & Rich Snippets -->
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+
     <!-- Open Graph / Facebook / LinkedIn (1200x630) -->
     <meta property="og:type" content="website" />
     <meta property="og:url" content="${canonicalUrl}" />
@@ -261,9 +488,10 @@ ${JSON.stringify(jsonLd, null, 2)}
     </script>
 `;
 
-    // Nettoyer les balises og:, twitter: et json-ld existantes pour éviter les doublons
+    // Nettoyer les balises robots, og:, twitter: et json-ld existantes pour éviter les doublons
     html = html
       .replace(/<script\s+type="application\/ld\+json">.*?<\/script>/gis, '')
+      .replace(/<meta\s+name="robots"[^>]*>/gi, '')
       .replace(/<meta\s+property="og:title"[^>]*>/gi, '')
       .replace(/<meta\s+property="og:description"[^>]*>/gi, '')
       .replace(/<meta\s+property="og:url"[^>]*>/gi, '')
@@ -343,11 +571,14 @@ ${JSON.stringify(jsonLd, null, 2)}
     console.log(`[prerender] Fichier _redirects copié dans dist/_redirects.`);
   }
 
-  // Copier également l'image og-image.jpg dans dist si elle existe
-  const publicOgImage = path.join(process.cwd(), 'public', 'og-image.jpg');
-  if (fs.existsSync(publicOgImage)) {
-    fs.copyFileSync(publicOgImage, path.join(distDir, 'og-image.jpg'));
-    console.log(`[prerender] Image 1200x630 copiée dans dist/og-image.jpg.`);
+  // Copier l'ensemble des images og-*.jpg vers dist/
+  const publicDir = path.join(process.cwd(), 'public');
+  if (fs.existsSync(publicDir)) {
+    const ogFiles = fs.readdirSync(publicDir).filter(f => f.startsWith('og-') && (f.endsWith('.jpg') || f.endsWith('.png')));
+    for (const f of ogFiles) {
+      fs.copyFileSync(path.join(publicDir, f), path.join(distDir, f));
+      console.log(`[prerender] Image ${f} copiée dans dist/${f}.`);
+    }
   }
 
   console.log(`[prerender] Succès complet du build SEO !`);
