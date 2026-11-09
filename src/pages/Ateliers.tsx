@@ -829,6 +829,114 @@ export default function Ateliers() {
           </div>
         </div>
 
+        {/* Structured Questions & Answers Section (Consigne 15: 600-900 mots) */}
+        <section className="mb-32 max-w-5xl mx-auto">
+          <div className="text-center mb-16">
+            <span className="text-xs font-black uppercase tracking-[0.3em] text-copper-orange mb-4 block">
+              Détails du Programme &amp; Financement
+            </span>
+            <h2 className="text-4xl font-heading font-black text-deep-blue">
+              Questions clés sur nos <span className="text-copper-orange">Ateliers &amp; Formations</span>
+            </h2>
+            <p className="text-muted-foreground max-w-2xl mx-auto mt-4 text-base md:text-lg">
+              Cinq réponses claires sur le public ciblé, les livrables, l'organisation et la prise en charge OPCO.
+            </p>
+          </div>
+
+          <div className="space-y-8">
+            {/* Question 1: À qui s'adresse l'offre */}
+            <div className="p-8 md:p-10 rounded-[2.5rem] bg-white border border-deep-blue/10 shadow-lg hover:shadow-xl transition-all">
+              <h3 className="text-2xl font-heading font-black text-deep-blue mb-4 flex items-center gap-3">
+                <span className="w-8 h-8 rounded-xl bg-copper-orange/15 text-copper-orange text-sm font-black flex items-center justify-center shrink-0">1</span>
+                À qui s'adressent nos formations et ateliers IA ?
+              </h3>
+              <div className="space-y-4 text-muted-foreground leading-relaxed text-base">
+                <p>
+                  Nos formations sont conçues pour les professionnels qui refusent les discours purement conceptuels et veulent acquérir des automatismes opérationnels concrets : cadres dirigeants, managers d'équipes, consultants indépendants, responsables marketing, communicants, créatifs et chefs de projet technique.
+                </p>
+                <p>
+                  Aucun prérequis en développement informatique n'est nécessaire. Nous adaptons la pédagogie aux réalités quotidiennes de votre organisation pour que chaque participant reparte avec des outils directement branchés sur ses propres tâches de travail :
+                </p>
+                <ul className="space-y-2 pl-4 border-l-2 border-copper-orange/40 text-deep-blue/90 font-medium text-sm">
+                  <li>• <strong>Dirigeants et DRH :</strong> accélérer la montée en compétences globale de l'entreprise tout en garantissant la sécurité des données internes.</li>
+                  <li>• <strong>Chefs de projet et consultants :</strong> automatiser la recherche documentaire, la formalisation de livrables et la veille stratégique.</li>
+                  <li>• <strong>Équipes marketing et communication :</strong> multiplier par trois la production de contenus textuels, visuels et graphiques fidèles à la charte de marque.</li>
+                </ul>
+              </div>
+            </div>
+
+            {/* Question 2: Ce qui est livré */}
+            <div className="p-8 md:p-10 rounded-[2.5rem] bg-white border border-deep-blue/10 shadow-lg hover:shadow-xl transition-all">
+              <h3 className="text-2xl font-heading font-black text-deep-blue mb-4 flex items-center gap-3">
+                <span className="w-8 h-8 rounded-xl bg-copper-orange/15 text-copper-orange text-sm font-black flex items-center justify-center shrink-0">2</span>
+                Ce qui vous est concrètement livré à l'issue de chaque module
+              </h3>
+              <div className="space-y-4 text-muted-foreground leading-relaxed text-base">
+                <p>
+                  Contrairement aux formations magistrales classiques où l'on se contente de diapositives théoriques, nos ateliers reposent sur une règle simple : vous repartez avec des actifs numériques tangibles, testés et fonctionnels dès le lendemain matin.
+                </p>
+                <p>
+                  Chaque participant bénéficie d'un accès permanent aux espaces collaboratifs Alkymya et à l'ensemble des ressources pédagogiques mises à jour en continu :
+                </p>
+                <ul className="space-y-2 pl-4 border-l-2 border-copper-orange/40 text-deep-blue/90 font-medium text-sm">
+                  <li>• <strong>Formation Core IA (14h) :</strong> bibliothèque de prompts maîtres prêts à l'emploi, guides pas-à-pas de prompt engineering, supports complets, attestation de fin de formation Qualiopi et suivi post-formation pendant 1 mois.</li>
+                  <li>• <strong>Option A — Agents IA (3h30) :</strong> conception et déploiement effectif de 3 agents intelligents autonomes connectés à Slack, Notion ou CRM, scénarios Make/Zapier exportables et documentation technique.</li>
+                  <li>• <strong>Option B — App No-Code (3h30) :</strong> une application web interne déployée sur URL sécurisée, interconnectée aux API de Google Gemini ou OpenAI GPT, avec formation à l'administration.</li>
+                  <li>• <strong>Option C — Éthique &amp; IA Act (3h30) :</strong> matrice d'audit de conformité réglementaire, grille de classification des risques et protocole de sécurisation des données d'entreprise.</li>
+                </ul>
+              </div>
+            </div>
+
+            {/* Question 3: Comment ça se passe */}
+            <div className="p-8 md:p-10 rounded-[2.5rem] bg-white border border-deep-blue/10 shadow-lg hover:shadow-xl transition-all">
+              <h3 className="text-2xl font-heading font-black text-deep-blue mb-4 flex items-center gap-3">
+                <span className="w-8 h-8 rounded-xl bg-copper-orange/15 text-copper-orange text-sm font-black flex items-center justify-center shrink-0">3</span>
+                Comment se déroule concrètement la formation (présentiel &amp; distanciel) ?
+              </h3>
+              <div className="space-y-4 text-muted-foreground leading-relaxed text-base">
+                <p>
+                  Nous privilégions un ratio strict de 80 % de pratique pour 20 % d'apports méthodologiques. Les sessions peuvent se tenir en présentiel dans vos locaux (partout en France et en Île-de-France), dans nos espaces partenaires, ou en classe virtuelle synchrone haute interaction.
+                </p>
+                <p>
+                  Le programme Core IA de 14 heures est articulé en 4 demi-journées modulables pour préserver l'activité de vos équipes. Les options spécialisées de 3h30 s'organisent sur une demi-journée dédiée et intense, focalisée sur un objectif unique : livrer un dispositif opérationnel avant la fin de la séance.
+                </p>
+              </div>
+            </div>
+
+            {/* Question 4: Ce que ça change */}
+            <div className="p-8 md:p-10 rounded-[2.5rem] bg-white border border-deep-blue/10 shadow-lg hover:shadow-xl transition-all">
+              <h3 className="text-2xl font-heading font-black text-deep-blue mb-4 flex items-center gap-3">
+                <span className="w-8 h-8 rounded-xl bg-copper-orange/15 text-copper-orange text-sm font-black flex items-center justify-center shrink-0">4</span>
+                Ce que nos ateliers changent dans votre organisation au quotidien
+              </h3>
+              <div className="space-y-4 text-muted-foreground leading-relaxed text-base">
+                <p>
+                  Le bénéfice le plus immédiatement mesurable est le gain de temps : nos apprenants constatent en moyenne une économie de 1 à 2 jours de travail par semaine sur la production de leurs livrables récurrents (synthèses de dossiers, comptes-rendus, propositions commerciales, créations visuelles).
+                </p>
+                <p>
+                  Au-delà du gain horaire, nos ateliers instaurent une culture de l'autonomie et de la rigueur : vos collaborateurs ne subissent plus la vague de l'intelligence artificielle mais savent exactement quel outil choisir, comment formuler une consigne infaillible et comment repérer les hallucinations.
+                </p>
+              </div>
+            </div>
+
+            {/* Question 5: Preuves et références */}
+            <div className="p-8 md:p-10 rounded-[2.5rem] bg-white border border-deep-blue/10 shadow-lg hover:shadow-xl transition-all">
+              <h3 className="text-2xl font-heading font-black text-deep-blue mb-4 flex items-center gap-3">
+                <span className="w-8 h-8 rounded-xl bg-copper-orange/15 text-copper-orange text-sm font-black flex items-center justify-center shrink-0">5</span>
+                Preuves de performance, certification Qualiopi et financements OPCO
+              </h3>
+              <div className="space-y-4 text-muted-foreground leading-relaxed text-base">
+                <p>
+                  Portée en alliance avec l'école INATEC et titulaire de la certification d'État Qualiopi pour les actions de formation, notre offre est éligible à une prise en charge financière pouvant atteindre 100 % par votre Opérateur de Compétences (OPCO).
+                </p>
+                <p>
+                  Nos chiffres parlent d'eux-mêmes : 99,3 % des participants recommandent nos ateliers, avec plus de 175 professionnels formés et évalués lors de la dernière campagne annuelle et une note de progression continue de +1,6 point sur douze mois. De prestigieuses institutions comme HETIC, Ynov, l'IÉSEG et le CFA Itis nous confient régulièrement leurs promotions.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* CTA */}
         <div className="text-center bg-white border border-deep-blue/5 rounded-[3rem] p-12 shadow-2xl">
           <h2 className="text-3xl font-heading font-black text-deep-blue mb-6">Prêt à transformer votre entreprise ?</h2>

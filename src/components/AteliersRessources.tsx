@@ -1,5 +1,4 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
 import { ArrowRight, Leaf, BookOpen, Users, ChevronDown, ChevronUp, CheckCircle2 } from "lucide-react";
 import { useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
@@ -70,10 +69,11 @@ export default function AteliersRessources() {
                 💡 Cliquez sur un atelier pour afficher sa présentation détaillée
               </p>
             </div>
-            <Link to="/ateliers">
-              <Button variant="link" className="text-accent p-0 h-auto font-medium group">
-                Voir tous les ateliers <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-              </Button>
+            <Link 
+              to="/ateliers"
+              className="inline-flex items-center text-accent font-medium group hover:underline text-sm"
+            >
+              Voir tous les ateliers <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
             </Link>
           </div>
 

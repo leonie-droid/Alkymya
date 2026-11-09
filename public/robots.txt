@@ -8,7 +8,13 @@ Disallow: /api/
 User-agent: GPTBot
 Allow: /
 
+User-agent: ChatGPT-User
+Allow: /
+
 User-agent: ClaudeBot
+Allow: /
+
+User-agent: anthropic-ai
 Allow: /
 
 User-agent: PerplexityBot
@@ -17,8 +23,30 @@ Allow: /
 User-agent: Google-Extended
 Allow: /
 
-# Sitemaps & LLM Context
+User-agent: Bytespider
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+User-agent: cohere-ai
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: Meta-ExternalAgent
+Allow: /
+
+User-agent: Amazonbot
+Allow: /
+
+# Sitemaps, Feeds & LLM Context
 Sitemap: https://alkymya.co/sitemap.xml
+# Flux RSS:
+# https://alkymya.co/rss.xml
+# Schéma structuré:
+# https://alkymya.co/schema.org.json
 # LLM knowledge files:
 # https://alkymya.co/llm.txt
 # https://alkymya.co/llms.txt

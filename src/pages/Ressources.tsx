@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { cn } from '../../lib/utils';
 import { Volume2, VolumeX, Maximize2, ExternalLink, Headphones, Play, FileText } from 'lucide-react';
+import NewsletterButton from '../components/NewsletterButton';
 
 const categories = ["Toutes", "Nos Analyseurs", "Nos études", "Business Game", "Agents", "Alkymya x Inatec", "Nos sites"];
 
@@ -343,6 +344,16 @@ export default function Ressources() {
             <p className="text-xl text-muted-foreground font-medium leading-relaxed">
               Bienvenue dans notre espace dédié au partage et à l'expérimentation. Chez Alkymya, nous croyons que la puissance de l'Intelligence Artificielle réside dans ses applications concrètes et sa capacité à simplifier notre quotidien professionnel.
             </p>
+            <div className="mt-8 flex flex-wrap items-center gap-4">
+              <NewsletterButton
+                variant="primary"
+                size="md"
+                label="Recevoir la lettre d'Alkymya"
+              />
+              <span className="text-xs text-muted-foreground font-medium">
+                Audience dédiée Resend · Une édition par mois sans bruit
+              </span>
+            </div>
           </motion.div>
         </div>
 

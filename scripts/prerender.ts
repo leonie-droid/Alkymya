@@ -174,6 +174,20 @@ function buildJsonLd(route: RouteData, canonicalUrl: string) {
     "about": {
       "@id": "https://alkymya.co/#organization"
     },
+    "author": [
+      {
+        "@type": "Person",
+        "@id": "https://alkymya.co/alchimistes/#cyril-garnier",
+        "name": "Cyril Garnier",
+        "url": "https://alkymya.co/alchimistes/#cyril-garnier"
+      },
+      {
+        "@type": "Person",
+        "@id": "https://alkymya.co/alchimistes/#leonie-egesipe",
+        "name": "Léonie Egesipe",
+        "url": "https://alkymya.co/alchimistes/#leonie-egesipe"
+      }
+    ],
     "breadcrumb": {
       "@id": `${canonicalUrl}#breadcrumb`
     }
@@ -313,20 +327,21 @@ function buildJsonLd(route: RouteData, canonicalUrl: string) {
     });
   }
 
-  // 5. Schéma Person pour /alchimistes/ (Cyril Garnier & Léonie Egesipe)
+  // 5. Schéma Person pour /alchimistes/ (Cyril Garnier, Léonie Egesipe, Véronique Landereau & Mariana Didier Laurent)
   if (route.path === '/alchimistes') {
     graphNodes.push(
       {
         "@type": "Person",
         "@id": "https://alkymya.co/#cyril-garnier",
         "name": "Cyril Garnier",
-        "jobTitle": "Fondateur & Consultant Stratégie IA",
+        "jobTitle": "Directeur Associé & Fondateur Alkymya",
         "image": "https://res.cloudinary.com/dokzioyu4/image/upload/v1758192982/66cffcd8-15f1-415f-b423-9f428d63e22f_gqjd53.png",
         "worksFor": {
           "@id": "https://alkymya.co/#organization"
         },
         "sameAs": [
-          "https://www.linkedin.com/in/cyrilgarnier/"
+          "https://www.linkedin.com/in/cyrilgarnier/",
+          "https://cyrilgarnier.fr/"
         ]
       },
       {
@@ -339,7 +354,76 @@ function buildJsonLd(route: RouteData, canonicalUrl: string) {
           "@id": "https://alkymya.co/#organization"
         },
         "sameAs": [
-          "https://www.linkedin.com/in/leonie-egesipe/"
+          "https://www.linkedin.com/in/leonie-egesipe/",
+          "https://leonieegesipe.netlify.app/"
+        ]
+      },
+      {
+        "@type": "Person",
+        "@id": "https://alkymya.co/alchimistes/#veronique-landereau",
+        "name": "Véronique Landereau",
+        "jobTitle": "Alchimiste associée, Santé, Prévention & Innovation",
+        "image": "https://res.cloudinary.com/dokzioyu4/image/upload/v1792763449/1792401247516_ussqzm.png",
+        "worksFor": {
+          "@type": "Organization",
+          "name": "Alkymya",
+          "url": "https://alkymya.co"
+        },
+        "alumniOf": {
+          "@type": "EducationalOrganization",
+          "name": "Gustave Roussy Éducation"
+        },
+        "knowsAbout": [
+          "Santé",
+          "Prévention",
+          "Maintien à domicile",
+          "MedTech",
+          "Intelligence artificielle en santé"
+        ],
+        "homeLocation": {
+          "@type": "Place",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Nantes",
+            "addressCountry": "FR"
+          }
+        },
+        "sameAs": [
+          "https://www.linkedin.com/in/veronique-landereau-97729a59/"
+        ]
+      },
+      {
+        "@type": "Person",
+        "@id": "https://alkymya.co/alchimistes/#mariana-didier-laurent",
+        "name": "Mariana Didier Laurent",
+        "jobTitle": "Alchimiste associée, Assurance & Services à la personne",
+        "image": "https://alkymya.co/img/alchimistes/mariana-didier-laurent.jpg",
+        "worksFor": {
+          "@type": "Organization",
+          "name": "Alkymya",
+          "url": "https://alkymya.co"
+        },
+        "alumniOf": {
+          "@type": "EducationalOrganization",
+          "name": "École Supérieure d'Assurance"
+        },
+        "knowsAbout": [
+          "Assurance IARD",
+          "Courtage",
+          "Services à la personne",
+          "Aide à domicile",
+          "Création d'entreprise"
+        ],
+        "homeLocation": {
+          "@type": "Place",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Le Plessis-Trévise",
+            "addressCountry": "FR"
+          }
+        },
+        "sameAs": [
+          "https://www.linkedin.com/in/marianassurance/"
         ]
       }
     );
@@ -395,16 +479,42 @@ function generateSitemapXml(allRoutes: RouteData[]): string {
     const loc = `https://alkymya.co${r.path === '/' ? '/' : `${r.path}/`}`;
     const priority = r.path === '/' ? '1.0' : (r.path === '/newbusiness' || r.path === '/ateliers' ? '0.9' : '0.8');
     const changefreq = r.path === '/' ? 'daily' : (r.path === '/newbusiness' || r.path === '/ateliers' || r.path === '/ressources' ? 'weekly' : 'monthly');
+
+    const images: { loc: string; title: string }[] = [
+      { loc: r.ogImage, title: `${r.title} — Alkymya` }
+    ];
+
+    if (r.path === '/alchimistes') {
+      images.push(
+        { loc: "https://res.cloudinary.com/dokzioyu4/image/upload/v1758192982/66cffcd8-15f1-415f-b423-9f428d63e22f_gqjd53.png", title: "Cyril Garnier — Directeur Associé Alkymya" },
+        { loc: "https://res.cloudinary.com/dokzioyu4/image/upload/v1758192982/c4f25b29-1634-44bf-a6d1-41f2378fbb4d_j10d8m.png", title: "Léonie Egesipe — Directrice Artistique IA Alkymya" },
+        { loc: "https://res.cloudinary.com/dokzioyu4/image/upload/v1792763449/1792401247516_ussqzm.png", title: "Véronique Landereau — Alchimiste associée Santé" },
+        { loc: "https://alkymya.co/img/alchimistes/mariana-didier-laurent.jpg", title: "Mariana Didier Laurent — Alchimiste associée Services" }
+      );
+    } else if (r.path === '/oeuvres') {
+      images.push(
+        { loc: "https://res.cloudinary.com/dokzioyu4/image/upload/v1772112521/e23iKTwc_u35aql.png", title: "Création IA — Angela Davis" },
+        { loc: "https://res.cloudinary.com/dokzioyu4/image/upload/v1772112521/d9eRiVt6_pmcd6l.png", title: "Création IA — Joséphine Baker" },
+        { loc: "https://res.cloudinary.com/dokzioyu4/image/upload/v1772111909/giJ307Jk_hcidx5.png", title: "Création IA — Pop Culture" }
+      );
+    }
+
+    const imageXml = images.map(img => `    <image:image>
+      <image:loc>${img.loc}</image:loc>
+      <image:title>${escapeHtml(img.title)}</image:title>
+    </image:image>`).join('\n');
+
     return `  <url>
     <loc>${loc}</loc>
     <lastmod>${today}</lastmod>
     <changefreq>${changefreq}</changefreq>
     <priority>${priority}</priority>
+${imageXml}
   </url>`;
   }).join('\n');
 
   return `<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
 ${urlEntries}
 </urlset>`;
 }
@@ -460,11 +570,14 @@ async function prerender() {
     <!-- Robots Directive for Google Discover & Rich Snippets -->
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
 
+    <!-- RSS Feed Discovery -->
+    <link rel="alternate" type="application/rss+xml" title="Flux RSS Alkymya" href="https://alkymya.co/rss.xml" />
+
     <!-- Open Graph / Facebook / LinkedIn (1200x630) -->
     <meta property="og:type" content="website" />
     <meta property="og:url" content="${canonicalUrl}" />
-    <meta property="og:title" content="${escapeHtml(route.title)}" />
-    <meta property="og:description" content="${escapeHtml(route.description)}" />
+    <meta property="og:title" content="${escapeHtml(route.ogTitle || route.title)}" />
+    <meta property="og:description" content="${escapeHtml(route.ogDescription || route.description)}" />
     <meta property="og:image" content="${route.ogImage}" />
     <meta property="og:image:secure_url" content="${route.ogImage}" />
     <meta property="og:image:width" content="1200" />
@@ -477,8 +590,8 @@ async function prerender() {
     <!-- Twitter Cards (summary_large_image) -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:url" content="${canonicalUrl}" />
-    <meta name="twitter:title" content="${escapeHtml(route.title)}" />
-    <meta name="twitter:description" content="${escapeHtml(route.description)}" />
+    <meta name="twitter:title" content="${escapeHtml(route.ogTitle || route.title)}" />
+    <meta name="twitter:description" content="${escapeHtml(route.ogDescription || route.description)}" />
     <meta name="twitter:image" content="${route.ogImage}" />
     <meta name="twitter:image:alt" content="Alkymya — Studio d'Innovation & Formations IA" />
 
@@ -569,6 +682,19 @@ ${JSON.stringify(jsonLd, null, 2)}
   if (fs.existsSync(publicRedirects)) {
     fs.copyFileSync(publicRedirects, path.join(distDir, '_redirects'));
     console.log(`[prerender] Fichier _redirects copié dans dist/_redirects.`);
+  }
+
+  // Copier rss.xml et schema.org.json
+  const publicRss = path.join(process.cwd(), 'public', 'rss.xml');
+  if (fs.existsSync(publicRss)) {
+    fs.copyFileSync(publicRss, path.join(distDir, 'rss.xml'));
+    console.log(`[prerender] Flux RSS copié dans dist/rss.xml.`);
+  }
+
+  const publicSchema = path.join(process.cwd(), 'public', 'schema.org.json');
+  if (fs.existsSync(publicSchema)) {
+    fs.copyFileSync(publicSchema, path.join(distDir, 'schema.org.json'));
+    console.log(`[prerender] Schéma JSON-LD copié dans dist/schema.org.json.`);
   }
 
   // Copier l'ensemble des images og-*.jpg vers dist/

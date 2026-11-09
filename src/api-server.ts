@@ -23,6 +23,7 @@ interface CohorteCandidature {
 
 const DATA_DIR = path.join(process.cwd(), 'data');
 const CANDIDATURES_FILE = path.join(DATA_DIR, 'cohorte-candidatures.json');
+const SUBSCRIBERS_FILE = path.join(DATA_DIR, 'newsletter-subscribers.json');
 
 function ensureDataDir() {
   if (!fs.existsSync(DATA_DIR)) {
@@ -30,6 +31,36 @@ function ensureDataDir() {
   }
   if (!fs.existsSync(CANDIDATURES_FILE)) {
     fs.writeFileSync(CANDIDATURES_FILE, JSON.stringify([], null, 2), 'utf-8');
+  }
+  if (!fs.existsSync(SUBSCRIBERS_FILE)) {
+    fs.writeFileSync(SUBSCRIBERS_FILE, JSON.stringify([], null, 2), 'utf-8');
+  }
+}
+
+function saveNewsletterSubscriber(email: string, firstName?: string, lastName?: string) {
+  ensureDataDir();
+  try {
+    const raw = fs.readFileSync(SUBSCRIBERS_FILE, 'utf-8');
+    const list = JSON.parse(raw);
+    const normalizedEmail = email.trim().toLowerCase();
+    const existing = list.find((item: any) => item.email?.toLowerCase() === normalizedEmail);
+    if (existing) {
+      return { alreadySubscribed: true, subscriber: existing };
+    }
+    const newSub = {
+      id: 'sub_' + Date.now() + '_' + Math.random().toString(36).substring(2, 7),
+      email: normalizedEmail,
+      firstName: firstName?.trim() || '',
+      lastName: lastName?.trim() || '',
+      createdAt: new Date().toISOString(),
+      status: 'subscribed',
+    };
+    list.push(newSub);
+    fs.writeFileSync(SUBSCRIBERS_FILE, JSON.stringify(list, null, 2), 'utf-8');
+    return { alreadySubscribed: false, subscriber: newSub };
+  } catch (err) {
+    console.error('Error saving newsletter subscriber:', err);
+    return { alreadySubscribed: false, subscriber: { email } };
   }
 }
 
@@ -421,6 +452,196 @@ export function createApiApp(): Express {
     } catch (error: any) {
       console.error('Chat API Error:', error);
       res.status(500).json({ error: error.message });
+    }
+  });
+
+  // Cached dedicated audience ID
+  let cachedAudienceId: string | null = process.env.RESEND_AUDIENCE_ID || null;
+
+  async function resolveDedicatedAudience(resendClient: Resend): Promise<string | null> {
+    if (cachedAudienceId) return cachedAudienceId;
+    if (process.env.RESEND_AUDIENCE_ID) {
+      cachedAudienceId = process.env.RESEND_AUDIENCE_ID;
+      return cachedAudienceId;
+    }
+
+    try {
+      const listRes = await resendClient.audiences.list();
+      const listData = (listRes as any)?.data?.data || (listRes as any)?.data || [];
+      if (Array.isArray(listData)) {
+        const found = listData.find((a: any) => 
+          a.name?.toLowerCase().includes('newsletter') || 
+          a.name?.toLowerCase().includes('alkymya')
+        );
+        if (found?.id) {
+          cachedAudienceId = found.id;
+          return cachedAudienceId;
+        }
+      }
+
+      // Auto-create dedicated audience in Resend if not yet present
+      const createRes = await resendClient.audiences.create({
+        name: 'Newsletter Alkymya',
+      });
+      const newId = (createRes as any)?.data?.id;
+      if (newId) {
+        cachedAudienceId = newId;
+        return cachedAudienceId;
+      }
+    } catch (err) {
+      console.warn('Could not auto-resolve or create Resend audience:', err);
+    }
+    return null;
+  }
+
+  // Newsletter Subscription API (Resend with dedicated audience)
+  app.post('/api/newsletter-subscribe', async (req, res) => {
+    try {
+      const { email, firstName, lastName } = req.body;
+      if (!email || typeof email !== 'string') {
+        return res.status(400).json({ error: 'Une adresse email valide est requise.' });
+      }
+
+      const normalizedEmail = email.trim().toLowerCase();
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!emailRegex.test(normalizedEmail)) {
+        return res.status(400).json({ error: 'Le format de l\'adresse email est invalide.' });
+      }
+
+      console.log(`[${new Date().toISOString()}] Inscription Newsletter pour ${normalizedEmail}`);
+
+      // Save locally in persistent JSON
+      const { alreadySubscribed } = saveNewsletterSubscriber(normalizedEmail, firstName, lastName);
+
+      // If no Resend API key is configured, respond in local dev mode
+      if (!process.env.RESEND_API_KEY) {
+        console.warn('RESEND_API_KEY non configurée — abonné enregistré localement.');
+        return res.status(200).json({
+          success: true,
+          message: alreadySubscribed
+            ? 'Vous êtes déjà inscrit(e) à la lettre d\'Alkymya.'
+            : 'Votre inscription à la lettre d\'Alkymya a bien été enregistrée avec succès !',
+          alreadySubscribed,
+          mode: 'local',
+        });
+      }
+
+      const resendClient = getResend();
+      const audienceId = await resolveDedicatedAudience(resendClient);
+
+      // Add contact to Resend with dedicated audience / segment
+      let resendContactError: any = null;
+      if (audienceId) {
+        try {
+          const addRes = await resendClient.contacts.create({
+            email: normalizedEmail,
+            firstName: firstName?.trim(),
+            lastName: lastName?.trim(),
+            unsubscribed: false,
+            audienceId: audienceId,
+          });
+          if (addRes.error) {
+            // Attempt with segments if audienceId was deprecated or expects segments
+            const segmentRes = await resendClient.contacts.create({
+              email: normalizedEmail,
+              firstName: firstName?.trim(),
+              lastName: lastName?.trim(),
+              unsubscribed: false,
+              segments: [{ id: audienceId }],
+            });
+            if (segmentRes.error) {
+              resendContactError = segmentRes.error;
+            }
+          }
+        } catch (err: any) {
+          console.warn('Error creating contact with audienceId:', err);
+          resendContactError = err;
+        }
+      } else {
+        const globalRes = await resendClient.contacts.create({
+          email: normalizedEmail,
+          firstName: firstName?.trim(),
+          lastName: lastName?.trim(),
+          unsubscribed: false,
+        });
+        if (globalRes.error) {
+          resendContactError = globalRes.error;
+        }
+      }
+
+      const errorMessage = resendContactError?.message || '';
+      const isAlreadyExists = errorMessage.toLowerCase().includes('already exists') || 
+                              errorMessage.toLowerCase().includes('duplicate');
+
+      // Send confirmation welcome email to subscriber
+      try {
+        await resendClient.emails.send({
+          from: 'Alkymya <onboarding@resend.dev>',
+          to: [normalizedEmail],
+          subject: 'Bienvenue dans la lettre d\'Alkymya',
+          html: `
+            <div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; max-width: 600px; margin: 0 auto; color: #1e293b; line-height: 1.6; border: 1px solid #e2e8f0; border-radius: 16px; overflow: hidden; background: #ffffff;">
+              <div style="background: linear-gradient(135deg, #1F4F6E 0%, #16384e 100%); padding: 36px 30px; text-align: center; color: #ffffff;">
+                <p style="text-transform: uppercase; letter-spacing: 2px; font-size: 11px; margin: 0 0 8px 0; color: #c06721; font-weight: bold;">Lettre d'information</p>
+                <h1 style="margin: 0; font-size: 26px; font-weight: 800; letter-spacing: 1px;">ALKYMYA</h1>
+                <p style="margin: 10px 0 0 0; font-size: 14px; color: #e2e8f0;">Carnets de terrain, retours d'expérience et signaux faibles de l'IA</p>
+              </div>
+              <div style="padding: 32px 30px;">
+                <p style="font-size: 16px; margin-top: 0;">Bonjour${firstName ? ' ' + firstName : ''},</p>
+                <p style="font-size: 15px; color: #475569; line-height: 1.7;">
+                  Votre inscription à la lettre d'information d'<strong>Alkymya</strong> est confirmée. Vous faites désormais partie de notre audience dédiée.
+                </p>
+                <div style="background-color: #f8fafc; border-left: 4px solid #c06721; padding: 20px; border-radius: 8px; margin: 24px 0;">
+                  <p style="margin: 0; font-size: 14px; color: #334155; line-height: 1.6;">
+                    <strong>Ce que vous recevrez :</strong> des mesures concrètes de terrain (SEO/GEO, pré-rendu, architecture de sites), des retours d'expérience sur les agents IA en production et les coulisses de nos prototypes.
+                  </p>
+                </div>
+                <p style="font-size: 14px; color: #64748b;">
+                  Pour toute question ou échange sur votre projet, répondez directement à ce mail ou écrivez-nous à <a href="mailto:cyril@alkymya.co" style="color: #c06721; text-decoration: none; font-weight: 600;">cyril@alkymya.co</a>.
+                </p>
+              </div>
+              <div style="background-color: #f1f5f9; padding: 20px 30px; text-align: center; font-size: 12px; color: #64748b;">
+                <p style="margin: 0 0 6px 0;">© ${new Date().getFullYear()} Alkymya.co — Tous droits réservés.</p>
+                <p style="margin: 0; font-size: 11px; color: #94a3b8;">Désinscription possible à tout moment en un clic.</p>
+              </div>
+            </div>
+          `,
+        });
+      } catch (mailErr) {
+        console.warn('Could not send welcome email:', mailErr);
+      }
+
+      // Notify Cyril
+      try {
+        await resendClient.emails.send({
+          from: 'Alkymya Newsletter <onboarding@resend.dev>',
+          to: ['cyril@alkymya.co'],
+          subject: `[Nouvel abonné Newsletter] ${normalizedEmail}`,
+          html: `
+            <div style="font-family: sans-serif; padding: 20px;">
+              <h3>Nouvel abonné à la lettre d'Alkymya</h3>
+              <p><strong>Email :</strong> ${normalizedEmail}</p>
+              <p><strong>Prénom :</strong> ${firstName || 'Non renseigné'}</p>
+              <p><strong>Audience Resend :</strong> ${audienceId || 'Globale'}</p>
+              <p><strong>Date :</strong> ${new Date().toLocaleString('fr-FR')}</p>
+            </div>
+          `,
+        });
+      } catch (adminMailErr) {
+        console.warn('Could not send admin notification:', adminMailErr);
+      }
+
+      return res.status(200).json({
+        success: true,
+        message: isAlreadyExists || alreadySubscribed
+          ? 'Vous êtes déjà inscrit(e) à notre lettre d\'information !'
+          : 'Votre inscription à la lettre d\'Alkymya a bien été enregistrée avec succès !',
+        audienceId: audienceId || undefined,
+        alreadySubscribed: isAlreadyExists || alreadySubscribed,
+      });
+    } catch (error: any) {
+      console.error('Newsletter Server Error:', error);
+      res.status(500).json({ error: error.message || 'Erreur serveur lors de l\'inscription.' });
     }
   });
 

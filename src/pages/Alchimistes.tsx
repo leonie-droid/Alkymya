@@ -8,14 +8,24 @@ import { cn } from '@/lib/utils';
 
 const alchimistes = [
   {
+    id: "cyril-garnier",
+    anchor: "#cyril-garnier",
     name: "Cyril Garnier",
     role: "Directeur Associé",
+    kicker: "Directeur Associé & Fondateur",
     website: "https://cyrilgarnier.fr/",
     websiteLabel: "cyrilgarnier.fr",
     bio: "Expert reconnu de l'accompagnement entrepreneurial, Cyril Garnier occupe aujourd'hui le poste de Directeur Associé chez Alkymya. Fort d'une expérience marquante à la tête de SNCF Développement, où il a soutenu la création de milliers d'emplois, il met désormais son savoir-faire au service de l'innovation de rupture. Au sein d'Alkymya, il agit comme un architecte de la croissance, spécialisé dans la transformation d'idées complexes en succès commerciaux concrets.",
     details: "Son rôle consiste à sécuriser le \"Go-to-Market\" des projets et à structurer des modèles économiques robustes, faisant de lui un pont stratégique entre l'agilité des startups et la puissance des grands groupes. En résumé, Cyril Garnier est un accélérateur de business qui transforme l'innovation théorique en réalité industrielle et économique.",
+    quote: "L'intelligence artificielle n'a de valeur réelle que lorsqu'elle rencontre un marché et de vrais clients engagés.",
     image: "https://res.cloudinary.com/dokzioyu4/image/upload/v1758192982/66cffcd8-15f1-415f-b423-9f428d63e22f_gqjd53.png",
     socials: { website: "https://cyrilgarnier.fr/", linkedin: "https://www.linkedin.com/in/cyril-garnier-89697b1/", instagram: "https://www.instagram.com/alkymya_cyril", tiktok: "https://www.tiktok.com/@cyrilgarnierphoto", youtube: "https://www.youtube.com/@cyrilgarnier9475", mail: "cyril@alkymya.co" },
+    link: {
+      label: "Site officiel",
+      display: "cyrilgarnier.fr",
+      url: "https://cyrilgarnier.fr/",
+      icon: "globe"
+    },
     works: [
       { label: "Doctrine IAG : Dialogue sur la Stratégie Cachée", url: "https://res.cloudinary.com/dokzioyu4/image/upload/v1777500626/La_Doctrine_IAG___Dialogue_sur_la_Strate%CC%81gie_Cache%CC%81e_de_l_E%CC%80re_Trump_zwxlqi_vlfkkw.pdf" },
       { label: "Quiz Maturité IA Entreprise", url: "https://maturiteia.alkymya.co/" },
@@ -29,14 +39,101 @@ const alchimistes = [
     ]
   },
   {
+    id: "leonie-egesipe",
+    anchor: "#leonie-egesipe",
+    name: "Léonie Egesipe",
+    role: "Chef de Projet Digital",
+    kicker: "Co-Fondatrice & Directrice Artistique IA",
+    website: "https://leonieegesipe.netlify.app/",
+    websiteLabel: "leonieegesipe.netlify.app",
+    bio: "Etudiante en chef de Projet Digital. Au sein d’Alkymya, Léonie occupe un rôle central dans le déploiement opérationnel des stratégies d’innovation. En binôme étroit avec Cyril Garnier, elle assure la direction des projets numériques, transformant les visions stratégiques du studio en dispositifs digitaux concrets et performants.",
+    details: "À la fois organisatrice et stratège, elle pilote la présence numérique d'Alkymya et optimise les outils de communication pour renforcer l'influence du studio. Sa mission est double : garantir une rigueur de pilotage irréprochable et apporter une agilité digitale indispensable pour partager avec les porteurs de projets leur transformation.",
+    quote: "Créer des identités visuelles et narratives singulières où la sensibilité humaine guide l'IA vers l'émotion.",
+    image: "https://res.cloudinary.com/dokzioyu4/image/upload/v1762252984/725879fe-afa3-4afa-a900-229030c002de_1_xoep2v.png",
+    socials: { website: "https://leonieegesipe.netlify.app/", instagram: "https://www.instagram.com/alkymya_leonie?igsh=YnRicG01NDBka3lx", linkedin: "https://www.linkedin.com/in/l%C3%A9onie-egesipe-96a283291/", mail: "leonie@alkymya.co" },
+    link: {
+      label: "Portfolio officiel",
+      display: "leonieegesipe.netlify.app",
+      url: "https://leonieegesipe.netlify.app/",
+      icon: "globe"
+    },
+    works: [
+      { label: "Vidéo analyseur de photo", url: "https://res.cloudinary.com/dokzioyu4/video/upload/v1773761166/46b26247d1084cb39b354fe4c9842b29_aszzay_f48sjs.mov" },
+      { label: "Vidéo analyseur de cv", url: "https://res.cloudinary.com/dokzioyu4/video/upload/v1773762096/c599dc6cd0ef4e6196a739c87b2cb773_gxn0lj.mov" },
+      { label: "Vidéo analyseur de mémoire", url: "https://res.cloudinary.com/dokzioyu4/video/upload/v1776374160/bac00848173641fd882d43dc3b970835_jtyspz.mov" },
+    ]
+  },
+  {
+    id: "veronique-landereau",
+    anchor: "#veronique-landereau",
+    name: "Véronique Landereau",
+    role: "Alchimiste associée — Santé, Prévention & Innovation",
+    kicker: "Alchimiste associée, Santé",
+    website: "https://www.linkedin.com/in/veronique-landereau-97729a59/",
+    websiteLabel: "linkedin.com/in/veronique-landereau",
+    websiteTag: "Profil LinkedIn",
+    websiteIcon: "linkedin",
+    bio: "Co-fondatrice de New Health Paradigm, Véronique Landereau consacre son activité aux projets de santé qui placent la prévention, le maintien à domicile et l'accompagnement des aidants au cœur de leur modèle. Formée à Gustave Roussy Éducation, elle évolue au quotidien dans l'écosystème MedTech et dispositifs médicaux.",
+    details: "Nantaise, elle évolue au quotidien entre dispositifs médicaux, prévention et perte d'autonomie, et suit de près les innovations françaises du secteur comme les tours de financement des jeunes entreprises de santé. Sa conviction : les technologies ne prennent véritablement leur sens que lorsqu'elles sont portées par des femmes et des hommes capables de créer de la confiance et du lien.",
+    quote: "Les technologies ne prennent véritablement leur sens que lorsqu'elles sont portées par des femmes et des hommes capables de créer de la confiance et du lien.",
+    image: "https://res.cloudinary.com/dokzioyu4/image/upload/v1792763449/1792401247516_ussqzm.png",
+    socials: {
+      linkedin: "https://www.linkedin.com/in/veronique-landereau-97729a59/",
+      mail: "contact@alkymya.co"
+    },
+    works: [
+      { label: "New Health Paradigm", url: "https://www.linkedin.com/in/veronique-landereau-97729a59/" },
+      { label: "Prévention & parcours de soins", url: "https://www.linkedin.com/in/veronique-landereau-97729a59/" },
+      { label: "Maintien à domicile & aidants", url: "https://www.linkedin.com/in/veronique-landereau-97729a59/" },
+      { label: "MedTech & dispositifs médicaux", url: "https://www.linkedin.com/in/veronique-landereau-97729a59/" },
+      { label: "Financement de l'innovation santé", url: "https://www.linkedin.com/in/veronique-landereau-97729a59/" }
+    ]
+  },
+  {
+    id: "mariana-didier-laurent",
+    anchor: "#mariana-didier-laurent",
+    name: "Mariana Didier Laurent",
+    role: "Alchimiste associée — Services à la personne & Autonomie",
+    kicker: "Alchimiste associée, Services à la personne",
+    website: "https://www.linkedin.com/in/marianassurance/",
+    websiteLabel: "esperanta-services.fr (en création)",
+    websiteTag: "Entreprise & Réseau",
+    websiteIcon: "globe",
+    bio: "Présidente d'Esperanta Services, Mariana Didier Laurent consacre son activité à l'aide à domicile des personnes en perte d'autonomie et à l'accompagnement des proches aidants. Diplômée de l'École Supérieure d'Assurance, passée par le courtage et la gestion des risques de personnes, elle ancre son entreprise au Plessis-Trévise.",
+    details: "Ce qu'elle partage avec les porteurs de projet du programme New Business, c'est l'expérience directe du lancement : choix de la forme juridique, constitution du capital, agrément des services à la personne, relation avec les prescripteurs locaux et les financeurs publics. Sa conviction : dans les services d'aide à la personne, la qualité de l'organisation et la rigueur de gestion sont indissociables de la relation humaine.",
+    quote: "Dans les services d'aide à la personne, la qualité de l'organisation et la rigueur de gestion sont indissociables de la relation humaine.",
+    image: "/img/alchimistes/mariana-didier-laurent.jpg",
+    socials: {
+      linkedin: "https://www.linkedin.com/in/marianassurance/",
+      mail: "contact@alkymya.co"
+    },
+    works: [
+      { label: "Esperanta Services", url: "https://www.linkedin.com/in/marianassurance/" },
+      { label: "Services à la personne & aide à domicile", url: "https://www.linkedin.com/in/marianassurance/" },
+      { label: "Accompagnement des proches aidants", url: "https://www.linkedin.com/in/marianassurance/" },
+      { label: "Gestion des risques & conformité", url: "https://www.linkedin.com/in/marianassurance/" },
+      { label: "Lancement d'entreprise & agrément", url: "https://www.linkedin.com/in/marianassurance/" }
+    ]
+  },
+  {
+    id: "olivier-dion",
+    anchor: "#olivier-dion",
     name: "Olivier Dion",
     role: "Fondateur de Onecub & Expert Data",
+    kicker: "Expert Data & Espaces de Données",
     website: "https://onecub.com/",
     websiteLabel: "onecub.com",
     bio: "Pionnier des Espaces de Données et expert en gouvernance numérique, le fondateur de Onecub est une figure centrale de la conformité réglementaire européenne. Entrepreneur engagé (notamment via Themy-x), il accompagne la transformation digitale de secteurs stratégiques comme la mobilité, l'énergie et l'agriculture en bâtissant des Data Spaces souverains.",
     details: "Expert auprès des instances de régulation et intervenant régulier pour la Commission Européenne, GAIA-X ou encore le gouvernement coréen, il contribue activement à définir les standards mondiaux de la donnée à travers ses publications et ses conférences internationales.",
+    quote: "La souveraineté de la donnée et la confiance sont le socle indispensable des architectures IA d'avenir.",
     image: "https://res.cloudinary.com/dokzioyu4/image/upload/v1760374889/Photo_Olivier_Dion_reve_dk2c5e.png",
     socials: { website: "https://onecub.com/", linkedin: "https://www.linkedin.com/in/olivierdion/", instagram: "", mail: "" },
+    link: {
+      label: "Site officiel",
+      display: "onecub.com",
+      url: "https://onecub.com/",
+      icon: "globe"
+    },
     works: [
       { label: "Lab Postal 2017", url: "https://www.youtube.com/watch?v=bubawgP2gU0" },
       { label: "TEDxLaBaule", url: "https://www.youtube.com/watch?v=u6Eh26k6O8U" },
@@ -46,29 +143,24 @@ const alchimistes = [
     ]
   },
   {
-    name: "Léonie Egesipe",
-    role: "Chef de Projet Digital",
-    website: "https://leonieegesipe.netlify.app/",
-    websiteLabel: "leonieegesipe.netlify.app",
-    bio: "Etudiante en chef de Projet Digital. Au sein d’Alkymya, Léonie occupe un rôle central dans le déploiement opérationnel des stratégies d’innovation. En binôme étroit avec Cyril Garnier, elle assure la direction des projets numériques, transformant les visions stratégiques du studio en dispositifs digitaux concrets et performants.",
-    details: "À la fois organisatrice et stratège, elle pilote la présence numérique d'Alkymya et optimise les outils de communication pour renforcer l'influence du studio. Sa mission est double : garantir une rigueur de pilotage irréprochable et apporter une agilité digitale indispensable pour partager avec les porteurs de projets leur transformation.",
-    image: "https://res.cloudinary.com/dokzioyu4/image/upload/v1762252984/725879fe-afa3-4afa-a900-229030c002de_1_xoep2v.png",
-    socials: { website: "https://leonieegesipe.netlify.app/", instagram: "https://www.instagram.com/alkymya_leonie?igsh=YnRicG01NDBka3lx", linkedin: "https://www.linkedin.com/in/l%C3%A9onie-egesipe-96a283291/", mail: "leonie@alkymya.co" },
-    works: [
-      { label: "Vidéo analyseur de photo", url: "https://res.cloudinary.com/dokzioyu4/video/upload/v1773761166/46b26247d1084cb39b354fe4c9842b29_aszzay_f48sjs.mov" },
-      { label: "Vidéo analyseur de cv", url: "https://res.cloudinary.com/dokzioyu4/video/upload/v1773762096/c599dc6cd0ef4e6196a739c87b2cb773_gxn0lj.mov" },
-      { label: "Vidéo analyseur de mémoire", url: "https://res.cloudinary.com/dokzioyu4/video/upload/v1776374160/bac00848173641fd882d43dc3b970835_jtyspz.mov" },
-    ]
-  },
-  {
+    id: "kendra-martine",
+    anchor: "#kendra-martine",
     name: "Kendra Martine",
     role: "Fondatrice d'Objectif Alternance & Formatrice",
+    kicker: "Partenaire Alternance & Formatrice",
     website: "https://www.objectifalternance.fr/",
     websiteLabel: "objectifalternance.fr",
     bio: "Fondatrice d’« Objectif Alternance », Kendra Martine est spécialisée dans le recrutement d’alternants et de profils en reconversion, ainsi que dans le coaching emploi et alternance ciblant principalement les TPE et PME. Passionnée par l'humain et l'insertion professionnelle, elle bâtit des passerelles solides entre talents émergents et entreprises en développement.",
     details: "Forte de 7 ans d’expérience en stratégie marketing en entreprise, Kendra mène en parallèle une activité d’enseignante et formatrice avec une réelle passion pour la transmission. Elle dispense des formations et cours de marketing destinés à des lycéens, étudiants et adultes, en présentiel comme en ligne.",
+    quote: "Bâtir des passerelles solides entre talents émergents et entreprises en développement grâce à l'insertion et l'alternance.",
     image: "https://res.cloudinary.com/dokzioyu4/image/upload/v1788941994/0c39dd0a7f91200361816f2b88d68802_cwzov0.jpg",
     socials: { website: "https://www.objectifalternance.fr/", linkedin: "", instagram: "", mail: "" },
+    link: {
+      label: "Site officiel",
+      display: "objectifalternance.fr",
+      url: "https://www.objectifalternance.fr/",
+      icon: "globe"
+    },
     works: [
       { label: "Site Objectif Alternance", url: "https://www.objectifalternance.fr/" }
     ]
@@ -176,15 +268,17 @@ const WorksAccordion = ({ works, handleWorkClick }: { works: any[], handleWorkCl
 const AlchimisteCard: React.FC<{ person: any, index: number, handleWorkClick: (e: React.MouseEvent, url: string, label: string) => void }> = ({ person, index, handleWorkClick }) => {
   const [isExpanded, setIsExpanded] = useState(false);
 
+  const anchorId = person.anchor ? person.anchor.replace('#', '') : (person.id || undefined);
+
   return (
     <motion.div
       key={person.name}
-      id={person.name === "Cyril Garnier" ? "cyril-garnier" : undefined}
+      id={anchorId}
       initial={{ opacity: 0, y: 30 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.8, delay: index * 0.1 }}
-      className="flex flex-col h-full"
+      className="flex flex-col h-full scroll-mt-28"
     >
       <Card className="group flex flex-col h-full overflow-hidden border-none shadow-2xl transition-all duration-500 rounded-[2.5rem] bg-white/70 backdrop-blur-md hover:shadow-copper-orange/10 border border-white/20">
         {/* Profile Header: Image & Role */}
@@ -197,39 +291,40 @@ const AlchimisteCard: React.FC<{ person: any, index: number, handleWorkClick: (e
           />
           <div className="absolute inset-0 bg-gradient-to-t from-deep-blue/90 via-deep-blue/20 to-transparent p-8 flex flex-col justify-end">
             <div className="flex flex-wrap gap-2 mb-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-              {person.socials.instagram && (
-                <a href={person.socials.instagram} target="_blank" rel="noopener noreferrer" className="p-2 rounded-full bg-white/10 hover:bg-copper-orange text-white backdrop-blur-md transition-all">
+              {person.socials?.instagram && (
+                <a href={person.socials.instagram} target="_blank" rel="noopener noreferrer" className="p-2 rounded-full bg-white/10 hover:bg-copper-orange text-white backdrop-blur-md transition-all" aria-label="Instagram">
                   <Instagram className="h-4 w-4" />
                 </a>
               )}
-              {person.socials.tiktok && (
-                <a href={person.socials.tiktok} target="_blank" rel="noopener noreferrer" className="p-2 rounded-full bg-white/10 hover:bg-copper-orange text-white backdrop-blur-md transition-all">
+              {person.socials?.tiktok && (
+                <a href={person.socials.tiktok} target="_blank" rel="noopener noreferrer" className="p-2 rounded-full bg-white/10 hover:bg-copper-orange text-white backdrop-blur-md transition-all" aria-label="TikTok">
                   <FaTiktok size={16} />
                 </a>
               )}
-              {"youtube" in person.socials && person.socials.youtube && (
-                <a href={person.socials.youtube as string} target="_blank" rel="noopener noreferrer" className="p-2 rounded-full bg-white/10 hover:bg-copper-orange text-white backdrop-blur-md transition-all">
+              {"youtube" in (person.socials || {}) && person.socials?.youtube && (
+                <a href={person.socials.youtube as string} target="_blank" rel="noopener noreferrer" className="p-2 rounded-full bg-white/10 hover:bg-copper-orange text-white backdrop-blur-md transition-all" aria-label="YouTube">
                   <Youtube className="h-4 w-4" />
                 </a>
               )}
-              {person.socials.linkedin && (
-                <a href={person.socials.linkedin} target="_blank" rel="noopener noreferrer" className="p-2 rounded-full bg-white/10 hover:bg-copper-orange text-white backdrop-blur-md transition-all">
+              {person.socials?.linkedin && (
+                <a href={person.socials.linkedin} target="_blank" rel="noopener noreferrer" className="p-2 rounded-full bg-white/10 hover:bg-copper-orange text-white backdrop-blur-md transition-all" aria-label="LinkedIn">
                   <Linkedin className="h-4 w-4" />
                 </a>
               )}
-              {("website" in person.socials && person.socials.website || "website" in person && person.website) && (
+              {(person.website || person.socials?.website) && (
                 <a 
-                  href={(person.socials.website || person.website) as string} 
+                  href={(person.website || person.socials?.website) as string} 
                   target="_blank" 
                   rel="noopener noreferrer" 
                   className="p-2 rounded-full bg-white/10 hover:bg-copper-orange text-white backdrop-blur-md transition-all"
                   title={person.websiteLabel || "Site web officiel"}
+                  aria-label="Site web"
                 >
                   <Globe className="h-4 w-4" />
                 </a>
               )}
-              {person.socials.mail && (
-                <a href={`mailto:${person.socials.mail}`} className="p-2 rounded-full bg-white/10 hover:bg-copper-orange text-white backdrop-blur-md transition-all">
+              {person.socials?.mail && (
+                <a href={`mailto:${person.socials.mail}`} className="p-2 rounded-full bg-white/10 hover:bg-copper-orange text-white backdrop-blur-md transition-all" aria-label="Email">
                   <Mail className="h-4 w-4" />
                 </a>
               )}
@@ -289,23 +384,23 @@ const AlchimisteCard: React.FC<{ person: any, index: number, handleWorkClick: (e
           </AnimatePresence>
 
           {/* Website direct CTA banner */}
-          {'website' in person && person.website && (
+          {person.website && (
             <a
               href={person.website}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-between w-full p-3.5 rounded-2xl bg-gradient-to-r from-copper-orange/15 via-copper-orange/5 to-transparent border border-copper-orange/30 hover:border-copper-orange hover:bg-copper-orange text-deep-blue hover:text-white transition-all duration-300 group/site shadow-sm"
+              className="inline-flex items-center justify-between w-full p-3.5 rounded-2xl bg-gradient-to-r from-copper-orange/15 via-copper-orange/5 to-transparent border border-copper-orange/30 hover:border-copper-orange hover:bg-copper-orange text-deep-blue hover:text-white transition-all duration-300 group/site shadow-sm mt-auto"
             >
               <div className="flex items-center gap-2.5">
                 <div className="p-2 rounded-xl bg-copper-orange/20 text-copper-orange group-hover/site:bg-white/20 group-hover/site:text-white transition-colors">
-                  <Globe className="w-4 h-4" />
+                  {person.websiteIcon === 'linkedin' ? <Linkedin className="w-4 h-4" /> : <Globe className="w-4 h-4" />}
                 </div>
                 <div className="text-left">
                   <span className="text-[10px] font-black uppercase tracking-wider text-copper-orange group-hover/site:text-white block">
-                    Site officiel
+                    {person.websiteTag || "Site officiel"}
                   </span>
                   <span className="text-xs font-bold font-heading line-clamp-1">
-                    {person.websiteLabel || "Visiter le site"}
+                    {person.websiteLabel || person.website.replace(/^https?:\/\//, '').replace(/\/$/, '')}
                   </span>
                 </div>
               </div>
@@ -314,7 +409,7 @@ const AlchimisteCard: React.FC<{ person: any, index: number, handleWorkClick: (e
           )}
 
           {/* Lab Works / Portfolio section */}
-          {'works' in person && person.works && person.works.length > 0 && (
+          {person.works && person.works.length > 0 && (
             <div className="mt-auto">
               <WorksAccordion works={person.works} handleWorkClick={handleWorkClick} />
             </div>
@@ -396,12 +491,12 @@ export default function Alchimistes() {
           <h1 className="text-5xl md:text-7xl font-heading font-black text-deep-blue mb-8">
             Nos <span className="text-copper-orange">Alchimistes</span>
           </h1>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-            Rencontrez les esprits créatifs qui font battre le cœur d'Alkymya. Des visionnaires passionnés par la transformation et l'innovation.
+          <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+            Derrière Alkymya, quatre personnalités complémentaires réunissent la vision stratégique d'entreprise, la rigueur pédagogique, l'audace de la direction artistique — et deux expertises de terrain, la santé et les services à la personne.
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-8 max-w-7xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
           {alchimistes.map((person, index) => (
             <AlchimisteCard 
               key={person.name} 

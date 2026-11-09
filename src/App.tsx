@@ -18,6 +18,7 @@ import { SEO } from './components/SEO';
 import { Chatbot } from './components/Chatbot';
 import CookieBanner from './components/CookieBanner';
 import { AnalyticsTracker } from './components/AnalyticsTracker';
+import NewsletterModal from './components/NewsletterModal';
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -58,6 +59,7 @@ export default function App() {
          <Footer />
          <Chatbot />
          <CookieBanner />
+         <NewsletterModal />
        </div>
     </Router>
   );

@@ -347,6 +347,114 @@ export default function GenerateurIA() {
             </Button>
           </motion.div>
         </section>
+
+        {/* Structured Questions & Answers Section (Consigne 15: 600-900 mots) */}
+        <section className="mt-32 max-w-5xl mx-auto">
+          <div className="text-center mb-16">
+            <span className="px-4 py-1.5 rounded-full bg-copper-orange/10 border border-copper-orange/30 text-copper-orange text-xs font-black uppercase tracking-widest inline-block mb-4">
+              Méthode &amp; Usages Opérationnels
+            </span>
+            <h2 className="text-3xl md:text-5xl font-heading font-black text-deep-blue">
+              Comprendre le <span className="text-copper-orange">Générateur d'Idées IA</span>
+            </h2>
+            <p className="text-muted-foreground max-w-2xl mx-auto mt-4 text-base md:text-lg">
+              Cinq réponses concrètes pour transformer une intuition technologique en valeur métier mesurable.
+            </p>
+          </div>
+
+          <div className="space-y-8">
+            {/* Question 1: À qui s'adresse l'offre */}
+            <div className="p-8 md:p-10 rounded-[2.5rem] bg-white border border-deep-blue/10 shadow-lg hover:shadow-xl transition-all">
+              <h3 className="text-2xl font-heading font-black text-deep-blue mb-4 flex items-center gap-3">
+                <span className="w-8 h-8 rounded-xl bg-copper-orange/15 text-copper-orange text-sm font-black flex items-center justify-center shrink-0">1</span>
+                À qui s'adresse le Générateur d'Idées IA Alkymya ?
+              </h3>
+              <div className="space-y-4 text-muted-foreground leading-relaxed text-base">
+                <p>
+                  Cette suite d'outils d'idéation s'adresse en priorité aux dirigeants d'entreprise, directeurs de l'innovation, chefs de produit, consultants en stratégie et étudiants des grandes écoles qui souhaitent dépasser les simples requêtes génériques pour éprouver de vraies hypothèses de marché.
+                </p>
+                <p>
+                  Que vous soyez en phase de cadrage d'un nouveau produit numérique, à la recherche de personas clients documentés ou en quête de cas d'usage opérationnels pour vos équipes métiers, le Générateur IA offre un cadre interactif rigoureux, sans jargon superflu et immédiatement mobilisable :
+                </p>
+                <ul className="space-y-2 pl-4 border-l-2 border-copper-orange/40 text-deep-blue/90 font-medium text-sm">
+                  <li>• <strong>Dirigeants et entrepreneurs :</strong> tester l'appétence d'un segment de marché et identifier les fonctionnalités indispensables avant tout investissement.</li>
+                  <li>• <strong>Responsables marketing et produit :</strong> simuler des réactions utilisateurs et formaliser des personas comportementaux nuancés.</li>
+                  <li>• <strong>Formateurs et enseignants :</strong> illustrer en direct auprès d'apprenants la puissance de l'ingénierie de prompt contextualisée.</li>
+                </ul>
+              </div>
+            </div>
+
+            {/* Question 2: Ce qui est livré */}
+            <div className="p-8 md:p-10 rounded-[2.5rem] bg-white border border-deep-blue/10 shadow-lg hover:shadow-xl transition-all">
+              <h3 className="text-2xl font-heading font-black text-deep-blue mb-4 flex items-center gap-3">
+                <span className="w-8 h-8 rounded-xl bg-copper-orange/15 text-copper-orange text-sm font-black flex items-center justify-center shrink-0">2</span>
+                Que livre concrètement cette suite de démonstrateurs ?
+              </h3>
+              <div className="space-y-4 text-muted-foreground leading-relaxed text-base">
+                <p>
+                  Le Générateur IA n'est pas un concept théorique : c'est un ensemble d'applications concrètes connectées aux modèles de langage les plus avancés du marché (Google Gemini et OpenAI GPT), calibrés avec nos propres bibliothèques de contraintes métiers.
+                </p>
+                <p>
+                  En naviguant dans l'outil, vous accédez à des livrables exploitables immédiatement pour nourrir vos réunions stratégiques ou vos dossiers de cadrage :
+                </p>
+                <ul className="space-y-2 pl-4 border-l-2 border-copper-orange/40 text-deep-blue/90 font-medium text-sm">
+                  <li>• <strong>Simulateur de personas interactif :</strong> cinq profils types d'usagers de l'IA (explorateur engagé, usager pragmatique, apprentis connectés, designers créatifs, observateurs prudents) avec scénarios vidéo et fiches de comportement.</li>
+                  <li>• <strong>Moteurs de prompts avancés :</strong> formulaires guidés pour générer des propositions de valeur, des matrices de risques et des scripts de pitch.</li>
+                  <li>• <strong>Rapport prospectif téléchargeable :</strong> accès direct à notre étude exclusive « Génération IA 2026 » analysant les mutations technologiques et organisationnelles à venir.</li>
+                  <li>• <strong>Quiz d'auto-évaluation :</strong> outil de diagnostic interactif pour situer la maturité IA de vos collaborateurs et de vos processus.</li>
+                </ul>
+              </div>
+            </div>
+
+            {/* Question 3: Comment ça se passe */}
+            <div className="p-8 md:p-10 rounded-[2.5rem] bg-white border border-deep-blue/10 shadow-lg hover:shadow-xl transition-all">
+              <h3 className="text-2xl font-heading font-black text-deep-blue mb-4 flex items-center gap-3">
+                <span className="w-8 h-8 rounded-xl bg-copper-orange/15 text-copper-orange text-sm font-black flex items-center justify-center shrink-0">3</span>
+                Comment se déroule l'expérimentation d'un cas d'usage ?
+              </h3>
+              <div className="space-y-4 text-muted-foreground leading-relaxed text-base">
+                <p>
+                  L'utilisation du Générateur IA suit une méthodologie en trois étapes éprouvée lors de nos interventions en entreprise : observation, confrontation et synthèse opérationnelle.
+                </p>
+                <p>
+                  Vous commencez par choisir une problématique métier précise (par exemple la qualification automatisée de prospects ou la génération de synthèses documentaires). L'outil sollicite alors des agents spécialisés qui confrontent votre idée à des contraintes réalistes de budget, de conformité RGPD et d'adoption utilisateur. En moins de dix minutes, vous obtenez une vue panoramique des forces et des angles morts de votre initiative.
+                </p>
+              </div>
+            </div>
+
+            {/* Question 4: Ce que ça change */}
+            <div className="p-8 md:p-10 rounded-[2.5rem] bg-white border border-deep-blue/10 shadow-lg hover:shadow-xl transition-all">
+              <h3 className="text-2xl font-heading font-black text-deep-blue mb-4 flex items-center gap-3">
+                <span className="w-8 h-8 rounded-xl bg-copper-orange/15 text-copper-orange text-sm font-black flex items-center justify-center shrink-0">4</span>
+                Ce que change l'idéation assistée par IA dans votre organisation
+              </h3>
+              <div className="space-y-4 text-muted-foreground leading-relaxed text-base">
+                <p>
+                  Dans la plupart des organisations, passer de l'idée au premier cadrage demande entre trois et six semaines de réunions préparatoires. Grâce à l'ingénierie de prompt contextualisée développée par Alkymya, ce délai est ramené à quelques heures.
+                </p>
+                <p>
+                  Ce gain de temps ne se fait jamais au détriment de la rigueur : l'intelligence artificielle est paramétrée pour agir comme un contradicteur exigeant, qui pointe les failles du modèle économique plutôt que de valider passivement des hypothèses complaisantes. Vos équipes abordent ensuite leurs ateliers de prototypage avec une vision lucide et argumentée.
+                </p>
+              </div>
+            </div>
+
+            {/* Question 5: Preuves et références */}
+            <div className="p-8 md:p-10 rounded-[2.5rem] bg-white border border-deep-blue/10 shadow-lg hover:shadow-xl transition-all">
+              <h3 className="text-2xl font-heading font-black text-deep-blue mb-4 flex items-center gap-3">
+                <span className="w-8 h-8 rounded-xl bg-copper-orange/15 text-copper-orange text-sm font-black flex items-center justify-center shrink-0">5</span>
+                Preuves de terrain et retours d'expérience vérifiables
+              </h3>
+              <div className="space-y-4 text-muted-foreground leading-relaxed text-base">
+                <p>
+                  Les démonstrateurs présentés sur cette page ont été testés et enrichis auprès de plus de 450 professionnels et étudiants issus d'écoles reconnues comme HETIC, Ynov Campus, IÉSEG et CFA Itis.
+                </p>
+                <p>
+                  Sur nos médias de territoire comme TheLittle77, l'agent d'analyse de marché adossé à cette technologie a produit plus de 400 simulations de personas documentés en moins de dix minutes, permettant de calibrer la ligne éditoriale sans mobiliser des semaines d'enquêtes terrain préalables.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
       </div>
     </div>
   );

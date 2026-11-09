@@ -343,6 +343,113 @@ export default function NewBusiness() {
         </div>
       </section>
 
+      {/* Structured Questions & Answers Section (Consigne 15: 600-900 mots) */}
+      <section className="py-20 px-4 max-w-5xl mx-auto w-full">
+        <div className="text-center mb-16">
+          <span className="text-xs font-black uppercase tracking-[0.3em] text-copper-orange mb-4 block">
+            Cadre Opérationnel &amp; Démarche
+          </span>
+          <h2 className="text-3xl md:text-5xl font-heading font-black text-deep-blue">
+            Tout savoir sur <span className="text-copper-orange">New Business MVP</span>
+          </h2>
+          <p className="text-muted-foreground max-w-2xl mx-auto mt-4 text-base md:text-lg">
+            Cinq questions fondamentales pour évaluer l'adéquation de votre projet avec notre accompagnement.
+          </p>
+        </div>
+
+        <div className="space-y-8">
+          {/* Question 1: À qui s'adresse l'offre */}
+          <div className="p-8 md:p-10 rounded-[2.5rem] bg-white border border-deep-blue/10 shadow-lg hover:shadow-xl transition-all">
+            <h3 className="text-2xl font-heading font-black text-deep-blue mb-4 flex items-center gap-3">
+              <span className="w-8 h-8 rounded-xl bg-copper-orange/15 text-copper-orange text-sm font-black flex items-center justify-center shrink-0">1</span>
+              À qui s'adresse l'offre New Business MVP ?
+            </h3>
+            <div className="space-y-4 text-muted-foreground leading-relaxed text-base">
+              <p>
+                Ce programme s'adresse aux créateurs d'entreprise, consultants indépendants en phase de lancement, repreneurs, intrapreneurs et professionnels porteurs d'un projet innovant qui refusent de s'enfermer dans l'effet tunnel du développement solitaire.
+              </p>
+              <p>
+                Il est spécialement conçu pour ceux qui ont une idée forte mais manquent de méthode pour valider la réalité de la demande avant d'engager des milliers d'euros en développements informatiques ou en campagnes publicitaires hasardeuses :
+              </p>
+              <ul className="space-y-2 pl-4 border-l-2 border-copper-orange/40 text-deep-blue/90 font-medium text-sm">
+                <li>• <strong>Solopreneurs et indépendants :</strong> passer du statut de prestataire à la vente d'une offre packagée et testée.</li>
+                <li>• <strong>Fondateurs de startups :</strong> confronter immédiatement leur hypothèse au terrain et signer leurs premiers clients payants.</li>
+                <li>• <strong>Professionnels en reconversion :</strong> acquérir une routine entrepreneuriale rigoureuse guidée par des mentors chevronnés.</li>
+              </ul>
+            </div>
+          </div>
+
+          {/* Question 2: Ce qui est livré */}
+          <div className="p-8 md:p-10 rounded-[2.5rem] bg-white border border-deep-blue/10 shadow-lg hover:shadow-xl transition-all">
+            <h3 className="text-2xl font-heading font-black text-deep-blue mb-4 flex items-center gap-3">
+              <span className="w-8 h-8 rounded-xl bg-copper-orange/15 text-copper-orange text-sm font-black flex items-center justify-center shrink-0">2</span>
+              Ce qui vous est concrètement livré mois après mois
+            </h3>
+            <div className="space-y-4 text-muted-foreground leading-relaxed text-base">
+              <p>
+                New Business MVP est un parcours jalonné d'actifs tangibles. Vous ne repartez pas avec de vagues conseils théoriques, mais avec des livrables opérationnels co-construits avec nos directeurs associés :
+              </p>
+              <ul className="space-y-2 pl-4 border-l-2 border-copper-orange/40 text-deep-blue/90 font-medium text-sm">
+                <li>• <strong>Mois 1 — Fiche Profil Client Idéal (ICP) :</strong> cartographie chirurgicale de qui paie, analyse des budgets existants et scénario d'interviews terrain qualifiées.</li>
+                <li>• <strong>Mois 2 — Proposition de Valeur &amp; Arbitrage :</strong> matrice valeur/complexité, élagage impitoyable du superflu et formalisation d'un argumentaire percutant.</li>
+                <li>• <strong>Mois 3 — MVP Opérationnel en Ligne :</strong> vitrine ou produit fonctionnel déployé sans coûts de développement superflus, avec capture de prospects active.</li>
+                <li>• <strong>Mois 4 — Grille Tarifaire &amp; Rituels :</strong> modélisation du modèle de revenus, tests d'acceptabilité prix et ancrage des rituels hebdomadaires de travail.</li>
+                <li>• <strong>Mois 5 — Pitch Deck Partenaires (10 slides) :</strong> présentation percutante appuyée sur vos preuves de traction réelles et script oral rodé de 3 minutes.</li>
+                <li>• <strong>Mois 6 — Boussole Stratégique &amp; Demo Day :</strong> analyse approfondie des métriques d'usage et arbitrage lucide entre Continuer, Pivoter ou Accélérer.</li>
+              </ul>
+            </div>
+          </div>
+
+          {/* Question 3: Comment ça se passe */}
+          <div className="p-8 md:p-10 rounded-[2.5rem] bg-white border border-deep-blue/10 shadow-lg hover:shadow-xl transition-all">
+            <h3 className="text-2xl font-heading font-black text-deep-blue mb-4 flex items-center gap-3">
+              <span className="w-8 h-8 rounded-xl bg-copper-orange/15 text-copper-orange text-sm font-black flex items-center justify-center shrink-0">3</span>
+              Comment se déroule concrètement l'accompagnement sur 6 mois ?
+            </h3>
+            <div className="space-y-4 text-muted-foreground leading-relaxed text-base">
+              <p>
+                L'accompagnement associe deux rendez-vous mensuels stratégiques en tête-à-tête en visioconférence avec Cyril Garnier et Léonie Egesipe, complétés par des rituels hebdomadaires de suivi asynchrone pour ne jamais laisser un blocage s'installer.
+              </p>
+              <p>
+                Chaque mois est dédié à un palier clair. Entre les sessions, vous appliquez des protocoles d'action guidés sur le terrain. L'effort personnel attendu est de 3 à 4 heures par semaine en plus de vos rendez-vous, ce qui permet de concilier parfaitement le programme avec votre activité professionnelle existante.
+              </p>
+            </div>
+          </div>
+
+          {/* Question 4: Ce que ça change */}
+          <div className="p-8 md:p-10 rounded-[2.5rem] bg-white border border-deep-blue/10 shadow-lg hover:shadow-xl transition-all">
+            <h3 className="text-2xl font-heading font-black text-deep-blue mb-4 flex items-center gap-3">
+              <span className="w-8 h-8 rounded-xl bg-copper-orange/15 text-copper-orange text-sm font-black flex items-center justify-center shrink-0">4</span>
+              Ce que la méthode change pour la viabilité de votre projet
+            </h3>
+            <div className="space-y-4 text-muted-foreground leading-relaxed text-base">
+              <p>
+                Le risque numéro un de tout projet entrepreneurial n'est pas technique, c'est de construire quelque chose dont personne ne veut au prix fixé. En vous forçant à confronter votre offre à de vrais prospects dès le premier mois, nous supprimons le risque de l'illusion.
+              </p>
+              <p>
+                Notre tarification est totalement transparente et accessible : 200 € / mois pendant 6 mois (soit un coût global de 1 200 € HT sans aucun engagement contractuel au-delà). Vous préservez votre trésorerie et financez votre accélération sur la base de premiers revenus avérés.
+              </p>
+            </div>
+          </div>
+
+          {/* Question 5: Preuves et références */}
+          <div className="p-8 md:p-10 rounded-[2.5rem] bg-white border border-deep-blue/10 shadow-lg hover:shadow-xl transition-all">
+            <h3 className="text-2xl font-heading font-black text-deep-blue mb-4 flex items-center gap-3">
+              <span className="w-8 h-8 rounded-xl bg-copper-orange/15 text-copper-orange text-sm font-black flex items-center justify-center shrink-0">5</span>
+              Preuves de terrain, références et mentors engagés
+            </h3>
+            <div className="space-y-4 text-muted-foreground leading-relaxed text-base">
+              <p>
+                Le programme s'appuie sur plus de 15 années d'expérience accumulées par Cyril Garnier, ancien directeur général de SNCF Développement où il a supervisé la création de milliers d'emplois et accompagné des centaines de projets vers la viabilité commerciale.
+              </p>
+              <p>
+                Le binôme est renforcé par Léonie Egesipe, directrice artistique et spécialiste de l'ergonomie numérique, garantissant que chaque livrable produit bénéficie d'un niveau d'exécution visuelle et d'expérience utilisateur digne des meilleurs standards du marché.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Formulaire de Candidature */}
       <section className="py-20 px-4 max-w-3xl mx-auto w-full" id="candidature">
         <div className="text-center mb-12">

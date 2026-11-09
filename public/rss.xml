@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Alkymya — Studio d'Innovation IA &amp; Formations Qualiopi</title>
+    <link>https://alkymya.co/</link>
+    <description>Actualités, réalisations concrètes en intelligence artificielle, médias éditoriaux (TheLittle77, TheLittle83, TheLittle75) et formations professionnelles certifiées Qualiopi par Alkymya.</description>
+    <language>fr-FR</language>
+    <lastBuildDate>Mon, 09 Nov 2026 09:00:00 +0100</lastBuildDate>
+    <atom:link href="https://alkymya.co/rss.xml" rel="self" type="application/rss+xml"/>
+    
+    <item>
+      <title>Refonte de la page Œuvres : médias de territoire, agents IA et création</title>
+      <link>https://alkymya.co/oeuvres/</link>
+      <guid isPermaLink="true">https://alkymya.co/oeuvres/#refonte-2026</guid>
+      <pubDate>Mon, 09 Nov 2026 08:30:00 +0100</pubDate>
+      <description><![CDATA[Découvrez les œuvres et réalisations réelles d'Alkymya : TheLittle77 (216 pages, N°1 Google et cité par Google AI Overviews), TheLittle83 (bilingue 132 pages), TheLittle75, ainsi que nos quatre agents IA opérationnels.]]></description>
+    </item>
+
+    <item>
+      <title>Lancement de TheLittle83 : média bilingue Var référencé en moins d'une heure</title>
+      <link>https://alkymya.co/oeuvres/#thelittle83</link>
+      <guid isPermaLink="true">https://alkymya.co/oeuvres/#thelittle83</guid>
+      <pubDate>Sun, 08 Nov 2026 10:00:00 +0100</pubDate>
+      <description><![CDATA[Mise en ligne de TheLittle83 dans le Var : 132 pages en deux langues, 101 967 mots et 144 photographies, indexé par les moteurs d'IA dès son premier jour.]]></description>
+    </item>
+
+    <item>
+      <title>Première newsletter TheLittle77 envoyée avec succès via notre Agent IA</title>
+      <link>https://alkymya.co/oeuvres/#agents-ia</link>
+      <guid isPermaLink="true">https://alkymya.co/oeuvres/#newsletter-thelittle77</guid>
+      <pubDate>Thu, 05 Nov 2026 14:00:00 +0100</pubDate>
+      <description><![CDATA[L'Agent Newsletter autonome d'Alkymya a assuré son premier cycle complet d'envoi et de tracking le 5 novembre 2026 pour TheLittle77.]]></description>
+    </item>
+
+    <item>
+      <title>Sessions d'Ateliers &amp; Formations IA Certifiées Qualiopi</title>
+      <link>https://alkymya.co/ateliers/</link>
+      <guid isPermaLink="true">https://alkymya.co/ateliers/#qualopi-sessions</guid>
+      <pubDate>Mon, 02 Nov 2026 09:00:00 +0100</pubDate>
+      <description><![CDATA[Nouvelle ouverture des sessions Formation Core IA (14h) et ateliers pratiques d'agentification de 3h30, finançables jusqu'à 100% par les OPCO grâce au partenariat INATEC.]]></description>
+    </item>
+
+    <item>
+      <title>Programme New Business MVP : 6 mois pour valider son offre auprès de vrais clients</title>
+      <link>https://alkymya.co/newbusiness/</link>
+      <guid isPermaLink="true">https://alkymya.co/newbusiness/#promo-mvp</guid>
+      <pubDate>Wed, 28 Oct 2026 09:00:00 +0100</pubDate>
+      <description><![CDATA[Accompagnement opérationnel à 200 € / mois piloté en binôme par Cyril Garnier et Léonie Egesipe pour concevoir un MVP et tester son marché.]]></description>
+    </item>
+  </channel>
+</rss>

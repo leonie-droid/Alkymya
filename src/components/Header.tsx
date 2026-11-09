@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Menu, Instagram, Facebook, Linkedin, Youtube } from 'lucide-react';
-import { Button } from '@/components/ui/button';
+import { buttonVariants } from '@/components/ui/button';
 import {
   Sheet,
   SheetContent,
@@ -9,6 +9,7 @@ import {
 import { Link, useLocation } from 'react-router-dom';
 import { cn } from '../../lib/utils';
 import Logo from './Logo';
+import NewsletterButton from './NewsletterButton';
 
 const navItems = [
   { name: 'Accueil', href: '/' },
@@ -57,9 +58,13 @@ export default function Header() {
           ))}
         </nav>
 
-        {/* Right column: Socials or Menu */}
-        <div className="flex-none flex items-center gap-4 z-10 min-w-[40px] justify-end">
-          <div className="hidden xl:flex items-center gap-4 text-muted-foreground border-l border-border pl-6 ml-2">
+        {/* Right column: Socials, Newsletter button & Mobile Menu */}
+        <div className="flex-none flex items-center gap-3 sm:gap-4 z-10 min-w-[40px] justify-end">
+          <div className="hidden sm:flex items-center">
+            <NewsletterButton variant="header" size="sm" label="Newsletter" />
+          </div>
+          
+          <div className="hidden xl:flex items-center gap-4 text-muted-foreground border-l border-border pl-4 ml-1">
             <a href="https://www.instagram.com/alkymya_cyril" target="_blank" rel="noopener noreferrer">
               <Instagram className="h-4 w-4 hover:text-accent cursor-pointer transition-colors" />
             </a>
@@ -70,29 +75,45 @@ export default function Header() {
               <Linkedin className="h-4 w-4 hover:text-accent cursor-pointer transition-colors" />
             </a>
           </div>
+          
           <div className="lg:hidden">
             <Sheet open={isOpen} onOpenChange={setIsOpen}>
-              <SheetTrigger asChild>
-                <Button variant="ghost" size="icon" className="text-primary">
-                  <Menu className="h-6 w-6" />
-                </Button>
+              <SheetTrigger
+                className={cn(
+                  buttonVariants({ variant: "ghost", size: "icon" }),
+                  "text-primary"
+                )}
+                aria-label="Ouvrir le menu de navigation"
+              >
+                <Menu className="h-6 w-6" />
+                <span className="sr-only">Menu principal</span>
               </SheetTrigger>
               <SheetContent side="right" className="w-[300px] sm:w-[400px] bg-background">
-                <nav className="flex flex-col gap-8 mt-12">
+                <nav className="flex flex-col gap-6 mt-10">
+                  <div className="pb-2">
+                    <NewsletterButton 
+                      variant="primary" 
+                      size="md" 
+                      label="S'inscrire à la newsletter" 
+                      className="w-full justify-center shadow-md" 
+                    />
+                  </div>
+
                   {navItems.map((item) => (
                     <Link
                       key={item.name}
                       to={item.href}
                       onClick={() => setIsOpen(false)}
                       className={cn(
-                        "text-2xl font-heading font-bold hover:text-accent transition-colors",
+                        "text-xl font-heading font-bold hover:text-accent transition-colors",
                         location.pathname === item.href ? "text-accent" : "text-primary"
                       )}
                     >
                       {item.name}
                     </Link>
                   ))}
-                  <div className="flex gap-4 mt-8">
+                  
+                  <div className="flex gap-4 mt-6 pt-6 border-t border-border">
                     <a href="https://www.instagram.com/alkymya_cyril" target="_blank" rel="noopener noreferrer">
                       <Instagram className="h-6 w-6 text-muted-foreground hover:text-accent cursor-pointer" />
                     </a>

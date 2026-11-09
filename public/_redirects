@@ -1,12 +1,20 @@
+# Redirection www et http vers https://alkymya.co en un seul saut (Consigne 18)
+https://www.alkymya.co/*   https://alkymya.co/:splat   301!
+http://www.alkymya.co/*    https://alkymya.co/:splat   301!
+http://alkymya.co/*        https://alkymya.co/:splat   301!
+
+# Redirection 301 propre de /index.html vers la racine / (Consigne 18)
+/index.html                /                           301!
+
 # Redirections 301 historiques vers l'URL canonique unique /newbusiness/
-/new-business.html        /newbusiness/    301!
-/new-business             /newbusiness/    301!
-/cohorte-fondatrice.html  /newbusiness/    301!
-/cohorte-fondatrice       /newbusiness/    301!
-/cohorte                  /newbusiness/    301!
+/new-business.html         /newbusiness/               301!
+/new-business              /newbusiness/               301!
+/cohorte-fondatrice.html   /newbusiness/               301!
+/cohorte-fondatrice        /newbusiness/               301!
+/cohorte                   /newbusiness/               301!
 
 # API proxy vers la fonction serverless Netlify
-/api/*                    /.netlify/functions/server/:splat    200
+/api/*                     /.netlify/functions/server/:splat    200
 
 # Règle anti-soft-404 : toute URL inconnue renvoie 404 vers /404.html
-/*                        /404.html        404
+/*                         /404.html                   404

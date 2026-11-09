@@ -1,0 +1,101 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": ["EducationalOrganization", "ProfessionalService", "LocalBusiness"],
+      "@id": "https://alkymya.co/#organization",
+      "name": "Alkymya",
+      "alternateName": ["Alkymya.co", "Studio Alkymya"],
+      "url": "https://alkymya.co/",
+      "logo": "https://res.cloudinary.com/dokzioyu4/image/upload/v1758096912/logo_principal_bleu_gbnyuu.png",
+      "image": "https://alkymya.co/og-image.jpg",
+      "description": "Studio d'innovation et organisme de formation certifié Qualiopi en Intelligence Artificielle générative, agentification, prompt engineering et création numérique.",
+      "telephone": "+33 1 89 71 32 40",
+      "email": "contact@alkymya.co",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Ozoir-la-Ferrière",
+        "addressLocality": "Ozoir-la-Ferrière",
+        "postalCode": "77330",
+        "addressRegion": "Seine-et-Marne",
+        "addressCountry": "FR"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 48.7667,
+        "longitude": 2.6833
+      },
+      "areaServed": [
+        { "@type": "AdministrativeArea", "name": "Seine-et-Marne" },
+        { "@type": "AdministrativeArea", "name": "Île-de-France" },
+        { "@type": "Country", "name": "France" }
+      ],
+      "sameAs": [
+        "https://www.linkedin.com/company/alkymya/",
+        "https://www.youtube.com/@alkymya",
+        "https://www.instagram.com/alkymya.co/"
+      ],
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+          "opens": "09:00",
+          "closes": "18:30"
+        }
+      ]
+    },
+    {
+      "@type": "Person",
+      "@id": "https://alkymya.co/alchimistes/#cyril-garnier",
+      "name": "Cyril Garnier",
+      "jobTitle": "Directeur Associé & Fondateur Alkymya",
+      "image": "https://res.cloudinary.com/dokzioyu4/image/upload/v1758192982/66cffcd8-15f1-415f-b423-9f428d63e22f_gqjd53.png",
+      "worksFor": { "@id": "https://alkymya.co/#organization" },
+      "sameAs": [
+        "https://www.linkedin.com/in/cyrilgarnier/",
+        "https://cyrilgarnier.fr/"
+      ]
+    },
+    {
+      "@type": "Person",
+      "@id": "https://alkymya.co/alchimistes/#leonie-egesipe",
+      "name": "Léonie Egesipe",
+      "jobTitle": "Co-Fondatrice & Directrice Artistique IA",
+      "image": "https://res.cloudinary.com/dokzioyu4/image/upload/v1758192982/c4f25b29-1634-44bf-a6d1-41f2378fbb4d_j10d8m.png",
+      "worksFor": { "@id": "https://alkymya.co/#organization" },
+      "sameAs": [
+        "https://www.linkedin.com/in/leonie-egesipe/",
+        "https://leonieegesipe.netlify.app/"
+      ]
+    },
+    {
+      "@type": "Person",
+      "@id": "https://alkymya.co/alchimistes/#veronique-landereau",
+      "name": "Véronique Landereau",
+      "jobTitle": "Alchimiste associée, Santé, Prévention & Innovation",
+      "image": "https://res.cloudinary.com/dokzioyu4/image/upload/v1792763449/1792401247516_ussqzm.png",
+      "worksFor": { "@id": "https://alkymya.co/#organization" },
+      "sameAs": [
+        "https://www.linkedin.com/in/veronique-landereau-97729a59/"
+      ]
+    },
+    {
+      "@type": "Person",
+      "@id": "https://alkymya.co/alchimistes/#mariana-didier-laurent",
+      "name": "Mariana Didier Laurent",
+      "jobTitle": "Alchimiste associée, Assurance & Services à la personne",
+      "image": "/img/alchimistes/mariana-didier-laurent.jpg",
+      "worksFor": { "@id": "https://alkymya.co/#organization" },
+      "sameAs": [
+        "https://www.linkedin.com/in/marianassurance/"
+      ]
+    },
+    {
+      "@type": "Course",
+      "@id": "https://alkymya.co/ateliers/#course-ia",
+      "name": "Formations & Ateliers Pratiques en Intelligence Artificielle Générative",
+      "description": "Formations certifiées Qualiopi éligibles OPCO : Formation Core IA (14h), Option A Agents IA (3h30), Option B App No-Code IA (3h30).",
+      "provider": { "@id": "https://alkymya.co/#organization" }
+    }
+  ]
+}
