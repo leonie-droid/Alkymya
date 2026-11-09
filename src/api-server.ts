@@ -1,6 +1,7 @@
 import express, { Express } from 'express';
 import path from 'node:path';
 import fs from 'node:fs';
+import os from 'node:os';
 import { Resend } from 'resend';
 import { GoogleGenAI } from "@google/genai";
 
@@ -21,57 +22,131 @@ interface CohorteCandidature {
   isFounder: boolean;
 }
 
-const DATA_DIR = path.join(process.cwd(), 'data');
-const CANDIDATURES_FILE = path.join(DATA_DIR, 'cohorte-candidatures.json');
-const SUBSCRIBERS_FILE = path.join(DATA_DIR, 'newsletter-subscribers.json');
+// In-memory fallbacks when filesystem is read-only (e.g. AWS Lambda / Netlify / Vercel at /var/task)
+const inMemoryCandidatures: CohorteCandidature[] = [];
+const inMemorySubscribers: any[] = [];
 
-function ensureDataDir() {
-  if (!fs.existsSync(DATA_DIR)) {
-    fs.mkdirSync(DATA_DIR, { recursive: true });
+function getWritableDataDir(): string {
+  // If running in a serverless environment (Netlify, AWS Lambda, Vercel) or read-only directory
+  if (
+    process.env.NETLIFY ||
+    process.env.VERCEL ||
+    process.env.AWS_LAMBDA_FUNCTION_NAME ||
+    process.cwd().startsWith('/var/task')
+  ) {
+    const tmpData = path.join(os.tmpdir(), 'alkymya-data');
+    try {
+      if (!fs.existsSync(tmpData)) {
+        fs.mkdirSync(tmpData, { recursive: true });
+      }
+      return tmpData;
+    } catch {
+      return os.tmpdir();
+    }
   }
-  if (!fs.existsSync(CANDIDATURES_FILE)) {
-    fs.writeFileSync(CANDIDATURES_FILE, JSON.stringify([], null, 2), 'utf-8');
+
+  // Local or containerized runtime
+  const localDir = path.join(process.cwd(), 'data');
+  try {
+    if (!fs.existsSync(localDir)) {
+      fs.mkdirSync(localDir, { recursive: true });
+    }
+    return localDir;
+  } catch {
+    // If process.cwd() is read-only, fallback to /tmp
+    const tmpData = path.join(os.tmpdir(), 'alkymya-data');
+    try {
+      if (!fs.existsSync(tmpData)) {
+        fs.mkdirSync(tmpData, { recursive: true });
+      }
+      return tmpData;
+    } catch {
+      return os.tmpdir();
+    }
   }
-  if (!fs.existsSync(SUBSCRIBERS_FILE)) {
-    fs.writeFileSync(SUBSCRIBERS_FILE, JSON.stringify([], null, 2), 'utf-8');
+}
+
+function ensureDataFiles() {
+  try {
+    const dir = getWritableDataDir();
+    const candFile = path.join(dir, 'cohorte-candidatures.json');
+    const subFile = path.join(dir, 'newsletter-subscribers.json');
+
+    if (!fs.existsSync(candFile)) {
+      fs.writeFileSync(candFile, JSON.stringify([], null, 2), 'utf-8');
+    }
+    if (!fs.existsSync(subFile)) {
+      fs.writeFileSync(subFile, JSON.stringify([], null, 2), 'utf-8');
+    }
+  } catch (err) {
+    console.warn('Filesystem read-only or not writable, using memory storage:', err);
   }
 }
 
 function saveNewsletterSubscriber(email: string, firstName?: string, lastName?: string) {
-  ensureDataDir();
+  const normalizedEmail = email.trim().toLowerCase();
+  ensureDataFiles();
+
   try {
-    const raw = fs.readFileSync(SUBSCRIBERS_FILE, 'utf-8');
-    const list = JSON.parse(raw);
-    const normalizedEmail = email.trim().toLowerCase();
-    const existing = list.find((item: any) => item.email?.toLowerCase() === normalizedEmail);
-    if (existing) {
-      return { alreadySubscribed: true, subscriber: existing };
+    const dir = getWritableDataDir();
+    const subFile = path.join(dir, 'newsletter-subscribers.json');
+    if (fs.existsSync(subFile)) {
+      const raw = fs.readFileSync(subFile, 'utf-8');
+      const list = JSON.parse(raw);
+      const existing = list.find((item: any) => item.email?.toLowerCase() === normalizedEmail);
+      if (existing) {
+        return { alreadySubscribed: true, subscriber: existing };
+      }
+      const newSub = {
+        id: 'sub_' + Date.now() + '_' + Math.random().toString(36).substring(2, 7),
+        email: normalizedEmail,
+        firstName: firstName?.trim() || '',
+        lastName: lastName?.trim() || '',
+        createdAt: new Date().toISOString(),
+        status: 'subscribed',
+      };
+      list.push(newSub);
+      fs.writeFileSync(subFile, JSON.stringify(list, null, 2), 'utf-8');
+      inMemorySubscribers.push(newSub);
+      return { alreadySubscribed: false, subscriber: newSub };
     }
-    const newSub = {
-      id: 'sub_' + Date.now() + '_' + Math.random().toString(36).substring(2, 7),
-      email: normalizedEmail,
-      firstName: firstName?.trim() || '',
-      lastName: lastName?.trim() || '',
-      createdAt: new Date().toISOString(),
-      status: 'subscribed',
-    };
-    list.push(newSub);
-    fs.writeFileSync(SUBSCRIBERS_FILE, JSON.stringify(list, null, 2), 'utf-8');
-    return { alreadySubscribed: false, subscriber: newSub };
   } catch (err) {
-    console.error('Error saving newsletter subscriber:', err);
-    return { alreadySubscribed: false, subscriber: { email } };
+    console.warn('Could not write subscriber to disk, falling back to memory:', err);
   }
+
+  // Memory fallback
+  const existingMem = inMemorySubscribers.find((item: any) => item.email?.toLowerCase() === normalizedEmail);
+  if (existingMem) {
+    return { alreadySubscribed: true, subscriber: existingMem };
+  }
+  const newSub = {
+    id: 'sub_' + Date.now() + '_' + Math.random().toString(36).substring(2, 7),
+    email: normalizedEmail,
+    firstName: firstName?.trim() || '',
+    lastName: lastName?.trim() || '',
+    createdAt: new Date().toISOString(),
+    status: 'subscribed',
+  };
+  inMemorySubscribers.push(newSub);
+  return { alreadySubscribed: false, subscriber: newSub };
 }
 
 function getStoredCandidatures(): CohorteCandidature[] {
+  ensureDataFiles();
   try {
-    ensureDataDir();
-    const raw = fs.readFileSync(CANDIDATURES_FILE, 'utf-8');
-    return JSON.parse(raw);
+    const dir = getWritableDataDir();
+    const candFile = path.join(dir, 'cohorte-candidatures.json');
+    if (fs.existsSync(candFile)) {
+      const raw = fs.readFileSync(candFile, 'utf-8');
+      const list = JSON.parse(raw);
+      if (Array.isArray(list) && list.length > 0) {
+        return list;
+      }
+    }
+    return inMemoryCandidatures;
   } catch (err) {
-    console.error('Error reading candidatures:', err);
-    return [];
+    console.warn('Error reading candidatures from disk, using memory:', err);
+    return inMemoryCandidatures;
   }
 }
 
@@ -82,7 +157,7 @@ function saveNewCandidature(data: Omit<CohorteCandidature, 'id' | 'createdAt' | 
   remainingPlaces: number;
   currentPrice: number;
 } {
-  ensureDataDir();
+  ensureDataFiles();
   const existing = getStoredCandidatures();
 
   const newCand: CohorteCandidature = {
@@ -94,7 +169,15 @@ function saveNewCandidature(data: Omit<CohorteCandidature, 'id' | 'createdAt' | 
   };
 
   existing.push(newCand);
-  fs.writeFileSync(CANDIDATURES_FILE, JSON.stringify(existing, null, 2), 'utf-8');
+  inMemoryCandidatures.push(newCand);
+
+  try {
+    const dir = getWritableDataDir();
+    const candFile = path.join(dir, 'cohorte-candidatures.json');
+    fs.writeFileSync(candFile, JSON.stringify(existing, null, 2), 'utf-8');
+  } catch (err) {
+    console.warn('Could not write candidature to disk, saved in memory:', err);
+  }
 
   const totalCount = existing.length;
 
@@ -641,7 +724,11 @@ export function createApiApp(): Express {
       });
     } catch (error: any) {
       console.error('Newsletter Server Error:', error);
-      res.status(500).json({ error: error.message || 'Erreur serveur lors de l\'inscription.' });
+      const rawMsg = error?.message || '';
+      const isFsError = rawMsg.includes('ENOENT') || rawMsg.includes('mkdir') || rawMsg.includes('EACCES') || rawMsg.includes('EROFS');
+      res.status(500).json({ 
+        error: !isFsError && rawMsg ? rawMsg : 'Une erreur est survenue lors de l\'inscription. Veuillez réessayer ultérieurement.' 
+      });
     }
   });
 
