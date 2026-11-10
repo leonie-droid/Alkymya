@@ -268,7 +268,7 @@ export default function Ateliers() {
 
   return (
     <div className="bg-[#FAF9F7] text-[#1F4F6E] min-h-screen pt-28 pb-20">
-      {/* HERO SECTION DE HAUTE TENUE */}
+      {/* HERO SECTION EN BLEU FONCÉ AVEC TEXTE EN BLANC NET */}
       <section className="relative overflow-hidden bg-gradient-to-b from-[#1F4F6E] via-[#163c54] to-[#122e40] text-white py-20 px-6 sm:px-12 md:py-28 text-center">
         {/* Glow & texture subtile */}
         <div className="absolute inset-0 opacity-15 pointer-events-none bg-[radial-gradient(#02ADAB_1px,transparent_1px)] [background-size:24px_24px]" />
@@ -280,8 +280,10 @@ export default function Ateliers() {
             <span>Studio de Transmission · Alkymya</span>
           </div>
 
-          <h1 className="text-4xl sm:text-5xl md:text-6xl font-light tracking-tight leading-[1.15] mb-6">
-            Vous repartez avec <br className="hidden sm:block" />
+          <h1 className="text-4xl sm:text-5xl md:text-6xl font-heading tracking-tight leading-[1.15] mb-6">
+            <span className="text-white block font-light">
+              Vous repartez avec
+            </span>
             <strong className="font-semibold text-white underline decoration-[#02ADAB] decoration-2 underline-offset-8">
               quelque chose de réel.
             </strong>
