@@ -56,10 +56,10 @@ export default function Footer() {
                 <span>Audience Dédiée · Resend</span>
               </span>
               <h3 className="text-2xl sm:text-3xl font-heading font-black text-white leading-tight">
-                Recevez la Lettre d'Alkymya
+                Notre veille créative, sans filtre.
               </h3>
               <p className="text-sm text-primary-foreground/75 leading-relaxed max-w-xl font-normal">
-                Carnets de terrain, tests mesurés en conditions réelles, agents IA autonomes et signaux faibles. Sans bruit, une fois par mois.
+                Découvrez nos dernières créations interactives, les projets audacieux nés de notre réseau de partenaires et une sélection affûtée des nouveautés numériques du moment.
               </p>
             </div>
 
@@ -94,7 +94,7 @@ export default function Footer() {
                       {isLoading ? (
                         <Loader2 className="w-4 h-4 animate-spin" />
                       ) : (
-                        <span>S'inscrire</span>
+                        <span>Suivre nos projets</span>
                       )}
                     </button>
                   </div>

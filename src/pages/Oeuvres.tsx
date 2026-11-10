@@ -1,25 +1,108 @@
-import { motion } from 'motion/react';
-import { Link } from 'react-router-dom';
+import { useState } from 'react';
+import { motion, AnimatePresence } from 'motion/react';
 import { 
-  Globe, 
-  ExternalLink, 
-  ArrowRight, 
-  CheckCircle2, 
+  Sparkles, 
+  Maximize2, 
+  X, 
+  Palette, 
+  Camera, 
   Layers, 
-  TrendingUp, 
-  Sparkles,
-  BookOpen,
-  Image as ImageIcon,
-  Zap
+  ArrowRight,
+  ExternalLink,
+  Tag
 } from 'lucide-react';
-import { Card } from '@/components/ui/card';
+import { Link } from 'react-router-dom';
+import { cn } from '../../lib/utils';
+import WorksCarousel from '../components/WorksCarousel';
+import NewsletterButton from '../components/NewsletterButton';
+
+interface Artwork {
+  id: string;
+  title: string;
+  category: string;
+  image: string;
+  thumbnail?: string;
+  description: string;
+  technique: string;
+  year: string;
+  badge?: string;
+  externalLink?: string;
+}
+
+const categories = [
+  "Toutes",
+  "Créations IA",
+  "Photographies de Terrain"
+];
+
+const artworks: Artwork[] = [
+  {
+    id: "angela-davis",
+    title: "Angela Davis — Voix & Empreinte",
+    category: "Créations IA",
+    image: "https://res.cloudinary.com/dokzioyu4/image/upload/v1772112521/e23iKTwc_u35aql.png",
+    description: "Hommage graphique vibrant à la figure émancipatrice d'Angela Davis. Dialogue entre prompt crafting de haute précision, textures organiques et esthétique sérigraphique contemporaine.",
+    technique: "Synthèse IA générative & post-production chromatique",
+    year: "2024",
+    badge: "Création IA",
+  },
+  {
+    id: "josephine-baker",
+    title: "Joséphine Baker — L'Audace du Mouvement",
+    category: "Créations IA",
+    image: "https://res.cloudinary.com/dokzioyu4/image/upload/v1772112521/d9eRiVt6_pmcd6l.png",
+    description: "Réinterprétation stylistique célébrant l'énergie scénique, l'engagement et la grâce intemporelle de Joséphine Baker à travers les palettes de l'IA générative.",
+    technique: "Modèle de diffusion & colorimétrie augmentée",
+    year: "2024",
+    badge: "Création IA",
+  },
+  {
+    id: "pop-culture",
+    title: "Pop Culture & Métamorphose",
+    category: "Créations IA",
+    image: "https://res.cloudinary.com/dokzioyu4/image/upload/v1772111909/giJ307Jk_hcidx5.png",
+    description: "Fusion d'icônes populaires et de matières sculptées. Une interrogation visuelle sur la persistance des symboles culturels à l'ère des flux algorithmiques.",
+    technique: "Composition numérique assistée par IA",
+    year: "2024",
+    badge: "Création IA",
+  },
+  {
+    id: "territoires-seine-et-marne",
+    title: "Lumières du Grand Morin — Seine-et-Marne",
+    category: "Photographies de Terrain",
+    image: "https://res.cloudinary.com/dokzioyu4/image/upload/v1788941703/PHOTO-2026-09-08-06-54-57_ynrbkt.jpg",
+    description: "Prise de vue authentique de terrain. Ciels changeants, brumes matinales et reflets capturés au fil des saisons sans artifice, dans le respect absolu du vivant.",
+    technique: "Photographie numérique de terrain (thelittle77)",
+    year: "2025",
+    badge: "Terrain 77",
+    externalLink: "https://thelittle77.fr/"
+  },
+  {
+    id: "paris-chroniques",
+    title: "Chroniques Urbaines — Paris Belleville & Ruelles",
+    category: "Photographies de Terrain",
+    image: "https://res.cloudinary.com/dokzioyu4/image/upload/v1788941670/Logo_thelittle75.fr_d1tmes.jpg",
+    description: "Documenter Paris à hauteur de pas. Série patrimoniale et visuelle issue des vingt arrondissements de la capitale, entre architecture populaire et poésie de quartier.",
+    technique: "Photographie documentaire & carnets urbains",
+    year: "2025",
+    badge: "Terrain 75",
+    externalLink: "https://thelittle75.fr/"
+  }
+];
 
 export default function Oeuvres() {
+  const [activeCategory, setActiveCategory] = useState("Toutes");
+  const [selectedArtwork, setSelectedArtwork] = useState<Artwork | null>(null);
+
+  const filteredArtworks = activeCategory === "Toutes"
+    ? artworks
+    : artworks.filter(art => art.category === activeCategory);
+
   return (
-    <div className="min-h-screen py-32 px-4 bg-background text-foreground selection:bg-copper-orange selection:text-white">
-      <div className="container mx-auto px-4 max-w-[1240px]">
+    <div className="min-h-screen py-28 px-4 bg-background text-foreground selection:bg-copper-orange selection:text-white">
+      <div className="container mx-auto px-4 max-w-[1360px]">
         {/* Header Hero */}
-        <header className="text-center max-w-4xl mx-auto mb-20">
+        <header className="text-center max-w-4xl mx-auto mb-16">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -27,379 +110,258 @@ export default function Oeuvres() {
           >
             <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-copper-orange/10 border border-copper-orange/30 text-copper-orange text-xs font-black uppercase tracking-widest mb-6">
               <Sparkles className="w-3.5 h-3.5" />
-              Carnets de Terrain &amp; Démonstration Réelle
+              Galerie &amp; Créations Visuelles
             </span>
-            <h1 className="text-4xl md:text-6xl lg:text-7xl font-heading font-black text-deep-blue leading-tight mb-8">
-              Trois carnets de terrain, <span className="text-copper-orange">trois sites mesurés</span>
+            <h1 className="text-4xl md:text-6xl lg:text-7xl font-heading font-black text-deep-blue leading-tight mb-6">
+              Nos <span className="text-copper-orange">Œuvres</span>
             </h1>
-            <p className="text-lg md:text-xl text-muted-foreground leading-relaxed max-w-3xl mx-auto mb-8 font-normal">
-              Trois sites, trois territoires, une seule manière de travailler. Ce ne sont pas des références clientes : ce sont mes propres carnets, en Seine-et-Marne, à Paris et dans le Var. Je les ai construits pour être mesurés, et je publie les chiffres — y compris ceux qui ne sont pas terminés.
+            <p className="text-lg md:text-xl text-muted-foreground leading-relaxed max-w-3xl mx-auto font-normal">
+              Une traversée visuelle où la matière brute, la photographie de terrain et l'audace de l'intelligence artificielle se rencontrent. Découvrez nos réalisations, séries artistiques et carnets documentaires.
             </p>
-            <div className="inline-block p-4 px-8 rounded-2xl bg-gradient-to-r from-deep-blue/5 via-copper-orange/10 to-deep-blue/5 border border-copper-orange/30 shadow-sm">
-              <p className="text-base md:text-lg font-heading font-black text-deep-blue">
-                Au total : <span className="text-copper-orange">387 pages</span>, <span className="text-copper-orange">804 photographies distinctes</span>, <span className="text-copper-orange">279 198 mots</span>.
-              </p>
-            </div>
           </motion.div>
         </header>
 
-        {/* SECTION 1 : thelittle77.fr */}
-        <motion.section 
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="mb-20"
-        >
-          <Card className="rounded-[2.5rem] bg-white border border-deep-blue/10 shadow-xl overflow-hidden hover:border-copper-orange/30 transition-all">
-            <div className="p-8 md:p-12 bg-gradient-to-br from-[#1F4F6E] via-[#16384e] to-[#0d2230] text-white">
-              <div className="flex flex-wrap items-center justify-between gap-3 mb-4">
-                <span className="px-3.5 py-1 rounded-full bg-copper-orange/20 border border-copper-orange/40 text-copper-orange font-black text-xs uppercase tracking-wider">
-                  Seine-et-Marne · Neuf bassins
-                </span>
-                <span className="text-xs text-white/60 font-medium">Carnet territorial</span>
-              </div>
-              <h2 className="text-3xl md:text-4xl font-heading font-black text-white mb-2">
-                thelittle77.fr — la Seine-et-Marne, en neuf bassins
-              </h2>
-              <p className="text-base md:text-lg text-white/80 leading-relaxed max-w-3xl">
-                Un carnet de voyage territorial. Neuf grands bassins éditoriaux, du Grand Morin à la Bassée, avec pour chacun un dossier, des lieux, des récits et un agenda.
-              </p>
-              
-              <div className="mt-8 pt-6 border-t border-white/10 flex flex-wrap items-center gap-6 text-sm font-bold">
-                <span className="flex items-center gap-2">
-                  <span className="w-2.5 h-2.5 rounded-full bg-copper-orange" />
-                  <strong className="text-white text-base">216</strong> pages
-                </span>
-                <span className="text-white/40">·</span>
-                <span className="flex items-center gap-2">
-                  <strong className="text-white text-base">149 392</strong> mots
-                </span>
-                <span className="text-white/40">·</span>
-                <span className="flex items-center gap-2">
-                  <strong className="text-white text-base">607</strong> photographies distinctes
-                </span>
-              </div>
-            </div>
+        {/* Filter Categories */}
+        <div className="flex flex-wrap items-center justify-center gap-3 mb-16 max-w-4xl mx-auto">
+          {categories.map((category) => (
+            <button
+              key={category}
+              onClick={() => setActiveCategory(category)}
+              className={cn(
+                "px-5 py-2.5 rounded-full text-xs font-heading font-black tracking-wider uppercase transition-all duration-300 border cursor-pointer",
+                activeCategory === category
+                  ? "bg-deep-blue text-white border-deep-blue shadow-lg scale-105"
+                  : "bg-white text-deep-blue border-deep-blue/15 hover:border-copper-orange hover:text-copper-orange"
+              )}
+            >
+              {category}
+            </button>
+          ))}
+        </div>
 
-            <div className="p-8 md:p-12 space-y-6">
-              <div className="space-y-4 text-base text-muted-foreground leading-relaxed">
-                <p>
-                  <strong className="text-deep-blue font-bold">Ce qui a été fait :</strong> le site servait auparavant une seule page vide à tous les moteurs — chaque adresse renvoyait le même HTML sans contenu. Le pré-rendu a été mis en place, puis les neuf dossiers territoriaux écrits, puis les images optimisées : le logo est passé de 1,28 Mo à 2,6 Ko et la page d'accueil de 1,4 Mo à environ 120 Ko. Un fichier de contexte de 40,7 Ko décrit aujourd'hui les neuf territoires aux modèles de langage.
-                </p>
-                <div className="p-6 rounded-2xl bg-amber-500/10 border-l-4 border-amber-500 text-deep-blue/90 font-medium">
-                  Le 9 novembre 2026, le site est <strong className="font-black text-deep-blue">premier résultat</strong> sur « photos de ciels et paysages en Seine-et-Marne ». Il est absent des dix premiers sur « randonnée Seine-et-Marne sans voiture » : c'est l'intention d'un concurrent, et je le dis parce que c'est vrai.
+        {/* Gallery Grid */}
+        <motion.div 
+          layout
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-24"
+        >
+          <AnimatePresence mode="popLayout">
+            {filteredArtworks.map((art) => (
+              <motion.article
+                key={art.id}
+                layout
+                initial={{ opacity: 0, scale: 0.95 }}
+                animate={{ opacity: 1, scale: 1 }}
+                exit={{ opacity: 0, scale: 0.95 }}
+                transition={{ duration: 0.35 }}
+                onClick={() => setSelectedArtwork(art)}
+                className="group relative rounded-3xl overflow-hidden bg-white border border-deep-blue/10 shadow-lg hover:shadow-2xl hover:border-copper-orange/40 transition-all duration-500 flex flex-col cursor-pointer"
+              >
+                {/* Image Container */}
+                <div className="relative aspect-[4/3] w-full overflow-hidden bg-slate-100">
+                  <img
+                    src={art.image}
+                    alt={art.title}
+                    loading="lazy"
+                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                    referrerPolicy="no-referrer"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-deep-blue/80 via-deep-blue/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                    <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/90 text-deep-blue font-heading font-black text-xs uppercase tracking-wider shadow-lg transform translate-y-2 group-hover:translate-y-0 transition-transform">
+                      <Maximize2 className="w-3.5 h-3.5" />
+                      Agrandir l'œuvre
+                    </span>
+                  </div>
+
+                  {/* Badge */}
+                  {art.badge && (
+                    <span className="absolute top-4 left-4 px-3 py-1 rounded-full bg-deep-blue/85 backdrop-blur-md text-white text-[11px] font-black uppercase tracking-wider border border-white/20">
+                      {art.badge}
+                    </span>
+                  )}
+
+                  <span className="absolute bottom-4 right-4 px-2.5 py-0.5 rounded-full bg-black/60 backdrop-blur-sm text-white/90 text-[10px] font-bold">
+                    {art.year}
+                  </span>
                 </div>
-              </div>
 
-              <div className="pt-4 flex flex-wrap items-center justify-between gap-4">
-                <a
-                  href="https://thelittle77.fr/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2.5 px-6 py-3 rounded-full bg-deep-blue hover:bg-copper-orange text-white font-heading font-black text-xs uppercase tracking-widest transition-all shadow-md group"
-                >
-                  <span>Visiter thelittle77.fr</span>
-                  <ExternalLink className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
-                </a>
-                <span className="text-xs text-muted-foreground italic font-medium">
-                  Mesures vérifiées et constatées le 9 novembre 2026
-                </span>
-              </div>
-            </div>
-          </Card>
-        </motion.section>
+                {/* Content */}
+                <div className="p-6 flex flex-col flex-grow justify-between space-y-4">
+                  <div>
+                    <span className="text-[11px] font-bold uppercase tracking-widest text-copper-orange block mb-2">
+                      {art.category}
+                    </span>
+                    <h2 className="text-xl font-heading font-black text-deep-blue group-hover:text-copper-orange transition-colors line-clamp-1">
+                      {art.title}
+                    </h2>
+                    <p className="mt-2 text-sm text-muted-foreground leading-relaxed line-clamp-3">
+                      {art.description}
+                    </p>
+                  </div>
 
-        {/* SECTION 2 : thelittle75.fr */}
-        <motion.section 
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="mb-20"
-        >
-          <Card className="rounded-[2.5rem] bg-white border border-deep-blue/10 shadow-xl overflow-hidden hover:border-copper-orange/30 transition-all">
-            <div className="p-8 md:p-12 bg-gradient-to-br from-[#1F4F6E] via-[#16384e] to-[#0d2230] text-white">
-              <div className="flex flex-wrap items-center justify-between gap-3 mb-4">
-                <span className="px-3.5 py-1 rounded-full bg-copper-orange/20 border border-copper-orange/40 text-copper-orange font-black text-xs uppercase tracking-wider">
-                  Paris · Onze récits
-                </span>
-                <span className="text-xs text-white/60 font-medium">Revue parisienne</span>
-              </div>
-              <h2 className="text-3xl md:text-4xl font-heading font-black text-white mb-2">
-                thelittle75.fr — Paris, en onze récits
-              </h2>
-              <p className="text-base md:text-lg text-white/80 leading-relaxed max-w-3xl">
-                Une revue parisienne : onze grands récits, une carte des vingt arrondissements avec une fiche par arrondissement, un index patrimonial, un agenda culturel et une photothèque.
-              </p>
-              
-              <div className="mt-8 pt-6 border-t border-white/10 flex flex-wrap items-center gap-6 text-sm font-bold">
-                <span className="flex items-center gap-2">
-                  <span className="w-2.5 h-2.5 rounded-full bg-copper-orange" />
-                  <strong className="text-white text-base">39</strong> pages
-                </span>
-                <span className="text-white/40">·</span>
-                <span className="flex items-center gap-2">
-                  <strong className="text-white text-base">27 839</strong> mots
-                </span>
-                <span className="text-white/40">·</span>
-                <span className="flex items-center gap-2">
-                  <strong className="text-white text-base">53</strong> photographies distinctes
-                </span>
-              </div>
-            </div>
-
-            <div className="p-8 md:p-12 space-y-6">
-              <div className="space-y-4 text-base text-muted-foreground leading-relaxed">
-                <p>
-                  <strong className="text-deep-blue font-bold">Ce qui a été fait :</strong> le site a été construit sans pré-rendu, puis corrigé. En deux jours, on est passé d'une page de HTML unique sur vingt-cinq à trente-huit pages sur trente-huit, chacune avec son titre, son fil d'Ariane et ses données structurées. Ensuite les images : même site, mêmes photos, <strong className="text-deep-blue font-bold">2 166 Ko par page avant, 200 Ko après, soit −91 %</strong> — rien n'a été retiré.
-                </p>
-                <div className="p-6 rounded-2xl bg-amber-500/10 border-l-4 border-amber-500 text-deep-blue/90 font-medium">
-                  Le 9 novembre 2026, le site est <strong className="font-black text-deep-blue">deuxième résultat</strong> sur « chronique Belleville Paris récit », derrière un théâtre. Trente-neuf pages bien tenues se placent devant des sites dix fois plus gros.
+                  <div className="pt-4 border-t border-deep-blue/5 flex items-center justify-between text-xs text-muted-foreground font-medium">
+                    <span className="truncate pr-2 italic">{art.technique}</span>
+                    <div className="w-8 h-8 rounded-full bg-copper-orange/10 text-copper-orange flex items-center justify-center flex-shrink-0 group-hover:bg-copper-orange group-hover:text-white transition-colors">
+                      <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
+                    </div>
+                  </div>
                 </div>
-              </div>
+              </motion.article>
+            ))}
+          </AnimatePresence>
+        </motion.div>
 
-              <div className="pt-4 flex flex-wrap items-center justify-between gap-4">
-                <a
-                  href="https://thelittle75.fr/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2.5 px-6 py-3 rounded-full bg-deep-blue hover:bg-copper-orange text-white font-heading font-black text-xs uppercase tracking-widest transition-all shadow-md group"
-                >
-                  <span>Visiter thelittle75.fr</span>
-                  <ExternalLink className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
-                </a>
-                <span className="text-xs text-muted-foreground italic font-medium">
-                  Mesures vérifiées et constatées le 9 novembre 2026
-                </span>
-              </div>
-            </div>
-          </Card>
-        </motion.section>
-
-        {/* SECTION 3 : thelittle83.fr */}
-        <motion.section 
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="mb-20"
-        >
-          <Card className="rounded-[2.5rem] bg-white border border-deep-blue/10 shadow-xl overflow-hidden hover:border-copper-orange/30 transition-all">
-            <div className="p-8 md:p-12 bg-gradient-to-br from-[#1F4F6E] via-[#16384e] to-[#0d2230] text-white">
-              <div className="flex flex-wrap items-center justify-between gap-3 mb-4">
-                <span className="px-3.5 py-1 rounded-full bg-copper-orange/20 border border-copper-orange/40 text-copper-orange font-black text-xs uppercase tracking-wider">
-                  Var · Bilingue FR / EN
-                </span>
-                <span className="text-xs text-white/60 font-medium">Carnet naturaliste</span>
-              </div>
-              <h2 className="text-3xl md:text-4xl font-heading font-black text-white mb-2">
-                thelittle83.fr — le Var, oiseaux et paysages
-              </h2>
-              <p className="text-base md:text-lg text-white/80 leading-relaxed max-w-3xl">
-                Un carnet naturaliste et photographique : cinquante et une fiches d'espèces par langue, huit spots d'observation, une galerie de paysages. Une règle éditoriale assumée — aucune capture, aucun appâtage, cent pour cent des photographies prises sur le terrain.
-              </p>
-              
-              <div className="mt-8 pt-6 border-t border-white/10 flex flex-wrap items-center gap-6 text-sm font-bold">
-                <span className="flex items-center gap-2">
-                  <span className="w-2.5 h-2.5 rounded-full bg-copper-orange" />
-                  <strong className="text-white text-base">132</strong> pages en deux langues
-                </span>
-                <span className="text-white/40">·</span>
-                <span className="flex items-center gap-2">
-                  <strong className="text-white text-base">101 967</strong> mots
-                </span>
-                <span className="text-white/40">·</span>
-                <span className="flex items-center gap-2">
-                  <strong className="text-white text-base">144</strong> photographies distinctes
-                </span>
-              </div>
-            </div>
-
-            <div className="p-8 md:p-12 space-y-6">
-              <div className="space-y-4 text-base text-muted-foreground leading-relaxed">
-                <p>
-                  <strong className="text-deep-blue font-bold">Ce qui a été fait :</strong> mis en ligne le 8 novembre 2026, le site est bilingue français-anglais dès le premier jour, avec 396 déclarations de correspondance entre les deux versions. Les 1 466 emplacements d'image sont tous optimisés et dimensionnés. Le fichier de contexte destiné aux modèles de langage est daté et décrit la démarche de prise de vue.
-                </p>
-                <div className="p-6 rounded-2xl bg-amber-500/10 border-l-4 border-amber-500 text-deep-blue/90 font-medium">
-                  C'est le site qui a le moins coûté à mettre au niveau : il a été construit sur le socle corrigé des deux premiers.
-                </div>
-              </div>
-
-              <div className="pt-4 flex flex-wrap items-center justify-between gap-4">
-                <a
-                  href="https://thelittle83.fr/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2.5 px-6 py-3 rounded-full bg-deep-blue hover:bg-copper-orange text-white font-heading font-black text-xs uppercase tracking-widest transition-all shadow-md group"
-                >
-                  <span>Visiter thelittle83.fr</span>
-                  <ExternalLink className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
-                </a>
-                <span className="text-xs text-muted-foreground italic font-medium">
-                  Mesures vérifiées et constatées le 9 novembre 2026
-                </span>
-              </div>
-            </div>
-          </Card>
-        </motion.section>
-
-        {/* SECTION 4 : Les trois, côte à côte (Tableau comparatif) */}
-        <motion.section 
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="mb-20"
-        >
-          <div className="p-8 md:p-12 rounded-[2.5rem] bg-white border border-deep-blue/10 shadow-xl">
-            <div className="flex items-center gap-3 mb-6">
-              <div className="w-10 h-10 rounded-2xl bg-copper-orange/15 text-copper-orange flex items-center justify-center font-black">
-                <Layers className="w-5 h-5" />
-              </div>
-              <h2 className="text-2xl md:text-3xl font-heading font-black text-deep-blue">
-                Les trois, côte à côte
-              </h2>
-            </div>
-
-            <div className="overflow-x-auto">
-              <table className="w-full text-left border-collapse">
-                <thead>
-                  <tr className="border-b-2 border-deep-blue/10">
-                    <th className="py-4 px-6 text-xs font-black uppercase tracking-wider text-muted-foreground">Métrique</th>
-                    <th className="py-4 px-6 text-sm font-black text-deep-blue font-heading bg-deep-blue/5 rounded-t-xl">thelittle77</th>
-                    <th className="py-4 px-6 text-sm font-black text-deep-blue font-heading">thelittle75</th>
-                    <th className="py-4 px-6 text-sm font-black text-deep-blue font-heading bg-deep-blue/5 rounded-t-xl">thelittle83</th>
-                  </tr>
-                </thead>
-                <tbody className="divide-y divide-deep-blue/5 text-sm">
-                  <tr>
-                    <td className="py-4 px-6 font-bold text-deep-blue">Pages</td>
-                    <td className="py-4 px-6 font-black text-copper-orange bg-deep-blue/5 text-base">216</td>
-                    <td className="py-4 px-6 font-black text-deep-blue text-base">39</td>
-                    <td className="py-4 px-6 font-black text-copper-orange bg-deep-blue/5 text-base">132</td>
-                  </tr>
-                  <tr>
-                    <td className="py-4 px-6 font-bold text-deep-blue">Photographies distinctes</td>
-                    <td className="py-4 px-6 font-bold text-deep-blue bg-deep-blue/5">607</td>
-                    <td className="py-4 px-6 font-bold text-deep-blue">53</td>
-                    <td className="py-4 px-6 font-bold text-deep-blue bg-deep-blue/5">144</td>
-                  </tr>
-                  <tr>
-                    <td className="py-4 px-6 font-bold text-deep-blue">Mots</td>
-                    <td className="py-4 px-6 font-bold text-deep-blue bg-deep-blue/5">149 392</td>
-                    <td className="py-4 px-6 font-bold text-deep-blue">27 839</td>
-                    <td className="py-4 px-6 font-bold text-deep-blue bg-deep-blue/5">101 967</td>
-                  </tr>
-                  <tr>
-                    <td className="py-4 px-6 font-bold text-deep-blue">Langues</td>
-                    <td className="py-4 px-6 font-medium text-muted-foreground bg-deep-blue/5">français</td>
-                    <td className="py-4 px-6 font-medium text-muted-foreground">français</td>
-                    <td className="py-4 px-6 font-medium text-muted-foreground bg-deep-blue/5">français, anglais</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-
-            <p className="mt-6 text-xs text-muted-foreground italic leading-relaxed">
-              * Mesures du 9 novembre 2026. Les notes internes qui accompagnent ces sites ne mesurent pas une position dans Google : elles notent la solidité d'un site sur dix critères. Une seule position compte, et elle se vérifie requête par requête.
-            </p>
-          </div>
-        </motion.section>
-
-        {/* SECTION 5 : Ce que ces trois sites m'ont appris */}
-        <motion.section 
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="mb-20"
-        >
-          <div className="mb-10 text-center max-w-2xl mx-auto">
+        {/* Featured Showcase Carousel */}
+        <div className="mb-24">
+          <div className="text-center mb-10">
             <span className="text-xs font-black uppercase tracking-widest text-copper-orange mb-2 block">
-              Enseignements de Terrain
+              Sélection Immersion
             </span>
             <h2 className="text-3xl md:text-4xl font-heading font-black text-deep-blue">
-              Ce que ces trois sites m'ont appris
+              Créations en Mouvement
             </h2>
           </div>
+          <WorksCarousel />
+        </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="p-8 rounded-[2rem] bg-white border border-deep-blue/10 shadow-lg hover:shadow-xl transition-all flex flex-col">
-              <div className="w-12 h-12 rounded-2xl bg-copper-orange/15 text-copper-orange flex items-center justify-center mb-6">
-                <Zap className="w-6 h-6" />
-              </div>
-              <h3 className="text-xl font-heading font-black text-deep-blue mb-4">
-                Le pré-rendu vaut trente points à lui seul.
-              </h3>
-              <p className="text-sm text-muted-foreground leading-relaxed flex-grow">
-                Sur thelittle75, la note interne est passée de 45 à 77 en deux jours, une fois le bon correctif identifié. Aucun autre chantier n'a ce rendement.
-              </p>
-            </div>
-
-            <div className="p-8 rounded-[2rem] bg-white border border-deep-blue/10 shadow-lg hover:shadow-xl transition-all flex flex-col">
-              <div className="w-12 h-12 rounded-2xl bg-copper-orange/15 text-copper-orange flex items-center justify-center mb-6">
-                <ImageIcon className="w-6 h-6" />
-              </div>
-              <h3 className="text-xl font-heading font-black text-deep-blue mb-4">
-                Les images pèsent plus lourd que le contenu.
-              </h3>
-              <p className="text-sm text-muted-foreground leading-relaxed flex-grow">
-                −91 % de poids par page sans retirer une seule photo. C'est le gain le plus rapide à obtenir et le plus visible pour un visiteur.
-              </p>
-            </div>
-
-            <div className="p-8 rounded-[2rem] bg-white border border-deep-blue/10 shadow-lg hover:shadow-xl transition-all flex flex-col">
-              <div className="w-12 h-12 rounded-2xl bg-copper-orange/15 text-copper-orange flex items-center justify-center mb-6">
-                <BookOpen className="w-6 h-6" />
-              </div>
-              <h3 className="text-xl font-heading font-black text-deep-blue mb-4">
-                Le volume ne fait rien tout seul.
-              </h3>
-              <p className="text-sm text-muted-foreground leading-relaxed flex-grow">
-                thelittle77 totalise 149 392 mots, dont soixante-trois récits de fond ; quatre-vingt-dix pages de lieux attendent encore leur texte. Un site de trente-neuf pages soignées se place devant un site de deux cent seize pages mal tenues.
-              </p>
-            </div>
-          </div>
-        </motion.section>
-
-        {/* SECTION 6 : Et pour votre projet & CTA */}
-        <motion.section 
-          initial={{ opacity: 0, scale: 0.96 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.7 }}
-          className="p-10 md:p-16 rounded-[3rem] bg-gradient-to-br from-[#1F4F6E] via-[#16384e] to-[#0d2230] text-white shadow-2xl border border-white/10 relative overflow-hidden"
-        >
+        {/* Bottom Banner & CTA */}
+        <section className="p-10 md:p-16 rounded-[2.5rem] bg-gradient-to-br from-[#1F4F6E] via-[#16384e] to-[#0d2230] text-white shadow-2xl relative overflow-hidden text-center">
           <div className="absolute top-0 right-0 w-96 h-96 bg-copper-orange/15 blur-[120px] rounded-full pointer-events-none" />
-          
-          <div className="relative z-10 max-w-3xl">
-            <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-copper-orange/20 border border-copper-orange/40 text-copper-orange text-xs font-black uppercase tracking-widest mb-6">
-              Méthode Appliquée
-            </span>
-            <h2 className="text-3xl md:text-5xl font-heading font-black text-white mb-6">
-              Et pour votre projet
-            </h2>
-            
-            <div className="space-y-4 text-white/90 text-base md:text-lg leading-relaxed mb-10 font-normal">
-              <p>
-                Ces trois sites ont été construits avec la même séquence : mesurer, corriger ce qui bloque l'accès, écrire, mesurer à nouveau. Six semaines séparent le premier audit de thelittle77 de son état actuel ; deux jours ont suffi à thelittle75 pour passer de 45 à 77.
-              </p>
-              <p>
-                C'est cette séquence que nous proposons dans l'accompagnement <strong className="text-white font-bold">NewBusiness MVP</strong>, appliquée non plus à un site mais à votre offre : un client idéal documenté, une proposition de valeur écrite, un produit en ligne, un prix testé auprès de vraies personnes, une décision prise sur des faits. Six mois, une séance d'une heure par semaine, un livrable par mois.
-              </p>
-            </div>
 
-            <Link
-              to="/newbusiness/"
-              className="inline-flex items-center gap-3 px-8 py-4 rounded-full bg-copper-orange hover:bg-white hover:text-deep-blue text-white font-heading font-black text-base md:text-lg transition-all transform hover:scale-105 shadow-xl"
-            >
-              <span>Lire comment se déroule l'accompagnement</span>
-              <ArrowRight className="w-5 h-5" />
-            </Link>
+          <div className="relative z-10 max-w-2xl mx-auto space-y-6">
+            <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-copper-orange/20 border border-copper-orange/40 text-copper-orange text-xs font-black uppercase tracking-widest">
+              Rejoignez l'Expérience
+            </span>
+            <h2 className="text-3xl md:text-5xl font-heading font-black text-white leading-tight">
+              Un projet artistique ou une commande visuelle ?
+            </h2>
+            <p className="text-base md:text-lg text-white/80 leading-relaxed font-normal">
+              Nous concevons des séries visuelles, des univers graphiques et des œuvres augmentées par l'IA pour les créateurs, écoles et entreprises engagées.
+            </p>
+
+            <div className="pt-4 flex flex-wrap items-center justify-center gap-4">
+              <Link
+                to="/contact"
+                className="inline-flex items-center gap-2.5 px-8 py-3.5 rounded-full bg-copper-orange hover:bg-white hover:text-deep-blue text-white font-heading font-black text-xs uppercase tracking-widest transition-all shadow-lg"
+              >
+                <span>Nous contacter</span>
+                <ArrowRight className="w-4 h-4" />
+              </Link>
+              <NewsletterButton
+                variant="outline"
+                size="md"
+                label="Suivre nos projets"
+                className="border-white/30 text-white hover:bg-white/10"
+              />
+            </div>
           </div>
-        </motion.section>
+        </section>
       </div>
+
+      {/* Lightbox Modal */}
+      <AnimatePresence>
+        {selectedArtwork && (
+          <div className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 overflow-y-auto">
+            {/* Backdrop */}
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              onClick={() => setSelectedArtwork(null)}
+              className="fixed inset-0 bg-black/90 backdrop-blur-md"
+            />
+
+            {/* Modal Body */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.92, y: 15 }}
+              animate={{ opacity: 1, scale: 1, y: 0 }}
+              exit={{ opacity: 0, scale: 0.92, y: 15 }}
+              transition={{ duration: 0.25 }}
+              className="relative w-full max-w-4xl rounded-3xl bg-white overflow-hidden shadow-2xl z-10 my-8"
+              onClick={(e) => e.stopPropagation()}
+            >
+              <button
+                type="button"
+                onClick={() => setSelectedArtwork(null)}
+                className="absolute top-4 right-4 z-20 p-2.5 rounded-full bg-black/60 hover:bg-black/90 text-white transition-colors"
+                aria-label="Fermer la vue détaillée"
+              >
+                <X className="w-5 h-5" />
+              </button>
+
+              <div className="grid grid-cols-1 md:grid-cols-12 max-h-[85vh] overflow-y-auto">
+                {/* Visual */}
+                <div className="md:col-span-7 bg-slate-900 flex items-center justify-center p-4 min-h-[300px] md:min-h-[500px]">
+                  <img
+                    src={selectedArtwork.image}
+                    alt={selectedArtwork.title}
+                    className="max-h-[70vh] w-auto max-w-full object-contain rounded-xl shadow-lg"
+                    referrerPolicy="no-referrer"
+                  />
+                </div>
+
+                {/* Details */}
+                <div className="md:col-span-5 p-6 md:p-8 flex flex-col justify-between space-y-6 bg-white">
+                  <div className="space-y-4">
+                    <div className="flex items-center gap-2">
+                      <span className="px-3 py-1 rounded-full bg-copper-orange/15 text-copper-orange text-xs font-black uppercase tracking-wider">
+                        {selectedArtwork.category}
+                      </span>
+                      <span className="text-xs text-muted-foreground font-semibold">
+                        {selectedArtwork.year}
+                      </span>
+                    </div>
+
+                    <h3 className="text-2xl font-heading font-black text-deep-blue leading-snug">
+                      {selectedArtwork.title}
+                    </h3>
+
+                    <p className="text-sm text-muted-foreground leading-relaxed">
+                      {selectedArtwork.description}
+                    </p>
+
+                    <div className="p-4 rounded-2xl bg-slate-50 border border-slate-100 space-y-2 text-xs">
+                      <div>
+                        <span className="font-bold text-deep-blue block">Technique :</span>
+                        <span className="text-muted-foreground">{selectedArtwork.technique}</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="pt-4 border-t border-border flex items-center justify-between gap-3">
+                    {selectedArtwork.externalLink ? (
+                      <a
+                        href={selectedArtwork.externalLink}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-deep-blue hover:bg-copper-orange text-white text-xs font-black uppercase tracking-wider transition-colors shadow-md"
+                      >
+                        <span>Visiter le projet</span>
+                        <ExternalLink className="w-3.5 h-3.5" />
+                      </a>
+                    ) : (
+                      <Link
+                        to="/contact"
+                        className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-deep-blue hover:bg-copper-orange text-white text-xs font-black uppercase tracking-wider transition-colors shadow-md"
+                      >
+                        <span>Demander des informations</span>
+                        <ArrowRight className="w-3.5 h-3.5" />
+                      </Link>
+                    )}
+
+                    <button
+                      type="button"
+                      onClick={() => setSelectedArtwork(null)}
+                      className="text-xs text-muted-foreground hover:text-deep-blue font-bold uppercase tracking-wider transition-colors"
+                    >
+                      Fermer
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+          </div>
+        )}
+      </AnimatePresence>
     </div>
   );
 }

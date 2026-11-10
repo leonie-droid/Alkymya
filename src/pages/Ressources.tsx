@@ -348,7 +348,7 @@ export default function Ressources() {
               <NewsletterButton
                 variant="primary"
                 size="md"
-                label="Recevoir la lettre d'Alkymya"
+                label="Suivre nos projets"
               />
               <span className="text-xs text-muted-foreground font-medium">
                 Audience dédiée Resend · Une édition par mois sans bruit

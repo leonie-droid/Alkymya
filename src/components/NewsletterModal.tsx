@@ -94,10 +94,10 @@ export default function NewsletterModal() {
               </div>
 
               <h3 className="text-2xl sm:text-3xl font-heading font-black text-white leading-tight">
-                La Lettre d'Alkymya
+                Notre veille créative, sans filtre.
               </h3>
               <p className="mt-2 text-sm text-white/80 leading-relaxed font-normal">
-                Chaque mois : carnets de terrain, tests mesurés en conditions réelles, agents IA autonomes et signaux faibles.
+                Découvrez nos dernières créations interactives, les projets audacieux nés de notre réseau de partenaires et une sélection affûtée des nouveautés numériques du moment.
               </p>
             </div>
 
@@ -112,7 +112,7 @@ export default function NewsletterModal() {
                     Inscription confirmée !
                   </h4>
                   <p className="text-sm text-muted-foreground max-w-md mx-auto leading-relaxed">
-                    {message} Vous recevrez prochainement nos derniers enseignements et décryptages exclusifs.
+                    {message} Vous recevrez prochainement notre sélection créative et nos nouveaux projets.
                   </p>
                   <button
                     type="button"
@@ -176,7 +176,7 @@ export default function NewsletterModal() {
                     ) : (
                       <>
                         <Mail className="w-4 h-4" />
-                        <span>Rejoindre l'audience dédiée</span>
+                        <span>Suivre nos projets</span>
                       </>
                     )}
                   </button>

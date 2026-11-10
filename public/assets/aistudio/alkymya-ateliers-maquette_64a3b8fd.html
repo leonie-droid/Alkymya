@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nos Ateliers — Alkymya</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap');
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Roboto', sans-serif; background: #f4f6f9; color: #1F4F6E; }
+
+  /* HERO */
+  .hero {
+    background: #1F4F6E;
+    color: white;
+    padding: 80px 40px 60px;
+    text-align: center;
+  }
+  .hero .eyebrow {
+    font-size: 0.85rem; letter-spacing: 0.15em; text-transform: uppercase;
+    color: #02ADAB; margin-bottom: 16px;
+  }
+  .hero h1 { font-weight: 300; font-size: 2.6rem; line-height: 1.2; margin-bottom: 20px; }
+  .hero h1 strong { font-weight: 500; }
+  .hero p { font-size: 1.1rem; color: rgba(255,255,255,0.75); max-width: 620px; margin: 0 auto; line-height: 1.7; }
+
+  /* NAV ATELIERS */
+  .nav-ateliers {
+    background: white;
+    border-bottom: 1px solid rgba(31,79,110,0.1);
+    display: flex;
+    justify-content: center;
+    gap: 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+  .nav-ateliers a {
+    display: block;
+    padding: 18px 28px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: #5a7a90;
+    text-decoration: none;
+    border-bottom: 3px solid transparent;
+    transition: color 0.2s, border-color 0.2s;
+  }
+  .nav-ateliers a:hover, .nav-ateliers a.active {
+    color: #1F4F6E;
+    border-bottom-color: #02ADAB;
+  }
+
+  /* SECTIONS */
+  section { max-width: 1100px; margin: 0 auto; padding: 70px 24px; }
+  .section-label { font-size: 0.75rem; letter-spacing: 0.18em; text-transform: uppercase; color: #02ADAB; margin-bottom: 10px; font-weight: 500; }
+  .section-title { font-size: 1.9rem; font-weight: 300; margin-bottom: 14px; color: #1F4F6E; }
+  .section-title strong { font-weight: 500; }
+  .section-intro { font-size: 1.05rem; color: #4a6a80; max-width: 640px; line-height: 1.7; margin-bottom: 50px; }
+
+  /* CARDS INDIVIDUELLES */
+  .cards-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; }
+
+  .atelier-card {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 2px 16px rgba(31,79,110,0.08);
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .atelier-card:hover { transform: translateY(-4px); box-shadow: 0 8px 32px rgba(31,79,110,0.14); }
+
+  .card-header {
+    padding: 28px 28px 20px;
+    border-bottom: 1px solid rgba(31,79,110,0.07);
+  }
+  .card-icon { font-size: 2rem; margin-bottom: 14px; display: block; }
+  .card-tag {
+    display: inline-block;
+    font-size: 0.72rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase;
+    padding: 4px 10px; border-radius: 4px; margin-bottom: 12px;
+  }
+  .tag-new { background: rgba(192,103,33,0.12); color: #C06721; }
+  .tag-signature { background: rgba(3,121,113,0.12); color: #037971; }
+  .tag-collectif { background: rgba(31,79,110,0.1); color: #1F4F6E; }
+
+  .card-name { font-size: 1.15rem; font-weight: 500; color: #1F4F6E; margin-bottom: 8px; }
+  .card-promise { font-size: 1rem; color: #C06721; font-weight: 400; line-height: 1.4; margin-bottom: 0; }
+
+  .card-body { padding: 24px 28px; flex: 1; }
+  .card-desc { font-size: 0.95rem; color: #5a7a90; line-height: 1.7; margin-bottom: 20px; }
+
+  .card-details { display: flex; flex-direction: column; gap: 8px; margin-bottom: 20px; }
+  .detail-row { display: flex; gap: 10px; align-items: flex-start; font-size: 0.88rem; }
+  .detail-icon { color: #02ADAB; flex-shrink: 0; margin-top: 1px; }
+  .detail-text { color: #4a6a80; line-height: 1.5; }
+
+  .card-result {
+    background: linear-gradient(135deg, #f0f8f8 0%, #e8f4f4 100%);
+    border-left: 3px solid #02ADAB;
+    border-radius: 0 6px 6px 0;
+    padding: 12px 14px;
+    font-size: 0.88rem;
+    color: #1F4F6E;
+    line-height: 1.5;
+    margin-bottom: 24px;
+  }
+  .card-result strong { font-weight: 500; }
+
+  .card-footer { padding: 20px 28px; border-top: 1px solid rgba(31,79,110,0.07); }
+  .card-price { font-size: 1.4rem; font-weight: 500; color: #1F4F6E; margin-bottom: 4px; }
+  .card-price-note { font-size: 0.8rem; color: #7a9ab0; margin-bottom: 16px; }
+  .card-cta {
+    display: block; text-align: center;
+    background: #1F4F6E; color: white;
+    padding: 12px 20px; border-radius: 8px;
+    font-size: 0.9rem; font-weight: 500; text-decoration: none;
+    transition: background 0.2s;
+  }
+  .card-cta:hover { background: #02ADAB; }
+  .card-cta.cta-outline {
+    background: transparent; border: 2px solid #1F4F6E; color: #1F4F6E;
+  }
+  .card-cta.cta-outline:hover { background: #1F4F6E; color: white; }
+
+  /* SEPARATEUR */
+  .divider { border: none; border-top: 1px solid rgba(31,79,110,0.1); margin: 0 24px; }
+
+  /* SECTION COLLECTIF */
+  .collectif-section { background: white; }
+  .collectif-wrap { max-width: 1100px; margin: 0 auto; padding: 70px 24px; }
+
+  .collectif-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: start; }
+  @media (max-width: 768px) { .collectif-grid { grid-template-columns: 1fr; } }
+
+  .collectif-left .big-stat {
+    font-size: 3.5rem; font-weight: 300; color: #1F4F6E; line-height: 1;
+    margin-bottom: 6px;
+  }
+  .collectif-left .big-stat strong { font-weight: 500; color: #02ADAB; }
+  .collectif-left .stat-label { font-size: 0.85rem; color: #7a9ab0; margin-bottom: 24px; }
+
+  .collectif-left .proof {
+    background: #f4f8fb; border-radius: 10px; padding: 20px;
+    margin-bottom: 16px;
+  }
+  .proof-value { font-size: 1.5rem; font-weight: 500; color: #1F4F6E; }
+  .proof-label { font-size: 0.82rem; color: #7a9ab0; }
+  .proof-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+
+  .module-list { list-style: none; display: flex; flex-direction: column; gap: 12px; margin-bottom: 28px; }
+  .module-item {
+    display: flex; gap: 14px; align-items: flex-start;
+    background: #f9fbfc; border-radius: 8px; padding: 14px 16px;
+  }
+  .module-badge {
+    background: #1F4F6E; color: white; border-radius: 6px;
+    font-size: 0.72rem; font-weight: 500; padding: 4px 8px;
+    white-space: nowrap; flex-shrink: 0;
+  }
+  .module-name { font-size: 0.95rem; font-weight: 500; color: #1F4F6E; }
+  .module-desc { font-size: 0.85rem; color: #7a9ab0; line-height: 1.5; margin-top: 2px; }
+  .opco-badge {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: rgba(3,121,113,0.1); color: #037971;
+    padding: 10px 16px; border-radius: 8px;
+    font-size: 0.88rem; font-weight: 500;
+  }
+
+  /* CTA FINAL */
+  .cta-section { background: #C06721; color: white; text-align: center; padding: 70px 40px; }
+  .cta-section h2 { font-size: 2rem; font-weight: 300; margin-bottom: 14px; }
+  .cta-section h2 strong { font-weight: 500; }
+  .cta-section p { font-size: 1.05rem; color: rgba(255,255,255,0.8); max-width: 480px; margin: 0 auto 32px; line-height: 1.7; }
+  .cta-btn {
+    display: inline-block; background: white; color: #C06721;
+    font-size: 0.95rem; font-weight: 500;
+    padding: 14px 32px; border-radius: 8px; text-decoration: none;
+    transition: transform 0.15s, box-shadow 0.15s;
+  }
+  .cta-btn:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(0,0,0,0.15); }
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<div class="hero">
+  <p class="eyebrow">Nos ateliers</p>
+  <h1>Vous repartez avec <strong>quelque chose de réel.</strong></h1>
+  <p>Pas de slides théoriques. Pas de certificat inutile. À la fin de chaque atelier, vous avez un outil, un site, un agent — ou une offre — qui fonctionne.</p>
+</div>
+
+<!-- NAV -->
+<nav class="nav-ateliers">
+  <a href="#individuels" class="active">Ateliers individuels</a>
+  <a href="#collectifs">Formation collective</a>
+</nav>
+
+<!-- ATELIERS INDIVIDUELS -->
+<section id="individuels">
+  <p class="section-label">Ateliers individuels</p>
+  <h2 class="section-title">Trois parcours,<br><strong>un livrable concret à chaque fois</strong></h2>
+  <p class="section-intro">Ces ateliers s'adressent aux indépendants, créateurs et dirigeants qui veulent construire quelque chose de personnel — pas former une équipe. On travaille ensemble, sur votre projet, à votre rythme.</p>
+
+  <div class="cards-grid">
+
+    <!-- Atelier 1 : Assets dormants -->
+    <div class="atelier-card">
+      <div class="card-header">
+        <span class="card-icon">📦</span>
+        <span class="card-tag tag-new">Nouveau</span>
+        <div class="card-name">Vos archives en ligne</div>
+        <div class="card-promise">Transformez vos photos, vidéos ou écrits dormants en un site qui attire une audience.</div>
+      </div>
+      <div class="card-body">
+        <p class="card-desc">Vous avez des centaines d'œuvres, de photos, d'archives — et personne ne les voit. En 3 séances, on construit ensemble un site éditorial structuré, indexé par Google et les IA génératives, qui donne une seconde vie à votre contenu.</p>
+        <div class="card-details">
+          <div class="detail-row">
+            <span class="detail-icon">📅</span>
+            <span class="detail-text">3 séances de 2h + accompagnement async</span>
+          </div>
+          <div class="detail-row">
+            <span class="detail-icon">🎯</span>
+            <span class="detail-text">Site live, référencé, avec vos propres contenus</span>
+          </div>
+          <div class="detail-row">
+            <span class="detail-icon">👤</span>
+            <span class="detail-text">Photographes, artistes, auteurs, collectionneurs</span>
+          </div>
+        </div>
+        <div class="card-result">
+          <strong>Exemple réel :</strong> TheLittle83 — 600 photos de terrain transformées en atlas naturalist bilingue, référencé par Google AI en moins d'une heure après mise en ligne. Construit en 24h.
+        </div>
+      </div>
+      <div class="card-footer">
+        <div class="card-price">1 500 € HT</div>
+        <div class="card-price-note">Financement OPCO possible selon statut</div>
+        <a href="/contact" class="card-cta">Prendre contact →</a>
+      </div>
+    </div>
+
+    <!-- Atelier 2 : Construire son outil IA -->
+    <div class="atelier-card">
+      <div class="card-header">
+        <span class="card-icon">🤖</span>
+        <span class="card-tag tag-signature">Signature</span>
+        <div class="card-name">Construire son outil IA</div>
+        <div class="card-promise">Un système expert, un agent ou une mini-app — conçu pour votre métier, par vous.</div>
+      </div>
+      <div class="card-body">
+        <p class="card-desc">Vous avez une expertise, des règles métier, des connaissances que vous voulez rendre accessibles ou automatiser. On conçoit ensemble l'architecture, on construit l'outil, et vous repartez autonome — capable de le faire évoluer seul.</p>
+        <div class="card-details">
+          <div class="detail-row">
+            <span class="detail-icon">📅</span>
+            <span class="detail-text">4 à 6 séances de 2h selon complexité</span>
+          </div>
+          <div class="detail-row">
+            <span class="detail-icon">🎯</span>
+            <span class="detail-text">Outil fonctionnel + documentation + autonomie</span>
+          </div>
+          <div class="detail-row">
+            <span class="detail-icon">👤</span>
+            <span class="detail-text">Thérapeutes, coachs, consultants, experts métier</span>
+          </div>
+        </div>
+        <div class="card-result">
+          <strong>Exemple réel :</strong> Système expert aidants familiaux — moteur de règles métier + base de connaissances + interface conversationnelle. Véronique Landreau, fondatrice AvecLouise.
+        </div>
+      </div>
+      <div class="card-footer">
+        <div class="card-price">Sur devis</div>
+        <div class="card-price-note">À partir de 2 000 € HT selon périmètre</div>
+        <a href="/contact" class="card-cta">Discutons de votre projet →</a>
+      </div>
+    </div>
+
+    <!-- Atelier 3 : New Business MVP -->
+    <div class="atelier-card">
+      <div class="card-header">
+        <span class="card-icon">🚀</span>
+        <span class="card-tag tag-signature">Programme long</span>
+        <div class="card-name">New Business MVP</div>
+        <div class="card-promise">De l'idée à la première vente — en 6 mois, avec l'IA comme accélérateur.</div>
+      </div>
+      <div class="card-body">
+        <p class="card-desc">Un accompagnement mensuel pour structurer votre offre, tester votre marché en quelques jours (pas en 3 mois), et passer à l'action. Chaque séance produit un livrable concret : persona validé, landing page live, premier client contacté.</p>
+        <div class="card-details">
+          <div class="detail-row">
+            <span class="detail-icon">📅</span>
+            <span class="detail-text">1 séance/mois × 6 mois + suivi async</span>
+          </div>
+          <div class="detail-row">
+            <span class="detail-icon">🎯</span>
+            <span class="detail-text">Offre structurée, marché validé, premiers clients</span>
+          </div>
+          <div class="detail-row">
+            <span class="detail-icon">👤</span>
+            <span class="detail-text">Indépendants, dirigeants qui lancent une nouvelle activité</span>
+          </div>
+        </div>
+        <div class="card-result">
+          <strong>L'IA change tout ici :</strong> ce qui prenait 6 mois de terrain se fait en quelques jours d'analyse marché. Vous prenez des décisions sur des faits, pas des intuitions.
+        </div>
+      </div>
+      <div class="card-footer">
+        <div class="card-price">500 € HT / mois</div>
+        <div class="card-price-note">Engagement 6 mois · soit 3 000 € HT</div>
+        <a href="/newbusiness" class="card-cta">Voir le programme →</a>
+      </div>
+    </div>
+
+
+    <!-- Atelier 4 : Capital IA -->
+    <div class="atelier-card">
+      <div class="card-header">
+        <span class="card-icon">🏗️</span>
+        <span class="card-tag tag-collectif">Diagnostic</span>
+        <div class="card-name">Construire son Capital IA</div>
+        <div class="card-promise">Auditez vos données, choisissez vos outils, identifiez les 3 processus à transformer en priorité.</div>
+      </div>
+      <div class="card-body">
+        <p class="card-desc">Une journée pour faire l'état des lieux de votre potentiel IA : données disponibles, processus automatisables, outils adaptés à votre taille et votre secteur. Vous repartez avec une feuille de route 6-12 mois — et les priorités clairement arbitrées.</p>
+        <div class="card-details">
+          <div class="detail-row">
+            <span class="detail-icon">📅</span>
+            <span class="detail-text">1 journée d'audit + restitution écrite</span>
+          </div>
+          <div class="detail-row">
+            <span class="detail-icon">🎯</span>
+            <span class="detail-text">Feuille de route IA priorisée + choix technologiques</span>
+          </div>
+          <div class="detail-row">
+            <span class="detail-icon">👤</span>
+            <span class="detail-text">Dirigeants PME, DSI, cabinets de conseil</span>
+          </div>
+        </div>
+        <div class="card-result">
+          <strong>Ce qui change tout :</strong> l'analyse de marché et le benchmark concurrentiel sont faits avant la journée — vous arrivez avec les faits, pas les intuitions.
+        </div>
+      </div>
+      <div class="card-footer">
+        <div class="card-price">3 000 – 5 000 € HT</div>
+        <div class="card-price-note">Selon périmètre et taille de l'organisation</div>
+        <a href="/contact" class="card-cta">Demander un audit →</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- FORMATION COLLECTIVE -->
+<div class="collectif-section" id="collectifs">
+  <div class="collectif-wrap">
+    <p class="section-label">Formation collective</p>
+    <h2 class="section-title">Pour les équipes qui veulent <strong>passer à l'action</strong></h2>
+    <p class="section-intro">Formation certifiée Qualiopi, finançable OPCO jusqu'à 100%. 80% de pratique, 20% de méthode. Vos équipes repartent avec des outils branchés sur leurs vraies tâches.</p>
+
+    <div class="collectif-grid">
+      <div class="collectif-left">
+        <div class="proof-grid" style="margin-bottom:32px;">
+          <div class="proof">
+            <div class="proof-value">99,3%</div>
+            <div class="proof-label">de participants recommandent nos ateliers</div>
+          </div>
+          <div class="proof">
+            <div class="proof-value">175+</div>
+            <div class="proof-label">professionnels formés</div>
+          </div>
+          <div class="proof">
+            <div class="proof-value">1-2j</div>
+            <div class="proof-label">économisés par semaine en moyenne</div>
+          </div>
+          <div class="proof">
+            <div class="proof-value">100%</div>
+            <div class="proof-label">financement OPCO possible</div>
+          </div>
+        </div>
+        <div class="opco-badge" style="margin-bottom:24px;">
+          ✅ Certification Qualiopi · Financement OPCO jusqu'à 100%
+        </div>
+        <p style="font-size:0.9rem;color:#7a9ab0;line-height:1.6;">
+          HETIC, Ynov, l'IÉSEG, le CFA Itis nous confient régulièrement leurs promotions. Nos formations s'adaptent à vos locaux, à distance ou en mode hybride.
+        </p>
+      </div>
+
+      <div class="collectif-right">
+        <ul class="module-list">
+          <li class="module-item">
+            <span class="module-badge">Core · 14h</span>
+            <div>
+              <div class="module-name">Formation Core IA</div>
+              <div class="module-desc">Prompts maîtres, workflows IA, outils opérationnels. Le socle indispensable — praticable dès le lendemain.</div>
+            </div>
+          </li>
+          <li class="module-item">
+            <span class="module-badge">Option A · 3h30</span>
+            <div>
+              <div class="module-name">Agents IA</div>
+              <div class="module-desc">3 agents autonomes déployés et connectés à vos outils (Slack, Notion, CRM) avant la fin de la séance.</div>
+            </div>
+          </li>
+          <li class="module-item">
+            <span class="module-badge">Option B · 3h30</span>
+            <div>
+              <div class="module-name">App No-Code</div>
+              <div class="module-desc">Une application web interne déployée sur URL sécurisée, interconnectée à Gemini ou GPT.</div>
+            </div>
+          </li>
+          <li class="module-item">
+            <span class="module-badge">Option C · 3h30</span>
+            <div>
+              <div class="module-name">Éthique & IA Act</div>
+              <div class="module-desc">Conformité réglementaire, classification des risques, sécurisation des données d'entreprise.</div>
+            </div>
+          </li>
+        </ul>
+        <a href="/contact" class="card-cta" style="display:block;text-align:center;text-decoration:none;background:#1F4F6E;color:white;padding:14px 24px;border-radius:8px;font-weight:500;">Demander un devis →</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- CTA FINAL -->
+<div class="cta-section">
+  <h2>Pas sûr de quel atelier <strong>vous convient ?</strong></h2>
+  <p>On fait un point de 30 minutes ensemble. Vous repartez avec une recommandation claire — même si ce n'est pas chez nous.</p>
+  <a href="/contact" class="cta-btn">Prendre rendez-vous →</a>
+</div>
+
+</body>
+</html>

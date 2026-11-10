@@ -134,85 +134,50 @@ export const routes: RouteData[] = [
   },
   {
     path: '/oeuvres',
-    title: "Trois carnets de terrain, trois sites mesurés — Alkymya",
-    description: "387 pages, 804 photographies, 279 198 mots. Trois sites construits avec la même méthode, mesurés le 9 novembre 2026. Ce qui a été fait, et ce qui reste.",
-    ogTitle: "Trois carnets de terrain, trois sites mesurés",
-    ogDescription: "Ce n'est pas un portfolio. C'est une démonstration : trois sites, une méthode, des chiffres datés.",
-    h1: "Trois carnets de terrain, trois sites mesurés",
+    title: "Nos Œuvres & Créations Artistiques — Alkymya",
+    description: "Explorez la galerie des œuvres et créations visuelles d'Alkymya : art génératif par IA, photographies de terrain, installations et sculptures organiques.",
+    ogTitle: "Nos Œuvres & Créations Artistiques — Alkymya",
+    ogDescription: "Explorez la galerie des créations d'Alkymya : art génératif par IA, photographies de terrain, installations et sculptures organiques.",
+    h1: "Nos Œuvres & Créations",
     ogImage: "https://alkymya.co/og-oeuvres.jpg",
-    lastmod: "2026-11-09",
+    lastmod: "2026-11-10",
     schemaType: "CollectionPage",
     content: {
-      leadParagraph: "Trois sites, trois territoires, une seule manière de travailler. Ce ne sont pas des références clientes : ce sont mes propres carnets, en Seine-et-Marne, à Paris et dans le Var. Je les ai construits pour être mesurés, et je publie les chiffres — y compris ceux qui ne sont pas terminés. Au total : 387 pages, 804 photographies distinctes, 279 198 mots.",
+      leadParagraph: "Une traversée visuelle où la matière brute, la photographie de terrain et l'audace de l'intelligence artificielle se rencontrent. Découvrez nos réalisations, séries artistiques et carnets documentaires.",
       sections: [
         {
-          h2: "thelittle77.fr — la Seine-et-Marne, en neuf bassins",
+          h2: "Créations Visuelles & Art Génératif par IA",
           paragraphs: [
-            "Un carnet de voyage territorial. Neuf grands bassins éditoriaux, du Grand Morin à la Bassée, avec pour chacun un dossier, des lieux, des récits et un agenda.",
-            "216 pages · 149 392 mots · 607 photographies",
-            "Ce qui a été fait : le site servait auparavant une seule page vide à tous les moteurs — chaque adresse renvoyait le même HTML sans contenu. Le pré-rendu a été mis en place, puis les neuf dossiers territoriaux écrits, puis les images optimisées : le logo est passé de 1,28 Mo à 2,6 Ko et la page d'accueil de 1,4 Mo à environ 120 Ko. Un fichier de contexte de 40,7 Ko décrit aujourd'hui les neuf territoires aux modèles de langage.",
-            "Le 9 novembre 2026, le site est premier résultat sur « photos de ciels et paysages en Seine-et-Marne ». Il est absent des dix premiers sur « randonnée Seine-et-Marne sans voiture » : c'est l'intention d'un concurrent, et je le dis parce que c'est vrai."
+            "Des portraits et compositions iconographiques explorant les limites expressives des modèles génératifs de pointe. Chaque œuvre est le fruit d'une recherche approfondie sur le prompt crafting, la matière texturée et la résonance culturelle contemporaine.",
+            "De la figure d'Angela Davis réinterprétée en sérigraphie contemporaine à l'hommage vibrant à Joséphine Baker, nos créations marient audace visuelle et rigueur esthétique."
           ]
         },
         {
-          h2: "thelittle75.fr — Paris, en onze récits",
+          h2: "Photographies de Terrain & Territoires",
           paragraphs: [
-            "Une revue parisienne : onze grands récits, une carte des vingt arrondissements avec une fiche par arrondissement, un index patrimonial, un agenda culturel et une photothèque.",
-            "39 pages · 27 839 mots · 53 photographies",
-            "Ce qui a été fait : le site a été construit sans pré-rendu, puis corrigé. En deux jours, on est passé d'une page de HTML unique sur vingt-cinq à trente-huit pages sur trente-huit, chacune avec son titre, son fil d'Ariane et ses données structurées. Ensuite les images : même site, mêmes photos, 2 166 Ko par page avant, 200 Ko après, soit −91 % — rien n'a été retiré.",
-            "Le 9 novembre 2026, le site est deuxième résultat sur « chronique Belleville Paris récit », derrière un théâtre. Trente-neuf pages bien tenues se placent devant des sites dix fois plus gros."
-          ]
-        },
-        {
-          h2: "thelittle83.fr — le Var, oiseaux et paysages",
-          paragraphs: [
-            "Un carnet naturaliste et photographique : cinquante et une fiches d'espèces par langue, huit spots d'observation, une galerie de paysages. Une règle éditoriale assumée — aucune capture, aucun appâtage, cent pour cent des photographies prises sur le terrain.",
-            "132 pages en deux langues · 101 967 mots · 144 photographies",
-            "Ce qui a été fait : mis en ligne le 8 novembre 2026, le site est bilingue français-anglais dès le premier jour, avec 396 déclarations de correspondance entre les deux versions. Les 1 466 emplacements d'image sont tous optimisés et dimensionnés. Le fichier de contexte destiné aux modèles de langage est daté et décrit la démarche de prise de vue.",
-            "C'est le site qui a le moins coûté à mettre au niveau : il a été construit sur le socle corrigé des deux premiers."
-          ]
-        },
-        {
-          h2: "Les trois, côte à côte",
-          paragraphs: [
-            "Tableau comparatif des trois carnets au 9 novembre 2026 : thelittle77 (216 pages, 607 photos distinctes, 149 392 mots, français), thelittle75 (39 pages, 53 photos distinctes, 27 839 mots, français), thelittle83 (132 pages, 144 photos distinctes, 101 967 mots, français et anglais).",
-            "Mesures du 9 novembre 2026. Les notes internes qui accompagnent ces sites ne mesurent pas une position dans Google : elles notent la solidité d'un site sur dix critères. Une seule position compte, et elle se vérifie requête par requête."
-          ]
-        },
-        {
-          h2: "Ce que ces trois sites m'ont appris",
-          paragraphs: [
-            "Le pré-rendu vaut trente points à lui seul. Sur thelittle75, la note interne est passée de 45 à 77 en deux jours, une fois le bon correctif identifié. Aucun autre chantier n'a ce rendement.",
-            "Les images pèsent plus lourd que le contenu. −91 % de poids par page sans retirer une seule photo. C'est le gain le plus rapide à obtenir et le plus visible pour un visiteur.",
-            "Le volume ne fait rien tout seul. thelittle77 totalise 149 392 mots, dont soixante-trois récits de fond ; quatre-vingt-dix pages de lieux attendent encore leur texte. Un site de trente-neuf pages soignées se place devant un site de deux cent seize pages mal tenues."
-          ]
-        },
-        {
-          h2: "Et pour votre projet",
-          paragraphs: [
-            "Ces trois sites ont été construits avec la même séquence : mesurer, corriger ce qui bloque l'accès, écrire, mesurer à nouveau. Six semaines séparent le premier audit de thelittle77 de son état actuel ; deux jours ont suffi à thelittle75 pour passer de 45 à 77.",
-            "C'est cette séquence que nous proposons dans l'accompagnement NewBusiness MVP, appliquée non plus à un site mais à votre offre : un client idéal documenté, une proposition de valeur écrite, un produit en ligne, un prix testé auprès de vraies personnes, une décision prise sur des faits. Six mois, une séance d'une heure par semaine, un livrable par mois."
+            "Une démarche photographique documentaire et naturaliste fondée sur l'authenticité : aucune altération artificielle, aucune mise en scène invasive. Ciels de Seine-et-Marne (thelittle77), chroniques de ruelles parisiennes (thelittle75) et faune du Var (thelittle83).",
+            "La capture de la lumière à l'état pur, révélant la richesse de nos patrimoines locaux et de la biodiversité."
           ]
         }
       ],
       internalLinks: [
-        { href: "/newbusiness/", label: "Lire comment se déroule l'accompagnement NewBusiness MVP →" },
-        { href: "/ateliers/", label: "Découvrir nos ateliers et formations pratiques en IA" },
-        { href: "/alchimistes/", label: "Rencontrer Cyril Garnier et l'équipe Alkymya" },
-        { href: "/contact/", label: "Échanger sur votre projet de site ou d'offre" }
+        { href: "/contact/", label: "Commander une création ou échanger sur un projet artistique →" },
+        { href: "/ateliers/", label: "Découvrir nos ateliers de création et d'acculturation IA" },
+        { href: "/alchimistes/", label: "Rencontrer Cyril Garnier et le collectif d'alchimistes" },
+        { href: "/ressources/", label: "Consulter notre bibliothèque d'outils et d'études" }
       ]
     }
   },
   {
     path: '/ateliers',
-    title: "Ateliers et Formations IA | Studio Alkymya",
-    description: "Formations opérationnelles et ateliers en IA générative, création d'agents autonomes, prompt engineering et conformité européenne de l'IA Act en France.",
-    h1: "Nos Ateliers & Formations IA",
+    title: "Nos Ateliers — Alkymya",
+    description: "Vous repartez avec quelque chose de réel. Pas de slides théoriques. Ateliers individuels et formations d'équipe certifiées Qualiopi finançables OPCO.",
+    h1: "Vous repartez avec quelque chose de réel.",
     ogImage: "https://alkymya.co/og-ateliers.jpg",
-    lastmod: "2026-11-09",
+    lastmod: "2026-11-10",
     schemaType: "Course",
     content: {
-      leadParagraph: "Des programmes de formation intensifs, immédiatement actionnables et finançables par les OPCO grâce à notre certification d'État Qualiopi en partenariat avec l'école INATEC.",
+      leadParagraph: "Pas de slides théoriques. Pas de certificat inutile. À la fin de chaque atelier, vous avez un outil, un site, un agent — ou une offre — qui fonctionne.",
       sections: [
         {
           h2: "À qui s'adressent nos formations et ateliers IA ?",

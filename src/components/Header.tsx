@@ -94,7 +94,7 @@ export default function Header() {
                     <NewsletterButton 
                       variant="primary" 
                       size="md" 
-                      label="S'inscrire à la newsletter" 
+                      label="Suivre nos projets" 
                       className="w-full justify-center shadow-md" 
                     />
                   </div>

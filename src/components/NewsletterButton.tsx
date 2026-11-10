@@ -15,7 +15,7 @@ export default function NewsletterButton({
   className,
   variant = 'primary',
   size = 'md',
-  label = "S'inscrire à la newsletter",
+  label = "Suivre nos projets",
   showIcon = true,
 }: NewsletterButtonProps) {
   const baseStyles = "inline-flex items-center justify-center font-heading font-black tracking-wider uppercase transition-all duration-300 rounded-full cursor-pointer";
