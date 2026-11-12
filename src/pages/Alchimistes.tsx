@@ -95,24 +95,25 @@ const alchimistes = [
     name: "Mariana Didier Laurent",
     role: "Alchimiste associée — Services à la personne & Autonomie",
     kicker: "Alchimiste associée, Services à la personne",
-    website: "https://www.linkedin.com/in/marianassurance/",
-    websiteLabel: "esperanta-services.fr (en création)",
+    website: "https://esperantaservices.netlify.app/",
+    websiteLabel: "esperantaservices.netlify.app",
     websiteTag: "Entreprise & Réseau",
     websiteIcon: "globe",
     bio: "Présidente d'Esperanta Services, Mariana Didier Laurent consacre son activité à l'aide à domicile des personnes en perte d'autonomie et à l'accompagnement des proches aidants. Diplômée de l'École Supérieure d'Assurance, passée par le courtage et la gestion des risques de personnes, elle ancre son entreprise au Plessis-Trévise.",
     details: "Ce qu'elle partage avec les porteurs de projet du programme New Business, c'est l'expérience directe du lancement : choix de la forme juridique, constitution du capital, agrément des services à la personne, relation avec les prescripteurs locaux et les financeurs publics. Sa conviction : dans les services d'aide à la personne, la qualité de l'organisation et la rigueur de gestion sont indissociables de la relation humaine.",
     quote: "Dans les services d'aide à la personne, la qualité de l'organisation et la rigueur de gestion sont indissociables de la relation humaine.",
-    image: "/img/alchimistes/mariana-didier-laurent.jpg",
+    image: "https://res.cloudinary.com/dokzioyu4/image/upload/v1794479431/WhatsApp_Image_2026-11-12_at_11.29.28_qwv5le.jpg",
     socials: {
-      linkedin: "https://www.linkedin.com/in/marianassurance/",
+      website: "https://esperantaservices.netlify.app/",
+      linkedin: "https://esperantaservices.netlify.app/",
       mail: "contact@alkymya.co"
     },
     works: [
-      { label: "Esperanta Services", url: "https://www.linkedin.com/in/marianassurance/" },
-      { label: "Services à la personne & aide à domicile", url: "https://www.linkedin.com/in/marianassurance/" },
-      { label: "Accompagnement des proches aidants", url: "https://www.linkedin.com/in/marianassurance/" },
-      { label: "Gestion des risques & conformité", url: "https://www.linkedin.com/in/marianassurance/" },
-      { label: "Lancement d'entreprise & agrément", url: "https://www.linkedin.com/in/marianassurance/" }
+      { label: "Esperanta Services", url: "https://esperantaservices.netlify.app/" },
+      { label: "Services à la personne & aide à domicile", url: "https://esperantaservices.netlify.app/" },
+      { label: "Accompagnement des proches aidants", url: "https://esperantaservices.netlify.app/" },
+      { label: "Gestion des risques & conformité", url: "https://esperantaservices.netlify.app/" },
+      { label: "Lancement d'entreprise & agrément", url: "https://esperantaservices.netlify.app/" }
     ]
   },
   {
@@ -443,13 +444,11 @@ export default function Alchimistes() {
   };
 
   return (
-    <div className="min-h-screen py-32 px-4 bg-background">
+    <div className="bg-[#FAF9F7] text-[#1F4F6E] min-h-screen pt-28 pb-20 selection:bg-copper-orange selection:text-white">
+      {/* Video Modal */}
       <AnimatePresence>
         {selectedVideo && (
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
+          <div
             className="fixed inset-0 z-[100] flex items-center justify-center bg-black/95 backdrop-blur-md p-4 md:p-8"
             onClick={() => setSelectedVideo(null)}
           >
@@ -461,7 +460,8 @@ export default function Alchimistes() {
               onClick={(e) => e.stopPropagation()}
             >
               <button
-                className="absolute -top-14 right-0 text-white bg-copper-orange rounded-full p-3 shadow-xl hover:scale-110 transition-transform z-[110]"
+                type="button"
+                className="absolute -top-14 right-0 text-white bg-[#C06721] rounded-full p-3 shadow-xl hover:scale-110 transition-transform z-[110] cursor-pointer"
                 onClick={() => setSelectedVideo(null)}
                 aria-label="Fermer la vidéo"
               >
@@ -477,26 +477,84 @@ export default function Alchimistes() {
                 />
               </div>
             </motion.div>
-          </motion.div>
+          </div>
         )}
       </AnimatePresence>
-      <div className="container mx-auto px-4 max-w-[1440px]">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-24"
-        >
-          <h1 className="text-5xl md:text-7xl font-heading font-black text-deep-blue mb-8">
-            Nos <span className="text-copper-orange">Alchimistes</span>
-          </h1>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-            Derrière Alkymya, quatre personnalités complémentaires réunissent la vision stratégique d'entreprise, la rigueur pédagogique, l'audace de la direction artistique — et deux expertises de terrain, la santé et les services à la personne.
-          </p>
-        </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
+      {/* HERO SECTION EN BLEU FONCÉ AVEC TEXTE EN BLANC NET */}
+      <section className="relative overflow-hidden bg-gradient-to-b from-[#1F4F6E] via-[#163c54] to-[#122e40] text-white py-20 px-6 sm:px-12 md:py-28 text-center">
+        {/* Glow & texture subtile */}
+        <div className="absolute inset-0 opacity-15 pointer-events-none bg-[radial-gradient(#02ADAB_1px,transparent_1px)] [background-size:24px_24px]" />
+        <div className="absolute -top-32 left-1/2 -translate-x-1/2 w-[700px] h-[350px] bg-[#02ADAB]/15 blur-[120px] rounded-full pointer-events-none" />
+
+        <div className="max-w-4xl mx-auto relative z-10">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-white/15 text-[#02ADAB] text-xs font-bold uppercase tracking-[0.2em] mb-6">
+            <Zap className="w-3.5 h-3.5" />
+            <span>Collectif &amp; Direction · Alkymya</span>
+          </div>
+
+          <h1 className="text-4xl sm:text-5xl md:text-6xl font-heading tracking-tight leading-[1.15] mb-6">
+            <span className="text-white block font-light">
+              Les visages &amp; les esprits
+            </span>
+            <strong className="font-semibold text-white underline decoration-[#02ADAB] decoration-2 underline-offset-8">
+              derrière Alkymya.
+            </strong>
+          </h1>
+
+          <p className="text-lg sm:text-xl text-white/80 max-w-2xl mx-auto leading-relaxed font-normal mb-10">
+            Quatre personnalités complémentaires réunissant la vision stratégique d'entreprise, la rigueur pédagogique, l'audace de la direction artistique — et des expertises concrètes de terrain en santé et autonomie.
+          </p>
+        </div>
+
+        {/* Chiffres clés intégrés */}
+        <div className="max-w-4xl mx-auto mt-16 pt-10 border-t border-white/10 grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+          <div>
+            <div className="text-2xl sm:text-3xl font-light text-white font-mono">
+              <strong className="font-semibold text-[#02ADAB]">5</strong>
+            </div>
+            <div className="text-xs text-white/60 uppercase tracking-wider mt-1">Alchimistes &amp; Associés</div>
+          </div>
+          <div>
+            <div className="text-2xl sm:text-3xl font-light text-white font-mono">
+              <strong className="font-semibold text-white">6</strong>
+            </div>
+            <div className="text-xs text-white/60 uppercase tracking-wider mt-1">Nouveaux Talents Formés</div>
+          </div>
+          <div>
+            <div className="text-2xl sm:text-3xl font-light text-white font-mono">
+              <strong className="font-semibold text-[#C06721]">100%</strong>
+            </div>
+            <div className="text-xs text-white/60 uppercase tracking-wider mt-1">Terrain &amp; Pratique</div>
+          </div>
+          <div>
+            <div className="text-2xl sm:text-3xl font-light text-white font-mono">
+              <strong className="font-semibold text-[#02ADAB]">20+ ans</strong>
+            </div>
+            <div className="text-xs text-white/60 uppercase tracking-wider mt-1">Expérience cumulée</div>
+          </div>
+        </div>
+      </section>
+
+      {/* SECTION DU COLLECTIF PRINCIPAL */}
+      <section className="max-w-[1280px] mx-auto py-16 px-6 sm:px-8">
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
+          <div>
+            <div className="flex items-center gap-2 text-xs font-bold text-[#02ADAB] uppercase tracking-[0.2em] mb-2">
+              <span>Gouvernance &amp; Fondateurs</span>
+              <span aria-hidden="true">·</span>
+              <span>L'Équipe Permanente</span>
+            </div>
+            <h2 className="text-3xl sm:text-4xl font-light text-[#1F4F6E] leading-tight">
+              Une alliance de visionnaires <strong className="font-semibold">et de praticiens</strong>
+            </h2>
+          </div>
+          <p className="text-sm sm:text-base text-[#5a7a90] max-w-md leading-relaxed">
+            Chaque alchimiste apporte un regard affûté, forgé par des années de pratique en entreprise, en direction de projets et sur le terrain.
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {alchimistes.map((person, index) => (
             <AlchimisteCard 
               key={person.name} 
@@ -508,19 +566,16 @@ export default function Alchimistes() {
         </div>
 
         {/* Section Nos Nouveaux Alchimistes */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
-          className="mt-32 max-w-7xl mx-auto"
-        >
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-heading font-black text-deep-blue mb-4">
-              Nos <span className="text-copper-orange">6 Nouveaux Alchimistes</span>
+        <div className="mt-28 pt-12 border-t border-[#1F4F6E]/10">
+          <div className="text-center max-w-3xl mx-auto mb-16">
+            <span className="text-xs font-bold text-[#C06721] uppercase tracking-[0.2em] block mb-2">
+              Transmission &amp; Nouvelle Génération
+            </span>
+            <h2 className="text-3xl md:text-4xl font-light text-[#1F4F6E] mb-4">
+              Nos <strong className="font-semibold text-[#1F4F6E]">6 Nouveaux Alchimistes</strong>
             </h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Découvrez les e-portfolios et les projets innovants réalisés par notre nouvelle vague d'alchimistes en herbe.
+            <p className="text-sm md:text-base text-[#5a7a90] max-w-2xl mx-auto leading-relaxed">
+              Découvrez les e-portfolios et les projets innovants réalisés par notre nouvelle vague d'alchimistes formés et accompagnés par Alkymya.
             </p>
           </div>
 
@@ -528,25 +583,25 @@ export default function Alchimistes() {
             {nouveauxAlchimistes.map((nouveau, index) => (
               <motion.div
                 key={nouveau.name}
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 0, y: 15 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.05 }}
+                transition={{ duration: 0.4, delay: index * 0.05 }}
               >
-                <Card className="group relative overflow-hidden border-none shadow-xl transition-all duration-500 rounded-[2rem] bg-white/50 backdrop-blur-md border border-white/20 p-8 flex flex-col h-full hover:shadow-copper-orange/5 hover:-translate-y-1">
-                  <div className="absolute top-0 right-0 w-32 h-32 bg-copper-orange/5 blur-2xl rounded-full" />
-                  
-                  <div className="flex items-center gap-4 mb-6">
-                    <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-copper-orange/20 to-copper-orange/5 border border-copper-orange/15 flex items-center justify-center font-heading font-bold text-lg text-copper-orange shadow-inner group-hover:scale-105 transition-transform duration-300">
+                <Card className="group relative overflow-hidden rounded-2xl bg-white border border-[#1F4F6E]/10 p-7 flex flex-col h-full shadow-[0_4px_24px_rgba(31,79,110,0.06)] hover:shadow-[0_12px_36px_rgba(31,79,110,0.12)] hover:-translate-y-1 transition-all duration-300">
+                  <div className="flex items-center gap-4 mb-5">
+                    <div className="w-13 h-13 rounded-xl bg-gradient-to-br from-[#C06721]/20 to-[#C06721]/5 border border-[#C06721]/20 flex items-center justify-center font-bold text-base text-[#C06721] shadow-inner group-hover:scale-105 transition-transform duration-300">
                       {nouveau.initials}
                     </div>
                     <div>
-                      <h3 className="text-xl font-heading font-black text-deep-blue group-hover:text-copper-orange transition-colors duration-300">{nouveau.name}</h3>
-                      <p className="text-xs font-bold text-deep-blue/40 uppercase tracking-widest">{nouveau.role}</p>
+                      <h3 className="text-lg font-bold text-[#1F4F6E] group-hover:text-[#C06721] transition-colors leading-snug">
+                        {nouveau.name}
+                      </h3>
+                      <p className="text-[11px] font-semibold text-[#7a9ab0] uppercase tracking-wider">{nouveau.role}</p>
                     </div>
                   </div>
 
-                  <p className="text-sm text-muted-foreground font-medium leading-relaxed mb-6 flex-grow">
+                  <p className="text-xs text-[#5a7a90] leading-relaxed mb-6 flex-grow">
                     {nouveau.description}
                   </p>
 
@@ -554,36 +609,48 @@ export default function Alchimistes() {
                     href={nouveau.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 text-sm font-black text-copper-orange hover:text-deep-blue transition-colors self-start mt-auto"
+                    className="inline-flex items-center gap-2 text-xs font-bold text-[#C06721] hover:text-[#1F4F6E] transition-colors self-start mt-auto"
                   >
-                    Voir l'e-portfolio
-                    <ExternalLink className="h-4 w-4" />
+                    <span>Consulter l'e-portfolio</span>
+                    <ExternalLink className="h-3.5 w-3.5" />
                   </a>
                 </Card>
               </motion.div>
             ))}
           </div>
-        </motion.div>
+        </div>
+      </section>
 
-        <motion.div
-          initial={{ opacity: 0, scale: 0.9 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="mt-24 p-12 rounded-[3rem] bg-deep-blue text-white text-center relative overflow-hidden"
-        >
-          <div className="absolute top-0 left-0 w-full h-full opacity-10 bg-[radial-gradient(circle_at_center,_var(--color-accent)_0%,_transparent_70%)]" />
-          <h2 className="text-3xl md:text-4xl font-heading font-bold mb-6 relative z-10 text-white">
-            Envie de devenir un alchimiste ?
-          </h2>
-          <p className="text-lg text-white/80 max-w-xl mx-auto mb-10 relative z-10">
-            Nous sommes toujours à la recherche de nouveaux talents, pour les transformer en fidèle alchimistes d'Alkymya.
-          </p>
-          <Link to="/rejoindre" className="inline-block px-8 py-4 bg-accent hover:bg-accent/90 text-white rounded-full font-bold transition-all transform hover:scale-105 relative z-10">
-            Nous rejoindre
-          </Link>
-        </motion.div>
-      </div>
+      {/* CTA FINAL : BANNIÈRE TERRACOTTA / CUIVRE */}
+      <section className="max-w-[1200px] mx-auto px-6 sm:px-8 mb-8 mt-12">
+        <div className="bg-[#C06721] text-white rounded-3xl p-8 sm:p-14 text-center shadow-xl">
+          <div className="max-w-xl mx-auto">
+            <span className="text-xs font-bold uppercase tracking-[0.2em] text-white/80 block mb-3">
+              Rejoindre le Mouvement
+            </span>
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-light mb-4 leading-snug">
+              Envie de devenir <strong className="font-semibold text-white">un alchimiste ?</strong>
+            </h2>
+            <p className="text-base text-white/90 leading-relaxed mb-8 font-normal">
+              Nous sommes constamment en quête de nouveaux talents, d'experts métiers et de créateurs pour co-développer nos projets d'innovation.
+            </p>
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+              <Link
+                to="/rejoindre"
+                className="w-full sm:w-auto px-8 py-4 rounded-xl bg-white text-[#C06721] hover:bg-[#1F4F6E] hover:text-white font-semibold text-sm transition-all duration-200 shadow-md"
+              >
+                Postuler pour nous rejoindre →
+              </Link>
+              <Link
+                to="/contact?subject=Rejoindre%20le%20collectif%20Alkymya"
+                className="w-full sm:w-auto px-6 py-4 rounded-xl bg-white/10 hover:bg-white/20 text-white font-semibold text-sm transition-all text-center"
+              >
+                Écrire au collectif
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
     </div>
   );
 }

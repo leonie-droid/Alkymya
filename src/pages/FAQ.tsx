@@ -278,35 +278,79 @@ export default function FAQ() {
   };
 
   return (
-    <motion.div
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      className="pt-32 pb-24"
-    >
+    <div className="bg-[#FAF9F7] text-[#1F4F6E] min-h-screen pt-28 pb-20 selection:bg-copper-orange selection:text-white">
       <SEO type="FAQPage" faqData={flattenedFaq} />
-      <div className="container mx-auto px-4 max-w-[1440px]">
-        <div className="max-w-4xl mb-16">
-          <h1 className="text-5xl md:text-7xl font-heading font-black mb-8 text-deep-blue">
-            Toutes vos questions sur <span className="text-copper-orange">Alkymya</span>
+
+      {/* HERO SECTION EN BLEU FONCÉ AVEC TEXTE EN BLANC NET */}
+      <section className="relative overflow-hidden bg-gradient-to-b from-[#1F4F6E] via-[#163c54] to-[#122e40] text-white py-20 px-6 sm:px-12 md:py-28 text-center">
+        {/* Glow & texture subtile */}
+        <div className="absolute inset-0 opacity-15 pointer-events-none bg-[radial-gradient(#02ADAB_1px,transparent_1px)] [background-size:24px_24px]" />
+        <div className="absolute -top-32 left-1/2 -translate-x-1/2 w-[700px] h-[350px] bg-[#02ADAB]/15 blur-[120px] rounded-full pointer-events-none" />
+
+        <div className="max-w-4xl mx-auto relative z-10">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-white/15 text-[#02ADAB] text-xs font-bold uppercase tracking-[0.2em] mb-6">
+            <HelpCircle className="w-3.5 h-3.5" />
+            <span>Foire aux Questions · Alkymya</span>
+          </div>
+
+          <h1 className="text-4xl sm:text-5xl md:text-6xl font-heading tracking-tight leading-[1.15] mb-6">
+            <span className="text-white block font-light">
+              Toutes vos questions sur
+            </span>
+            <strong className="font-semibold text-white underline decoration-[#02ADAB] decoration-2 underline-offset-8">
+              nos expertises &amp; formations.
+            </strong>
           </h1>
-          <p className="text-xl text-muted-foreground font-normal leading-relaxed">
-            Découvrez comment Alkymya partage avec la Génération IA le chemin vers l'excellence : formations, outils gratuits, et expertise en intelligence artificielle pour grandes écoles et entreprises.
+
+          <p className="text-lg sm:text-xl text-white/80 max-w-2xl mx-auto leading-relaxed font-normal mb-10">
+            Formations certifiées Qualiopi, financements OPCO, accompagnement New Business MVP et outils libres : retrouvez ici les réponses directes et pragmatiques à vos questions.
           </p>
         </div>
 
+        {/* Chiffres clés intégrés */}
+        <div className="max-w-4xl mx-auto mt-16 pt-10 border-t border-white/10 grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+          <div>
+            <div className="text-2xl sm:text-3xl font-light text-white font-mono">
+              <strong className="font-semibold text-[#02ADAB]">4</strong>
+            </div>
+            <div className="text-xs text-white/60 uppercase tracking-wider mt-1">Thématiques majeures</div>
+          </div>
+          <div>
+            <div className="text-2xl sm:text-3xl font-light text-white font-mono">
+              <strong className="font-semibold text-white">100%</strong>
+            </div>
+            <div className="text-xs text-white/60 uppercase tracking-wider mt-1">Transparence &amp; Clarté</div>
+          </div>
+          <div>
+            <div className="text-2xl sm:text-3xl font-light text-white font-mono">
+              <strong className="font-semibold text-[#C06721]">Qualiopi</strong>
+            </div>
+            <div className="text-xs text-white/60 uppercase tracking-wider mt-1">Conformité OPCO</div>
+          </div>
+          <div>
+            <div className="text-2xl sm:text-3xl font-light text-white font-mono">
+              <strong className="font-semibold text-[#02ADAB]">&lt; 24h</strong>
+            </div>
+            <div className="text-xs text-white/60 uppercase tracking-wider mt-1">Assistance par mail</div>
+          </div>
+        </div>
+      </section>
+
+      {/* ACCORDÉONS FAQ */}
+      <section className="max-w-[1100px] mx-auto py-16 px-6 sm:px-8">
         <div className="space-y-12">
           {faqCategories.map((category) => {
             const Icon = category.icon;
             return (
               <div key={category.title} className="relative">
-                <div className="flex items-center gap-4 mb-8">
-                  <div className="p-3 bg-copper-orange/10 rounded-2xl">
-                    <Icon className="h-8 w-8 text-copper-orange" />
+                <div className="flex items-center gap-3.5 mb-6">
+                  <div className="p-3 bg-[#FAF9F7] border border-[#1F4F6E]/10 rounded-xl text-[#02ADAB]">
+                    <Icon className="h-6 w-6" />
                   </div>
-                  <h2 className="text-3xl font-heading font-black text-deep-blue">{category.title}</h2>
+                  <h2 className="text-2xl font-bold text-[#1F4F6E]">{category.title}</h2>
                 </div>
                 
-                <div className="bg-white/50 backdrop-blur-sm rounded-3xl p-8 md:p-12 border border-deep-blue/5 shadow-2xl shadow-deep-blue/5">
+                <div className="bg-white rounded-2xl p-6 sm:p-10 border border-[#1F4F6E]/10 shadow-[0_4px_24px_rgba(31,79,110,0.06)]">
                   {category.items.map((item, index) => (
                     <FAQItem
                       key={index}
@@ -321,31 +365,38 @@ export default function FAQ() {
             );
           })}
         </div>
+      </section>
 
-        <div className="mt-24 text-center bg-deep-blue rounded-[3rem] p-12 md:p-24 relative overflow-hidden">
-          <div className="absolute inset-0 bg-gradient-to-br from-copper-orange/20 to-transparent pointer-events-none" />
-          <div className="relative z-10 max-w-2xl mx-auto">
-            <h3 className="text-3xl md:text-4xl font-heading font-black text-white mb-6">
-              Vous n'avez pas trouvé votre réponse ?
-            </h3>
-            <p className="text-white/70 text-lg mb-12">
-              Contactez-nous directement, nous serons ravis de vous aider.
+      {/* CTA FINAL : BANNIÈRE TERRACOTTA / CUIVRE */}
+      <section className="max-w-[1200px] mx-auto px-6 sm:px-8 mb-8">
+        <div className="bg-[#C06721] text-white rounded-3xl p-8 sm:p-14 text-center shadow-xl">
+          <div className="max-w-xl mx-auto">
+            <span className="text-xs font-bold uppercase tracking-[0.2em] text-white/80 block mb-3">
+              Besoin d'une réponse sur-mesure ?
+            </span>
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-light mb-4 leading-snug">
+              Vous n'avez pas trouvé <strong className="font-semibold text-white">votre réponse ?</strong>
+            </h2>
+            <p className="text-base text-white/90 leading-relaxed mb-8 font-normal">
+              Contactez-nous directement. Nous prenons le temps d'étudier votre cas spécifique et de vous orienter vers la solution la plus adaptée.
             </p>
-            <motion.div
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="inline-block"
-            >
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <a
                 href="/contact"
-                className="px-12 py-5 bg-copper-orange text-white rounded-full font-black uppercase tracking-widest hover:bg-white hover:text-copper-orange transition-all shadow-xl"
+                className="w-full sm:w-auto px-8 py-4 rounded-xl bg-white text-[#C06721] hover:bg-[#1F4F6E] hover:text-white font-semibold text-sm transition-all duration-200 shadow-md text-center"
               >
-                Parlons-en
+                Poser ma question à l'équipe →
               </a>
-            </motion.div>
+              <a
+                href="mailto:contact@alkymya.co"
+                className="w-full sm:w-auto px-6 py-4 rounded-xl bg-white/10 hover:bg-white/20 text-white font-semibold text-sm transition-all text-center"
+              >
+                Écrire par email
+              </a>
+            </div>
           </div>
         </div>
-      </div>
-    </motion.div>
+      </section>
+    </div>
   );
 }
