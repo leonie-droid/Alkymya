@@ -65,8 +65,8 @@ export default function AteliersRessources() {
               <p className="text-muted-foreground leading-relaxed">
                 Des moments de partage et d'apprentissage pour transformer notre regard sur le monde et notre manière de créer.
               </p>
-              <p className="text-xs font-bold uppercase tracking-wider text-accent mt-3">
-                💡 Cliquez sur un atelier pour afficher sa présentation détaillée
+              <p className="text-xs font-bold uppercase tracking-wider text-[#02ADAB] mt-3">
+                Cliquez sur un atelier pour afficher sa présentation détaillée
               </p>
             </div>
             <Link 

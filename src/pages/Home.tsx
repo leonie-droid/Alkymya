@@ -2,12 +2,12 @@ import React from 'react';
 import Hero from '../components/Hero';
 import { motion } from 'motion/react';
 import { Link } from 'react-router-dom';
-import { ArrowRight, Sparkles, Award, Users, CheckCircle2 } from 'lucide-react';
+import { ArrowRight, CheckCircle2 } from 'lucide-react';
 import { SEO } from '../components/SEO';
 
 export default function Home() {
   return (
-    <div className="bg-[#FAF9F7] text-[#1F4F6E] min-h-screen selection:bg-copper-orange selection:text-white">
+    <div className="bg-[#f4f6f9] text-[#1F4F6E] min-h-screen font-['Roboto',sans-serif] selection:bg-[#C06721] selection:text-white">
       <SEO
         title="Alkymya | L'art de la transformation IA"
         description="Alkymya fusionne créativité sensible et expertise technologique pour propulser les organisations et la Génération IA vers l'excellence. Ateliers, formation, conseil et créations numériques."
@@ -16,52 +16,52 @@ export default function Home() {
       <Hero />
       
       {/* Visual Showcase Section */}
-      <section className="py-12 max-w-4xl mx-auto px-6 w-full">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
-          className="relative w-full overflow-hidden rounded-3xl shadow-[0_12px_40px_rgba(31,79,110,0.1)] border border-[#1F4F6E]/10 bg-white p-2 sm:p-3"
-        >
+      <section className="max-w-[1100px] mx-auto py-10 px-6">
+        <div className="bg-white rounded-[12px] overflow-hidden shadow-[0_2px_16px_rgba(31,79,110,0.08)] p-3 sm:p-4">
           <img 
             src="https://res.cloudinary.com/dokzioyu4/image/upload/v1780154614/DuAFdcjz_bo9gcq.png" 
             alt="Alkymya Visual Showcase" 
-            className="w-full h-auto object-cover rounded-2xl"
+            className="w-full h-auto object-cover rounded-[8px]"
             referrerPolicy="no-referrer"
           />
-        </motion.div>
+        </div>
       </section>
+
+      {/* SÉPARATEUR */}
+      <hr className="border-none border-t border-[rgba(31,79,110,0.1)] mx-6 max-w-[1100px] md:mx-auto" />
       
       {/* Notre Impact Section */}
-      <section className="py-24 max-w-[1200px] mx-auto px-6 sm:px-8">
-        <div className="text-center max-w-3xl mx-auto mb-16">
-          <span className="text-xs font-bold uppercase tracking-widest text-[#02ADAB] mb-2 block">
-            Résultats Prouvés &amp; Satisfaction
-          </span>
-          <h2 className="text-3xl md:text-5xl font-heading font-bold text-[#1F4F6E] mb-4">
-            Notre Impact sur le terrain
-          </h2>
-          <p className="text-slate-600 text-base md:text-lg">
-            Des résultats mesurés et une adhésion exceptionnelle auprès de nos apprenants et clients <span className="text-copper-orange font-semibold">(étude 2024-2025)</span>.
-          </p>
-        </div>
+      <section className="max-w-[1100px] mx-auto py-[70px] px-6">
+        <p className="text-[0.75rem] tracking-[0.18em] uppercase text-[#02ADAB] mb-2.5 font-medium">
+          Résultats prouvés &amp; satisfaction
+        </p>
+        <h2 className="text-[1.8rem] sm:text-[2rem] font-light mb-3 text-[#1F4F6E]">
+          Notre impact <strong className="font-medium text-[#1F4F6E]">sur le terrain</strong>
+        </h2>
+        <p className="text-[1.05rem] text-[#4a6a80] max-w-[640px] leading-[1.7] mb-12 font-normal">
+          Des résultats mesurés et une adhésion exceptionnelle auprès de nos apprenants et clients (étude 2024-2025).
+        </p>
         
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {[
-            { value: "99,3%", label: "des participants recommandent nos ateliers" },
-            { value: "175", label: "apprenants accompagnés et certifiés en 2024-2025" },
-            { value: "+1,6 pts", label: "de progression moyenne sur les compétences IA" },
-            { value: "90,9%", label: "se sentent plus performants dès le premier mois" }
+            { value: "99,3%", label: "des participants recommandent nos ateliers", highlight: "Recommandation" },
+            { value: "175", label: "apprenants accompagnés et certifiés en 2024-2025", highlight: "Apprenants certifiés" },
+            { value: "+1,6 pts", label: "de progression moyenne sur les compétences IA", highlight: "Progression compétences" },
+            { value: "90,9%", label: "se sentent plus performants dès le premier mois", highlight: "Performance directe" }
           ].map((stat, i) => (
             <div
               key={i}
-              className="p-8 rounded-2xl bg-white shadow-[0_4px_24px_rgba(31,79,110,0.06)] hover:shadow-[0_12px_36px_rgba(31,79,110,0.12)] border border-[#1F4F6E]/10 text-center transition-all duration-300"
+              className="bg-white rounded-[12px] p-7 shadow-[0_2px_16px_rgba(31,79,110,0.08)] hover:shadow-[0_8px_32px_rgba(31,79,110,0.14)] hover:-translate-y-1 transition-all duration-200 text-center flex flex-col justify-between"
             >
-              <div className="text-4xl md:text-5xl font-heading font-bold text-copper-orange mb-3">
-                {stat.value}
+              <div>
+                <span className="text-[0.72rem] font-medium tracking-[0.1em] uppercase text-[#02ADAB] block mb-2">
+                  {stat.highlight}
+                </span>
+                <div className="text-[2.2rem] sm:text-[2.5rem] font-light text-[#C06721] mb-2 leading-none">
+                  {stat.value}
+                </div>
               </div>
-              <p className="text-xs sm:text-sm text-slate-600 font-medium leading-relaxed">
+              <p className="text-[0.9rem] text-[#5a7a90] font-normal leading-[1.6]">
                 {stat.label}
               </p>
             </div>
@@ -69,39 +69,32 @@ export default function Home() {
         </div>
       </section>
 
+      {/* SÉPARATEUR */}
+      <hr className="border-none border-t border-[rgba(31,79,110,0.1)] mx-6 max-w-[1100px] md:mx-auto" />
+
       {/* Signature Copper CTA Banner */}
-      <section className="max-w-[1200px] mx-auto px-6 sm:px-8 mb-20">
-        <div className="bg-[#C06721] text-white rounded-3xl p-8 sm:p-14 text-center shadow-xl relative overflow-hidden">
-          <div className="absolute top-0 right-0 w-80 h-80 bg-white/10 rounded-full blur-3xl pointer-events-none -mr-20 -mt-20" />
-          <div className="absolute bottom-0 left-0 w-64 h-64 bg-black/10 rounded-full blur-2xl pointer-events-none -ml-20 -mb-20" />
-          <div className="relative z-10 max-w-2xl mx-auto space-y-6">
-            <span className="inline-block px-3.5 py-1 rounded-full bg-white/15 text-white text-xs font-bold uppercase tracking-wider">
-              Prêt à explorer votre alchimie IA ?
-            </span>
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-heading font-bold text-white tracking-tight">
-              Parlons de vos enjeux et formons vos équipes
-            </h2>
-            <p className="text-white/90 text-base sm:text-lg leading-relaxed">
-              Atelier d'initiation, acculturation d'un département, ou accompagnement New Business MVP : nous concevons le parcours adapté à vos objectifs.
-            </p>
-            <div className="pt-2 flex flex-col sm:flex-row items-center justify-center gap-4">
-              <Link
-                to="/ateliers"
-                className="w-full sm:w-auto px-8 py-3.5 bg-white text-[#C06721] font-bold text-sm uppercase tracking-wider rounded-full hover:bg-slate-100 transition-all shadow-md inline-flex items-center justify-center gap-2"
-              >
-                <span>Découvrir nos ateliers</span>
-                <ArrowRight className="w-4 h-4" />
-              </Link>
-              <Link
-                to="/contact"
-                className="w-full sm:w-auto px-8 py-3.5 bg-transparent border-2 border-white text-white font-bold text-sm uppercase tracking-wider rounded-full hover:bg-white/10 transition-all"
-              >
-                Contacter un alchimiste
-              </Link>
-            </div>
-          </div>
+      <div className="bg-[#C06721] text-white text-center py-[70px] px-10">
+        <h2 className="text-[2rem] font-light mb-3.5 text-white">
+          Parlons de vos enjeux <strong className="font-medium text-white">et formons vos équipes</strong>
+        </h2>
+        <p className="text-[1.05rem] text-white/80 max-w-[540px] mx-auto mb-8 leading-[1.7] font-light">
+          Atelier d'initiation, acculturation d'un département, ou accompagnement New Business MVP : nous concevons le parcours adapté à vos objectifs.
+        </p>
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+          <Link
+            to="/ateliers"
+            className="inline-block bg-white text-[#C06721] text-[0.95rem] font-medium py-3.5 px-8 rounded-[8px] no-underline tracking-[0.04em] transition-transform duration-150 hover:-translate-y-0.5 hover:shadow-[0_6px_20px_rgba(0,0,0,0.15)]"
+          >
+            Découvrir nos ateliers →
+          </Link>
+          <Link
+            to="/contact"
+            className="inline-block bg-white/10 hover:bg-white/20 text-white text-[0.95rem] font-medium py-3.5 px-8 rounded-[8px] no-underline tracking-[0.04em] transition-transform duration-150 hover:-translate-y-0.5 border border-white/25"
+          >
+            Contacter un alchimiste
+          </Link>
         </div>
-      </section>
+      </div>
     </div>
   );
 }

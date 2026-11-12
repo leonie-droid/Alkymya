@@ -48,38 +48,30 @@ const pillars = [
 export default function Hero() {
   return (
     <div>
-      {/* Hero Section — Maquette Signature Deep Blue */}
-      <section className="bg-gradient-to-b from-[#1F4F6E] via-[#163c54] to-[#122e40] text-white pt-32 pb-24 px-6 sm:px-12 text-center relative overflow-hidden">
-        {/* Micro-dot grid pattern & glow blur */}
-        <div className="absolute inset-0 opacity-15 bg-[radial-gradient(#02ADAB_1px,transparent_1px)] [background-size:20px_20px] pointer-events-none" />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] bg-[#02ADAB]/15 rounded-full blur-[150px] pointer-events-none" />
-        <div className="absolute bottom-0 right-10 w-96 h-96 bg-copper-orange/15 rounded-full blur-[130px] pointer-events-none" />
-
-        <div className="max-w-4xl mx-auto relative z-10">
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-md border border-white/15 text-[#02ADAB] text-xs font-bold uppercase tracking-wider mb-8">
-            <Sparkles className="w-4 h-4" />
-            <span>Collectif d'Alchimistes IA • Création & Stratégie</span>
-          </div>
-
-          <h1 className="text-4xl sm:text-6xl md:text-7xl font-heading font-light text-white mb-8 tracking-tight leading-[1.1]">
-            L'art de la <strong className="font-semibold text-white underline decoration-[#02ADAB] decoration-2 underline-offset-8">transformation</strong> IA.
+      {/* Hero Section — Exact Maquette Deep Blue */}
+      <header className="bg-[#1F4F6E] text-white py-20 px-6 sm:px-10 text-center relative overflow-hidden">
+        <div className="max-w-[700px] mx-auto relative z-10">
+          <p className="text-[0.85rem] tracking-[0.15em] uppercase text-[#02ADAB] mb-4 font-normal">
+            Collectif d'Alchimistes IA · Création & Stratégie
+          </p>
+          <h1 className="font-light text-[2.4rem] sm:text-[2.6rem] leading-[1.2] mb-5 text-white">
+            L'art de la transformation IA.<br />
+            <strong className="font-medium text-white">Créativité sensible &amp; résultats concrets.</strong>
           </h1>
-
-          <p className="text-white/80 text-lg sm:text-2xl max-w-2xl mx-auto font-normal leading-relaxed mb-12">
-            Alkymya fusionne créativité sensible et expertise technologique pour propulser les organisations et la <span className="text-white font-semibold">Génération IA</span> vers l'excellence.
+          <p className="text-[1.05rem] sm:text-[1.1rem] text-white/75 max-w-[620px] mx-auto leading-[1.7] font-light mb-8">
+            Alkymya fusionne créativité sensible et expertise technologique pour propulser les organisations et la Génération IA vers l'excellence.
           </p>
 
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12">
             <Link
               to="/ateliers"
-              className="w-full sm:w-auto px-8 py-4 bg-copper-orange text-white font-bold text-xs uppercase tracking-widest rounded-full hover:bg-[#a85517] transition-all shadow-xl flex items-center justify-center gap-2"
+              className="inline-block bg-[#C06721] hover:bg-[#a85517] text-white text-[0.95rem] font-medium py-3.5 px-8 rounded-[8px] no-underline tracking-[0.04em] transition-transform duration-150 hover:-translate-y-0.5 hover:shadow-[0_6px_20px_rgba(0,0,0,0.15)] shadow-md"
             >
-              <span>Explorer nos ateliers IA</span>
-              <ArrowRight className="w-4 h-4" />
+              Explorer nos ateliers IA →
             </Link>
             <Link
               to="/oeuvres"
-              className="w-full sm:w-auto px-8 py-4 bg-white/10 text-white font-bold text-xs uppercase tracking-widest rounded-full border border-white/20 hover:bg-white/20 transition-all flex items-center justify-center"
+              className="inline-block bg-white/10 hover:bg-white/20 text-white text-[0.95rem] font-medium py-3.5 px-8 rounded-[8px] no-underline tracking-[0.04em] transition-transform duration-150 hover:-translate-y-0.5 border border-white/25"
             >
               Découvrir nos œuvres
             </Link>
@@ -88,84 +80,80 @@ export default function Hero() {
           {/* Stats Ribbon */}
           <div className="pt-8 border-t border-white/10 grid grid-cols-2 md:grid-cols-4 gap-6 max-w-3xl mx-auto text-left">
             <div>
-              <div className="text-2xl sm:text-3xl font-heading font-semibold text-white">99,3%</div>
-              <div className="text-xs text-white/70 font-medium uppercase tracking-wider mt-0.5">Recommandation clients</div>
+              <div className="text-2xl sm:text-3xl font-light text-white mb-0.5">99,3%</div>
+              <div className="text-xs text-white/70 font-normal uppercase tracking-wider">Recommandation</div>
             </div>
             <div>
-              <div className="text-2xl sm:text-3xl font-heading font-semibold text-[#02ADAB]">175+</div>
-              <div className="text-xs text-white/70 font-medium uppercase tracking-wider mt-0.5">Apprenants évalués</div>
+              <div className="text-2xl sm:text-3xl font-light text-[#02ADAB] mb-0.5">175+</div>
+              <div className="text-xs text-white/70 font-normal uppercase tracking-wider">Apprenants évalués</div>
             </div>
             <div>
-              <div className="text-2xl sm:text-3xl font-heading font-semibold text-copper-orange">15+</div>
-              <div className="text-xs text-white/70 font-medium uppercase tracking-wider mt-0.5">Partenaires & écoles</div>
+              <div className="text-2xl sm:text-3xl font-light text-white mb-0.5">15+</div>
+              <div className="text-xs text-white/70 font-normal uppercase tracking-wider">Partenaires &amp; écoles</div>
             </div>
             <div>
-              <div className="text-2xl sm:text-3xl font-heading font-semibold text-white">100%</div>
-              <div className="text-xs text-white/70 font-medium uppercase tracking-wider mt-0.5">Sur-mesure & terrain</div>
+              <div className="text-2xl sm:text-3xl font-light text-[#02ADAB] mb-0.5">100%</div>
+              <div className="text-xs text-white/70 font-normal uppercase tracking-wider">Sur-mesure &amp; terrain</div>
             </div>
           </div>
         </div>
-      </section>
+      </header>
 
       {/* 3 Pillars Section */}
-      <section className="bg-[#FAF9F7] py-20 px-6 sm:px-8">
-        <div className="max-w-[1200px] mx-auto">
-          <div className="text-center max-w-2xl mx-auto mb-16">
-            <span className="text-xs font-bold uppercase tracking-widest text-[#02ADAB] mb-2 block">
-              Notre Méthode en 3 Piliers
-            </span>
-            <h2 className="text-3xl md:text-5xl font-heading font-bold text-[#1F4F6E]">
-              Explorer, Transformer, Partager
-            </h2>
-            <p className="text-slate-600 text-sm md:text-base mt-3">
-              Une démarche pragmatique et humaine pour intégrer l'IA générative sans perdre votre singularité.
-            </p>
-          </div>
+      <section className="max-w-[1100px] mx-auto py-[70px] px-6">
+        <p className="text-[0.75rem] tracking-[0.18em] uppercase text-[#02ADAB] mb-2.5 font-medium text-center">
+          Notre méthode en 3 piliers
+        </p>
+        <h2 className="text-[1.8rem] sm:text-[2rem] font-light mb-3 text-[#1F4F6E] text-center">
+          Explorer, Transformer, <strong className="font-medium text-[#1F4F6E]">Partager</strong>
+        </h2>
+        <p className="text-[1.05rem] text-[#4a6a80] max-w-[640px] leading-[1.7] mb-12 font-normal text-center mx-auto">
+          Une démarche pragmatique et humaine pour intégrer l'IA générative sans perdre votre singularité.
+        </p>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {pillars.map((pillar, index) => {
-              const Icon = pillar.icon;
-              return (
-                <div
-                  key={pillar.name}
-                  className="flex flex-col p-8 rounded-2xl bg-white shadow-[0_4px_24px_rgba(31,79,110,0.06)] hover:shadow-[0_12px_36px_rgba(31,79,110,0.12)] border border-[#1F4F6E]/10 hover:border-copper-orange/30 transition-all duration-300 group justify-between"
-                >
-                  <div>
-                    <div className="flex items-center justify-between mb-6">
-                      <span className="text-xs font-bold uppercase tracking-widest text-copper-orange">
-                        Pilier 0{index + 1}
-                      </span>
-                      <div className="w-10 h-10 rounded-xl bg-copper-orange/10 flex items-center justify-center text-copper-orange">
-                        <Icon className="w-5 h-5" />
-                      </div>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-7">
+          {pillars.map((pillar, index) => {
+            const Icon = pillar.icon;
+            return (
+              <div
+                key={pillar.name}
+                className="bg-white rounded-[12px] overflow-hidden shadow-[0_2px_16px_rgba(31,79,110,0.08)] hover:shadow-[0_8px_32px_rgba(31,79,110,0.14)] hover:-translate-y-1 transition-all duration-200 flex flex-col justify-between p-7"
+              >
+                <div>
+                  <div className="flex items-center justify-between mb-5">
+                    <span className="text-[0.72rem] font-medium tracking-[0.1em] uppercase text-[#02ADAB]">
+                      Pilier 0{index + 1}
+                    </span>
+                    <div className="w-10 h-10 rounded-[8px] bg-[rgba(2,173,171,0.1)] flex items-center justify-center text-[#02ADAB]">
+                      <Icon className="w-5 h-5 text-[#02ADAB]" />
                     </div>
-
-                    <h3 className="text-2xl font-heading font-bold mb-3 text-[#1F4F6E]">{pillar.name}</h3>
-                    <p className="text-sm text-slate-600 leading-relaxed mb-6">
-                      {pillar.description}
-                    </p>
-
-                    <ul className="space-y-2.5 mb-8">
-                      {pillar.points.map((point, idx) => (
-                        <li key={idx} className="flex items-start gap-2.5 text-xs text-slate-700 font-medium">
-                          <CheckCircle2 className="w-4 h-4 text-[#02ADAB] shrink-0 mt-0.5" />
-                          <span>{point}</span>
-                        </li>
-                      ))}
-                    </ul>
                   </div>
 
-                  <Link
-                    to={pillar.link}
-                    className="inline-flex items-center justify-between pt-4 border-t border-[#1F4F6E]/10 text-xs font-bold uppercase tracking-wider text-[#1F4F6E] group-hover:text-copper-orange transition-colors"
-                  >
-                    <span>{pillar.linkText}</span>
-                    <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                  </Link>
+                  <h3 className="text-[1.2rem] font-medium mb-2 text-[#1F4F6E]">{pillar.name}</h3>
+                  <p className="text-[0.95rem] text-[#5a7a90] leading-[1.6] mb-5 font-normal">
+                    {pillar.description}
+                  </p>
+
+                  <ul className="space-y-2.5 mb-7">
+                    {pillar.points.map((point, idx) => (
+                      <li key={idx} className="flex items-start gap-2.5 text-[0.88rem] text-[#1F4F6E]/80 font-normal">
+                        <CheckCircle2 className="w-4 h-4 text-[#02ADAB] shrink-0 mt-0.5" />
+                        <span>{point}</span>
+                      </li>
+                    ))}
+                  </ul>
                 </div>
-              );
-            })}
-          </div>
+
+                <Link
+                  to={pillar.link}
+                  className="inline-flex items-center justify-between pt-4 border-t border-[rgba(31,79,110,0.08)] text-[0.88rem] font-medium text-[#02ADAB] hover:text-[#037971] transition-colors group"
+                >
+                  <span>{pillar.linkText}</span>
+                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                </Link>
+              </div>
+            );
+          })}
         </div>
       </section>
     </div>

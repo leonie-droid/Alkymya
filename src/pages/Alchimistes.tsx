@@ -95,8 +95,8 @@ const alchimistes = [
     name: "Mariana Didier Laurent",
     role: "Alchimiste associée — Services à la personne & Autonomie",
     kicker: "Alchimiste associée, Services à la personne",
-    website: "https://esperantaservices.netlify.app/",
-    websiteLabel: "esperantaservices.netlify.app",
+    website: "https://esperantaservices.fr/",
+    websiteLabel: "esperantaservices.fr",
     websiteTag: "Entreprise & Réseau",
     websiteIcon: "globe",
     bio: "Présidente d'Esperanta Services, Mariana Didier Laurent consacre son activité à l'aide à domicile des personnes en perte d'autonomie et à l'accompagnement des proches aidants. Diplômée de l'École Supérieure d'Assurance, passée par le courtage et la gestion des risques de personnes, elle ancre son entreprise au Plessis-Trévise.",
@@ -104,16 +104,16 @@ const alchimistes = [
     quote: "Dans les services d'aide à la personne, la qualité de l'organisation et la rigueur de gestion sont indissociables de la relation humaine.",
     image: "https://res.cloudinary.com/dokzioyu4/image/upload/v1794479431/WhatsApp_Image_2026-11-12_at_11.29.28_qwv5le.jpg",
     socials: {
-      website: "https://esperantaservices.netlify.app/",
-      linkedin: "https://esperantaservices.netlify.app/",
+      website: "https://esperantaservices.fr/",
+      linkedin: "https://esperantaservices.fr/",
       mail: "contact@alkymya.co"
     },
     works: [
-      { label: "Esperanta Services", url: "https://esperantaservices.netlify.app/" },
-      { label: "Services à la personne & aide à domicile", url: "https://esperantaservices.netlify.app/" },
-      { label: "Accompagnement des proches aidants", url: "https://esperantaservices.netlify.app/" },
-      { label: "Gestion des risques & conformité", url: "https://esperantaservices.netlify.app/" },
-      { label: "Lancement d'entreprise & agrément", url: "https://esperantaservices.netlify.app/" }
+      { label: "Esperanta Services", url: "https://esperantaservices.fr/" },
+      { label: "Services à la personne & aide à domicile", url: "https://esperantaservices.fr/" },
+      { label: "Accompagnement des proches aidants", url: "https://esperantaservices.fr/" },
+      { label: "Gestion des risques & conformité", url: "https://esperantaservices.fr/" },
+      { label: "Lancement d'entreprise & agrément", url: "https://esperantaservices.fr/" }
     ]
   },
   {
@@ -275,13 +275,13 @@ const AlchimisteCard: React.FC<{ person: any, index: number, handleWorkClick: (e
     <motion.div
       key={person.name}
       id={anchorId}
-      initial={{ opacity: 0, y: 30 }}
+      initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
-      transition={{ duration: 0.8, delay: index * 0.1 }}
+      transition={{ duration: 0.5, delay: index * 0.05 }}
       className="flex flex-col h-full scroll-mt-28"
     >
-      <Card className="group flex flex-col h-full overflow-hidden border-none shadow-2xl transition-all duration-500 rounded-[2.5rem] bg-white/70 backdrop-blur-md hover:shadow-copper-orange/10 border border-white/20">
+      <div className="group flex flex-col h-full overflow-hidden rounded-[12px] bg-white shadow-[0_2px_16px_rgba(31,79,110,0.08)] hover:shadow-[0_8px_32px_rgba(31,79,110,0.14)] hover:-translate-y-1 transition-all duration-200">
         {/* Profile Header: Image & Role */}
         <div className="relative aspect-[4/5] overflow-hidden">
           <img
@@ -416,7 +416,7 @@ const AlchimisteCard: React.FC<{ person: any, index: number, handleWorkClick: (e
             </div>
           )}
         </div>
-      </Card>
+      </div>
     </motion.div>
   );
 };
@@ -444,7 +444,7 @@ export default function Alchimistes() {
   };
 
   return (
-    <div className="bg-[#FAF9F7] text-[#1F4F6E] min-h-screen pt-28 pb-20 selection:bg-copper-orange selection:text-white">
+    <div className="bg-[#f4f6f9] text-[#1F4F6E] min-h-screen font-['Roboto',sans-serif] selection:bg-[#C06721] selection:text-white">
       {/* Video Modal */}
       <AnimatePresence>
         {selectedVideo && (
@@ -481,80 +481,54 @@ export default function Alchimistes() {
         )}
       </AnimatePresence>
 
-      {/* HERO SECTION EN BLEU FONCÉ AVEC TEXTE EN BLANC NET */}
-      <section className="relative overflow-hidden bg-gradient-to-b from-[#1F4F6E] via-[#163c54] to-[#122e40] text-white py-20 px-6 sm:px-12 md:py-28 text-center">
-        {/* Glow & texture subtile */}
-        <div className="absolute inset-0 opacity-15 pointer-events-none bg-[radial-gradient(#02ADAB_1px,transparent_1px)] [background-size:24px_24px]" />
-        <div className="absolute -top-32 left-1/2 -translate-x-1/2 w-[700px] h-[350px] bg-[#02ADAB]/15 blur-[120px] rounded-full pointer-events-none" />
-
-        <div className="max-w-4xl mx-auto relative z-10">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-white/15 text-[#02ADAB] text-xs font-bold uppercase tracking-[0.2em] mb-6">
-            <Zap className="w-3.5 h-3.5" />
-            <span>Collectif &amp; Direction · Alkymya</span>
-          </div>
-
-          <h1 className="text-4xl sm:text-5xl md:text-6xl font-heading tracking-tight leading-[1.15] mb-6">
-            <span className="text-white block font-light">
-              Les visages &amp; les esprits
-            </span>
-            <strong className="font-semibold text-white underline decoration-[#02ADAB] decoration-2 underline-offset-8">
-              derrière Alkymya.
-            </strong>
+      {/* HERO SECTION DESIGN SYSTEM */}
+      <header className="bg-[#1F4F6E] text-white py-20 px-6 sm:px-10 text-center relative overflow-hidden">
+        <div className="max-w-[700px] mx-auto relative z-10">
+          <p className="text-[0.85rem] tracking-[0.15em] uppercase text-[#02ADAB] mb-4 font-normal">
+            Collectif &amp; Direction · Alkymya
+          </p>
+          <h1 className="font-light text-[2.4rem] sm:text-[2.6rem] leading-[1.2] mb-5 text-white">
+            Les visages &amp; les esprits<br />
+            <strong className="font-medium text-white">derrière Alkymya.</strong>
           </h1>
-
-          <p className="text-lg sm:text-xl text-white/80 max-w-2xl mx-auto leading-relaxed font-normal mb-10">
+          <p className="text-[1.05rem] sm:text-[1.1rem] text-white/75 max-w-[620px] mx-auto leading-[1.7] font-light mb-8">
             Quatre personnalités complémentaires réunissant la vision stratégique d'entreprise, la rigueur pédagogique, l'audace de la direction artistique — et des expertises concrètes de terrain en santé et autonomie.
           </p>
-        </div>
 
-        {/* Chiffres clés intégrés */}
-        <div className="max-w-4xl mx-auto mt-16 pt-10 border-t border-white/10 grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
-          <div>
-            <div className="text-2xl sm:text-3xl font-light text-white font-mono">
-              <strong className="font-semibold text-[#02ADAB]">5</strong>
+          <div className="pt-8 border-t border-white/10 grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+            <div>
+              <div className="text-2xl sm:text-3xl font-light text-white mb-0.5">5</div>
+              <div className="text-xs text-white/70 font-normal uppercase tracking-wider">Alchimistes &amp; Associés</div>
             </div>
-            <div className="text-xs text-white/60 uppercase tracking-wider mt-1">Alchimistes &amp; Associés</div>
-          </div>
-          <div>
-            <div className="text-2xl sm:text-3xl font-light text-white font-mono">
-              <strong className="font-semibold text-white">6</strong>
+            <div>
+              <div className="text-2xl sm:text-3xl font-light text-[#02ADAB] mb-0.5">6</div>
+              <div className="text-xs text-white/70 font-normal uppercase tracking-wider">Nouveaux Talents</div>
             </div>
-            <div className="text-xs text-white/60 uppercase tracking-wider mt-1">Nouveaux Talents Formés</div>
-          </div>
-          <div>
-            <div className="text-2xl sm:text-3xl font-light text-white font-mono">
-              <strong className="font-semibold text-[#C06721]">100%</strong>
+            <div>
+              <div className="text-2xl sm:text-3xl font-light text-white mb-0.5">100%</div>
+              <div className="text-xs text-white/70 font-normal uppercase tracking-wider">Terrain &amp; Pratique</div>
             </div>
-            <div className="text-xs text-white/60 uppercase tracking-wider mt-1">Terrain &amp; Pratique</div>
-          </div>
-          <div>
-            <div className="text-2xl sm:text-3xl font-light text-white font-mono">
-              <strong className="font-semibold text-[#02ADAB]">20+ ans</strong>
+            <div>
+              <div className="text-2xl sm:text-3xl font-light text-[#02ADAB] mb-0.5">20+ ans</div>
+              <div className="text-xs text-white/70 font-normal uppercase tracking-wider">Expérience cumulée</div>
             </div>
-            <div className="text-xs text-white/60 uppercase tracking-wider mt-1">Expérience cumulée</div>
           </div>
         </div>
-      </section>
+      </header>
 
       {/* SECTION DU COLLECTIF PRINCIPAL */}
-      <section className="max-w-[1280px] mx-auto py-16 px-6 sm:px-8">
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
-          <div>
-            <div className="flex items-center gap-2 text-xs font-bold text-[#02ADAB] uppercase tracking-[0.2em] mb-2">
-              <span>Gouvernance &amp; Fondateurs</span>
-              <span aria-hidden="true">·</span>
-              <span>L'Équipe Permanente</span>
-            </div>
-            <h2 className="text-3xl sm:text-4xl font-light text-[#1F4F6E] leading-tight">
-              Une alliance de visionnaires <strong className="font-semibold">et de praticiens</strong>
-            </h2>
-          </div>
-          <p className="text-sm sm:text-base text-[#5a7a90] max-w-md leading-relaxed">
-            Chaque alchimiste apporte un regard affûté, forgé par des années de pratique en entreprise, en direction de projets et sur le terrain.
-          </p>
-        </div>
+      <section className="max-w-[1100px] mx-auto py-[70px] px-6">
+        <p className="text-[0.75rem] tracking-[0.18em] uppercase text-[#02ADAB] mb-2.5 font-medium">
+          Gouvernance &amp; Fondateurs
+        </p>
+        <h2 className="text-[1.8rem] sm:text-[2rem] font-light mb-3 text-[#1F4F6E]">
+          Une alliance de visionnaires <strong className="font-medium text-[#1F4F6E]">et de praticiens</strong>
+        </h2>
+        <p className="text-[1.05rem] text-[#4a6a80] max-w-[640px] leading-[1.7] mb-12 font-normal">
+          Chaque alchimiste apporte un regard affûté, forgé par des années de pratique en entreprise, en direction de projets et sur le terrain.
+        </p>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-7">
           {alchimistes.map((person, index) => (
             <AlchimisteCard 
               key={person.name} 
@@ -564,93 +538,87 @@ export default function Alchimistes() {
             />
           ))}
         </div>
+      </section>
 
-        {/* Section Nos Nouveaux Alchimistes */}
-        <div className="mt-28 pt-12 border-t border-[#1F4F6E]/10">
-          <div className="text-center max-w-3xl mx-auto mb-16">
-            <span className="text-xs font-bold text-[#C06721] uppercase tracking-[0.2em] block mb-2">
-              Transmission &amp; Nouvelle Génération
-            </span>
-            <h2 className="text-3xl md:text-4xl font-light text-[#1F4F6E] mb-4">
-              Nos <strong className="font-semibold text-[#1F4F6E]">6 Nouveaux Alchimistes</strong>
-            </h2>
-            <p className="text-sm md:text-base text-[#5a7a90] max-w-2xl mx-auto leading-relaxed">
-              Découvrez les e-portfolios et les projets innovants réalisés par notre nouvelle vague d'alchimistes formés et accompagnés par Alkymya.
-            </p>
-          </div>
+      {/* SÉPARATEUR */}
+      <hr className="border-none border-t border-[rgba(31,79,110,0.1)] mx-6 max-w-[1100px] md:mx-auto" />
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {nouveauxAlchimistes.map((nouveau, index) => (
-              <motion.div
-                key={nouveau.name}
-                initial={{ opacity: 0, y: 15 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.4, delay: index * 0.05 }}
-              >
-                <Card className="group relative overflow-hidden rounded-2xl bg-white border border-[#1F4F6E]/10 p-7 flex flex-col h-full shadow-[0_4px_24px_rgba(31,79,110,0.06)] hover:shadow-[0_12px_36px_rgba(31,79,110,0.12)] hover:-translate-y-1 transition-all duration-300">
-                  <div className="flex items-center gap-4 mb-5">
-                    <div className="w-13 h-13 rounded-xl bg-gradient-to-br from-[#C06721]/20 to-[#C06721]/5 border border-[#C06721]/20 flex items-center justify-center font-bold text-base text-[#C06721] shadow-inner group-hover:scale-105 transition-transform duration-300">
-                      {nouveau.initials}
-                    </div>
-                    <div>
-                      <h3 className="text-lg font-bold text-[#1F4F6E] group-hover:text-[#C06721] transition-colors leading-snug">
-                        {nouveau.name}
-                      </h3>
-                      <p className="text-[11px] font-semibold text-[#7a9ab0] uppercase tracking-wider">{nouveau.role}</p>
-                    </div>
+      {/* Section Nos Nouveaux Alchimistes */}
+      <section className="max-w-[1100px] mx-auto py-[70px] px-6">
+        <p className="text-[0.75rem] tracking-[0.18em] uppercase text-[#02ADAB] mb-2.5 font-medium">
+          Transmission &amp; Nouvelle Génération
+        </p>
+        <h2 className="text-[1.8rem] sm:text-[2rem] font-light mb-3 text-[#1F4F6E]">
+          Nos <strong className="font-medium text-[#1F4F6E]">6 Nouveaux Alchimistes</strong>
+        </h2>
+        <p className="text-[1.05rem] text-[#4a6a80] max-w-[640px] leading-[1.7] mb-12 font-normal">
+          Découvrez les e-portfolios et les projets innovants réalisés par notre nouvelle vague d'alchimistes formés et accompagnés par Alkymya.
+        </p>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {nouveauxAlchimistes.map((nouveau, index) => (
+            <div
+              key={nouveau.name}
+              className="bg-white rounded-[12px] p-7 shadow-[0_2px_16px_rgba(31,79,110,0.08)] hover:shadow-[0_8px_32px_rgba(31,79,110,0.14)] hover:-translate-y-1 transition-all duration-200 flex flex-col justify-between"
+            >
+              <div>
+                <div className="flex items-center gap-4 mb-4">
+                  <div className="w-12 h-12 rounded-[8px] bg-[rgba(192,103,33,0.12)] text-[#C06721] flex items-center justify-center font-medium text-sm">
+                    {nouveau.initials}
                   </div>
+                  <div>
+                    <h3 className="text-[1.05rem] font-medium text-[#1F4F6E] leading-snug">
+                      {nouveau.name}
+                    </h3>
+                    <p className="text-[0.75rem] text-[#7a9ab0] uppercase tracking-wider font-normal">{nouveau.role}</p>
+                  </div>
+                </div>
 
-                  <p className="text-xs text-[#5a7a90] leading-relaxed mb-6 flex-grow">
-                    {nouveau.description}
-                  </p>
+                <p className="text-[0.9rem] text-[#5a7a90] leading-[1.6] mb-6">
+                  {nouveau.description}
+                </p>
+              </div>
 
-                  <a
-                    href={nouveau.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 text-xs font-bold text-[#C06721] hover:text-[#1F4F6E] transition-colors self-start mt-auto"
-                  >
-                    <span>Consulter l'e-portfolio</span>
-                    <ExternalLink className="h-3.5 w-3.5" />
-                  </a>
-                </Card>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* CTA FINAL : BANNIÈRE TERRACOTTA / CUIVRE */}
-      <section className="max-w-[1200px] mx-auto px-6 sm:px-8 mb-8 mt-12">
-        <div className="bg-[#C06721] text-white rounded-3xl p-8 sm:p-14 text-center shadow-xl">
-          <div className="max-w-xl mx-auto">
-            <span className="text-xs font-bold uppercase tracking-[0.2em] text-white/80 block mb-3">
-              Rejoindre le Mouvement
-            </span>
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-light mb-4 leading-snug">
-              Envie de devenir <strong className="font-semibold text-white">un alchimiste ?</strong>
-            </h2>
-            <p className="text-base text-white/90 leading-relaxed mb-8 font-normal">
-              Nous sommes constamment en quête de nouveaux talents, d'experts métiers et de créateurs pour co-développer nos projets d'innovation.
-            </p>
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-              <Link
-                to="/rejoindre"
-                className="w-full sm:w-auto px-8 py-4 rounded-xl bg-white text-[#C06721] hover:bg-[#1F4F6E] hover:text-white font-semibold text-sm transition-all duration-200 shadow-md"
+              <a
+                href={nouveau.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 text-[0.85rem] font-medium text-[#02ADAB] hover:text-[#037971] transition-colors self-start mt-auto"
               >
-                Postuler pour nous rejoindre →
-              </Link>
-              <Link
-                to="/contact?subject=Rejoindre%20le%20collectif%20Alkymya"
-                className="w-full sm:w-auto px-6 py-4 rounded-xl bg-white/10 hover:bg-white/20 text-white font-semibold text-sm transition-all text-center"
-              >
-                Écrire au collectif
-              </Link>
+                <span>Consulter l'e-portfolio</span>
+                <ExternalLink className="h-3.5 w-3.5" />
+              </a>
             </div>
-          </div>
+          ))}
         </div>
       </section>
+
+      {/* SÉPARATEUR */}
+      <hr className="border-none border-t border-[rgba(31,79,110,0.1)] mx-6 max-w-[1100px] md:mx-auto" />
+
+      {/* CTA FINAL : BANNIÈRE ORANGE #C06721 */}
+      <div className="bg-[#C06721] text-white text-center py-[70px] px-10">
+        <h2 className="text-[2rem] font-light mb-3.5 text-white">
+          Envie de devenir <strong className="font-medium text-white">un alchimiste ?</strong>
+        </h2>
+        <p className="text-[1.05rem] text-white/80 max-w-[500px] mx-auto mb-8 leading-[1.7] font-light">
+          Nous sommes constamment en quête de nouveaux talents, d'experts métiers et de créateurs pour co-développer nos projets d'innovation.
+        </p>
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+          <Link
+            to="/rejoindre"
+            className="inline-block bg-white text-[#C06721] text-[0.95rem] font-medium py-3.5 px-8 rounded-[8px] no-underline tracking-[0.04em] transition-transform duration-150 hover:-translate-y-0.5 hover:shadow-[0_6px_20px_rgba(0,0,0,0.15)]"
+          >
+            Postuler pour nous rejoindre →
+          </Link>
+          <Link
+            to="/contact?subject=Rejoindre%20le%20collectif%20Alkymya"
+            className="inline-block bg-white/10 hover:bg-white/20 text-white text-[0.95rem] font-medium py-3.5 px-8 rounded-[8px] no-underline tracking-[0.04em] transition-transform duration-150 hover:-translate-y-0.5 border border-white/25"
+          >
+            Écrire au collectif
+          </Link>
+        </div>
+      </div>
     </div>
   );
 }

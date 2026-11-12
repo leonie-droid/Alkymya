@@ -113,7 +113,7 @@ export const Chatbot: React.FC = () => {
                     <MessageCircle className="w-8 h-8" />
                   </div>
                   <div className="space-y-2">
-                    <p className="text-deep-blue font-bold">Bonjour ! 👋</p>
+                    <p className="text-deep-blue font-bold">Bonjour !</p>
                     <p className="text-muted-foreground text-sm">Comment puis-je vous aider aujourd'hui ? Je peux vous parler de notre étude Génération IA ou de nos services.</p>
                   </div>
                 </div>
