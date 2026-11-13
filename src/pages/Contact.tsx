@@ -68,77 +68,58 @@ export default function Contact() {
   };
 
   return (
-    <div className="bg-[#FAF9F7] text-[#1F4F6E] min-h-screen pt-28 pb-20 selection:bg-copper-orange selection:text-white">
-      {/* HERO SECTION EN BLEU FONCÉ AVEC TEXTE EN BLANC NET */}
-      <section className="relative overflow-hidden bg-gradient-to-b from-[#1F4F6E] via-[#163c54] to-[#122e40] text-white py-20 px-6 sm:px-12 md:py-28 text-center">
-        {/* Glow & texture subtile */}
-        <div className="absolute inset-0 opacity-15 pointer-events-none bg-[radial-gradient(#02ADAB_1px,transparent_1px)] [background-size:24px_24px]" />
-        <div className="absolute -top-32 left-1/2 -translate-x-1/2 w-[700px] h-[350px] bg-[#02ADAB]/15 blur-[120px] rounded-full pointer-events-none" />
-
-        <div className="max-w-4xl mx-auto relative z-10">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-white/15 text-[#02ADAB] text-xs font-bold uppercase tracking-[0.2em] mb-6">
-            <MessageSquare className="w-3.5 h-3.5" />
-            <span>Échange &amp; Collaboration · Alkymya</span>
-          </div>
-
-          <h1 className="text-4xl sm:text-5xl md:text-6xl font-heading tracking-tight leading-[1.15] mb-6">
-            <span className="text-white block font-light">
-              Parlons de votre projet,
-            </span>
-            <strong className="font-semibold text-white underline decoration-[#02ADAB] decoration-2 underline-offset-8">
-              prenons contact.
-            </strong>
+    <div className="bg-[#f4f6f9] text-[#1F4F6E] min-h-screen font-['Roboto',sans-serif] selection:bg-[#C06721] selection:text-white">
+      {/* HERO SECTION */}
+      <header className="bg-[#1F4F6E] text-white py-20 px-6 sm:px-10 text-center relative overflow-hidden">
+        <div className="max-w-[700px] mx-auto relative z-10">
+          <p className="text-[0.85rem] tracking-[0.15em] uppercase text-[#02ADAB] mb-4 font-normal">
+            Échange &amp; Collaboration · Alkymya
+          </p>
+          <h1 className="font-light text-[2.4rem] sm:text-[2.6rem] leading-[1.2] mb-5 text-white">
+            Parlons de votre projet,<br />
+            <strong className="font-medium text-white">prenons contact.</strong>
           </h1>
-
-          <p className="text-lg sm:text-xl text-white/80 max-w-2xl mx-auto leading-relaxed font-normal mb-10">
+          <p className="text-[1.05rem] sm:text-[1.1rem] text-white/75 max-w-[620px] mx-auto leading-[1.7] font-light mb-8">
             Une question sur nos ateliers, notre accompagnement New Business MVP ou un projet de commande artistique ? Écrivez-nous, nous vous répondons rapidement avec une recommandation claire.
           </p>
-        </div>
 
-        {/* Chiffres clés intégrés */}
-        <div className="max-w-4xl mx-auto mt-16 pt-10 border-t border-white/10 grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
-          <div>
-            <div className="text-2xl sm:text-3xl font-light text-white font-mono">
-              <strong className="font-semibold text-[#02ADAB]">&lt; 24h</strong>
+          <div className="pt-8 border-t border-white/10 grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+            <div>
+              <div className="text-2xl sm:text-3xl font-light text-[#02ADAB] mb-0.5">&lt; 24h</div>
+              <div className="text-xs text-white/70 font-normal uppercase tracking-wider">Délai de réponse</div>
             </div>
-            <div className="text-xs text-white/60 uppercase tracking-wider mt-1">Délai de réponse</div>
-          </div>
-          <div>
-            <div className="text-2xl sm:text-3xl font-light text-white font-mono">
-              <strong className="font-semibold text-white">100%</strong>
+            <div>
+              <div className="text-2xl sm:text-3xl font-light text-white mb-0.5">100%</div>
+              <div className="text-xs text-white/70 font-normal uppercase tracking-wider">Direct fondateur</div>
             </div>
-            <div className="text-xs text-white/60 uppercase tracking-wider mt-1">Direct fondateur</div>
-          </div>
-          <div>
-            <div className="text-2xl sm:text-3xl font-light text-white font-mono">
-              <strong className="font-semibold text-[#C06721]">Paris &amp; 77</strong>
+            <div>
+              <div className="text-2xl sm:text-3xl font-light text-white mb-0.5">Paris &amp; 77</div>
+              <div className="text-xs text-white/70 font-normal uppercase tracking-wider">Présence territoriale</div>
             </div>
-            <div className="text-xs text-white/60 uppercase tracking-wider mt-1">Présence territoriale</div>
-          </div>
-          <div>
-            <div className="text-2xl sm:text-3xl font-light text-white font-mono">
-              <strong className="font-semibold text-[#02ADAB]">Visio / Présentiel</strong>
+            <div>
+              <div className="text-2xl sm:text-3xl font-light text-[#02ADAB] mb-0.5">Visio / Site</div>
+              <div className="text-xs text-white/70 font-normal uppercase tracking-wider">Modalités d'échange</div>
             </div>
-            <div className="text-xs text-white/60 uppercase tracking-wider mt-1">Modalités d'échange</div>
           </div>
         </div>
-      </section>
+      </header>
 
       {/* FORMULAIRE DE CONTACT */}
-      <section className="max-w-[1100px] mx-auto py-16 px-6 sm:px-8">
-        <div className="bg-white rounded-3xl border border-[#1F4F6E]/10 shadow-[0_4px_24px_rgba(31,79,110,0.06)] p-8 sm:p-14 mb-16">
-          <div className="mb-10 text-center sm:text-left">
-            <span className="text-xs font-bold uppercase tracking-[0.2em] text-[#C06721] block mb-2">
-              Formulaire de contact direct
-            </span>
-            <h2 className="text-2xl sm:text-3xl font-light text-[#1F4F6E]">
-              Envoyez-nous un message <strong className="font-semibold">pour démarrer</strong>
-            </h2>
-          </div>
+      <section className="max-w-[1100px] mx-auto py-[70px] px-6">
+        <p className="text-[0.75rem] tracking-[0.18em] uppercase text-[#02ADAB] mb-2.5 font-medium">
+          Formulaire de contact direct
+        </p>
+        <h2 className="text-[1.8rem] sm:text-[2rem] font-light mb-3 text-[#1F4F6E]">
+          Envoyez-nous un message <strong className="font-medium text-[#1F4F6E]">pour démarrer</strong>
+        </h2>
+        <p className="text-[1.05rem] text-[#4a6a80] max-w-[640px] leading-[1.7] mb-10 font-normal">
+          Décrivez votre besoin ou votre contexte : nous étudions chaque demande personnellement.
+        </p>
 
+        <div className="bg-white rounded-[12px] shadow-[0_2px_16px_rgba(31,79,110,0.08)] p-8 sm:p-12 mb-12">
           <form onSubmit={handleSubmit} className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div className="space-y-2">
-              <label className="text-xs font-bold text-[#1F4F6E] uppercase tracking-wider ml-1">Prénom</label>
+              <label className="text-xs font-medium text-[#1F4F6E] uppercase tracking-wider block">Prénom</label>
               <input 
                 type="text" 
                 name="firstName"
@@ -146,11 +127,11 @@ export default function Contact() {
                 onChange={handleChange}
                 placeholder="Votre prénom"
                 required
-                className="w-full px-5 py-3.5 bg-[#FAF9F7] border border-[#1F4F6E]/15 rounded-xl focus:border-[#C06721] focus:bg-white transition-all outline-none text-sm text-[#1F4F6E]"
+                className="w-full px-4 py-3 bg-[#f4f6f9] border border-[rgba(31,79,110,0.15)] rounded-[8px] focus:border-[#02ADAB] focus:bg-white transition-all outline-none text-sm text-[#1F4F6E]"
               />
             </div>
             <div className="space-y-2">
-              <label className="text-xs font-bold text-[#1F4F6E] uppercase tracking-wider ml-1">Nom</label>
+              <label className="text-xs font-medium text-[#1F4F6E] uppercase tracking-wider block">Nom</label>
               <input 
                 type="text" 
                 name="lastName"
@@ -158,11 +139,11 @@ export default function Contact() {
                 onChange={handleChange}
                 placeholder="Votre nom"
                 required
-                className="w-full px-5 py-3.5 bg-[#FAF9F7] border border-[#1F4F6E]/15 rounded-xl focus:border-[#C06721] focus:bg-white transition-all outline-none text-sm text-[#1F4F6E]"
+                className="w-full px-4 py-3 bg-[#f4f6f9] border border-[rgba(31,79,110,0.15)] rounded-[8px] focus:border-[#02ADAB] focus:bg-white transition-all outline-none text-sm text-[#1F4F6E]"
               />
             </div>
             <div className="space-y-2">
-              <label className="text-xs font-bold text-[#1F4F6E] uppercase tracking-wider ml-1">Email</label>
+              <label className="text-xs font-medium text-[#1F4F6E] uppercase tracking-wider block">Email</label>
               <input 
                 type="email" 
                 name="email"
@@ -170,11 +151,11 @@ export default function Contact() {
                 onChange={handleChange}
                 placeholder="nom@entreprise.fr"
                 required
-                className="w-full px-5 py-3.5 bg-[#FAF9F7] border border-[#1F4F6E]/15 rounded-xl focus:border-[#C06721] focus:bg-white transition-all outline-none text-sm text-[#1F4F6E]"
+                className="w-full px-4 py-3 bg-[#f4f6f9] border border-[rgba(31,79,110,0.15)] rounded-[8px] focus:border-[#02ADAB] focus:bg-white transition-all outline-none text-sm text-[#1F4F6E]"
               />
             </div>
             <div className="space-y-2">
-              <label className="text-xs font-bold text-[#1F4F6E] uppercase tracking-wider ml-1">Sujet</label>
+              <label className="text-xs font-medium text-[#1F4F6E] uppercase tracking-wider block">Sujet</label>
               <input 
                 type="text" 
                 name="subject"
@@ -182,11 +163,11 @@ export default function Contact() {
                 onChange={handleChange}
                 placeholder="Objet de votre demande"
                 required
-                className="w-full px-5 py-3.5 bg-[#FAF9F7] border border-[#1F4F6E]/15 rounded-xl focus:border-[#C06721] focus:bg-white transition-all outline-none text-sm text-[#1F4F6E]"
+                className="w-full px-4 py-3 bg-[#f4f6f9] border border-[rgba(31,79,110,0.15)] rounded-[8px] focus:border-[#02ADAB] focus:bg-white transition-all outline-none text-sm text-[#1F4F6E]"
               />
             </div>
             <div className="space-y-2 md:col-span-2">
-              <label className="text-xs font-bold text-[#1F4F6E] uppercase tracking-wider ml-1">Message</label>
+              <label className="text-xs font-medium text-[#1F4F6E] uppercase tracking-wider block">Message</label>
               <textarea 
                 name="message"
                 value={formData.message}
@@ -194,16 +175,17 @@ export default function Contact() {
                 rows={5}
                 placeholder="Décrivez votre besoin, votre projet ou votre question..."
                 required
-                className="w-full px-5 py-3.5 bg-[#FAF9F7] border border-[#1F4F6E]/15 rounded-xl focus:border-[#C06721] focus:bg-white transition-all outline-none text-sm text-[#1F4F6E] resize-none"
+                className="w-full px-4 py-3 bg-[#f4f6f9] border border-[rgba(31,79,110,0.15)] rounded-[8px] focus:border-[#02ADAB] focus:bg-white transition-all outline-none text-sm text-[#1F4F6E] resize-none"
               />
             </div>
             <div className="md:col-span-2 pt-2 flex flex-col sm:flex-row items-center justify-between gap-4">
               <button 
                 type="submit"
                 disabled={status === 'loading'}
-                className="w-full sm:w-auto px-10 py-4 bg-[#1F4F6E] hover:bg-[#02ADAB] text-white rounded-xl font-bold text-xs uppercase tracking-wider transition-all shadow-md flex items-center justify-center gap-2.5 disabled:opacity-50 cursor-pointer"
+                className="w-full sm:w-auto px-8 py-3.5 bg-[#C06721] hover:bg-[#a85517] text-white rounded-[8px] font-medium text-sm tracking-[0.04em] transition-all shadow-sm flex items-center justify-center gap-2.5 disabled:opacity-50 cursor-pointer"
               >
-                {status === 'loading' ? 'Envoi en cours...' : 'Envoyer le message'} <Mail className="h-4 w-4" />
+                <span>{status === 'loading' ? 'Envoi en cours...' : 'Envoyer le message'}</span>
+                <Mail className="h-4 w-4" />
               </button>
               
               <span className="text-xs text-[#7a9ab0]">
@@ -212,13 +194,13 @@ export default function Contact() {
             </div>
 
             {status === 'success' && (
-              <div className="md:col-span-2 p-4 rounded-xl bg-emerald-50 border border-emerald-200 text-emerald-800 text-sm font-semibold">
+              <div className="md:col-span-2 p-4 rounded-[8px] bg-emerald-50 border border-emerald-200 text-emerald-800 text-sm font-medium">
                 Merci ! Votre message a bien été envoyé. Nous vous répondrons dans les plus brefs délais.
               </div>
             )}
             
             {status === 'error' && (
-              <div className="md:col-span-2 p-4 rounded-xl bg-red-50 border border-red-200 text-red-800 text-sm font-semibold">
+              <div className="md:col-span-2 p-4 rounded-[8px] bg-red-50 border border-red-200 text-red-800 text-sm font-medium">
                 {errorMessage || 'Une erreur est survenue. Veuillez réessayer ou nous contacter par email directement.'}
               </div>
             )}
@@ -226,43 +208,48 @@ export default function Contact() {
         </div>
 
         {/* CARTES DE CONTACT DIRECT */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <div className="p-8 rounded-2xl bg-white border border-[#1F4F6E]/10 shadow-sm flex flex-col justify-between">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-7">
+          <div className="p-8 rounded-[12px] bg-white shadow-[0_2px_16px_rgba(31,79,110,0.08)] flex flex-col justify-between">
             <div>
-              <span className="text-xs font-bold text-[#C06721] uppercase tracking-wider block mb-1">Directeur Associé</span>
-              <h3 className="text-xl font-bold text-[#1F4F6E] mb-2">Cyril Garnier</h3>
-              <p className="text-xs text-[#5a7a90] leading-relaxed mb-4">
+              <span className="text-[0.72rem] font-medium tracking-[0.1em] uppercase text-[#02ADAB] block mb-2">
+                Directeur Associé
+              </span>
+              <h3 className="text-[1.2rem] font-medium text-[#1F4F6E] mb-2">Cyril Garnier</h3>
+              <p className="text-[0.95rem] text-[#5a7a90] leading-[1.6] mb-5 font-normal">
                 Conseil stratégique, accompagnement New Business MVP, grands comptes et formations.
               </p>
             </div>
-            <a href="mailto:cyril@alkymya.co" className="text-sm font-bold text-[#1F4F6E] hover:text-[#02ADAB] transition-colors">
+            <a href="mailto:cyril@alkymya.co" className="text-[0.9rem] font-medium text-[#02ADAB] hover:text-[#037971] transition-colors">
               cyril@alkymya.co →
             </a>
           </div>
 
-          <div className="p-8 rounded-2xl bg-white border border-[#1F4F6E]/10 shadow-sm flex flex-col justify-between">
+          <div className="p-8 rounded-[12px] bg-white shadow-[0_2px_16px_rgba(31,79,110,0.08)] flex flex-col justify-between">
             <div>
-              <span className="text-xs font-bold text-[#C06721] uppercase tracking-wider block mb-1">Chef de Projet Digital &amp; DA</span>
-              <h3 className="text-xl font-bold text-[#1F4F6E] mb-2">Léonie Egesipe</h3>
-              <p className="text-xs text-[#5a7a90] leading-relaxed mb-4">
+              <span className="text-[0.72rem] font-medium tracking-[0.1em] uppercase text-[#02ADAB] block mb-2">
+                Chef de Projet Digital &amp; DA
+              </span>
+              <h3 className="text-[1.2rem] font-medium text-[#1F4F6E] mb-2">Léonie Egesipe</h3>
+              <p className="text-[0.95rem] text-[#5a7a90] leading-[1.6] mb-5 font-normal">
                 Créations visuelles, direction artistique IA, gestion des ateliers et réseaux.
               </p>
             </div>
-            <a href="mailto:leonie@alkymya.co" className="text-sm font-bold text-[#1F4F6E] hover:text-[#02ADAB] transition-colors">
+            <a href="mailto:leonie@alkymya.co" className="text-[0.9rem] font-medium text-[#02ADAB] hover:text-[#037971] transition-colors">
               leonie@alkymya.co →
             </a>
           </div>
         </div>
       </section>
 
-      {/* BANNIÈRE CITATION FINALE */}
-      <section className="max-w-[1200px] mx-auto px-6 sm:px-8 mb-8">
-        <div className="bg-[#C06721] text-white rounded-3xl p-8 sm:p-12 text-center shadow-xl">
-          <p className="text-lg md:text-xl font-light italic text-white/95 max-w-xl mx-auto">
-            « Chaque rencontre est une opportunité de transmutation. »
-          </p>
-        </div>
-      </section>
+      {/* SÉPARATEUR */}
+      <hr className="border-none border-t border-[rgba(31,79,110,0.1)] mx-6 max-w-[1100px] md:mx-auto" />
+
+      {/* BANNIÈRE CITATION FINALE ORANGE #C06721 */}
+      <div className="bg-[#C06721] text-white text-center py-[70px] px-10">
+        <p className="text-[1.35rem] sm:text-[1.6rem] font-light text-white max-w-[600px] mx-auto leading-[1.5]">
+          « Chaque rencontre est une opportunité de transmutation. »
+        </p>
+      </div>
     </div>
   );
 }

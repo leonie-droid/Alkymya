@@ -408,9 +408,9 @@ export default function Oeuvres() {
           {/* 3. TheLittle83.fr (avec photo spécifique demandée par l'utilisateur) */}
           <article className="bg-white rounded-[12px] overflow-hidden shadow-[0_2px_16px_rgba(31,79,110,0.08)] hover:shadow-[0_8px_32px_rgba(31,79,110,0.14)] hover:-translate-y-1 transition-all duration-200 flex flex-col justify-between">
             <div>
-              <div className="h-[180px] bg-[#2a4a3a] relative overflow-hidden flex items-center justify-center group p-3">
+              <div className="h-[180px] bg-[#2a4a3a] relative overflow-hidden flex items-center justify-center group p-4">
                 <img
-                  src="https://res.cloudinary.com/dokzioyu4/image/upload/v1794476269/thelittle83-logo_lcgfiq_ijsue9.png"
+                  src="https://res.cloudinary.com/dyooqwryq/image/upload/v1794124042/thelittle83-logo_op3yvm.svg"
                   alt="Var — atlas naturaliste bilingue (thelittle83.fr)"
                   className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-500"
                   referrerPolicy="no-referrer"

@@ -84,245 +84,252 @@ const partenaires = [
 
 export default function Partenaires() {
   return (
-    <div className="bg-[#FAF9F7] text-[#1F4F6E] min-h-screen pt-28 pb-20 selection:bg-copper-orange selection:text-white">
+    <div className="bg-[#f4f6f9] text-[#1F4F6E] min-h-screen font-['Roboto',sans-serif] selection:bg-[#C06721] selection:text-white">
       <SEO
         title="Nos Partenaires & Alliances Stratégiques | Alkymya"
         description="Découvrez les universités, grandes écoles, fondations et entreprises qui collaborent avec Alkymya pour former les talents de demain et propulser l'IA générative."
       />
 
-      {/* Hero Section — Maquette Signature Deep Blue */}
-      <section className="bg-gradient-to-b from-[#1F4F6E] via-[#163c54] to-[#122e40] text-white py-20 px-6 sm:px-12 md:py-28 text-center relative overflow-hidden mb-16">
-        {/* Micro-dot grid pattern & glow blur */}
-        <div className="absolute inset-0 opacity-15 bg-[radial-gradient(#02ADAB_1px,transparent_1px)] [background-size:20px_20px] pointer-events-none" />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[350px] bg-[#02ADAB]/15 rounded-full blur-[140px] pointer-events-none" />
-        <div className="absolute bottom-0 right-10 w-80 h-80 bg-copper-orange/15 rounded-full blur-[120px] pointer-events-none" />
+      {/* HERO SECTION DESIGN SYSTEM */}
+      <header className="bg-[#1F4F6E] text-white py-20 px-6 sm:px-10 text-center relative overflow-hidden">
+        <div className="max-w-[700px] mx-auto relative z-10">
+          <p className="text-[0.85rem] tracking-[0.15em] uppercase text-[#02ADAB] mb-4 font-normal">
+            Alliances Stratégiques &amp; Écosystème
+          </p>
 
-        <div className="max-w-4xl mx-auto relative z-10">
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-md border border-white/15 text-[#02ADAB] text-xs font-bold uppercase tracking-wider mb-6">
-            <Handshake className="w-4 h-4" />
-            <span>Alliances Stratégiques & Écosystème</span>
-          </div>
-
-          <h1 className="text-4xl sm:text-5xl md:text-6xl font-heading font-light text-white mb-6 tracking-tight leading-tight">
-            Nos partenaires &amp; <strong className="font-semibold text-white underline decoration-[#02ADAB] decoration-2 underline-offset-8">synergies d'avenir</strong>
+          <h1 className="font-light text-[2.4rem] sm:text-[2.6rem] leading-[1.2] mb-5 text-white">
+            Nos partenaires &amp;<br />
+            <strong className="font-medium text-white">synergies d'avenir.</strong>
           </h1>
 
-          <p className="text-white/80 text-base sm:text-lg max-w-2xl mx-auto font-normal leading-relaxed mb-12">
+          <p className="text-[1.05rem] sm:text-[1.1rem] text-white/75 max-w-[600px] mx-auto leading-[1.7] font-light mb-8">
             Grandes écoles, universités, fondations d'entreprise et acteurs de l'écosystème : nous unissons nos expertises pour catalyser l'innovation responsable et former les talents à l'IA générative.
           </p>
 
-          {/* Stats / Highlights Ribbon */}
-          <div className="pt-8 border-t border-white/10 grid grid-cols-2 md:grid-cols-4 gap-6 max-w-3xl mx-auto text-left">
+          {/* Stats Ribbon */}
+          <div className="pt-8 border-t border-white/10 grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
             <div>
-              <div className="text-2xl sm:text-3xl font-heading font-semibold text-white">15+</div>
-              <div className="text-xs text-white/70 font-medium uppercase tracking-wider mt-0.5">Partenaires actifs</div>
+              <div className="text-2xl sm:text-3xl font-light text-white mb-0.5">15+</div>
+              <div className="text-xs text-white/70 font-normal uppercase tracking-wider">Partenaires actifs</div>
             </div>
             <div>
-              <div className="text-2xl sm:text-3xl font-heading font-semibold text-[#02ADAB]">8+</div>
-              <div className="text-xs text-white/70 font-medium uppercase tracking-wider mt-0.5">Grandes Écoles</div>
+              <div className="text-2xl sm:text-3xl font-light text-[#02ADAB] mb-0.5">8+</div>
+              <div className="text-xs text-white/70 font-normal uppercase tracking-wider">Grandes Écoles</div>
             </div>
             <div>
-              <div className="text-2xl sm:text-3xl font-heading font-semibold text-copper-orange">450+</div>
-              <div className="text-xs text-white/70 font-medium uppercase tracking-wider mt-0.5">Talents formés</div>
+              <div className="text-2xl sm:text-3xl font-light text-white mb-0.5">450+</div>
+              <div className="text-xs text-white/70 font-normal uppercase tracking-wider">Talents formés</div>
             </div>
             <div>
-              <div className="text-2xl sm:text-3xl font-heading font-semibold text-white">100%</div>
-              <div className="text-xs text-white/70 font-medium uppercase tracking-wider mt-0.5">Ancrage terrain</div>
+              <div className="text-2xl sm:text-3xl font-light text-[#02ADAB] mb-0.5">100%</div>
+              <div className="text-xs text-white/70 font-normal uppercase tracking-wider">Ancrage terrain</div>
             </div>
           </div>
         </div>
-      </section>
+      </header>
 
-      {/* Main Content */}
-      <div className="max-w-[1200px] mx-auto px-6 sm:px-8 space-y-20">
+      {/* PARTENAIRE FORMATION OFFICIEL */}
+      <section className="max-w-[1100px] mx-auto py-[70px] px-6">
+        <p className="text-[0.75rem] tracking-[0.18em] uppercase text-[#02ADAB] mb-2.5 font-medium">
+          Partenaire Formation &amp; Insertion
+        </p>
+        <h2 className="text-[1.8rem] sm:text-[2rem] font-light mb-3 text-[#1F4F6E]">
+          Alliance stratégique <strong className="font-medium text-[#1F4F6E]">en vedette</strong>
+        </h2>
+        <p className="text-[1.05rem] text-[#4a6a80] max-w-[640px] leading-[1.7] mb-10 font-normal">
+          Un accompagnement conjoint entre insertion professionnelle, alternance et maîtrise concrète de l'intelligence artificielle.
+        </p>
 
-        {/* Partenaire Formation Officiel - En vedette */}
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.7 }}
+          transition={{ duration: 0.5 }}
+          className="bg-white rounded-[12px] p-8 md:p-12 shadow-[0_2px_16px_rgba(31,79,110,0.08)] border border-[rgba(31,79,110,0.08)]"
         >
-          <div className="relative overflow-hidden rounded-3xl border border-copper-orange/20 bg-white p-8 md:p-12 lg:p-14 shadow-[0_8px_32px_rgba(31,79,110,0.08)]">
-            {/* Background subtle decorative glow */}
-            <div className="absolute top-0 right-0 w-96 h-96 bg-copper-orange/10 rounded-full blur-3xl pointer-events-none -mr-20 -mt-20" />
-            <div className="absolute bottom-0 left-0 w-72 h-72 bg-[#02ADAB]/10 rounded-full blur-3xl pointer-events-none -ml-20 -mb-20" />
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+            {/* Colonne Logo */}
+            <div className="lg:col-span-5 flex flex-col items-center justify-center">
+              <a
+                href="https://www.objectifalternance.fr/accueil"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group block w-full max-w-md p-8 rounded-[12px] bg-[#f4f6f9] border border-[rgba(31,79,110,0.1)] hover:border-[#02ADAB] transition-all duration-200 text-center"
+                title="Visiter le site officiel d'Objectif Alternance"
+              >
+                <div className="h-32 md:h-40 flex items-center justify-center">
+                  <img
+                    src="https://res.cloudinary.com/dokzioyu4/image/upload/v1788507182/logo_objectif_code_u3otua.png"
+                    alt="Logo Objectif Alternance"
+                    className="max-h-full max-w-full object-contain group-hover:scale-105 transition-transform duration-300"
+                    referrerPolicy="no-referrer"
+                  />
+                </div>
+                <div className="mt-4 pt-4 border-t border-[rgba(31,79,110,0.1)] flex items-center justify-center gap-2 text-xs font-medium uppercase tracking-widest text-[#4a6a80] group-hover:text-[#02ADAB] transition-colors">
+                  <span>Partenaire Formation Officiel</span>
+                  <ArrowUpRight className="w-3.5 h-3.5" />
+                </div>
+              </a>
+            </div>
 
-            <div className="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
-              {/* Colonne Logo */}
-              <div className="lg:col-span-5 flex flex-col items-center justify-center">
+            {/* Colonne Contenu */}
+            <div className="lg:col-span-7 flex flex-col items-start justify-center space-y-5">
+              <span className="inline-flex items-center gap-2 px-3 py-1 rounded-[4px] bg-[#02ADAB]/10 text-[#037971] text-xs font-medium uppercase tracking-wider">
+                <GraduationCap className="h-4 w-4 text-[#02ADAB]" />
+                <span>Partenaire Formation &amp; Insertion</span>
+              </span>
+
+              <div>
+                <h3 className="text-[1.8rem] font-medium text-[#1F4F6E] tracking-tight mb-1.5">
+                  Objectif Alternance
+                </h3>
+                <p className="text-[1rem] font-medium text-[#C06721]">
+                  Le tremplin sur-mesure entre talents émergents et entreprises d'avenir
+                </p>
+              </div>
+
+              <p className="text-[0.98rem] text-[#4a6a80] leading-[1.7] font-normal">
+                Spécialiste de référence dans le recrutement d'alternants et l'accompagnement des profils en reconversion, Objectif Alternance facilite la rencontre entre les nouveaux talents et les entreprises en plein essor. Grâce à un coaching humain exigeant et des ateliers ancrés dans la réalité du terrain, notre alliance dote chaque candidat d'une maîtrise concrète des outils d'intelligence artificielle pour propulser leur employabilité dès le premier jour.
+              </p>
+
+              <div className="pt-2">
                 <a
                   href="https://www.objectifalternance.fr/accueil"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group block w-full max-w-md p-8 md:p-10 rounded-2xl bg-[#FAF9F7] border border-[#1F4F6E]/10 shadow-sm hover:shadow-xl hover:border-copper-orange/40 hover:-translate-y-1 transition-all duration-300 text-center"
-                  title="Visiter le site officiel d'Objectif Alternance"
+                  className="inline-flex items-center justify-center gap-2.5 px-7 py-3.5 rounded-[8px] bg-[#C06721] hover:bg-[#a85517] text-white font-medium text-sm tracking-[0.03em] shadow-sm transition-all duration-150"
                 >
-                  <div className="h-32 md:h-40 flex items-center justify-center">
-                    <img
-                      src="https://res.cloudinary.com/dokzioyu4/image/upload/v1788507182/logo_objectif_code_u3otua.png"
-                      alt="Logo Objectif Alternance"
-                      className="max-h-full max-w-full object-contain group-hover:scale-105 transition-transform duration-300"
-                      referrerPolicy="no-referrer"
-                    />
-                  </div>
-                  <div className="mt-4 pt-4 border-t border-[#1F4F6E]/10 flex items-center justify-center gap-2 text-xs font-bold uppercase tracking-widest text-[#1F4F6E]/60 group-hover:text-copper-orange transition-colors">
-                    <span>Partenaire Formation Officiel</span>
-                    <ArrowUpRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
-                  </div>
+                  <span>Découvrir Objectif Alternance</span>
+                  <ExternalLink className="w-4 h-4" />
                 </a>
-              </div>
-
-              {/* Colonne Contenu */}
-              <div className="lg:col-span-7 flex flex-col items-start justify-center space-y-5">
-                <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-copper-orange/15 text-copper-orange border border-copper-orange/30">
-                  <GraduationCap className="h-4 w-4" />
-                  <span className="text-xs font-bold uppercase tracking-wider">Partenaire Formation &amp; Insertion</span>
-                </div>
-
-                <div>
-                  <h2 className="text-2xl md:text-3xl lg:text-4xl font-heading font-bold text-[#1F4F6E] tracking-tight mb-2">
-                    Objectif Alternance
-                  </h2>
-                  <p className="text-sm md:text-base font-semibold text-copper-orange">
-                    Le tremplin sur-mesure entre talents émergents et entreprises d'avenir
-                  </p>
-                </div>
-
-                <p className="text-base md:text-lg text-slate-700 leading-relaxed font-normal">
-                  Spécialiste de référence dans le recrutement d'alternants et l'accompagnement des profils en reconversion, Objectif Alternance facilite la rencontre entre les nouveaux talents et les entreprises en plein essor. Grâce à un coaching humain exigeant et des ateliers ancrés dans la réalité du terrain, notre alliance dote chaque candidat d'une maîtrise concrète des outils d'intelligence artificielle pour propulser leur employabilité dès le premier jour.
-                </p>
-
-                <div className="pt-2 w-full sm:w-auto">
-                  <a
-                    href="https://www.objectifalternance.fr/accueil"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center justify-center gap-3 px-6 py-3.5 rounded-full bg-copper-orange hover:bg-[#a85517] text-white font-bold text-sm md:text-base shadow-lg shadow-copper-orange/25 hover:-translate-y-0.5 transition-all duration-300 group"
-                  >
-                    <span>Découvrir Objectif Alternance</span>
-                    <ExternalLink className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
-                  </a>
-                </div>
               </div>
             </div>
           </div>
         </motion.div>
+      </section>
 
-        {/* Section Nos Partenaires */}
-        <div>
-          <div className="text-center mb-12">
-            <span className="text-xs font-bold uppercase tracking-widest text-[#02ADAB] mb-2 block">
-              Réseau Académique &amp; Économique
-            </span>
-            <h2 className="text-3xl md:text-4xl font-heading font-bold text-[#1F4F6E] mb-4">
-              Ils nous font confiance &amp; co-construisent avec nous
-            </h2>
-            <p className="text-base text-slate-600 max-w-xl mx-auto">
-              Grandes écoles, universités, entreprises et institutions qui partagent la vision d'une IA créative et responsable.
-            </p>
-          </div>
+      {/* SÉPARATEUR */}
+      <hr className="border-none border-t border-[rgba(31,79,110,0.1)] mx-6 max-w-[1100px] md:mx-auto" />
 
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6">
-            {partenaires.map((partenaire, index) => (
-              <motion.div
-                key={partenaire.name}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.4, delay: index * 0.04 }}
-              >
-                <div className="group h-full p-6 rounded-2xl border border-[#1F4F6E]/10 bg-white hover:border-[#02ADAB]/40 hover:shadow-[0_12px_32px_rgba(31,79,110,0.12)] transition-all duration-300 flex flex-col items-center justify-between text-center min-h-[190px]">
-                  <div className="w-full flex-1 flex items-center justify-center py-4">
-                    <img
-                      src={partenaire.logo}
-                      alt={partenaire.name}
-                      className="max-w-[130px] max-h-16 object-contain grayscale group-hover:grayscale-0 transition-all duration-300 group-hover:scale-105"
-                      referrerPolicy="no-referrer"
-                    />
-                  </div>
-                  <div className="w-full pt-3 border-t border-[#1F4F6E]/5">
-                    <h3 className="text-xs font-bold text-[#1F4F6E] group-hover:text-copper-orange transition-colors truncate">
-                      {partenaire.name}
-                    </h3>
-                    <p className="text-[10px] text-slate-500 truncate mt-0.5">
-                      {partenaire.category}
-                    </p>
-                  </div>
+      {/* SECTION NOS PARTENAIRES */}
+      <section className="max-w-[1100px] mx-auto py-[70px] px-6">
+        <p className="text-[0.75rem] tracking-[0.18em] uppercase text-[#02ADAB] mb-2.5 font-medium">
+          Réseau Académique &amp; Économique
+        </p>
+        <h2 className="text-[1.8rem] sm:text-[2rem] font-light mb-3 text-[#1F4F6E]">
+          Ils nous font confiance &amp; <strong className="font-medium text-[#1F4F6E]">co-construisent avec nous</strong>
+        </h2>
+        <p className="text-[1.05rem] text-[#4a6a80] max-w-[640px] leading-[1.7] mb-12 font-normal">
+          Grandes écoles, universités, entreprises et institutions qui partagent la vision d'une IA créative et responsable.
+        </p>
+
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6">
+          {partenaires.map((partenaire, index) => (
+            <motion.div
+              key={partenaire.name}
+              initial={{ opacity: 0, y: 15 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.35, delay: index * 0.03 }}
+            >
+              <div className="group h-full p-6 rounded-[12px] bg-white shadow-[0_2px_16px_rgba(31,79,110,0.08)] hover:shadow-[0_8px_32px_rgba(31,79,110,0.14)] hover:-translate-y-1 transition-all duration-200 flex flex-col items-center justify-between text-center min-h-[190px]">
+                <div className="w-full flex-1 flex items-center justify-center py-4">
+                  <img
+                    src={partenaire.logo}
+                    alt={partenaire.name}
+                    className="max-w-[130px] max-h-16 object-contain grayscale group-hover:grayscale-0 transition-all duration-300 group-hover:scale-105"
+                    referrerPolicy="no-referrer"
+                  />
                 </div>
-              </motion.div>
-            ))}
-          </div>
+                <div className="w-full pt-3 border-t border-[rgba(31,79,110,0.08)]">
+                  <h3 className="text-xs font-medium text-[#1F4F6E] group-hover:text-[#02ADAB] transition-colors truncate">
+                    {partenaire.name}
+                  </h3>
+                  <p className="text-[11px] text-[#7a9ab0] truncate mt-0.5 font-normal">
+                    {partenaire.category}
+                  </p>
+                </div>
+              </div>
+            </motion.div>
+          ))}
         </div>
+      </section>
 
-        {/* Trois piliers de collaboration */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 pt-4">
-          <div className="p-8 rounded-2xl bg-white border border-[#1F4F6E]/10 shadow-sm">
-            <div className="w-12 h-12 rounded-xl bg-[#02ADAB]/10 text-[#02ADAB] flex items-center justify-center mb-6">
+      {/* SÉPARATEUR */}
+      <hr className="border-none border-t border-[rgba(31,79,110,0.1)] mx-6 max-w-[1100px] md:mx-auto" />
+
+      {/* TROIS PILIERS DE COLLABORATION */}
+      <section className="max-w-[1100px] mx-auto py-[70px] px-6">
+        <p className="text-[0.75rem] tracking-[0.18em] uppercase text-[#02ADAB] mb-2.5 font-medium">
+          Piliers de collaboration
+        </p>
+        <h2 className="text-[1.8rem] sm:text-[2rem] font-light mb-10 text-[#1F4F6E]">
+          Comment nous <strong className="font-medium text-[#1F4F6E]">intervenons ensemble</strong>
+        </h2>
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-7">
+          <div className="p-8 rounded-[12px] bg-white shadow-[0_2px_16px_rgba(31,79,110,0.08)]">
+            <div className="w-12 h-12 rounded-[10px] bg-[#02ADAB]/15 text-[#02ADAB] flex items-center justify-center mb-6">
               <GraduationCap className="w-6 h-6" />
             </div>
-            <h3 className="text-xl font-heading font-bold text-[#1F4F6E] mb-3">Enseignement Supérieur</h3>
-            <p className="text-sm text-slate-600 leading-relaxed">
+            <h3 className="text-[1.15rem] font-medium text-[#1F4F6E] mb-3">Enseignement Supérieur</h3>
+            <p className="text-[0.95rem] text-[#5a7a90] leading-[1.6] font-normal">
               Modules certifiants, masterclasses et jurys d'innovation dans les écoles de commerce, de design et d'ingénieurs.
             </p>
           </div>
 
-          <div className="p-8 rounded-2xl bg-white border border-[#1F4F6E]/10 shadow-sm">
-            <div className="w-12 h-12 rounded-xl bg-copper-orange/10 text-copper-orange flex items-center justify-center mb-6">
+          <div className="p-8 rounded-[12px] bg-white shadow-[0_2px_16px_rgba(31,79,110,0.08)]">
+            <div className="w-12 h-12 rounded-[10px] bg-[#02ADAB]/15 text-[#02ADAB] flex items-center justify-center mb-6">
               <Building2 className="w-6 h-6" />
             </div>
-            <h3 className="text-xl font-heading font-bold text-[#1F4F6E] mb-3">Entreprises &amp; Fondations</h3>
-            <p className="text-sm text-slate-600 leading-relaxed">
+            <h3 className="text-[1.15rem] font-medium text-[#1F4F6E] mb-3">Entreprises &amp; Fondations</h3>
+            <p className="text-[0.95rem] text-[#5a7a90] leading-[1.6] font-normal">
               Acculturation des équipes métiers, prototypage de cas d'usage IA et programmes de mécénat de compétences.
             </p>
           </div>
 
-          <div className="p-8 rounded-2xl bg-white border border-[#1F4F6E]/10 shadow-sm">
-            <div className="w-12 h-12 rounded-xl bg-[#1F4F6E]/10 text-[#1F4F6E] flex items-center justify-center mb-6">
+          <div className="p-8 rounded-[12px] bg-white shadow-[0_2px_16px_rgba(31,79,110,0.08)]">
+            <div className="w-12 h-12 rounded-[10px] bg-[#02ADAB]/15 text-[#02ADAB] flex items-center justify-center mb-6">
               <Award className="w-6 h-6" />
             </div>
-            <h3 className="text-xl font-heading font-bold text-[#1F4F6E] mb-3">Recherche &amp; Territoires</h3>
-            <p className="text-sm text-slate-600 leading-relaxed">
+            <h3 className="text-[1.15rem] font-medium text-[#1F4F6E] mb-3">Recherche &amp; Territoires</h3>
+            <p className="text-[0.95rem] text-[#5a7a90] leading-[1.6] font-normal">
               Études empiriques sur les usages (Génération IA 2024-2026) et déploiement de solutions d'IA locale ancrées dans les territoires.
             </p>
           </div>
         </div>
-
-      </div>
-
-      {/* Signature Copper CTA Banner */}
-      <section className="max-w-[1200px] mx-auto px-6 sm:px-8 mt-20">
-        <div className="bg-[#C06721] text-white rounded-3xl p-8 sm:p-14 text-center shadow-xl relative overflow-hidden">
-          <div className="absolute top-0 right-0 w-80 h-80 bg-white/10 rounded-full blur-3xl pointer-events-none -mr-20 -mt-20" />
-          <div className="absolute bottom-0 left-0 w-64 h-64 bg-black/10 rounded-full blur-2xl pointer-events-none -ml-20 -mb-20" />
-          <div className="relative z-10 max-w-2xl mx-auto space-y-6">
-            <span className="inline-block px-3.5 py-1 rounded-full bg-white/15 text-white text-xs font-bold uppercase tracking-wider">
-              Nouvelles Alliances
-            </span>
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-heading font-bold text-white tracking-tight">
-              Bâtissons ensemble votre prochain programme IA
-            </h2>
-            <p className="text-white/90 text-base sm:text-lg leading-relaxed">
-              Vous êtes une école, une université, une entreprise ou une institution ? Échangeons sur les synergies possibles pour former vos apprenants ou accélérer vos équipes.
-            </p>
-            <div className="pt-2 flex flex-col sm:flex-row items-center justify-center gap-4">
-              <Link
-                to="/contact"
-                className="w-full sm:w-auto px-8 py-3.5 bg-white text-[#C06721] font-bold text-sm uppercase tracking-wider rounded-full hover:bg-slate-100 transition-all shadow-md inline-flex items-center justify-center gap-2"
-              >
-                <span>Devenir partenaire</span>
-                <ArrowRight className="w-4 h-4" />
-              </Link>
-              <Link
-                to="/ateliers"
-                className="w-full sm:w-auto px-8 py-3.5 bg-transparent border-2 border-white text-white font-bold text-sm uppercase tracking-wider rounded-full hover:bg-white/10 transition-all"
-              >
-                Découvrir nos ateliers
-              </Link>
-            </div>
-          </div>
-        </div>
       </section>
+
+      {/* SÉPARATEUR */}
+      <hr className="border-none border-t border-[rgba(31,79,110,0.1)] mx-6 max-w-[1100px] md:mx-auto" />
+
+      {/* CTA FINAL — Exact Maquette Orange #C06721 */}
+      <div className="bg-[#C06721] text-white text-center py-[70px] px-10">
+        <p className="text-[0.75rem] tracking-[0.18em] uppercase text-white/80 mb-2.5 font-medium">
+          Nouvelles Alliances
+        </p>
+        <h2 className="text-[2rem] font-light mb-3.5 text-white">
+          Bâtissons ensemble <strong className="font-medium text-white">votre prochain programme IA</strong>
+        </h2>
+        <p className="text-[1.05rem] text-white/85 max-w-[560px] mx-auto mb-8 leading-[1.7] font-light">
+          Vous êtes une école, une université, une entreprise ou une institution ? Échangeons sur les synergies possibles pour former vos apprenants ou accélérer vos équipes.
+        </p>
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+          <Link
+            to="/contact"
+            className="inline-flex items-center justify-center gap-2 bg-white text-[#C06721] text-[0.95rem] font-medium py-3.5 px-8 rounded-[8px] no-underline tracking-[0.04em] transition-transform duration-150 hover:-translate-y-0.5 hover:shadow-[0_6px_20px_rgba(0,0,0,0.15)]"
+          >
+            <span>Devenir partenaire</span>
+            <ArrowRight className="w-4 h-4" />
+          </Link>
+          <Link
+            to="/ateliers"
+            className="inline-block bg-white/10 hover:bg-white/20 text-white text-[0.95rem] font-medium py-3.5 px-8 rounded-[8px] no-underline tracking-[0.04em] transition-transform duration-150 hover:-translate-y-0.5 border border-white/25"
+          >
+            Découvrir nos ateliers
+          </Link>
+        </div>
+      </div>
     </div>
   );
 }

@@ -232,16 +232,16 @@ const faqCategories: FAQCategory[] = [
 
 function FAQItem({ question, answer, isOpen, onClick }: { question: string, answer: string | ReactNode, isOpen: boolean, onClick: () => void, key?: any }) {
   return (
-    <div className="border-b border-deep-blue/10 last:border-0">
+    <div className="border-b border-[rgba(31,79,110,0.08)] last:border-0">
       <button
         onClick={onClick}
-        className="w-full py-6 flex items-center justify-between text-left group"
+        className="w-full py-5 flex items-center justify-between text-left group cursor-pointer"
       >
-        <span className="text-xl font-heading font-black text-deep-blue group-hover:text-copper-orange transition-colors pr-8">
+        <span className="text-[1.05rem] sm:text-[1.12rem] font-medium text-[#1F4F6E] group-hover:text-[#02ADAB] transition-colors pr-8">
           {question}
         </span>
-        <div className={`p-2 rounded-full flex-shrink-0 transition-all ${isOpen ? 'bg-copper-orange text-white' : 'bg-muted text-deep-blue'}`}>
-          {isOpen ? <Minus className="h-5 w-5" /> : <Plus className="h-5 w-5" />}
+        <div className={`w-8 h-8 rounded-[8px] flex items-center justify-center flex-shrink-0 transition-all ${isOpen ? 'bg-[#C06721] text-white' : 'bg-[#f4f6f9] text-[#1F4F6E]'}`}>
+          {isOpen ? <Minus className="h-4 w-4" /> : <Plus className="h-4 w-4" />}
         </div>
       </button>
       <motion.div
@@ -250,7 +250,7 @@ function FAQItem({ question, answer, isOpen, onClick }: { question: string, answ
         transition={{ duration: 0.3, ease: "easeInOut" }}
         className="overflow-hidden"
       >
-        <div className="pb-6 text-lg text-muted-foreground leading-relaxed">
+        <div className="pb-5 text-[0.95rem] text-[#5a7a90] leading-[1.65] font-normal">
           {answer}
         </div>
       </motion.div>
@@ -278,79 +278,61 @@ export default function FAQ() {
   };
 
   return (
-    <div className="bg-[#FAF9F7] text-[#1F4F6E] min-h-screen pt-28 pb-20 selection:bg-copper-orange selection:text-white">
+    <div className="bg-[#f4f6f9] text-[#1F4F6E] min-h-screen font-['Roboto',sans-serif] selection:bg-[#C06721] selection:text-white">
       <SEO type="FAQPage" faqData={flattenedFaq} />
 
-      {/* HERO SECTION EN BLEU FONCÉ AVEC TEXTE EN BLANC NET */}
-      <section className="relative overflow-hidden bg-gradient-to-b from-[#1F4F6E] via-[#163c54] to-[#122e40] text-white py-20 px-6 sm:px-12 md:py-28 text-center">
-        {/* Glow & texture subtile */}
-        <div className="absolute inset-0 opacity-15 pointer-events-none bg-[radial-gradient(#02ADAB_1px,transparent_1px)] [background-size:24px_24px]" />
-        <div className="absolute -top-32 left-1/2 -translate-x-1/2 w-[700px] h-[350px] bg-[#02ADAB]/15 blur-[120px] rounded-full pointer-events-none" />
-
-        <div className="max-w-4xl mx-auto relative z-10">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-white/15 text-[#02ADAB] text-xs font-bold uppercase tracking-[0.2em] mb-6">
-            <HelpCircle className="w-3.5 h-3.5" />
-            <span>Foire aux Questions · Alkymya</span>
-          </div>
-
-          <h1 className="text-4xl sm:text-5xl md:text-6xl font-heading tracking-tight leading-[1.15] mb-6">
-            <span className="text-white block font-light">
-              Toutes vos questions sur
-            </span>
-            <strong className="font-semibold text-white underline decoration-[#02ADAB] decoration-2 underline-offset-8">
-              nos expertises &amp; formations.
-            </strong>
+      {/* HERO SECTION */}
+      <header className="bg-[#1F4F6E] text-white py-20 px-6 sm:px-10 text-center relative overflow-hidden">
+        <div className="max-w-[700px] mx-auto relative z-10">
+          <p className="text-[0.85rem] tracking-[0.15em] uppercase text-[#02ADAB] mb-4 font-normal">
+            Foire aux Questions · Alkymya
+          </p>
+          <h1 className="font-light text-[2.4rem] sm:text-[2.6rem] leading-[1.2] mb-5 text-white">
+            Toutes vos questions sur<br />
+            <strong className="font-medium text-white">nos expertises &amp; formations.</strong>
           </h1>
-
-          <p className="text-lg sm:text-xl text-white/80 max-w-2xl mx-auto leading-relaxed font-normal mb-10">
+          <p className="text-[1.05rem] sm:text-[1.1rem] text-white/75 max-w-[620px] mx-auto leading-[1.7] font-light mb-8">
             Formations certifiées Qualiopi, financements OPCO, accompagnement New Business MVP et outils libres : retrouvez ici les réponses directes et pragmatiques à vos questions.
           </p>
-        </div>
 
-        {/* Chiffres clés intégrés */}
-        <div className="max-w-4xl mx-auto mt-16 pt-10 border-t border-white/10 grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
-          <div>
-            <div className="text-2xl sm:text-3xl font-light text-white font-mono">
-              <strong className="font-semibold text-[#02ADAB]">4</strong>
+          <div className="pt-8 border-t border-white/10 grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+            <div>
+              <div className="text-2xl sm:text-3xl font-light text-[#02ADAB] mb-0.5">4</div>
+              <div className="text-xs text-white/70 font-normal uppercase tracking-wider">Thématiques majeures</div>
             </div>
-            <div className="text-xs text-white/60 uppercase tracking-wider mt-1">Thématiques majeures</div>
-          </div>
-          <div>
-            <div className="text-2xl sm:text-3xl font-light text-white font-mono">
-              <strong className="font-semibold text-white">100%</strong>
+            <div>
+              <div className="text-2xl sm:text-3xl font-light text-white mb-0.5">100%</div>
+              <div className="text-xs text-white/70 font-normal uppercase tracking-wider">Transparence &amp; Clarté</div>
             </div>
-            <div className="text-xs text-white/60 uppercase tracking-wider mt-1">Transparence &amp; Clarté</div>
-          </div>
-          <div>
-            <div className="text-2xl sm:text-3xl font-light text-white font-mono">
-              <strong className="font-semibold text-[#C06721]">Qualiopi</strong>
+            <div>
+              <div className="text-2xl sm:text-3xl font-light text-white mb-0.5">Qualiopi</div>
+              <div className="text-xs text-white/70 font-normal uppercase tracking-wider">Conformité OPCO</div>
             </div>
-            <div className="text-xs text-white/60 uppercase tracking-wider mt-1">Conformité OPCO</div>
-          </div>
-          <div>
-            <div className="text-2xl sm:text-3xl font-light text-white font-mono">
-              <strong className="font-semibold text-[#02ADAB]">&lt; 24h</strong>
+            <div>
+              <div className="text-2xl sm:text-3xl font-light text-[#02ADAB] mb-0.5">&lt; 24h</div>
+              <div className="text-xs text-white/70 font-normal uppercase tracking-wider">Assistance par mail</div>
             </div>
-            <div className="text-xs text-white/60 uppercase tracking-wider mt-1">Assistance par mail</div>
           </div>
         </div>
-      </section>
+      </header>
 
       {/* ACCORDÉONS FAQ */}
-      <section className="max-w-[1100px] mx-auto py-16 px-6 sm:px-8">
+      <section className="max-w-[1100px] mx-auto py-[70px] px-6">
         <div className="space-y-12">
           {faqCategories.map((category) => {
             const Icon = category.icon;
             return (
               <div key={category.title} className="relative">
-                <div className="flex items-center gap-3.5 mb-6">
-                  <div className="p-3 bg-[#FAF9F7] border border-[#1F4F6E]/10 rounded-xl text-[#02ADAB]">
-                    <Icon className="h-6 w-6" />
+                <div className="flex items-center gap-3.5 mb-5">
+                  <div className="w-10 h-10 rounded-[8px] bg-[rgba(2,173,171,0.1)] flex items-center justify-center text-[#02ADAB]">
+                    <Icon className="h-5 w-5" />
                   </div>
-                  <h2 className="text-2xl font-bold text-[#1F4F6E]">{category.title}</h2>
+                  <h2 className="text-[1.4rem] sm:text-[1.6rem] font-light text-[#1F4F6E]">
+                    <strong className="font-medium">{category.title}</strong>
+                  </h2>
                 </div>
                 
-                <div className="bg-white rounded-2xl p-6 sm:p-10 border border-[#1F4F6E]/10 shadow-[0_4px_24px_rgba(31,79,110,0.06)]">
+                <div className="bg-white rounded-[12px] p-6 sm:p-8 shadow-[0_2px_16px_rgba(31,79,110,0.08)]">
                   {category.items.map((item, index) => (
                     <FAQItem
                       key={index}
@@ -367,36 +349,32 @@ export default function FAQ() {
         </div>
       </section>
 
-      {/* CTA FINAL : BANNIÈRE TERRACOTTA / CUIVRE */}
-      <section className="max-w-[1200px] mx-auto px-6 sm:px-8 mb-8">
-        <div className="bg-[#C06721] text-white rounded-3xl p-8 sm:p-14 text-center shadow-xl">
-          <div className="max-w-xl mx-auto">
-            <span className="text-xs font-bold uppercase tracking-[0.2em] text-white/80 block mb-3">
-              Besoin d'une réponse sur-mesure ?
-            </span>
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-light mb-4 leading-snug">
-              Vous n'avez pas trouvé <strong className="font-semibold text-white">votre réponse ?</strong>
-            </h2>
-            <p className="text-base text-white/90 leading-relaxed mb-8 font-normal">
-              Contactez-nous directement. Nous prenons le temps d'étudier votre cas spécifique et de vous orienter vers la solution la plus adaptée.
-            </p>
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-              <a
-                href="/contact"
-                className="w-full sm:w-auto px-8 py-4 rounded-xl bg-white text-[#C06721] hover:bg-[#1F4F6E] hover:text-white font-semibold text-sm transition-all duration-200 shadow-md text-center"
-              >
-                Poser ma question à l'équipe →
-              </a>
-              <a
-                href="mailto:contact@alkymya.co"
-                className="w-full sm:w-auto px-6 py-4 rounded-xl bg-white/10 hover:bg-white/20 text-white font-semibold text-sm transition-all text-center"
-              >
-                Écrire par email
-              </a>
-            </div>
-          </div>
+      {/* SÉPARATEUR */}
+      <hr className="border-none border-t border-[rgba(31,79,110,0.1)] mx-6 max-w-[1100px] md:mx-auto" />
+
+      {/* CTA FINAL : BANNIÈRE ORANGE #C06721 */}
+      <div className="bg-[#C06721] text-white text-center py-[70px] px-10">
+        <h2 className="text-[2rem] font-light mb-3.5 text-white">
+          Vous n'avez pas trouvé <strong className="font-medium text-white">votre réponse ?</strong>
+        </h2>
+        <p className="text-[1.05rem] text-white/80 max-w-[540px] mx-auto mb-8 leading-[1.7] font-light">
+          Contactez-nous directement. Nous prenons le temps d'étudier votre cas spécifique et de vous orienter vers la solution la plus adaptée.
+        </p>
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+          <a
+            href="/contact"
+            className="inline-block bg-white text-[#C06721] text-[0.95rem] font-medium py-3.5 px-8 rounded-[8px] no-underline tracking-[0.04em] transition-transform duration-150 hover:-translate-y-0.5 hover:shadow-[0_6px_20px_rgba(0,0,0,0.15)]"
+          >
+            Poser ma question à l'équipe →
+          </a>
+          <a
+            href="mailto:contact@alkymya.co"
+            className="inline-block bg-white/10 hover:bg-white/20 text-white text-[0.95rem] font-medium py-3.5 px-8 rounded-[8px] no-underline tracking-[0.04em] transition-transform duration-150 hover:-translate-y-0.5 border border-white/25"
+          >
+            Écrire par email
+          </a>
         </div>
-      </section>
+      </div>
     </div>
   );
 }

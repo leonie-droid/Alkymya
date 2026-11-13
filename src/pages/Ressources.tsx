@@ -207,6 +207,16 @@ const resources: ResourceItem[] = [
     appUrl: "https://thelittle75.fr/",
     imageUrl: "https://res.cloudinary.com/dokzioyu4/image/upload/v1788941670/Logo_thelittle75.fr_d1tmes.jpg",
     type: "site"
+  },
+  {
+    id: 19,
+    title: "Thelittle83.fr",
+    category: "Nos sites",
+    description: "L'atlas naturaliste bilingue dédié aux oiseaux, espaces naturels et paysages du Var (83), conçu en français et en anglais.",
+    url: "https://thelittle83.fr/",
+    appUrl: "https://thelittle83.fr/",
+    imageUrl: "https://res.cloudinary.com/dyooqwryq/image/upload/v1794124042/thelittle83-logo_op3yvm.svg",
+    type: "site"
   }
 ];
 
@@ -241,91 +251,72 @@ export default function Ressources() {
     : resources.filter(r => r.category === activeCategory);
 
   return (
-    <div className="bg-[#FAF9F7] text-[#1F4F6E] min-h-screen pt-28 pb-20 selection:bg-copper-orange selection:text-white">
-      {/* HERO SECTION EN BLEU FONCÉ AVEC TEXTE EN BLANC NET */}
-      <section className="relative overflow-hidden bg-gradient-to-b from-[#1F4F6E] via-[#163c54] to-[#122e40] text-white py-20 px-6 sm:px-12 md:py-28 text-center">
-        {/* Glow & texture subtile */}
-        <div className="absolute inset-0 opacity-15 pointer-events-none bg-[radial-gradient(#02ADAB_1px,transparent_1px)] [background-size:24px_24px]" />
-        <div className="absolute -top-32 left-1/2 -translate-x-1/2 w-[700px] h-[350px] bg-[#02ADAB]/15 blur-[120px] rounded-full pointer-events-none" />
+    <div className="bg-[#f4f6f9] text-[#1F4F6E] min-h-screen font-['Roboto',sans-serif] selection:bg-[#C06721] selection:text-white">
+      {/* HERO SECTION DESIGN SYSTEM */}
+      <header className="bg-[#1F4F6E] text-white py-20 px-6 sm:px-10 text-center relative overflow-hidden">
+        <div className="max-w-[760px] mx-auto relative z-10">
+          <p className="text-[0.85rem] tracking-[0.15em] uppercase text-[#02ADAB] mb-4 font-normal">
+            Bibliothèque &amp; Outils Libres · Alkymya
+          </p>
 
-        <div className="max-w-4xl mx-auto relative z-10">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-white/15 text-[#02ADAB] text-xs font-bold uppercase tracking-[0.2em] mb-6">
-            <Sparkles className="w-3.5 h-3.5" />
-            <span>Bibliothèque &amp; Outils Libres · Alkymya</span>
-          </div>
-
-          <h1 className="text-4xl sm:text-5xl md:text-6xl font-heading tracking-tight leading-[1.15] mb-6">
-            <span className="text-white block font-light">
-              Nos ressources,
-            </span>
-            <strong className="font-semibold text-white underline decoration-[#02ADAB] decoration-2 underline-offset-8">
-              analyses &amp; outils IA.
-            </strong>
+          <h1 className="font-light text-[2.4rem] sm:text-[2.6rem] leading-[1.2] mb-5 text-white">
+            Nos ressources,<br />
+            <strong className="font-medium text-white">analyses &amp; outils IA.</strong>
           </h1>
 
-          <p className="text-lg sm:text-xl text-white/80 max-w-2xl mx-auto leading-relaxed font-normal mb-10">
+          <p className="text-[1.05rem] sm:text-[1.1rem] text-white/75 max-w-[620px] mx-auto leading-[1.7] font-light mb-8">
             Bienvenue dans notre espace dédié au partage et à l'expérimentation. Accédez librement à nos analyseurs d'images et de CV, nos rapports prospectifs, nos podcasts et nos médias territoriaux.
           </p>
 
-          {/* Sélecteur de vue (Segmented Switcher) */}
-          <div className="inline-flex p-1.5 rounded-2xl bg-black/25 backdrop-blur-md border border-white/15 max-w-full overflow-x-auto">
+          {/* Sélecteur de catégorie */}
+          <div className="inline-flex flex-wrap justify-center gap-1.5 p-1.5 rounded-[10px] bg-white/10 border border-white/15 max-w-full mb-10">
             {categories.map((cat) => (
               <button
                 key={cat}
                 type="button"
                 onClick={() => setActiveCategory(cat)}
-                className={`px-4 sm:px-5 py-2.5 rounded-xl text-xs sm:text-sm font-semibold transition-all cursor-pointer whitespace-nowrap ${
+                className={`px-3.5 py-2 rounded-[6px] text-xs font-medium transition-all cursor-pointer whitespace-nowrap ${
                   activeCategory === cat
-                    ? 'bg-white text-[#1F4F6E] shadow-md'
-                    : 'text-white/70 hover:text-white'
+                    ? 'bg-white text-[#1F4F6E] shadow-sm'
+                    : 'text-white/75 hover:text-white hover:bg-white/10'
                 }`}
               >
                 {cat}
               </button>
             ))}
           </div>
-        </div>
 
-        {/* Chiffres clés intégrés */}
-        <div className="max-w-4xl mx-auto mt-16 pt-10 border-t border-white/10 grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
-          <div>
-            <div className="text-2xl sm:text-3xl font-light text-white font-mono">
-              <strong className="font-semibold text-[#02ADAB]">16</strong>
+          {/* Chiffres clés intégrés */}
+          <div className="pt-8 border-t border-white/10 grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+            <div>
+              <div className="text-2xl sm:text-3xl font-light text-[#02ADAB] mb-0.5">{resources.length}</div>
+              <div className="text-xs text-white/70 font-normal uppercase tracking-wider">Ressources en ligne</div>
             </div>
-            <div className="text-xs text-white/60 uppercase tracking-wider mt-1">Ressources en ligne</div>
-          </div>
-          <div>
-            <div className="text-2xl sm:text-3xl font-light text-white font-mono">
-              <strong className="font-semibold text-white">4</strong>
+            <div>
+              <div className="text-2xl sm:text-3xl font-light text-white mb-0.5">4</div>
+              <div className="text-xs text-white/70 font-normal uppercase tracking-wider">Analyseurs IA actifs</div>
             </div>
-            <div className="text-xs text-white/60 uppercase tracking-wider mt-1">Analyseurs IA actifs</div>
-          </div>
-          <div>
-            <div className="text-2xl sm:text-3xl font-light text-white font-mono">
-              <strong className="font-semibold text-[#C06721]">100%</strong>
+            <div>
+              <div className="text-2xl sm:text-3xl font-light text-white mb-0.5">100%</div>
+              <div className="text-xs text-white/70 font-normal uppercase tracking-wider">Accès libre &amp; ouvert</div>
             </div>
-            <div className="text-xs text-white/60 uppercase tracking-wider mt-1">Accès libre &amp; ouvert</div>
-          </div>
-          <div>
-            <div className="text-2xl sm:text-3xl font-light text-white font-mono">
-              <strong className="font-semibold text-[#02ADAB]">Vidéo &amp; PDF</strong>
+            <div>
+              <div className="text-2xl sm:text-3xl font-light text-[#02ADAB] mb-0.5">Vidéo &amp; PDF</div>
+              <div className="text-xs text-white/70 font-normal uppercase tracking-wider">Formats interactifs</div>
             </div>
-            <div className="text-xs text-white/60 uppercase tracking-wider mt-1">Formats interactifs</div>
           </div>
         </div>
-      </section>
+      </header>
 
       {/* GRILLE DES RESSOURCES */}
-      <section className="max-w-[1200px] mx-auto py-16 px-6 sm:px-8">
+      <section className="max-w-[1100px] mx-auto py-[70px] px-6">
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
           <div>
-            <div className="flex items-center gap-2 text-xs font-bold text-[#02ADAB] uppercase tracking-[0.2em] mb-2">
-              <span>Bibliothèque interactive</span>
-              <span aria-hidden="true">·</span>
-              <span>{filteredResources.length} livrables disponibles</span>
-            </div>
-            <h2 className="text-3xl sm:text-4xl font-light text-[#1F4F6E] leading-tight">
-              Des outils concrets <strong className="font-semibold">pour tester et expérimenter</strong>
+            <p className="text-[0.75rem] tracking-[0.18em] uppercase text-[#02ADAB] mb-2.5 font-medium">
+              Bibliothèque interactive · {filteredResources.length} livrables disponibles
+            </p>
+            <h2 className="text-[1.8rem] sm:text-[2rem] font-light text-[#1F4F6E]">
+              Des outils concrets <strong className="font-medium text-[#1F4F6E]">pour tester et expérimenter</strong>
             </h2>
           </div>
           <div className="flex items-center gap-3">
@@ -339,258 +330,260 @@ export default function Ressources() {
 
         <motion.div 
           layout
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-20"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-7"
         >
           <AnimatePresence mode="popLayout">
-            {filteredResources.map((item) => (
-              <motion.article
-                key={item.id}
-                layout
-                initial={{ opacity: 0, y: 15 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, scale: 0.95 }}
-                transition={{ duration: 0.3 }}
-                className="group bg-white rounded-2xl border border-[#1F4F6E]/10 shadow-[0_4px_24px_rgba(31,79,110,0.06)] hover:shadow-[0_12px_36px_rgba(31,79,110,0.12)] transition-all duration-300 flex flex-col justify-between overflow-hidden text-left"
-              >
-                {/* Media Container (Aspect 9/16 for Reels/Demos or rich cards) */}
-                <div 
-                  className="relative aspect-[9/16] w-full overflow-hidden bg-black cursor-pointer"
-                  onClick={() => {
-                    if (item.type === 'pdf') {
-                      window.open(item.url, '_blank');
-                    } else if (item.type === 'site') {
-                      window.open(item.appUrl || item.url, '_blank');
-                    } else {
-                      setSelectedResource(item);
-                    }
-                  }}
+            {filteredResources.map((item) => {
+              const isSvgSite = item.type === 'site' && item.imageUrl?.toLowerCase().endsWith('.svg');
+              return (
+                <motion.article
+                  key={item.id}
+                  layout
+                  initial={{ opacity: 0, y: 15 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, scale: 0.95 }}
+                  transition={{ duration: 0.25 }}
+                  className="group bg-white rounded-[12px] shadow-[0_2px_16px_rgba(31,79,110,0.08)] hover:shadow-[0_8px_32px_rgba(31,79,110,0.14)] hover:-translate-y-1 transition-all duration-200 flex flex-col justify-between overflow-hidden text-left"
                 >
-                  {/* Expert Badge if present */}
-                  {item.expert && (
-                    <div className="absolute top-4 left-4 z-20 flex items-center gap-2 bg-[#1F4F6E]/90 backdrop-blur-md px-3 py-1.5 rounded-full border border-white/15 shadow-md pointer-events-none">
-                      <img 
-                        src={item.expert.avatar} 
-                        alt={item.expert.name} 
-                        referrerPolicy="no-referrer"
-                        className="w-5 h-5 rounded-full object-cover border border-[#C06721]" 
-                      />
-                      <span className="text-[11px] font-bold text-white tracking-wide">
-                        Avec {item.expert.name}
-                      </span>
-                    </div>
-                  )}
-
-                  {/* Type rendering */}
-                  {item.type === 'pdf' ? (
-                    <div className="w-full h-full bg-gradient-to-br from-[#1F4F6E] via-[#16384e] to-[#0d2230] flex flex-col items-center justify-center p-8 text-center relative overflow-hidden">
-                      <div className="w-16 h-16 rounded-2xl bg-[#02ADAB]/20 flex items-center justify-center mb-5 text-[#02ADAB] transition-transform duration-500 group-hover:scale-110">
-                        <FileText className="w-8 h-8" />
-                      </div>
-                      <span className="text-white text-2xl font-semibold mb-2 block leading-snug">
-                        {item.title}
-                      </span>
-                      <span className="text-[#02ADAB] text-xs font-bold uppercase tracking-wider mt-2">
-                        Consulter l'étude (.pdf) →
-                      </span>
-                      {item.audioUrl && (
-                        <span className="inline-flex items-center gap-1.5 mt-4 text-[10px] font-bold uppercase tracking-wider text-[#C06721] bg-[#C06721]/20 px-3 py-1 rounded-full border border-[#C06721]/30">
-                          <Headphones className="w-3.5 h-3.5" /> Audio / Podcast inclus
+                  {/* Media Container */}
+                  <div 
+                    className="relative aspect-[9/16] w-full overflow-hidden bg-[#1a3a50] cursor-pointer"
+                    onClick={() => {
+                      if (item.type === 'pdf') {
+                        window.open(item.url, '_blank');
+                      } else if (item.type === 'site') {
+                        window.open(item.appUrl || item.url, '_blank');
+                      } else {
+                        setSelectedResource(item);
+                      }
+                    }}
+                  >
+                    {/* Expert Badge if present */}
+                    {item.expert && (
+                      <div className="absolute top-3.5 left-3.5 z-20 flex items-center gap-2 bg-[#1F4F6E]/90 backdrop-blur-xs px-3 py-1.5 rounded-[6px] border border-white/15 shadow-sm pointer-events-none">
+                        <img 
+                          src={item.expert.avatar} 
+                          alt={item.expert.name} 
+                          referrerPolicy="no-referrer"
+                          className="w-5 h-5 rounded-full object-cover border border-[#C06721]" 
+                        />
+                        <span className="text-[11px] font-medium text-white tracking-wide">
+                          Avec {item.expert.name}
                         </span>
-                      )}
-                    </div>
-                  ) : item.type === 'audio' ? (
-                    <div className="w-full h-full bg-gradient-to-br from-[#1F4F6E] via-[#0d1c31] to-black flex flex-col items-center justify-center p-8 text-center relative overflow-hidden">
-                      <div className="w-16 h-16 rounded-2xl bg-[#C06721]/25 border border-[#C06721]/30 flex items-center justify-center mb-5 text-[#C06721] transition-transform duration-500 group-hover:scale-110 shadow-lg">
-                        <Headphones className="w-8 h-8" />
                       </div>
-                      <span className="text-[#C06721] text-[10px] font-bold uppercase tracking-[0.2em] mb-2">
-                        Podcast • Dialogue Audio
-                      </span>
-                      <span className="text-white text-2xl font-semibold mb-4 block leading-snug">
-                        {item.title}
-                      </span>
-                      <span className="inline-flex items-center gap-2 text-white bg-[#C06721] px-4 py-2 rounded-full text-xs font-bold uppercase tracking-wider shadow-md group-hover:bg-white group-hover:text-[#1F4F6E] transition-colors">
-                        <Play className="w-3.5 h-3.5 fill-current" />
-                        Écouter le podcast
-                      </span>
-                    </div>
-                  ) : item.type === 'site' ? (
-                    <div className="w-full h-full relative bg-slate-900 flex items-center justify-center overflow-hidden">
-                      <img 
-                        src={item.imageUrl || item.url} 
-                        alt={item.title}
-                        referrerPolicy="no-referrer"
-                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-                      />
-                      <div className="absolute inset-0 bg-gradient-to-t from-[#1F4F6E]/85 via-transparent to-transparent opacity-60 group-hover:opacity-40 transition-opacity duration-300" />
-                      <div className="absolute bottom-4 right-4 z-20 bg-[#1F4F6E]/80 backdrop-blur-md text-white p-2.5 rounded-full border border-white/10 opacity-0 group-hover:opacity-100 transition-opacity">
-                        <ExternalLink className="w-5 h-5" />
-                      </div>
-                    </div>
-                  ) : (
-                    <>
-                      <video 
-                        src={item.url} 
-                        className="w-full h-full object-cover opacity-90 group-hover:opacity-100 transition-all duration-700 pointer-events-none"
-                        autoPlay
-                        muted={!unmutedIds.has(item.id)}
-                        loop
-                        playsInline
-                      />
-                      {/* Audio Toggle */}
-                      <button
-                        type="button"
-                        onClick={(e) => toggleMute(e, item.id)}
-                        className="absolute bottom-4 left-4 z-20 bg-black/50 backdrop-blur-md text-white p-2.5 rounded-full border border-white/15 hover:bg-[#C06721] transition-all duration-200 cursor-pointer"
-                        title={unmutedIds.has(item.id) ? "Couper le son" : "Activer le son"}
-                        aria-label="Contrôle audio"
-                      >
-                        {unmutedIds.has(item.id) ? (
-                          <Volume2 className="w-4 h-4" />
-                        ) : (
-                          <VolumeX className="w-4 h-4" />
+                    )}
+
+                    {/* Type rendering */}
+                    {item.type === 'pdf' ? (
+                      <div className="w-full h-full bg-[#1F4F6E] flex flex-col items-center justify-center p-8 text-center relative overflow-hidden">
+                        <div className="w-14 h-14 rounded-[10px] bg-[rgba(2,173,171,0.2)] flex items-center justify-center mb-5 text-[#02ADAB] transition-transform duration-300 group-hover:scale-105">
+                          <FileText className="w-7 h-7" />
+                        </div>
+                        <span className="text-white text-xl font-medium mb-2 block leading-snug">
+                          {item.title}
+                        </span>
+                        <span className="text-[#02ADAB] text-xs font-medium uppercase tracking-wider mt-2">
+                          Consulter l'étude (.pdf) →
+                        </span>
+                        {item.audioUrl && (
+                          <span className="inline-flex items-center gap-1.5 mt-4 text-[11px] font-medium uppercase tracking-wider text-white bg-[#C06721] px-3 py-1 rounded-[4px]">
+                            <Headphones className="w-3.5 h-3.5" /> Audio / Podcast inclus
+                          </span>
                         )}
-                      </button>
-                      
-                      {/* Zoom Indicator */}
-                      <div className="absolute bottom-4 right-4 z-20 bg-white/15 backdrop-blur-md text-white p-2.5 rounded-full border border-white/15 opacity-0 group-hover:opacity-100 transition-opacity">
-                        <Maximize2 className="w-4 h-4" />
                       </div>
-                    </>
-                  )}
+                    ) : item.type === 'audio' ? (
+                      <div className="w-full h-full bg-[#16384e] flex flex-col items-center justify-center p-8 text-center relative overflow-hidden">
+                        <div className="w-14 h-14 rounded-[10px] bg-[#C06721]/25 border border-[#C06721]/30 flex items-center justify-center mb-5 text-[#C06721] transition-transform duration-300 group-hover:scale-105">
+                          <Headphones className="w-7 h-7" />
+                        </div>
+                        <span className="text-[#02ADAB] text-[11px] font-medium uppercase tracking-[0.18em] mb-2">
+                          Podcast • Dialogue Audio
+                        </span>
+                        <span className="text-white text-xl font-medium mb-4 block leading-snug">
+                          {item.title}
+                        </span>
+                        <span className="inline-flex items-center gap-2 text-white bg-[#C06721] px-4 py-2 rounded-[6px] text-xs font-medium uppercase tracking-wider shadow-sm group-hover:bg-white group-hover:text-[#1F4F6E] transition-colors">
+                          <Play className="w-3.5 h-3.5 fill-current" />
+                          Écouter le podcast
+                        </span>
+                      </div>
+                    ) : item.type === 'site' ? (
+                      <div className={`w-full h-full relative flex items-center justify-center overflow-hidden ${isSvgSite ? 'bg-[#2a4a3a] p-8' : 'bg-[#1a3a50]'}`}>
+                        <img 
+                          src={item.imageUrl || item.url} 
+                          alt={item.title}
+                          referrerPolicy="no-referrer"
+                          className={`w-full h-full transition-transform duration-500 group-hover:scale-105 ${isSvgSite ? 'object-contain' : 'object-cover'}`}
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-[#1F4F6E]/80 via-transparent to-transparent opacity-60 group-hover:opacity-40 transition-opacity duration-300" />
+                        <div className="absolute bottom-4 right-4 z-20 bg-[#1F4F6E]/85 text-white p-2.5 rounded-[8px] border border-white/10 opacity-0 group-hover:opacity-100 transition-opacity">
+                          <ExternalLink className="w-4 h-4" />
+                        </div>
+                      </div>
+                    ) : (
+                      <>
+                        <video 
+                          src={item.url} 
+                          className="w-full h-full object-cover opacity-90 group-hover:opacity-100 transition-all duration-500 pointer-events-none"
+                          autoPlay
+                          muted={!unmutedIds.has(item.id)}
+                          loop
+                          playsInline
+                        />
+                        {/* Audio Toggle */}
+                        <button
+                          type="button"
+                          onClick={(e) => toggleMute(e, item.id)}
+                          className="absolute bottom-4 left-4 z-20 bg-black/55 text-white p-2.5 rounded-[8px] border border-white/15 hover:bg-[#C06721] transition-all duration-200 cursor-pointer"
+                          title={unmutedIds.has(item.id) ? "Couper le son" : "Activer le son"}
+                          aria-label="Contrôle audio"
+                        >
+                          {unmutedIds.has(item.id) ? (
+                            <Volume2 className="w-4 h-4" />
+                          ) : (
+                            <VolumeX className="w-4 h-4" />
+                          )}
+                        </button>
+                        
+                        {/* Zoom Indicator */}
+                        <div className="absolute bottom-4 right-4 z-20 bg-white/15 text-white p-2.5 rounded-[8px] border border-white/15 opacity-0 group-hover:opacity-100 transition-opacity">
+                          <Maximize2 className="w-4 h-4" />
+                        </div>
+                      </>
+                    )}
 
-                  {/* Bottom title overlay */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#1F4F6E]/85 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6 pointer-events-none">
-                    <span className="text-[#02ADAB] text-xs font-bold tracking-wider uppercase mb-1">
-                      {item.category}
-                    </span>
-                    <h3 className="text-xl text-white font-bold leading-snug">
-                      {item.title}
-                    </h3>
-                  </div>
-                </div>
-
-                {/* Content info */}
-                <div className="p-6 flex flex-col flex-grow justify-between space-y-4">
-                  <div>
-                    <div className="flex items-center justify-between gap-2 mb-2">
-                      <span className="text-[11px] font-bold uppercase tracking-wider text-[#C06721]">
+                    {/* Bottom title overlay */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#1F4F6E]/90 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6 pointer-events-none">
+                      <span className="text-[#02ADAB] text-xs font-medium tracking-wider uppercase mb-1">
                         {item.category}
                       </span>
-                      {item.appUrl && (
-                        <span className="text-[10px] font-bold text-[#02ADAB] bg-[#02ADAB]/10 px-2 py-0.5 rounded-md">
-                          En direct
+                      <h3 className="text-lg text-white font-medium leading-snug">
+                        {item.title}
+                      </h3>
+                    </div>
+                  </div>
+
+                  {/* Content info */}
+                  <div className="p-6 flex flex-col flex-grow justify-between space-y-4">
+                    <div>
+                      <div className="flex items-center justify-between gap-2 mb-2">
+                        <span className="text-[0.72rem] font-medium uppercase tracking-[0.1em] text-[#02ADAB]">
+                          {item.category}
                         </span>
+                        {item.appUrl && (
+                          <span className="text-[0.7rem] font-medium text-[#037971] bg-[#02ADAB]/10 px-2 py-0.5 rounded-[4px]">
+                            En direct
+                          </span>
+                        )}
+                      </div>
+
+                      <h3 className="text-[1.1rem] font-medium text-[#1F4F6E] group-hover:text-[#C06721] transition-colors leading-snug mb-2">
+                        {item.title}
+                      </h3>
+
+                      <p className="text-[0.92rem] text-[#5a7a90] leading-[1.6] font-normal">
+                        {item.description}
+                      </p>
+
+                      {/* Expert card if present */}
+                      {item.expert && (
+                        <div className="mt-4 p-3.5 rounded-[8px] bg-[#f4f6f9] border border-[rgba(31,79,110,0.08)] space-y-2">
+                          <div className="flex items-center gap-2.5">
+                            <img
+                              src={item.expert.avatar}
+                              alt={item.expert.name}
+                              referrerPolicy="no-referrer"
+                              className="w-9 h-9 rounded-full object-cover border border-[#C06721] shrink-0"
+                            />
+                            <div className="min-w-0">
+                              <span className="text-[10px] font-medium uppercase text-[#C06721] block leading-none mb-0.5">
+                                Partenaire Formation
+                              </span>
+                              <span className="text-xs font-medium text-[#1F4F6E] block truncate">
+                                {item.expert.name}
+                              </span>
+                            </div>
+                          </div>
+                          <p className="text-[11px] text-[#4a6a80] italic leading-snug">
+                            « {item.expert.hook} »
+                          </p>
+                        </div>
                       )}
                     </div>
 
-                    <h3 className="text-xl font-semibold text-[#1F4F6E] group-hover:text-[#C06721] transition-colors leading-snug mb-2">
-                      {item.title}
-                    </h3>
+                    <div className="pt-4 border-t border-[rgba(31,79,110,0.08)] flex items-center justify-between gap-2">
+                      {item.appUrl ? (
+                        <a
+                          href={item.appUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center gap-1.5 text-[0.88rem] font-medium text-[#02ADAB] hover:text-[#037971] transition-colors"
+                        >
+                          <span>Ouvrir l'application</span>
+                          <ExternalLink className="w-3.5 h-3.5" />
+                        </a>
+                      ) : item.type === 'pdf' ? (
+                        <a
+                          href={item.url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center gap-1.5 text-[0.88rem] font-medium text-[#02ADAB] hover:text-[#037971] transition-colors"
+                        >
+                          <span>Télécharger le PDF</span>
+                          <FileText className="w-3.5 h-3.5" />
+                        </a>
+                      ) : (
+                        <button
+                          type="button"
+                          onClick={() => setSelectedResource(item)}
+                          className="inline-flex items-center gap-1.5 text-[0.88rem] font-medium text-[#02ADAB] hover:text-[#037971] transition-colors cursor-pointer"
+                        >
+                          <span>Voir la démonstration</span>
+                          <Play className="w-3.5 h-3.5" />
+                        </button>
+                      )}
 
-                    <p className="text-sm text-[#5a7a90] leading-relaxed">
-                      {item.description}
-                    </p>
-
-                    {/* Expert card if present */}
-                    {item.expert && (
-                      <div className="mt-4 p-3.5 rounded-xl bg-slate-50 border border-[#1F4F6E]/10 space-y-2">
-                        <div className="flex items-center gap-2.5">
-                          <img
-                            src={item.expert.avatar}
-                            alt={item.expert.name}
-                            referrerPolicy="no-referrer"
-                            className="w-9 h-9 rounded-full object-cover border border-[#C06721] shrink-0"
-                          />
-                          <div className="min-w-0">
-                            <span className="text-[10px] font-bold uppercase text-[#C06721] block leading-none mb-0.5">
-                              Partenaire Formation
-                            </span>
-                            <span className="text-xs font-bold text-[#1F4F6E] block truncate">
-                              {item.expert.name}
-                            </span>
-                          </div>
-                        </div>
-                        <p className="text-[11px] text-[#4a6a80] italic leading-snug">
-                          « {item.expert.hook} »
-                        </p>
+                      <div className="w-8 h-8 rounded-[6px] bg-[#f4f6f9] text-[#1F4F6E] flex items-center justify-center shrink-0 group-hover:bg-[#C06721] group-hover:text-white transition-colors">
+                        <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
                       </div>
-                    )}
-                  </div>
-
-                  <div className="pt-4 border-t border-[#1F4F6E]/8 flex items-center justify-between gap-2">
-                    {item.appUrl ? (
-                      <a
-                        href={item.appUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center gap-1.5 text-xs font-bold text-[#1F4F6E] hover:text-[#02ADAB] transition-colors"
-                      >
-                        <span>Ouvrir l'application</span>
-                        <ExternalLink className="w-3.5 h-3.5" />
-                      </a>
-                    ) : item.type === 'pdf' ? (
-                      <a
-                        href={item.url}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center gap-1.5 text-xs font-bold text-[#1F4F6E] hover:text-[#02ADAB] transition-colors"
-                      >
-                        <span>Télécharger le PDF</span>
-                        <FileText className="w-3.5 h-3.5" />
-                      </a>
-                    ) : (
-                      <button
-                        type="button"
-                        onClick={() => setSelectedResource(item)}
-                        className="inline-flex items-center gap-1.5 text-xs font-bold text-[#1F4F6E] hover:text-[#02ADAB] transition-colors cursor-pointer"
-                      >
-                        <span>Voir la démonstration</span>
-                        <Play className="w-3.5 h-3.5" />
-                      </button>
-                    )}
-
-                    <div className="w-8 h-8 rounded-full bg-[#1F4F6E]/5 text-[#1F4F6E] flex items-center justify-center shrink-0 group-hover:bg-[#C06721] group-hover:text-white transition-colors">
-                      <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
                     </div>
                   </div>
-                </div>
-              </motion.article>
-            ))}
+                </motion.article>
+              );
+            })}
           </AnimatePresence>
         </motion.div>
       </section>
 
-      {/* CTA FINAL : BANNIÈRE TERRACOTTA / CUIVRE */}
-      <section className="max-w-[1200px] mx-auto px-6 sm:px-8 mb-8">
-        <div className="bg-[#C06721] text-white rounded-3xl p-8 sm:p-14 text-center shadow-xl">
-          <div className="max-w-xl mx-auto">
-            <span className="text-xs font-bold uppercase tracking-[0.2em] text-white/80 block mb-3">
-              Veille &amp; Nouveautés
-            </span>
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-light mb-4 leading-snug">
-              Envie d'explorer de <strong className="font-semibold text-white">nouveaux cas d'usage ?</strong>
-            </h2>
-            <p className="text-base text-white/90 leading-relaxed mb-8 font-normal">
-              Nos alchimistes publient régulièrement de nouveaux agents, études et retours d'expérience. Rejoignez notre communauté pour ne rien manquer.
-            </p>
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-              <Link
-                to="/ateliers"
-                className="w-full sm:w-auto px-8 py-4 rounded-xl bg-white text-[#C06721] hover:bg-[#1F4F6E] hover:text-white font-semibold text-sm transition-all duration-200 shadow-md"
-              >
-                Découvrir nos ateliers pratiques →
-              </Link>
-              <NewsletterButton
-                variant="outline"
-                size="md"
-                label="Suivre nos projets"
-                className="w-full sm:w-auto border-white/40 text-white hover:bg-white/10"
-              />
-            </div>
-          </div>
+      {/* SÉPARATEUR */}
+      <hr className="border-none border-t border-[rgba(31,79,110,0.1)] mx-6 max-w-[1100px] md:mx-auto" />
+
+      {/* CTA FINAL — Exact Maquette Orange #C06721 */}
+      <div className="bg-[#C06721] text-white text-center py-[70px] px-10">
+        <p className="text-[0.75rem] tracking-[0.18em] uppercase text-white/80 mb-2.5 font-medium">
+          Veille &amp; Nouveautés
+        </p>
+        <h2 className="text-[2rem] font-light mb-3.5 text-white">
+          Envie d'explorer de <strong className="font-medium text-white">nouveaux cas d'usage ?</strong>
+        </h2>
+        <p className="text-[1.05rem] text-white/85 max-w-[520px] mx-auto mb-8 leading-[1.7] font-light">
+          Nos alchimistes publient régulièrement de nouveaux agents, études et retours d'expérience. Rejoignez notre communauté pour ne rien manquer.
+        </p>
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+          <Link
+            to="/ateliers"
+            className="inline-block bg-white text-[#C06721] text-[0.95rem] font-medium py-3.5 px-8 rounded-[8px] no-underline tracking-[0.04em] transition-transform duration-150 hover:-translate-y-0.5 hover:shadow-[0_6px_20px_rgba(0,0,0,0.15)]"
+          >
+            Découvrir nos ateliers pratiques →
+          </Link>
+          <NewsletterButton
+            variant="outline"
+            size="md"
+            label="Suivre nos projets"
+            className="border-white/40 text-white hover:bg-white/10 rounded-[8px]"
+          />
         </div>
-      </section>
+      </div>
 
       {/* Video / Audio / App Modal */}
       <AnimatePresence>
@@ -621,7 +614,7 @@ export default function Ressources() {
                 <X className="w-5 h-5" />
               </button>
 
-              <div className="w-full h-full rounded-3xl overflow-hidden shadow-2xl bg-black border border-white/10">
+              <div className="w-full h-full rounded-[12px] overflow-hidden shadow-2xl bg-black border border-white/10">
                 {selectedResource.type === "video" ? (
                   <video
                     src={selectedResource.url}
@@ -631,22 +624,22 @@ export default function Ressources() {
                     playsInline
                   />
                 ) : selectedResource.type === "audio" ? (
-                  <div className="p-8 md:p-12 bg-gradient-to-br from-[#0F1E36] via-[#1F4F6E] to-black text-white text-center flex flex-col items-center justify-center">
-                    <div className="w-20 h-20 rounded-full bg-[#C06721]/20 border border-[#C06721]/40 flex items-center justify-center mb-6 shadow-xl">
+                  <div className="p-8 md:p-12 bg-[#1F4F6E] text-white text-center flex flex-col items-center justify-center">
+                    <div className="w-20 h-20 rounded-[12px] bg-[#C06721]/20 border border-[#C06721]/40 flex items-center justify-center mb-6 shadow-xl">
                       <Headphones className="w-10 h-10 text-[#C06721]" />
                     </div>
-                    <span className="text-xs font-bold uppercase tracking-[0.2em] text-[#C06721] mb-2">
+                    <span className="text-xs font-medium uppercase tracking-[0.18em] text-[#02ADAB] mb-2">
                       Podcast &amp; Dialogue Audio
                     </span>
-                    <h3 className="text-2xl md:text-3xl font-bold mb-3 text-white max-w-lg">
+                    <h3 className="text-2xl md:text-3xl font-light mb-3 text-white max-w-lg">
                       {selectedResource.title}
                     </h3>
-                    <p className="text-sm text-white/75 max-w-md mb-6 leading-relaxed">
+                    <p className="text-sm text-white/75 max-w-md mb-6 leading-relaxed font-light">
                       {selectedResource.description}
                     </p>
                     <audio
                       src={selectedResource.url}
-                      className="w-full max-w-md h-12 rounded-full mb-6"
+                      className="w-full max-w-md h-12 rounded-[8px] mb-6"
                       controls
                       autoPlay
                     />
@@ -655,7 +648,7 @@ export default function Ressources() {
                         href={selectedResource.appUrl}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-[#C06721] text-white text-xs font-bold uppercase tracking-wider hover:bg-white hover:text-[#1F4F6E] transition-colors shadow-lg"
+                        className="inline-flex items-center gap-2 px-5 py-2.5 rounded-[8px] bg-[#C06721] text-white text-xs font-medium uppercase tracking-wider hover:bg-white hover:text-[#1F4F6E] transition-colors shadow-lg"
                       >
                         <FileText className="w-4 h-4" />
                         Consulter l'étude PDF associée
@@ -672,7 +665,7 @@ export default function Ressources() {
               </div>
 
               {selectedResource.expert && (
-                <div className="mt-4 w-full bg-[#1F4F6E]/95 border border-white/15 rounded-2xl p-4 text-white flex flex-col sm:flex-row items-center justify-between gap-4 backdrop-blur-md shadow-2xl">
+                <div className="mt-4 w-full bg-[#1F4F6E] border border-white/15 rounded-[12px] p-4 text-white flex flex-col sm:flex-row items-center justify-between gap-4 shadow-2xl">
                   <div className="flex items-center gap-3 text-left">
                     <img
                       src={selectedResource.expert.avatar}
@@ -681,11 +674,11 @@ export default function Ressources() {
                       className="w-12 h-12 rounded-full object-cover border-2 border-[#C06721] shrink-0"
                     />
                     <div>
-                      <span className="text-[10px] font-bold uppercase tracking-wider text-[#C06721] block">
+                      <span className="text-[10px] font-medium uppercase tracking-wider text-[#02ADAB] block">
                         Accompagnement Personnalisé
                       </span>
-                      <h4 className="font-bold text-sm text-white">
-                        {selectedResource.expert.name} — <span className="text-white/70 font-normal text-xs">{selectedResource.expert.role}</span>
+                      <h4 className="font-medium text-sm text-white">
+                        {selectedResource.expert.name} — <span className="text-white/70 font-light text-xs">{selectedResource.expert.role}</span>
                       </h4>
                       <p className="text-xs text-white/80 max-w-xl italic mt-0.5">
                         « {selectedResource.expert.hook} »
@@ -696,7 +689,7 @@ export default function Ressources() {
                     href={selectedResource.expert.siteUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="shrink-0 inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-[#C06721] text-white text-xs font-bold uppercase tracking-wider hover:bg-white hover:text-[#1F4F6E] transition-colors shadow-lg"
+                    className="shrink-0 inline-flex items-center gap-2 px-4 py-2.5 rounded-[8px] bg-[#C06721] text-white text-xs font-medium uppercase tracking-wider hover:bg-white hover:text-[#1F4F6E] transition-colors shadow-sm"
                   >
                     <span>{selectedResource.expert.siteLabel}</span>
                     <ExternalLink className="w-3.5 h-3.5" />
