@@ -64,6 +64,8 @@ export const alchimistes: AlchimisteProfile[] = [
       icon: "globe"
     },
     works: [
+      { label: "Site thelittle77.fr", url: "https://thelittle77.fr" },
+      { label: "Site thelittle83.fr", url: "https://thelittle83.fr" },
       { label: "Doctrine IAG : Dialogue sur la Stratégie Cachée", url: "https://res.cloudinary.com/dokzioyu4/image/upload/v1777500626/La_Doctrine_IAG___Dialogue_sur_la_Strate%CC%81gie_Cache%CC%81e_de_l_E%CC%80re_Trump_zwxlqi_vlfkkw.pdf" },
       { label: "Quiz Maturité IA Entreprise", url: "https://maturiteia.alkymya.co/" },
       { label: "Analyseur de CV", url: "https://analysercvpro.alkymya.co/" },
@@ -100,6 +102,7 @@ export const alchimistes: AlchimisteProfile[] = [
       icon: "globe"
     },
     works: [
+      { label: "Site thelittle75.fr", url: "https://thelittle75.fr" },
       { label: "Vidéo analyseur de photo", url: "https://res.cloudinary.com/dokzioyu4/video/upload/v1773761166/46b26247d1084cb39b354fe4c9842b29_aszzay_f48sjs.mov" },
       { label: "Vidéo analyseur de cv", url: "https://res.cloudinary.com/dokzioyu4/video/upload/v1773762096/c599dc6cd0ef4e6196a739c87b2cb773_gxn0lj.mov" },
       { label: "Vidéo analyseur de mémoire", url: "https://res.cloudinary.com/dokzioyu4/video/upload/v1776374160/bac00848173641fd882d43dc3b970835_jtyspz.mov" }

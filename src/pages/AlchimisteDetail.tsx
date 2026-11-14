@@ -66,6 +66,51 @@ export default function AlchimisteDetail() {
   const seoTitle = `${person.name} — Expert IA France | Alkymya`.slice(0, 60);
   const seoDescription = `${person.name}, ${person.role} chez Alkymya. ${person.bio}`.slice(0, 152).trim() + '...';
 
+  const profileUrls: { label: string; url: string; displayUrl: string; isMail?: boolean }[] = [];
+  if (person.website) {
+    profileUrls.push({
+      label: person.websiteTag || 'Site officiel',
+      url: person.website,
+      displayUrl: person.website
+    });
+  }
+  if (person.socials.linkedin && person.socials.linkedin !== person.website) {
+    profileUrls.push({
+      label: 'LinkedIn',
+      url: person.socials.linkedin,
+      displayUrl: person.socials.linkedin
+    });
+  }
+  if (person.socials.instagram) {
+    profileUrls.push({
+      label: 'Instagram',
+      url: person.socials.instagram,
+      displayUrl: person.socials.instagram
+    });
+  }
+  if (person.socials.tiktok) {
+    profileUrls.push({
+      label: 'TikTok',
+      url: person.socials.tiktok,
+      displayUrl: person.socials.tiktok
+    });
+  }
+  if (person.socials.youtube) {
+    profileUrls.push({
+      label: 'YouTube',
+      url: person.socials.youtube,
+      displayUrl: person.socials.youtube
+    });
+  }
+  if (person.socials.mail) {
+    profileUrls.push({
+      label: 'Email',
+      url: `mailto:${person.socials.mail}`,
+      displayUrl: person.socials.mail,
+      isMail: true
+    });
+  }
+
   return (
     <div className="bg-[#f4f6f9] text-[#1F4F6E] min-h-screen font-['Roboto',sans-serif] selection:bg-[#C06721] selection:text-white">
       <SEO
@@ -219,9 +264,9 @@ export default function AlchimisteDetail() {
         </div>
       </header>
 
-      {/* CONTENU PRÉSENTATION & LIENS */}
+      {/* CONTENU PRÉSENTATION & RÉALISATIONS */}
       <section className="max-w-[1000px] mx-auto py-[60px] px-6 space-y-10">
-        {/* Présentation détaillée */}
+        {/* Présentation détaillée + URLs */}
         <div className="bg-white rounded-[12px] p-8 sm:p-10 shadow-[0_2px_16px_rgba(31,79,110,0.08)] space-y-6">
           <div>
             <p className="text-[0.75rem] tracking-[0.18em] uppercase text-[#02ADAB] mb-2 font-medium">
@@ -245,16 +290,45 @@ export default function AlchimisteDetail() {
               </p>
             </blockquote>
           )}
+
+          {profileUrls.length > 0 && (
+            <div className="pt-6 border-t border-[rgba(31,79,110,0.08)]">
+              <p className="text-[0.72rem] tracking-[0.16em] uppercase text-[#02ADAB] mb-3 font-medium">
+                Sites &amp; URLs officielles
+              </p>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                {profileUrls.map((item, idx) => (
+                  <a
+                    key={idx}
+                    href={item.url}
+                    target={item.isMail ? undefined : '_blank'}
+                    rel={item.isMail ? undefined : 'noopener noreferrer'}
+                    className="flex items-center justify-between gap-3 p-3.5 rounded-[8px] bg-[#f4f6f9] border border-[rgba(31,79,110,0.08)] hover:border-[#02ADAB] hover:bg-[#f0f8f8] transition-all group"
+                  >
+                    <div className="min-w-0">
+                      <span className="block text-[0.7rem] uppercase tracking-wider font-medium text-[#C06721] mb-0.5">
+                        {item.label}
+                      </span>
+                      <span className="block text-xs font-medium text-[#1F4F6E] group-hover:text-[#037971] truncate">
+                        {item.displayUrl}
+                      </span>
+                    </div>
+                    <ExternalLink className="w-4 h-4 text-[#02ADAB] shrink-0" />
+                  </a>
+                ))}
+              </div>
+            </div>
+          )}
         </div>
 
-        {/* Liens & Œuvres */}
+        {/* Réalisations */}
         {person.works && person.works.length > 0 && (
           <div className="bg-white rounded-[12px] p-8 sm:p-10 shadow-[0_2px_16px_rgba(31,79,110,0.08)]">
             <p className="text-[0.75rem] tracking-[0.18em] uppercase text-[#02ADAB] mb-2 font-medium">
-              Réalisations &amp; Liens
+              Réalisations
             </p>
             <h2 className="text-[1.5rem] sm:text-[1.7rem] font-light text-[#1F4F6E] mb-6">
-              Œuvres et liens de <strong className="font-medium">{person.name}</strong>
+              Œuvres de <strong className="font-medium">{person.name}</strong>
             </h2>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
@@ -270,11 +344,16 @@ export default function AlchimisteDetail() {
                     target="_blank"
                     rel="noopener noreferrer"
                     onClick={(e) => handleWorkClick(e, work.url, work.label)}
-                    className="flex items-center justify-between p-4 rounded-[8px] bg-[#f4f6f9] border border-[rgba(31,79,110,0.08)] hover:border-[#02ADAB] hover:bg-[#f0f8f8] transition-all group"
+                    className="flex items-center justify-between gap-3 p-4 rounded-[8px] bg-[#f4f6f9] border border-[rgba(31,79,110,0.08)] hover:border-[#02ADAB] hover:bg-[#f0f8f8] transition-all group"
                   >
-                    <span className="text-sm font-medium text-[#1F4F6E] group-hover:text-[#037971] transition-colors pr-3">
-                      {work.label}
-                    </span>
+                    <div className="min-w-0">
+                      <span className="block text-sm font-medium text-[#1F4F6E] group-hover:text-[#037971] transition-colors">
+                        {work.label}
+                      </span>
+                      <span className="block text-xs text-[#5a7a90] truncate mt-0.5">
+                        {work.url}
+                      </span>
+                    </div>
                     {isVideo ? (
                       <Play className="w-4 h-4 text-[#C06721] shrink-0 fill-current" />
                     ) : (

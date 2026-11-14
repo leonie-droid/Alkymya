@@ -316,7 +316,7 @@ export default function Oeuvres() {
                 <Clock className="w-3 h-3 text-[#02ADAB]" /> Construit en 3 mois
               </span>
               <span className="inline-flex items-center gap-1.5 text-[0.78rem] bg-[#f0f7ff] text-[#1F4F6E] px-2.5 py-1 rounded-[4px] font-normal">
-                <UserCheck className="w-3 h-3 text-[#02ADAB]" /> Rédaction : Cyril Garnier
+                <UserCheck className="w-3 h-3 text-[#02ADAB]" /> Créateur : Cyril Garnier
               </span>
             </div>
 
@@ -388,7 +388,7 @@ export default function Oeuvres() {
                 <Clock className="w-3 h-3 text-[#02ADAB]" /> Construit en 2 mois
               </span>
               <span className="inline-flex items-center gap-1.5 text-[0.78rem] bg-[#f0f7ff] text-[#1F4F6E] px-2.5 py-1 rounded-[4px] font-normal">
-                <UserCheck className="w-3 h-3 text-[#02ADAB]" /> Rédaction : Léonie Egesipe
+                <UserCheck className="w-3 h-3 text-[#02ADAB]" /> Créateur : Egesipe Léonie
               </span>
             </div>
 
@@ -460,7 +460,7 @@ export default function Oeuvres() {
                 <Clock className="w-3 h-3 text-[#02ADAB]" /> Construit en 24h
               </span>
               <span className="inline-flex items-center gap-1.5 text-[0.78rem] bg-[#f0f7ff] text-[#1F4F6E] px-2.5 py-1 rounded-[4px] font-normal">
-                <UserCheck className="w-3 h-3 text-[#02ADAB]" /> Rédaction : Cyril Garnier
+                <UserCheck className="w-3 h-3 text-[#02ADAB]" /> Créateur : Cyril Garnier
               </span>
             </div>
 
