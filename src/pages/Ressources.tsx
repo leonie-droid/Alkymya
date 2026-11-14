@@ -18,6 +18,7 @@ import {
 } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import NewsletterButton from '../components/NewsletterButton';
+import { SEO } from '../components/SEO';
 
 interface ExpertInfo {
   name: string;
@@ -43,13 +44,10 @@ interface ResourceItem {
 }
 
 const categories = [
-  "Toutes",
   "Nos Analyseurs",
   "Nos études",
   "Business Game",
-  "Agents",
-  "Alkymya x Inatec",
-  "Nos sites"
+  "Alkymya x Inatec"
 ];
 
 const resources: ResourceItem[] = [
@@ -140,15 +138,6 @@ const resources: ResourceItem[] = [
     type: "video"
   },
   {
-    id: 5,
-    title: "SODA",
-    category: "Agents",
-    description: "SODA est une IA spécialisée conçue pour l'accompagnement et l'analyse stratégique. Découvrez notre agent autonome.",
-    url: "https://res.cloudinary.com/dokzioyu4/video/upload/v1779116439/f_ea_e_f_f_a_f_a_e_cbe_f_cmp__gxlwhw.mp4",
-    appUrl: "https://www.genspark.ai/agents?type=custom_super_agent&agent_id=20503058-4b49-40f7-b277-b38c21724a41",
-    type: "video"
-  },
-  {
     id: 10,
     title: "Partenariat d'Avenir",
     category: "Alkymya x Inatec",
@@ -187,41 +176,11 @@ const resources: ResourceItem[] = [
     description: "Visualisez la mise en œuvre concrète de nos solutions digitales de pointe et leur impact direct sur la performance.",
     url: "https://res.cloudinary.com/dokzioyu4/video/upload/v1780954634/reel_04_v2_2_ozedom.mp4",
     type: "video"
-  },
-  {
-    id: 15,
-    title: "Thelittle77.fr",
-    category: "Nos sites",
-    description: "Le média et guide local de Seine-et-Marne (77), mettant en lumière les initiatives, commerces et innovations du territoire.",
-    url: "https://thelittle77.fr/",
-    appUrl: "https://thelittle77.fr/",
-    imageUrl: "https://res.cloudinary.com/dokzioyu4/image/upload/v1788941703/PHOTO-2026-09-08-06-54-57_ynrbkt.jpg",
-    type: "site"
-  },
-  {
-    id: 16,
-    title: "Thelittle75.fr",
-    category: "Nos sites",
-    description: "Le guide urbain et média digital de référence dédié aux actualités, adresses et pépites incontournables de Paris (75).",
-    url: "https://thelittle75.fr/",
-    appUrl: "https://thelittle75.fr/",
-    imageUrl: "https://res.cloudinary.com/dokzioyu4/image/upload/v1788941670/Logo_thelittle75.fr_d1tmes.jpg",
-    type: "site"
-  },
-  {
-    id: 19,
-    title: "Thelittle83.fr",
-    category: "Nos sites",
-    description: "L'atlas naturaliste bilingue dédié aux oiseaux, espaces naturels et paysages du Var (83), conçu en français et en anglais.",
-    url: "https://thelittle83.fr/",
-    appUrl: "https://thelittle83.fr/",
-    imageUrl: "https://res.cloudinary.com/dyooqwryq/image/upload/v1794124042/thelittle83-logo_op3yvm.svg",
-    type: "site"
   }
 ];
 
 export default function Ressources() {
-  const [activeCategory, setActiveCategory] = useState("Toutes");
+  const [activeCategory, setActiveCategory] = useState(categories[0]);
   const [selectedResource, setSelectedResource] = useState<ResourceItem | null>(null);
   const [unmutedIds, setUnmutedIds] = useState<Set<number>>(new Set());
 
@@ -246,26 +205,32 @@ export default function Ressources() {
     });
   };
 
-  const filteredResources = activeCategory === "Toutes"
-    ? resources
-    : resources.filter(r => r.category === activeCategory);
+  const filteredResources = resources.filter(r => r.category === activeCategory);
 
   return (
     <div className="bg-[#f4f6f9] text-[#1F4F6E] min-h-screen font-['Roboto',sans-serif] selection:bg-[#C06721] selection:text-white">
+      <SEO
+        title="Ressources IA, Veille SEO & Outils Gratuits | Alkymya"
+        description="Veille SEO IA, analyseurs intelligents gratuits, études Génération IA et création site éditorial par l'agence IA et studio création IA Alkymya."
+        keywords="veille SEO IA, agence IA, studio création IA, création site éditorial, agents IA autonomes, stratégie SEO et GEO"
+        canonicalPath="/ressources"
+        ogImage="https://res.cloudinary.com/dokzioyu4/image/upload/v1788941703/PHOTO-2026-09-08-06-54-57_ynrbkt.jpg"
+        type="CollectionPage"
+      />
       {/* HERO SECTION DESIGN SYSTEM */}
       <header className="bg-[#1F4F6E] text-white py-20 px-6 sm:px-10 text-center relative overflow-hidden">
         <div className="max-w-[760px] mx-auto relative z-10">
           <p className="text-[0.85rem] tracking-[0.15em] uppercase text-[#02ADAB] mb-4 font-normal">
-            Bibliothèque &amp; Outils Libres · Alkymya
+            Veille SEO IA &amp; Outils Libres · Agence IA Alkymya
           </p>
 
           <h1 className="font-light text-[2.4rem] sm:text-[2.6rem] leading-[1.2] mb-5 text-white">
-            Nos ressources,<br />
-            <strong className="font-medium text-white">analyses &amp; outils IA.</strong>
+            Ressources IA, veille SEO IA &amp;<br />
+            <strong className="font-medium text-white">outils gratuits.</strong>
           </h1>
 
           <p className="text-[1.05rem] sm:text-[1.1rem] text-white/75 max-w-[620px] mx-auto leading-[1.7] font-light mb-8">
-            Bienvenue dans notre espace dédié au partage et à l'expérimentation. Accédez librement à nos analyseurs d'images et de CV, nos rapports prospectifs, nos podcasts et nos médias territoriaux.
+            Bibliothèque ouverte de notre studio création IA : analyseurs gratuits, veille SEO IA, création site éditorial optimisé Google AI et démonstrations d'agents IA autonomes en production.
           </p>
 
           {/* Sélecteur de catégorie */}
@@ -316,7 +281,7 @@ export default function Ressources() {
               Bibliothèque interactive · {filteredResources.length} livrables disponibles
             </p>
             <h2 className="text-[1.8rem] sm:text-[2rem] font-light text-[#1F4F6E]">
-              Des outils concrets <strong className="font-medium text-[#1F4F6E]">pour tester et expérimenter</strong>
+              Outils gratuits, veille SEO IA <strong className="font-medium text-[#1F4F6E]">&amp; création site éditorial</strong>
             </h2>
           </div>
           <div className="flex items-center gap-3">
@@ -333,9 +298,7 @@ export default function Ressources() {
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-7"
         >
           <AnimatePresence mode="popLayout">
-            {filteredResources.map((item) => {
-              const isSvgSite = item.type === 'site' && item.imageUrl?.toLowerCase().endsWith('.svg');
-              return (
+            {filteredResources.map((item) => (
                 <motion.article
                   key={item.id}
                   layout
@@ -351,8 +314,6 @@ export default function Ressources() {
                     onClick={() => {
                       if (item.type === 'pdf') {
                         window.open(item.url, '_blank');
-                      } else if (item.type === 'site') {
-                        window.open(item.appUrl || item.url, '_blank');
                       } else {
                         setSelectedResource(item);
                       }
@@ -363,7 +324,7 @@ export default function Ressources() {
                       <div className="absolute top-3.5 left-3.5 z-20 flex items-center gap-2 bg-[#1F4F6E]/90 backdrop-blur-xs px-3 py-1.5 rounded-[6px] border border-white/15 shadow-sm pointer-events-none">
                         <img 
                           src={item.expert.avatar} 
-                          alt={item.expert.name} 
+                          alt={`${item.expert.name} — ${item.expert.role}, partenaire agence IA Alkymya`} 
                           referrerPolicy="no-referrer"
                           className="w-5 h-5 rounded-full object-cover border border-[#C06721]" 
                         />
@@ -407,23 +368,12 @@ export default function Ressources() {
                           Écouter le podcast
                         </span>
                       </div>
-                    ) : item.type === 'site' ? (
-                      <div className={`w-full h-full relative flex items-center justify-center overflow-hidden ${isSvgSite ? 'bg-[#2a4a3a] p-8' : 'bg-[#1a3a50]'}`}>
-                        <img 
-                          src={item.imageUrl || item.url} 
-                          alt={item.title}
-                          referrerPolicy="no-referrer"
-                          className={`w-full h-full transition-transform duration-500 group-hover:scale-105 ${isSvgSite ? 'object-contain' : 'object-cover'}`}
-                        />
-                        <div className="absolute inset-0 bg-gradient-to-t from-[#1F4F6E]/80 via-transparent to-transparent opacity-60 group-hover:opacity-40 transition-opacity duration-300" />
-                        <div className="absolute bottom-4 right-4 z-20 bg-[#1F4F6E]/85 text-white p-2.5 rounded-[8px] border border-white/10 opacity-0 group-hover:opacity-100 transition-opacity">
-                          <ExternalLink className="w-4 h-4" />
-                        </div>
-                      </div>
                     ) : (
                       <>
                         <video 
                           src={item.url} 
+                          aria-label={`Démonstration vidéo IA : ${item.title}`}
+                          title={item.title}
                           className="w-full h-full object-cover opacity-90 group-hover:opacity-100 transition-all duration-500 pointer-events-none"
                           autoPlay
                           muted={!unmutedIds.has(item.id)}
@@ -457,9 +407,9 @@ export default function Ressources() {
                       <span className="text-[#02ADAB] text-xs font-medium tracking-wider uppercase mb-1">
                         {item.category}
                       </span>
-                      <h3 className="text-lg text-white font-medium leading-snug">
+                      <div className="text-lg text-white font-medium leading-snug">
                         {item.title}
-                      </h3>
+                      </div>
                     </div>
                   </div>
 
@@ -491,7 +441,7 @@ export default function Ressources() {
                           <div className="flex items-center gap-2.5">
                             <img
                               src={item.expert.avatar}
-                              alt={item.expert.name}
+                              alt={`${item.expert.name} — ${item.expert.role}, partenaire formation IA Alkymya`}
                               referrerPolicy="no-referrer"
                               className="w-9 h-9 rounded-full object-cover border border-[#C06721] shrink-0"
                             />
@@ -549,8 +499,7 @@ export default function Ressources() {
                     </div>
                   </div>
                 </motion.article>
-              );
-            })}
+            ))}
           </AnimatePresence>
         </motion.div>
       </section>
@@ -564,7 +513,7 @@ export default function Ressources() {
           Veille &amp; Nouveautés
         </p>
         <h2 className="text-[2rem] font-light mb-3.5 text-white">
-          Envie d'explorer de <strong className="font-medium text-white">nouveaux cas d'usage ?</strong>
+          Accélérez votre <strong className="font-medium text-white">stratégie SEO, GEO &amp; IA</strong>
         </h2>
         <p className="text-[1.05rem] text-white/85 max-w-[520px] mx-auto mb-8 leading-[1.7] font-light">
           Nos alchimistes publient régulièrement de nouveaux agents, études et retours d'expérience. Rejoignez notre communauté pour ne rien manquer.
@@ -618,6 +567,8 @@ export default function Ressources() {
                 {selectedResource.type === "video" ? (
                   <video
                     src={selectedResource.url}
+                    aria-label={`Démonstration vidéo complète : ${selectedResource.title}`}
+                    title={selectedResource.title}
                     className="w-full h-full object-contain"
                     controls
                     autoPlay
@@ -669,7 +620,7 @@ export default function Ressources() {
                   <div className="flex items-center gap-3 text-left">
                     <img
                       src={selectedResource.expert.avatar}
-                      alt={selectedResource.expert.name}
+                      alt={`${selectedResource.expert.name} — ${selectedResource.expert.role}`}
                       referrerPolicy="no-referrer"
                       className="w-12 h-12 rounded-full object-cover border-2 border-[#C06721] shrink-0"
                     />
@@ -677,9 +628,9 @@ export default function Ressources() {
                       <span className="text-[10px] font-medium uppercase tracking-wider text-[#02ADAB] block">
                         Accompagnement Personnalisé
                       </span>
-                      <h4 className="font-medium text-sm text-white">
+                      <div className="font-medium text-sm text-white">
                         {selectedResource.expert.name} — <span className="text-white/70 font-light text-xs">{selectedResource.expert.role}</span>
-                      </h4>
+                      </div>
                       <p className="text-xs text-white/80 max-w-xl italic mt-0.5">
                         « {selectedResource.expert.hook} »
                       </p>

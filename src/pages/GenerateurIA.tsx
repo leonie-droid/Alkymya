@@ -55,8 +55,12 @@ export default function GenerateurIA() {
   return (
     <div className="bg-[#f4f6f9] text-[#1F4F6E] min-h-screen font-['Roboto',sans-serif] selection:bg-[#C06721] selection:text-white">
       <SEO
-        title="Génération IA & Démonstrateurs | Alkymya"
-        description="Étude empirique et démonstrateurs d'IA générative : 5 personas d'utilisateurs en vidéo, synthèses audio, rapports d'enquêtes 2024-2026 à télécharger."
+        title="Création d'Agents IA & Démonstrateurs Métiers | Alkymya"
+        description="Studio création IA et générateur d'agents IA sur mesure : personas vidéo, études Génération IA 2024-2026 et accompagnement intelligence artificielle."
+        keywords="studio création IA, création d'agents IA sur mesure, accompagnement intelligence artificielle, agence IA, stratégie SEO et GEO"
+        canonicalPath="/ia"
+        ogImage="https://res.cloudinary.com/dokzioyu4/image/upload/v1777491204/Capture_GENERATION_IA_lrxvdx.png"
+        type="WebApplication"
       />
 
       {/* Video Modal */}
@@ -87,6 +91,8 @@ export default function GenerateurIA() {
               <div className="w-full h-full rounded-[12px] overflow-hidden shadow-2xl bg-black border border-white/10">
                 <video
                   src={selectedVideo}
+                  aria-label="Vidéo de démonstration d'un persona d'agent IA Alkymya"
+                  title="Démonstrateur persona IA Alkymya"
                   className="w-full h-full object-contain"
                   controls
                   autoPlay
@@ -102,16 +108,16 @@ export default function GenerateurIA() {
       <header className="bg-[#1F4F6E] text-white py-20 px-6 sm:px-10 text-center relative overflow-hidden">
         <div className="max-w-[700px] mx-auto relative z-10">
           <p className="text-[0.85rem] tracking-[0.15em] uppercase text-[#02ADAB] mb-4 font-normal">
-            Étude Empirique &amp; Démonstrateurs Métiers
+            Studio Création IA &amp; Agents IA Sur Mesure
           </p>
 
           <h1 className="font-light text-[2.4rem] sm:text-[2.6rem] leading-[1.2] mb-5 text-white">
-            Génération IA &amp;<br />
-            <strong className="font-medium text-white">démonstrateurs interactifs.</strong>
+            Création d'agents IA sur mesure &amp;<br />
+            <strong className="font-medium text-white">démonstrateurs métiers.</strong>
           </h1>
 
           <p className="text-[1.05rem] sm:text-[1.1rem] text-white/75 max-w-[620px] mx-auto leading-[1.7] font-light mb-8">
-            Comprendre l'adoption réelle de l'IA générative dans l'enseignement supérieur et les entreprises à travers nos enquêtes terrain, nos personas vidéo et nos prototypes opérationnels.
+            Notre studio création IA et agence IA vous propose un accompagnement intelligence artificielle concret : personas vidéo, stratégie SEO et GEO, et prototypes d'agents IA opérationnels testés sur le terrain.
           </p>
 
           {/* Stats Ribbon */}
@@ -147,7 +153,7 @@ export default function GenerateurIA() {
           >
             <img 
               src="https://res.cloudinary.com/dokzioyu4/image/upload/v1777491204/Capture_GENERATION_IA_lrxvdx.png" 
-              alt="Génération IA Illustration" 
+              alt="Étude Génération IA et création d'agents IA sur mesure par le studio création IA Alkymya" 
               className="w-full h-auto object-cover rounded-[8px]"
               referrerPolicy="no-referrer"
             />
@@ -156,10 +162,10 @@ export default function GenerateurIA() {
           <div className="lg:col-span-7 space-y-6 text-[#4a6a80] font-normal leading-[1.7] text-left">
             <div>
               <p className="text-[0.75rem] tracking-[0.18em] uppercase text-[#02ADAB] mb-2.5 font-medium">
-                Méthodologie Scientifique &amp; Empirique
+                Méthodologie Scientifique &amp; Agence IA
               </p>
               <h2 className="text-[1.8rem] sm:text-[2rem] font-light text-[#1F4F6E]">
-                L'enquête de référence sur <strong className="font-medium text-[#1F4F6E]">les usages réels de l'IA</strong>
+                L'enquête de référence pour <strong className="font-medium text-[#1F4F6E]">l'accompagnement intelligence artificielle</strong>
               </h2>
             </div>
 
@@ -207,7 +213,7 @@ export default function GenerateurIA() {
             Ressources &amp; Synthèses
           </p>
           <h2 className="text-[1.8rem] sm:text-[2rem] font-light mb-3 text-[#1F4F6E]">
-            Écoutez les synthèses <strong className="font-medium text-[#1F4F6E]">&amp; téléchargez les études</strong>
+            Synthèses audio &amp; études <strong className="font-medium text-[#1F4F6E]">de notre studio création IA</strong>
           </h2>
         </div>
 
@@ -339,10 +345,10 @@ export default function GenerateurIA() {
           Vidéos &amp; Comportements
         </p>
         <h2 className="text-[1.8rem] sm:text-[2rem] font-light mb-3 text-[#1F4F6E]">
-          Les 5 Personas de l'IA <strong className="font-medium text-[#1F4F6E]">en vidéo</strong>
+          Les 5 Personas pour <strong className="font-medium text-[#1F4F6E]">vos agents IA sur mesure</strong>
         </h2>
         <p className="text-[1.05rem] text-[#4a6a80] max-w-[640px] leading-[1.7] mb-12 font-normal">
-          Cliquez sur un profil pour visionner son scénario vidéo et décrypter son rapport quotidien à l'IA.
+          Cliquez sur un profil pour visionner son scénario vidéo et adapter votre accompagnement intelligence artificielle aux usages réels.
         </p>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6">
@@ -355,6 +361,8 @@ export default function GenerateurIA() {
               <div className="aspect-[9/16] relative bg-black overflow-hidden">
                 <video 
                   src={persona.url} 
+                  aria-label={`Scénario vidéo persona IA : ${persona.name}`}
+                  title={persona.name}
                   className="w-full h-full object-cover opacity-85 group-hover:opacity-100 transition-opacity pointer-events-none"
                   autoPlay
                   muted
@@ -409,10 +417,10 @@ export default function GenerateurIA() {
           Méthode &amp; Usages Opérationnels
         </p>
         <h2 className="text-[1.8rem] sm:text-[2rem] font-light mb-3 text-[#1F4F6E]">
-          Comprendre le <strong className="font-medium text-[#1F4F6E]">Générateur d'Idées IA</strong>
+          Comprendre la <strong className="font-medium text-[#1F4F6E]">création d'agents IA sur mesure</strong>
         </h2>
         <p className="text-[1.05rem] text-[#4a6a80] max-w-[640px] leading-[1.7] mb-12 font-normal">
-          Cinq réponses concrètes pour transformer une intuition technologique en valeur métier mesurable.
+          Cinq réponses concrètes de notre agence IA pour transformer une intuition technologique en valeur métier et en visibilité Google AI mesurable.
         </p>
 
         <div className="space-y-5">
@@ -420,7 +428,7 @@ export default function GenerateurIA() {
           <div className="p-8 rounded-[12px] bg-white shadow-[0_2px_16px_rgba(31,79,110,0.08)]">
             <h3 className="text-[1.15rem] font-medium text-[#1F4F6E] mb-4 flex items-center gap-3">
               <span className="w-8 h-8 rounded-[8px] bg-[#02ADAB]/15 text-[#02ADAB] text-sm font-medium flex items-center justify-center shrink-0">1</span>
-              À qui s'adresse le Générateur d'Idées IA Alkymya ?
+              À qui s'adresse le studio création IA et Générateur Alkymya ?
             </h3>
             <div className="space-y-3 text-[#5a7a90] leading-[1.65] text-[0.95rem]">
               <p>
@@ -512,7 +520,7 @@ export default function GenerateurIA() {
           Passez de l'observation à l'action
         </p>
         <h2 className="text-[2rem] font-light mb-3.5 text-white">
-          Testez vos cas d'usage <strong className="font-medium text-white">lors d'un atelier pratique</strong>
+          Créez vos agents IA sur mesure <strong className="font-medium text-white">en atelier pratique</strong>
         </h2>
         <p className="text-[1.05rem] text-white/85 max-w-[560px] mx-auto mb-8 leading-[1.7] font-light">
           Nos ateliers d'une journée permettent à vos équipes de s'approprier ces outils, de créer leurs propres personas et de prototyper leurs premiers cas d'usage métiers.

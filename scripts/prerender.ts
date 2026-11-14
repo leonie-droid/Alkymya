@@ -29,7 +29,7 @@ function generatePageBody(route: RouteData): string {
     <header style="background: #ffffff; border-bottom: 1px solid #e2e8f0; padding: 1rem 1.5rem; position: sticky; top: 0; z-index: 50;">
       <div style="max-width: 1280px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem;">
         <a href="/" aria-label="Accueil Alkymya" style="display: flex; align-items: center; text-decoration: none;">
-          <img src="https://res.cloudinary.com/dokzioyu4/image/upload/v1758096912/logo_principal_bleu_gbnyuu.png" alt="Alkymya - Studio d'Innovation IA" width="150" height="38" style="height: 38px; width: auto;" />
+          <img src="https://res.cloudinary.com/dokzioyu4/image/upload/v1758096912/logo_principal_bleu_gbnyuu.png" alt="Alkymya — Agence IA & Studio Création IA" width="150" height="38" style="height: 38px; width: auto;" />
         </a>
         <nav aria-label="Navigation principale" style="display: flex; flex-wrap: wrap; gap: 1rem; font-size: 0.8125rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em;">
           ${navItems.map(item => `
@@ -243,7 +243,7 @@ function buildJsonLd(route: RouteData, canonicalUrl: string) {
     "url": "https://alkymya.co/",
     "logo": "https://res.cloudinary.com/dokzioyu4/image/upload/v1758096912/logo_principal_bleu_gbnyuu.png",
     "image": "https://alkymya.co/og-image.jpg",
-    "description": "Studio d'innovation et organisme de formation certifié Qualiopi en Intelligence Artificielle générative, agentification et prompt engineering.",
+    "description": "Agence IA et studio création IA en France : accompagnement intelligence artificielle, création d'agents IA sur mesure, stratégie SEO et GEO Google AI, formation IA entreprise certifiée Qualiopi finançable OPCO.",
     "telephone": "+33 1 89 71 32 40",
     "email": "contact@alkymya.co",
     "address": {
@@ -397,7 +397,7 @@ function buildJsonLd(route: RouteData, canonicalUrl: string) {
         "@id": "https://alkymya.co/alchimistes/#mariana-didier-laurent",
         "name": "Mariana Didier Laurent",
         "jobTitle": "Alchimiste associée, Assurance & Services à la personne",
-        "image": "https://alkymya.co/img/alchimistes/mariana-didier-laurent.jpg",
+        "image": "https://res.cloudinary.com/dokzioyu4/image/upload/v1794479431/WhatsApp_Image_2026-11-12_at_11.29.28_qwv5le.jpg",
         "worksFor": {
           "@type": "Organization",
           "name": "Alkymya",
@@ -423,7 +423,7 @@ function buildJsonLd(route: RouteData, canonicalUrl: string) {
           }
         },
         "sameAs": [
-          "https://www.linkedin.com/in/marianassurance/"
+          "https://esperantaservices.fr/"
         ]
       }
     );
@@ -489,13 +489,13 @@ function generateSitemapXml(allRoutes: RouteData[]): string {
         { loc: "https://res.cloudinary.com/dokzioyu4/image/upload/v1758192982/66cffcd8-15f1-415f-b423-9f428d63e22f_gqjd53.png", title: "Cyril Garnier — Directeur Associé Alkymya" },
         { loc: "https://res.cloudinary.com/dokzioyu4/image/upload/v1758192982/c4f25b29-1634-44bf-a6d1-41f2378fbb4d_j10d8m.png", title: "Léonie Egesipe — Directrice Artistique IA Alkymya" },
         { loc: "https://res.cloudinary.com/dokzioyu4/image/upload/v1792763449/1792401247516_ussqzm.png", title: "Véronique Landereau — Alchimiste associée Santé" },
-        { loc: "https://alkymya.co/img/alchimistes/mariana-didier-laurent.jpg", title: "Mariana Didier Laurent — Alchimiste associée Services" }
+        { loc: "https://res.cloudinary.com/dokzioyu4/image/upload/v1794479431/WhatsApp_Image_2026-11-12_at_11.29.28_qwv5le.jpg", title: "Mariana Didier Laurent — Experts IA France & Services à la personne" }
       );
     } else if (r.path === '/oeuvres') {
       images.push(
-        { loc: "https://res.cloudinary.com/dokzioyu4/image/upload/v1772112521/e23iKTwc_u35aql.png", title: "Création IA — Angela Davis" },
-        { loc: "https://res.cloudinary.com/dokzioyu4/image/upload/v1772112521/d9eRiVt6_pmcd6l.png", title: "Création IA — Joséphine Baker" },
-        { loc: "https://res.cloudinary.com/dokzioyu4/image/upload/v1772111909/giJ307Jk_hcidx5.png", title: "Création IA — Pop Culture" }
+        { loc: "https://res.cloudinary.com/dokzioyu4/image/upload/v1772112521/e23iKTwc_u35aql.png", title: "Direction artistique photo vidéo IA — Portrait Angela Davis" },
+        { loc: "https://res.cloudinary.com/dokzioyu4/image/upload/v1772112521/d9eRiVt6_pmcd6l.png", title: "Direction artistique photo vidéo IA — Portrait Joséphine Baker" },
+        { loc: "https://res.cloudinary.com/dokzioyu4/image/upload/v1772112521/jnya8Go8_e6eczn.png", title: "Direction artistique photo vidéo IA — Portrait Katherine Johnson" }
       );
     }
 
@@ -583,7 +583,7 @@ async function prerender() {
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
     <meta property="og:image:type" content="image/jpeg" />
-    <meta property="og:image:alt" content="Alkymya — Studio d'Innovation & Formations IA" />
+    <meta property="og:image:alt" content="Alkymya — Agence IA & Studio Création IA en France" />
     <meta property="og:site_name" content="Alkymya" />
     <meta property="og:locale" content="fr_FR" />
 
@@ -593,7 +593,7 @@ async function prerender() {
     <meta name="twitter:title" content="${escapeHtml(route.ogTitle || route.title)}" />
     <meta name="twitter:description" content="${escapeHtml(route.ogDescription || route.description)}" />
     <meta name="twitter:image" content="${route.ogImage}" />
-    <meta name="twitter:image:alt" content="Alkymya — Studio d'Innovation & Formations IA" />
+    <meta name="twitter:image:alt" content="Alkymya — Agence IA & Studio Création IA en France" />
 
     <!-- JSON-LD Structured Data -->
     <script type="application/ld+json">

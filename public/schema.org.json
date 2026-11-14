@@ -4,12 +4,12 @@
     {
       "@type": ["EducationalOrganization", "ProfessionalService", "LocalBusiness"],
       "@id": "https://alkymya.co/#organization",
-      "name": "Alkymya",
-      "alternateName": ["Alkymya.co", "Studio Alkymya"],
+      "name": "Alkymya — Agence IA & Studio Création IA",
+      "alternateName": ["Alkymya.co", "Studio Alkymya", "Agence IA Alkymya"],
       "url": "https://alkymya.co/",
       "logo": "https://res.cloudinary.com/dokzioyu4/image/upload/v1758096912/logo_principal_bleu_gbnyuu.png",
       "image": "https://alkymya.co/og-image.jpg",
-      "description": "Studio d'innovation et organisme de formation certifié Qualiopi en Intelligence Artificielle générative, agentification, prompt engineering et création numérique.",
+      "description": "Agence IA et studio création IA en France : accompagnement intelligence artificielle, création d'agents IA sur mesure, stratégie SEO et GEO Google AI, formation IA entreprise certifiée Qualiopi finançable OPCO.",
       "telephone": "+33 1 89 71 32 40",
       "email": "contact@alkymya.co",
       "address": {
@@ -48,7 +48,7 @@
       "@type": "Person",
       "@id": "https://alkymya.co/alchimistes/#cyril-garnier",
       "name": "Cyril Garnier",
-      "jobTitle": "Directeur Associé & Fondateur Alkymya",
+      "jobTitle": "Directeur Associé, Expert IA France & Fondateur Agence IA Alkymya",
       "image": "https://res.cloudinary.com/dokzioyu4/image/upload/v1758192982/66cffcd8-15f1-415f-b423-9f428d63e22f_gqjd53.png",
       "worksFor": { "@id": "https://alkymya.co/#organization" },
       "sameAs": [
@@ -60,7 +60,7 @@
       "@type": "Person",
       "@id": "https://alkymya.co/alchimistes/#leonie-egesipe",
       "name": "Léonie Egesipe",
-      "jobTitle": "Co-Fondatrice & Directrice Artistique IA",
+      "jobTitle": "Co-Fondatrice & Directrice Artistique Studio Création IA",
       "image": "https://res.cloudinary.com/dokzioyu4/image/upload/v1758192982/c4f25b29-1634-44bf-a6d1-41f2378fbb4d_j10d8m.png",
       "worksFor": { "@id": "https://alkymya.co/#organization" },
       "sameAs": [
@@ -84,17 +84,17 @@
       "@id": "https://alkymya.co/alchimistes/#mariana-didier-laurent",
       "name": "Mariana Didier Laurent",
       "jobTitle": "Alchimiste associée, Assurance & Services à la personne",
-      "image": "/img/alchimistes/mariana-didier-laurent.jpg",
+      "image": "https://res.cloudinary.com/dokzioyu4/image/upload/v1794479431/WhatsApp_Image_2026-11-12_at_11.29.28_qwv5le.jpg",
       "worksFor": { "@id": "https://alkymya.co/#organization" },
       "sameAs": [
-        "https://www.linkedin.com/in/marianassurance/"
+        "https://esperantaservices.fr/"
       ]
     },
     {
       "@type": "Course",
       "@id": "https://alkymya.co/ateliers/#course-ia",
-      "name": "Formations & Ateliers Pratiques en Intelligence Artificielle Générative",
-      "description": "Formations certifiées Qualiopi éligibles OPCO : Formation Core IA (14h), Option A Agents IA (3h30), Option B App No-Code IA (3h30).",
+      "name": "Atelier IA pratique & Formation IA entreprise certifiée Qualiopi",
+      "description": "Formation IA entreprise certifiée Qualiopi finançable OPCO, audit IA PME (Capital IA), créer son agent IA métier, valorisation d'archives photo et vidéo et conformité IA Act.",
       "provider": { "@id": "https://alkymya.co/#organization" }
     }
   ]

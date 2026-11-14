@@ -29,17 +29,17 @@ export interface RouteData {
 export const routes: RouteData[] = [
   {
     path: '/',
-    title: "Alkymya | Studio d'Innovation et Formations IA",
-    description: "Studio d'innovation et formations en IA générative à Ozoir-la-Ferrière. Accompagnement sur-mesure des entreprises et grandes écoles vers l'IA.",
-    h1: "L'art de la transformation IA.",
+    title: "Agence IA & Studio Création IA | Alkymya",
+    description: "Agence IA et studio création IA : accompagnement intelligence artificielle, création d'agents IA sur mesure, stratégie SEO et GEO Google AI.",
+    h1: "Agence IA & studio création IA : l'art de la transformation.",
     ogImage: "https://alkymya.co/og-image.jpg",
-    lastmod: "2026-11-09",
+    lastmod: "2026-11-13",
     schemaType: "WebPage",
     content: {
-      leadParagraph: "Alkymya fusionne créativité et expertise technologique pour propulser la Génération IA vers l'excellence opérationnelle et stratégique en France et en Europe.",
+      leadParagraph: "Alkymya est votre agence IA et studio création IA en France : accompagnement intelligence artificielle, création d'agents IA sur mesure et stratégie SEO et GEO pour votre visibilité Google AI.",
       sections: [
         {
-          h2: "Nos trois piliers fondamentaux d'action",
+          h2: "Accompagnement intelligence artificielle en trois piliers",
           paragraphs: [
             "Nous guidons les dirigeants, professionnels et étudiants à travers trois axes complémentaires : Explorer les technologies d'IA générative, Transformer les processus métiers avec des prototypes fonctionnels, et Partager les compétences clés pour une autonomie durable."
           ],
@@ -68,17 +68,17 @@ export const routes: RouteData[] = [
   },
   {
     path: '/ia',
-    title: "Générateur IA | Outils d'Idéation Alkymya",
-    description: "Explorez notre générateur d'idées IA. Testez des prompts avancés, générez des personas métiers et accélérez votre créativité avec les outils Alkymya.",
-    h1: "Le Générateur d'Idées IA.",
+    title: "Création d'Agents IA & Démonstrateurs Métiers | Alkymya",
+    description: "Studio création IA et générateur d'agents IA sur mesure : personas vidéo, études Génération IA 2024-2026 et accompagnement intelligence artificielle.",
+    h1: "Génération IA & création d'agents IA sur mesure.",
     ogImage: "https://alkymya.co/og-ia.jpg",
-    lastmod: "2026-11-09",
+    lastmod: "2026-11-13",
     schemaType: "WebApplication",
     content: {
-      leadParagraph: "Explorez en direct la puissance créative de l'intelligence artificielle grâce à notre suite d'outils interactifs d'idéation, de génération de personas et de cas d'usage métiers.",
+      leadParagraph: "Explorez en direct la puissance de notre studio création IA : accompagnement intelligence artificielle, création d'agents IA sur mesure, personas vidéo et stratégie SEO et GEO.",
       sections: [
         {
-          h2: "À qui s'adresse le Générateur d'Idées IA Alkymya ?",
+          h2: "À qui s'adresse notre studio création IA et Générateur d'Idées ?",
           paragraphs: [
             "Cette suite d'outils d'idéation s'adresse en priorité aux dirigeants d'entreprise, directeurs de l'innovation, chefs de produit, consultants en stratégie et étudiants des grandes écoles qui souhaitent dépasser les simples requêtes génériques pour éprouver de vraies hypothèses de marché.",
             "Que vous soyez en phase de cadrage d'un nouveau produit numérique, à la recherche de personas clients documentés ou en quête de cas d'usage opérationnels pour vos équipes métiers, le Générateur IA offre un cadre interactif rigoureux, sans jargon superflu et immédiatement mobilisable."
@@ -134,28 +134,28 @@ export const routes: RouteData[] = [
   },
   {
     path: '/oeuvres',
-    title: "Nos Œuvres & Créations Artistiques — Alkymya",
-    description: "Explorez la galerie des œuvres et créations visuelles d'Alkymya : art génératif par IA, photographies de terrain, installations et sculptures organiques.",
-    ogTitle: "Nos Œuvres & Créations Artistiques — Alkymya",
-    ogDescription: "Explorez la galerie des créations d'Alkymya : art génératif par IA, photographies de terrain, installations et sculptures organiques.",
-    h1: "Nos Œuvres & Créations",
+    title: "Création Site Éditorial, Agents IA & SEO GEO | Alkymya",
+    description: "Création site éditorial, référencement naturel Google, visibilité AI Overviews, agents IA autonomes en production et direction artistique IA.",
+    ogTitle: "Création Site Éditorial, Agents IA & SEO GEO | Alkymya",
+    ogDescription: "Création site éditorial, référencement naturel Google, visibilité AI Overviews, agents IA autonomes en production et direction artistique IA.",
+    h1: "Création site éditorial, agents IA & direction artistique IA.",
     ogImage: "https://alkymya.co/og-oeuvres.jpg",
-    lastmod: "2026-11-10",
+    lastmod: "2026-11-13",
     schemaType: "CollectionPage",
     content: {
-      leadParagraph: "Une traversée visuelle où la matière brute, la photographie de terrain et l'audace de l'intelligence artificielle se rencontrent. Découvrez nos réalisations, séries artistiques et carnets documentaires.",
+      leadParagraph: "Création site éditorial, référencement naturel Google, visibilité AI Overviews et agents IA autonomes en production : des projets réels, une veille SEO IA continue et une direction artistique photo vidéo IA vérifiable.",
       sections: [
         {
-          h2: "Créations Visuelles & Art Génératif par IA",
+          h2: "Direction artistique photo vidéo IA & créations visuelles",
           paragraphs: [
             "Des portraits et compositions iconographiques explorant les limites expressives des modèles génératifs de pointe. Chaque œuvre est le fruit d'une recherche approfondie sur le prompt crafting, la matière texturée et la résonance culturelle contemporaine.",
             "De la figure d'Angela Davis réinterprétée en sérigraphie contemporaine à l'hommage vibrant à Joséphine Baker, nos créations marient audace visuelle et rigueur esthétique."
           ]
         },
         {
-          h2: "Photographies de Terrain & Territoires",
+          h2: "Création site éditorial, référencement naturel Google & AI Overviews",
           paragraphs: [
-            "Une démarche photographique documentaire et naturaliste fondée sur l'authenticité : aucune altération artificielle, aucune mise en scène invasive. Ciels de Seine-et-Marne (thelittle77), chroniques de ruelles parisiennes (thelittle75) et faune du Var (thelittle83).",
+            "Une démarche photographique documentaire et naturaliste alliée au référencement naturel Google, à la veille SEO IA et à la visibilité AI Overviews. Ciels de Seine-et-Marne (thelittle77), chroniques de ruelles parisiennes (thelittle75) et faune du Var (thelittle83).",
             "La capture de la lumière à l'état pur, révélant la richesse de nos patrimoines locaux et de la biodiversité."
           ]
         }
@@ -170,17 +170,17 @@ export const routes: RouteData[] = [
   },
   {
     path: '/ateliers',
-    title: "Nos Ateliers — Alkymya",
-    description: "Vous repartez avec quelque chose de réel. Pas de slides théoriques. Ateliers individuels et formations d'équipe certifiées Qualiopi finançables OPCO.",
-    h1: "Vous repartez avec quelque chose de réel.",
+    title: "Atelier IA Pratique & Formation Qualiopi OPCO | Alkymya",
+    description: "Atelier IA pratique, formation IA entreprise certifiée Qualiopi finançable OPCO, audit IA PME Capital IA, agent IA métier et conformité IA Act.",
+    h1: "Atelier IA pratique & formation IA entreprise Qualiopi.",
     ogImage: "https://alkymya.co/og-ateliers.jpg",
-    lastmod: "2026-11-10",
+    lastmod: "2026-11-13",
     schemaType: "Course",
     content: {
-      leadParagraph: "Pas de slides théoriques. Pas de certificat inutile. À la fin de chaque atelier, vous avez un outil, un site, un agent — ou une offre — qui fonctionne.",
+      leadParagraph: "Atelier IA pratique, formation IA entreprise certifiée Qualiopi finançable OPCO, audit IA PME (Capital IA) et conformité IA Act : créer son agent IA métier et valoriser vos archives photo et vidéo avec du concret.",
       sections: [
         {
-          h2: "À qui s'adressent nos formations et ateliers IA ?",
+          h2: "À qui s'adressent nos ateliers IA pratiques, audits Capital IA et formations OPCO ?",
           paragraphs: [
             "Nos formations sont conçues pour les professionnels qui refusent les discours purement conceptuels et veulent acquérir des automatismes opérationnels concrets : cadres dirigeants, managers d'équipes, consultants indépendants, responsables marketing, communicants, créatifs et chefs de projet technique.",
             "Aucun prérequis en développement informatique n'est nécessaire. Nous adaptons la pédagogie aux réalités quotidiennes de votre organisation pour que chaque participant reparte avec des outils directement branchés sur ses propres tâches de travail."
@@ -236,17 +236,17 @@ export const routes: RouteData[] = [
   },
   {
     path: '/ressources',
-    title: "Ressources et Guides IA | Studio Alkymya",
-    description: "Accédez librement à notre veille technologique, guides d'agentification, fiches pratiques et frameworks stratégiques pour maîtriser l'IA en entreprise.",
-    h1: "Ressources & Guides IA",
+    title: "Ressources IA, Veille SEO & Outils Gratuits | Alkymya",
+    description: "Veille SEO IA, analyseurs intelligents gratuits, études Génération IA et création site éditorial par l'agence IA et studio création IA Alkymya.",
+    h1: "Ressources IA, veille SEO IA & outils gratuits.",
     ogImage: "https://alkymya.co/og-ressources.jpg",
-    lastmod: "2026-11-09",
+    lastmod: "2026-11-13",
     schemaType: "CollectionPage",
     content: {
-      leadParagraph: "Une bibliothèque ouverte de savoirs pratiques, méthodologies d'adoption de l'IA, frameworks d'agentification et veilles technologiques mises à jour chaque semaine.",
+      leadParagraph: "Bibliothèque ouverte de notre agence IA et studio création IA : veille SEO IA, création d'agents IA sur mesure, stratégie SEO et GEO (visibilité Google AI) et analyseurs gratuits.",
       sections: [
         {
-          h2: "Guides opérationnels et canevas téléchargeables",
+          h2: "Guides opérationnels, stratégie SEO GEO & agents IA",
           paragraphs: [
             "Nos ressources ont été élaborées pour vous permettre de franchir chaque palier de maturité technologique avec méthode et sérénité, de l'expérimentation isolée à l'industrialisation des agents IA."
           ],
@@ -273,17 +273,17 @@ export const routes: RouteData[] = [
   },
   {
     path: '/alchimistes',
-    title: "Nos Alchimistes | L'Équipe du Studio Alkymya",
-    description: "Rencontrez l'équipe Alkymya : Cyril Garnier, Léonie Egesipe, Véronique Landereau et Mariana Didier Laurent, experts de la transformation IA en entreprise.",
-    h1: "Nos Alchimistes",
+    title: "Experts IA France & Fondateurs Agence IA | Alkymya",
+    description: "Experts IA France : Cyril Garnier, Léonie Egesipe, Véronique Landereau et Mariana Didier Laurent. Accompagnement IA dirigeants et indépendants.",
+    h1: "Experts IA France : l'équipe de l'agence Alkymya.",
     ogImage: "https://alkymya.co/og-alchimistes.jpg",
-    lastmod: "2026-11-09",
+    lastmod: "2026-11-13",
     schemaType: "AboutPage",
     content: {
-      leadParagraph: "Derrière Alkymya, quatre personnalités complémentaires réunissent la vision stratégique d'entreprise, la rigueur pédagogique, l'audace de la direction artistique — et deux expertises de terrain, la santé et les services à la personne.",
+      leadParagraph: "Derrière Alkymya, quatre experts IA France assurent l'accompagnement IA dirigeants et indépendants, la stratégie SEO et GEO, l'innovation santé et les services à la personne.",
       sections: [
         {
-          h2: "Cyril Garnier — Directeur Associé & Fondateur",
+          h2: "Cyril Garnier — Expert IA France & Accompagnement Dirigeants",
           paragraphs: [
             "Consultant senior et enseignant certifié au sein des plus grandes institutions académiques françaises (HETIC, Ynov, IÉSEG, CFA Itis).",
             "Cyril apporte plus de 15 ans d'expérience dans l'accompagnement des dirigeants, la viabilité des modèles d'affaires technologiques et l'intégration des flux d'IA en entreprise (ex-directeur général de SNCF Développement)."
@@ -321,17 +321,17 @@ export const routes: RouteData[] = [
   },
   {
     path: '/partenaires',
-    title: "Partenaires Alkymya | Écosystème Académique & IA",
-    description: "Découvrez nos partenaires académiques et technologiques : Objectif Alternance, HETIC, Ynov Campus, IÉSEG, CFA Itis, SNCF et Morning.",
-    h1: "Nos Partenaires",
+    title: "Partenaires Formation IA & Grandes Écoles | Alkymya",
+    description: "Accompagnement intelligence artificielle avec Objectif Alternance, HETIC, Ynov, IÉSEG et CFA Itis. Agence IA et formation IA entreprise Qualiopi.",
+    h1: "Partenaires formation IA & alliances stratégiques.",
     ogImage: "https://alkymya.co/og-partenaires.jpg",
-    lastmod: "2026-11-09",
+    lastmod: "2026-11-13",
     schemaType: "WebPage",
     content: {
-      leadParagraph: "Alkymya s'entoure d'un écosystème d'excellence réunissant grandes écoles, acteurs de l'alternance, institutions publiques et entreprises pionnières.",
+      leadParagraph: "Notre agence IA et studio création IA collabore avec grandes écoles, fondations et acteurs de l'alternance pour déployer l'accompagnement intelligence artificielle et la formation IA entreprise certifiée Qualiopi.",
       sections: [
         {
-          h2: "Partenariat stratégique avec Objectif Alternance",
+          h2: "Partenariat formation IA stratégique avec Objectif Alternance",
           paragraphs: [
             "Nous formons une alliance étroite avec Objectif Alternance pour accompagner les étudiants et les entreprises d'accueil dans l'intégration réussie de compétences en IA générative.",
             "Nos modules permettent aux alternants de devenir de véritables accélérateurs d'innovation au sein de leurs équipes d'accueil."
@@ -353,17 +353,17 @@ export const routes: RouteData[] = [
   },
   {
     path: '/contact',
-    title: "Contactez Alkymya | Experts en IA Générative",
-    description: "Un projet d'acculturation IA, de formation ou de transformation numérique ? Contactez le studio Alkymya à Ozoir-la-Ferrière pour un échange personnalisé.",
-    h1: "Contactez Alkymya",
+    title: "Contact Experts IA & Devis Formation Qualiopi | Alkymya",
+    description: "Demandez un devis formation IA Qualiopi finançable OPCO ou un accompagnement IA dirigeants et indépendants auprès de nos experts IA France.",
+    h1: "Contactez nos experts IA France & devis Qualiopi.",
     ogImage: "https://alkymya.co/og-contact.jpg",
-    lastmod: "2026-11-09",
+    lastmod: "2026-11-13",
     schemaType: "ContactPage",
     content: {
-      leadParagraph: "Discutons de votre projet d'acculturation, de formation certifiante ou de transformation opérationnelle par l'intelligence artificielle.",
+      leadParagraph: "Échangez avec nos experts IA France pour un devis formation IA Qualiopi, un audit IA PME (Capital IA) ou un accompagnement IA dirigeants et indépendants.",
       sections: [
         {
-          h2: "Comment pouvons-nous vous accompagner ?",
+          h2: "Devis formation IA Qualiopi & accompagnement dirigeants",
           paragraphs: [
             "Que vous représentiez une grande école souhaitant intégrer un module IA innovant, une entreprise en quête d'optimisation de ses processus, ou un porteur de projet visant à lancer son MVP, notre équipe vous répond sous 24 à 48 heures."
           ],
@@ -391,17 +391,17 @@ export const routes: RouteData[] = [
   },
   {
     path: '/faq',
-    title: "FAQ Alkymya | Réponses sur Nos Formations IA",
-    description: "Toutes les réponses sur nos formations IA, la prise en charge OPCO Qualiopi, la création d'agents intelligents et l'offre New Business MVP Alkymya.",
-    h1: "Foire Aux Questions",
+    title: "FAQ Agence IA : Qualiopi, OPCO & Agents IA | Alkymya",
+    description: "Réponses sur notre formation IA entreprise certifiée Qualiopi, financement OPCO, création d'agents IA sur mesure et accompagnement dirigeants.",
+    h1: "FAQ agence IA, formation Qualiopi & agents IA.",
     ogImage: "https://alkymya.co/og-faq.jpg",
-    lastmod: "2026-11-09",
+    lastmod: "2026-11-13",
     schemaType: "FAQPage",
     content: {
-      leadParagraph: "Retrouvez ici toutes les informations essentielles concernant nos modalités pédagogiques, les financements OPCO et nos parcours d'accompagnement.",
+      leadParagraph: "Toutes les réponses de notre agence IA sur la formation IA entreprise certifiée Qualiopi finançable OPCO, la création d'agents IA sur mesure, la stratégie SEO et GEO et l'accompagnement dirigeants.",
       sections: [
         {
-          h2: "Questions fréquentes sur les formations et ateliers Alkymya",
+          h2: "Questions fréquentes : formation IA Qualiopi, OPCO & agents IA",
           paragraphs: [
             "Nous mettons un point d'honneur à apporter une transparence totale sur le contenu de nos formations, les profils des intervenants et les modalités financières."
           ],
@@ -421,17 +421,17 @@ export const routes: RouteData[] = [
   },
   {
     path: '/rejoindre',
-    title: "Rejoindre Alkymya | Opportunités et Talents IA",
-    description: "Rejoignez l'écosystème Alkymya : intervenants, formateurs IA, mentors de projet et alternants passionnés par la transformation technologique.",
-    h1: "Rejoignez l'Alchimie",
+    title: "Rejoindre l'Agence IA Alkymya | Experts IA France",
+    description: "Rejoignez notre studio création IA et agence IA : formateurs Qualiopi, créateurs d'agents IA sur mesure et experts IA France engagés.",
+    h1: "Rejoignez notre agence IA & experts IA France.",
     ogImage: "https://alkymya.co/og-rejoindre.jpg",
-    lastmod: "2026-11-09",
+    lastmod: "2026-11-13",
     schemaType: "WebPage",
     content: {
-      leadParagraph: "Alkymya grandit et accueille régulièrement de nouveaux formateurs, experts métiers, conférenciers et créateurs visuels animés par la passion de transmettre.",
+      leadParagraph: "Notre studio création IA et agence IA recrute des experts IA France, formateurs Qualiopi et concepteurs d'agents IA sur mesure pour l'accompagnement intelligence artificielle.",
       sections: [
         {
-          h2: "Pourquoi intervenir au sein du studio Alkymya ?",
+          h2: "Pourquoi rejoindre l'agence IA et studio création IA Alkymya ?",
           paragraphs: [
             "En rejoignant Alkymya, vous intervenez auprès de prestigieuses écoles et entreprises tout en bénéficiant de nos ressources pédagogiques et de notre écosystème."
           ],
@@ -457,17 +457,17 @@ export const routes: RouteData[] = [
   },
   {
     path: '/newbusiness',
-    title: "New Business MVP | Validation Client et Offre IA",
-    description: "Programme opérationnel de 6 mois pour bâtir votre MVP, tester votre offre auprès de vrais clients et piloter vos décisions selon la boussole stratégique.",
-    h1: "New Business MVP — De l'idée à la validation client",
+    title: "Accompagnement IA Dirigeants & MVP 6 Mois | Alkymya",
+    description: "Accompagnement IA dirigeants et indépendants sur 6 mois : création de MVP, validation client, agents IA sur mesure et stratégie SEO et GEO.",
+    h1: "Accompagnement IA dirigeants & New Business MVP.",
     ogImage: "https://alkymya.co/og-newbusiness.jpg",
-    lastmod: "2026-11-09",
+    lastmod: "2026-11-13",
     schemaType: "EducationalOccupationalProgram",
     content: {
-      leadParagraph: "L'accompagnement opérationnel de 6 mois pour concevoir votre MVP, tester votre offre auprès de vrais clients avant d'investir et décider avec lucidité : Continuer, Pivoter ou Accélérer.",
+      leadParagraph: "Accompagnement IA dirigeants et indépendants sur 6 mois : concevez votre MVP, déployez des agents IA sur mesure et validez votre stratégie SEO et GEO auprès de vrais clients.",
       sections: [
         {
-          h2: "À qui s'adresse l'offre New Business MVP ?",
+          h2: "À qui s'adresse cet accompagnement IA dirigeants et indépendants ?",
           paragraphs: [
             "Ce programme s'adresse aux créateurs d'entreprise, consultants indépendants en phase de lancement, repreneurs, intrapreneurs et professionnels porteurs d'un projet innovant qui refusent de s'enfermer dans l'effet tunnel du développement solitaire.",
             "Il est spécialement conçu pour ceux qui ont une idée forte mais manquent de méthode pour valider la réalité de la demande avant d'engager des milliers d'euros en développements informatiques ou en campagnes publicitaires hasardeuses."
@@ -524,17 +524,17 @@ export const routes: RouteData[] = [
   },
   {
     path: '/mentions-legales',
-    title: "Mentions Légales et RGPD | Studio Alkymya",
-    description: "Informations légales, hébergement, conditions d'utilisation et politique de protection des données personnelles RGPD du studio d'innovation IA Alkymya.co.",
-    h1: "Mentions Légales",
+    title: "Mentions Légales Agence IA & RGPD | Alkymya",
+    description: "Mentions légales de l'agence IA Alkymya, experts IA France à Ozoir-la-Ferrière : conformité RGPD, hébergement cloud et co-création assistée par IA.",
+    h1: "Mentions légales agence IA Alkymya & RGPD.",
     ogImage: "https://alkymya.co/og-mentions.jpg",
-    lastmod: "2026-11-09",
+    lastmod: "2026-11-13",
     schemaType: "WebPage",
     content: {
-      leadParagraph: "Consultez l'ensemble des informations légales régissant l'utilisation du site alkymya.co, ainsi que nos engagements stricts en matière de confidentialité et de conformité RGPD.",
+      leadParagraph: "Consultez les mentions légales de l'agence IA et studio création IA Alkymya (experts IA France à Ozoir-la-Ferrière) ainsi que notre politique stricte de confidentialité RGPD.",
       sections: [
         {
-          h2: "Éditeur du site et direction de publication",
+          h2: "Éditeur de l'agence IA et direction de publication",
           paragraphs: [
             "Le site internet alkymya.co est édité par le Studio Alkymya, domicilié à Ozoir-la-Ferrière, Seine-et-Marne (77330), France.",
             "Direction de la publication : Cyril Garnier et Léonie Egesipe. Contact : contact@alkymya.co."

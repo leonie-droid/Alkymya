@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { motion } from 'motion/react';
 import { Mail, MessageSquare } from 'lucide-react';
 import { Card } from '@/components/ui/card';
+import { SEO } from '../components/SEO';
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -69,18 +70,26 @@ export default function Contact() {
 
   return (
     <div className="bg-[#f4f6f9] text-[#1F4F6E] min-h-screen font-['Roboto',sans-serif] selection:bg-[#C06721] selection:text-white">
+      <SEO
+        title="Contact Experts IA & Devis Formation Qualiopi | Alkymya"
+        description="Demandez un devis formation IA Qualiopi finançable OPCO ou un accompagnement IA dirigeants et indépendants auprès de nos experts IA France."
+        keywords="devis formation IA Qualiopi, experts IA France, accompagnement IA dirigeants et indépendants, agence IA, formation IA finançable OPCO"
+        canonicalPath="/contact"
+        ogImage="https://res.cloudinary.com/dokzioyu4/image/upload/v1758192982/66cffcd8-15f1-415f-b423-9f428d63e22f_gqjd53.png"
+        type="ContactPage"
+      />
       {/* HERO SECTION */}
       <header className="bg-[#1F4F6E] text-white py-20 px-6 sm:px-10 text-center relative overflow-hidden">
         <div className="max-w-[700px] mx-auto relative z-10">
           <p className="text-[0.85rem] tracking-[0.15em] uppercase text-[#02ADAB] mb-4 font-normal">
-            Échange &amp; Collaboration · Alkymya
+            Experts IA France &amp; Devis Formation IA Qualiopi
           </p>
           <h1 className="font-light text-[2.4rem] sm:text-[2.6rem] leading-[1.2] mb-5 text-white">
-            Parlons de votre projet,<br />
-            <strong className="font-medium text-white">prenons contact.</strong>
+            Devis formation IA Qualiopi &amp;<br />
+            <strong className="font-medium text-white">experts IA France.</strong>
           </h1>
           <p className="text-[1.05rem] sm:text-[1.1rem] text-white/75 max-w-[620px] mx-auto leading-[1.7] font-light mb-8">
-            Une question sur nos ateliers, notre accompagnement New Business MVP ou un projet de commande artistique ? Écrivez-nous, nous vous répondons rapidement avec une recommandation claire.
+            Demandez un devis formation IA Qualiopi finançable OPCO, un audit IA PME ou un accompagnement IA dirigeants et indépendants avec notre agence IA basée en France.
           </p>
 
           <div className="pt-8 border-t border-white/10 grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
@@ -110,10 +119,10 @@ export default function Contact() {
           Formulaire de contact direct
         </p>
         <h2 className="text-[1.8rem] sm:text-[2rem] font-light mb-3 text-[#1F4F6E]">
-          Envoyez-nous un message <strong className="font-medium text-[#1F4F6E]">pour démarrer</strong>
+          Demandez un devis formation IA Qualiopi <strong className="font-medium text-[#1F4F6E]">ou un accompagnement</strong>
         </h2>
         <p className="text-[1.05rem] text-[#4a6a80] max-w-[640px] leading-[1.7] mb-10 font-normal">
-          Décrivez votre besoin ou votre contexte : nous étudions chaque demande personnellement.
+          Décrivez votre besoin en accompagnement intelligence artificielle, création d'agents IA sur mesure ou formation OPCO : nos experts IA France étudient chaque demande sous 24h.
         </p>
 
         <div className="bg-white rounded-[12px] shadow-[0_2px_16px_rgba(31,79,110,0.08)] p-8 sm:p-12 mb-12">
@@ -212,11 +221,11 @@ export default function Contact() {
           <div className="p-8 rounded-[12px] bg-white shadow-[0_2px_16px_rgba(31,79,110,0.08)] flex flex-col justify-between">
             <div>
               <span className="text-[0.72rem] font-medium tracking-[0.1em] uppercase text-[#02ADAB] block mb-2">
-                Directeur Associé
+                Directeur Associé &amp; Expert IA France
               </span>
-              <h3 className="text-[1.2rem] font-medium text-[#1F4F6E] mb-2">Cyril Garnier</h3>
+              <h3 className="text-[1.2rem] font-medium text-[#1F4F6E] mb-2">Cyril Garnier — Accompagnement Dirigeants</h3>
               <p className="text-[0.95rem] text-[#5a7a90] leading-[1.6] mb-5 font-normal">
-                Conseil stratégique, accompagnement New Business MVP, grands comptes et formations.
+                Conseil stratégique, accompagnement IA dirigeants et indépendants (New Business MVP), création d'agents IA et devis formation IA Qualiopi.
               </p>
             </div>
             <a href="mailto:cyril@alkymya.co" className="text-[0.9rem] font-medium text-[#02ADAB] hover:text-[#037971] transition-colors">
@@ -227,11 +236,11 @@ export default function Contact() {
           <div className="p-8 rounded-[12px] bg-white shadow-[0_2px_16px_rgba(31,79,110,0.08)] flex flex-col justify-between">
             <div>
               <span className="text-[0.72rem] font-medium tracking-[0.1em] uppercase text-[#02ADAB] block mb-2">
-                Chef de Projet Digital &amp; DA
+                Chef de Projet Digital &amp; Studio Création IA
               </span>
-              <h3 className="text-[1.2rem] font-medium text-[#1F4F6E] mb-2">Léonie Egesipe</h3>
+              <h3 className="text-[1.2rem] font-medium text-[#1F4F6E] mb-2">Léonie Egesipe — Direction Artistique IA</h3>
               <p className="text-[0.95rem] text-[#5a7a90] leading-[1.6] mb-5 font-normal">
-                Créations visuelles, direction artistique IA, gestion des ateliers et réseaux.
+                Création site éditorial, direction artistique photo vidéo IA, valorisation d'archives et coordination des ateliers pratiques.
               </p>
             </div>
             <a href="mailto:leonie@alkymya.co" className="text-[0.9rem] font-medium text-[#02ADAB] hover:text-[#037971] transition-colors">

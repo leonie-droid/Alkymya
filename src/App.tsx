@@ -8,6 +8,7 @@ import Ateliers from './pages/Ateliers';
 import Ressources from './pages/Ressources';
 import GenerateurIA from './pages/GenerateurIA';
 import Alchimistes from './pages/Alchimistes';
+import AlchimisteDetail from './pages/AlchimisteDetail';
 import Partenaires from './pages/Partenaires';
 import Contact from './pages/Contact';
 import FAQ from './pages/FAQ';
@@ -45,6 +46,7 @@ export default function App() {
              <Route path="/ia" element={<GenerateurIA />} />
              <Route path="/oeuvres" element={<Oeuvres />} />
              <Route path="/alchimistes" element={<Alchimistes />} />
+             <Route path="/alchimistes/:id" element={<AlchimisteDetail />} />
              <Route path="/ateliers" element={<Ateliers />} />
              <Route path="/ressources" element={<Ressources />} />
              <Route path="/partenaires" element={<Partenaires />} />

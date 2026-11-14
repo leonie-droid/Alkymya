@@ -9,22 +9,25 @@ const MentionsLegales: React.FC = () => {
   return (
     <div className="bg-[#f4f6f9] text-[#1F4F6E] min-h-screen font-['Roboto',sans-serif] selection:bg-[#C06721] selection:text-white">
       <SEO
-        title="Mentions Légales & Gestion des Cookies | Alkymya"
-        description="Consultez les informations légales, mentions obligatoires, hébergement et politique de protection des données (RGPD) du site Alkymya."
+        title="Mentions Légales Agence IA & RGPD | Alkymya"
+        description="Mentions légales de l'agence IA Alkymya, experts IA France à Ozoir-la-Ferrière : conformité RGPD, hébergement cloud et co-création assistée par IA."
+        keywords="agence IA, experts IA France, conformité IA Act, RGPD, studio création IA"
+        canonicalPath="/mentions-legales"
+        type="WebPage"
       />
 
       {/* HERO SECTION */}
       <header className="bg-[#1F4F6E] text-white py-20 px-6 sm:px-10 text-center relative overflow-hidden">
         <div className="max-w-[700px] mx-auto relative z-10">
           <p className="text-[0.85rem] tracking-[0.15em] uppercase text-[#02ADAB] mb-4 font-normal">
-            Cadre Juridique &amp; Transparence
+            Cadre Juridique &amp; Agence IA Alkymya
           </p>
           <h1 className="font-light text-[2.4rem] sm:text-[2.6rem] leading-[1.2] mb-5 text-white">
-            Mentions Légales &amp;<br />
+            Mentions légales agence IA &amp;<br />
             <strong className="font-medium text-white">données personnelles</strong>
           </h1>
           <p className="text-[1.05rem] sm:text-[1.1rem] text-white/75 max-w-[620px] mx-auto leading-[1.7] font-light mb-6">
-            Informations réglementaires, hébergement, droits de propriété intellectuelle et gestion des cookies conformément au RGPD.
+            Informations réglementaires de notre agence IA et studio création IA en France : éditeur, hébergement, conformité IA Act et gestion des cookies RGPD.
           </p>
           <span className="inline-block bg-white/10 text-white/80 text-xs font-medium uppercase tracking-wider px-3.5 py-1.5 rounded-[4px]">
             Version 2.2 · Mise à jour Mars 2026
@@ -42,11 +45,11 @@ const MentionsLegales: React.FC = () => {
               <div className="w-10 h-10 rounded-[8px] bg-[rgba(2,173,171,0.1)] text-[#02ADAB] flex items-center justify-center">
                 <User className="w-5 h-5" />
               </div>
-              <h2 className="text-[1.25rem] font-medium text-[#1F4F6E]">Éditeur du site</h2>
+              <h2 className="text-[1.25rem] font-medium text-[#1F4F6E]">Éditeur de l'agence IA Alkymya</h2>
             </div>
             <div className="space-y-2.5 text-[0.95rem] text-[#5a7a90]">
               <p><strong className="text-[#1F4F6E] font-medium">Nom :</strong> Cyril Garnier</p>
-              <p><strong className="text-[#1F4F6E] font-medium">Qualité :</strong> Enseignant-Explorateur, Expert IA &amp; Innovation</p>
+              <p><strong className="text-[#1F4F6E] font-medium">Qualité :</strong> Enseignant-Explorateur, Expert IA France &amp; Innovation</p>
               <p><strong className="text-[#1F4F6E] font-medium">Société :</strong> Cyril Garnier Consulting</p>
               <p><strong className="text-[#1F4F6E] font-medium">Email de contact :</strong> <a href="mailto:cyril@alkymya.co" className="text-[#02ADAB] hover:text-[#037971] font-medium">cyril@alkymya.co</a></p>
             </div>
@@ -58,7 +61,7 @@ const MentionsLegales: React.FC = () => {
               <div className="w-10 h-10 rounded-[8px] bg-[rgba(192,103,33,0.12)] text-[#C06721] flex items-center justify-center">
                 <Bot className="w-5 h-5" />
               </div>
-              <h2 className="text-[1.25rem] font-medium text-[#1F4F6E]">Co-création assistée par IA</h2>
+              <h2 className="text-[1.25rem] font-medium text-[#1F4F6E]">Studio création IA &amp; co-création</h2>
             </div>
             <p className="text-[0.95rem] text-[#5a7a90] leading-[1.6]">
               Ce site web, ses outils interactifs et ses supports de recherche ont été co-créés avec l'assistance d'agents d'intelligence artificielle :

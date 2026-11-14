@@ -86,24 +86,28 @@ export default function Partenaires() {
   return (
     <div className="bg-[#f4f6f9] text-[#1F4F6E] min-h-screen font-['Roboto',sans-serif] selection:bg-[#C06721] selection:text-white">
       <SEO
-        title="Nos Partenaires & Alliances Stratégiques | Alkymya"
-        description="Découvrez les universités, grandes écoles, fondations et entreprises qui collaborent avec Alkymya pour former les talents de demain et propulser l'IA générative."
+        title="Partenaires Formation IA & Grandes Écoles | Alkymya"
+        description="Accompagnement intelligence artificielle avec Objectif Alternance, HETIC, Ynov, IÉSEG et CFA Itis. Agence IA et formation IA entreprise Qualiopi."
+        keywords="agence IA, accompagnement intelligence artificielle, formation IA entreprise certifiée Qualiopi, experts IA France, studio création IA"
+        canonicalPath="/partenaires"
+        ogImage="https://res.cloudinary.com/dokzioyu4/image/upload/v1788507182/logo_objectif_code_u3otua.png"
+        type="WebPage"
       />
 
       {/* HERO SECTION DESIGN SYSTEM */}
       <header className="bg-[#1F4F6E] text-white py-20 px-6 sm:px-10 text-center relative overflow-hidden">
         <div className="max-w-[700px] mx-auto relative z-10">
           <p className="text-[0.85rem] tracking-[0.15em] uppercase text-[#02ADAB] mb-4 font-normal">
-            Alliances Stratégiques &amp; Écosystème
+            Agence IA &amp; Partenaires Formation Qualiopi
           </p>
 
           <h1 className="font-light text-[2.4rem] sm:text-[2.6rem] leading-[1.2] mb-5 text-white">
-            Nos partenaires &amp;<br />
-            <strong className="font-medium text-white">synergies d'avenir.</strong>
+            Partenaires formation IA &amp;<br />
+            <strong className="font-medium text-white">alliances d'agence IA.</strong>
           </h1>
 
           <p className="text-[1.05rem] sm:text-[1.1rem] text-white/75 max-w-[600px] mx-auto leading-[1.7] font-light mb-8">
-            Grandes écoles, universités, fondations d'entreprise et acteurs de l'écosystème : nous unissons nos expertises pour catalyser l'innovation responsable et former les talents à l'IA générative.
+            Notre agence IA et studio création IA collabore avec grandes écoles, fondations et acteurs de l'alternance pour déployer l'accompagnement intelligence artificielle et la formation IA entreprise certifiée Qualiopi.
           </p>
 
           {/* Stats Ribbon */}
@@ -134,10 +138,10 @@ export default function Partenaires() {
           Partenaire Formation &amp; Insertion
         </p>
         <h2 className="text-[1.8rem] sm:text-[2rem] font-light mb-3 text-[#1F4F6E]">
-          Alliance stratégique <strong className="font-medium text-[#1F4F6E]">en vedette</strong>
+          Partenariat formation IA <strong className="font-medium text-[#1F4F6E]">et insertion en vedette</strong>
         </h2>
         <p className="text-[1.05rem] text-[#4a6a80] max-w-[640px] leading-[1.7] mb-10 font-normal">
-          Un accompagnement conjoint entre insertion professionnelle, alternance et maîtrise concrète de l'intelligence artificielle.
+          Un accompagnement intelligence artificielle conjoint entre insertion professionnelle, alternance et atelier IA pratique certifié Qualiopi.
         </p>
 
         <motion.div
@@ -160,7 +164,7 @@ export default function Partenaires() {
                 <div className="h-32 md:h-40 flex items-center justify-center">
                   <img
                     src="https://res.cloudinary.com/dokzioyu4/image/upload/v1788507182/logo_objectif_code_u3otua.png"
-                    alt="Logo Objectif Alternance"
+                    alt="Logo Objectif Alternance — partenaire formation IA entreprise certifiée Qualiopi et insertion avec Alkymya"
                     className="max-h-full max-w-full object-contain group-hover:scale-105 transition-transform duration-300"
                     referrerPolicy="no-referrer"
                   />
@@ -217,10 +221,10 @@ export default function Partenaires() {
           Réseau Académique &amp; Économique
         </p>
         <h2 className="text-[1.8rem] sm:text-[2rem] font-light mb-3 text-[#1F4F6E]">
-          Ils nous font confiance &amp; <strong className="font-medium text-[#1F4F6E]">co-construisent avec nous</strong>
+          Écoles &amp; entreprises partenaires <strong className="font-medium text-[#1F4F6E]">de notre agence IA</strong>
         </h2>
         <p className="text-[1.05rem] text-[#4a6a80] max-w-[640px] leading-[1.7] mb-12 font-normal">
-          Grandes écoles, universités, entreprises et institutions qui partagent la vision d'une IA créative et responsable.
+          Grandes écoles, universités, entreprises et institutions qui déploient nos ateliers IA pratiques et notre accompagnement intelligence artificielle.
         </p>
 
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6">
@@ -236,7 +240,7 @@ export default function Partenaires() {
                 <div className="w-full flex-1 flex items-center justify-center py-4">
                   <img
                     src={partenaire.logo}
-                    alt={partenaire.name}
+                    alt={`Logo ${partenaire.name} — ${partenaire.category}, partenaire agence IA Alkymya`}
                     className="max-w-[130px] max-h-16 object-contain grayscale group-hover:grayscale-0 transition-all duration-300 group-hover:scale-105"
                     referrerPolicy="no-referrer"
                   />
@@ -264,7 +268,7 @@ export default function Partenaires() {
           Piliers de collaboration
         </p>
         <h2 className="text-[1.8rem] sm:text-[2rem] font-light mb-10 text-[#1F4F6E]">
-          Comment nous <strong className="font-medium text-[#1F4F6E]">intervenons ensemble</strong>
+          Comment nos experts IA France <strong className="font-medium text-[#1F4F6E]">interviennent ensemble</strong>
         </h2>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-7">
@@ -272,7 +276,7 @@ export default function Partenaires() {
             <div className="w-12 h-12 rounded-[10px] bg-[#02ADAB]/15 text-[#02ADAB] flex items-center justify-center mb-6">
               <GraduationCap className="w-6 h-6" />
             </div>
-            <h3 className="text-[1.15rem] font-medium text-[#1F4F6E] mb-3">Enseignement Supérieur</h3>
+            <h3 className="text-[1.15rem] font-medium text-[#1F4F6E] mb-3">Enseignement Supérieur &amp; Atelier IA</h3>
             <p className="text-[0.95rem] text-[#5a7a90] leading-[1.6] font-normal">
               Modules certifiants, masterclasses et jurys d'innovation dans les écoles de commerce, de design et d'ingénieurs.
             </p>
@@ -282,9 +286,9 @@ export default function Partenaires() {
             <div className="w-12 h-12 rounded-[10px] bg-[#02ADAB]/15 text-[#02ADAB] flex items-center justify-center mb-6">
               <Building2 className="w-6 h-6" />
             </div>
-            <h3 className="text-[1.15rem] font-medium text-[#1F4F6E] mb-3">Entreprises &amp; Fondations</h3>
+            <h3 className="text-[1.15rem] font-medium text-[#1F4F6E] mb-3">Entreprises &amp; Formation IA Qualiopi</h3>
             <p className="text-[0.95rem] text-[#5a7a90] leading-[1.6] font-normal">
-              Acculturation des équipes métiers, prototypage de cas d'usage IA et programmes de mécénat de compétences.
+              Acculturation des équipes métiers, création d'agents IA sur mesure, prototypage et formation IA finançable OPCO.
             </p>
           </div>
 
@@ -292,9 +296,9 @@ export default function Partenaires() {
             <div className="w-12 h-12 rounded-[10px] bg-[#02ADAB]/15 text-[#02ADAB] flex items-center justify-center mb-6">
               <Award className="w-6 h-6" />
             </div>
-            <h3 className="text-[1.15rem] font-medium text-[#1F4F6E] mb-3">Recherche &amp; Territoires</h3>
+            <h3 className="text-[1.15rem] font-medium text-[#1F4F6E] mb-3">Création Site Éditorial &amp; Territoires</h3>
             <p className="text-[0.95rem] text-[#5a7a90] leading-[1.6] font-normal">
-              Études empiriques sur les usages (Génération IA 2024-2026) et déploiement de solutions d'IA locale ancrées dans les territoires.
+              Études empiriques sur les usages (Génération IA 2024-2026) et déploiement de médias optimisés en stratégie SEO et GEO.
             </p>
           </div>
         </div>
@@ -309,7 +313,7 @@ export default function Partenaires() {
           Nouvelles Alliances
         </p>
         <h2 className="text-[2rem] font-light mb-3.5 text-white">
-          Bâtissons ensemble <strong className="font-medium text-white">votre prochain programme IA</strong>
+          Bâtissons votre <strong className="font-medium text-white">programme formation IA Qualiopi</strong>
         </h2>
         <p className="text-[1.05rem] text-white/85 max-w-[560px] mx-auto mb-8 leading-[1.7] font-light">
           Vous êtes une école, une université, une entreprise ou une institution ? Échangeons sur les synergies possibles pour former vos apprenants ou accélérer vos équipes.

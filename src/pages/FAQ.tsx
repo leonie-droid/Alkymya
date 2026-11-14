@@ -279,20 +279,27 @@ export default function FAQ() {
 
   return (
     <div className="bg-[#f4f6f9] text-[#1F4F6E] min-h-screen font-['Roboto',sans-serif] selection:bg-[#C06721] selection:text-white">
-      <SEO type="FAQPage" faqData={flattenedFaq} />
+      <SEO
+        title="FAQ Agence IA : Qualiopi, OPCO & Agents IA | Alkymya"
+        description="Réponses sur notre formation IA entreprise certifiée Qualiopi, financement OPCO, création d'agents IA sur mesure et accompagnement dirigeants."
+        keywords="formation IA entreprise certifiée Qualiopi, formation IA finançable OPCO, création d'agents IA sur mesure, agence IA, accompagnement IA dirigeants et indépendants"
+        canonicalPath="/faq"
+        type="FAQPage"
+        faqData={flattenedFaq}
+      />
 
       {/* HERO SECTION */}
       <header className="bg-[#1F4F6E] text-white py-20 px-6 sm:px-10 text-center relative overflow-hidden">
         <div className="max-w-[700px] mx-auto relative z-10">
           <p className="text-[0.85rem] tracking-[0.15em] uppercase text-[#02ADAB] mb-4 font-normal">
-            Foire aux Questions · Alkymya
+            FAQ Agence IA · Qualiopi, OPCO &amp; Agents IA
           </p>
           <h1 className="font-light text-[2.4rem] sm:text-[2.6rem] leading-[1.2] mb-5 text-white">
-            Toutes vos questions sur<br />
-            <strong className="font-medium text-white">nos expertises &amp; formations.</strong>
+            FAQ agence IA : Qualiopi, OPCO &amp;<br />
+            <strong className="font-medium text-white">agents IA sur mesure.</strong>
           </h1>
           <p className="text-[1.05rem] sm:text-[1.1rem] text-white/75 max-w-[620px] mx-auto leading-[1.7] font-light mb-8">
-            Formations certifiées Qualiopi, financements OPCO, accompagnement New Business MVP et outils libres : retrouvez ici les réponses directes et pragmatiques à vos questions.
+            Toutes les réponses sur la formation IA entreprise certifiée Qualiopi, la formation IA finançable OPCO, la création d'agents IA sur mesure et l'accompagnement IA dirigeants et indépendants.
           </p>
 
           <div className="pt-8 border-t border-white/10 grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
@@ -355,7 +362,7 @@ export default function FAQ() {
       {/* CTA FINAL : BANNIÈRE ORANGE #C06721 */}
       <div className="bg-[#C06721] text-white text-center py-[70px] px-10">
         <h2 className="text-[2rem] font-light mb-3.5 text-white">
-          Vous n'avez pas trouvé <strong className="font-medium text-white">votre réponse ?</strong>
+          Demandez votre <strong className="font-medium text-white">devis formation IA Qualiopi</strong>
         </h2>
         <p className="text-[1.05rem] text-white/80 max-w-[540px] mx-auto mb-8 leading-[1.7] font-light">
           Contactez-nous directement. Nous prenons le temps d'étudier votre cas spécifique et de vous orienter vers la solution la plus adaptée.

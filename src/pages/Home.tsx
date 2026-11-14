@@ -9,8 +9,10 @@ export default function Home() {
   return (
     <div className="bg-[#f4f6f9] text-[#1F4F6E] min-h-screen font-['Roboto',sans-serif] selection:bg-[#C06721] selection:text-white">
       <SEO
-        title="Alkymya | L'art de la transformation IA"
-        description="Alkymya fusionne créativité sensible et expertise technologique pour propulser les organisations et la Génération IA vers l'excellence. Ateliers, formation, conseil et créations numériques."
+        title="Agence IA & Studio Création IA | Alkymya"
+        description="Agence IA et studio création IA : accompagnement intelligence artificielle, création d'agents IA sur mesure, stratégie SEO et GEO Google AI."
+        canonicalPath="/"
+        ogImage="https://alkymya.co/og-image.jpg"
       />
 
       <Hero />
@@ -20,7 +22,7 @@ export default function Home() {
         <div className="bg-white rounded-[12px] overflow-hidden shadow-[0_2px_16px_rgba(31,79,110,0.08)] p-3 sm:p-4">
           <img 
             src="https://res.cloudinary.com/dokzioyu4/image/upload/v1780154614/DuAFdcjz_bo9gcq.png" 
-            alt="Alkymya Visual Showcase" 
+            alt="Vitrine du studio création IA Alkymya — agence IA, accompagnement intelligence artificielle et stratégie SEO GEO" 
             className="w-full h-auto object-cover rounded-[8px]"
             referrerPolicy="no-referrer"
           />
@@ -36,10 +38,10 @@ export default function Home() {
           Résultats prouvés &amp; satisfaction
         </p>
         <h2 className="text-[1.8rem] sm:text-[2rem] font-light mb-3 text-[#1F4F6E]">
-          Notre impact <strong className="font-medium text-[#1F4F6E]">sur le terrain</strong>
+          Impact de notre agence IA <strong className="font-medium text-[#1F4F6E]">sur le terrain</strong>
         </h2>
         <p className="text-[1.05rem] text-[#4a6a80] max-w-[640px] leading-[1.7] mb-12 font-normal">
-          Des résultats mesurés et une adhésion exceptionnelle auprès de nos apprenants et clients (étude 2024-2025).
+          Des résultats mesurés en accompagnement intelligence artificielle, création d'agents IA sur mesure et stratégie SEO et GEO auprès de nos clients et apprenants.
         </p>
         
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -54,9 +56,9 @@ export default function Home() {
               className="bg-white rounded-[12px] p-7 shadow-[0_2px_16px_rgba(31,79,110,0.08)] hover:shadow-[0_8px_32px_rgba(31,79,110,0.14)] hover:-translate-y-1 transition-all duration-200 text-center flex flex-col justify-between"
             >
               <div>
-                <span className="text-[0.72rem] font-medium tracking-[0.1em] uppercase text-[#02ADAB] block mb-2">
+                <h3 className="text-[0.72rem] font-medium tracking-[0.1em] uppercase text-[#02ADAB] block mb-2">
                   {stat.highlight}
-                </span>
+                </h3>
                 <div className="text-[2.2rem] sm:text-[2.5rem] font-light text-[#C06721] mb-2 leading-none">
                   {stat.value}
                 </div>
@@ -75,10 +77,10 @@ export default function Home() {
       {/* Signature Copper CTA Banner */}
       <div className="bg-[#C06721] text-white text-center py-[70px] px-10">
         <h2 className="text-[2rem] font-light mb-3.5 text-white">
-          Parlons de vos enjeux <strong className="font-medium text-white">et formons vos équipes</strong>
+          Parlons de votre projet <strong className="font-medium text-white">d'accompagnement intelligence artificielle</strong>
         </h2>
         <p className="text-[1.05rem] text-white/80 max-w-[540px] mx-auto mb-8 leading-[1.7] font-light">
-          Atelier d'initiation, acculturation d'un département, ou accompagnement New Business MVP : nous concevons le parcours adapté à vos objectifs.
+          Studio création IA, création d'agents IA sur mesure ou stratégie SEO et GEO (visibilité Google AI) : concevons le parcours adapté à vos objectifs.
         </p>
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
           <Link

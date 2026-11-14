@@ -5,25 +5,25 @@ import { Link } from 'react-router-dom';
 
 const pillars = [
   { 
-    name: 'Explorer', 
+    name: 'Explorer — Accompagnement intelligence artificielle', 
     icon: Compass,
-    description: "Formations sur-mesure et ateliers pratiques pour démystifier l'IA et explorer son potentiel réel pour votre activité.",
+    description: "Ateliers pratiques et accompagnement intelligence artificielle pour démystifier l'IA et activer son potentiel réel dans votre entreprise.",
     points: [
-      "Formations grandes écoles & entreprises",
+      "Formations grandes écoles & entreprises Qualiopi",
       "Ateliers pratiques « IA pour les pros »",
       "Approche pédagogique immersive",
       "Veille prospective et inspiration continue"
     ],
     link: "/ateliers",
-    linkText: "Voir les ateliers"
+    linkText: "Voir les ateliers IA"
   },
   { 
-    name: 'Transformer', 
+    name: "Transformer — Création d'agents IA sur mesure", 
     icon: Rocket,
-    description: "Du conseil à la réalisation. Nous vous aidons à passer de l'idée au prototype fonctionnel en intégrant l'IA au cœur de vos processus.",
+    description: "Du conseil à la production. Notre agence IA conçoit vos prototypes MVP, automatisations et création d'agents IA sur mesure.",
     points: [
       "Advisory pour startups & entreprises",
-      "Ateliers de prototypage rapide (MVP)",
+      "Création d'agents IA sur mesure & MVP",
       "Stratégie d'intégration de l'IA générative",
       "Transformation organisationnelle sur-mesure"
     ],
@@ -31,17 +31,17 @@ const pillars = [
     linkText: "Programme MVP 6 mois"
   },
   { 
-    name: 'Partager', 
+    name: 'Partager — Studio création IA & stratégie SEO GEO', 
     icon: Users,
-    description: "Conseil stratégique et mentorat pour acculturer les équipes, développer les talents et diffuser les pratiques d'alchimie créative.",
+    description: "Studio création IA et mentorat pour acculturer vos équipes et bâtir votre stratégie SEO et GEO (visibilité Google AI).",
     points: [
       "Mentorat personnalisé en binôme",
-      "Recrutement et évaluation de talents IA",
-      "Production d'œuvres numériques hybrides",
+      "Stratégie SEO et GEO & visibilité Google AI",
+      "Studio création IA & œuvres numériques hybrides",
       "Partage d'études et de ressources libres"
     ],
     link: "/alchimistes",
-    linkText: "Rencontrer l'équipe"
+    linkText: "Rencontrer les experts IA"
   },
 ];
 
@@ -52,14 +52,14 @@ export default function Hero() {
       <header className="bg-[#1F4F6E] text-white py-20 px-6 sm:px-10 text-center relative overflow-hidden">
         <div className="max-w-[700px] mx-auto relative z-10">
           <p className="text-[0.85rem] tracking-[0.15em] uppercase text-[#02ADAB] mb-4 font-normal">
-            Collectif d'Alchimistes IA · Création & Stratégie
+            Agence IA &amp; Studio Création IA · France
           </p>
           <h1 className="font-light text-[2.4rem] sm:text-[2.6rem] leading-[1.2] mb-5 text-white">
-            L'art de la transformation IA.<br />
-            <strong className="font-medium text-white">Créativité sensible &amp; résultats concrets.</strong>
+            Agence IA &amp; studio création IA :<br />
+            <strong className="font-medium text-white">l'art de la transformation.</strong>
           </h1>
           <p className="text-[1.05rem] sm:text-[1.1rem] text-white/75 max-w-[620px] mx-auto leading-[1.7] font-light mb-8">
-            Alkymya fusionne créativité sensible et expertise technologique pour propulser les organisations et la Génération IA vers l'excellence.
+            Alkymya déploie votre accompagnement intelligence artificielle sur mesure : création d'agents IA sur mesure, stratégie SEO et GEO pour votre visibilité Google AI, et formations certifiées.
           </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12">
@@ -102,13 +102,13 @@ export default function Hero() {
       {/* 3 Pillars Section */}
       <section className="max-w-[1100px] mx-auto py-[70px] px-6">
         <p className="text-[0.75rem] tracking-[0.18em] uppercase text-[#02ADAB] mb-2.5 font-medium text-center">
-          Notre méthode en 3 piliers
+          Agence IA · Notre méthode en 3 piliers
         </p>
         <h2 className="text-[1.8rem] sm:text-[2rem] font-light mb-3 text-[#1F4F6E] text-center">
-          Explorer, Transformer, <strong className="font-medium text-[#1F4F6E]">Partager</strong>
+          Accompagnement intelligence artificielle &amp; <strong className="font-medium text-[#1F4F6E]">création d'agents IA</strong>
         </h2>
         <p className="text-[1.05rem] text-[#4a6a80] max-w-[640px] leading-[1.7] mb-12 font-normal text-center mx-auto">
-          Une démarche pragmatique et humaine pour intégrer l'IA générative sans perdre votre singularité.
+          Notre agence IA et studio création IA allie stratégie SEO et GEO (visibilité Google AI) et déploiement opérationnel sans perdre votre singularité.
         </p>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-7">

@@ -1,27 +1,107 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 
 interface SEOProps {
-  type?: 'WebPage' | 'FAQPage' | 'LocalBusiness' | 'EducationalOrganization';
+  title?: string;
+  description?: string;
+  keywords?: string;
+  canonicalPath?: string;
+  ogImage?: string;
+  type?:
+    | 'WebPage'
+    | 'FAQPage'
+    | 'LocalBusiness'
+    | 'EducationalOrganization'
+    | 'CollectionPage'
+    | 'Course'
+    | 'AboutPage'
+    | 'ContactPage'
+    | 'WebApplication'
+    | 'EducationalOccupationalProgram';
   faqData?: Array<{ question: string; answer: string }>;
 }
 
-export const SEO: React.FC<SEOProps> = ({ type = 'WebPage', faqData }) => {
+function upsertMeta(attr: 'name' | 'property', key: string, content: string) {
+  if (!content) return;
+  let el = document.head.querySelector(`meta[${attr}="${key}"]`) as HTMLMetaElement | null;
+  if (!el) {
+    el = document.createElement('meta');
+    el.setAttribute(attr, key);
+    document.head.appendChild(el);
+  }
+  el.setAttribute('content', content);
+}
+
+function upsertCanonical(href: string) {
+  if (!href) return;
+  let link = document.head.querySelector('link[rel="canonical"]') as HTMLLinkElement | null;
+  if (!link) {
+    link = document.createElement('link');
+    link.setAttribute('rel', 'canonical');
+    document.head.appendChild(link);
+  }
+  link.setAttribute('href', href);
+}
+
+export const SEO: React.FC<SEOProps> = ({
+  title,
+  description,
+  keywords,
+  canonicalPath,
+  ogImage,
+  type = 'WebPage',
+  faqData,
+}) => {
+  useEffect(() => {
+    if (title) {
+      document.title = title;
+      upsertMeta('property', 'og:title', title);
+      upsertMeta('name', 'twitter:title', title);
+    }
+    if (description) {
+      upsertMeta('name', 'description', description);
+      upsertMeta('property', 'og:description', description);
+      upsertMeta('name', 'twitter:description', description);
+    }
+    if (keywords) {
+      upsertMeta('name', 'keywords', keywords);
+    }
+    if (ogImage) {
+      upsertMeta('property', 'og:image', ogImage);
+      upsertMeta('name', 'twitter:image', ogImage);
+    }
+    if (canonicalPath || title) {
+      const origin = 'https://alkymya.co';
+      const path =
+        canonicalPath !== undefined
+          ? canonicalPath === '/'
+            ? '/'
+            : `${canonicalPath.replace(/\/$/, '')}/`
+          : typeof window !== 'undefined'
+          ? window.location.pathname
+          : '/';
+      const fullUrl = `${origin}${path}`;
+      upsertCanonical(fullUrl);
+      upsertMeta('property', 'og:url', fullUrl);
+      upsertMeta('name', 'twitter:url', fullUrl);
+    }
+  }, [title, description, keywords, canonicalPath, ogImage]);
+
   const localBusinessSchema = {
     "@context": "https://schema.org",
-    "@type": "LocalBusiness",
-    "name": "Alkymya",
+    "@type": ["LocalBusiness", "ProfessionalService"],
+    "name": "Alkymya — Agence IA & Studio Création IA",
     "image": "https://res.cloudinary.com/dokzioyu4/image/upload/v1758096912/logo_principal_bleu_gbnyuu.png",
-    "@id": "https://alkymya.co",
+    "@id": "https://alkymya.co/#localbusiness",
     "url": "https://alkymya.co",
-    "telephone": "",
+    "description": "Agence IA et studio création IA en France : accompagnement intelligence artificielle, création d'agents IA sur mesure, stratégie SEO et GEO Google AI et formation IA Qualiopi OPCO.",
     "address": {
       "@type": "PostalAddress",
-      "streetAddress": "",
       "addressLocality": "Ozoir-la-Ferrière",
       "postalCode": "77330",
       "addressRegion": "Seine-et-Marne",
       "addressCountry": "FR"
     },
+    "areaServed": ["Seine-et-Marne", "Île-de-France", "France"],
     "geo": {
       "@type": "GeoCoordinates",
       "latitude": 48.7667,
@@ -29,13 +109,7 @@ export const SEO: React.FC<SEOProps> = ({ type = 'WebPage', faqData }) => {
     },
     "openingHoursSpecification": {
       "@type": "OpeningHoursSpecification",
-      "dayOfWeek": [
-        "Monday",
-        "Tuesday",
-        "Wednesday",
-        "Thursday",
-        "Friday"
-      ],
+      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
       "opens": "09:00",
       "closes": "18:00"
     }
@@ -45,27 +119,34 @@ export const SEO: React.FC<SEOProps> = ({ type = 'WebPage', faqData }) => {
     "@context": "https://schema.org",
     "@type": "EducationalOrganization",
     "name": "Alkymya",
-    "description": "Expert enseignant en Intelligence Artificielle et Innovation Pédagogique pour les Grandes Écoles.",
+    "description": "Experts IA France : formation IA entreprise certifiée Qualiopi finançable OPCO, atelier IA pratique et accompagnement IA dirigeants et indépendants.",
     "url": "https://alkymya.co",
     "address": {
       "@type": "PostalAddress",
       "addressLocality": "Ozoir-la-Ferrière",
-      "addressRegion": "Seine-et-Marne"
+      "addressRegion": "Seine-et-Marne",
+      "addressCountry": "FR"
     }
   };
 
-  const faqSchema = faqData ? {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": faqData.map(item => ({
-      "@type": "Question",
-      "name": item.question,
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": item.answer
+  const faqSchema = faqData
+    ? {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": faqData.map((item) => ({
+          "@type": "Question",
+          "name": item.question,
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": item.answer
+          }
+        }))
       }
-    }))
-  } : null;
+    : null;
+
+  const pageUrl = canonicalPath
+    ? `https://alkymya.co${canonicalPath === '/' ? '/' : `${canonicalPath.replace(/\/$/, '')}/`}`
+    : 'https://alkymya.co/';
 
   return (
     <>
@@ -84,18 +165,23 @@ export const SEO: React.FC<SEOProps> = ({ type = 'WebPage', faqData }) => {
           {JSON.stringify(faqSchema)}
         </script>
       )}
-      <script type="application/ld+json">
-        {JSON.stringify({
-          "@context": "https://schema.org",
-          "@type": "WebPage",
-          "name": "Alkymya - Créateurs d'avenir par l'IA",
-          "description": "Studio d'innovation spécialisé dans l'IA, l'agentification et la formation en Seine-et-Marne.",
-          "publisher": {
-            "@type": "Organization",
-            "name": "Alkymya"
-          }
-        })}
-      </script>
+      {(title || description) && (
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": type === 'LocalBusiness' || type === 'EducationalOrganization' ? 'WebPage' : type,
+            "name": title || "Agence IA & Studio Création IA | Alkymya",
+            "description": description || "Agence IA et studio création IA : accompagnement intelligence artificielle, création d'agents IA sur mesure, stratégie SEO et GEO.",
+            "url": pageUrl,
+            "inLanguage": "fr-FR",
+            "publisher": {
+              "@type": "Organization",
+              "name": "Alkymya",
+              "url": "https://alkymya.co"
+            }
+          })}
+        </script>
+      )}
     </>
   );
 };

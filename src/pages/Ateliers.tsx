@@ -30,21 +30,25 @@ export default function Ateliers() {
   return (
     <div className="bg-[#f4f6f9] text-[#1F4F6E] min-h-screen font-['Roboto',sans-serif] selection:bg-[#C06721] selection:text-white">
       <SEO
-        title="Nos Ateliers — Alkymya"
-        description="Vous repartez avec quelque chose de réel. Pas de slides théoriques. Ateliers individuels et formations d'équipe certifiées Qualiopi finançables OPCO."
+        title="Atelier IA Pratique & Formation Qualiopi OPCO | Alkymya"
+        description="Atelier IA pratique, formation IA entreprise certifiée Qualiopi finançable OPCO, audit IA PME Capital IA, agent IA métier et conformité IA Act."
+        canonicalPath="/ateliers"
+        ogImage="https://alkymya.co/og-ateliers.jpg"
+        type="Course"
       />
 
       {/* HERO — Exact Maquette */}
       <header className="bg-[#1F4F6E] text-white py-20 px-6 sm:px-10 text-center relative overflow-hidden">
         <div className="max-w-[700px] mx-auto relative z-10">
           <p className="text-[0.85rem] tracking-[0.15em] uppercase text-[#02ADAB] mb-4 font-normal">
-            Nos ateliers
+            Atelier IA pratique &amp; formation IA entreprise certifiée Qualiopi
           </p>
           <h1 className="font-light text-[2.4rem] sm:text-[2.6rem] leading-[1.2] mb-5 text-white">
-            Vous repartez avec <strong className="font-medium text-white">quelque chose de réel.</strong>
+            Atelier IA pratique &amp; formation Qualiopi :<br />
+            <strong className="font-medium text-white">repartez avec du réel.</strong>
           </h1>
           <p className="text-[1.05rem] sm:text-[1.1rem] text-white/75 max-w-[620px] mx-auto leading-[1.7] font-light">
-            Pas de slides théoriques. Pas de certificat inutile. À la fin de chaque atelier, vous avez un outil, un site, un agent — ou une offre — qui fonctionne.
+            Formation IA finançable OPCO, audit IA PME (Capital IA), créer son agent IA métier, valorisation d'archives photo et vidéo et conformité IA Act sans slides théoriques.
           </p>
         </div>
       </header>
@@ -78,14 +82,14 @@ export default function Ateliers() {
       {/* ATELIERS INDIVIDUELS */}
       <section id="individuels" className="max-w-[1100px] mx-auto py-[70px] px-6">
         <p className="text-[0.75rem] tracking-[0.18em] uppercase text-[#02ADAB] mb-2.5 font-medium">
-          Ateliers individuels
+          Atelier IA pratique sur mesure
         </p>
         <h2 className="text-[1.9rem] font-light mb-3.5 text-[#1F4F6E] leading-tight">
-          Trois parcours,<br />
+          Ateliers IA pratiques &amp; audit Capital IA,<br />
           <strong className="font-medium text-[#1F4F6E]">un livrable concret à chaque fois</strong>
         </h2>
         <p className="text-[1.05rem] text-[#4a6a80] max-w-[640px] leading-[1.7] mb-12 font-normal">
-          Ces ateliers s'adressent aux indépendants, créateurs et dirigeants qui veulent construire quelque chose de personnel — pas former une équipe. On travaille ensemble, sur votre projet, à votre rythme.
+          Chaque atelier IA pratique s'adresse aux indépendants et dirigeants souhaitant créer son agent IA métier, piloter un audit IA PME (Capital IA) ou assurer la valorisation d'archives photo et vidéo.
         </p>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6">
@@ -101,7 +105,7 @@ export default function Ateliers() {
                   Nouveau
                 </span>
                 <h3 className="text-[1.15rem] font-medium text-[#1F4F6E] mb-2">
-                  Vos archives en ligne
+                  Valorisation d'archives photo et vidéo en ligne
                 </h3>
                 <p className="text-[1rem] text-[#C06721] font-normal leading-[1.4] mb-0">
                   Transformez vos photos, vidéos ou écrits dormants en un site qui attire une audience.
@@ -157,7 +161,7 @@ export default function Ateliers() {
                   Signature
                 </span>
                 <h3 className="text-[1.15rem] font-medium text-[#1F4F6E] mb-2">
-                  Construire son outil IA
+                  Créer son agent IA métier sur mesure
                 </h3>
                 <p className="text-[1rem] text-[#C06721] font-normal leading-[1.4] mb-0">
                   Un système expert, un agent ou une mini-app — conçu pour votre métier, par vous.
@@ -213,7 +217,7 @@ export default function Ateliers() {
                   Programme long
                 </span>
                 <h3 className="text-[1.15rem] font-medium text-[#1F4F6E] mb-2">
-                  New Business MVP
+                  New Business MVP — Atelier IA pratique lancement
                 </h3>
                 <p className="text-[1rem] text-[#C06721] font-normal leading-[1.4] mb-0">
                   De l'idée à la première vente — en 6 mois, avec l'IA comme accélérateur.
@@ -269,7 +273,7 @@ export default function Ateliers() {
                   Diagnostic
                 </span>
                 <h3 className="text-[1.15rem] font-medium text-[#1F4F6E] mb-2">
-                  Construire son Capital IA
+                  Audit IA PME (Capital IA) &amp; feuille de route
                 </h3>
                 <p className="text-[1rem] text-[#C06721] font-normal leading-[1.4] mb-0">
                   Auditez vos données, choisissez vos outils, identifiez les 3 processus à transformer en priorité.
@@ -324,13 +328,13 @@ export default function Ateliers() {
       <div className="bg-white py-[70px]" id="collectifs">
         <div className="max-w-[1100px] mx-auto px-6">
           <p className="text-[0.75rem] tracking-[0.18em] uppercase text-[#02ADAB] mb-2.5 font-medium">
-            Formation collective
+            Formation IA entreprise certifiée Qualiopi
           </p>
           <h2 className="text-[1.9rem] font-light mb-3.5 text-[#1F4F6E] leading-tight">
-            Pour les équipes qui veulent <strong className="font-medium text-[#1F4F6E]">passer à l'action</strong>
+            Formation IA finançable OPCO <strong className="font-medium text-[#1F4F6E]">pour vos équipes</strong>
           </h2>
           <p className="text-[1.05rem] text-[#4a6a80] max-w-[640px] leading-[1.7] mb-12 font-normal">
-            Formation certifiée Qualiopi, finançable OPCO jusqu'à 100%. 80% de pratique, 20% de méthode. Vos équipes repartent avec des outils branchés sur leurs vraies tâches.
+            Formation IA entreprise certifiée Qualiopi, finançable OPCO jusqu'à 100%. 80% d'atelier IA pratique pour créer son agent IA métier et assurer votre conformité IA Act.
           </p>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-start">
@@ -373,9 +377,9 @@ export default function Ateliers() {
                     Core · 14h
                   </span>
                   <div>
-                    <div className="text-[0.95rem] font-medium text-[#1F4F6E]">Formation Core IA</div>
+                    <h3 className="text-[0.95rem] font-medium text-[#1F4F6E]">Formation Core IA — Socle entreprise Qualiopi</h3>
                     <div className="text-[0.85rem] text-[#7a9ab0] leading-[1.5] mt-0.5">
-                      Prompts maîtres, workflows IA, outils opérationnels. Le socle indispensable — praticable dès le lendemain.
+                      Prompts maîtres, workflows IA, outils opérationnels. Le socle indispensable — finançable OPCO et praticable dès le lendemain.
                     </div>
                   </div>
                 </li>
@@ -385,7 +389,7 @@ export default function Ateliers() {
                     Option A · 3h30
                   </span>
                   <div>
-                    <div className="text-[0.95rem] font-medium text-[#1F4F6E]">Agents IA</div>
+                    <h3 className="text-[0.95rem] font-medium text-[#1F4F6E]">Agents IA — Créer son agent IA métier</h3>
                     <div className="text-[0.85rem] text-[#7a9ab0] leading-[1.5] mt-0.5">
                       3 agents autonomes déployés et connectés à vos outils (Slack, Notion, CRM) avant la fin de la séance.
                     </div>
@@ -397,7 +401,7 @@ export default function Ateliers() {
                     Option B · 3h30
                   </span>
                   <div>
-                    <div className="text-[0.95rem] font-medium text-[#1F4F6E]">App No-Code</div>
+                    <h3 className="text-[0.95rem] font-medium text-[#1F4F6E]">App No-Code — Outil interne IA sur mesure</h3>
                     <div className="text-[0.85rem] text-[#7a9ab0] leading-[1.5] mt-0.5">
                       Une application web interne déployée sur URL sécurisée, interconnectée à Gemini ou GPT.
                     </div>
@@ -409,9 +413,9 @@ export default function Ateliers() {
                     Option C · 3h30
                   </span>
                   <div>
-                    <div className="text-[0.95rem] font-medium text-[#1F4F6E]">Éthique &amp; IA Act</div>
+                    <h3 className="text-[0.95rem] font-medium text-[#1F4F6E]">Éthique &amp; conformité IA Act</h3>
                     <div className="text-[0.85rem] text-[#7a9ab0] leading-[1.5] mt-0.5">
-                      Conformité réglementaire, classification des risques, sécurisation des données d'entreprise.
+                      Conformité IA Act réglementaire, classification des risques, sécurisation des données d'entreprise.
                     </div>
                   </div>
                 </li>
@@ -421,7 +425,7 @@ export default function Ateliers() {
                 to="/contact"
                 className="block text-center no-underline bg-[#1F4F6E] hover:bg-[#02ADAB] text-white py-3.5 px-6 rounded-[8px] font-medium text-[0.95rem] transition-colors"
               >
-                Demander un devis →
+                Demander un devis formation IA Qualiopi →
               </Link>
             </div>
           </div>
@@ -431,16 +435,16 @@ export default function Ateliers() {
       {/* CTA FINAL — Exact Maquette Orange #C06721 */}
       <div className="bg-[#C06721] text-white text-center py-[70px] px-10">
         <h2 className="text-[2rem] font-light mb-3.5 text-white">
-          Pas sûr de quel atelier <strong className="font-medium text-white">vous convient ?</strong>
+          Quel atelier IA pratique ou <strong className="font-medium text-white">formation Qualiopi OPCO vous convient ?</strong>
         </h2>
         <p className="text-[1.05rem] text-white/80 max-w-[480px] mx-auto mb-8 leading-[1.7] font-light">
-          On fait un point de 30 minutes ensemble. Vous repartez avec une recommandation claire — même si ce n'est pas chez nous.
+          On fait un point de 30 minutes sur votre audit IA PME ou formation entreprise. Vous repartez avec une recommandation claire.
         </p>
         <Link
           to="/contact"
           className="inline-block bg-white text-[#C06721] text-[0.95rem] font-medium py-3.5 px-8 rounded-[8px] no-underline tracking-[0.04em] transition-transform duration-150 hover:-translate-y-0.5 hover:shadow-[0_6px_20px_rgba(0,0,0,0.15)]"
         >
-          Prendre rendez-vous →
+          Demander un devis Qualiopi →
         </Link>
       </div>
     </div>

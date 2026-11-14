@@ -114,24 +114,28 @@ export default function NewBusiness() {
   return (
     <div className="bg-[#f4f6f9] text-[#1F4F6E] min-h-screen font-['Roboto',sans-serif] selection:bg-[#C06721] selection:text-white">
       <SEO
-        title="Programme New Business MVP | Alkymya"
-        description="L'accompagnement opérationnel de 6 mois pour concevoir votre MVP, tester votre offre auprès de vrais clients avant d'investir, et piloter votre trajectoire grâce à la boussole Continuer, Pivoter ou Accélérer."
+        title="Accompagnement IA Dirigeants & MVP 6 Mois | Alkymya"
+        description="Accompagnement IA dirigeants et indépendants sur 6 mois : création de MVP, validation client, agents IA sur mesure et stratégie SEO et GEO."
+        keywords="accompagnement IA dirigeants et indépendants, création d'agents IA sur mesure, stratégie SEO et GEO, experts IA France, agence IA"
+        canonicalPath="/newbusiness"
+        ogImage="https://res.cloudinary.com/dokzioyu4/image/upload/v1758192982/66cffcd8-15f1-415f-b423-9f428d63e22f_gqjd53.png"
+        type="EducationalOccupationalProgram"
       />
 
       {/* HERO SECTION DESIGN SYSTEM */}
       <header className="bg-[#1F4F6E] text-white py-20 px-6 sm:px-10 text-center relative overflow-hidden">
         <div className="max-w-[740px] mx-auto relative z-10">
           <p className="text-[0.85rem] tracking-[0.15em] uppercase text-[#02ADAB] mb-4 font-normal">
-            Programme New Business MVP • 6 Mois d'Accompagnement
+            Accompagnement IA Dirigeants &amp; Indépendants · 6 Mois
           </p>
 
           <h1 className="font-light text-[2.4rem] sm:text-[2.6rem] leading-[1.2] mb-5 text-white">
-            New Business MVP —<br />
-            <strong className="font-medium text-white">De l'idée à la validation client.</strong>
+            Accompagnement IA dirigeants &amp;<br />
+            <strong className="font-medium text-white">New Business MVP.</strong>
           </h1>
 
           <p className="text-[1.05rem] sm:text-[1.1rem] text-white/75 max-w-[640px] mx-auto leading-[1.7] font-light mb-8">
-            L'accompagnement opérationnel sur 6 mois pour concevoir votre MVP, tester votre offre auprès de vrais clients avant d'investir, et arbitrer avec lucidité grâce à la boussole : <span className="text-white font-medium">Continuer, Pivoter ou Accélérer</span>.
+            Accompagnement IA dirigeants et indépendants sur 6 mois : concevez votre MVP, déployez des agents IA sur mesure et validez votre stratégie SEO et GEO auprès de vrais clients grâce à la boussole <span className="text-white font-medium">Continuer, Pivoter ou Accélérer</span>.
           </p>
 
           <div className="flex flex-wrap items-center justify-center gap-3 text-xs sm:text-sm font-normal text-white/90 mb-8">
@@ -193,10 +197,10 @@ export default function NewBusiness() {
           Méthodologie Opérationnelle
         </p>
         <h2 className="text-[1.8rem] sm:text-[2rem] font-light mb-3 text-[#1F4F6E]">
-          La feuille de route pas à pas <strong className="font-medium text-[#1F4F6E]">sur 6 mois</strong>
+          Feuille de route accompagnement IA <strong className="font-medium text-[#1F4F6E]">sur 6 mois</strong>
         </h2>
         <p className="text-[1.05rem] text-[#4a6a80] max-w-[640px] leading-[1.7] mb-12 font-normal">
-          Un processus structuré pour tester sur le terrain, confronter les retours réels et éviter le piège classique du développement en vase clos.
+          Un accompagnement intelligence artificielle structuré pour tester sur le terrain, déployer votre MVP et accélérer votre visibilité Google AI.
         </p>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-7">
@@ -255,7 +259,7 @@ export default function NewBusiness() {
               Pack Prêt à l'Emploi
             </p>
             <h2 className="text-[1.8rem] sm:text-[2rem] font-light text-[#1F4F6E]">
-              Ce que vous obtenez <strong className="font-medium text-[#1F4F6E]">à l'issue des 6 mois</strong>
+              Livrables pour dirigeants &amp; indépendants <strong className="font-medium text-[#1F4F6E]">à l'issue des 6 mois</strong>
             </h2>
           </div>
 
@@ -273,7 +277,7 @@ export default function NewBusiness() {
                   {idx + 1}
                 </div>
                 <div>
-                  <h4 className="font-medium text-[#1F4F6E] text-sm mb-1">{item.title}</h4>
+                  <h3 className="font-medium text-[#1F4F6E] text-sm mb-1">{item.title}</h3>
                   <p className="text-xs text-[#5a7a90] leading-relaxed">{item.desc}</p>
                 </div>
               </div>
@@ -291,23 +295,23 @@ export default function NewBusiness() {
           Encadrement d'Excellence
         </p>
         <h2 className="text-[1.8rem] sm:text-[2rem] font-light mb-3 text-[#1F4F6E]">
-          Vos mentors <strong className="font-medium text-[#1F4F6E]">en binôme</strong>
+          Vos experts IA France <strong className="font-medium text-[#1F4F6E]">en binôme</strong>
         </h2>
         <p className="text-[1.05rem] text-[#4a6a80] max-w-[640px] leading-[1.7] mb-10 font-normal">
-          Bénéficiez de la double expertise de nos formateurs seniors durant tout le parcours.
+          Bénéficiez de la double expertise de nos fondateurs en accompagnement IA dirigeants et indépendants durant tout le parcours.
         </p>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-7">
           <div className="p-8 rounded-[12px] bg-white shadow-[0_2px_16px_rgba(31,79,110,0.08)] flex flex-col sm:flex-row items-center sm:items-start gap-6">
             <img
               src="https://res.cloudinary.com/dokzioyu4/image/upload/v1758192982/66cffcd8-15f1-415f-b423-9f428d63e22f_gqjd53.png"
-              alt="Cyril Garnier"
+              alt="Cyril Garnier — Expert IA France et accompagnement IA dirigeants Alkymya"
               className="w-24 h-24 rounded-[10px] object-cover shrink-0 border border-[rgba(31,79,110,0.12)]"
             />
             <div>
-              <h3 className="text-[1.2rem] font-medium text-[#1F4F6E]">Cyril Garnier</h3>
+              <h3 className="text-[1.2rem] font-medium text-[#1F4F6E]">Cyril Garnier — Expert IA France</h3>
               <p className="text-xs font-medium text-[#C06721] uppercase tracking-wider mb-3">
-                Expert Stratégie &amp; Innovation IA
+                Stratégie &amp; Accompagnement Dirigeants
               </p>
               <p className="text-[0.9rem] text-[#5a7a90] leading-[1.6] font-normal">
                 Consultant et enseignant certifié dans les grandes écoles. Cyril pilote l'alignement stratégique, la viabilité économique des modèles d'affaires et la conduite du changement par l'IA.
@@ -318,11 +322,11 @@ export default function NewBusiness() {
           <div className="p-8 rounded-[12px] bg-white shadow-[0_2px_16px_rgba(31,79,110,0.08)] flex flex-col sm:flex-row items-center sm:items-start gap-6">
             <img
               src="https://res.cloudinary.com/dokzioyu4/image/upload/v1758192982/c4f25b29-1634-44bf-a6d1-41f2378fbb4d_j10d8m.png"
-              alt="Léonie Egesipe"
+              alt="Léonie Egesipe — Studio création IA et direction artistique Alkymya"
               className="w-24 h-24 rounded-[10px] object-cover shrink-0 border border-[rgba(31,79,110,0.12)]"
             />
             <div>
-              <h3 className="text-[1.2rem] font-medium text-[#1F4F6E]">Léonie Egesipe</h3>
+              <h3 className="text-[1.2rem] font-medium text-[#1F4F6E]">Léonie Egesipe — Studio Création IA</h3>
               <p className="text-xs font-medium text-[#C06721] uppercase tracking-wider mb-3">
                 Directrice Artistique &amp; Création IA
               </p>
@@ -374,7 +378,7 @@ export default function NewBusiness() {
           Cadre Opérationnel &amp; Démarche
         </p>
         <h2 className="text-[1.8rem] sm:text-[2rem] font-light mb-3 text-[#1F4F6E]">
-          Tout savoir sur <strong className="font-medium text-[#1F4F6E]">New Business MVP</strong>
+          Questions sur l'accompagnement <strong className="font-medium text-[#1F4F6E]">IA dirigeants &amp; indépendants</strong>
         </h2>
         <p className="text-[1.05rem] text-[#4a6a80] max-w-[640px] leading-[1.7] mb-12 font-normal">
           Cinq questions fondamentales pour évaluer l'adéquation de votre projet avec notre accompagnement.
@@ -475,7 +479,7 @@ export default function NewBusiness() {
             Formulaire de Candidature
           </p>
           <h2 className="text-[1.8rem] sm:text-[2rem] font-light mb-3 text-[#1F4F6E]">
-            Postuler au programme <strong className="font-medium text-[#1F4F6E]">New Business MVP</strong>
+            Postuler à l'accompagnement <strong className="font-medium text-[#1F4F6E]">New Business MVP</strong>
           </h2>
           <p className="text-[1.05rem] text-[#4a6a80] leading-[1.7] font-normal">
             Répondez à ces quelques questions pour nous permettre d'analyser l'adéquation de votre projet avec le programme.
@@ -650,7 +654,7 @@ export default function NewBusiness() {
           Une question avant de postuler ?
         </p>
         <h2 className="text-[2rem] font-light mb-3.5 text-white">
-          Échangez directement <strong className="font-medium text-white">avec Cyril ou Léonie</strong>
+          Échangez avec nos <strong className="font-medium text-white">experts IA France</strong>
         </h2>
         <p className="text-[1.05rem] text-white/85 max-w-[540px] mx-auto mb-8 leading-[1.7] font-light">
           Nous répondons avec franchise sur la pertinence de votre projet par rapport à la méthode avant toute démarche contractuelle.

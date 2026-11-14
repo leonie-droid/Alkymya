@@ -44,8 +44,8 @@ interface Album {
 const albumsData: Album[] = [
   {
     id: 'projets-photo-video',
-    title: 'Projet photos et vidéo Alkymya — Cyril Garnier et Léonie Egesipe',
-    category: 'Direction Artistique & Studio',
+    title: 'Direction artistique photo vidéo IA Alkymya — Cyril Garnier et Léonie Egesipe',
+    category: 'Direction Artistique Photo Vidéo IA',
     coverImage: 'https://res.cloudinary.com/dokzioyu4/image/upload/v1767128574/kk25As37_y8rw27.png',
     description: "Direction artistique augmentée conçue en binôme par Cyril Garnier et Léonie Egesipe. Recherche plastique associant composition photographique, maîtrise de la lumière et prompt engineering chirurgical.",
     badge: 'Studio',
@@ -99,8 +99,8 @@ const albumsData: Album[] = [
   },
   {
     id: 'metropolia',
-    title: 'Métropolia — narration visuelle générative',
-    category: 'Narration Urbaine',
+    title: 'Métropolia — direction artistique photo vidéo IA & narration générative',
+    category: 'Direction Artistique Photo Vidéo IA',
     coverImage: 'https://res.cloudinary.com/dokzioyu4/image/upload/v1770044606/4333e2ce-3ca9-43ca-9498-5149956f55a8_pzltlj.jpg',
     description: "Projet narratif explorant la métropole futuriste et la condition urbaine à travers l'IA générative et la matière photographique réelle. Une esthétique cyberpunk poétique entre documentaire et anticipation.",
     badge: 'Narration',
@@ -154,8 +154,8 @@ const albumsData: Album[] = [
   },
   {
     id: 'portraits-figures',
-    title: 'Portraits et figures historiques',
-    category: 'Art Génératif & Sérigraphie',
+    title: 'Portraits et figures historiques — direction artistique IA & sérigraphie',
+    category: 'Direction Artistique Photo Vidéo IA',
     coverImage: 'https://res.cloudinary.com/dokzioyu4/image/upload/v1772112521/e23iKTwc_u35aql.png',
     description: "Hommage graphique vibrant aux grandes figures émancipatrices et culturelles, mêlant prompt crafting chirurgical, sérigraphie contemporaine et palettes chromatiques intenses.",
     badge: 'Série IA',
@@ -203,6 +203,26 @@ const albumsData: Album[] = [
   }
 ];
 
+const sodaAgentMedia: Album = {
+  id: 'soda-agent',
+  title: "SODA — Agent IA autonome d'analyse de marché",
+  category: 'Agents IA autonomes',
+  coverImage: '',
+  description: "SODA est une IA spécialisée conçue pour l'accompagnement, l'analyse stratégique et la simulation d'entretiens clients.",
+  badge: 'Agent IA',
+  badgeBg: 'rgba(2,173,171,0.9)',
+  resultGradient: 'linear-gradient(135deg, #037971 0%, #02ADAB 100%)',
+  resultText: '400 réponses synthétiques · <10 minutes',
+  mediaList: [
+    {
+      type: 'video',
+      url: 'https://res.cloudinary.com/dokzioyu4/video/upload/v1779116439/f_ea_e_f_f_a_f_a_e_cbe_f_cmp__gxlwhw.mp4',
+      title: "SODA — Démonstration de l'agent IA autonome d'analyse de marché",
+      caption: "SODA est une IA spécialisée conçue pour l'accompagnement, l'analyse stratégique et la simulation de centaines d'entretiens clients afin de valider une hypothèse en moins de dix minutes."
+    }
+  ]
+};
+
 export default function Oeuvres() {
   const [activeAlbum, setActiveAlbum] = useState<Album | null>(null);
   const [activeMediaIndex, setActiveMediaIndex] = useState<number>(0);
@@ -229,22 +249,25 @@ export default function Oeuvres() {
   return (
     <div className="bg-[#f4f6f9] text-[#1F4F6E] min-h-screen font-['Roboto',sans-serif] selection:bg-[#C06721] selection:text-white">
       <SEO
-        title="Nos Œuvres & Réalisations — Alkymya"
-        description="Ce que nous construisons. Et ce que ça donne vraiment. Médias locaux TheLittle77, TheLittle75, TheLittle83, agents IA en production et albums de création artistique."
+        title="Création Site Éditorial, Agents IA & SEO GEO | Alkymya"
+        description="Création site éditorial, référencement naturel Google, visibilité AI Overviews, agents IA autonomes en production et direction artistique IA."
+        canonicalPath="/oeuvres"
+        ogImage="https://alkymya.co/og-oeuvres.jpg"
+        type="CollectionPage"
       />
 
       {/* HERO — Exact Maquette */}
       <header className="bg-[#1F4F6E] text-white py-20 px-6 sm:px-10 text-center relative overflow-hidden">
         <div className="max-w-[700px] mx-auto relative z-10">
           <p className="text-[0.85rem] tracking-[0.15em] uppercase text-[#02ADAB] mb-4 font-normal">
-            Nos réalisations
+            Nos réalisations · Studio création IA &amp; référencement naturel Google
           </p>
           <h1 className="font-light text-[2.4rem] sm:text-[2.6rem] leading-[1.2] mb-5 text-white">
-            Ce que nous construisons.<br />
-            <strong className="font-medium text-white">Et ce que ça donne vraiment.</strong>
+            Création site éditorial &amp; agents IA.<br />
+            <strong className="font-medium text-white">Visibilité AI Overviews &amp; résultats réels.</strong>
           </h1>
           <p className="text-[1.05rem] sm:text-[1.1rem] text-white/75 max-w-[600px] mx-auto leading-[1.7] font-light">
-            Pas de cas clients anonymisés, pas de promesses floues. Des projets réels, des chiffres datés, des résultats vérifiables.
+            Création site éditorial, référencement naturel Google, visibilité AI Overviews, agents IA autonomes en production, veille SEO IA et direction artistique photo vidéo IA vérifiables.
           </p>
         </div>
       </header>
@@ -252,76 +275,77 @@ export default function Oeuvres() {
       {/* SITES ÉDITORIAUX : Ordre exact : TheLittle77 -> TheLittle75 -> TheLittle83 */}
       <section className="max-w-[1100px] mx-auto py-[70px] px-6">
         <p className="text-[0.75rem] tracking-[0.18em] uppercase text-[#02ADAB] mb-2.5 font-medium">
-          Sites éditoriaux
+          Création site éditorial &amp; référencement naturel Google
         </p>
         <h2 className="text-[1.8rem] font-light mb-3 text-[#1F4F6E]">
-          Trois médias locaux construits <strong className="font-medium text-[#1F4F6E]">de zéro</strong>
+          Création de sites éditoriaux optimisés <strong className="font-medium text-[#1F4F6E]">Google &amp; visibilité AI Overviews</strong>
         </h2>
         <p className="text-[1.05rem] text-[#4a6a80] max-w-[640px] leading-[1.7] mb-12 font-normal">
-          Chacun de ces sites est un laboratoire en production : indexé, mesuré, et preuve que la méthode fonctionne avant de la proposer à nos clients.
+          Chaque création site éditorial est un laboratoire en production : référencement naturel Google, visibilité AI Overviews et veille SEO IA mesurés avant déploiement client.
         </p>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-7">
 
           {/* 1. TheLittle77.fr */}
-          <article className="bg-white rounded-[12px] overflow-hidden shadow-[0_2px_16px_rgba(31,79,110,0.08)] hover:shadow-[0_8px_32px_rgba(31,79,110,0.14)] hover:-translate-y-1 transition-all duration-200 flex flex-col justify-between">
-            <div>
-              <div className="h-[180px] bg-[#1a3a50] relative overflow-hidden flex items-center justify-center group">
-                <img
-                  src="https://res.cloudinary.com/dokzioyu4/image/upload/v1788941703/PHOTO-2026-09-08-06-54-57_ynrbkt.jpg"
-                  alt="Seine-et-Marne — carnet de territoire (thelittle77.fr)"
-                  className="w-full h-full object-cover opacity-90 group-hover:scale-105 transition-transform duration-500"
-                  referrerPolicy="no-referrer"
-                />
-                <span className="absolute top-3.5 left-3.5 bg-[rgba(2,173,171,0.9)] text-white text-[0.72rem] font-medium tracking-[0.1em] uppercase px-2.5 py-1 rounded-[4px] shadow-sm">
-                  Référence
-                </span>
-                <span className="absolute bottom-3.5 right-3.5 bg-black/50 text-white text-[0.78rem] px-2.5 py-1 rounded-[4px] backdrop-blur-[4px]">
-                  thelittle77.fr
-                </span>
+          <article className="bg-white rounded-[12px] overflow-hidden shadow-[0_2px_16px_rgba(31,79,110,0.08)] hover:shadow-[0_8px_32px_rgba(31,79,110,0.14)] hover:-translate-y-1 transition-all duration-200 flex flex-col lg:grid lg:grid-rows-subgrid lg:row-span-7 lg:gap-y-0">
+            <div className="h-[180px] bg-[#1a3a50] relative overflow-hidden flex items-center justify-center group">
+              <img
+                src="https://res.cloudinary.com/dokzioyu4/image/upload/v1788941703/PHOTO-2026-09-08-06-54-57_ynrbkt.jpg"
+                alt="Ciel de Seine-et-Marne — création site éditorial thelittle77.fr et référencement naturel Google"
+                className="w-full h-full object-cover opacity-90 group-hover:scale-105 transition-transform duration-500"
+                referrerPolicy="no-referrer"
+              />
+              <span className="absolute top-3.5 left-3.5 bg-[rgba(2,173,171,0.9)] text-white text-[0.72rem] font-medium tracking-[0.1em] uppercase px-2.5 py-1 rounded-[4px] shadow-sm">
+                Référence
+              </span>
+              <span className="absolute bottom-3.5 right-3.5 bg-black/50 text-white text-[0.78rem] px-2.5 py-1 rounded-[4px] backdrop-blur-[4px]">
+                thelittle77.fr
+              </span>
+            </div>
+
+            <h3 className="px-6 pt-6 pb-1.5 text-[1.1rem] font-medium text-[#1F4F6E]">
+              thelittle77.fr — Création site éditorial &amp; SEO Seine-et-Marne
+            </h3>
+
+            <p className="px-6 pb-5 text-[0.95rem] text-[#5a7a90] leading-[1.6] font-normal">
+              Nature, patrimoine et vie locale en 77. Neuf bassins éditoriaux, des lieux documentés et une audience qui grandit sans publicité.
+            </p>
+
+            <div className="px-6 pb-3.5 flex gap-2 flex-wrap content-start">
+              <span className="inline-flex items-center gap-1.5 text-[0.78rem] bg-[#f0f7ff] text-[#1F4F6E] px-2.5 py-1 rounded-[4px] font-medium">
+                <Clock className="w-3 h-3 text-[#02ADAB]" /> Construit en 3 mois
+              </span>
+              <span className="inline-flex items-center gap-1.5 text-[0.78rem] bg-[#f0f7ff] text-[#1F4F6E] px-2.5 py-1 rounded-[4px] font-normal">
+                <UserCheck className="w-3 h-3 text-[#02ADAB]" /> Rédaction : Cyril Garnier
+              </span>
+            </div>
+
+            <div className="px-6 pb-5 grid grid-cols-3 gap-2.5 items-start">
+              <div className="text-center bg-[#f4f8fb] rounded-[8px] py-2.5 px-1.5">
+                <span className="text-[1.3rem] font-medium text-[#1F4F6E] block leading-none mb-1">+200</span>
+                <span className="text-[0.7rem] text-[#7a9ab0] uppercase tracking-[0.08em] font-normal">pages</span>
               </div>
-
-              <div className="p-6">
-                <h3 className="text-[1.1rem] font-medium text-[#1F4F6E] mb-1.5">
-                  Seine-et-Marne — carnet de territoire
-                </h3>
-                <p className="text-[0.95rem] text-[#5a7a90] leading-[1.6] mb-5 font-normal">
-                  Nature, patrimoine et vie locale en 77. Neuf bassins éditoriaux, des centaines de lieux documentés, une audience qui grandit sans publicité.
-                </p>
-
-                <div className="flex gap-2 mb-3.5 flex-wrap">
-                  <span className="inline-flex items-center gap-1.5 text-[0.78rem] bg-[#f0f7ff] text-[#1F4F6E] px-2.5 py-1 rounded-[4px] font-medium">
-                    <Clock className="w-3 h-3 text-[#02ADAB]" /> Construit en 3 mois
-                  </span>
-                  <span className="inline-flex items-center gap-1.5 text-[0.78rem] bg-[#f0f7ff] text-[#1F4F6E] px-2.5 py-1 rounded-[4px] font-normal">
-                    <UserCheck className="w-3 h-3 text-[#02ADAB]" /> Rédaction : Cyril Garnier
-                  </span>
-                </div>
-
-                <div className="grid grid-cols-3 gap-2.5 mb-5">
-                  <div className="text-center bg-[#f4f8fb] rounded-[8px] py-2.5 px-1.5">
-                    <span className="text-[1.3rem] font-medium text-[#1F4F6E] block leading-none mb-1">+200</span>
-                    <span className="text-[0.7rem] text-[#7a9ab0] uppercase tracking-[0.08em] font-normal">pages</span>
-                  </div>
-                  <div className="text-center bg-[#f4f8fb] rounded-[8px] py-2.5 px-1.5">
-                    <span className="text-[1.3rem] font-medium text-[#1F4F6E] block leading-none mb-1">600</span>
-                    <span className="text-[0.7rem] text-[#7a9ab0] uppercase tracking-[0.08em] font-normal">photos</span>
-                  </div>
-                  <div className="text-center bg-[#f4f8fb] rounded-[8px] py-2.5 px-1.5">
-                    <span className="text-[1.3rem] font-medium text-[#1F4F6E] block leading-none mb-1">275k</span>
-                    <span className="text-[0.7rem] text-[#7a9ab0] uppercase tracking-[0.08em] font-normal">vues/mois</span>
-                  </div>
-                </div>
-
-                <div className="bg-gradient-to-br from-[#037971] to-[#02ADAB] rounded-[8px] p-3 sm:px-4 text-white text-[0.9rem] leading-[1.5] mb-4 font-normal shadow-sm">
-                  <strong className="font-medium text-white">1ère page Google</strong> sur "photos de ciels et paysages en Seine-et-Marne".<br />
-                  <strong className="font-medium text-white">Position 7</strong> sur "Moulin de Belle-Assise" — devant Wikipedia.<br />
-                  Cité par Google AI comme référence naturaliste régionale, aux côtés de la LPO.
-                </div>
+              <div className="text-center bg-[#f4f8fb] rounded-[8px] py-2.5 px-1.5">
+                <span className="text-[1.3rem] font-medium text-[#1F4F6E] block leading-none mb-1">600</span>
+                <span className="text-[0.7rem] text-[#7a9ab0] uppercase tracking-[0.08em] font-normal">photos</span>
+              </div>
+              <div className="text-center bg-[#f4f8fb] rounded-[8px] py-2.5 px-1.5">
+                <span className="text-[1.3rem] font-medium text-[#1F4F6E] block leading-none mb-1">275k</span>
+                <span className="text-[0.7rem] text-[#7a9ab0] uppercase tracking-[0.08em] font-normal">vues/mois</span>
               </div>
             </div>
 
-            <div className="px-6 pb-6 pt-0">
+            <div className="px-6 pb-6 flex">
+              <div className="w-full bg-gradient-to-br from-[#037971] to-[#02ADAB] rounded-[8px] p-3 sm:px-4 text-white text-[0.9rem] leading-[1.5] font-normal shadow-sm flex flex-col justify-center">
+                <p>
+                  <strong className="font-medium text-white">1ère page Google</strong> sur "photos de ciels et paysages en Seine-et-Marne".<br />
+                  <strong className="font-medium text-white">Position 7</strong> sur "Moulin de Belle-Assise" — devant Wikipedia.<br />
+                  Cité par Google AI comme référence naturaliste régionale, aux côtés de la LPO.
+                </p>
+              </div>
+            </div>
+
+            <div className="px-6 pb-6 pt-0 mt-auto lg:mt-0">
               <a 
                 href="https://thelittle77.fr" 
                 className="inline-flex items-center gap-1.5 text-[#02ADAB] hover:text-[#037971] text-[0.88rem] font-medium tracking-[0.03em] no-underline transition-colors group" 
@@ -335,64 +359,65 @@ export default function Oeuvres() {
           </article>
 
           {/* 2. TheLittle75.fr */}
-          <article className="bg-white rounded-[12px] overflow-hidden shadow-[0_2px_16px_rgba(31,79,110,0.08)] hover:shadow-[0_8px_32px_rgba(31,79,110,0.14)] hover:-translate-y-1 transition-all duration-200 flex flex-col justify-between">
-            <div>
-              <div className="h-[180px] bg-[#2a2a4a] relative overflow-hidden flex items-center justify-center group">
-                <img
-                  src="https://res.cloudinary.com/dokzioyu4/image/upload/v1788941670/Logo_thelittle75.fr_d1tmes.jpg"
-                  alt="Paris — revue des vingt arrondissements (thelittle75.fr)"
-                  className="w-full h-full object-cover opacity-90 group-hover:scale-105 transition-transform duration-500"
-                  referrerPolicy="no-referrer"
-                />
-                <span className="absolute top-3.5 left-3.5 bg-[rgba(2,173,171,0.9)] text-white text-[0.72rem] font-medium tracking-[0.1em] uppercase px-2.5 py-1 rounded-[4px] shadow-sm">
-                  En croissance
-                </span>
-                <span className="absolute bottom-3.5 right-3.5 bg-black/50 text-white text-[0.78rem] px-2.5 py-1 rounded-[4px] backdrop-blur-[4px]">
-                  thelittle75.fr
-                </span>
+          <article className="bg-white rounded-[12px] overflow-hidden shadow-[0_2px_16px_rgba(31,79,110,0.08)] hover:shadow-[0_8px_32px_rgba(31,79,110,0.14)] hover:-translate-y-1 transition-all duration-200 flex flex-col lg:grid lg:grid-rows-subgrid lg:row-span-7 lg:gap-y-0">
+            <div className="h-[180px] bg-[#2a2a4a] relative overflow-hidden flex items-center justify-center group">
+              <img
+                src="https://res.cloudinary.com/dokzioyu4/image/upload/v1788941670/Logo_thelittle75.fr_d1tmes.jpg"
+                alt="Paris — création site éditorial thelittle75.fr et stratégie référencement naturel Google"
+                className="w-full h-full object-cover opacity-90 group-hover:scale-105 transition-transform duration-500"
+                referrerPolicy="no-referrer"
+              />
+              <span className="absolute top-3.5 left-3.5 bg-[rgba(2,173,171,0.9)] text-white text-[0.72rem] font-medium tracking-[0.1em] uppercase px-2.5 py-1 rounded-[4px] shadow-sm">
+                En croissance
+              </span>
+              <span className="absolute bottom-3.5 right-3.5 bg-black/50 text-white text-[0.78rem] px-2.5 py-1 rounded-[4px] backdrop-blur-[4px]">
+                thelittle75.fr
+              </span>
+            </div>
+
+            <h3 className="px-6 pt-6 pb-1.5 text-[1.1rem] font-medium text-[#1F4F6E]">
+              thelittle75.fr — Création site éditorial Paris &amp; veille SEO IA
+            </h3>
+
+            <p className="px-6 pb-5 text-[0.95rem] text-[#5a7a90] leading-[1.6] font-normal">
+              Récits, patrimoine et portraits de quartiers. Onze chroniques de fond, une carte interactive et un index patrimonial complet.
+            </p>
+
+            <div className="px-6 pb-3.5 flex gap-2 flex-wrap content-start">
+              <span className="inline-flex items-center gap-1.5 text-[0.78rem] bg-[#f0f7ff] text-[#1F4F6E] px-2.5 py-1 rounded-[4px] font-medium">
+                <Clock className="w-3 h-3 text-[#02ADAB]" /> Construit en 2 mois
+              </span>
+              <span className="inline-flex items-center gap-1.5 text-[0.78rem] bg-[#f0f7ff] text-[#1F4F6E] px-2.5 py-1 rounded-[4px] font-normal">
+                <UserCheck className="w-3 h-3 text-[#02ADAB]" /> Rédaction : Léonie Egesipe
+              </span>
+            </div>
+
+            <div className="px-6 pb-5 grid grid-cols-3 gap-2.5 items-start">
+              <div className="text-center bg-[#f4f8fb] rounded-[8px] py-2.5 px-1.5">
+                <span className="text-[1.3rem] font-medium text-[#1F4F6E] block leading-none mb-1">39</span>
+                <span className="text-[0.7rem] text-[#7a9ab0] uppercase tracking-[0.08em] font-normal">pages</span>
               </div>
-
-              <div className="p-6">
-                <h3 className="text-[1.1rem] font-medium text-[#1F4F6E] mb-1.5">
-                  Paris — revue des vingt arrondissements
-                </h3>
-                <p className="text-[0.95rem] text-[#5a7a90] leading-[1.6] mb-5 font-normal">
-                  Récits, patrimoine et portraits de quartiers. Onze chroniques de fond, une carte interactive, un index patrimonial complet.
-                </p>
-
-                <div className="flex gap-2 mb-3.5 flex-wrap">
-                  <span className="inline-flex items-center gap-1.5 text-[0.78rem] bg-[#f0f7ff] text-[#1F4F6E] px-2.5 py-1 rounded-[4px] font-medium">
-                    <Clock className="w-3 h-3 text-[#02ADAB]" /> Construit en 2 mois
-                  </span>
-                  <span className="inline-flex items-center gap-1.5 text-[0.78rem] bg-[#f0f7ff] text-[#1F4F6E] px-2.5 py-1 rounded-[4px] font-normal">
-                    <UserCheck className="w-3 h-3 text-[#02ADAB]" /> Rédaction : Léonie Egesipe
-                  </span>
-                </div>
-
-                <div className="grid grid-cols-3 gap-2.5 mb-5">
-                  <div className="text-center bg-[#f4f8fb] rounded-[8px] py-2.5 px-1.5">
-                    <span className="text-[1.3rem] font-medium text-[#1F4F6E] block leading-none mb-1">39</span>
-                    <span className="text-[0.7rem] text-[#7a9ab0] uppercase tracking-[0.08em] font-normal">pages</span>
-                  </div>
-                  <div className="text-center bg-[#f4f8fb] rounded-[8px] py-2.5 px-1.5">
-                    <span className="text-[1.3rem] font-medium text-[#1F4F6E] block leading-none mb-1">−91%</span>
-                    <span className="text-[0.7rem] text-[#7a9ab0] uppercase tracking-[0.08em] font-normal">poids img</span>
-                  </div>
-                  <div className="text-center bg-[#f4f8fb] rounded-[8px] py-2.5 px-1.5">
-                    <span className="text-[1.3rem] font-medium text-[#1F4F6E] block leading-none mb-1">Top 2</span>
-                    <span className="text-[0.7rem] text-[#7a9ab0] uppercase tracking-[0.08em] font-normal">Google</span>
-                  </div>
-                </div>
-
-                <div className="bg-gradient-to-br from-[#037971] to-[#02ADAB] rounded-[8px] p-3 sm:px-4 text-white text-[0.9rem] leading-[1.5] mb-4 font-normal shadow-sm">
-                  <strong className="font-medium text-white">2ème résultat Google</strong> sur "chronique Belleville Paris récit".<br />
-                  39 pages bien tenues devant des sites dix fois plus gros.<br />
-                  Score SEO passé de 45 à 77 en 48h après correction technique.
-                </div>
+              <div className="text-center bg-[#f4f8fb] rounded-[8px] py-2.5 px-1.5">
+                <span className="text-[1.3rem] font-medium text-[#1F4F6E] block leading-none mb-1">−91%</span>
+                <span className="text-[0.7rem] text-[#7a9ab0] uppercase tracking-[0.08em] font-normal">poids img</span>
+              </div>
+              <div className="text-center bg-[#f4f8fb] rounded-[8px] py-2.5 px-1.5">
+                <span className="text-[1.3rem] font-medium text-[#1F4F6E] block leading-none mb-1">Top 2</span>
+                <span className="text-[0.7rem] text-[#7a9ab0] uppercase tracking-[0.08em] font-normal">Google</span>
               </div>
             </div>
 
-            <div className="px-6 pb-6 pt-0">
+            <div className="px-6 pb-6 flex">
+              <div className="w-full bg-gradient-to-br from-[#037971] to-[#02ADAB] rounded-[8px] p-3 sm:px-4 text-white text-[0.9rem] leading-[1.5] font-normal shadow-sm flex flex-col justify-center">
+                <p>
+                  <strong className="font-medium text-white">2ème résultat Google</strong> sur "chronique Belleville Paris récit".<br />
+                  39 pages bien tenues devant des sites dix fois plus gros.<br />
+                  Score SEO passé de 45 à 77 en 48h après correction technique.
+                </p>
+              </div>
+            </div>
+
+            <div className="px-6 pb-6 pt-0 mt-auto lg:mt-0">
               <a 
                 href="https://thelittle75.fr" 
                 className="inline-flex items-center gap-1.5 text-[#02ADAB] hover:text-[#037971] text-[0.88rem] font-medium tracking-[0.03em] no-underline transition-colors group" 
@@ -406,64 +431,65 @@ export default function Oeuvres() {
           </article>
 
           {/* 3. TheLittle83.fr (avec photo spécifique demandée par l'utilisateur) */}
-          <article className="bg-white rounded-[12px] overflow-hidden shadow-[0_2px_16px_rgba(31,79,110,0.08)] hover:shadow-[0_8px_32px_rgba(31,79,110,0.14)] hover:-translate-y-1 transition-all duration-200 flex flex-col justify-between">
-            <div>
-              <div className="h-[180px] bg-[#2a4a3a] relative overflow-hidden flex items-center justify-center group p-4">
-                <img
-                  src="https://res.cloudinary.com/dyooqwryq/image/upload/v1794124042/thelittle83-logo_op3yvm.svg"
-                  alt="Var — atlas naturaliste bilingue (thelittle83.fr)"
-                  className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-500"
-                  referrerPolicy="no-referrer"
-                />
-                <span className="absolute top-3.5 left-3.5 bg-[rgba(2,173,171,0.9)] text-white text-[0.72rem] font-medium tracking-[0.1em] uppercase px-2.5 py-1 rounded-[4px] shadow-sm">
-                  Nouveau
-                </span>
-                <span className="absolute bottom-3.5 right-3.5 bg-black/50 text-white text-[0.78rem] px-2.5 py-1 rounded-[4px] backdrop-blur-[4px]">
-                  thelittle83.fr
-                </span>
+          <article className="bg-white rounded-[12px] overflow-hidden shadow-[0_2px_16px_rgba(31,79,110,0.08)] hover:shadow-[0_8px_32px_rgba(31,79,110,0.14)] hover:-translate-y-1 transition-all duration-200 flex flex-col lg:grid lg:grid-rows-subgrid lg:row-span-7 lg:gap-y-0">
+            <div className="h-[180px] bg-[#2a4a3a] relative overflow-hidden flex items-center justify-center group p-4">
+              <img
+                src="https://res.cloudinary.com/dyooqwryq/image/upload/v1794124042/thelittle83-logo_op3yvm.svg"
+                alt="Logo thelittle83.fr — atlas naturaliste du Var optimisé visibilité AI Overviews et Google AI"
+                className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-500"
+                referrerPolicy="no-referrer"
+              />
+              <span className="absolute top-3.5 left-3.5 bg-[rgba(2,173,171,0.9)] text-white text-[0.72rem] font-medium tracking-[0.1em] uppercase px-2.5 py-1 rounded-[4px] shadow-sm">
+                Nouveau
+              </span>
+              <span className="absolute bottom-3.5 right-3.5 bg-black/50 text-white text-[0.78rem] px-2.5 py-1 rounded-[4px] backdrop-blur-[4px]">
+                thelittle83.fr
+              </span>
+            </div>
+
+            <h3 className="px-6 pt-6 pb-1.5 text-[1.1rem] font-medium text-[#1F4F6E]">
+              thelittle83.fr — Atlas naturaliste Var &amp; visibilité AI Overviews
+            </h3>
+
+            <p className="px-6 pb-5 text-[0.95rem] text-[#5a7a90] leading-[1.6] font-normal">
+              Oiseaux et paysages du Var. Fiches espèces bilingues, spots d'observation et galerie terrain, sans compromis sur l'authenticité.
+            </p>
+
+            <div className="px-6 pb-3.5 flex gap-2 flex-wrap content-start">
+              <span className="inline-flex items-center gap-1.5 text-[0.78rem] bg-[#f0f7ff] text-[#1F4F6E] px-2.5 py-1 rounded-[4px] font-medium">
+                <Clock className="w-3 h-3 text-[#02ADAB]" /> Construit en 24h
+              </span>
+              <span className="inline-flex items-center gap-1.5 text-[0.78rem] bg-[#f0f7ff] text-[#1F4F6E] px-2.5 py-1 rounded-[4px] font-normal">
+                <UserCheck className="w-3 h-3 text-[#02ADAB]" /> Rédaction : Cyril Garnier
+              </span>
+            </div>
+
+            <div className="px-6 pb-5 grid grid-cols-3 gap-2.5 items-start">
+              <div className="text-center bg-[#f4f8fb] rounded-[8px] py-2.5 px-1.5">
+                <span className="text-[1.3rem] font-medium text-[#1F4F6E] block leading-none mb-1">130</span>
+                <span className="text-[0.7rem] text-[#7a9ab0] uppercase tracking-[0.08em] font-normal">pages</span>
               </div>
-
-              <div className="p-6">
-                <h3 className="text-[1.1rem] font-medium text-[#1F4F6E] mb-1.5">
-                  Var — atlas naturaliste bilingue
-                </h3>
-                <p className="text-[0.95rem] text-[#5a7a90] leading-[1.6] mb-5 font-normal">
-                  Oiseaux et paysages du Var. Fiches espèces en français et anglais, spots d'observation, galerie photographique terrain. Zéro compromis sur l'authenticité.
-                </p>
-
-                <div className="flex gap-2 mb-3.5 flex-wrap">
-                  <span className="inline-flex items-center gap-1.5 text-[0.78rem] bg-[#f0f7ff] text-[#1F4F6E] px-2.5 py-1 rounded-[4px] font-medium">
-                    <Clock className="w-3 h-3 text-[#02ADAB]" /> Construit en 24h
-                  </span>
-                  <span className="inline-flex items-center gap-1.5 text-[0.78rem] bg-[#f0f7ff] text-[#1F4F6E] px-2.5 py-1 rounded-[4px] font-normal">
-                    <UserCheck className="w-3 h-3 text-[#02ADAB]" /> Rédaction : Cyril Garnier
-                  </span>
-                </div>
-
-                <div className="grid grid-cols-3 gap-2.5 mb-5">
-                  <div className="text-center bg-[#f4f8fb] rounded-[8px] py-2.5 px-1.5">
-                    <span className="text-[1.3rem] font-medium text-[#1F4F6E] block leading-none mb-1">130</span>
-                    <span className="text-[0.7rem] text-[#7a9ab0] uppercase tracking-[0.08em] font-normal">pages</span>
-                  </div>
-                  <div className="text-center bg-[#f4f8fb] rounded-[8px] py-2.5 px-1.5">
-                    <span className="text-[1.3rem] font-medium text-[#1F4F6E] block leading-none mb-1">×2</span>
-                    <span className="text-[0.7rem] text-[#7a9ab0] uppercase tracking-[0.08em] font-normal">langues</span>
-                  </div>
-                  <div className="text-center bg-[#f4f8fb] rounded-[8px] py-2.5 px-1.5">
-                    <span className="text-[1.3rem] font-medium text-[#1F4F6E] block leading-none mb-1">&lt;1h</span>
-                    <span className="text-[0.7rem] text-[#7a9ab0] uppercase tracking-[0.08em] font-normal">indexé IA</span>
-                  </div>
-                </div>
-
-                <div className="bg-gradient-to-br from-[#037971] to-[#02ADAB] rounded-[8px] p-3 sm:px-4 text-white text-[0.9rem] leading-[1.5] mb-4 font-normal shadow-sm">
-                  <strong className="font-medium text-white">Lancé le 8 nov. 2026.</strong> Référencé par Google AI en moins d'une heure.<br />
-                  <strong className="font-medium text-white">1er résultat image</strong> sur "aigrette garzette Hyères" dès le lendemain.<br />
-                  Aucune publicité. Aucun backlink acheté.
-                </div>
+              <div className="text-center bg-[#f4f8fb] rounded-[8px] py-2.5 px-1.5">
+                <span className="text-[1.3rem] font-medium text-[#1F4F6E] block leading-none mb-1">×2</span>
+                <span className="text-[0.7rem] text-[#7a9ab0] uppercase tracking-[0.08em] font-normal">langues</span>
+              </div>
+              <div className="text-center bg-[#f4f8fb] rounded-[8px] py-2.5 px-1.5">
+                <span className="text-[1.3rem] font-medium text-[#1F4F6E] block leading-none mb-1">&lt;1h</span>
+                <span className="text-[0.7rem] text-[#7a9ab0] uppercase tracking-[0.08em] font-normal">indexé IA</span>
               </div>
             </div>
 
-            <div className="px-6 pb-6 pt-0">
+            <div className="px-6 pb-6 flex">
+              <div className="w-full bg-gradient-to-br from-[#037971] to-[#02ADAB] rounded-[8px] p-3 sm:px-4 text-white text-[0.9rem] leading-[1.5] font-normal shadow-sm flex flex-col justify-center">
+                <p>
+                  <strong className="font-medium text-white">Lancé le 8 nov. 2026.</strong> Référencé par Google AI en moins d'une heure.<br />
+                  <strong className="font-medium text-white">1er résultat image</strong> sur "aigrette garzette Hyères" dès le lendemain.<br />
+                  Aucune publicité. Aucun backlink acheté.
+                </p>
+              </div>
+            </div>
+
+            <div className="px-6 pb-6 pt-0 mt-auto lg:mt-0">
               <a 
                 href="https://thelittle83.fr" 
                 className="inline-flex items-center gap-1.5 text-[#02ADAB] hover:text-[#037971] text-[0.88rem] font-medium tracking-[0.03em] no-underline transition-colors group" 
@@ -486,79 +512,101 @@ export default function Oeuvres() {
       <div className="bg-[#1F4F6E] text-white py-[70px]">
         <section className="max-w-[1100px] mx-auto px-6">
           <p className="text-[0.75rem] tracking-[0.18em] uppercase text-[#02ADAB] mb-2.5 font-medium">
-            Agents IA
+            Agents IA autonomes en production &amp; veille SEO IA
           </p>
           <h2 className="text-[1.8rem] font-light mb-3 text-white">
-            Quatre collaborateurs <strong className="font-medium text-white">qui ne dorment pas</strong>
+            Quatre agents IA autonomes <strong className="font-medium text-white">en production chaque semaine</strong>
           </h2>
           <p className="text-[1.05rem] text-white/70 max-w-[640px] leading-[1.7] mb-12 font-normal">
-            Ces agents ne sont pas des expériences. Ils sont en production — ils ont servi à construire les sites que vous venez de voir, et ils tournent chaque semaine.
+            Ces agents IA autonomes en production orchestrent notre veille SEO IA, le suivi de visibilité AI Overviews et la création site éditorial en continu.
           </p>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
 
-            {/* Agent 1 : Analyse de marché */}
-            <div className="bg-white/[0.07] border border-white/10 rounded-[10px] p-6 hover:bg-white/[0.12] transition-colors duration-200">
+            {/* Agent 1 : Analyse de marché (SODA) */}
+            <div className="bg-white/[0.07] border border-white/10 rounded-[10px] p-6 hover:bg-white/[0.12] transition-colors duration-200 flex flex-col lg:grid lg:grid-rows-subgrid lg:row-span-5 lg:gap-y-0">
               <div className="w-[44px] h-[44px] rounded-[10px] bg-[rgba(2,173,171,0.2)] flex items-center justify-center text-[#02ADAB] mb-4">
                 <BarChart3 className="w-5 h-5 text-[#02ADAB]" />
               </div>
               <h3 className="text-[1rem] font-medium text-white mb-2">
-                Analyse de marché
+                Agent IA analyse de marché — SODA
               </h3>
               <p className="text-[0.9rem] text-white/65 leading-[1.6] mb-3 font-normal">
-                Simule des centaines d'entretiens avec vos clients potentiels. Valide ou invalide une hypothèse en dix minutes, pas en trois mois.
+                IA spécialisée pour l'analyse stratégique et la simulation d'entretiens clients. Valide une hypothèse en 10 minutes, pas en 3 mois.
               </p>
-              <div className="text-[0.85rem] text-[#02ADAB] font-medium">
+              <div className="text-[0.85rem] text-[#02ADAB] font-medium self-start">
                 400 réponses synthétiques · &lt;10 minutes
+              </div>
+              <div className="pt-4 mt-4 border-t border-white/10 flex flex-wrap items-center justify-between gap-2 self-end w-full">
+                <button
+                  type="button"
+                  onClick={() => openAlbum(sodaAgentMedia, 0)}
+                  className="inline-flex items-center gap-1.5 text-[0.82rem] font-medium text-white hover:text-[#02ADAB] transition-colors cursor-pointer"
+                >
+                  <Play className="w-3.5 h-3.5 text-[#02ADAB] fill-current" />
+                  <span>Démo vidéo</span>
+                </button>
+                <a
+                  href="https://www.genspark.ai/agents?type=custom_super_agent&agent_id=20503058-4b49-40f7-b277-b38c21724a41"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1 text-[0.82rem] font-medium text-[#02ADAB] hover:text-white transition-colors"
+                >
+                  <span>Tester SODA</span>
+                  <ExternalLink className="w-3.5 h-3.5" />
+                </a>
               </div>
             </div>
 
             {/* Agent 2 : Veille SEO & IA */}
-            <div className="bg-white/[0.07] border border-white/10 rounded-[10px] p-6 hover:bg-white/[0.12] transition-colors duration-200">
+            <div className="bg-white/[0.07] border border-white/10 rounded-[10px] p-6 hover:bg-white/[0.12] transition-colors duration-200 flex flex-col lg:grid lg:grid-rows-subgrid lg:row-span-5 lg:gap-y-0">
               <div className="w-[44px] h-[44px] rounded-[10px] bg-[rgba(2,173,171,0.2)] flex items-center justify-center text-[#02ADAB] mb-4">
                 <Search className="w-5 h-5 text-[#02ADAB]" />
               </div>
               <h3 className="text-[1rem] font-medium text-white mb-2">
-                Veille SEO &amp; IA
+                Agent de veille SEO IA &amp; AI Overviews
               </h3>
               <p className="text-[0.9rem] text-white/65 leading-[1.6] mb-3 font-normal">
-                Surveille vos positions sur Google et vos apparitions dans les réponses des IA génératives. Les deux ne se pilotent pas de la même façon.
+                Surveille le référencement naturel Google et vos citations en visibilité AI Overviews. Les deux leviers se pilotent avec précision.
               </p>
-              <div className="text-[0.85rem] text-[#02ADAB] font-medium">
-                93 apparitions AI Overviews en 3 mois · TheLittle77
+              <div className="text-[0.85rem] text-[#02ADAB] font-medium self-start">
+                93 apparitions AI Overviews · TheLittle77
               </div>
+              <div className="hidden lg:block" aria-hidden="true" />
             </div>
 
             {/* Agent 3 : Création de contenus */}
-            <div className="bg-white/[0.07] border border-white/10 rounded-[10px] p-6 hover:bg-white/[0.12] transition-colors duration-200">
+            <div className="bg-white/[0.07] border border-white/10 rounded-[10px] p-6 hover:bg-white/[0.12] transition-colors duration-200 flex flex-col lg:grid lg:grid-rows-subgrid lg:row-span-5 lg:gap-y-0">
               <div className="w-[44px] h-[44px] rounded-[10px] bg-[rgba(2,173,171,0.2)] flex items-center justify-center text-[#02ADAB] mb-4">
                 <PenTool className="w-5 h-5 text-[#02ADAB]" />
               </div>
               <h3 className="text-[1rem] font-medium text-white mb-2">
-                Création de contenus
+                Agent IA de création site éditorial
               </h3>
               <p className="text-[0.9rem] text-white/65 leading-[1.6] mb-3 font-normal">
-                Produit des briefs, des chroniques, des scripts à partir d'une contrainte éditoriale. Il accélère, vous validez. L'expertise terrain reste la vôtre.
+                Produit des briefs, chroniques et scripts selon vos contraintes éditoriales. Il accélère le rythme, votre expertise terrain reste.
               </p>
-              <div className="text-[0.85rem] text-[#02ADAB] font-medium">
-                En production sur les 3 TheLittle
+              <div className="text-[0.85rem] text-[#02ADAB] font-medium self-start">
+                En production sur les 3 sites TheLittle
               </div>
+              <div className="hidden lg:block" aria-hidden="true" />
             </div>
 
             {/* Agent 4 : Newsletter */}
-            <div className="bg-white/[0.07] border border-white/10 rounded-[10px] p-6 hover:bg-white/[0.12] transition-colors duration-200">
+            <div className="bg-white/[0.07] border border-white/10 rounded-[10px] p-6 hover:bg-white/[0.12] transition-colors duration-200 flex flex-col lg:grid lg:grid-rows-subgrid lg:row-span-5 lg:gap-y-0">
               <div className="w-[44px] h-[44px] rounded-[10px] bg-[rgba(2,173,171,0.2)] flex items-center justify-center text-[#02ADAB] mb-4">
                 <Mail className="w-5 h-5 text-[#02ADAB]" />
               </div>
               <h3 className="text-[1rem] font-medium text-white mb-2">
-                Newsletter
+                Agent IA autonome de newsletter
               </h3>
               <p className="text-[0.9rem] text-white/65 leading-[1.6] mb-3 font-normal">
-                Gère le cycle complet : inscription, envoi, suivi des ouvertures. Un pipeline, pas un outil ponctuel. Fonctionne sans intervention manuelle.
+                Gère le cycle complet : inscription, envoi et suivi des ouvertures. Un pipeline autonome qui fonctionne sans intervention manuelle.
               </p>
-              <div className="text-[0.85rem] text-[#02ADAB] font-medium">
-                Pipeline live · TheLittle77 · depuis nov. 2026
+              <div className="text-[0.85rem] text-[#02ADAB] font-medium self-start">
+                Pipeline live · TheLittle77 · nov. 2026
               </div>
+              <div className="hidden lg:block" aria-hidden="true" />
             </div>
 
           </div>
@@ -568,13 +616,13 @@ export default function Oeuvres() {
       {/* CRÉATION ARTISTIQUE : Avec redirections vers les albums photos/vidéos */}
       <section className="max-w-[1100px] mx-auto py-[70px] px-6">
         <p className="text-[0.75rem] tracking-[0.18em] uppercase text-[#02ADAB] mb-2.5 font-medium">
-          Création artistique
+          Direction artistique photo vidéo IA
         </p>
         <h2 className="text-[1.8rem] font-light mb-3 text-[#1F4F6E]">
-          L'IA comme outil de direction, <strong className="font-medium text-[#1F4F6E]">pas de remplacement</strong>
+          Direction artistique photo vidéo IA : <strong className="font-medium text-[#1F4F6E]">l'outil ne remplace pas l'œil</strong>
         </h2>
         <p className="text-[1.05rem] text-[#4a6a80] max-w-[640px] leading-[1.7] mb-12 font-normal">
-          Projets photo, vidéo et narration générative. L'expertise et le regard restent humains — l'IA accélère la mise en forme et ouvre de nouveaux territoires visuels. Cliquez sur un projet pour ouvrir son album complet.
+          Projets de direction artistique photo vidéo IA et narration générative. L'expertise humaine reste centrale — cliquez sur un projet pour ouvrir son album complet.
         </p>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-7">
@@ -591,7 +639,7 @@ export default function Oeuvres() {
                 >
                   <img
                     src={album.coverImage}
-                    alt={album.title}
+                    alt={`${album.title} — direction artistique photo vidéo IA Alkymya`}
                     className="w-full h-full object-cover opacity-90 group-hover:scale-105 transition-transform duration-500"
                     referrerPolicy="no-referrer"
                   />
@@ -648,10 +696,10 @@ export default function Oeuvres() {
       {/* CTA FINAL — Exact Maquette Orange #C06721 */}
       <div className="bg-[#C06721] text-white text-center py-[70px] px-10">
         <h2 className="text-[2rem] font-light mb-3.5 text-white">
-          Créez <strong className="font-medium text-white">votre propre œuvre</strong>
+          Lancez votre création site éditorial <strong className="font-medium text-white">ou vos agents IA</strong>
         </h2>
         <p className="text-[1.05rem] text-white/80 max-w-[480px] mx-auto mb-8 leading-[1.7] font-light">
-          Chacun de ces projets a commencé par une conversation. Le vôtre aussi peut démarrer aujourd'hui.
+          Référencement naturel Google, visibilité AI Overviews ou direction artistique photo vidéo IA : chaque projet démarre par un échange concret.
         </p>
         <Link
           to="/ateliers"
@@ -715,6 +763,8 @@ export default function Oeuvres() {
                   <video
                     key={activeAlbum.mediaList[activeMediaIndex].url}
                     src={activeAlbum.mediaList[activeMediaIndex].url}
+                    aria-label={`${activeAlbum.mediaList[activeMediaIndex].title} — direction artistique photo vidéo IA Alkymya`}
+                    title={`${activeAlbum.mediaList[activeMediaIndex].title} — direction artistique photo vidéo IA`}
                     className="max-h-[60vh] w-auto max-w-full object-contain"
                     controls
                     autoPlay
@@ -724,7 +774,7 @@ export default function Oeuvres() {
                   <img
                     key={activeAlbum.mediaList[activeMediaIndex].url}
                     src={activeAlbum.mediaList[activeMediaIndex].url}
-                    alt={activeAlbum.mediaList[activeMediaIndex].title}
+                    alt={`${activeAlbum.mediaList[activeMediaIndex].title} — direction artistique photo vidéo IA Alkymya`}
                     className="max-h-[60vh] w-auto max-w-full object-contain"
                     referrerPolicy="no-referrer"
                   />
