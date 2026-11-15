@@ -20,6 +20,7 @@ import {
 } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { SEO } from '../components/SEO';
+import { cloudinaryUrl, cloudinarySrcSet } from '../utils/cloudinary';
 
 interface MediaItem {
   type: 'image' | 'video';
@@ -249,8 +250,8 @@ export default function Oeuvres() {
   return (
     <div className="bg-[#f4f6f9] text-[#1F4F6E] min-h-screen font-['Roboto',sans-serif] selection:bg-[#C06721] selection:text-white">
       <SEO
-        title="Création Site Éditorial, Agents IA & SEO GEO | Alkymya"
-        description="Création site éditorial, référencement naturel Google, visibilité AI Overviews, agents IA autonomes en production et direction artistique IA."
+        title="Études de cas SEO, IA & création éditoriale — Alkymya"
+        description="Trois études de cas mesurées (thelittle77, 75 et 83), agents IA autonomes en production et direction artistique IA par Alkymya à Ozoir-la-Ferrière."
         canonicalPath="/oeuvres"
         ogImage="https://alkymya.co/og-oeuvres.jpg"
         type="CollectionPage"
@@ -290,7 +291,11 @@ export default function Oeuvres() {
           <article className="bg-white rounded-[12px] overflow-hidden shadow-[0_2px_16px_rgba(31,79,110,0.08)] hover:shadow-[0_8px_32px_rgba(31,79,110,0.14)] hover:-translate-y-1 transition-all duration-200 flex flex-col lg:grid lg:grid-rows-subgrid lg:row-span-7 lg:gap-y-0">
             <div className="h-[180px] bg-[#1a3a50] relative overflow-hidden flex items-center justify-center group">
               <img
-                src="https://res.cloudinary.com/dokzioyu4/image/upload/v1788941703/PHOTO-2026-09-08-06-54-57_ynrbkt.jpg"
+                src={cloudinaryUrl("https://res.cloudinary.com/dokzioyu4/image/upload/v1788941703/PHOTO-2026-09-08-06-54-57_ynrbkt.jpg", 1000)}
+                srcSet={cloudinarySrcSet("https://res.cloudinary.com/dokzioyu4/image/upload/v1788941703/PHOTO-2026-09-08-06-54-57_ynrbkt.jpg")}
+                sizes="(max-width: 768px) 100vw, 33vw"
+                width={600}
+                height={360}
                 alt="Ciel de Seine-et-Marne — création site éditorial thelittle77.fr et référencement naturel Google"
                 className="w-full h-full object-cover opacity-90 group-hover:scale-105 transition-transform duration-500"
                 referrerPolicy="no-referrer"
@@ -322,23 +327,23 @@ export default function Oeuvres() {
 
             <div className="px-6 pb-5 grid grid-cols-3 gap-2.5 items-start">
               <div className="text-center bg-[#f4f8fb] rounded-[8px] py-2.5 px-1.5">
-                <span className="text-[1.3rem] font-medium text-[#1F4F6E] block leading-none mb-1">+200</span>
-                <span className="text-[0.7rem] text-[#7a9ab0] uppercase tracking-[0.08em] font-normal">pages</span>
+                <span className="text-[1.25rem] font-medium text-[#1F4F6E] block leading-none mb-1">216</span>
+                <span className="text-[0.7rem] text-[#7a9ab0] uppercase tracking-[0.08em] font-normal">URLs</span>
               </div>
               <div className="text-center bg-[#f4f8fb] rounded-[8px] py-2.5 px-1.5">
-                <span className="text-[1.3rem] font-medium text-[#1F4F6E] block leading-none mb-1">600</span>
-                <span className="text-[0.7rem] text-[#7a9ab0] uppercase tracking-[0.08em] font-normal">photos</span>
+                <span className="text-[1.25rem] font-medium text-[#1F4F6E] block leading-none mb-1">149 392</span>
+                <span className="text-[0.7rem] text-[#7a9ab0] uppercase tracking-[0.08em] font-normal">mots</span>
               </div>
               <div className="text-center bg-[#f4f8fb] rounded-[8px] py-2.5 px-1.5">
-                <span className="text-[1.3rem] font-medium text-[#1F4F6E] block leading-none mb-1">275k</span>
-                <span className="text-[0.7rem] text-[#7a9ab0] uppercase tracking-[0.08em] font-normal">vues/mois</span>
+                <span className="text-[1.25rem] font-medium text-[#1F4F6E] block leading-none mb-1">652</span>
+                <span className="text-[0.7rem] text-[#7a9ab0] uppercase tracking-[0.08em] font-normal">images</span>
               </div>
             </div>
 
             <div className="px-6 pb-6 flex">
               <div className="w-full bg-gradient-to-br from-[#037971] to-[#02ADAB] rounded-[8px] p-3 sm:px-4 text-white text-[0.9rem] leading-[1.5] font-normal shadow-sm flex flex-col justify-center">
                 <p>
-                  <strong className="font-medium text-white">1ère page Google</strong> sur "photos de ciels et paysages en Seine-et-Marne".<br />
+                  <strong className="font-medium text-white">1ère page Google</strong> et <strong className="font-medium text-white">275k vues/mois</strong> sans publicité.<br />
                   <strong className="font-medium text-white">Position 7</strong> sur "Moulin de Belle-Assise" — devant Wikipedia.<br />
                   Cité par Google AI comme référence naturaliste régionale, aux côtés de la LPO.
                 </p>
@@ -362,7 +367,12 @@ export default function Oeuvres() {
           <article className="bg-white rounded-[12px] overflow-hidden shadow-[0_2px_16px_rgba(31,79,110,0.08)] hover:shadow-[0_8px_32px_rgba(31,79,110,0.14)] hover:-translate-y-1 transition-all duration-200 flex flex-col lg:grid lg:grid-rows-subgrid lg:row-span-7 lg:gap-y-0">
             <div className="h-[180px] bg-[#2a2a4a] relative overflow-hidden flex items-center justify-center group">
               <img
-                src="https://res.cloudinary.com/dokzioyu4/image/upload/v1788941670/Logo_thelittle75.fr_d1tmes.jpg"
+                src={cloudinaryUrl("https://res.cloudinary.com/dokzioyu4/image/upload/v1788941670/Logo_thelittle75.fr_d1tmes.jpg", 1000)}
+                srcSet={cloudinarySrcSet("https://res.cloudinary.com/dokzioyu4/image/upload/v1788941670/Logo_thelittle75.fr_d1tmes.jpg")}
+                sizes="(max-width: 768px) 100vw, 33vw"
+                width={600}
+                height={360}
+                loading="lazy"
                 alt="Paris — création site éditorial thelittle75.fr et stratégie référencement naturel Google"
                 className="w-full h-full object-cover opacity-90 group-hover:scale-105 transition-transform duration-500"
                 referrerPolicy="no-referrer"
@@ -394,16 +404,16 @@ export default function Oeuvres() {
 
             <div className="px-6 pb-5 grid grid-cols-3 gap-2.5 items-start">
               <div className="text-center bg-[#f4f8fb] rounded-[8px] py-2.5 px-1.5">
-                <span className="text-[1.3rem] font-medium text-[#1F4F6E] block leading-none mb-1">39</span>
-                <span className="text-[0.7rem] text-[#7a9ab0] uppercase tracking-[0.08em] font-normal">pages</span>
+                <span className="text-[1.25rem] font-medium text-[#1F4F6E] block leading-none mb-1">39</span>
+                <span className="text-[0.7rem] text-[#7a9ab0] uppercase tracking-[0.08em] font-normal">URLs</span>
               </div>
               <div className="text-center bg-[#f4f8fb] rounded-[8px] py-2.5 px-1.5">
-                <span className="text-[1.3rem] font-medium text-[#1F4F6E] block leading-none mb-1">−91%</span>
-                <span className="text-[0.7rem] text-[#7a9ab0] uppercase tracking-[0.08em] font-normal">poids img</span>
+                <span className="text-[1.25rem] font-medium text-[#1F4F6E] block leading-none mb-1">27 839</span>
+                <span className="text-[0.7rem] text-[#7a9ab0] uppercase tracking-[0.08em] font-normal">mots</span>
               </div>
               <div className="text-center bg-[#f4f8fb] rounded-[8px] py-2.5 px-1.5">
-                <span className="text-[1.3rem] font-medium text-[#1F4F6E] block leading-none mb-1">Top 2</span>
-                <span className="text-[0.7rem] text-[#7a9ab0] uppercase tracking-[0.08em] font-normal">Google</span>
+                <span className="text-[1.25rem] font-medium text-[#1F4F6E] block leading-none mb-1">53</span>
+                <span className="text-[0.7rem] text-[#7a9ab0] uppercase tracking-[0.08em] font-normal">images</span>
               </div>
             </div>
 
@@ -411,7 +421,7 @@ export default function Oeuvres() {
               <div className="w-full bg-gradient-to-br from-[#037971] to-[#02ADAB] rounded-[8px] p-3 sm:px-4 text-white text-[0.9rem] leading-[1.5] font-normal shadow-sm flex flex-col justify-center">
                 <p>
                   <strong className="font-medium text-white">2ème résultat Google</strong> sur "chronique Belleville Paris récit".<br />
-                  39 pages bien tenues devant des sites dix fois plus gros.<br />
+                  39 pages structurées (−91 % poids images) devant des médias dix fois plus gros.<br />
                   Score SEO passé de 45 à 77 en 48h après correction technique.
                 </p>
               </div>
@@ -434,7 +444,12 @@ export default function Oeuvres() {
           <article className="bg-white rounded-[12px] overflow-hidden shadow-[0_2px_16px_rgba(31,79,110,0.08)] hover:shadow-[0_8px_32px_rgba(31,79,110,0.14)] hover:-translate-y-1 transition-all duration-200 flex flex-col lg:grid lg:grid-rows-subgrid lg:row-span-7 lg:gap-y-0">
             <div className="h-[180px] bg-[#2a4a3a] relative overflow-hidden flex items-center justify-center group p-4">
               <img
-                src="https://res.cloudinary.com/dyooqwryq/image/upload/v1794124042/thelittle83-logo_op3yvm.svg"
+                src={cloudinaryUrl("https://res.cloudinary.com/dyooqwryq/image/upload/v1794124042/thelittle83-logo_op3yvm.svg", 600)}
+                srcSet={cloudinarySrcSet("https://res.cloudinary.com/dyooqwryq/image/upload/v1794124042/thelittle83-logo_op3yvm.svg")}
+                sizes="(max-width: 768px) 100vw, 33vw"
+                width={600}
+                height={360}
+                loading="lazy"
                 alt="Logo thelittle83.fr — atlas naturaliste du Var optimisé visibilité AI Overviews et Google AI"
                 className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-500"
                 referrerPolicy="no-referrer"
@@ -466,23 +481,23 @@ export default function Oeuvres() {
 
             <div className="px-6 pb-5 grid grid-cols-3 gap-2.5 items-start">
               <div className="text-center bg-[#f4f8fb] rounded-[8px] py-2.5 px-1.5">
-                <span className="text-[1.3rem] font-medium text-[#1F4F6E] block leading-none mb-1">130</span>
-                <span className="text-[0.7rem] text-[#7a9ab0] uppercase tracking-[0.08em] font-normal">pages</span>
+                <span className="text-[1.25rem] font-medium text-[#1F4F6E] block leading-none mb-1">132</span>
+                <span className="text-[0.7rem] text-[#7a9ab0] uppercase tracking-[0.08em] font-normal">URLs</span>
               </div>
               <div className="text-center bg-[#f4f8fb] rounded-[8px] py-2.5 px-1.5">
-                <span className="text-[1.3rem] font-medium text-[#1F4F6E] block leading-none mb-1">×2</span>
-                <span className="text-[0.7rem] text-[#7a9ab0] uppercase tracking-[0.08em] font-normal">langues</span>
+                <span className="text-[1.25rem] font-medium text-[#1F4F6E] block leading-none mb-1">101 967</span>
+                <span className="text-[0.7rem] text-[#7a9ab0] uppercase tracking-[0.08em] font-normal">mots</span>
               </div>
               <div className="text-center bg-[#f4f8fb] rounded-[8px] py-2.5 px-1.5">
-                <span className="text-[1.3rem] font-medium text-[#1F4F6E] block leading-none mb-1">&lt;1h</span>
-                <span className="text-[0.7rem] text-[#7a9ab0] uppercase tracking-[0.08em] font-normal">indexé IA</span>
+                <span className="text-[1.25rem] font-medium text-[#1F4F6E] block leading-none mb-1">514</span>
+                <span className="text-[0.7rem] text-[#7a9ab0] uppercase tracking-[0.08em] font-normal">images</span>
               </div>
             </div>
 
             <div className="px-6 pb-6 flex">
               <div className="w-full bg-gradient-to-br from-[#037971] to-[#02ADAB] rounded-[8px] p-3 sm:px-4 text-white text-[0.9rem] leading-[1.5] font-normal shadow-sm flex flex-col justify-center">
                 <p>
-                  <strong className="font-medium text-white">Lancé le 8 nov. 2026.</strong> Référencé par Google AI en moins d'une heure.<br />
+                  <strong className="font-medium text-white">Lancé le 8 nov. 2026.</strong> Bilingue et référencé par Google AI en moins d'une heure.<br />
                   <strong className="font-medium text-white">1er résultat image</strong> sur "aigrette garzette Hyères" dès le lendemain.<br />
                   Aucune publicité. Aucun backlink acheté.
                 </p>
@@ -502,6 +517,98 @@ export default function Oeuvres() {
             </div>
           </article>
 
+        </div>
+
+        {/* TABLEAU COMPARATIF DES 3 ÉTUDES DE CAS MESURÉES */}
+        <div className="mt-14 bg-white rounded-[12px] p-7 sm:p-9 shadow-[0_2px_16px_rgba(31,79,110,0.08)]">
+          <div className="mb-6">
+            <p className="text-[0.72rem] tracking-[0.18em] uppercase text-[#02ADAB] mb-2 font-medium">
+              Preuves mesurées en production · Relevé du 12 nov. 2026
+            </p>
+            <h3 className="text-[1.45rem] font-light text-[#1F4F6E]">
+              Synthèse comparative des <strong className="font-medium">trois études de cas TheLittle</strong>
+            </h3>
+            <p className="text-[0.95rem] text-[#5a7a90] leading-[1.65] mt-2 max-w-[780px]">
+              Ces trois sites éditoriaux servent de banc d'essai permanent à l'agence Alkymya : ils démontrent qu'une architecture sémantique rigoureuse, couplée à nos agents IA éditoriaux et de veille SEO/GEO, génère une autorité organique vérifiable sans achat d'espace publicitaire ni netlinking artificiel.
+            </p>
+          </div>
+
+          <div className="overflow-x-auto">
+            <table className="w-full text-left border-collapse text-sm">
+              <thead>
+                <tr className="border-b border-[rgba(31,79,110,0.12)] text-[#1F4F6E] text-xs uppercase tracking-wider">
+                  <th className="py-3 pr-4 font-medium">Site &amp; Créateur</th>
+                  <th className="py-3 px-4 font-medium">Délai</th>
+                  <th className="py-3 px-4 font-medium">URLs indexables</th>
+                  <th className="py-3 px-4 font-medium">Mots publiés</th>
+                  <th className="py-3 px-4 font-medium">Images</th>
+                  <th className="py-3 pl-4 font-medium">Signal Google &amp; AI Overviews</th>
+                </tr>
+              </thead>
+              <tbody className="divide-y divide-[rgba(31,79,110,0.08)] text-[#4a6a80]">
+                <tr>
+                  <td className="py-3.5 pr-4 font-medium text-[#1F4F6E]">
+                    thelittle77.fr <span className="block text-xs font-normal text-[#7a9ab0]">Cyril Garnier</span>
+                  </td>
+                  <td className="py-3.5 px-4">3 mois</td>
+                  <td className="py-3.5 px-4 font-medium text-[#1F4F6E]">216 URL</td>
+                  <td className="py-3.5 px-4 font-medium text-[#1F4F6E]">149 392</td>
+                  <td className="py-3.5 px-4 font-medium text-[#1F4F6E]">652</td>
+                  <td className="py-3.5 pl-4">275k vues/mois, Position 7 devant Wikipedia, 93 citations AI Overviews</td>
+                </tr>
+                <tr>
+                  <td className="py-3.5 pr-4 font-medium text-[#1F4F6E]">
+                    thelittle75.fr <span className="block text-xs font-normal text-[#7a9ab0]">Léonie Egesipe</span>
+                  </td>
+                  <td className="py-3.5 px-4">2 mois</td>
+                  <td className="py-3.5 px-4 font-medium text-[#1F4F6E]">39 URL</td>
+                  <td className="py-3.5 px-4 font-medium text-[#1F4F6E]">27 839</td>
+                  <td className="py-3.5 px-4 font-medium text-[#1F4F6E]">53</td>
+                  <td className="py-3.5 pl-4">Top 2 Google sur "chronique Belleville Paris récit", score SEO 45 → 77 en 48h</td>
+                </tr>
+                <tr>
+                  <td className="py-3.5 pr-4 font-medium text-[#1F4F6E]">
+                    thelittle83.fr <span className="block text-xs font-normal text-[#7a9ab0]">Cyril Garnier</span>
+                  </td>
+                  <td className="py-3.5 px-4">24 heures</td>
+                  <td className="py-3.5 px-4 font-medium text-[#1F4F6E]">132 URL</td>
+                  <td className="py-3.5 px-4 font-medium text-[#1F4F6E]">101 967</td>
+                  <td className="py-3.5 px-4 font-medium text-[#1F4F6E]">514</td>
+                  <td className="py-3.5 pl-4">Indexé par Google AI en &lt;1h, 1er résultat image dès J+1 sans backlink</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          {/* BLOC DE TRANSITION VERS NEW BUSINESS MVP */}
+          <div className="mt-7 p-6 rounded-[10px] bg-[#f4f8fb] border border-[rgba(2,173,171,0.2)] flex flex-col md:flex-row md:items-center justify-between gap-6">
+            <div className="max-w-[660px]">
+              <p className="text-xs uppercase tracking-[0.14em] text-[#037971] font-medium mb-1.5">
+                De la vitrine éditoriale au lancement commercial
+              </p>
+              <h4 className="text-[1.15rem] font-medium text-[#1F4F6E] mb-1.5">
+                La même méthode appliquée à votre offre dans New Business MVP
+              </h4>
+              <p className="text-[0.9rem] text-[#5a7a90] leading-[1.6]">
+                Ces 387 URLs et plus de 279 000 mots publiés en conditions réelles nourrissent directement l'accompagnement de 6 mois pour dirigeants et indépendants : vous validez votre marché, votre site MVP et votre visibilité Google AI avant d'investir lourdement.
+              </p>
+            </div>
+            <div className="flex flex-wrap gap-3 shrink-0">
+              <Link
+                to="/newbusiness"
+                className="inline-flex items-center gap-2 px-5 py-3 rounded-[8px] bg-[#1F4F6E] hover:bg-[#02ADAB] text-white text-sm font-medium transition-colors"
+              >
+                <span>Découvrir New Business MVP</span>
+                <ArrowRight className="w-4 h-4" />
+              </Link>
+              <Link
+                to="/ateliers"
+                className="inline-flex items-center gap-2 px-5 py-3 rounded-[8px] bg-white border border-[rgba(31,79,110,0.18)] hover:border-[#02ADAB] text-[#1F4F6E] text-sm font-medium transition-colors"
+              >
+                <span>Ateliers SEO &amp; Agents IA</span>
+              </Link>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -638,7 +745,12 @@ export default function Oeuvres() {
                   className="h-[180px] bg-[#1F4F6E] relative overflow-hidden flex items-center justify-center group cursor-pointer"
                 >
                   <img
-                    src={album.coverImage}
+                    src={cloudinaryUrl(album.coverImage, 800)}
+                    srcSet={cloudinarySrcSet(album.coverImage)}
+                    sizes="(max-width: 768px) 100vw, 33vw"
+                    width={600}
+                    height={360}
+                    loading="lazy"
                     alt={`${album.title} — direction artistique photo vidéo IA Alkymya`}
                     className="w-full h-full object-cover opacity-90 group-hover:scale-105 transition-transform duration-500"
                     referrerPolicy="no-referrer"
@@ -773,7 +885,11 @@ export default function Oeuvres() {
                 ) : (
                   <img
                     key={activeAlbum.mediaList[activeMediaIndex].url}
-                    src={activeAlbum.mediaList[activeMediaIndex].url}
+                    src={cloudinaryUrl(activeAlbum.mediaList[activeMediaIndex].url, 1200)}
+                    srcSet={cloudinarySrcSet(activeAlbum.mediaList[activeMediaIndex].url)}
+                    sizes="90vw"
+                    width={1200}
+                    height={900}
                     alt={`${activeAlbum.mediaList[activeMediaIndex].title} — direction artistique photo vidéo IA Alkymya`}
                     className="max-h-[60vh] w-auto max-w-full object-contain"
                     referrerPolicy="no-referrer"
@@ -841,7 +957,10 @@ export default function Oeuvres() {
                       </div>
                     ) : (
                       <img
-                        src={media.url}
+                        src={cloudinaryUrl(media.url, 300)}
+                        width={64}
+                        height={48}
+                        loading="lazy"
                         alt={media.title}
                         className="w-full h-full object-cover"
                         referrerPolicy="no-referrer"

@@ -107,6 +107,59 @@ export default function JoinUs() {
       {/* SÉPARATEUR */}
       <hr className="border-none border-t border-[rgba(31,79,110,0.1)] mx-6 max-w-[1100px] md:mx-auto" />
 
+      {/* PARCOURS & DEVENIR DES ALTERNANTS */}
+      <section className="max-w-[1100px] mx-auto py-[70px] px-6">
+        <p className="text-[0.75rem] tracking-[0.18em] uppercase text-[#02ADAB] mb-2.5 font-medium">
+          Transmission &amp; Alternance
+        </p>
+        <h2 className="text-[1.8rem] sm:text-[2rem] font-light mb-3 text-[#1F4F6E]">
+          Ce que devient un alternant <strong className="font-medium text-[#1F4F6E]">ou jeune talent chez Alkymya</strong>
+        </h2>
+        <p className="text-[1.05rem] text-[#4a6a80] max-w-[680px] leading-[1.7] mb-10 font-normal">
+          Nous refusons les stages et alternances d'exécution passive. Chaque talent intégré au studio conçoit de vrais produits en ligne, co-anime des ateliers devant des dirigeants et publie sous son propre nom pour bâtir un portfolio vérifiable.
+        </p>
+
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-7">
+          <div className="lg:col-span-7 bg-white rounded-[12px] p-8 shadow-[0_2px_16px_rgba(31,79,110,0.08)] space-y-4">
+            <span className="inline-block text-[0.72rem] font-medium tracking-[0.1em] uppercase py-1 px-2.5 rounded-[4px] bg-[rgba(192,103,33,0.12)] text-[#C06721]">
+              Cas réel · Parcours terrain
+            </span>
+            <h3 className="text-[1.25rem] font-medium text-[#1F4F6E]">
+              De cheffe de projet en alternance à co-pilote des programmes et médias du studio
+            </h3>
+            <p className="text-[0.95rem] text-[#5a7a90] leading-[1.7]">
+              Arrivée au sein d'Alkymya en formation digitale, <strong className="font-medium text-[#1F4F6E]">Léonie Egesipe</strong> a pris en charge la direction opérationnelle des projets numériques et la direction artistique IA du studio dès les premiers mois. Elle co-pilote aujourd'hui les cohortes <strong className="font-medium text-[#1F4F6E]">New Business MVP</strong> aux côtés de Cyril Garnier, signe l'univers visuel <strong className="font-medium text-[#1F4F6E]">Métropolia</strong> et a conçu le média éditorial <strong className="font-medium text-[#1F4F6E]">thelittle75.fr</strong> (Top 2 Google sur ses requêtes cibles).
+            </p>
+            <p className="text-[0.95rem] text-[#5a7a90] leading-[1.7]">
+              Six nouveaux talents issus de nos promotions accompagnées (Alex Le Bloch Moan, Imane Zagour, Inès Laghzou, Laura Louit, Nancy Ghanem et Apolline Bellaclas) ont déjà publié leurs propres e-portfolios et dispositifs web interactifs.
+            </p>
+          </div>
+
+          <div className="lg:col-span-5 bg-white rounded-[12px] p-8 shadow-[0_2px_16px_rgba(31,79,110,0.08)] space-y-4">
+            <h3 className="text-[1.15rem] font-medium text-[#1F4F6E]">
+              Ce que vous construisez dès les 90 premiers jours
+            </h3>
+            <ul className="space-y-3 text-[0.92rem] text-[#4a6a80] leading-[1.6]">
+              <li className="flex items-start gap-2.5">
+                <CheckCircle2 className="w-4 h-4 text-[#02ADAB] shrink-0 mt-1" />
+                <span>Mise en ligne d'un site ou d'un agent IA autonome mesuré sur Google et les moteurs IA.</span>
+              </li>
+              <li className="flex items-start gap-2.5">
+                <CheckCircle2 className="w-4 h-4 text-[#02ADAB] shrink-0 mt-1" />
+                <span>Co-animation d'ateliers pratiques IA en entreprise et en grandes écoles (HETIC, Ynov, CFA Itis).</span>
+              </li>
+              <li className="flex items-start gap-2.5">
+                <CheckCircle2 className="w-4 h-4 text-[#02ADAB] shrink-0 mt-1" />
+                <span>Accompagnement en recrutement et insertion avec notre partenaire officiel Objectif Alternance.</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      {/* SÉPARATEUR */}
+      <hr className="border-none border-t border-[rgba(31,79,110,0.1)] mx-6 max-w-[1100px] md:mx-auto" />
+
       {/* ASSESSFIRST & CANDIDATURE */}
       <section className="max-w-[1100px] mx-auto py-[70px] px-6 space-y-10">
         {/* AssessFirst Quiz Section */}

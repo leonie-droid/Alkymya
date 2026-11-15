@@ -30,8 +30,8 @@ export default function Ateliers() {
   return (
     <div className="bg-[#f4f6f9] text-[#1F4F6E] min-h-screen font-['Roboto',sans-serif] selection:bg-[#C06721] selection:text-white">
       <SEO
-        title="Atelier IA Pratique & Formation Qualiopi OPCO | Alkymya"
-        description="Atelier IA pratique, formation IA entreprise certifiée Qualiopi finançable OPCO, audit IA PME Capital IA, agent IA métier et conformité IA Act."
+        title="Ateliers IA pour équipes en Île-de-France — Alkymya"
+        description="Alkymya, studio IA et organisme de formation à Ozoir-la-Ferrière : ateliers pratiques Qualiopi finançables OPCO, agents IA métiers et audit Capital IA."
         canonicalPath="/ateliers"
         ogImage="https://alkymya.co/og-ateliers.jpg"
         type="Course"

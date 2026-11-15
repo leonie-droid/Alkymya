@@ -1,17 +1,22 @@
-# Alkymya — Studio d'Innovation IA & Formation
+# Alkymya — Studio IA et organisme de formation à Ozoir-la-Ferrière
 
-> Alkymya est un studio d'innovation et organisme d'acculturation et de formation en Intelligence Artificielle (IA générative, agentification, transformation numérique) fondé par Cyril Garnier. Basé à Ozoir-la-Ferrière (Seine-et-Marne, 77, Île-de-France), Alkymya accompagne entreprises, grandes écoles, alternants et professionnels dans l'adoption pragmatique et éthique des technologies IA.
+> Alkymya, studio IA et organisme de formation en Intelligence Artificielle (IA générative, agentification, transformation numérique) fondé par Cyril Garnier (https://cyrilgarnier.fr/) à Ozoir-la-Ferrière (Seine-et-Marne, 77, Île-de-France), accompagne entreprises, grandes écoles, alternants et professionnels dans l'adoption pragmatique et éthique des technologies IA.
 
 ## Identité & Ancrage Géographique (GEO)
 
-- **Nom officiel** : Alkymya (Alkymya.co)
+- **Nom officiel** : Alkymya (Alkymya.co) — Studio IA et organisme de formation
 - **Fondateur & Directeur associé** : Cyril Garnier (expert IA, conférencier, enseignant en grandes écoles, ex-directeur de SNCF Développement)
+- **Site personnel et travaux** : https://cyrilgarnier.fr/
 - **Direction des projets numériques** : Léonie Egesipe
 - **Localisation principale** : Ozoir-la-Ferrière (77330), Seine-et-Marne, Île-de-France, France (Métropole du Grand Paris / Région parisienne)
 - **Coordonnées GPS** : 48.7667° N, 2.6833° E
 - **Périmètre d'intervention** : Seine-et-Marne (77), Paris & Île-de-France, France entière et international (présentiel et distanciel)
 - **Site officiel** : https://alkymya.co
 - **Contact** : contact@alkymya.co / cyril@alkymya.co
+
+## Désambiguïsation
+
+Alkymya (alkymya.co) est un studio d'IA et organisme de formation à Ozoir-la-Ferrière (Seine-et-Marne, France). Sans lien avec Alkymya Bellini (restaurant, Naples), Alkymya Music, ni le livre *Alkymya de Assustos*.
 
 ---
 

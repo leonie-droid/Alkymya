@@ -16,7 +16,8 @@ interface SEOProps {
     | 'AboutPage'
     | 'ContactPage'
     | 'WebApplication'
-    | 'EducationalOccupationalProgram';
+    | 'EducationalOccupationalProgram'
+    | 'ProfilePage';
   faqData?: Array<{ question: string; answer: string }>;
 }
 
@@ -88,12 +89,29 @@ export const SEO: React.FC<SEOProps> = ({
 
   const localBusinessSchema = {
     "@context": "https://schema.org",
-    "@type": ["LocalBusiness", "ProfessionalService"],
-    "name": "Alkymya — Agence IA & Studio Création IA",
-    "image": "https://res.cloudinary.com/dokzioyu4/image/upload/v1758096912/logo_principal_bleu_gbnyuu.png",
-    "@id": "https://alkymya.co/#localbusiness",
-    "url": "https://alkymya.co",
-    "description": "Agence IA et studio création IA en France : accompagnement intelligence artificielle, création d'agents IA sur mesure, stratégie SEO et GEO Google AI et formation IA Qualiopi OPCO.",
+    "@type": ["LocalBusiness", "ProfessionalService", "EducationalOrganization"],
+    "name": "Alkymya",
+    "alternateName": ["Alkymya.co", "Studio Alkymya"],
+    "image": "https://res.cloudinary.com/dokzioyu4/image/upload/f_auto,q_auto,w_600,c_limit/v1758096912/logo_principal_bleu_gbnyuu.png",
+    "@id": "https://alkymya.co/#organization",
+    "url": "https://alkymya.co/",
+    "description": "Alkymya, studio IA et organisme de formation à Ozoir-la-Ferrière (Seine-et-Marne, France) : accompagnement intelligence artificielle, création d'agents IA sur mesure, stratégie SEO et GEO Google AI et formation IA Qualiopi OPCO.",
+    "founder": {
+      "@type": "Person",
+      "@id": "https://alkymya.co/#cyril-garnier",
+      "name": "Cyril Garnier",
+      "url": "https://cyrilgarnier.fr/",
+      "sameAs": [
+        "https://cyrilgarnier.fr/",
+        "https://www.linkedin.com/in/cyril-garnier-89697b1/"
+      ]
+    },
+    "sameAs": [
+      "https://www.linkedin.com/company/alkymya/",
+      "https://www.youtube.com/@alkymya",
+      "https://www.instagram.com/alkymya.co/",
+      "https://cyrilgarnier.fr/"
+    ],
     "address": {
       "@type": "PostalAddress",
       "addressLocality": "Ozoir-la-Ferrière",
@@ -119,11 +137,22 @@ export const SEO: React.FC<SEOProps> = ({
     "@context": "https://schema.org",
     "@type": "EducationalOrganization",
     "name": "Alkymya",
-    "description": "Experts IA France : formation IA entreprise certifiée Qualiopi finançable OPCO, atelier IA pratique et accompagnement IA dirigeants et indépendants.",
-    "url": "https://alkymya.co",
+    "alternateName": ["Alkymya.co", "Studio Alkymya"],
+    "description": "Alkymya, studio IA et organisme de formation à Ozoir-la-Ferrière : formation IA entreprise certifiée Qualiopi finançable OPCO, atelier IA pratique et accompagnement IA dirigeants et indépendants.",
+    "url": "https://alkymya.co/",
+    "founder": {
+      "@id": "https://alkymya.co/#cyril-garnier"
+    },
+    "sameAs": [
+      "https://www.linkedin.com/company/alkymya/",
+      "https://www.youtube.com/@alkymya",
+      "https://www.instagram.com/alkymya.co/",
+      "https://cyrilgarnier.fr/"
+    ],
     "address": {
       "@type": "PostalAddress",
       "addressLocality": "Ozoir-la-Ferrière",
+      "postalCode": "77330",
       "addressRegion": "Seine-et-Marne",
       "addressCountry": "FR"
     }

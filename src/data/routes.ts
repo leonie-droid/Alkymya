@@ -9,6 +9,14 @@ export interface InternalLink {
   label: string;
 }
 
+export interface RouteImage {
+  src: string;
+  alt: string;
+  width: number;
+  height: number;
+  caption?: string;
+}
+
 export interface RouteData {
   path: string;
   title: string; // strictly <= 60 characters
@@ -19,6 +27,7 @@ export interface RouteData {
   ogImage: string;
   lastmod: string;
   schemaType: string;
+  images?: RouteImage[];
   content: {
     leadParagraph: string;
     sections: RouteContentSection[];
@@ -29,40 +38,76 @@ export interface RouteData {
 export const routes: RouteData[] = [
   {
     path: '/',
-    title: "Agence IA & Studio Création IA | Alkymya",
-    description: "Agence IA et studio création IA : accompagnement intelligence artificielle, création d'agents IA sur mesure, stratégie SEO et GEO Google AI.",
-    h1: "Agence IA & studio création IA : l'art de la transformation.",
+    title: "Formation IA en entreprise à Ozoir-la-Ferrière — Alkymya",
+    description: "Alkymya, studio IA et organisme de formation à Ozoir-la-Ferrière (77) : formation IA entreprise Qualiopi, agents IA sur mesure et stratégie SEO GEO.",
+    h1: "Former vos équipes à l'IA, là où elles travaillent.",
     ogImage: "https://alkymya.co/og-image.jpg",
-    lastmod: "2026-11-13",
+    lastmod: "2026-11-15",
     schemaType: "WebPage",
+    images: [
+      {
+        src: "https://res.cloudinary.com/dokzioyu4/image/upload/v1767128574/kk25As37_y8rw27.png",
+        alt: "Alkymya, studio IA et organisme de formation à Ozoir-la-Ferrière — direction artistique générative",
+        width: 1200,
+        height: 800,
+        caption: "Création visuelle augmentée — Studio Alkymya (Ozoir-la-Ferrière)"
+      },
+      {
+        src: "https://res.cloudinary.com/dokzioyu4/image/upload/v1758192982/66cffcd8-15f1-415f-b423-9f428d63e22f_gqjd53.png",
+        alt: "Cyril Garnier — Fondateur d'Alkymya, studio IA et organisme de formation à Ozoir-la-Ferrière",
+        width: 600,
+        height: 750,
+        caption: "Cyril Garnier — Directeur Associé & Fondateur"
+      },
+      {
+        src: "https://res.cloudinary.com/dokzioyu4/image/upload/v1762252984/725879fe-afa3-4afa-a900-229030c002de_1_xoep2v.png",
+        alt: "Léonie Egesipe — Co-fondatrice et Directrice Artistique IA chez Alkymya",
+        width: 600,
+        height: 750,
+        caption: "Léonie Egesipe — Cheffe de Projet Digital & DA IA"
+      }
+    ],
     content: {
-      leadParagraph: "Alkymya est votre agence IA et studio création IA en France : accompagnement intelligence artificielle, création d'agents IA sur mesure et stratégie SEO et GEO pour votre visibilité Google AI.",
+      leadParagraph: "Alkymya est un studio IA et organisme de formation installé à Ozoir-la-Ferrière (Seine-et-Marne) : formation IA en entreprise certifiée Qualiopi, création d'agents IA sur mesure, stratégie SEO et GEO pour votre visibilité Google AI.",
       sections: [
         {
           h2: "Accompagnement intelligence artificielle en trois piliers",
           paragraphs: [
-            "Nous guidons les dirigeants, professionnels et étudiants à travers trois axes complémentaires : Explorer les technologies d'IA générative, Transformer les processus métiers avec des prototypes fonctionnels, et Partager les compétences clés pour une autonomie durable."
+            "Alkymya, studio IA et organisme de formation à Ozoir-la-Ferrière, guide les dirigeants, équipes métiers et étudiants à travers trois axes complémentaires : Explorer les technologies d'IA générative, Transformer les processus quotidiens avec des prototypes fonctionnels, et Partager les compétences clés pour une autonomie durable.",
+            "Chaque intervention privilégie la pratique immédiate sur les outils de travail réels de l'entreprise : rédaction structurée, automatisation documentaire, agents autonomes connectés au CRM et déploiement de sites éditoriaux visibles sur Google et dans Google AI Overviews."
           ],
           listItems: [
-            "Explorer : Ateliers d'acculturation et veille stratégique de pointe sur l'intelligence artificielle.",
-            "Transformer : Conseil stratégique, agentification des workflows et prototypage no-code / low-code.",
-            "Partager : Formations certifiantes Qualiopi, business games interactifs et mentorat de talents."
+            "Explorer : ateliers d'acculturation, veille SEO IA et analyse des cas d'usage rentables par service.",
+            "Transformer : conseil stratégique, création d'agents IA sur mesure et prototypage no-code / low-code.",
+            "Partager : formations certifiantes Qualiopi finançables OPCO, business games et mentorat de talents."
           ]
         },
         {
-          h2: "Notre impact pédagogique et territorial",
+          h2: "Ce que vous repartez avec et nos trois formats d'intervention",
           paragraphs: [
-            "Basé en Seine-et-Marne à Ozoir-la-Ferrière, Alkymya collabore étroitement avec les grandes écoles d'ingénieurs et de commerce de premier plan ainsi que les grands groupes industriels et de services.",
-            "Plus de 450 étudiants et professionnels formés avec un taux de satisfaction de 98 % sur l'ensemble de nos programmes d'acculturation et d'expérimentation."
+            "Nous intervenons directement dans vos locaux en Seine-et-Marne, à Paris et partout en Île-de-France, ou en classe virtuelle synchrone. Chaque participant repart avec des prompts métiers testés sur ses propres dossiers, des agents IA opérationnels et un protocole de conformité IA Act.",
+            "Nos résultats ne sont pas théoriques : nos trois études de cas éditoriales en production (thelittle77.fr, thelittle75.fr et thelittle83.fr) totalisent 387 URLs indexables et plus de 279 000 mots publiés sans publicité ni achat de liens."
+          ],
+          listItems: [
+            "Formation Core IA (14h en 4 demi-journées) : certifiée Qualiopi via INATEC, éligible OPCO jusqu'à 100 %, pour maîtriser le prompt engineering, la création de contenus et les premiers workflows.",
+            "Ateliers spécialisés (3h30) : création de 3 agents IA métiers autonomes, application web interne no-code connectée à Gemini/GPT ou audit de conformité IA Act.",
+            "New Business MVP (6 mois à 200 € / mois) : accompagnement en binôme par Cyril Garnier et Léonie Egesipe pour valider votre offre auprès de vrais clients avant d'investir."
+          ]
+        },
+        {
+          h2: "Ancrage territorial à Ozoir-la-Ferrière et impact pédagogique",
+          paragraphs: [
+            "Basé en Seine-et-Marne à Ozoir-la-Ferrière (77330), Alkymya collabore avec les PME d'Île-de-France, les grands groupes (SNCF, Fondation GRDF, Morning) et les grandes écoles (HETIC, Ynov Campus, IÉSEG, CFA Itis, Paris École de Management).",
+            "Plus de 450 professionnels et étudiants ont déjà suivi nos programmes, avec un taux de recommandation de 99,3 % sur nos ateliers pratiques."
           ]
         }
       ],
       internalLinks: [
-        { href: "/ateliers/", label: "Découvrir nos ateliers et formations IA" },
+        { href: "/oeuvres/", label: "Voir nos trois études de cas éditoriales (thelittle77, 75, 83)" },
+        { href: "/ateliers/", label: "Découvrir nos ateliers et formations IA Qualiopi" },
         { href: "/newbusiness/", label: "Rejoindre le programme New Business MVP" },
-        { href: "/oeuvres/", label: "Consulter nos réalisations concrètes en IA" },
         { href: "/alchimistes/", label: "Rencontrer les fondateurs d'Alkymya" },
-        { href: "/contact/", label: "Contacter nos experts pour un projet sur-mesure" }
+        { href: "/contact/", label: "Contacter Alkymya à Ozoir-la-Ferrière" }
       ]
     }
   },
@@ -72,10 +117,19 @@ export const routes: RouteData[] = [
     description: "Studio création IA et générateur d'agents IA sur mesure : personas vidéo, études Génération IA 2024-2026 et accompagnement intelligence artificielle.",
     h1: "Génération IA & création d'agents IA sur mesure.",
     ogImage: "https://alkymya.co/og-ia.jpg",
-    lastmod: "2026-11-13",
+    lastmod: "2026-11-15",
     schemaType: "WebApplication",
+    images: [
+      {
+        src: "https://res.cloudinary.com/dokzioyu4/image/upload/v1777491204/Capture_GENERATION_IA_lrxvdx.png",
+        alt: "Étude Génération IA et création d'agents IA sur mesure par le studio création IA Alkymya",
+        width: 1000,
+        height: 620,
+        caption: "Méthodologie Génération IA 2024-2026 — Enquêtes et personas"
+      }
+    ],
     content: {
-      leadParagraph: "Explorez en direct la puissance de notre studio création IA : accompagnement intelligence artificielle, création d'agents IA sur mesure, personas vidéo et stratégie SEO et GEO.",
+      leadParagraph: "Explorez en direct la puissance d'Alkymya, studio IA et organisme de formation à Ozoir-la-Ferrière : accompagnement intelligence artificielle, création d'agents IA sur mesure, personas vidéo et stratégie SEO et GEO.",
       sections: [
         {
           h2: "À qui s'adresse notre studio création IA et Générateur d'Idées ?",
@@ -134,50 +188,221 @@ export const routes: RouteData[] = [
   },
   {
     path: '/oeuvres',
-    title: "Création Site Éditorial, Agents IA & SEO GEO | Alkymya",
-    description: "Création site éditorial, référencement naturel Google, visibilité AI Overviews, agents IA autonomes en production et direction artistique IA.",
-    ogTitle: "Création Site Éditorial, Agents IA & SEO GEO | Alkymya",
-    ogDescription: "Création site éditorial, référencement naturel Google, visibilité AI Overviews, agents IA autonomes en production et direction artistique IA.",
-    h1: "Création site éditorial, agents IA & direction artistique IA.",
+    title: "Études de cas SEO, IA & création éditoriale — Alkymya",
+    description: "Trois études de cas mesurées (thelittle77, 75 et 83), agents IA autonomes en production et direction artistique IA par Alkymya à Ozoir-la-Ferrière.",
+    ogTitle: "Études de cas SEO, IA & création éditoriale — Alkymya",
+    ogDescription: "Trois études de cas mesurées (thelittle77, 75 et 83), agents IA autonomes en production et direction artistique IA par Alkymya à Ozoir-la-Ferrière.",
+    h1: "Études de cas SEO, agents IA & création éditoriale.",
     ogImage: "https://alkymya.co/og-oeuvres.jpg",
-    lastmod: "2026-11-13",
+    lastmod: "2026-11-15",
     schemaType: "CollectionPage",
+    images: [
+      {
+        src: "https://res.cloudinary.com/dokzioyu4/image/upload/v1788941703/PHOTO-2026-09-08-06-54-57_ynrbkt.jpg",
+        alt: "Ciel de Seine-et-Marne — étude de cas éditoriale thelittle77.fr (216 URLs, 149 392 mots)",
+        width: 1200,
+        height: 800,
+        caption: "thelittle77.fr — Créateur Cyril Garnier"
+      },
+      {
+        src: "https://res.cloudinary.com/dokzioyu4/image/upload/v1788941670/Logo_thelittle75.fr_d1tmes.jpg",
+        alt: "Paris — étude de cas éditoriale thelittle75.fr (39 URLs, 27 839 mots)",
+        width: 1000,
+        height: 667,
+        caption: "thelittle75.fr — Créateur Léonie Egesipe"
+      },
+      {
+        src: "https://res.cloudinary.com/dyooqwryq/image/upload/v1794124042/thelittle83-logo_op3yvm.svg",
+        alt: "Logo thelittle83.fr — atlas naturaliste bilingue du Var (132 URLs, 101 967 mots)",
+        width: 600,
+        height: 360,
+        caption: "thelittle83.fr — Créateur Cyril Garnier"
+      },
+      {
+        src: "https://res.cloudinary.com/dokzioyu4/image/upload/v1767128574/kk25As37_y8rw27.png",
+        alt: "Alkymya Vision #01 — Composition chromatique & géométrie lumineuse",
+        width: 1000,
+        height: 1000,
+        caption: "Direction artistique Alkymya — Cyril Garnier & Léonie Egesipe"
+      },
+      {
+        src: "https://res.cloudinary.com/dokzioyu4/image/upload/v1767128268/n0DtTbCd_n4wyfq.png",
+        alt: "Alkymya Vision #02 — Matières brutes & grain argentique",
+        width: 1000,
+        height: 1000
+      },
+      {
+        src: "https://res.cloudinary.com/dokzioyu4/image/upload/v1767127553/MVpvT2RW_s1n5ul.png",
+        alt: "Alkymya Vision #03 — Drapé algorithmique & fluidité textile",
+        width: 1000,
+        height: 1000
+      },
+      {
+        src: "https://res.cloudinary.com/dokzioyu4/image/upload/v1767127109/ya7Z8TI3_iaygii.png",
+        alt: "Alkymya Vision #04 — Profil sculptural & ombres portées",
+        width: 1000,
+        height: 1000
+      },
+      {
+        src: "https://res.cloudinary.com/dokzioyu4/image/upload/v1767127394/kXMN69tr_iskmoq.png",
+        alt: "Alkymya Vision #05 — Scénographie numérique & abstraction",
+        width: 1000,
+        height: 1000
+      },
+      {
+        src: "https://res.cloudinary.com/dokzioyu4/image/upload/v1767126747/8YHpK93A_c1xlyq.png",
+        alt: "Alkymya Vision #06 — Épure minérale & palette signature",
+        width: 1000,
+        height: 1000
+      },
+      {
+        src: "https://res.cloudinary.com/dokzioyu4/image/upload/v1767007589/WhatsApp_Image_2025-12-13_at_19.07.53_beeekx.jpg",
+        alt: "Alkymya Vision #07 — Instant décisif & matière de terrain",
+        width: 1000,
+        height: 750
+      },
+      {
+        src: "https://res.cloudinary.com/dokzioyu4/image/upload/v1770044606/4333e2ce-3ca9-43ca-9498-5149956f55a8_pzltlj.jpg",
+        alt: "Métropolia #01 — Vertiges d'acier & verticalité cyberpunk",
+        width: 1000,
+        height: 1000,
+        caption: "Métropolia — Narration générative urbaine"
+      },
+      {
+        src: "https://res.cloudinary.com/dokzioyu4/image/upload/v1770044606/d54d1975-3bf2-43bf-83da-c03d78f7ab96_f0jcm2.jpg",
+        alt: "Métropolia #02 — Nocturne cyberpunk & flux de données",
+        width: 1000,
+        height: 1000
+      },
+      {
+        src: "https://res.cloudinary.com/dokzioyu4/image/upload/v1770044606/1e9ba31e-8c38-48c3-ab3c-26b3337a305d_ynksne.jpg",
+        alt: "Métropolia #03 — Perspectives cinématiques & architecture brute",
+        width: 1000,
+        height: 1000
+      },
+      {
+        src: "https://res.cloudinary.com/dokzioyu4/image/upload/v1770044606/IMG_2742_yfl8fu.jpg",
+        alt: "Métropolia #04 — Passages secrets & interstices urbains",
+        width: 1000,
+        height: 1000
+      },
+      {
+        src: "https://res.cloudinary.com/dokzioyu4/image/upload/v1770044606/fcecdf84-531c-4531-85bd-405b0c861c7d_tpdkpz.jpg",
+        alt: "Métropolia #05 — Brume industrielle & horizon crépusculaire",
+        width: 1000,
+        height: 1000
+      },
+      {
+        src: "https://res.cloudinary.com/dokzioyu4/image/upload/v1770044605/etudiante_tbrydi.jpg",
+        alt: "Métropolia #06 — Silhouette citadine & errance narrative",
+        width: 1000,
+        height: 1000
+      },
+      {
+        src: "https://res.cloudinary.com/dokzioyu4/image/upload/v1770044605/IMG_2525_jsdqwk.jpg",
+        alt: "Métropolia #07 — Réalité brute & texture urbaine originelle",
+        width: 1000,
+        height: 1000
+      },
+      {
+        src: "https://res.cloudinary.com/dokzioyu4/image/upload/v1772112521/e23iKTwc_u35aql.png",
+        alt: "Portrait Angela Davis — Direction artistique IA & sérigraphie contemporaine",
+        width: 1000,
+        height: 1000,
+        caption: "Portraits & Figures historiques — Série sérigraphique IA"
+      },
+      {
+        src: "https://res.cloudinary.com/dokzioyu4/image/upload/v1772112521/d9eRiVt6_pmcd6l.png",
+        alt: "Portrait Joséphine Baker — Résistance, engagement patriotique & audace",
+        width: 1000,
+        height: 1000
+      },
+      {
+        src: "https://res.cloudinary.com/dokzioyu4/image/upload/v1772112521/jnya8Go8_e6eczn.png",
+        alt: "Portrait Katherine Johnson — Génie mathématique & conquête spatiale",
+        width: 1000,
+        height: 1000
+      },
+      {
+        src: "https://res.cloudinary.com/dokzioyu4/image/upload/v1772112521/ucGK9H1u_xjx5t7.png",
+        alt: "Portrait Rosa Parks — Dignité inébranlable & résistance pacifique",
+        width: 1000,
+        height: 1000
+      },
+      {
+        src: "https://res.cloudinary.com/dokzioyu4/image/upload/v1772112520/moVD6Z2d_pm4jnx.png",
+        alt: "New York 70s — Émancipation culturelle & énergie urbaine",
+        width: 1000,
+        height: 1000
+      },
+      {
+        src: "https://res.cloudinary.com/dokzioyu4/image/upload/v1772112520/grq2NVff_rcr9vi.png",
+        alt: "Portrait Shirley Chisholm — Pionnière politique & Maison Blanche",
+        width: 1000,
+        height: 1000
+      }
+    ],
     content: {
-      leadParagraph: "Création site éditorial, référencement naturel Google, visibilité AI Overviews et agents IA autonomes en production : des projets réels, une veille SEO IA continue et une direction artistique photo vidéo IA vérifiable.",
+      leadParagraph: "Alkymya, studio IA et organisme de formation à Ozoir-la-Ferrière, publie ici les résultats mesurés de ses trois études de cas éditoriales en production (thelittle77.fr, thelittle75.fr et thelittle83.fr), ses quatre agents IA autonomes et ses séries de direction artistique générative.",
       sections: [
         {
-          h2: "Direction artistique photo vidéo IA & créations visuelles",
+          h2: "Trois études de cas SEO & GEO mesurées en production (relevé du 12 nov. 2026)",
           paragraphs: [
-            "Des portraits et compositions iconographiques explorant les limites expressives des modèles génératifs de pointe. Chaque œuvre est le fruit d'une recherche approfondie sur le prompt crafting, la matière texturée et la résonance culturelle contemporaine.",
-            "De la figure d'Angela Davis réinterprétée en sérigraphie contemporaine à l'hommage vibrant à Joséphine Baker, nos créations marient audace visuelle et rigueur esthétique."
+            "Plutôt que d'avancer des promesses abstraites, Alkymya exploite trois sites éditoriaux territoriaux comme laboratoires grandeur nature. Chacun valide notre architecture sémantique, nos agents IA éditoriaux et notre pilotage Google Search & AI Overviews sans achat publicitaire ni backlinks payants.",
+            "À ce jour, ces trois plateformes cumulent 387 URLs indexables, 279 198 mots éditoriaux publiés et 1 219 images documentées sur le terrain."
+          ],
+          listItems: [
+            "thelittle77.fr (Créateur : Cyril Garnier) — Construit en 3 mois : 216 URLs, 149 392 mots, 652 images, 275 000 vues mensuelles sans publicité, 1ère page Google sur les paysages de Seine-et-Marne et position 7 devant Wikipedia sur Moulin de Belle-Assise, avec 93 apparitions AI Overviews.",
+            "thelittle75.fr (Créateur : Léonie Egesipe) — Construit en 2 mois : 39 URLs, 27 839 mots, 53 images (-91 % sur le poids des visuels), 2ème résultat Google sur chronique Belleville Paris récit et score technique SEO passé de 45 à 77 en 48 heures.",
+            "thelittle83.fr (Créateur : Cyril Garnier) — Lancé le 8 novembre 2026 en 24 heures : 132 URLs bilingues, 101 967 mots, 514 images, indexé par Google AI en moins d'une heure et 1er résultat image dès le lendemain sur aigrette garzette Hyères."
           ]
         },
         {
-          h2: "Création site éditorial, référencement naturel Google & AI Overviews",
+          h2: "Synthèse comparative : délais, volumes mesurés et positionnement Google AI",
           paragraphs: [
-            "Une démarche photographique documentaire et naturaliste alliée au référencement naturel Google, à la veille SEO IA et à la visibilité AI Overviews. Ciels de Seine-et-Marne (thelittle77), chroniques de ruelles parisiennes (thelittle75) et faune du Var (thelittle83).",
-            "La capture de la lumière à l'état pur, révélant la richesse de nos patrimoines locaux et de la biodiversité."
+            "Comparés côte à côte, ces trois déploiements montrent comment la vitesse de mise en production s'articule avec la profondeur documentaire : trois mois pour ancrer un média régional de 216 pages en Seine-et-Marne, deux mois pour structurer un index patrimonial parisien optimisé techniquement, et vingt-quatre heures pour publier un atlas naturaliste bilingue de 132 fiches dans le Var.",
+            "Dans chacun des cas, les images sont servies au format adaptatif avec dimensions déclarées et chargement progressif, tandis que les données structurées Schema.org relient chaque fiche locale à une entité éditoriale vérifiable."
+          ]
+        },
+        {
+          h2: "Comment ces résultats alimentent votre offre dans New Business MVP",
+          paragraphs: [
+            "La méthode éprouvée sur thelittle77.fr, thelittle75.fr et thelittle83.fr est directement transférée aux dirigeants et indépendants qui rejoignent le programme New Business MVP sur 6 mois. Dès le troisième mois, votre vitrine ou offre MVP est architecturée pour capter de vraies intentions de recherche Google et être citée par les moteurs génératifs.",
+            "Ce socle éditorial et technique évite de brûler du budget en publicité payante avant d'avoir prouvé la traction commerciale de votre offre."
+          ]
+        },
+        {
+          h2: "Quatre agents IA autonomes en production chaque semaine",
+          paragraphs: [
+            "Ces sites s'appuient sur quatre agents IA spécialisés exploités au quotidien chez Alkymya : l'agent d'analyse de marché SODA (400 réponses synthétiques en moins de 10 minutes), l'agent de veille SEO et AI Overviews, l'agent de création éditoriale sous contraintes terrain et le pipeline autonome de newsletter."
+          ]
+        },
+        {
+          h2: "Direction artistique photo vidéo IA : trois séries originales",
+          paragraphs: [
+            "L'outil ne remplace pas l'œil : nos trois albums photographiques et génératifs explorent l'équilibre entre cadrage réel, lumière studio et synthèse algorithmique.",
+            "Découvrez les 7 visuels d'Alkymya Vision conçus en binôme par Cyril Garnier et Léonie Egesipe, les 7 scènes cyberpunk documentaires de Métropolia et les 6 portraits sérigraphiques de la série Portraits et Figures Historiques (Angela Davis, Joséphine Baker, Katherine Johnson, Rosa Parks, New York 70s et Shirley Chisholm)."
           ]
         }
       ],
       internalLinks: [
-        { href: "/contact/", label: "Commander une création ou échanger sur un projet artistique →" },
-        { href: "/ateliers/", label: "Découvrir nos ateliers de création et d'acculturation IA" },
-        { href: "/alchimistes/", label: "Rencontrer Cyril Garnier et le collectif d'alchimistes" },
-        { href: "/ressources/", label: "Consulter notre bibliothèque d'outils et d'études" }
+        { href: "/newbusiness/", label: "Appliquer cette méthode avec New Business MVP" },
+        { href: "/ateliers/", label: "Se former à nos outils lors d'un atelier IA Qualiopi" },
+        { href: "/alchimistes/", label: "Rencontrer Cyril Garnier et Léonie Egesipe" },
+        { href: "/contact/", label: "Lancer un projet éditorial ou agent IA →" }
       ]
     }
   },
   {
     path: '/ateliers',
-    title: "Atelier IA Pratique & Formation Qualiopi OPCO | Alkymya",
-    description: "Atelier IA pratique, formation IA entreprise certifiée Qualiopi finançable OPCO, audit IA PME Capital IA, agent IA métier et conformité IA Act.",
+    title: "Ateliers IA pour équipes en Île-de-France — Alkymya",
+    description: "Ateliers IA pratiques en Île-de-France depuis Ozoir-la-Ferrière : formation IA certifiée Qualiopi finançable OPCO, agents IA métiers et conformité IA Act.",
     h1: "Atelier IA pratique & formation IA entreprise Qualiopi.",
     ogImage: "https://alkymya.co/og-ateliers.jpg",
-    lastmod: "2026-11-13",
+    lastmod: "2026-11-15",
     schemaType: "Course",
     content: {
-      leadParagraph: "Atelier IA pratique, formation IA entreprise certifiée Qualiopi finançable OPCO, audit IA PME (Capital IA) et conformité IA Act : créer son agent IA métier et valoriser vos archives photo et vidéo avec du concret.",
+      leadParagraph: "Ateliers IA pour équipes en Île-de-France avec Alkymya, studio IA et organisme de formation à Ozoir-la-Ferrière : formation IA entreprise certifiée Qualiopi finançable OPCO, audit Capital IA et création d'agents IA métiers.",
       sections: [
         {
           h2: "À qui s'adressent nos ateliers IA pratiques, audits Capital IA et formations OPCO ?",
@@ -207,7 +432,7 @@ export const routes: RouteData[] = [
         {
           h2: "Comment se déroule concrètement la formation (présentiel & distanciel) ?",
           paragraphs: [
-            "Nous privilégions un ratio strict de 80 % de pratique pour 20 % d'apports méthodologiques. Les sessions peuvent se tenir en présentiel dans vos locaux (partout en France et en Île-de-France), dans nos espaces partenaires, ou en classe virtuelle synchrone haute interaction.",
+            "Nous privilégions un ratio strict de 80 % de pratique pour 20 % d'apports méthodologiques. Les sessions peuvent se tenir en présentiel dans vos locaux (en Seine-et-Marne, à Ozoir-la-Ferrière, à Paris et partout en Île-de-France), dans nos espaces partenaires, ou en classe virtuelle synchrone haute interaction.",
             "Le programme Core IA de 14 heures est articulé en 4 demi-journées modulables pour préserver l'activité de vos équipes. Les options spécialisées de 3h30 s'organisent sur une demi-journée dédiée et intense, focalisée sur un objectif unique : livrer un dispositif opérationnel avant la fin de la séance."
           ]
         },
@@ -240,34 +465,56 @@ export const routes: RouteData[] = [
     description: "Veille SEO IA, analyseurs intelligents gratuits, études Génération IA et création site éditorial par l'agence IA et studio création IA Alkymya.",
     h1: "Ressources IA, veille SEO IA & outils gratuits.",
     ogImage: "https://alkymya.co/og-ressources.jpg",
-    lastmod: "2026-11-13",
+    lastmod: "2026-11-15",
     schemaType: "CollectionPage",
+    images: [
+      {
+        src: "https://res.cloudinary.com/dokzioyu4/image/upload/v1788941994/0c39dd0a7f91200361816f2b88d68802_cwzov0.jpg",
+        alt: "Kendra Martine — Fondatrice d'Objectif Alternance et partenaire de l'Analyseur de CV Alkymya",
+        width: 400,
+        height: 400,
+        caption: "Kendra Martine — Partenaire Analyseur de CV & Coaching Alternance"
+      }
+    ],
     content: {
-      leadParagraph: "Bibliothèque ouverte de notre agence IA et studio création IA : veille SEO IA, création d'agents IA sur mesure, stratégie SEO et GEO (visibilité Google AI) et analyseurs gratuits.",
+      leadParagraph: "Bibliothèque ouverte d'Alkymya, studio IA et organisme de formation à Ozoir-la-Ferrière : quatre pôles de ressources en accès libre réunissant nos analyseurs intelligents, nos enquêtes longitudinales Génération IA, le business game NoNo BanaBa et les capsules vidéo Qualiopi avec INATEC.",
       sections: [
         {
-          h2: "Guides opérationnels, stratégie SEO GEO & agents IA",
+          h2: "1. Nos analyseurs IA gratuits en production",
           paragraphs: [
-            "Nos ressources ont été élaborées pour vous permettre de franchir chaque palier de maturité technologique avec méthode et sérénité, de l'expérimentation isolée à l'industrialisation des agents IA."
+            "Alkymya met à disposition des étudiants, candidats et équipes éditoriales des applications web gratuites permettant d'éprouver immédiatement les apports de l'intelligence artificielle générative sur des documents réels."
           ],
           listItems: [
-            "Matrice de maturité IA pour évaluer le niveau d'adoption de votre organisation.",
-            "Guide pas à pas de l'agentification : de l'analyse du workflow à la connexion API.",
-            "Modèles de prompts pour dirigeants, directeurs pédagogiques et chefs de projet.",
-            "Dossiers de décryptage du cadre réglementaire européen de l'IA Act."
+            "Analyseur de photo (analyseurdephoto.alkymya.co) : explorer, retoucher et extraire des métadonnées ou descriptions alt exploitables pour vos séries visuelles et sites éditoriaux.",
+            "Analyseur de CV (analysercvpro.alkymya.co), conçu avec Kendra Martine d'Objectif Alternance : comparer vos compétences aux offres d'emploi ou d'alternance cibles et obtenir des reformulations directement actionnables.",
+            "Analyseur de mémoire (analyseurdememoire.alkymya.co) : diagnostiquer la cohérence des plans de mémoires et thèses académiques, vérifier les sources clés et repérer les angles morts méthodologiques."
           ]
         },
         {
-          h2: "Veille continue et partage en open source",
+          h2: "2. Nos études Génération IA (2024-2026) & La Doctrine IAG",
           paragraphs: [
-            "Nous croyons à la diffusion ouverte des connaissances. Tous nos guides intègrent des cas réels tirés de nos interventions en grandes écoles et en entreprises."
+            "Chaque année depuis 2024, Alkymya publie en accès libre les résultats empiriques de son enquête Génération IA menée auprès de plus de 380 étudiants et enseignants issus d'écoles partenaires (HETIC, IÉSEG, ISCOM, Ynov). Ces études documentent l'évolution des usages, les freins éthiques et les besoins d'encadrement en entreprise.",
+            "Notre bibliothèque inclut également La Doctrine IAG (dialogue en PDF et podcast audio de 5 min 43) consacrée aux enjeux industriels, technologiques et géopolitiques de l'intelligence artificielle générative pour les dirigeants et stratèges."
+          ],
+          listItems: [
+            "Rapport Génération IA 2026 : métriques terrain, signaux faibles et recommandations opérationnelles pour les DRH et responsables pédagogiques.",
+            "Génération IA 2025 (Personas) : segmentation comportementale en 5 profils types pour calibrer vos cursus et agents IA.",
+            "Génération IA 2024 & La Doctrine IAG (PDF + Podcast audio) : accès libre sans inscription obligatoire."
+          ]
+        },
+        {
+          h2: "3. Business Game NoNo BanaBa & capsules vidéo Alkymya x INATEC",
+          paragraphs: [
+            "Pour ancrer les concepts de stratégie data, de marketing digital et de modèle économique par le jeu, nos intervenants déploient le business game NoNo BanaBa en séminaires d'équipe et en grandes écoles.",
+            "Enfin, cinq capsules vidéo réalisées avec notre partenaire Qualiopi INATEC (Partenariat d'Avenir, Efficacité Augmentée, Synergie Créative, Le Futur en Marche, Performance Digitale) illustrent comment déployer une formation IA finançable jusqu'à 100 % par votre OPCO."
           ]
         }
       ],
       internalLinks: [
+        { href: "/oeuvres/", label: "Voir nos études de cas SEO et GEO en production" },
         { href: "/ateliers/", label: "Participer à un atelier d'application pratique" },
-        { href: "/ia/", label: "Tester notre générateur d'idées interactif" },
-        { href: "/contact/", label: "Suggérer une thématique de ressource" }
+        { href: "/ia/", label: "Tester nos 5 personas vidéo et le générateur IA" },
+        { href: "/contact/", label: "Suggérer une thématique ou demander un atelier" }
       ]
     }
   },
@@ -275,39 +522,90 @@ export const routes: RouteData[] = [
     path: '/alchimistes',
     title: "Experts IA France & Fondateurs Agence IA | Alkymya",
     description: "Experts IA France : Cyril Garnier, Léonie Egesipe, Véronique Landereau et Mariana Didier Laurent. Accompagnement IA dirigeants et indépendants.",
-    h1: "Experts IA France : l'équipe de l'agence Alkymya.",
+    h1: "Experts IA France : l'équipe d'Alkymya à Ozoir-la-Ferrière.",
     ogImage: "https://alkymya.co/og-alchimistes.jpg",
-    lastmod: "2026-11-13",
+    lastmod: "2026-11-15",
     schemaType: "AboutPage",
+    images: [
+      {
+        src: "https://res.cloudinary.com/dokzioyu4/image/upload/v1758192982/66cffcd8-15f1-415f-b423-9f428d63e22f_gqjd53.png",
+        alt: "Cyril Garnier — Directeur Associé & Fondateur d'Alkymya",
+        width: 600,
+        height: 750,
+        caption: "Cyril Garnier — Directeur Associé (cyrilgarnier.fr)"
+      },
+      {
+        src: "https://res.cloudinary.com/dokzioyu4/image/upload/v1762252984/725879fe-afa3-4afa-a900-229030c002de_1_xoep2v.png",
+        alt: "Léonie Egesipe — Cheffe de Projet Digital & Co-Fondatrice Alkymya",
+        width: 600,
+        height: 750,
+        caption: "Léonie Egesipe — Cheffe de Projet Digital & DA IA"
+      },
+      {
+        src: "https://res.cloudinary.com/dokzioyu4/image/upload/v1792763449/1792401247516_ussqzm.png",
+        alt: "Véronique Landereau — Alchimiste associée Santé, Prévention & Innovation",
+        width: 600,
+        height: 750,
+        caption: "Véronique Landereau — Santé, Prévention & MedTech"
+      },
+      {
+        src: "https://res.cloudinary.com/dokzioyu4/image/upload/v1794479431/WhatsApp_Image_2026-11-12_at_11.29.28_qwv5le.jpg",
+        alt: "Mariana Didier Laurent — Alchimiste associée Services à la personne & Autonomie",
+        width: 600,
+        height: 750,
+        caption: "Mariana Didier Laurent — Présidente d'Esperanta Services"
+      },
+      {
+        src: "https://res.cloudinary.com/dokzioyu4/image/upload/v1760374889/Photo_Olivier_Dion_reve_dk2c5e.png",
+        alt: "Olivier Dion — Fondateur de Onecub & Expert Data Spaces",
+        width: 600,
+        height: 750,
+        caption: "Olivier Dion — Expert Data & Gouvernance Européenne"
+      },
+      {
+        src: "https://res.cloudinary.com/dokzioyu4/image/upload/v1788941994/0c39dd0a7f91200361816f2b88d68802_cwzov0.jpg",
+        alt: "Kendra Martine — Fondatrice d'Objectif Alternance & Formatrice",
+        width: 600,
+        height: 750,
+        caption: "Kendra Martine — Recrutement Alternance & Coaching Emploi"
+      }
+    ],
     content: {
-      leadParagraph: "Derrière Alkymya, quatre experts IA France assurent l'accompagnement IA dirigeants et indépendants, la stratégie SEO et GEO, l'innovation santé et les services à la personne.",
+      leadParagraph: "Derrière Alkymya, studio IA et organisme de formation à Ozoir-la-Ferrière, six alchimistes complémentaires assurent l'accompagnement IA dirigeants et indépendants, la stratégie SEO et GEO, la gouvernance data, l'insertion professionnelle, l'innovation santé et les services à la personne.",
       sections: [
         {
-          h2: "Cyril Garnier — Expert IA France & Accompagnement Dirigeants",
+          h2: "Cyril Garnier — Directeur Associé & Fondateur",
           paragraphs: [
-            "Consultant senior et enseignant certifié au sein des plus grandes institutions académiques françaises (HETIC, Ynov, IÉSEG, CFA Itis).",
-            "Cyril apporte plus de 15 ans d'expérience dans l'accompagnement des dirigeants, la viabilité des modèles d'affaires technologiques et l'intégration des flux d'IA en entreprise (ex-directeur général de SNCF Développement)."
+            "Consultant senior, fondateur d'Alkymya (cyrilgarnier.fr) et intervenant certifié au sein de grandes institutions académiques (HETIC, Ynov, IÉSEG, CFA Itis), Cyril Garnier apporte plus de 15 ans d'expérience dans l'accompagnement des dirigeants (ex-directeur général de SNCF Développement).",
+            "Il pilote la viabilité économique des projets, le Go-to-Market du programme New Business MVP et les créations éditoriales thelittle77.fr et thelittle83.fr."
           ]
         },
         {
-          h2: "Léonie Egesipe — Co-Fondatrice & Directrice Artistique IA",
+          h2: "Léonie Egesipe — Cheffe de Projet Digital & Directrice Artistique IA",
           paragraphs: [
-            "Créatrice visuelle, scénariste et spécialiste de l'esthétique générative. Léonie insuffle une sensibilité visuelle unique à l'ensemble des créations du studio Alkymya.",
-            "Elle pilote notamment le projet Métropolia et supervise la cohérence esthétique et l'expérience utilisateur de nos programmes d'accompagnement."
+            "Créatrice visuelle, scénariste et spécialiste de l'esthétique générative, Léonie Egesipe co-pilote le studio Alkymya en binôme étroit avec Cyril Garnier et dirige la stratégie de déploiement numérique.",
+            "Elle supervise notamment la direction artistique de Métropolia, le média parisien thelittle75.fr et l'expérience utilisateur des programmes d'accompagnement."
           ]
         },
         {
           h2: "Véronique Landereau — Alchimiste associée, Santé, Prévention & Innovation",
           paragraphs: [
-            "Co-fondatrice de New Health Paradigm, Véronique Landereau consacre son activité aux projets de santé qui placent la prévention, le maintien à domicile et l'accompagnement des aidants au cœur de leur modèle. Formée à Gustave Roussy Éducation, elle évolue au quotidien dans l'écosystème MedTech et dispositifs médicaux.",
-            "Nantaise, elle évolue au quotidien entre dispositifs médicaux, prévention et perte d'autonomie, et suit de près les innovations françaises du secteur comme les tours de financement des jeunes entreprises de santé."
+            "Co-fondatrice de New Health Paradigm et formée à Gustave Roussy Éducation, Véronique Landereau consacre son activité aux projets de santé qui placent la prévention, le maintien à domicile et l'accompagnement des aidants au cœur de leur modèle.",
+            "Basée à Nantes, elle évolue au quotidien dans l'écosystème MedTech et dispositifs médicaux."
           ]
         },
         {
           h2: "Mariana Didier Laurent — Alchimiste associée, Services à la personne & Autonomie",
           paragraphs: [
-            "Présidente d'Esperanta Services, Mariana Didier Laurent consacre son activité à l'aide à domicile des personnes en perte d'autonomie et à l'accompagnement des proches aidants. Diplômée de l'École Supérieure d'Assurance, passée par le courtage et la gestion des risques de personnes, elle ancre son entreprise au Plessis-Trévise.",
-            "Secouriste bénévole à la Protection Civile de Paris Seine pendant cinq ans, puis réserviste de la Gendarmerie nationale, elle a appris à décider vite, dans l'ordre et sans se disperser. Elle a créé son entreprise en juillet 2026 : ce qu'elle raconte aux créateurs, elle vient de le vivre."
+            "Présidente d'Esperanta Services au Plessis-Trévise (esperantaservices.fr), diplômée de l'École Supérieure d'Assurance, Mariana Didier Laurent accompagne les personnes en perte d'autonomie et leurs proches aidants.",
+            "Créatrice de son entreprise en juillet 2026 après un parcours en courtage et gestion des risques, elle partage avec les porteurs de projets la réalité concrète du lancement, des agréments et du pilotage quotidien."
+          ]
+        },
+        {
+          h2: "Olivier Dion (Onecub) & Kendra Martine (Objectif Alternance)",
+          paragraphs: [
+            "Olivier Dion, fondateur de Onecub et pionnier européen des Data Spaces souverains (intervenant Commission Européenne et GAIA-X), apporte son expertise en gouvernance des données et conformité RGPD.",
+            "Kendra Martine, fondatrice d'Objectif Alternance et formatrice marketing, relie les talents émergents aux PME en croissance via le coaching emploi, l'alternance et l'Analyseur de CV Alkymya."
           ]
         }
       ],
@@ -322,29 +620,91 @@ export const routes: RouteData[] = [
   {
     path: '/partenaires',
     title: "Partenaires Formation IA & Grandes Écoles | Alkymya",
-    description: "Accompagnement intelligence artificielle avec Objectif Alternance, HETIC, Ynov, IÉSEG et CFA Itis. Agence IA et formation IA entreprise Qualiopi.",
+    description: "Partenariats formation IA Alkymya : recrutement d'alternants avec Objectif Alternance, interventions en école (HETIC, Ynov, IÉSEG) et projets étudiants.",
     h1: "Partenaires formation IA & alliances stratégiques.",
     ogImage: "https://alkymya.co/og-partenaires.jpg",
-    lastmod: "2026-11-13",
+    lastmod: "2026-11-15",
     schemaType: "WebPage",
+    images: [
+      {
+        src: "https://res.cloudinary.com/dokzioyu4/image/upload/v1788507182/logo_objectif_code_u3otua.png",
+        alt: "Logo Objectif Alternance — partenaire recrutement alternants et coaching emploi avec Alkymya",
+        width: 320,
+        height: 160,
+        caption: "Objectif Alternance — Partenaire Insertion & Alternance"
+      },
+      {
+        src: "https://res.cloudinary.com/dokzioyu4/image/upload/v1777818451/WhatsApp_Image_2026-02-27_at_15.38.53_utvfxs.jpg",
+        alt: "Logo INATEC — partenaire certification Qualiopi et financement OPCO avec Alkymya",
+        width: 240,
+        height: 120,
+        caption: "INATEC — Portage Qualiopi & Ingénierie Pédagogique"
+      },
+      {
+        src: "https://res.cloudinary.com/dokzioyu4/image/upload/v1759785816/logo-hetic_fnt2zy.png",
+        alt: "Logo HETIC — école partenaire pour ateliers IA et jurys de projets étudiants",
+        width: 240,
+        height: 120
+      },
+      {
+        src: "https://res.cloudinary.com/dokzioyu4/image/upload/v1759785824/ynov-campus_logo_e1ma2q.png",
+        alt: "Logo Ynov Campus — école partenaire pour modules prompt engineering et hackathons IA",
+        width: 240,
+        height: 120
+      },
+      {
+        src: "https://res.cloudinary.com/dokzioyu4/image/upload/v1759785830/IESEG_logo_zzx1aa.jpg",
+        alt: "Logo IÉSEG — école de management partenaire séminaires stratégie et IA",
+        width: 240,
+        height: 120
+      },
+      {
+        src: "https://res.cloudinary.com/dokzioyu4/image/upload/v1759785836/CFA_ITIS_logo_vetgdg.webp",
+        alt: "Logo CFA Itis — formation apprentis en Seine-et-Marne et Île-de-France",
+        width: 240,
+        height: 120
+      },
+      {
+        src: "https://res.cloudinary.com/dokzioyu4/image/upload/v1777819108/t%C3%A9l%C3%A9chargement_16_j060qu.jpg",
+        alt: "Logo SNCF — partenaire historique d'accompagnement entrepreneurial",
+        width: 240,
+        height: 120
+      },
+      {
+        src: "https://res.cloudinary.com/dokzioyu4/image/upload/v1759925019/logo-fondation-grdf_wx9kpo.png",
+        alt: "Logo Fondation GRDF — accompagnement de projets à impact territorial",
+        width: 240,
+        height: 120
+      }
+    ],
     content: {
-      leadParagraph: "Notre agence IA et studio création IA collabore avec grandes écoles, fondations et acteurs de l'alternance pour déployer l'accompagnement intelligence artificielle et la formation IA entreprise certifiée Qualiopi.",
+      leadParagraph: "Alkymya, studio IA et organisme de formation à Ozoir-la-Ferrière, fédère plus de 15 écoles supérieures, fondations et partenaires d'insertion autour de trois missions concrètes : le recrutement d'alternants, les interventions pédagogiques en école et la supervision de projets étudiants réels.",
       sections: [
         {
-          h2: "Partenariat formation IA stratégique avec Objectif Alternance",
+          h2: "Recrutement d'alternants & insertion avec Objectif Alternance",
           paragraphs: [
-            "Nous formons une alliance étroite avec Objectif Alternance pour accompagner les étudiants et les entreprises d'accueil dans l'intégration réussie de compétences en IA générative.",
-            "Nos modules permettent aux alternants de devenir de véritables accélérateurs d'innovation au sein de leurs équipes d'accueil."
+            "Notre alliance stratégique avec Objectif Alternance (dirigé par Kendra Martine) relie directement les TPE/PME en croissance aux jeunes talents formés aux outils d'intelligence artificielle générative. Ensemble, nous couplons l'Analyseur de CV IA gratuit d'Alkymya à un coaching emploi humain sur mesure.",
+            "Les alternants intégrés dans nos entreprises partenaires maîtrisent dès la prise de poste la veille automatisée, la structuration éditoriale SEO/GEO et l'usage responsable des modèles de langage, raccourcissant de moitié leur temps de montée en autonomie."
           ]
         },
         {
-          h2: "Grandes écoles et entreprises partenaires",
+          h2: "Interventions en école, hackathons et jurys de projets étudiants",
           paragraphs: [
-            "Nos formateurs interviennent régulièrement dans les cursus de référence : HETIC, Ynov, IÉSEG, CFA Itis, Paris École de Management, ainsi qu'auprès de structures comme Morning Coworking, SNCF et Fondation GRDF."
+            "Nos alchimistes interviennent chaque semestre dans les cursus de plus de huit grandes écoles et campus spécialisés : HETIC (ateliers produit web et jurys), Ynov Campus (prompt engineering, agents IA et hackathons), IÉSEG (séminaires de stratégie business), CFA Itis (parcours apprentis en Seine-et-Marne), EURIDIS (prospection B2B augmentée), ISCOM (direction artistique et stratégie de marque) et Paris École de Management.",
+            "Plus de 450 étudiants et apprentis ont déjà éprouvé nos business games (NoNo BanaBa) et nos démonstrateurs métiers, alimentant en retour nos enquêtes annuelles Génération IA 2024, 2025 et 2026."
+          ]
+        },
+        {
+          h2: "Alliances Qualiopi, territoires et entreprises engagées",
+          paragraphs: [
+            "Grâce au portage pédagogique et à la certification Qualiopi d'INATEC, l'ensemble de nos formations inter et intra-entreprises bénéficie d'une éligibilité OPCO pouvant couvrir jusqu'à 100 % du coût pédagogique pour les TPE, PME et grands comptes d'Île-de-France.",
+            "Notre écosystème réunit également des acteurs de terrain et d'innovation tels que SNCF, Morning Coworking (accueil d'ateliers en présentiel en Île-de-France), la Fondation GRDF, SEALESTER, la Fondation Flamenca, Azimuto, La Ressourcerie Gaillarde, Onecub, New Health Paradigm et Esperanta Services.",
+            "Chaque partenariat donne lieu à des livrables tangibles : diagnostics de maturité IA pour dirigeants, déploiement de workflows documentaires conformes à l'IA Act, ateliers de direction artistique générative et accompagnement vers la création d'activité ou l'employabilité durable des apprenants."
           ]
         }
       ],
       internalLinks: [
+        { href: "/rejoindre/", label: "Découvrir le parcours de nos jeunes talents & alternants" },
         { href: "/ateliers/", label: "Découvrir les programmes dispensés aux partenaires" },
         { href: "/alchimistes/", label: "Rencontrer notre équipe pédagogique" },
         { href: "/contact/", label: "Devenir établissement ou entreprise partenaire" }
@@ -353,32 +713,32 @@ export const routes: RouteData[] = [
   },
   {
     path: '/contact',
-    title: "Contact Experts IA & Devis Formation Qualiopi | Alkymya",
-    description: "Demandez un devis formation IA Qualiopi finançable OPCO ou un accompagnement IA dirigeants et indépendants auprès de nos experts IA France.",
-    h1: "Contactez nos experts IA France & devis Qualiopi.",
+    title: "Contact — formation IA et conseil, Ozoir-la-Ferrière",
+    description: "Contactez Alkymya, studio IA et organisme de formation à Ozoir-la-Ferrière (77) : devis formation Qualiopi OPCO, ateliers IA et accompagnement dirigeants.",
+    h1: "Contactez Alkymya : formation IA & conseil à Ozoir-la-Ferrière.",
     ogImage: "https://alkymya.co/og-contact.jpg",
-    lastmod: "2026-11-13",
+    lastmod: "2026-11-15",
     schemaType: "ContactPage",
     content: {
-      leadParagraph: "Échangez avec nos experts IA France pour un devis formation IA Qualiopi, un audit IA PME (Capital IA) ou un accompagnement IA dirigeants et indépendants.",
+      leadParagraph: "Échangez avec Alkymya, studio IA et organisme de formation à Ozoir-la-Ferrière (Seine-et-Marne), pour un devis formation IA Qualiopi finançable OPCO, un atelier d'agents IA en Île-de-France ou un accompagnement New Business MVP.",
       sections: [
         {
           h2: "Devis formation IA Qualiopi & accompagnement dirigeants",
           paragraphs: [
-            "Que vous représentiez une grande école souhaitant intégrer un module IA innovant, une entreprise en quête d'optimisation de ses processus, ou un porteur de projet visant à lancer son MVP, notre équipe vous répond sous 24 à 48 heures."
+            "Que vous représentiez une grande école souhaitant intégrer un module IA innovant, une PME d'Île-de-France en quête d'optimisation de ses processus, ou un porteur de projet visant à lancer son MVP, notre équipe vous répond sous 24 à 48 heures."
           ],
           listItems: [
-            "Formations certifiantes éligibles au financement OPCO (Qualiopi).",
+            "Formations certifiantes éligibles au financement OPCO (Qualiopi via INATEC).",
             "Ateliers intensifs de création d'agents IA et de prompt engineering.",
-            "Accompagnement New Business MVP pour valider votre offre terrain.",
+            "Accompagnement New Business MVP pour valider votre offre terrain en 6 mois.",
             "Conférences, keynotes inspirantes et business games pour vos séminaires."
           ]
         },
         {
-          h2: "Nos coordonnées et localisation",
+          h2: "Nos coordonnées et localisation en Seine-et-Marne",
           paragraphs: [
-            "Studio Alkymya — Ozoir-la-Ferrière, Seine-et-Marne (77330), Île-de-France.",
-            "Email direct : contact@alkymya.co • Téléphone : disponible sur demande via formulaire."
+            "Alkymya — Studio IA et organisme de formation, Ozoir-la-Ferrière, Seine-et-Marne (77330), Île-de-France.",
+            "Email direct : contact@alkymya.co • Téléphone : +33 1 89 71 32 40."
           ]
         }
       ],
@@ -392,14 +752,24 @@ export const routes: RouteData[] = [
   {
     path: '/faq',
     title: "FAQ Agence IA : Qualiopi, OPCO & Agents IA | Alkymya",
-    description: "Réponses sur notre formation IA entreprise certifiée Qualiopi, financement OPCO, création d'agents IA sur mesure et accompagnement dirigeants.",
-    h1: "FAQ agence IA, formation Qualiopi & agents IA.",
+    description: "Réponses sur Alkymya (studio IA à Ozoir-la-Ferrière), formation IA entreprise certifiée Qualiopi, financement OPCO et création d'agents IA.",
+    h1: "FAQ Alkymya : identité, formation Qualiopi & agents IA.",
     ogImage: "https://alkymya.co/og-faq.jpg",
-    lastmod: "2026-11-13",
+    lastmod: "2026-11-15",
     schemaType: "FAQPage",
     content: {
-      leadParagraph: "Toutes les réponses de notre agence IA sur la formation IA entreprise certifiée Qualiopi finançable OPCO, la création d'agents IA sur mesure, la stratégie SEO et GEO et l'accompagnement dirigeants.",
+      leadParagraph: "Toutes les réponses sur Alkymya (studio IA et organisme de formation à Ozoir-la-Ferrière), la formation IA entreprise certifiée Qualiopi finançable OPCO, la création d'agents IA sur mesure et le programme New Business MVP.",
       sections: [
+        {
+          h2: "Identité d'Alkymya & désambiguïsation",
+          paragraphs: [
+            "Alkymya (alkymya.co) est un studio d'intelligence artificielle et organisme de formation professionnelle fondé par Cyril Garnier et Léonie Egesipe, implanté à Ozoir-la-Ferrière en Seine-et-Marne (77)."
+          ],
+          listItems: [
+            "Qu'est-ce qu'Alkymya ? Alkymya (alkymya.co) est un studio IA et organisme de formation certifié Qualiopi basé à Ozoir-la-Ferrière (Seine-et-Marne), spécialisé en formation IA en entreprise, création d'agents IA sur mesure, stratégie SEO/GEO et accompagnement New Business MVP.",
+            "Alkymya, est-ce un restaurant ? Non. Alkymya (alkymya.co) est exclusivement un studio d'intelligence artificielle et organisme de formation professionnelle en France (Ozoir-la-Ferrière, 77) — sans aucun lien avec le restaurant Alkymya Bellini de Naples, ni avec le groupe de musique Alkymya Music, ni avec le livre brésilien Alkymya de Assustos."
+          ]
+        },
         {
           h2: "Questions fréquentes : formation IA Qualiopi, OPCO & agents IA",
           paragraphs: [
@@ -422,49 +792,79 @@ export const routes: RouteData[] = [
   {
     path: '/rejoindre',
     title: "Rejoindre l'Agence IA Alkymya | Experts IA France",
-    description: "Rejoignez notre studio création IA et agence IA : formateurs Qualiopi, créateurs d'agents IA sur mesure et experts IA France engagés.",
-    h1: "Rejoignez notre agence IA & experts IA France.",
+    description: "Rejoignez Alkymya à Ozoir-la-Ferrière : formateurs IA Qualiopi, concepteurs d'agents autonomes et alternants formés sur des projets réels en production.",
+    h1: "Rejoindre Alkymya : experts IA, formateurs & jeunes talents.",
     ogImage: "https://alkymya.co/og-rejoindre.jpg",
-    lastmod: "2026-11-13",
+    lastmod: "2026-11-15",
     schemaType: "WebPage",
     content: {
-      leadParagraph: "Notre studio création IA et agence IA recrute des experts IA France, formateurs Qualiopi et concepteurs d'agents IA sur mesure pour l'accompagnement intelligence artificielle.",
+      leadParagraph: "Alkymya, studio IA et organisme de formation à Ozoir-la-Ferrière, recrute des formateurs Qualiopi, des concepteurs d'agents IA et accueille chaque année des alternants et jeunes talents sur des projets en production réelle.",
       sections: [
         {
-          h2: "Pourquoi rejoindre l'agence IA et studio création IA Alkymya ?",
+          h2: "Pourquoi rejoindre Alkymya et notre collectif d'alchimistes ?",
           paragraphs: [
-            "En rejoignant Alkymya, vous intervenez auprès de prestigieuses écoles et entreprises tout en bénéficiant de nos ressources pédagogiques et de notre écosystème."
+            "En rejoignant Alkymya, vous intervenez sur des chantiers à impact mesurable : ateliers pratiques en PME, conférences et jurys en grandes écoles (HETIC, Ynov, IÉSEG, CFA Itis), déploiement de sites éditoriaux SEO/GEO et création d'agents IA autonomes.",
+            "Nous privilégions la transmission directe entre profils seniors et nouvelle génération numérique : chaque membre contribue activement aux livrables clients et aux publications open source du studio."
           ],
           listItems: [
-            "Intervenir comme conférencier ou formateur senior dans les grandes écoles.",
-            "Co-développer des business games immersifs et des cas pratiques métiers.",
-            "Accéder à une communauté bienveillante de professionnels passionnés par l'innovation."
+            "Intervenir comme conférencier, mentor ou formateur en entreprises et grandes écoles.",
+            "Co-développer des agents IA sur mesure, des business games immersifs et des médias éditoriaux.",
+            "Accéder à une communauté active en Île-de-France reliant dirigeants, chercheurs data et talents en alternance."
+          ]
+        },
+        {
+          h2: "Ce que devient un alternant ou jeune talent chez Alkymya : l'exemple de Léonie Egesipe",
+          paragraphs: [
+            "Chez Alkymya, un alternant ou jeune talent n'est pas cantonné à des tâches de support : il est responsabilisé sur de vrais actifs numériques visibles sur Google et utilisés par des dirigeants. Léonie Egesipe en incarne le parcours réel au sein du studio.",
+            "Initialement étudiante en cheffe de projet digital, Léonie Egesipe a pris la co-direction opérationnelle des projets numériques d'Alkymya aux côtés de Cyril Garnier. Elle a conçu et déployé thelittle75.fr (39 URLs structurées, 27 839 mots, -91 % de poids images, Top 2 Google sur chronique Belleville Paris récit), piloté la direction artistique de la série Métropolia et co-encadre aujourd'hui la cohorte New Business MVP."
+          ],
+          listItems: [
+            "Premier mois : prise en main de l'architecture éditoriale SEO/GEO, des workflows génératifs et de la qualité de code en production.",
+            "Deuxième mois : mise en ligne et suivi hebdomadaire d'un média ou d'un agent IA autonome mesuré par les outils de veille Google.",
+            "À 90 jours : co-animation d'ateliers en entreprise ou en école et responsabilisation complète sur le pilotage client."
           ]
         },
         {
           h2: "Profils recherchés et modalités de collaboration",
           paragraphs: [
-            "Nous recherchons des experts en prompt engineering, ingénieurs d'agents IA, directeurs artistiques numériques, consultants en transformation digitale et juristes spécialisés IA Act."
+            "Nous recherchons tout au long de l'année des formateurs IA pragmatiques, ingénieurs d'agents IA, directeurs artistiques numériques, consultants en transformation digitale, juristes spécialisés IA Act ainsi que des candidats en alternance via notre partenaire Objectif Alternance."
           ]
         }
       ],
       internalLinks: [
-        { href: "/alchimistes/", label: "Faire connaissance avec nos fondateurs" },
-        { href: "/partenaires/", label: "Consulter notre écosystème de partenaires" },
+        { href: "/alchimistes/", label: "Découvrir le profil de Léonie Egesipe et des Alchimistes" },
+        { href: "/oeuvres/", label: "Voir les réalisations en production (dont thelittle75.fr)" },
+        { href: "/partenaires/", label: "Consulter notre écosystème écoles & Objectif Alternance" },
         { href: "/contact/", label: "Déposer une candidature spontanée" }
       ]
     }
   },
   {
     path: '/newbusiness',
-    title: "Accompagnement IA Dirigeants & MVP 6 Mois | Alkymya",
+    title: "New Business MVP : valider son offre en 6 mois — Alkymya",
     description: "Accompagnement IA dirigeants et indépendants sur 6 mois : création de MVP, validation client, agents IA sur mesure et stratégie SEO et GEO.",
     h1: "Accompagnement IA dirigeants & New Business MVP.",
     ogImage: "https://alkymya.co/og-newbusiness.jpg",
-    lastmod: "2026-11-13",
+    lastmod: "2026-11-15",
     schemaType: "EducationalOccupationalProgram",
+    images: [
+      {
+        src: "https://res.cloudinary.com/dokzioyu4/image/upload/v1758192982/66cffcd8-15f1-415f-b423-9f428d63e22f_gqjd53.png",
+        alt: "Cyril Garnier — Mentor stratégie et accompagnement dirigeants New Business MVP",
+        width: 240,
+        height: 240,
+        caption: "Cyril Garnier — Stratégie & Viabilité Économique"
+      },
+      {
+        src: "https://res.cloudinary.com/dokzioyu4/image/upload/v1758192982/c4f25b29-1634-44bf-a6d1-41f2378fbb4d_j10d8m.png",
+        alt: "Léonie Egesipe — Mentor ergonomie numérique et direction artistique IA New Business MVP",
+        width: 240,
+        height: 240,
+        caption: "Léonie Egesipe — Direction Artistique & Ergonomie MVP"
+      }
+    ],
     content: {
-      leadParagraph: "Accompagnement IA dirigeants et indépendants sur 6 mois : concevez votre MVP, déployez des agents IA sur mesure et validez votre stratégie SEO et GEO auprès de vrais clients.",
+      leadParagraph: "Accompagnement IA dirigeants et indépendants sur 6 mois avec Alkymya (Ozoir-la-Ferrière) : concevez votre MVP, déployez des agents IA sur mesure et validez votre stratégie SEO et GEO auprès de vrais clients grâce aux méthodes éprouvées sur nos trois études de cas TheLittle.",
       sections: [
         {
           h2: "À qui s'adresse cet accompagnement IA dirigeants et indépendants ?",
@@ -515,8 +915,8 @@ export const routes: RouteData[] = [
         }
       ],
       internalLinks: [
+        { href: "/oeuvres/", label: "Consulter nos 3 études de cas TheLittle en production" },
         { href: "/ateliers/", label: "Voir tous nos ateliers et formations" },
-        { href: "/oeuvres/", label: "Consulter nos réalisations concrètes en IA" },
         { href: "/faq/", label: "Consulter la foire aux questions" },
         { href: "/contact/", label: "Contacter les mentors de la cohorte" }
       ]
@@ -525,19 +925,19 @@ export const routes: RouteData[] = [
   {
     path: '/mentions-legales',
     title: "Mentions Légales Agence IA & RGPD | Alkymya",
-    description: "Mentions légales de l'agence IA Alkymya, experts IA France à Ozoir-la-Ferrière : conformité RGPD, hébergement cloud et co-création assistée par IA.",
-    h1: "Mentions légales agence IA Alkymya & RGPD.",
+    description: "Mentions légales d'Alkymya, studio IA et organisme de formation à Ozoir-la-Ferrière : conformité RGPD, hébergement cloud et propriété intellectuelle.",
+    h1: "Mentions légales Alkymya (Ozoir-la-Ferrière) & RGPD.",
     ogImage: "https://alkymya.co/og-mentions.jpg",
-    lastmod: "2026-11-13",
+    lastmod: "2026-11-15",
     schemaType: "WebPage",
     content: {
-      leadParagraph: "Consultez les mentions légales de l'agence IA et studio création IA Alkymya (experts IA France à Ozoir-la-Ferrière) ainsi que notre politique stricte de confidentialité RGPD.",
+      leadParagraph: "Consultez les mentions légales d'Alkymya, studio IA et organisme de formation à Ozoir-la-Ferrière (Seine-et-Marne), ainsi que notre politique stricte de confidentialité RGPD.",
       sections: [
         {
-          h2: "Éditeur de l'agence IA et direction de publication",
+          h2: "Éditeur du site et direction de publication",
           paragraphs: [
-            "Le site internet alkymya.co est édité par le Studio Alkymya, domicilié à Ozoir-la-Ferrière, Seine-et-Marne (77330), France.",
-            "Direction de la publication : Cyril Garnier et Léonie Egesipe. Contact : contact@alkymya.co."
+            "Le site internet alkymya.co est édité par Alkymya, studio IA et organisme de formation professionnelle, domicilié à Ozoir-la-Ferrière, Seine-et-Marne (77330), France.",
+            "Direction de la publication : Cyril Garnier (cyrilgarnier.fr) et Léonie Egesipe. Contact : contact@alkymya.co."
           ]
         },
         {

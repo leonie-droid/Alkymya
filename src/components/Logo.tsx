@@ -1,4 +1,5 @@
 import { cn } from "@/lib/utils";
+import { cloudinaryUrl } from "../utils/cloudinary";
 
 interface LogoProps {
   className?: string;
@@ -8,8 +9,10 @@ interface LogoProps {
 export default function Logo({ className, variant = 'default' }: LogoProps) {
   return (
     <img 
-      src="https://res.cloudinary.com/dokzioyu4/image/upload/v1758096912/logo_principal_bleu_gbnyuu.png" 
-      alt="Alkymya — Agence IA & Studio Création IA" 
+      src={cloudinaryUrl("https://res.cloudinary.com/dokzioyu4/image/upload/v1758096912/logo_principal_bleu_gbnyuu.png", 600)} 
+      alt="Alkymya, studio IA et organisme de formation à Ozoir-la-Ferrière" 
+      width={150}
+      height={38}
       className={cn(
         "inline-block h-[1em] w-auto align-middle",
         variant === 'white' && "brightness-0 invert",

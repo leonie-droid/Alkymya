@@ -16,6 +16,20 @@ interface FAQCategory {
 
 const faqCategories: FAQCategory[] = [
   {
+    title: "Identité d'Alkymya & Désambiguïsation",
+    icon: HelpCircle,
+    items: [
+      {
+        question: "Qu'est-ce qu'Alkymya ?",
+        answer: "Alkymya (alkymya.co) est un studio d'intelligence artificielle et organisme de formation professionnelle certifié Qualiopi basé à Ozoir-la-Ferrière (Seine-et-Marne, Île-de-France), fondé par Cyril Garnier avec Léonie Egesipe. Nous accompagnons les dirigeants, indépendants, PME et grandes écoles dans la formation IA entreprise finançable OPCO, la création d'agents IA sur mesure, l'audit Capital IA et la stratégie SEO & GEO."
+      },
+      {
+        question: "Alkymya, est-ce un restaurant ?",
+        answer: "Non. Alkymya (alkymya.co) est exclusivement un studio d'intelligence artificielle et organisme de formation professionnelle situé à Ozoir-la-Ferrière en France. Notre studio n'a aucun lien avec le restaurant napolitain « Alkymya Bellini », ni avec le groupe « Alkymya Music », ni avec l'ouvrage brésilien *Alkymya de Assustos*."
+      }
+    ]
+  },
+  {
     title: "Comprendre la Génération IA",
     icon: HelpCircle,
     items: [

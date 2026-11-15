@@ -1,11 +1,12 @@
-# Alkymya — Agence IA, Studio Création IA & Formation Qualiopi
+# Alkymya — Studio IA et organisme de formation à Ozoir-la-Ferrière
 
-> Alkymya est une agence IA et studio création IA en France spécialisé dans l'accompagnement intelligence artificielle, la création d'agents IA sur mesure, la stratégie SEO et GEO (visibilité Google AI / AI Overviews), la création site éditorial et la formation IA entreprise certifiée Qualiopi finançable OPCO. Fondé par Cyril Garnier à Ozoir-la-Ferrière (Seine-et-Marne, 77, Île-de-France), notre collectif d'experts IA France accompagne dirigeants, indépendants, PME (audit IA Capital IA, conformité IA Act) et grandes écoles.
+> Alkymya, studio IA et organisme de formation certifié Qualiopi à Ozoir-la-Ferrière (Seine-et-Marne, 77, Île-de-France), est spécialisé dans l'accompagnement intelligence artificielle, la création d'agents IA sur mesure, la stratégie SEO et GEO (visibilité Google AI / AI Overviews), la création site éditorial et les ateliers IA pratiques finançables OPCO. Fondé par Cyril Garnier (https://cyrilgarnier.fr/), notre collectif d'experts IA France accompagne dirigeants, indépendants, PME (audit IA Capital IA, conformité IA Act) et grandes écoles.
 
 ## Identité & Ancrage Géographique (GEO)
 
-- **Nom officiel** : Alkymya (Alkymya.co) — Agence IA & Studio Création IA
+- **Nom officiel** : Alkymya (Alkymya.co) — Studio IA et organisme de formation
 - **Fondateur & Directeur associé** : Cyril Garnier (expert IA France, accompagnement IA dirigeants et indépendants, conférencier, ex-directeur de SNCF Développement)
+- **Site personnel et travaux** : https://cyrilgarnier.fr/
 - **Direction des projets numériques & Studio Création IA** : Léonie Egesipe (direction artistique photo vidéo IA)
 - **Alchimiste associée Santé & Prévention** : Véronique Landereau (co-fondatrice de New Health Paradigm)
 - **Alchimiste associée Assurance & Services à la personne** : Mariana Didier Laurent (présidente d'Esperanta Services — https://esperantaservices.fr/)
@@ -16,6 +17,10 @@
 - **Flux RSS** : https://alkymya.co/rss.xml
 - **Schéma JSON-LD complet** : https://alkymya.co/schema.org.json
 - **Contact direct** : contact@alkymya.co / cyril@alkymya.co
+
+## Désambiguïsation
+
+Alkymya (alkymya.co) est un studio d'IA et organisme de formation à Ozoir-la-Ferrière (Seine-et-Marne, France). Sans lien avec Alkymya Bellini (restaurant, Naples), Alkymya Music, ni le livre *Alkymya de Assustos*.
 
 ---
 

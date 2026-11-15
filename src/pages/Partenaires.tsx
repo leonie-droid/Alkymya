@@ -8,77 +8,92 @@ const partenaires = [
   {
     name: "Hetic",
     logo: "https://res.cloudinary.com/dokzioyu4/image/upload/v1759785816/logo-hetic_fnt2zy.png",
-    category: "Grande École"
+    category: "Grande École",
+    outcome: "Ateliers intensifs d'IA générative et jurys de projets numériques pour former les futurs chefs de produit web."
   },
   {
     name: "Ynov",
     logo: "https://res.cloudinary.com/dokzioyu4/image/upload/v1759785824/ynov-campus_logo_e1ma2q.png",
-    category: "Campus Tech"
+    category: "Campus Tech",
+    outcome: "Modules de prompt engineering avancé, prototypage d'agents IA et hackathons appliqués aux métiers du digital."
   },
   {
     name: "IESEG",
     logo: "https://res.cloudinary.com/dokzioyu4/image/upload/v1759785830/IESEG_logo_zzx1aa.jpg",
-    category: "Grande École de Management"
+    category: "Grande École de Management",
+    outcome: "Séminaires de stratégie business et intégration opérationnelle de l'IA pour les étudiants en management."
   },
   {
     name: "CFA Itis",
     logo: "https://res.cloudinary.com/dokzioyu4/image/upload/v1759785836/CFA_ITIS_logo_vetgdg.webp",
-    category: "Formation & Alternance"
+    category: "Formation & Alternance",
+    outcome: "Parcours pratiques dédiés aux apprentis pour déployer l'IA directement au service de leurs entreprises d'accueil."
   },
   {
     name: "Paris école de management",
     logo: "https://res.cloudinary.com/dokzioyu4/image/upload/v1760635542/logo_paris_ecole_de_management_vs3hwl.jpg",
-    category: "Management & Stratégie"
+    category: "Management & Stratégie",
+    outcome: "Cas pratiques d'entreprise et acculturation des apprenants aux nouveaux modèles économiques dopés à l'IA."
   },
   {
     name: "Fondation GRDF",
     logo: "https://res.cloudinary.com/dokzioyu4/image/upload/v1759925019/logo-fondation-grdf_wx9kpo.png",
-    category: "Fondation Entreprise"
+    category: "Fondation Entreprise",
+    outcome: "Accompagnement de projets à impact territorial et transmission des usages responsables de l'IA."
   },
   {
     name: "EURIDIS",
     logo: "https://res.cloudinary.com/dokzioyu4/image/upload/v1759785888/EURIDIS_logo_rjpc9a.webp",
-    category: "Business School"
+    category: "Business School",
+    outcome: "Entraînement des forces commerciales B2B à la prospection augmentée et à l'analyse client par l'IA."
   },
   {
     name: "ISCOM",
     logo: "https://res.cloudinary.com/dokzioyu4/image/upload/v1759785896/ISCOM_logo_vrvwbp.webp",
-    category: "Communication & Marque"
+    category: "Communication & Marque",
+    outcome: "Ateliers de direction artistique, création éditoriale et stratégie de marque assistée par IA générative."
   },
   {
     name: "SEALESTER",
     logo: "https://res.cloudinary.com/dokzioyu4/image/upload/v1759785904/SEALESTER_logo_iyccmi.webp",
-    category: "Innovation Industrielle"
+    category: "Innovation Industrielle",
+    outcome: "Exploration d'outils de veille technologique et d'automatisation au service de l'innovation produit."
   },
   {
     name: "La fondation Flamenca",
     logo: "https://res.cloudinary.com/dokzioyu4/image/upload/v1760702243/Logo_fondation_Flamenca_vprft5.png",
-    category: "Culture & Transmission"
+    category: "Culture & Transmission",
+    outcome: "Valorisation de patrimoines artistiques et conception de récits culturels augmentés par l'IA."
   },
   {
     name: "Azimuto",
     logo: "https://res.cloudinary.com/dokzioyu4/image/upload/v1760702297/Logo_Azimuto_iqqqce.webp",
-    category: "Accompagnement Stratégique"
+    category: "Accompagnement Stratégique",
+    outcome: "Outils de diagnostic et méthodes structurantes pour sécuriser la transformation numérique des dirigeants."
   },
   {
     name: "La Ressourcerie Gaillarde",
     logo: "https://res.cloudinary.com/dokzioyu4/image/upload/v1760702361/Logo_Ressourcerie_Gaillarde_nndpbj.png",
-    category: "Économie Circulaire"
+    category: "Économie Circulaire",
+    outcome: "Optimisation des flux d'information et communication locale grâce à des outils IA sobres et accessibles."
   },
   {
     name: "SNCF",
     logo: "https://res.cloudinary.com/dokzioyu4/image/upload/v1777819108/t%C3%A9l%C3%A9chargement_16_j060qu.jpg",
-    category: "Mobilité & Développement"
+    category: "Mobilité & Développement",
+    outcome: "Co-construction de programmes entrepreneuriaux et appui au développement économique des territoires."
   },
   {
     name: "INATEC",
     logo: "https://res.cloudinary.com/dokzioyu4/image/upload/v1777818451/WhatsApp_Image_2026-02-27_at_15.38.53_utvfxs.jpg",
-    category: "Expertise Pédagogique"
+    category: "Expertise Pédagogique",
+    outcome: "Portage Qualiopi et ingénierie pédagogique permettant un financement OPCO jusqu'à 100 % des formations."
   },
   {
     name: "Morning",
     logo: "https://res.cloudinary.com/dokzioyu4/image/upload/v1779185919/Logo_Morning_sma32y.png",
-    category: "Espaces & Écosystème"
+    category: "Espaces & Écosystème",
+    outcome: "Accueil de nos ateliers pratiques en présentiel et rencontres d'entrepreneurs au cœur de l'Île-de-France."
   }
 ];
 
@@ -87,7 +102,7 @@ export default function Partenaires() {
     <div className="bg-[#f4f6f9] text-[#1F4F6E] min-h-screen font-['Roboto',sans-serif] selection:bg-[#C06721] selection:text-white">
       <SEO
         title="Partenaires Formation IA & Grandes Écoles | Alkymya"
-        description="Accompagnement intelligence artificielle avec Objectif Alternance, HETIC, Ynov, IÉSEG et CFA Itis. Agence IA et formation IA entreprise Qualiopi."
+        description="Partenariats formation IA Alkymya : recrutement d'alternants avec Objectif Alternance, interventions en école (HETIC, Ynov, IÉSEG) et projets étudiants."
         keywords="agence IA, accompagnement intelligence artificielle, formation IA entreprise certifiée Qualiopi, experts IA France, studio création IA"
         canonicalPath="/partenaires"
         ogImage="https://res.cloudinary.com/dokzioyu4/image/upload/v1788507182/logo_objectif_code_u3otua.png"
@@ -163,7 +178,10 @@ export default function Partenaires() {
               >
                 <div className="h-32 md:h-40 flex items-center justify-center">
                   <img
-                    src="https://res.cloudinary.com/dokzioyu4/image/upload/v1788507182/logo_objectif_code_u3otua.png"
+                    src="https://res.cloudinary.com/dokzioyu4/image/upload/f_auto,q_auto,w_600,c_limit/v1788507182/logo_objectif_code_u3otua.png"
+                    width={320}
+                    height={160}
+                    loading="lazy"
                     alt="Logo Objectif Alternance — partenaire formation IA entreprise certifiée Qualiopi et insertion avec Alkymya"
                     className="max-h-full max-w-full object-contain group-hover:scale-105 transition-transform duration-300"
                     referrerPolicy="no-referrer"
@@ -227,7 +245,7 @@ export default function Partenaires() {
           Grandes écoles, universités, entreprises et institutions qui déploient nos ateliers IA pratiques et notre accompagnement intelligence artificielle.
         </p>
 
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
           {partenaires.map((partenaire, index) => (
             <motion.div
               key={partenaire.name}
@@ -236,21 +254,27 @@ export default function Partenaires() {
               viewport={{ once: true }}
               transition={{ duration: 0.35, delay: index * 0.03 }}
             >
-              <div className="group h-full p-6 rounded-[12px] bg-white shadow-[0_2px_16px_rgba(31,79,110,0.08)] hover:shadow-[0_8px_32px_rgba(31,79,110,0.14)] hover:-translate-y-1 transition-all duration-200 flex flex-col items-center justify-between text-center min-h-[190px]">
-                <div className="w-full flex-1 flex items-center justify-center py-4">
+              <div className="group h-full p-5 rounded-[12px] bg-white shadow-[0_2px_16px_rgba(31,79,110,0.08)] hover:shadow-[0_8px_32px_rgba(31,79,110,0.14)] hover:-translate-y-1 transition-all duration-200 flex flex-col items-center justify-between text-center min-h-[240px]">
+                <div className="w-full flex-1 flex items-center justify-center py-3">
                   <img
-                    src={partenaire.logo}
+                    src={partenaire.logo.replace('/image/upload/', '/image/upload/f_auto,q_auto,w_600,c_limit/')}
+                    width={130}
+                    height={64}
+                    loading="lazy"
                     alt={`Logo ${partenaire.name} — ${partenaire.category}, partenaire agence IA Alkymya`}
                     className="max-w-[130px] max-h-16 object-contain grayscale group-hover:grayscale-0 transition-all duration-300 group-hover:scale-105"
                     referrerPolicy="no-referrer"
                   />
                 </div>
-                <div className="w-full pt-3 border-t border-[rgba(31,79,110,0.08)]">
+                <div className="w-full pt-3 border-t border-[rgba(31,79,110,0.08)] space-y-1.5">
                   <h3 className="text-xs font-medium text-[#1F4F6E] group-hover:text-[#02ADAB] transition-colors truncate">
                     {partenaire.name}
                   </h3>
-                  <p className="text-[11px] text-[#7a9ab0] truncate mt-0.5 font-normal">
+                  <p className="text-[11px] text-[#C06721] font-medium truncate">
                     {partenaire.category}
+                  </p>
+                  <p className="text-[11px] text-[#5a7a90] leading-[1.45] font-normal">
+                    {partenaire.outcome}
                   </p>
                 </div>
               </div>

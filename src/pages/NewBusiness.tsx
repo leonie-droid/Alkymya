@@ -114,7 +114,7 @@ export default function NewBusiness() {
   return (
     <div className="bg-[#f4f6f9] text-[#1F4F6E] min-h-screen font-['Roboto',sans-serif] selection:bg-[#C06721] selection:text-white">
       <SEO
-        title="Accompagnement IA Dirigeants & MVP 6 Mois | Alkymya"
+        title="New Business MVP : valider son offre en 6 mois — Alkymya"
         description="Accompagnement IA dirigeants et indépendants sur 6 mois : création de MVP, validation client, agents IA sur mesure et stratégie SEO et GEO."
         keywords="accompagnement IA dirigeants et indépendants, création d'agents IA sur mesure, stratégie SEO et GEO, experts IA France, agence IA"
         canonicalPath="/newbusiness"
@@ -161,6 +161,12 @@ export default function NewBusiness() {
               <span>Déposer ma candidature</span>
               <ArrowRight className="w-4 h-4" />
             </a>
+            <Link
+              to="/oeuvres"
+              className="w-full sm:w-auto px-8 py-3.5 bg-white/10 text-white font-medium text-sm rounded-[8px] border border-white/25 hover:bg-white/20 transition-all flex items-center justify-center"
+            >
+              Voir nos 3 études de cas TheLittle →
+            </Link>
             <Link
               to="/ateliers"
               className="w-full sm:w-auto px-8 py-3.5 bg-white/10 text-white font-medium text-sm rounded-[8px] border border-white/25 hover:bg-white/20 transition-all flex items-center justify-center"
@@ -304,7 +310,10 @@ export default function NewBusiness() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-7">
           <div className="p-8 rounded-[12px] bg-white shadow-[0_2px_16px_rgba(31,79,110,0.08)] flex flex-col sm:flex-row items-center sm:items-start gap-6">
             <img
-              src="https://res.cloudinary.com/dokzioyu4/image/upload/v1758192982/66cffcd8-15f1-415f-b423-9f428d63e22f_gqjd53.png"
+              src="https://res.cloudinary.com/dokzioyu4/image/upload/f_auto,q_auto,w_600,c_limit/v1758192982/66cffcd8-15f1-415f-b423-9f428d63e22f_gqjd53.png"
+              width={96}
+              height={96}
+              loading="lazy"
               alt="Cyril Garnier — Expert IA France et accompagnement IA dirigeants Alkymya"
               className="w-24 h-24 rounded-[10px] object-cover shrink-0 border border-[rgba(31,79,110,0.12)]"
             />
@@ -321,7 +330,10 @@ export default function NewBusiness() {
 
           <div className="p-8 rounded-[12px] bg-white shadow-[0_2px_16px_rgba(31,79,110,0.08)] flex flex-col sm:flex-row items-center sm:items-start gap-6">
             <img
-              src="https://res.cloudinary.com/dokzioyu4/image/upload/v1758192982/c4f25b29-1634-44bf-a6d1-41f2378fbb4d_j10d8m.png"
+              src="https://res.cloudinary.com/dokzioyu4/image/upload/f_auto,q_auto,w_600,c_limit/v1758192982/c4f25b29-1634-44bf-a6d1-41f2378fbb4d_j10d8m.png"
+              width={96}
+              height={96}
+              loading="lazy"
               alt="Léonie Egesipe — Studio création IA et direction artistique Alkymya"
               className="w-24 h-24 rounded-[10px] object-cover shrink-0 border border-[rgba(31,79,110,0.12)]"
             />

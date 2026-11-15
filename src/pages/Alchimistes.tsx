@@ -5,6 +5,7 @@ import { Mail, Linkedin, Instagram, ExternalLink, Zap, Youtube, ChevronDown, Glo
 import { FaTiktok } from 'react-icons/fa';
 import { SEO } from '../components/SEO';
 import { alchimistes } from '../data/alchimistes';
+import { cloudinaryUrl, cloudinarySrcSet } from '../utils/cloudinary';
 
 const nouveauxAlchimistes = [
   {
@@ -126,7 +127,12 @@ const AlchimisteCard: React.FC<{ person: any, index: number, handleWorkClick: (e
             aria-label={`Découvrir le profil de ${person.name}`}
           >
             <img
-              src={person.image}
+              src={cloudinaryUrl(person.image, 800)}
+              srcSet={cloudinarySrcSet(person.image)}
+              sizes="(max-width: 768px) 100vw, 33vw"
+              width={600}
+              height={750}
+              loading={index === 0 ? undefined : 'lazy'}
               alt={`${person.name} — ${person.role}, expert IA France agence Alkymya`}
               className="object-cover w-full h-full transition-transform duration-700 group-hover:scale-105"
               referrerPolicy="no-referrer"

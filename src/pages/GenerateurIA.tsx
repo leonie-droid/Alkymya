@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from 'motion/react';
 import { Sparkles, FileText, Download, Play, X, ArrowRight, ExternalLink, Headphones, BarChart3, CheckCircle2 } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { SEO } from '../components/SEO';
+import { cloudinaryUrl, cloudinarySrcSet } from '../utils/cloudinary';
 
 const personas = [
   {
@@ -152,7 +153,12 @@ export default function GenerateurIA() {
             className="lg:col-span-5 rounded-[12px] overflow-hidden shadow-[0_2px_16px_rgba(31,79,110,0.08)] bg-white p-2"
           >
             <img 
-              src="https://res.cloudinary.com/dokzioyu4/image/upload/v1777491204/Capture_GENERATION_IA_lrxvdx.png" 
+              src={cloudinaryUrl("https://res.cloudinary.com/dokzioyu4/image/upload/v1777491204/Capture_GENERATION_IA_lrxvdx.png", 1000)} 
+              srcSet={cloudinarySrcSet("https://res.cloudinary.com/dokzioyu4/image/upload/v1777491204/Capture_GENERATION_IA_lrxvdx.png")}
+              sizes="(max-width: 1024px) 100vw, 42vw"
+              width={1000}
+              height={620}
+              loading="lazy"
               alt="Étude Génération IA et création d'agents IA sur mesure par le studio création IA Alkymya" 
               className="w-full h-auto object-cover rounded-[8px]"
               referrerPolicy="no-referrer"

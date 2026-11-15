@@ -1,6 +1,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { routes, RouteData } from '../src/data/routes';
+import { cloudinaryUrl, cloudinarySrcSet } from '../src/utils/cloudinary';
 
 function escapeHtml(str: string): string {
   return str
@@ -29,7 +30,7 @@ function generatePageBody(route: RouteData): string {
     <header style="background: #ffffff; border-bottom: 1px solid #e2e8f0; padding: 1rem 1.5rem; position: sticky; top: 0; z-index: 50;">
       <div style="max-width: 1280px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem;">
         <a href="/" aria-label="Accueil Alkymya" style="display: flex; align-items: center; text-decoration: none;">
-          <img src="https://res.cloudinary.com/dokzioyu4/image/upload/v1758096912/logo_principal_bleu_gbnyuu.png" alt="Alkymya — Agence IA & Studio Création IA" width="150" height="38" style="height: 38px; width: auto;" />
+          <img src="${cloudinaryUrl('https://res.cloudinary.com/dokzioyu4/image/upload/v1758096912/logo_principal_bleu_gbnyuu.png', 600)}" alt="Alkymya, studio IA et organisme de formation à Ozoir-la-Ferrière" width="150" height="38" style="height: 38px; width: auto;" />
         </a>
         <nav aria-label="Navigation principale" style="display: flex; flex-wrap: wrap; gap: 1rem; font-size: 0.8125rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em;">
           ${navItems.map(item => `
@@ -74,6 +75,27 @@ function generatePageBody(route: RouteData): string {
           `).join('')}
         </div>
 
+        ${route.images && route.images.length > 0 ? `
+        <section style="margin-bottom: 3rem;">
+          <h2 style="font-size: 1.375rem; font-weight: 800; color: #1F4F6E; margin-top: 0; margin-bottom: 1.25rem;">
+            Visuels &amp; réalisations illustrées
+          </h2>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.25rem;">
+            ${route.images.map((img, idx) => {
+              const optimizedSrc = cloudinaryUrl(img.src, 1200);
+              const srcset = cloudinarySrcSet(img.src);
+              const srcsetAttr = srcset ? ` srcset="${srcset}" sizes="(max-width: 768px) 100vw, 480px"` : '';
+              const lazyAttr = idx === 0 ? '' : ' loading="lazy"';
+              return `
+            <figure style="margin: 0; background: #ffffff; border: 1px solid #e2e8f0; border-radius: 0.75rem; overflow: hidden;">
+              <img src="${optimizedSrc}"${srcsetAttr} alt="${escapeHtml(img.alt)}" width="${img.width}" height="${img.height}"${lazyAttr} style="width: 100%; height: 180px; object-fit: cover; display: block;" />
+              ${img.caption ? `<figcaption style="padding: 0.65rem 0.85rem; font-size: 0.82rem; color: #475569;">${escapeHtml(img.caption)}</figcaption>` : ''}
+            </figure>`;
+            }).join('')}
+          </div>
+        </section>
+        ` : ''}
+
         <section style="background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 1.25rem; padding: 2rem 2.5rem; margin-bottom: 3rem;">
           <h2 style="font-size: 1.375rem; font-weight: 800; color: #1F4F6E; margin-top: 0; margin-bottom: 1rem;">
             Découvrir d'autres pages et ressources Alkymya
@@ -94,9 +116,10 @@ function generatePageBody(route: RouteData): string {
     <footer style="background: #1F4F6E; color: #ffffff; padding: 3rem 1.5rem; margin-top: 4rem; font-family: system-ui, -apple-system, sans-serif;">
       <div style="max-width: 1200px; margin: 0 auto; display: flex; flex-direction: column; align-items: center; justify-content: space-between; gap: 1.5rem; text-align: center;">
         <p style="margin: 0; font-size: 0.875rem; color: #cbd5e1;">
-          © 2026 <strong>Alkymya.co</strong> — Studio d'innovation et formations en Intelligence Artificielle générative. Ozoir-la-Ferrière, Seine-et-Marne (77), France.
+          © 2026 <strong>Alkymya.co</strong> — Alkymya, studio IA et organisme de formation à Ozoir-la-Ferrière, Seine-et-Marne (77), France.
         </p>
-        <nav aria-label="Liens de pied de page" style="display: flex; gap: 1.5rem; font-size: 0.8125rem; text-transform: uppercase; letter-spacing: 0.05em; font-weight: 600;">
+        <nav aria-label="Liens de pied de page" style="display: flex; flex-wrap: wrap; justify-content: center; gap: 1.5rem; font-size: 0.8125rem; text-transform: uppercase; letter-spacing: 0.05em; font-weight: 600;">
+          <a href="https://cyrilgarnier.fr/" target="_blank" rel="noopener noreferrer" style="color: #02ADAB; text-decoration: none;">Voir le site de Cyril Garnier →</a>
           <a href="/mentions-legales/" style="color: #cbd5e1; text-decoration: none;">Mentions Légales</a>
           <a href="/newbusiness/" style="color: #cbd5e1; text-decoration: none;">New Business MVP</a>
           <a href="/faq/" style="color: #cbd5e1; text-decoration: none;">FAQ</a>
@@ -123,6 +146,14 @@ const breadcrumbNames: Record<string, string> = {
 };
 
 const faqQuestions = [
+  {
+    name: "Qu'est-ce qu'Alkymya ?",
+    answer: "Alkymya (alkymya.co) est un studio IA et organisme de formation professionnelle certifié Qualiopi basé à Ozoir-la-Ferrière en Seine-et-Marne (77), fondé par Cyril Garnier et Léonie Egesipe. Nous formons les équipes en entreprise, concevons des agents IA sur mesure et accompagnons les dirigeants dans le programme New Business MVP."
+  },
+  {
+    name: "Alkymya, est-ce un restaurant ?",
+    answer: "Non. Alkymya (alkymya.co) est un studio d'intelligence artificielle et organisme de formation professionnelle en France (Ozoir-la-Ferrière, Seine-et-Marne), sans aucun lien avec le restaurant Alkymya Bellini à Naples, le groupe Alkymya Music ni le livre brésilien Alkymya de Assustos."
+  },
   {
     name: "Quel est le format des ateliers d'agents IA ?",
     answer: "Des sessions intensives de 3h30 pour concevoir et déployer 3 agents intelligents autonomes connectés à vos outils métiers (Slack, Notion, CRM via Make/Zapier)."
@@ -176,16 +207,13 @@ function buildJsonLd(route: RouteData, canonicalUrl: string) {
     },
     "author": [
       {
-        "@type": "Person",
-        "@id": "https://alkymya.co/alchimistes/#cyril-garnier",
-        "name": "Cyril Garnier",
-        "url": "https://alkymya.co/alchimistes/#cyril-garnier"
+        "@id": "https://alkymya.co/#cyril-garnier"
       },
       {
         "@type": "Person",
-        "@id": "https://alkymya.co/alchimistes/#leonie-egesipe",
+        "@id": "https://alkymya.co/#leonie-egesipe",
         "name": "Léonie Egesipe",
-        "url": "https://alkymya.co/alchimistes/#leonie-egesipe"
+        "url": "https://alkymya.co/alchimistes/leonie-egesipe/"
       }
     ],
     "breadcrumb": {
@@ -241,9 +269,12 @@ function buildJsonLd(route: RouteData, canonicalUrl: string) {
     "name": "Alkymya",
     "alternateName": ["Alkymya.co", "Studio Alkymya"],
     "url": "https://alkymya.co/",
-    "logo": "https://res.cloudinary.com/dokzioyu4/image/upload/v1758096912/logo_principal_bleu_gbnyuu.png",
+    "logo": cloudinaryUrl("https://res.cloudinary.com/dokzioyu4/image/upload/v1758096912/logo_principal_bleu_gbnyuu.png", 600),
     "image": "https://alkymya.co/og-image.jpg",
-    "description": "Agence IA et studio création IA en France : accompagnement intelligence artificielle, création d'agents IA sur mesure, stratégie SEO et GEO Google AI, formation IA entreprise certifiée Qualiopi finançable OPCO.",
+    "description": "Alkymya, studio IA et organisme de formation certifié Qualiopi à Ozoir-la-Ferrière (77) : accompagnement intelligence artificielle, création d'agents IA sur mesure, stratégie SEO et GEO Google AI.",
+    "founder": {
+      "@id": "https://alkymya.co/#cyril-garnier"
+    },
     "telephone": "+33 1 89 71 32 40",
     "email": "contact@alkymya.co",
     "address": {
@@ -267,7 +298,8 @@ function buildJsonLd(route: RouteData, canonicalUrl: string) {
     "sameAs": [
       "https://www.linkedin.com/company/alkymya/",
       "https://www.youtube.com/@alkymya",
-      "https://www.instagram.com/alkymya.co/"
+      "https://www.instagram.com/alkymya.co/",
+      "https://cyrilgarnier.fr/"
     ],
     "openingHoursSpecification": [
       {
@@ -279,7 +311,24 @@ function buildJsonLd(route: RouteData, canonicalUrl: string) {
     ]
   };
 
-  const graphNodes: any[] = [webpageNode, breadcrumbNode, organizationNode];
+  // Entité fondateur Cyril Garnier présente sur toutes les pages pour résoudre founder.@id
+  const cyrilGarnierNode: Record<string, any> = {
+    "@type": "Person",
+    "@id": "https://alkymya.co/#cyril-garnier",
+    "name": "Cyril Garnier",
+    "jobTitle": "Directeur Associé & Fondateur Alkymya",
+    "url": "https://cyrilgarnier.fr/",
+    "image": cloudinaryUrl("https://res.cloudinary.com/dokzioyu4/image/upload/v1758192982/66cffcd8-15f1-415f-b423-9f428d63e22f_gqjd53.png", 600),
+    "worksFor": {
+      "@id": "https://alkymya.co/#organization"
+    },
+    "sameAs": [
+      "https://www.linkedin.com/in/cyril-garnier-89697b1/",
+      "https://cyrilgarnier.fr/"
+    ]
+  };
+
+  const graphNodes: any[] = [webpageNode, breadcrumbNode, organizationNode, cyrilGarnierNode];
 
   // 4. Schéma Course spécifique pour /ateliers/ avec hasCourseInstance
   if (route.path === '/ateliers') {
@@ -327,29 +376,15 @@ function buildJsonLd(route: RouteData, canonicalUrl: string) {
     });
   }
 
-  // 5. Schéma Person pour /alchimistes/ (Cyril Garnier, Léonie Egesipe, Véronique Landereau & Mariana Didier Laurent)
+  // 5. Schéma Person pour /alchimistes/ (Léonie Egesipe, Véronique Landereau & Mariana Didier Laurent — Cyril Garnier déjà inclus dans graphNodes)
   if (route.path === '/alchimistes') {
     graphNodes.push(
-      {
-        "@type": "Person",
-        "@id": "https://alkymya.co/#cyril-garnier",
-        "name": "Cyril Garnier",
-        "jobTitle": "Directeur Associé & Fondateur Alkymya",
-        "image": "https://res.cloudinary.com/dokzioyu4/image/upload/v1758192982/66cffcd8-15f1-415f-b423-9f428d63e22f_gqjd53.png",
-        "worksFor": {
-          "@id": "https://alkymya.co/#organization"
-        },
-        "sameAs": [
-          "https://www.linkedin.com/in/cyrilgarnier/",
-          "https://cyrilgarnier.fr/"
-        ]
-      },
       {
         "@type": "Person",
         "@id": "https://alkymya.co/#leonie-egesipe",
         "name": "Léonie Egesipe",
         "jobTitle": "Co-Fondatrice & Directrice Artistique IA",
-        "image": "https://res.cloudinary.com/dokzioyu4/image/upload/v1758192982/c4f25b29-1634-44bf-a6d1-41f2378fbb4d_j10d8m.png",
+        "image": cloudinaryUrl("https://res.cloudinary.com/dokzioyu4/image/upload/v1762252984/725879fe-afa3-4afa-a900-229030c002de_1_xoep2v.png", 600),
         "worksFor": {
           "@id": "https://alkymya.co/#organization"
         },
@@ -484,19 +519,13 @@ function generateSitemapXml(allRoutes: RouteData[]): string {
       { loc: r.ogImage, title: `${r.title} — Alkymya` }
     ];
 
-    if (r.path === '/alchimistes') {
-      images.push(
-        { loc: "https://res.cloudinary.com/dokzioyu4/image/upload/v1758192982/66cffcd8-15f1-415f-b423-9f428d63e22f_gqjd53.png", title: "Cyril Garnier — Directeur Associé Alkymya" },
-        { loc: "https://res.cloudinary.com/dokzioyu4/image/upload/v1758192982/c4f25b29-1634-44bf-a6d1-41f2378fbb4d_j10d8m.png", title: "Léonie Egesipe — Directrice Artistique IA Alkymya" },
-        { loc: "https://res.cloudinary.com/dokzioyu4/image/upload/v1792763449/1792401247516_ussqzm.png", title: "Véronique Landereau — Alchimiste associée Santé" },
-        { loc: "https://res.cloudinary.com/dokzioyu4/image/upload/v1794479431/WhatsApp_Image_2026-11-12_at_11.29.28_qwv5le.jpg", title: "Mariana Didier Laurent — Experts IA France & Services à la personne" }
-      );
-    } else if (r.path === '/oeuvres') {
-      images.push(
-        { loc: "https://res.cloudinary.com/dokzioyu4/image/upload/v1772112521/e23iKTwc_u35aql.png", title: "Direction artistique photo vidéo IA — Portrait Angela Davis" },
-        { loc: "https://res.cloudinary.com/dokzioyu4/image/upload/v1772112521/d9eRiVt6_pmcd6l.png", title: "Direction artistique photo vidéo IA — Portrait Joséphine Baker" },
-        { loc: "https://res.cloudinary.com/dokzioyu4/image/upload/v1772112521/jnya8Go8_e6eczn.png", title: "Direction artistique photo vidéo IA — Portrait Katherine Johnson" }
-      );
+    if (r.images && r.images.length > 0) {
+      for (const img of r.images) {
+        images.push({
+          loc: cloudinaryUrl(img.src, 1200),
+          title: img.caption || img.alt
+        });
+      }
     }
 
     const imageXml = images.map(img => `    <image:image>
@@ -682,6 +711,20 @@ ${JSON.stringify(jsonLd, null, 2)}
   if (fs.existsSync(publicRedirects)) {
     fs.copyFileSync(publicRedirects, path.join(distDir, '_redirects'));
     console.log(`[prerender] Fichier _redirects copié dans dist/_redirects.`);
+  }
+
+  const publicHeaders = path.join(process.cwd(), 'public', '_headers');
+  if (fs.existsSync(publicHeaders)) {
+    fs.copyFileSync(publicHeaders, path.join(distDir, '_headers'));
+    console.log(`[prerender] Fichier _headers copié dans dist/_headers.`);
+  }
+
+  for (const llmsFile of ['llms.txt', 'llm.txt', 'llms-full.txt', 'robots.txt']) {
+    const srcLlms = path.join(process.cwd(), 'public', llmsFile);
+    if (fs.existsSync(srcLlms)) {
+      fs.copyFileSync(srcLlms, path.join(distDir, llmsFile));
+      console.log(`[prerender] Fichier ${llmsFile} copié dans dist/${llmsFile}.`);
+    }
   }
 
   // Copier rss.xml et schema.org.json

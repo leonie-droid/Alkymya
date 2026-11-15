@@ -17,6 +17,7 @@ import {
 import { FaTiktok } from 'react-icons/fa';
 import { alchimistes } from '../data/alchimistes';
 import { SEO } from '../components/SEO';
+import { cloudinaryUrl, cloudinarySrcSet } from '../utils/cloudinary';
 
 export default function AlchimisteDetail() {
   const { id } = useParams<{ id: string }>();
@@ -173,7 +174,11 @@ export default function AlchimisteDetail() {
           <div className="flex flex-col md:flex-row items-center md:items-start gap-8 md:gap-12">
             <div className="w-48 sm:w-56 aspect-[4/5] rounded-[12px] overflow-hidden border border-white/15 shadow-lg shrink-0 bg-[#163b52]">
               <img
-                src={person.image}
+                src={cloudinaryUrl(person.image, 800)}
+                srcSet={cloudinarySrcSet(person.image)}
+                sizes="(max-width: 768px) 192px, 224px"
+                width={480}
+                height={600}
                 alt={`${person.name} — ${person.role}, expert IA France Alkymya`}
                 className="w-full h-full object-cover"
                 referrerPolicy="no-referrer"
@@ -382,7 +387,10 @@ export default function AlchimisteDetail() {
                 className="bg-white rounded-[12px] p-4 shadow-[0_2px_16px_rgba(31,79,110,0.08)] hover:shadow-[0_8px_24px_rgba(31,79,110,0.14)] hover:-translate-y-0.5 transition-all flex items-center gap-3.5 group"
               >
                 <img
-                  src={other.image}
+                  src={cloudinaryUrl(other.image, 200)}
+                  width={96}
+                  height={96}
+                  loading="lazy"
                   alt={other.name}
                   className="w-12 h-12 rounded-[8px] object-cover shrink-0"
                   referrerPolicy="no-referrer"

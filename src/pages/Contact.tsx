@@ -71,9 +71,9 @@ export default function Contact() {
   return (
     <div className="bg-[#f4f6f9] text-[#1F4F6E] min-h-screen font-['Roboto',sans-serif] selection:bg-[#C06721] selection:text-white">
       <SEO
-        title="Contact Experts IA & Devis Formation Qualiopi | Alkymya"
-        description="Demandez un devis formation IA Qualiopi finançable OPCO ou un accompagnement IA dirigeants et indépendants auprès de nos experts IA France."
-        keywords="devis formation IA Qualiopi, experts IA France, accompagnement IA dirigeants et indépendants, agence IA, formation IA finançable OPCO"
+        title="Contact — formation IA et conseil, Ozoir-la-Ferrière"
+        description="Demandez un devis formation IA Qualiopi finançable OPCO ou un accompagnement IA dirigeants et indépendants auprès d'Alkymya à Ozoir-la-Ferrière."
+        keywords="devis formation IA Qualiopi, experts IA France, accompagnement IA dirigeants et indépendants, formation IA Ozoir-la-Ferrière, formation IA finançable OPCO"
         canonicalPath="/contact"
         ogImage="https://res.cloudinary.com/dokzioyu4/image/upload/v1758192982/66cffcd8-15f1-415f-b423-9f428d63e22f_gqjd53.png"
         type="ContactPage"

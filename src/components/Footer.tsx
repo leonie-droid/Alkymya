@@ -172,6 +172,14 @@ export default function Footer() {
             <Link to="/newbusiness/" className="hover:text-accent transition-colors">
               New business
             </Link>
+            <a
+              href="https://cyrilgarnier.fr/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-accent transition-colors"
+            >
+              Voir le site de Cyril Garnier →
+            </a>
             <button
               type="button"
               onClick={openNewsletterModal}

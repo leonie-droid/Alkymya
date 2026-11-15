@@ -19,6 +19,7 @@ import {
 import { Link } from 'react-router-dom';
 import NewsletterButton from '../components/NewsletterButton';
 import { SEO } from '../components/SEO';
+import { cloudinaryUrl } from '../utils/cloudinary';
 
 interface ExpertInfo {
   name: string;
@@ -55,7 +56,7 @@ const resources: ResourceItem[] = [
     id: 1,
     title: "Analyseur de photo",
     category: "Nos Analyseurs",
-    description: "Analyseur de photo vous permet d'explorer, de retoucher et de métamorphoser vos images en un instant.",
+    description: "Analyseur de photo vous permet d'explorer, de retoucher et de métamorphoser vos images en un instant. Idéal pour tester des cadrages éditoriaux, extraire des descriptions alt et préparer des séries visuelles.",
     url: "https://res.cloudinary.com/dokzioyu4/video/upload/v1773761166/46b26247d1084cb39b354fe4c9842b29_aszzay_f48sjs.mov",
     appUrl: "https://analyseurdephoto.alkymya.co/",
     type: "video"
@@ -64,14 +65,14 @@ const resources: ResourceItem[] = [
     id: 2,
     title: "Analyseur de CV",
     category: "Nos Analyseurs",
-    description: "Outil IA gratuit pour optimiser votre CV et maximiser vos chances de décrocher le poste de vos rêves.",
+    description: "Outil IA gratuit pour optimiser votre CV et maximiser vos chances de décrocher le poste de vos rêves. Compare vos compétences aux offres cibles et suggère des reformulations directement actionnables.",
     url: "https://res.cloudinary.com/dokzioyu4/video/upload/v1773762096/c599dc6cd0ef4e6196a739c87b2cb773_gxn0lj.mov",
     appUrl: "https://analysercvpro.alkymya.co/",
     type: "video",
     expert: {
       name: "Kendra Martine",
       role: "Fondatrice d'Objectif Alternance & Coach Emploi",
-      avatar: "https://res.cloudinary.com/dokzioyu4/image/upload/v1788941994/0c39dd0a7f91200361816f2b88d68802_cwzov0.jpg",
+      avatar: "https://res.cloudinary.com/dokzioyu4/image/upload/f_auto,q_auto,w_600,c_limit/v1788941994/0c39dd0a7f91200361816f2b88d68802_cwzov0.jpg",
       hook: "Boostez vos candidatures : associez l'optimisation IA de votre CV à un coaching humain sur-mesure pour décrocher l'alternance ou le poste fait pour vous.",
       siteUrl: "https://www.objectifalternance.fr/",
       siteLabel: "Découvrir Objectif Alternance"
@@ -81,7 +82,7 @@ const resources: ResourceItem[] = [
     id: 3,
     title: "Analyseur de mémoire",
     category: "Nos Analyseurs",
-    description: "Outil puissant pour analyser en profondeur les mémoires et thèses d'étudiants et chercheurs.",
+    description: "Outil puissant pour analyser en profondeur les mémoires et thèses d'étudiants et chercheurs. Identifie les points de vigilance méthodologiques, vérifie la cohérence des plans et synthétise les sources clés.",
     url: "https://res.cloudinary.com/dokzioyu4/video/upload/v1776374160/bac00848173641fd882d43dc3b970835_jtyspz.mov",
     appUrl: "https://analyseurdememoire.alkymya.co/",
     type: "video"
@@ -90,7 +91,7 @@ const resources: ResourceItem[] = [
     id: 17,
     title: "La Doctrine IAG",
     category: "Nos études",
-    description: "Dialogue sur la Stratégie Cachée de l'Ère Trump. Analyse prospective et décryptage approfondi des enjeux géopolitiques, technologiques et industriels de l'IAG.",
+    description: "Dialogue sur la Stratégie Cachée de l'Ère Trump. Analyse prospective et décryptage approfondi des enjeux géopolitiques, technologiques et industriels de l'IAG pour dirigeants et stratèges.",
     url: "https://res.cloudinary.com/dyooqwryq/image/upload/v1762315350/La_Doctrine_IAG___Dialogue_sur_la_Strat%C3%A9gie_Cach%C3%A9e_de_l_%C3%88re_Trump_zwxlqi.pdf",
     audioUrl: "https://res.cloudinary.com/dyooqwryq/video/upload/v1762315917/merged_audio.19bea92d_cunpbi.mp3",
     type: "pdf"
@@ -99,7 +100,7 @@ const resources: ResourceItem[] = [
     id: 18,
     title: "Podcast • La Doctrine IAG",
     category: "Nos études",
-    description: "Dialogue et synthèse audio immersive : explorez en profondeur la thèse, les stratégies cachées et les implications de la Doctrine IAG sous l'ère Trump (5 min 43).",
+    description: "Dialogue et synthèse audio immersive : explorez en profondeur la thèse, les stratégies cachées et les implications de la Doctrine IAG sous l'ère Trump (5 min 43) en format écoute directe.",
     url: "https://res.cloudinary.com/dyooqwryq/video/upload/v1762315917/merged_audio.19bea92d_cunpbi.mp3",
     pdfUrl: "https://res.cloudinary.com/dyooqwryq/image/upload/v1762315350/La_Doctrine_IAG___Dialogue_sur_la_Strat%C3%A9gie_Cach%C3%A9e_de_l_%C3%88re_Trump_zwxlqi.pdf",
     type: "audio"
@@ -108,7 +109,7 @@ const resources: ResourceItem[] = [
     id: 6,
     title: "Génération IA 2026",
     category: "Nos études",
-    description: "Notre tout nouveau rapport complet sur l'impact futur, les usages et l'évolution de l'intelligence artificielle générative pour 2026.",
+    description: "Notre tout nouveau rapport complet sur l'impact futur, les usages et l'évolution de l'intelligence artificielle générative pour 2026. Rassemble métriques terrain, signaux faibles et recommandations DRH.",
     url: "https://res.cloudinary.com/dokzioyu4/image/upload/v1780148789/rapport-generation-ia-2026_v10_20260528_tymyph.pdf",
     type: "pdf"
   },
@@ -116,7 +117,7 @@ const resources: ResourceItem[] = [
     id: 7,
     title: "Génération IA 2025",
     category: "Nos études",
-    description: "Une segmentation approfondie en 5 profils types (personas) pour refléter la diversité des usages et des niveaux de maîtrise de l'IA générative.",
+    description: "Une segmentation approfondie en 5 profils types (personas) pour refléter la diversité des usages et des niveaux de maîtrise de l'IA générative dans les écoles et les équipes métiers.",
     url: "https://res.cloudinary.com/dokzioyu4/image/upload/v1777491985/generation_ia_2025_personas_20251105051526_qvl18j_1_jjn9s4.pdf",
     type: "pdf"
   },
@@ -124,7 +125,7 @@ const resources: ResourceItem[] = [
     id: 8,
     title: "Génération IA 2024",
     category: "Nos études",
-    description: "Une analyse empirique détaillée sur l'introduction et l'usage des outils d'intelligence artificielle auprès de centaines d'étudiants de l'enseignement supérieur.",
+    description: "Une analyse empirique détaillée sur l'introduction et l'usage des outils d'intelligence artificielle auprès de centaines d'étudiants de l'enseignement supérieur et leurs premiers réflexes professionnels.",
     url: "https://res.cloudinary.com/dokzioyu4/image/upload/v1777491668/Generation_IA-2024-V1_Mars_2025_2_cxtaeh_ygnyce.pdf",
     type: "pdf"
   },
@@ -132,7 +133,7 @@ const resources: ResourceItem[] = [
     id: 4,
     title: "NoNo BanaBa",
     category: "Business Game",
-    description: "Au travers de la marque fashion de la Gen Z, explorez la data, le web-marketing et les business modèles contemporains.",
+    description: "Au travers de la marque fashion de la Gen Z, explorez la data, le web-marketing et les business modèles contemporains en atelier de grande école ou lors d'un séminaire d'équipe.",
     url: "https://res.cloudinary.com/dokzioyu4/video/upload/v1777905236/Vide%CC%81o_publicitaire_e%CC%81lectro_pop_cre%CC%81e%CC%81e_oydyo3_xxtwtb.mp4",
     appUrl: "https://nonobanaba.netlify.app/",
     type: "video"
@@ -141,7 +142,7 @@ const resources: ResourceItem[] = [
     id: 10,
     title: "Partenariat d'Avenir",
     category: "Alkymya x Inatec",
-    description: "Découvrez l'introduction de notre collaboration avec Inatec, alliant excellence pédagogique et IA de pointe.",
+    description: "Découvrez l'introduction de notre collaboration avec Inatec, alliant excellence pédagogique, certification Qualiopi et IA de pointe pour rendre les formations finançables OPCO.",
     url: "https://res.cloudinary.com/dokzioyu4/video/upload/v1780954428/reel_01_v2_3_zwqjnw.mp4",
     type: "video"
   },
@@ -149,7 +150,7 @@ const resources: ResourceItem[] = [
     id: 11,
     title: "Efficacité Augmentée",
     category: "Alkymya x Inatec",
-    description: "Optimisation des processus et automatisation intelligente : plongez au cœur des métiers de demain.",
+    description: "Optimisation des processus et automatisation intelligente : plongez au cœur des métiers de demain avec des démonstrations concrètes de gains de temps hebdomadaires.",
     url: "https://res.cloudinary.com/dokzioyu4/video/upload/v1780954633/reel_02_p2_2_ggfpvz.mp4",
     type: "video"
   },
@@ -157,7 +158,7 @@ const resources: ResourceItem[] = [
     id: 12,
     title: "Synergie Créative",
     category: "Alkymya x Inatec",
-    description: "Exploration de l'intégration créative des nouvelles technologies au sein des environnements collaboratifs.",
+    description: "Exploration de l'intégration créative des nouvelles technologies au sein des environnements collaboratifs pour stimuler l'autonomie des apprenants et managers.",
     url: "https://res.cloudinary.com/dokzioyu4/video/upload/v1780954632/reel_03_v2_2_bms3f4.mp4",
     type: "video"
   },
@@ -165,7 +166,7 @@ const resources: ResourceItem[] = [
     id: 13,
     title: "Le Futur en Marche",
     category: "Alkymya x Inatec",
-    description: "Comment transformer les défis organisationnels en opportunités grâce à la puissance des algorithmes génératifs.",
+    description: "Comment transformer les défis organisationnels en opportunités grâce à la puissance des algorithmes génératifs et à un encadrement pragmatique sur le terrain.",
     url: "https://res.cloudinary.com/dokzioyu4/video/upload/v1780954634/reel_01_p2_2_stdxyh.mp4",
     type: "video"
   },
@@ -173,7 +174,7 @@ const resources: ResourceItem[] = [
     id: 14,
     title: "Performance Digitale",
     category: "Alkymya x Inatec",
-    description: "Visualisez la mise en œuvre concrète de nos solutions digitales de pointe et leur impact direct sur la performance.",
+    description: "Visualisez la mise en œuvre concrète de nos solutions digitales de pointe et leur impact direct sur la performance opérationnelle des PME accompagnées.",
     url: "https://res.cloudinary.com/dokzioyu4/video/upload/v1780954634/reel_04_v2_2_ozedom.mp4",
     type: "video"
   }
@@ -283,8 +284,11 @@ export default function Ressources() {
             <h2 className="text-[1.8rem] sm:text-[2rem] font-light text-[#1F4F6E]">
               Outils gratuits, veille SEO IA <strong className="font-medium text-[#1F4F6E]">&amp; création site éditorial</strong>
             </h2>
+            <p className="text-[0.98rem] text-[#4a6a80] max-w-[680px] leading-[1.65] mt-2 font-normal">
+              Chaque ressource de ce hub est directement actionnable en autonomie ou en atelier : analyseurs intelligents gratuits, études empiriques Génération IA 2024-2026, business game pédagogique NoNo BanaBa et capsules pratiques conçues avec notre partenaire Qualiopi INATEC.
+            </p>
           </div>
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-3 shrink-0">
             <NewsletterButton
               variant="primary"
               size="sm"
@@ -323,7 +327,10 @@ export default function Ressources() {
                     {item.expert && (
                       <div className="absolute top-3.5 left-3.5 z-20 flex items-center gap-2 bg-[#1F4F6E]/90 backdrop-blur-xs px-3 py-1.5 rounded-[6px] border border-white/15 shadow-sm pointer-events-none">
                         <img 
-                          src={item.expert.avatar} 
+                          src={cloudinaryUrl(item.expert.avatar, 200)} 
+                          width={40}
+                          height={40}
+                          loading="lazy"
                           alt={`${item.expert.name} — ${item.expert.role}, partenaire agence IA Alkymya`} 
                           referrerPolicy="no-referrer"
                           className="w-5 h-5 rounded-full object-cover border border-[#C06721]" 
@@ -440,7 +447,10 @@ export default function Ressources() {
                         <div className="mt-4 p-3.5 rounded-[8px] bg-[#f4f6f9] border border-[rgba(31,79,110,0.08)] space-y-2">
                           <div className="flex items-center gap-2.5">
                             <img
-                              src={item.expert.avatar}
+                              src={cloudinaryUrl(item.expert.avatar, 200)}
+                              width={40}
+                              height={40}
+                              loading="lazy"
                               alt={`${item.expert.name} — ${item.expert.role}, partenaire formation IA Alkymya`}
                               referrerPolicy="no-referrer"
                               className="w-9 h-9 rounded-full object-cover border border-[#C06721] shrink-0"
@@ -502,6 +512,26 @@ export default function Ressources() {
             ))}
           </AnimatePresence>
         </motion.div>
+
+        {/* Vue d'ensemble des 4 pôles de ressources pour l'indexation et les visiteurs */}
+        <div className="mt-14 grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="bg-white rounded-[12px] p-6 shadow-[0_2px_16px_rgba(31,79,110,0.08)]">
+            <h3 className="text-[1.05rem] font-medium text-[#1F4F6E] mb-2">
+              1. Analyseurs IA gratuits en production
+            </h3>
+            <p className="text-[0.92rem] text-[#5a7a90] leading-[1.6]">
+              Nos trois analyseurs (Photo, CV en partenariat avec Kendra Martine d'Objectif Alternance, et Mémoire académique) permettent de tester immédiatement l'apport concret des modèles génératifs sur des documents réels, sans barrière technique.
+            </p>
+          </div>
+          <div className="bg-white rounded-[12px] p-6 shadow-[0_2px_16px_rgba(31,79,110,0.08)]">
+            <h3 className="text-[1.05rem] font-medium text-[#1F4F6E] mb-2">
+              2. Études Génération IA &amp; Business Game
+            </h3>
+            <p className="text-[0.92rem] text-[#5a7a90] leading-[1.6]">
+              Téléchargez librement nos enquêtes longitudinales (2024, 2025, 2026), la Doctrine IAG en PDF et podcast audio, ainsi que le jeu d'entreprise NoNo BanaBa utilisé dans nos interventions en grandes écoles et entreprises.
+            </p>
+          </div>
+        </div>
       </section>
 
       {/* SÉPARATEUR */}
@@ -619,7 +649,10 @@ export default function Ressources() {
                 <div className="mt-4 w-full bg-[#1F4F6E] border border-white/15 rounded-[12px] p-4 text-white flex flex-col sm:flex-row items-center justify-between gap-4 shadow-2xl">
                   <div className="flex items-center gap-3 text-left">
                     <img
-                      src={selectedResource.expert.avatar}
+                      src={cloudinaryUrl(selectedResource.expert.avatar, 200)}
+                      width={48}
+                      height={48}
+                      loading="lazy"
                       alt={`${selectedResource.expert.name} — ${selectedResource.expert.role}`}
                       referrerPolicy="no-referrer"
                       className="w-12 h-12 rounded-full object-cover border-2 border-[#C06721] shrink-0"

@@ -4,12 +4,12 @@
     {
       "@type": ["EducationalOrganization", "ProfessionalService", "LocalBusiness"],
       "@id": "https://alkymya.co/#organization",
-      "name": "Alkymya — Agence IA & Studio Création IA",
-      "alternateName": ["Alkymya.co", "Studio Alkymya", "Agence IA Alkymya"],
+      "name": "Alkymya",
+      "alternateName": ["Alkymya.co", "Studio Alkymya"],
       "url": "https://alkymya.co/",
-      "logo": "https://res.cloudinary.com/dokzioyu4/image/upload/v1758096912/logo_principal_bleu_gbnyuu.png",
+      "logo": "https://res.cloudinary.com/dokzioyu4/image/upload/f_auto,q_auto,w_600,c_limit/v1758096912/logo_principal_bleu_gbnyuu.png",
       "image": "https://alkymya.co/og-image.jpg",
-      "description": "Agence IA et studio création IA en France : accompagnement intelligence artificielle, création d'agents IA sur mesure, stratégie SEO et GEO Google AI, formation IA entreprise certifiée Qualiopi finançable OPCO.",
+      "description": "Alkymya, studio IA et organisme de formation à Ozoir-la-Ferrière (Seine-et-Marne, France) : accompagnement intelligence artificielle, création d'agents IA sur mesure, stratégie SEO et GEO Google AI, formation IA entreprise certifiée Qualiopi finançable OPCO.",
       "telephone": "+33 1 89 71 32 40",
       "email": "contact@alkymya.co",
       "address": {
@@ -30,10 +30,14 @@
         { "@type": "AdministrativeArea", "name": "Île-de-France" },
         { "@type": "Country", "name": "France" }
       ],
+      "founder": {
+        "@id": "https://alkymya.co/#cyril-garnier"
+      },
       "sameAs": [
         "https://www.linkedin.com/company/alkymya/",
         "https://www.youtube.com/@alkymya",
-        "https://www.instagram.com/alkymya.co/"
+        "https://www.instagram.com/alkymya.co/",
+        "https://cyrilgarnier.fr/"
       ],
       "openingHoursSpecification": [
         {
@@ -46,10 +50,11 @@
     },
     {
       "@type": "Person",
-      "@id": "https://alkymya.co/alchimistes/#cyril-garnier",
+      "@id": "https://alkymya.co/#cyril-garnier",
       "name": "Cyril Garnier",
-      "jobTitle": "Directeur Associé, Expert IA France & Fondateur Agence IA Alkymya",
-      "image": "https://res.cloudinary.com/dokzioyu4/image/upload/v1758192982/66cffcd8-15f1-415f-b423-9f428d63e22f_gqjd53.png",
+      "jobTitle": "Directeur Associé, Expert IA France & Fondateur Alkymya",
+      "url": "https://cyrilgarnier.fr/",
+      "image": "https://res.cloudinary.com/dokzioyu4/image/upload/f_auto,q_auto,w_1200,c_limit/v1758192982/66cffcd8-15f1-415f-b423-9f428d63e22f_gqjd53.png",
       "worksFor": { "@id": "https://alkymya.co/#organization" },
       "sameAs": [
         "https://www.linkedin.com/in/cyrilgarnier/",
