@@ -4,6 +4,7 @@ import { motion } from 'motion/react';
 import { Link } from 'react-router-dom';
 import { ArrowRight, CheckCircle2 } from 'lucide-react';
 import { SEO } from '../components/SEO';
+import { cloudinaryUrl, cloudinarySrcSet } from '../utils/cloudinary';
 
 export default function Home() {
   return (
@@ -20,19 +21,22 @@ export default function Home() {
       
       {/* Visual Showcase Section */}
       <section className="max-w-[1100px] mx-auto py-10 px-6">
-        <div className="bg-white rounded-[12px] overflow-hidden shadow-[0_2px_16px_rgba(31,79,110,0.08)] p-3 sm:p-4">
-          <img 
-            src="https://res.cloudinary.com/dokzioyu4/image/upload/f_auto,q_auto,w_1200,c_limit/v1780154614/DuAFdcjz_bo9gcq.png"
-            srcSet="https://res.cloudinary.com/dokzioyu4/image/upload/f_auto,q_auto,w_600,c_limit/v1780154614/DuAFdcjz_bo9gcq.png 600w, https://res.cloudinary.com/dokzioyu4/image/upload/f_auto,q_auto,w_1000,c_limit/v1780154614/DuAFdcjz_bo9gcq.png 1000w, https://res.cloudinary.com/dokzioyu4/image/upload/f_auto,q_auto,w_1400,c_limit/v1780154614/DuAFdcjz_bo9gcq.png 1400w"
+        <figure className="bg-white rounded-[12px] overflow-hidden shadow-[0_2px_16px_rgba(31,79,110,0.08)] p-3 sm:p-4">
+          <img
+            src={cloudinaryUrl("https://res.cloudinary.com/dokzioyu4/image/upload/v1794758649/duo_office_bifqwq.jpg", 1200)}
+            srcSet={cloudinarySrcSet("https://res.cloudinary.com/dokzioyu4/image/upload/v1794758649/duo_office_bifqwq.jpg")}
             sizes="(max-width: 768px) 100vw, 1100px"
             width={1200}
             height={675}
             loading="lazy"
-            alt="Vitrine du studio création IA Alkymya à Ozoir-la-Ferrière — formation IA et accompagnement intelligence artificielle" 
+            alt="Cyril Garnier et Léonie Egesipe, co-fondateurs d'Alkymya — formation IA en entreprise et accompagnement intelligence artificielle"
             className="w-full h-auto object-cover rounded-[8px]"
             referrerPolicy="no-referrer"
           />
-        </div>
+          <figcaption className="pt-3.5 pb-1 px-2 text-center text-[0.92rem] text-[#4a6a80] font-normal leading-relaxed">
+            <strong className="font-medium text-[#1F4F6E]">Cyril Garnier et Léonie Egesipe</strong>, co-fondateurs d'Alkymya — le binôme qui accompagne vos équipes sur le terrain.
+          </figcaption>
+        </figure>
       </section>
 
       {/* SÉPARATEUR */}

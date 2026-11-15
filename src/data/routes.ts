@@ -46,11 +46,11 @@ export const routes: RouteData[] = [
     schemaType: "WebPage",
     images: [
       {
-        src: "https://res.cloudinary.com/dokzioyu4/image/upload/v1767128574/kk25As37_y8rw27.png",
-        alt: "Alkymya, studio IA et organisme de formation à Ozoir-la-Ferrière — direction artistique générative",
+        src: "https://res.cloudinary.com/dokzioyu4/image/upload/v1794758649/duo_office_bifqwq.jpg",
+        alt: "Cyril Garnier et Léonie Egesipe, co-fondateurs d'Alkymya — formation IA en entreprise",
         width: 1200,
-        height: 800,
-        caption: "Création visuelle augmentée — Studio Alkymya (Ozoir-la-Ferrière)"
+        height: 675,
+        caption: "Cyril Garnier et Léonie Egesipe, co-fondateurs d'Alkymya — le binôme qui accompagne vos équipes sur le terrain."
       },
       {
         src: "https://res.cloudinary.com/dokzioyu4/image/upload/v1758192982/66cffcd8-15f1-415f-b423-9f428d63e22f_gqjd53.png",
@@ -432,7 +432,7 @@ export const routes: RouteData[] = [
         {
           h2: "Comment se déroule concrètement la formation (présentiel & distanciel) ?",
           paragraphs: [
-            "Nous privilégions un ratio strict de 80 % de pratique pour 20 % d'apports méthodologiques. Les sessions peuvent se tenir en présentiel dans vos locaux (en Seine-et-Marne, à Ozoir-la-Ferrière, à Paris et partout en Île-de-France), dans nos espaces partenaires, ou en classe virtuelle synchrone haute interaction.",
+            "Nous privilégions un ratio strict de 80 % de pratique pour 20 % d'apports méthodologiques. Les sessions peuvent se tenir en présentiel dans vos locaux (en Seine-et-Marne, à Paris et partout en Île-de-France), dans nos espaces partenaires, ou en classe virtuelle synchrone haute interaction.",
             "Le programme Core IA de 14 heures est articulé en 4 demi-journées modulables pour préserver l'activité de vos équipes. Les options spécialisées de 3h30 s'organisent sur une demi-journée dédiée et intense, focalisée sur un objectif unique : livrer un dispositif opérationnel avant la fin de la séance."
           ]
         },
