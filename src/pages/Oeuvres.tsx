@@ -737,55 +737,54 @@ export default function Oeuvres() {
           {albumsData.map((album) => (
             <article 
               key={album.id}
-              className="bg-white rounded-[12px] overflow-hidden shadow-[0_2px_16px_rgba(31,79,110,0.08)] hover:shadow-[0_8px_32px_rgba(31,79,110,0.14)] hover:-translate-y-1 transition-all duration-200 flex flex-col justify-between"
+              className="bg-white rounded-[12px] overflow-hidden shadow-[0_2px_16px_rgba(31,79,110,0.08)] hover:shadow-[0_8px_32px_rgba(31,79,110,0.14)] hover:-translate-y-1 transition-all duration-200 flex flex-col lg:grid lg:grid-rows-subgrid lg:row-span-5 lg:gap-y-0"
             >
-              <div>
-                <div 
-                  onClick={() => openAlbum(album, 0)}
-                  className="h-[180px] bg-[#1F4F6E] relative overflow-hidden flex items-center justify-center group cursor-pointer"
+              <div 
+                onClick={() => openAlbum(album, 0)}
+                className="h-[180px] bg-[#1F4F6E] relative overflow-hidden flex items-center justify-center group cursor-pointer"
+              >
+                <img
+                  src={cloudinaryUrl(album.coverImage, 800)}
+                  srcSet={cloudinarySrcSet(album.coverImage)}
+                  sizes="(max-width: 768px) 100vw, 33vw"
+                  width={600}
+                  height={360}
+                  loading="lazy"
+                  alt={`${album.title} — direction artistique photo vidéo IA Alkymya`}
+                  className="w-full h-full object-cover opacity-90 group-hover:scale-105 transition-transform duration-500"
+                  referrerPolicy="no-referrer"
+                />
+                <span 
+                  className="absolute top-3.5 left-3.5 text-white text-[0.72rem] font-medium tracking-[0.1em] uppercase px-2.5 py-1 rounded-[4px] shadow-sm"
+                  style={{ background: album.badgeBg }}
                 >
-                  <img
-                    src={cloudinaryUrl(album.coverImage, 800)}
-                    srcSet={cloudinarySrcSet(album.coverImage)}
-                    sizes="(max-width: 768px) 100vw, 33vw"
-                    width={600}
-                    height={360}
-                    loading="lazy"
-                    alt={`${album.title} — direction artistique photo vidéo IA Alkymya`}
-                    className="w-full h-full object-cover opacity-90 group-hover:scale-105 transition-transform duration-500"
-                    referrerPolicy="no-referrer"
-                  />
-                  <span 
-                    className="absolute top-3.5 left-3.5 text-white text-[0.72rem] font-medium tracking-[0.1em] uppercase px-2.5 py-1 rounded-[4px] shadow-sm"
-                    style={{ background: album.badgeBg }}
-                  >
-                    {album.badge}
+                  {album.badge}
+                </span>
+                <div className="absolute inset-0 bg-[#1F4F6E]/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-white text-xs font-medium">
+                  <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white/95 text-[#1F4F6E] font-medium text-xs shadow-md">
+                    <ImageIcon className="w-3.5 h-3.5 text-[#02ADAB]" /> Ouvrir l'album photo ({album.mediaList.length})
                   </span>
-                  <div className="absolute inset-0 bg-[#1F4F6E]/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-white text-xs font-medium">
-                    <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white/95 text-[#1F4F6E] font-medium text-xs shadow-md">
-                      <ImageIcon className="w-3.5 h-3.5 text-[#02ADAB]" /> Ouvrir l'album photo ({album.mediaList.length})
-                    </span>
-                  </div>
-                </div>
-
-                <div className="p-6">
-                  <h3 className="text-[1.1rem] font-medium text-[#1F4F6E] mb-1.5">
-                    {album.title}
-                  </h3>
-                  <p className="text-[0.95rem] text-[#5a7a90] leading-[1.6] mb-5 font-normal">
-                    {album.description}
-                  </p>
-
-                  <div 
-                    className="rounded-[8px] p-3 sm:px-4 text-white text-[0.88rem] leading-[1.5] font-normal shadow-sm mb-4"
-                    style={{ background: album.resultGradient }}
-                  >
-                    {album.resultText}
-                  </div>
                 </div>
               </div>
 
-              <div className="px-6 pb-6 pt-0">
+              <h3 className="px-6 pt-6 pb-2 text-[1.1rem] font-medium text-[#1F4F6E]">
+                {album.title}
+              </h3>
+
+              <p className="px-6 pb-5 text-[0.95rem] text-[#5a7a90] leading-[1.6] font-normal">
+                {album.description}
+              </p>
+
+              <div className="px-6 pb-5 flex">
+                <div 
+                  className="w-full rounded-[8px] p-3 sm:px-4 text-white text-[0.88rem] leading-[1.5] font-normal shadow-sm flex items-center"
+                  style={{ background: album.resultGradient }}
+                >
+                  {album.resultText}
+                </div>
+              </div>
+
+              <div className="px-6 pb-6 pt-0 mt-auto lg:mt-0">
                 <button
                   type="button"
                   onClick={() => openAlbum(album, 0)}

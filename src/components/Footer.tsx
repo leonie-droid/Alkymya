@@ -130,7 +130,7 @@ export default function Footer() {
               <Logo className="h-16" variant="white" />
             </Link>
             <p className="text-primary-foreground/70 max-w-md leading-relaxed mb-8 font-normal italic">
-              "Explorer la beauté, partager la conscience, transformer le futur."
+              Explorer, partager, transformer
             </p>
             <div className="flex gap-6">
               <a href="https://www.instagram.com/alkymya_cyril" target="_blank" rel="noopener noreferrer" className="hover:text-accent transition-colors"><Instagram className="h-6 w-6" /></a>
