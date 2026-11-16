@@ -16,7 +16,6 @@ import JoinUs from './pages/JoinUs';
 import MentionsLegales from './pages/MentionsLegales';
 import NewBusiness from './pages/NewBusiness';
 import { SEO } from './components/SEO';
-import { Chatbot } from './components/Chatbot';
 import CookieBanner from './components/CookieBanner';
 import { AnalyticsTracker } from './components/AnalyticsTracker';
 import NewsletterModal from './components/NewsletterModal';
@@ -38,7 +37,6 @@ export default function App() {
        <AnalyticsTracker />
        <div className="min-h-screen flex flex-col selection:bg-accent selection:text-white">
          <SEO type="LocalBusiness" />
-         <SEO type="EducationalOrganization" />
          <Header />
          <main className="flex-grow">
            <Routes>
@@ -49,6 +47,7 @@ export default function App() {
              <Route path="/alchimistes/:id" element={<AlchimisteDetail />} />
              <Route path="/ateliers" element={<Ateliers />} />
              <Route path="/ressources" element={<Ressources />} />
+             <Route path="/ressources/:categorySlug" element={<Ressources />} />
              <Route path="/partenaires" element={<Partenaires />} />
              <Route path="/contact" element={<Contact />} />
              <Route path="/faq" element={<FAQ />} />
@@ -59,7 +58,6 @@ export default function App() {
            </Routes>
          </main>
          <Footer />
-         <Chatbot />
          <CookieBanner />
          <NewsletterModal />
        </div>

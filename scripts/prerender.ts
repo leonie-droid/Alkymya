@@ -30,7 +30,7 @@ function generatePageBody(route: RouteData): string {
     <header style="background: #ffffff; border-bottom: 1px solid #e2e8f0; padding: 1rem 1.5rem; position: sticky; top: 0; z-index: 50;">
       <div style="max-width: 1280px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem;">
         <a href="/" aria-label="Accueil Alkymya" style="display: flex; align-items: center; text-decoration: none;">
-          <img src="${cloudinaryUrl('https://res.cloudinary.com/dokzioyu4/image/upload/v1758096912/logo_principal_bleu_gbnyuu.png', 600)}" alt="Alkymya, studio IA et organisme de formation" width="150" height="38" style="height: 38px; width: auto;" />
+          <img src="${cloudinaryUrl('https://res.cloudinary.com/dokzioyu4/image/upload/v1758096912/logo_principal_bleu_gbnyuu.png', 600)}" alt="Alkymya, studio d'expertise et de création IA" width="150" height="38" style="height: 38px; width: auto;" />
         </a>
         <nav aria-label="Navigation principale" style="display: flex; flex-wrap: wrap; gap: 1rem; font-size: 0.8125rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em;">
           ${navItems.map(item => `
@@ -116,7 +116,7 @@ function generatePageBody(route: RouteData): string {
     <footer style="background: #1F4F6E; color: #ffffff; padding: 3rem 1.5rem; margin-top: 4rem; font-family: system-ui, -apple-system, sans-serif;">
       <div style="max-width: 1200px; margin: 0 auto; display: flex; flex-direction: column; align-items: center; justify-content: space-between; gap: 1.5rem; text-align: center;">
         <p style="margin: 0; font-size: 0.875rem; color: #cbd5e1;">
-          © 2026 <strong>Alkymya.co</strong> — Alkymya, studio IA et organisme de formation en Île-de-France, France.
+          © 2026 <strong>Alkymya.co</strong> — Alkymya, studio d'expertise et de création IA en Île-de-France, France.
         </p>
         <nav aria-label="Liens de pied de page" style="display: flex; flex-wrap: wrap; justify-content: center; gap: 1.5rem; font-size: 0.8125rem; text-transform: uppercase; letter-spacing: 0.05em; font-weight: 600;">
           <a href="https://cyrilgarnier.fr/" target="_blank" rel="noopener noreferrer" style="color: #02ADAB; text-decoration: none;">Voir le site de Cyril Garnier →</a>
@@ -137,6 +137,10 @@ const breadcrumbNames: Record<string, string> = {
   '/alchimistes': 'Nos Alchimistes',
   '/ateliers': 'Nos Ateliers',
   '/ressources': 'Nos Ressources',
+  '/ressources/nos-analyseurs': 'Nos Analyseurs',
+  '/ressources/nos-etudes': 'Nos études',
+  '/ressources/business-game': 'Business Game',
+  '/ressources/alkymya-x-inatec': 'Alkymya x Inatec',
   '/partenaires': 'Nos Partenaires',
   '/contact': 'Contact',
   '/faq': 'FAQ',
@@ -148,11 +152,11 @@ const breadcrumbNames: Record<string, string> = {
 const faqQuestions = [
   {
     name: "Qu'est-ce qu'Alkymya ?",
-    answer: "Alkymya (alkymya.co) est un studio IA et organisme de formation professionnelle basé en Île-de-France (France), fondé par Cyril Garnier et Léonie Egesipe. Nous formons les équipes en entreprise (avec financement OPCO via nos partenaires certifiés Qualiopi), concevons des agents IA sur mesure et accompagnons les dirigeants dans le programme New Business MVP."
+    answer: "Alkymya (alkymya.co) est un studio IA et cabinet d'expertise en Île-de-France (France), fondé par Cyril Garnier et Léonie Egesipe. Alkymya n'est pas un organisme de formation en nom propre : nous collaborons avec des partenaires certifiés Qualiopi (comme INATEC) pour proposer des formations IA en entreprise finançables OPCO, concevons des agents IA sur mesure et accompagnons les dirigeants dans le programme New Business MVP."
   },
   {
     name: "Alkymya, est-ce un restaurant ?",
-    answer: "Non. Alkymya (alkymya.co) est un studio d'intelligence artificielle et organisme de formation professionnelle en France (Île-de-France), sans aucun lien avec le restaurant Alkymya Bellini à Naples, le groupe Alkymya Music ni le livre brésilien Alkymya de Assustos."
+    answer: "Non. Alkymya (alkymya.co) est un studio d'intelligence artificielle et cabinet d'expertise en France (Île-de-France), sans aucun lien avec le restaurant Alkymya Bellini à Naples, le groupe Alkymya Music ni le livre brésilien Alkymya de Assustos."
   },
   {
     name: "Quel est le format des ateliers d'agents IA ?",
@@ -197,7 +201,7 @@ function buildJsonLd(route: RouteData, canonicalUrl: string) {
       "@id": "https://alkymya.co/#website",
       "url": "https://alkymya.co/",
       "name": "Alkymya",
-      "description": "Studio d'innovation et organisme de formation en Intelligence Artificielle générative."
+      "description": "Studio d'innovation, d'expertise et de création en Intelligence Artificielle générative."
     },
     "publisher": {
       "@id": "https://alkymya.co/#organization"
@@ -246,6 +250,27 @@ function buildJsonLd(route: RouteData, canonicalUrl: string) {
             "item": "https://alkymya.co/"
           }
         ]
+      : route.path.startsWith('/ressources/')
+      ? [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Accueil",
+            "item": "https://alkymya.co/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Nos Ressources",
+            "item": "https://alkymya.co/ressources/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": breadcrumbNames[route.path] || route.h1,
+            "item": canonicalUrl
+          }
+        ]
       : [
           {
             "@type": "ListItem",
@@ -262,16 +287,16 @@ function buildJsonLd(route: RouteData, canonicalUrl: string) {
         ]
   };
 
-  // 3. Fiche Organization enrichie (LocalBusiness + EducationalOrganization)
+  // 3. Fiche Organization enrichie (LocalBusiness + ProfessionalService)
   const organizationNode: Record<string, any> = {
-    "@type": ["EducationalOrganization", "ProfessionalService", "LocalBusiness"],
+    "@type": ["ProfessionalService", "LocalBusiness"],
     "@id": "https://alkymya.co/#organization",
     "name": "Alkymya",
     "alternateName": ["Alkymya.co", "Studio Alkymya"],
     "url": "https://alkymya.co/",
     "logo": cloudinaryUrl("https://res.cloudinary.com/dokzioyu4/image/upload/v1758096912/logo_principal_bleu_gbnyuu.png", 600),
     "image": "https://alkymya.co/og-image.jpg",
-    "description": "Alkymya, studio IA et organisme de formation en France : accompagnement intelligence artificielle, création d'agents IA sur mesure, stratégie SEO et GEO Google AI et formations finançables OPCO via nos partenaires certifiés Qualiopi.",
+    "description": "Alkymya, studio d'expertise et de création IA en France : accompagnement intelligence artificielle, création d'agents IA sur mesure, stratégie SEO et GEO Google AI et formations finançables OPCO via nos organismes partenaires certifiés Qualiopi.",
     "founder": {
       "@id": "https://alkymya.co/#cyril-garnier"
     },

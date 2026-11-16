@@ -11,7 +11,7 @@ export default function Home() {
     <div className="bg-[#f4f6f9] text-[#1F4F6E] min-h-screen font-['Roboto',sans-serif] selection:bg-[#C06721] selection:text-white">
       <SEO
         title="Formation IA en entreprise en Île-de-France — Alkymya"
-        description="Alkymya, studio IA et organisme de formation : ateliers pratiques OPCO via nos partenaires certifiés Qualiopi, agents IA et accompagnement dirigeants."
+        description="Alkymya, studio d'expertise et de création IA : ateliers pratiques OPCO via nos partenaires certifiés Qualiopi, agents IA et accompagnement dirigeants."
         canonicalPath="/"
         ogImage="https://alkymya.co/og-image.jpg"
         type="LocalBusiness"
@@ -93,7 +93,7 @@ export default function Home() {
           Ce que vous repartez avec <strong className="font-medium text-[#1F4F6E]">et nos trois formats</strong>
         </h2>
         <p className="text-[1.05rem] text-[#4a6a80] max-w-[680px] leading-[1.7] mb-12 font-normal">
-          Alkymya, studio IA et organisme de formation, privilégie 80 % de mise en pratique. Vos équipes repartent avec des agents IA connectés, une application web interne, une bibliothèque de prompts maîtres et une grille de conformité AI Act.
+          Alkymya, studio d'expertise et de création IA, privilégie 80 % de mise en pratique. Vos équipes repartent avec des agents IA connectés, une application web interne, une bibliothèque de prompts maîtres et une grille de conformité AI Act.
         </p>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-7 mb-10">

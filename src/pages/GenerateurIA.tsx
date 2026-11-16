@@ -56,8 +56,8 @@ export default function GenerateurIA() {
   return (
     <div className="bg-[#f4f6f9] text-[#1F4F6E] min-h-screen font-['Roboto',sans-serif] selection:bg-[#C06721] selection:text-white">
       <SEO
-        title="Création d'Agents IA & Démonstrateurs Métiers | Alkymya"
-        description="Studio création IA et générateur d'agents IA sur mesure : personas vidéo, études Génération IA 2024-2026 et accompagnement intelligence artificielle."
+        title="Génération IA : une génération, de nouveaux usages | Alkymya"
+        description="Comment les étudiants intègrent-ils l'IA ? Trois années d'enquête (2024-2026) auprès de 1 082 étudiants : pratiques, attentes et inquiétudes."
         keywords="studio création IA, création d'agents IA sur mesure, accompagnement intelligence artificielle, agence IA, stratégie SEO et GEO"
         canonicalPath="/ia"
         ogImage="https://res.cloudinary.com/dokzioyu4/image/upload/v1777491204/Capture_GENERATION_IA_lrxvdx.png"
@@ -113,12 +113,12 @@ export default function GenerateurIA() {
           </p>
 
           <h1 className="font-light text-[2.4rem] sm:text-[2.6rem] leading-[1.2] mb-5 text-white">
-            Création d'agents IA sur mesure &amp;<br />
-            <strong className="font-medium text-white">démonstrateurs métiers.</strong>
+            Génération IA : une génération,<br />
+            <strong className="font-medium text-white">de nouveaux usages</strong>
           </h1>
 
           <p className="text-[1.05rem] sm:text-[1.1rem] text-white/75 max-w-[620px] mx-auto leading-[1.7] font-light mb-8">
-            Notre studio création IA et agence IA vous propose un accompagnement intelligence artificielle concret : personas vidéo, stratégie SEO et GEO, et prototypes d'agents IA opérationnels testés sur le terrain.
+            Comment les étudiants intègrent-ils l’IA dans leurs études et leur quotidien ? Trois années d’enquête, de 2024 à 2026, auprès de 1 082 étudiants pour comprendre leurs pratiques, leurs attentes et leurs inquiétudes.
           </p>
 
           {/* Stats Ribbon */}
@@ -128,8 +128,8 @@ export default function GenerateurIA() {
               <div className="text-xs text-white/70 font-normal uppercase tracking-wider">Vidéos documentées</div>
             </div>
             <div>
-              <div className="text-2xl sm:text-3xl font-light text-[#02ADAB] mb-0.5">380+</div>
-              <div className="text-xs text-white/70 font-normal uppercase tracking-wider">Répondants terrain</div>
+              <div className="text-2xl sm:text-3xl font-light text-[#02ADAB] mb-0.5">1 082</div>
+              <div className="text-xs text-white/70 font-normal uppercase tracking-wider">Étudiants interrogés</div>
             </div>
             <div>
               <div className="text-2xl sm:text-3xl font-light text-white mb-0.5">3 Rapports</div>

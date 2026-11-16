@@ -89,13 +89,13 @@ export const SEO: React.FC<SEOProps> = ({
 
   const localBusinessSchema = {
     "@context": "https://schema.org",
-    "@type": ["LocalBusiness", "ProfessionalService", "EducationalOrganization"],
+    "@type": ["LocalBusiness", "ProfessionalService"],
     "name": "Alkymya",
     "alternateName": ["Alkymya.co", "Studio Alkymya"],
     "image": "https://res.cloudinary.com/dokzioyu4/image/upload/f_auto,q_auto,w_600,c_limit/v1758096912/logo_principal_bleu_gbnyuu.png",
     "@id": "https://alkymya.co/#organization",
     "url": "https://alkymya.co/",
-    "description": "Alkymya, studio IA et organisme de formation en France : accompagnement intelligence artificielle, création d'agents IA sur mesure, stratégie SEO et GEO Google AI et formations OPCO via nos partenaires certifiés Qualiopi.",
+    "description": "Alkymya, studio d'expertise et de création IA en France : accompagnement intelligence artificielle, création d'agents IA sur mesure, stratégie SEO et GEO Google AI et formations OPCO via nos organismes partenaires certifiés Qualiopi.",
     "founder": {
       "@type": "Person",
       "@id": "https://alkymya.co/#cyril-garnier",
@@ -133,10 +133,10 @@ export const SEO: React.FC<SEOProps> = ({
 
   const educationalOrgSchema = {
     "@context": "https://schema.org",
-    "@type": "EducationalOrganization",
+    "@type": "ProfessionalService",
     "name": "Alkymya",
     "alternateName": ["Alkymya.co", "Studio Alkymya"],
-    "description": "Alkymya, studio IA et organisme de formation en France : formation IA entreprise finançable OPCO via nos partenaires certifiés Qualiopi, atelier IA pratique et accompagnement IA dirigeants et indépendants.",
+    "description": "Alkymya, studio d'expertise et de création IA en France : atelier IA pratique, création d'agents IA, accompagnement dirigeants et formations finançables OPCO via nos organismes partenaires certifiés Qualiopi.",
     "url": "https://alkymya.co/",
     "founder": {
       "@id": "https://alkymya.co/#cyril-garnier"

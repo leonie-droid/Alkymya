@@ -7,12 +7,20 @@ import { Link } from 'react-router-dom';
 import Logo from './Logo';
 import { openCookiePreferencesModal } from '../utils/cookieConsent';
 import { openNewsletterModal, subscribeToNewsletter } from '../utils/newsletter';
+import { useAntiBot, HoneypotField } from '../hooks/useAntiBot';
 
 export default function Footer() {
   const [email, setEmail] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const [status, setStatus] = useState<'idle' | 'success' | 'error'>('idle');
   const [feedback, setFeedback] = useState('');
+  const {
+    honeypotValue,
+    setHoneypotValue,
+    getAntiBotPayload,
+    resetProtection,
+    formInteractionProps,
+  } = useAntiBot('newsletter_footer');
 
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -29,6 +37,7 @@ export default function Footer() {
     const res = await subscribeToNewsletter({
       email,
       source: 'footer_inline',
+      antiBot: getAntiBotPayload(),
     });
 
     setIsLoading(false);
@@ -36,6 +45,7 @@ export default function Footer() {
       setStatus('success');
       setFeedback(res.message);
       setEmail('');
+      resetProtection();
     } else {
       setStatus('error');
       setFeedback(res.message);
@@ -73,7 +83,16 @@ export default function Footer() {
                   </div>
                 </div>
               ) : (
-                <form onSubmit={handleInlineSubscribe} className="space-y-2.5">
+                <form
+                  onSubmit={handleInlineSubscribe}
+                  {...formInteractionProps}
+                  className="space-y-2.5"
+                >
+                  <HoneypotField
+                    id="footer-website-hp"
+                    value={honeypotValue}
+                    onChange={setHoneypotValue}
+                  />
                   <div className="flex flex-col sm:flex-row gap-2">
                     <div className="relative flex-grow">
                       <Mail className="w-4 h-4 absolute left-3.5 top-1/2 -translate-y-1/2 text-primary-foreground/40" />

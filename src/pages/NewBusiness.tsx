@@ -21,6 +21,7 @@ import {
 } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { SEO } from '../components/SEO';
+import { useAntiBot, HoneypotField } from '../hooks/useAntiBot';
 
 const steps = [
   {
@@ -86,6 +87,13 @@ export default function NewBusiness() {
   });
   const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
   const [errorMessage, setErrorMessage] = useState('');
+  const {
+    honeypotValue,
+    setHoneypotValue,
+    getAntiBotPayload,
+    resetProtection,
+    formInteractionProps,
+  } = useAntiBot('newbusiness');
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -96,7 +104,7 @@ export default function NewBusiness() {
       const response = await fetch('/api/candidature-cohorte', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(formData)
+        body: JSON.stringify({ ...formData, ...getAntiBotPayload() })
       });
 
       const data = await response.json();
@@ -105,6 +113,7 @@ export default function NewBusiness() {
       }
 
       setStatus('success');
+      resetProtection();
     } catch (err: any) {
       setStatus('error');
       setErrorMessage(err.message || 'Une erreur est survenue lors de l\'envoi de votre candidature.');
@@ -517,7 +526,16 @@ export default function NewBusiness() {
             </div>
           </div>
         ) : (
-          <form onSubmit={handleSubmit} className="bg-white p-8 md:p-10 rounded-[12px] shadow-[0_2px_16px_rgba(31,79,110,0.08)] space-y-6">
+          <form
+            onSubmit={handleSubmit}
+            {...formInteractionProps}
+            className="bg-white p-8 md:p-10 rounded-[12px] shadow-[0_2px_16px_rgba(31,79,110,0.08)] space-y-6"
+          >
+            <HoneypotField
+              id="newbusiness-website-hp"
+              value={honeypotValue}
+              onChange={setHoneypotValue}
+            />
             {status === 'error' && (
               <div className="p-4 rounded-[8px] bg-red-50 border border-red-200 text-red-700 text-sm font-medium">
                 {errorMessage}

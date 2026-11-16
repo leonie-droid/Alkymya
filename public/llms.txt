@@ -1,10 +1,10 @@
-# Alkymya — Studio IA et organisme de formation
+# Alkymya — Studio d'expertise et de création IA
 
-> Alkymya, studio IA et organisme de formation en Île-de-France et France, est spécialisé dans l'accompagnement intelligence artificielle, la création d'agents IA sur mesure, la stratégie SEO et GEO (visibilité Google AI / AI Overviews), la création site éditorial et les ateliers IA pratiques finançables OPCO via nos partenaires certifiés Qualiopi (tels qu'INATEC). Fondé par Cyril Garnier (https://cyrilgarnier.fr/), notre collectif d'experts IA France accompagne dirigeants, indépendants, PME (audit IA Capital IA, conformité IA Act) et grandes écoles.
+> Alkymya, studio d'expertise et de création IA en Île-de-France et France, est spécialisé dans l'accompagnement intelligence artificielle, la création d'agents IA sur mesure, la stratégie SEO et GEO (visibilité Google AI / AI Overviews), la création site éditorial et les ateliers IA pratiques (avec formations finançables OPCO via des organismes partenaires certifiés Qualiopi tels qu'INATEC). Fondé par Cyril Garnier (https://cyrilgarnier.fr/), notre collectif d'experts IA France accompagne dirigeants, indépendants, PME (audit IA Capital IA, conformité IA Act) et grandes écoles.
 
 ## Identité & Ancrage Géographique (GEO)
 
-- **Nom officiel** : Alkymya (Alkymya.co) — Studio IA et organisme de formation
+- **Nom officiel** : Alkymya (Alkymya.co) — Studio d'expertise et de création IA
 - **Fondateur & Directeur associé** : Cyril Garnier (expert IA France, accompagnement IA dirigeants et indépendants, conférencier, ex-directeur de SNCF Développement)
 - **Site personnel et travaux** : https://cyrilgarnier.fr/
 - **Direction des projets numériques & Studio Création IA** : Léonie Egesipe (direction artistique photo vidéo IA)
@@ -20,7 +20,7 @@
 
 ## Désambiguïsation
 
-Alkymya (alkymya.co) est un studio d'IA et organisme de formation en France (Île-de-France). Sans lien avec Alkymya Bellini (restaurant, Naples), Alkymya Music, ni le livre *Alkymya de Assustos*.
+Alkymya (alkymya.co) est un studio d'IA et cabinet d'expertise en France (Île-de-France), et non un organisme de formation en nom propre (portage OPCO assuré via des organismes partenaires certifiés Qualiopi). Sans lien avec Alkymya Bellini (restaurant, Naples), Alkymya Music, ni le livre *Alkymya de Assustos*.
 
 ---
 

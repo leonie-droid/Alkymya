@@ -6,9 +6,9 @@
 
 ## 1. Identité de l'Entité
 
-- **Dénomination** : Alkymya — Studio IA et organisme de formation (marque : Alkymya / Alkymya.co / Studio Alkymya)
+- **Dénomination** : Alkymya — Studio d'expertise et de création IA (marque : Alkymya / Alkymya.co / Studio Alkymya)
 - **Structure juridique** : Cyril Garnier Consulting / Alkymya
-- **Activité principale** : Studio d'innovation IA, conseil stratégique et organisme de formation en Intelligence Artificielle générative et agentification (financement OPCO possible via nos partenaires certifiés Qualiopi tels qu'INATEC)
+- **Activité principale** : Studio d'innovation IA, conseil stratégique, ateliers pratiques et création en Intelligence Artificielle générative et agentification (Alkymya n'est pas un organisme de formation en nom propre : financement OPCO possible via des organismes partenaires certifiés Qualiopi tels qu'INATEC)
 - **Site personnel et travaux du fondateur** : https://cyrilgarnier.fr/
 - **Adresse / Zone** : Île-de-France, France
 - **Coordonnées GPS précises** : Latitude 48.7667, Longitude 2.6833
@@ -21,7 +21,7 @@
 
 ## Désambiguïsation
 
-Alkymya (alkymya.co) est un studio d'IA et organisme de formation professionnelle en France (Île-de-France). Sans lien avec Alkymya Bellini (restaurant, Naples), Alkymya Music, ni le livre *Alkymya de Assustos*.
+Alkymya (alkymya.co) est un studio d'IA et cabinet d'expertise en France (Île-de-France), et non un organisme de formation en nom propre. Sans lien avec Alkymya Bellini (restaurant, Naples), Alkymya Music, ni le livre *Alkymya de Assustos*.
 
 ---
 
@@ -92,7 +92,7 @@ Alkymya propose des formats modulaires adaptés aux écoles, PME, ETI et grands 
 
 ## 7. Données Structurées pour Moteurs de Recherche IA (GEO)
 
-- **Catégorie métier (Schema.org)** : EducationalOrganization, ProfessionalService, LocalBusiness
+- **Catégorie métier (Schema.org)** : ProfessionalService, LocalBusiness
 - **Zone géographique principale** : Région Île-de-France, France entière
 - **Zone de chalandise** : France entière (Paris, Lyon, Bordeaux, Lille, Marseille) et pays francophones
 - **Mots-clés sémantiques prioritaires** : 

@@ -4,6 +4,7 @@ import fs from 'node:fs';
 import os from 'node:os';
 import { Resend } from 'resend';
 import { GoogleGenAI } from "@google/genai";
+import { evaluateAntiBotSubmission, escapeHtml } from './utils/antiBotServer';
 
 const PROGRAM_PRICE = 200;
 
@@ -281,6 +282,10 @@ export function createApiApp(): Express {
     'oeuvres',
     'ateliers',
     'ressources',
+    'ressources/nos-analyseurs',
+    'ressources/nos-etudes',
+    'ressources/business-game',
+    'ressources/alkymya-x-inatec',
     'alchimistes',
     'partenaires',
     'contact',
@@ -333,23 +338,54 @@ export function createApiApp(): Express {
   // Candidature Cohorte Fondatrice API
   app.post('/api/candidature-cohorte', async (req, res) => {
     try {
+      const botCheck = evaluateAntiBotSubmission(req, {
+        expectedFormTypes: ['newbusiness'],
+        nameFields: ['firstName', 'lastName'],
+        singleLineFields: ['firstName', 'lastName', 'email', 'activity', 'stage', 'availability'],
+        textFieldsToScan: ['activity', 'blocker', 'motivation'],
+      });
+
+      if (botCheck.isBot) {
+        console.warn(`[ANTIBOT BLOCKED] /api/candidature-cohorte (${botCheck.reason})`);
+        return res.status(200).json({
+          success: true,
+          message: 'Candidature reçue et enregistrée avec succès.',
+          candidatureNumber: 0,
+          priceApplied: PROGRAM_PRICE,
+          currentPrice: PROGRAM_PRICE,
+        });
+      }
+
+      if (botCheck.validationError) {
+        return res.status(400).json({ error: botCheck.validationError });
+      }
+
       const { firstName, lastName, email, activity, stage, blocker, availability, motivation } = req.body;
       console.log(`[${new Date().toISOString()}] Candidature New Business MVP from ${firstName} ${lastName} (${email})`);
 
-      if (!firstName || !lastName || !email) {
+      if (
+        typeof firstName !== 'string' || !firstName.trim() ||
+        typeof lastName !== 'string' || !lastName.trim() ||
+        typeof email !== 'string' || !email.trim()
+      ) {
         return res.status(400).json({ error: 'Prénom, nom et email sont requis.' });
+      }
+
+      const normalizedEmail = email.trim().toLowerCase();
+      if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(normalizedEmail)) {
+        return res.status(400).json({ error: 'Veuillez saisir une adresse email valide.' });
       }
 
       // Save to persistent storage
       const saveResult = saveNewCandidature({
-        firstName,
-        lastName,
-        email,
-        activity: activity || '',
-        stage: stage || '',
-        blocker: blocker || '',
-        availability: availability || 'oui',
-        motivation: motivation || '',
+        firstName: firstName.trim().slice(0, 80),
+        lastName: lastName.trim().slice(0, 80),
+        email: normalizedEmail.slice(0, 160),
+        activity: typeof activity === 'string' ? activity.trim().slice(0, 300) : '',
+        stage: typeof stage === 'string' ? stage.trim().slice(0, 80) : '',
+        blocker: typeof blocker === 'string' ? blocker.trim().slice(0, 500) : '',
+        availability: typeof availability === 'string' ? availability.trim().slice(0, 40) : 'oui',
+        motivation: typeof motivation === 'string' ? motivation.trim().slice(0, 3000) : '',
       });
 
       const { candidature, totalCount } = saveResult;
@@ -367,12 +403,20 @@ export function createApiApp(): Express {
         });
       }
 
+      const safeFirstName = escapeHtml(candidature.firstName);
+      const safeLastName = escapeHtml(candidature.lastName);
+      const safeEmail = escapeHtml(candidature.email);
+      const safeActivity = escapeHtml(candidature.activity || 'Non précisé');
+      const safeStage = escapeHtml(candidature.stage || 'Non précisé');
+      const safeBlocker = escapeHtml(candidature.blocker || 'Non renseigné');
+      const safeMotivation = escapeHtml(candidature.motivation || 'Non renseigné');
+
       const resendClient = getResend();
       const { data, error } = await resendClient.emails.send({
         from: 'Alkymya New Business <onboarding@resend.dev>',
         to: ['cyril@alkymya.co'],
-        subject: `[${quotaStatusText}] ${firstName} ${lastName} - ${activity || 'Nouveau projet MVP'}`,
-        replyTo: email,
+        subject: `[${quotaStatusText}] ${candidature.firstName} ${candidature.lastName} - ${candidature.activity || 'Nouveau projet MVP'}`,
+        replyTo: candidature.email,
         html: `
           <div style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; max-width: 650px; margin: 0 auto; color: #1e293b; line-height: 1.6; border: 1px solid #e2e8f0; border-radius: 12px; overflow: hidden;">
             <div style="background: linear-gradient(135deg, #1F4F6E 0%, #037971 100%); padding: 35px 30px; text-align: center;">
@@ -393,18 +437,18 @@ export function createApiApp(): Express {
               <div style="background-color: #f8fafc; padding: 25px; border-radius: 10px; border-left: 4px solid #c06721; margin-bottom: 25px;">
                 <p style="margin: 0 0 12px 0;"><strong>Numéro de candidature :</strong> #${totalCount}</p>
                 <p style="margin: 0 0 12px 0;"><strong>Tarif appliqué :</strong> <strong style="color: #c06721;">${priceText}</strong></p>
-                <p style="margin: 0 0 12px 0;"><strong>Candidat :</strong> ${firstName} ${lastName}</p>
-                <p style="margin: 0 0 12px 0;"><strong>Email :</strong> <a href="mailto:${email}" style="color: #c06721;">${email}</a></p>
-                <p style="margin: 0 0 12px 0;"><strong>Activité / Projet MVP :</strong> ${activity || 'Non précisé'}</p>
-                <p style="margin: 0 0 12px 0;"><strong>Stade actuel :</strong> ${stage || 'Non précisé'}</p>
-                <p style="margin: 0 0 12px 0;"><strong>Disponibilité (3-4h/semaine) :</strong> ${availability === 'oui' ? '✅ Oui, s\'y engage' : '⚠️ Non'}</p>
+                <p style="margin: 0 0 12px 0;"><strong>Candidat :</strong> ${safeFirstName} ${safeLastName}</p>
+                <p style="margin: 0 0 12px 0;"><strong>Email :</strong> <a href="mailto:${safeEmail}" style="color: #c06721;">${safeEmail}</a></p>
+                <p style="margin: 0 0 12px 0;"><strong>Activité / Projet MVP :</strong> ${safeActivity}</p>
+                <p style="margin: 0 0 12px 0;"><strong>Stade actuel :</strong> ${safeStage}</p>
+                <p style="margin: 0 0 12px 0;"><strong>Disponibilité (3-4h/semaine) :</strong> ${availability === 'non' ? '⚠️ Non' : escapeHtml(availability || 'oui')}</p>
                 <div style="margin-top: 15px; padding-top: 15px; border-top: 1px solid #e2e8f0;">
                   <strong>Principal blocage digital :</strong>
-                  <p style="margin: 6px 0 0 0; color: #475569; font-style: italic;">${blocker || 'Non renseigné'}</p>
+                  <p style="margin: 6px 0 0 0; color: #475569; font-style: italic;">${safeBlocker}</p>
                 </div>
                 <div style="margin-top: 15px; padding-top: 15px; border-top: 1px solid #e2e8f0;">
                   <strong>Motivations :</strong>
-                  <p style="margin: 6px 0 0 0; color: #475569; font-style: italic;">${motivation || 'Non renseigné'}</p>
+                  <p style="margin: 6px 0 0 0; color: #475569; font-style: italic;">${safeMotivation}</p>
                 </div>
               </div>
             </div>
@@ -437,19 +481,61 @@ export function createApiApp(): Express {
   // Contact API
   app.post('/api/send-contact', async (req, res) => {
     try {
+      const botCheck = evaluateAntiBotSubmission(req, {
+        expectedFormTypes: ['contact'],
+        nameFields: ['firstName', 'lastName'],
+        singleLineFields: ['firstName', 'lastName', 'email', 'subject'],
+        textFieldsToScan: ['subject', 'message'],
+      });
+
+      if (botCheck.isBot) {
+        console.warn(`[ANTIBOT BLOCKED] /api/send-contact (${botCheck.reason})`);
+        return res.status(200).json({ success: true });
+      }
+
+      if (botCheck.validationError) {
+        return res.status(400).json({ error: botCheck.validationError });
+      }
+
       const { firstName, lastName, email, subject, message, type } = req.body;
-      console.log(`[${new Date().toISOString()}] Email from ${email}`);
+
+      if (
+        typeof firstName !== 'string' || !firstName.trim() ||
+        typeof lastName !== 'string' || !lastName.trim() ||
+        typeof email !== 'string' || !email.trim() ||
+        typeof subject !== 'string' || !subject.trim() ||
+        typeof message !== 'string' || !message.trim()
+      ) {
+        return res.status(400).json({ error: 'Tous les champs du formulaire sont obligatoires.' });
+      }
+
+      const normalizedEmail = email.trim().toLowerCase();
+      if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(normalizedEmail)) {
+        return res.status(400).json({ error: 'Veuillez saisir une adresse email valide.' });
+      }
+
+      if (message.trim().length > 5000 || subject.trim().length > 200) {
+        return res.status(400).json({ error: 'Le sujet ou le message dépasse la longueur maximale autorisée.' });
+      }
+
+      console.log(`[${new Date().toISOString()}] Email from ${normalizedEmail}`);
 
       if (!process.env.RESEND_API_KEY) {
         return res.status(500).json({ error: 'Configuration serveur incomplète (RESEND_API_KEY manquante)' });
       }
 
+      const safeFirstName = escapeHtml(firstName.trim());
+      const safeLastName = escapeHtml(lastName.trim());
+      const safeEmail = escapeHtml(normalizedEmail);
+      const safeSubject = escapeHtml(subject.trim());
+      const safeMessage = escapeHtml(message.trim());
+
       const resendClient = getResend();
       const { data, error } = await resendClient.emails.send({
         from: 'Alkymya Contact <onboarding@resend.dev>',
         to: ['cyril@alkymya.co'],
-        subject: `[${type || 'Contact'}] ${subject || 'Nouveau message'}`,
-        replyTo: email,
+        subject: `[${type || 'Contact'}] ${subject.trim()}`,
+        replyTo: normalizedEmail,
         html: `
           <div style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; max-width: 600px; margin: 0 auto; color: #334155; line-height: 1.6; border: 1px solid #f1f5f9; border-radius: 16px; overflow: hidden; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);">
             <div style="background-color: #1f4f6e; padding: 40px 30px; text-align: center;">
@@ -465,22 +551,22 @@ export function createApiApp(): Express {
               <div style="background-color: #f8fafc; padding: 30px; border-radius: 12px; margin-bottom: 30px; border-top: 4px solid #c06721;">
                 <div style="margin-bottom: 20px;">
                   <span style="display: block; font-size: 12px; text-transform: uppercase; color: #94a3b8; font-weight: 700; margin-bottom: 4px;">Expéditeur</span>
-                  <span style="font-size: 16px; color: #1e293b; font-weight: 600;">${firstName} ${lastName}</span>
+                  <span style="font-size: 16px; color: #1e293b; font-weight: 600;">${safeFirstName} ${safeLastName}</span>
                 </div>
                 
                 <div style="margin-bottom: 20px;">
                   <span style="display: block; font-size: 12px; text-transform: uppercase; color: #94a3b8; font-weight: 700; margin-bottom: 4px;">Email</span>
-                  <a href="mailto:${email}" style="font-size: 16px; color: #c06721; text-decoration: none; font-weight: 600;">${email}</a>
+                  <a href="mailto:${safeEmail}" style="font-size: 16px; color: #c06721; text-decoration: none; font-weight: 600;">${safeEmail}</a>
                 </div>
                 
                 <div style="margin-bottom: 25px;">
                   <span style="display: block; font-size: 12px; text-transform: uppercase; color: #94a3b8; font-weight: 700; margin-bottom: 4px;">Sujet</span>
-                  <span style="font-size: 16px; color: #1e293b; font-weight: 600;">${subject}</span>
+                  <span style="font-size: 16px; color: #1e293b; font-weight: 600;">${safeSubject}</span>
                 </div>
                 
                 <div style="padding-top: 20px; border-top: 1px solid #e2e8f0;">
                   <span style="display: block; font-size: 12px; text-transform: uppercase; color: #94a3b8; font-weight: 700; margin-bottom: 12px;">Message</span>
-                  <div style="font-size: 15px; color: #334155; white-space: pre-wrap; font-style: italic; line-height: 1.8;">${message}</div>
+                  <div style="font-size: 15px; color: #334155; white-space: pre-wrap; font-style: italic; line-height: 1.8;">${safeMessage}</div>
                 </div>
               </div>
               
@@ -580,16 +666,37 @@ export function createApiApp(): Express {
   // Newsletter Subscription API (Resend with dedicated audience)
   app.post('/api/newsletter-subscribe', async (req, res) => {
     try {
+      const botCheck = evaluateAntiBotSubmission(req, {
+        expectedFormTypes: ['newsletter_footer', 'newsletter_modal'],
+        nameFields: ['firstName', 'lastName'],
+        singleLineFields: ['email', 'firstName', 'lastName'],
+      });
+
+      if (botCheck.isBot) {
+        console.warn(`[ANTIBOT BLOCKED] /api/newsletter-subscribe (${botCheck.reason})`);
+        return res.status(200).json({
+          success: true,
+          message: 'Votre inscription à la lettre d\'Alkymya a bien été enregistrée avec succès !',
+        });
+      }
+
+      if (botCheck.validationError) {
+        return res.status(400).json({ error: botCheck.validationError });
+      }
+
       const { email, firstName, lastName } = req.body;
       if (!email || typeof email !== 'string') {
         return res.status(400).json({ error: 'Une adresse email valide est requise.' });
       }
 
       const normalizedEmail = email.trim().toLowerCase();
-      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-      if (!emailRegex.test(normalizedEmail)) {
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+      if (!emailRegex.test(normalizedEmail) || normalizedEmail.length > 160) {
         return res.status(400).json({ error: 'Le format de l\'adresse email est invalide.' });
       }
+
+      const safeFirstName = escapeHtml(typeof firstName === 'string' ? firstName.trim().slice(0, 80) : '');
+      const safeEmail = escapeHtml(normalizedEmail);
 
       console.log(`[${new Date().toISOString()}] Inscription Newsletter pour ${normalizedEmail}`);
 
@@ -670,7 +777,7 @@ export function createApiApp(): Express {
                 <p style="margin: 10px 0 0 0; font-size: 14px; color: #e2e8f0;">Carnets de terrain, retours d'expérience et signaux faibles de l'IA</p>
               </div>
               <div style="padding: 32px 30px;">
-                <p style="font-size: 16px; margin-top: 0;">Bonjour${firstName ? ' ' + firstName : ''},</p>
+                <p style="font-size: 16px; margin-top: 0;">Bonjour${safeFirstName ? ' ' + safeFirstName : ''},</p>
                 <p style="font-size: 15px; color: #475569; line-height: 1.7;">
                   Votre inscription à la lettre d'information d'<strong>Alkymya</strong> est confirmée. Vous faites désormais partie de notre audience dédiée.
                 </p>
@@ -703,8 +810,8 @@ export function createApiApp(): Express {
           html: `
             <div style="font-family: sans-serif; padding: 20px;">
               <h3>Nouvel abonné à la lettre d'Alkymya</h3>
-              <p><strong>Email :</strong> ${normalizedEmail}</p>
-              <p><strong>Prénom :</strong> ${firstName || 'Non renseigné'}</p>
+              <p><strong>Email :</strong> ${safeEmail}</p>
+              <p><strong>Prénom :</strong> ${safeFirstName || 'Non renseigné'}</p>
               <p><strong>Audience Resend :</strong> ${audienceId || 'Globale'}</p>
               <p><strong>Date :</strong> ${new Date().toLocaleString('fr-FR')}</p>
             </div>

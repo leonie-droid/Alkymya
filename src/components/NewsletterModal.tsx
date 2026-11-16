@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { Mail, Check, X, Sparkles, Loader2, ShieldCheck } from 'lucide-react';
 import { subscribeToNewsletter } from '../utils/newsletter';
+import { useAntiBot, HoneypotField } from '../hooks/useAntiBot';
 
 export default function NewsletterModal() {
   const [isOpen, setIsOpen] = useState(false);
@@ -11,12 +12,20 @@ export default function NewsletterModal() {
   const [status, setStatus] = useState<'idle' | 'success' | 'error'>('idle');
   const [message, setMessage] = useState('');
   const inputRef = useRef<HTMLInputElement>(null);
+  const {
+    honeypotValue,
+    setHoneypotValue,
+    getAntiBotPayload,
+    resetProtection,
+    formInteractionProps,
+  } = useAntiBot('newsletter_modal');
 
   useEffect(() => {
     const handleOpen = () => {
       setIsOpen(true);
       setStatus('idle');
       setMessage('');
+      resetProtection();
       setTimeout(() => inputRef.current?.focus(), 150);
     };
 
@@ -42,6 +51,7 @@ export default function NewsletterModal() {
       email,
       firstName,
       source: 'modal_button',
+      antiBot: getAntiBotPayload(),
     });
 
     setIsLoading(false);
@@ -50,6 +60,7 @@ export default function NewsletterModal() {
       setMessage(res.message);
       setEmail('');
       setFirstName('');
+      resetProtection();
     } else {
       setStatus('error');
       setMessage(res.message);
@@ -123,7 +134,16 @@ export default function NewsletterModal() {
                   </button>
                 </div>
               ) : (
-                <form onSubmit={handleSubmit} className="space-y-4">
+                <form
+                  onSubmit={handleSubmit}
+                  {...formInteractionProps}
+                  className="space-y-4"
+                >
+                  <HoneypotField
+                    id="modal-website-hp"
+                    value={honeypotValue}
+                    onChange={setHoneypotValue}
+                  />
                   <div>
                     <label htmlFor="newsletter-firstname" className="block text-xs font-bold text-deep-blue uppercase tracking-wider mb-1.5">
                       Prénom <span className="text-muted-foreground font-normal">(facultatif)</span>

@@ -2,11 +2,14 @@
  * Newsletter Utility Functions for Alkymya
  */
 
+import { AntiBotPayload } from './antiBotToken';
+
 export interface SubscribeParams {
   email: string;
   firstName?: string;
   lastName?: string;
   source?: string;
+  antiBot?: AntiBotPayload;
 }
 
 export interface SubscribeResult {
@@ -42,6 +45,7 @@ export async function subscribeToNewsletter(params: SubscribeParams): Promise<Su
         firstName: params.firstName?.trim() || '',
         lastName: params.lastName?.trim() || '',
         source: params.source || 'website',
+        ...(params.antiBot || {}),
       }),
     });
 

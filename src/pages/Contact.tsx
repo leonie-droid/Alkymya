@@ -3,6 +3,7 @@ import { motion } from 'motion/react';
 import { Mail, MessageSquare } from 'lucide-react';
 import { Card } from '@/components/ui/card';
 import { SEO } from '../components/SEO';
+import { useAntiBot, HoneypotField } from '../hooks/useAntiBot';
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -15,6 +16,13 @@ export default function Contact() {
 
   const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
+  const {
+    honeypotValue,
+    setHoneypotValue,
+    getAntiBotPayload,
+    resetProtection,
+    formInteractionProps,
+  } = useAntiBot('contact');
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -28,7 +36,7 @@ export default function Contact() {
       const response = await fetch(apiUrl, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ ...formData, type: 'Contact' }),
+        body: JSON.stringify({ ...formData, ...getAntiBotPayload(), type: 'Contact' }),
       });
 
       let result;
@@ -44,6 +52,7 @@ export default function Contact() {
       if (response.ok) {
         setStatus('success');
         setFormData({ firstName: '', lastName: '', email: '', subject: '', message: '' });
+        resetProtection();
       } else {
         setStatus('error');
         // Capture des erreurs spécifiques retournées par le serveur ou Resend
@@ -126,7 +135,16 @@ export default function Contact() {
         </p>
 
         <div className="bg-white rounded-[12px] shadow-[0_2px_16px_rgba(31,79,110,0.08)] p-8 sm:p-12 mb-12">
-          <form onSubmit={handleSubmit} className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <form
+            onSubmit={handleSubmit}
+            {...formInteractionProps}
+            className="grid grid-cols-1 md:grid-cols-2 gap-6"
+          >
+            <HoneypotField
+              id="contact-website-hp"
+              value={honeypotValue}
+              onChange={setHoneypotValue}
+            />
             <div className="space-y-2">
               <label className="text-xs font-medium text-[#1F4F6E] uppercase tracking-wider block">Prénom</label>
               <input 
