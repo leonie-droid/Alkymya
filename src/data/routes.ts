@@ -40,7 +40,7 @@ export const routes: RouteData[] = [
     path: '/',
     title: "Formation IA en entreprise en Île-de-France — Alkymya",
     description: "Alkymya, studio IA et organisme de formation : ateliers IA finançables OPCO via nos partenaires certifiés Qualiopi, agents IA et accompagnement.",
-    h1: "Former vos équipes à l'IA, là où elles travaillent.",
+    h1: "Déployez l'intelligence artificielle au service de vos équipes.",
     ogImage: "https://alkymya.co/og-image.jpg",
     lastmod: "2026-11-15",
     schemaType: "WebPage",

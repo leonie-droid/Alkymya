@@ -52,14 +52,14 @@ export default function Hero() {
       <header className="bg-[#1F4F6E] text-white py-20 px-6 sm:px-10 text-center relative overflow-hidden">
         <div className="max-w-[700px] mx-auto relative z-10">
           <p className="text-[0.85rem] tracking-[0.15em] uppercase text-[#02ADAB] mb-4 font-normal">
-            Alkymya, studio IA et organisme de formation · Île-de-France &amp; France
+            Alkymya · Formation, expertise et studio IA · Île-de-France &amp; France
           </p>
           <h1 className="font-light text-[2.4rem] sm:text-[2.6rem] leading-[1.2] mb-5 text-white">
-            Former vos équipes à l'IA,<br />
-            <strong className="font-medium text-white">là où elles travaillent.</strong>
+            Déployez l'intelligence artificielle<br />
+            <strong className="font-medium text-white">au service de vos équipes.</strong>
           </h1>
           <p className="text-[1.05rem] sm:text-[1.1rem] text-white/75 max-w-[620px] mx-auto leading-[1.7] font-light mb-8">
-            Alkymya, studio IA et organisme de formation, déploie votre accompagnement intelligence artificielle sur mesure : création d'agents IA, stratégie SEO et GEO et ateliers finançables OPCO via nos partenaires certifiés Qualiopi.
+            Alkymya vous accompagne à transformer votre entreprise par l'IA : création d'agents IA, stratégie SEO et GEO et ateliers finançables OPCO via nos partenaires certifiés Qualiopi.
           </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12">
