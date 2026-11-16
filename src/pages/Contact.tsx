@@ -71,9 +71,9 @@ export default function Contact() {
   return (
     <div className="bg-[#f4f6f9] text-[#1F4F6E] min-h-screen font-['Roboto',sans-serif] selection:bg-[#C06721] selection:text-white">
       <SEO
-        title="Contact — formation IA et conseil, Ozoir-la-Ferrière"
-        description="Demandez un devis formation IA Qualiopi finançable OPCO ou un accompagnement IA dirigeants et indépendants auprès d'Alkymya à Ozoir-la-Ferrière."
-        keywords="devis formation IA Qualiopi, experts IA France, accompagnement IA dirigeants et indépendants, formation IA Ozoir-la-Ferrière, formation IA finançable OPCO"
+        title="Contact — formation IA et conseil en France | Alkymya"
+        description="Demandez un devis formation IA (OPCO via nos partenaires certifiés Qualiopi) ou un accompagnement dirigeants auprès d'Alkymya en France."
+        keywords="devis formation IA OPCO, partenaires certifiés Qualiopi, experts IA France, accompagnement IA dirigeants et indépendants, formation IA Île-de-France"
         canonicalPath="/contact"
         ogImage="https://res.cloudinary.com/dokzioyu4/image/upload/v1758192982/66cffcd8-15f1-415f-b423-9f428d63e22f_gqjd53.png"
         type="ContactPage"
@@ -82,14 +82,14 @@ export default function Contact() {
       <header className="bg-[#1F4F6E] text-white py-20 px-6 sm:px-10 text-center relative overflow-hidden">
         <div className="max-w-[700px] mx-auto relative z-10">
           <p className="text-[0.85rem] tracking-[0.15em] uppercase text-[#02ADAB] mb-4 font-normal">
-            Experts IA France &amp; Devis Formation IA Qualiopi
+            Experts IA France &amp; Devis Formation IA
           </p>
           <h1 className="font-light text-[2.4rem] sm:text-[2.6rem] leading-[1.2] mb-5 text-white">
-            Devis formation IA Qualiopi &amp;<br />
+            Devis formation IA &amp;<br />
             <strong className="font-medium text-white">experts IA France.</strong>
           </h1>
           <p className="text-[1.05rem] sm:text-[1.1rem] text-white/75 max-w-[620px] mx-auto leading-[1.7] font-light mb-8">
-            Demandez un devis formation IA Qualiopi finançable OPCO, un audit IA PME ou un accompagnement IA dirigeants et indépendants avec notre agence IA basée en France.
+            Demandez un devis formation IA (finançable OPCO via nos partenaires certifiés Qualiopi), un audit IA PME ou un accompagnement IA dirigeants et indépendants avec notre agence IA basée en France.
           </p>
 
           <div className="pt-8 border-t border-white/10 grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
@@ -119,10 +119,10 @@ export default function Contact() {
           Formulaire de contact direct
         </p>
         <h2 className="text-[1.8rem] sm:text-[2rem] font-light mb-3 text-[#1F4F6E]">
-          Demandez un devis formation IA Qualiopi <strong className="font-medium text-[#1F4F6E]">ou un accompagnement</strong>
+          Demandez un devis formation IA <strong className="font-medium text-[#1F4F6E]">ou un accompagnement</strong>
         </h2>
         <p className="text-[1.05rem] text-[#4a6a80] max-w-[640px] leading-[1.7] mb-10 font-normal">
-          Décrivez votre besoin en accompagnement intelligence artificielle, création d'agents IA sur mesure ou formation OPCO : nos experts IA France étudient chaque demande sous 24h.
+          Décrivez votre besoin en accompagnement intelligence artificielle, création d'agents IA sur mesure ou formation OPCO (portée avec nos partenaires certifiés Qualiopi) : nos experts IA France étudient chaque demande sous 24h.
         </p>
 
         <div className="bg-white rounded-[12px] shadow-[0_2px_16px_rgba(31,79,110,0.08)] p-8 sm:p-12 mb-12">
@@ -225,7 +225,7 @@ export default function Contact() {
               </span>
               <h3 className="text-[1.2rem] font-medium text-[#1F4F6E] mb-2">Cyril Garnier — Accompagnement Dirigeants</h3>
               <p className="text-[0.95rem] text-[#5a7a90] leading-[1.6] mb-5 font-normal">
-                Conseil stratégique, accompagnement IA dirigeants et indépendants (New Business MVP), création d'agents IA et devis formation IA Qualiopi.
+                Conseil stratégique, accompagnement IA dirigeants et indépendants (New Business MVP), création d'agents IA et devis formation IA (OPCO via nos partenaires certifiés Qualiopi).
               </p>
             </div>
             <a href="mailto:cyril@alkymya.co" className="text-[0.9rem] font-medium text-[#02ADAB] hover:text-[#037971] transition-colors">

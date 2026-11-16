@@ -251,7 +251,7 @@ export default function Oeuvres() {
     <div className="bg-[#f4f6f9] text-[#1F4F6E] min-h-screen font-['Roboto',sans-serif] selection:bg-[#C06721] selection:text-white">
       <SEO
         title="Études de cas SEO, IA & création éditoriale — Alkymya"
-        description="Trois études de cas mesurées (thelittle77, 75 et 83), agents IA autonomes en production et direction artistique IA par Alkymya à Ozoir-la-Ferrière."
+        description="Trois études de cas mesurées (thelittle77, 75 et 83), agents IA autonomes en production et direction artistique IA par Alkymya en France."
         canonicalPath="/oeuvres"
         ogImage="https://alkymya.co/og-oeuvres.jpg"
         type="CollectionPage"
@@ -343,7 +343,7 @@ export default function Oeuvres() {
             <div className="px-6 pb-6 flex">
               <div className="w-full bg-gradient-to-br from-[#037971] to-[#02ADAB] rounded-[8px] p-3 sm:px-4 text-white text-[0.9rem] leading-[1.5] font-normal shadow-sm flex flex-col justify-center">
                 <p>
-                  <strong className="font-medium text-white">1ère page Google</strong> et <strong className="font-medium text-white">275k vues/mois</strong> sans publicité.<br />
+                  <strong className="font-medium text-white">1ère page Google</strong> et <strong className="font-medium text-white">275k vues/mois sur Facebook</strong> sans publicité.<br />
                   <strong className="font-medium text-white">Position 7</strong> sur "Moulin de Belle-Assise" — devant Wikipedia.<br />
                   Cité par Google AI comme référence naturaliste régionale, aux côtés de la LPO.
                 </p>
@@ -542,7 +542,7 @@ export default function Oeuvres() {
                   <th className="py-3 px-4 font-medium">URLs indexables</th>
                   <th className="py-3 px-4 font-medium">Mots publiés</th>
                   <th className="py-3 px-4 font-medium">Images</th>
-                  <th className="py-3 pl-4 font-medium">Signal Google &amp; AI Overviews</th>
+                  <th className="py-3 pl-4 font-medium">Audience, Google &amp; AI Overviews</th>
                 </tr>
               </thead>
               <tbody className="divide-y divide-[rgba(31,79,110,0.08)] text-[#4a6a80]">
@@ -554,7 +554,7 @@ export default function Oeuvres() {
                   <td className="py-3.5 px-4 font-medium text-[#1F4F6E]">216 URL</td>
                   <td className="py-3.5 px-4 font-medium text-[#1F4F6E]">149 392</td>
                   <td className="py-3.5 px-4 font-medium text-[#1F4F6E]">652</td>
-                  <td className="py-3.5 pl-4">275k vues/mois, Position 7 devant Wikipedia, 93 citations AI Overviews</td>
+                  <td className="py-3.5 pl-4">275k vues/mois sur Facebook, Position 7 devant Wikipedia, 93 citations AI Overviews</td>
                 </tr>
                 <tr>
                   <td className="py-3.5 pr-4 font-medium text-[#1F4F6E]">

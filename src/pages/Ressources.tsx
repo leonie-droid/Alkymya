@@ -142,7 +142,7 @@ const resources: ResourceItem[] = [
     id: 10,
     title: "Partenariat d'Avenir",
     category: "Alkymya x Inatec",
-    description: "Découvrez l'introduction de notre collaboration avec Inatec, alliant excellence pédagogique, certification Qualiopi et IA de pointe pour rendre les formations finançables OPCO.",
+    description: "Découvrez l'introduction de notre collaboration avec INATEC, organisme partenaire certifié Qualiopi, alliant excellence pédagogique et IA de pointe pour rendre les formations finançables OPCO.",
     url: "https://res.cloudinary.com/dokzioyu4/video/upload/v1780954428/reel_01_v2_3_zwqjnw.mp4",
     type: "video"
   },
@@ -285,7 +285,7 @@ export default function Ressources() {
               Outils gratuits, veille SEO IA <strong className="font-medium text-[#1F4F6E]">&amp; création site éditorial</strong>
             </h2>
             <p className="text-[0.98rem] text-[#4a6a80] max-w-[680px] leading-[1.65] mt-2 font-normal">
-              Chaque ressource de ce hub est directement actionnable en autonomie ou en atelier : analyseurs intelligents gratuits, études empiriques Génération IA 2024-2026, business game pédagogique NoNo BanaBa et capsules pratiques conçues avec notre partenaire Qualiopi INATEC.
+              Chaque ressource de ce hub est directement actionnable en autonomie ou en atelier : analyseurs intelligents gratuits, études empiriques Génération IA 2024-2026, business game pédagogique NoNo BanaBa et capsules pratiques conçues avec notre organisme partenaire certifié Qualiopi INATEC.
             </p>
           </div>
           <div className="flex items-center gap-3 shrink-0">

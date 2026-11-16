@@ -38,8 +38,8 @@ export interface RouteData {
 export const routes: RouteData[] = [
   {
     path: '/',
-    title: "Formation IA en entreprise à Ozoir-la-Ferrière — Alkymya",
-    description: "Alkymya, studio IA et organisme de formation à Ozoir-la-Ferrière (77) : formation IA entreprise Qualiopi, agents IA sur mesure et stratégie SEO GEO.",
+    title: "Formation IA en entreprise en Île-de-France — Alkymya",
+    description: "Alkymya, studio IA et organisme de formation : ateliers IA finançables OPCO via nos partenaires certifiés Qualiopi, agents IA et accompagnement.",
     h1: "Former vos équipes à l'IA, là où elles travaillent.",
     ogImage: "https://alkymya.co/og-image.jpg",
     lastmod: "2026-11-15",
@@ -54,7 +54,7 @@ export const routes: RouteData[] = [
       },
       {
         src: "https://res.cloudinary.com/dokzioyu4/image/upload/v1758192982/66cffcd8-15f1-415f-b423-9f428d63e22f_gqjd53.png",
-        alt: "Cyril Garnier — Fondateur d'Alkymya, studio IA et organisme de formation à Ozoir-la-Ferrière",
+        alt: "Cyril Garnier — Fondateur d'Alkymya, studio IA et organisme de formation",
         width: 600,
         height: 750,
         caption: "Cyril Garnier — Directeur Associé & Fondateur"
@@ -68,18 +68,18 @@ export const routes: RouteData[] = [
       }
     ],
     content: {
-      leadParagraph: "Alkymya est un studio IA et organisme de formation installé à Ozoir-la-Ferrière (Seine-et-Marne) : formation IA en entreprise certifiée Qualiopi, création d'agents IA sur mesure, stratégie SEO et GEO pour votre visibilité Google AI.",
+      leadParagraph: "Alkymya est un studio IA et organisme de formation : ateliers IA finançables OPCO via nos organismes partenaires certifiés Qualiopi, création d'agents IA sur mesure, stratégie SEO et GEO pour votre visibilité Google AI.",
       sections: [
         {
           h2: "Accompagnement intelligence artificielle en trois piliers",
           paragraphs: [
-            "Alkymya, studio IA et organisme de formation à Ozoir-la-Ferrière, guide les dirigeants, équipes métiers et étudiants à travers trois axes complémentaires : Explorer les technologies d'IA générative, Transformer les processus quotidiens avec des prototypes fonctionnels, et Partager les compétences clés pour une autonomie durable.",
+            "Alkymya, studio IA et organisme de formation, guide les dirigeants, équipes métiers et étudiants à travers trois axes complémentaires : Explorer les technologies d'IA générative, Transformer les processus quotidiens avec des prototypes fonctionnels, et Partager les compétences clés pour une autonomie durable.",
             "Chaque intervention privilégie la pratique immédiate sur les outils de travail réels de l'entreprise : rédaction structurée, automatisation documentaire, agents autonomes connectés au CRM et déploiement de sites éditoriaux visibles sur Google et dans Google AI Overviews."
           ],
           listItems: [
             "Explorer : ateliers d'acculturation, veille SEO IA et analyse des cas d'usage rentables par service.",
             "Transformer : conseil stratégique, création d'agents IA sur mesure et prototypage no-code / low-code.",
-            "Partager : formations certifiantes Qualiopi finançables OPCO, business games et mentorat de talents."
+            "Partager : formations sur mesure finançables OPCO via nos partenaires certifiés Qualiopi, business games et mentorat de talents."
           ]
         },
         {
@@ -89,25 +89,25 @@ export const routes: RouteData[] = [
             "Nos résultats ne sont pas théoriques : nos trois études de cas éditoriales en production (thelittle77.fr, thelittle75.fr et thelittle83.fr) totalisent 387 URLs indexables et plus de 279 000 mots publiés sans publicité ni achat de liens."
           ],
           listItems: [
-            "Formation Core IA (14h en 4 demi-journées) : certifiée Qualiopi via INATEC, éligible OPCO jusqu'à 100 %, pour maîtriser le prompt engineering, la création de contenus et les premiers workflows.",
+            "Formation Core IA (14h en 4 demi-journées) : portée avec notre partenaire certifié Qualiopi INATEC, éligible OPCO jusqu'à 100 %, pour maîtriser le prompt engineering, la création de contenus et les premiers workflows.",
             "Ateliers spécialisés (3h30) : création de 3 agents IA métiers autonomes, application web interne no-code connectée à Gemini/GPT ou audit de conformité IA Act.",
             "New Business MVP (6 mois à 200 € / mois) : accompagnement en binôme par Cyril Garnier et Léonie Egesipe pour valider votre offre auprès de vrais clients avant d'investir."
           ]
         },
         {
-          h2: "Ancrage territorial à Ozoir-la-Ferrière et impact pédagogique",
+          h2: "Ancrage en Île-de-France et impact pédagogique",
           paragraphs: [
-            "Basé en Seine-et-Marne à Ozoir-la-Ferrière (77330), Alkymya collabore avec les PME d'Île-de-France, les grands groupes (SNCF, Fondation GRDF, Morning) et les grandes écoles (HETIC, Ynov Campus, IÉSEG, CFA Itis, Paris École de Management).",
+            "Présent en Île-de-France et partout en France, Alkymya collabore avec les PME, les grands groupes (SNCF, Fondation GRDF, Morning) et les grandes écoles (HETIC, Ynov Campus, IÉSEG, CFA Itis, Paris École de Management).",
             "Plus de 450 professionnels et étudiants ont déjà suivi nos programmes, avec un taux de recommandation de 99,3 % sur nos ateliers pratiques."
           ]
         }
       ],
       internalLinks: [
         { href: "/oeuvres/", label: "Voir nos trois études de cas éditoriales (thelittle77, 75, 83)" },
-        { href: "/ateliers/", label: "Découvrir nos ateliers et formations IA Qualiopi" },
+        { href: "/ateliers/", label: "Découvrir nos ateliers et formations IA (OPCO via partenaires Qualiopi)" },
         { href: "/newbusiness/", label: "Rejoindre le programme New Business MVP" },
         { href: "/alchimistes/", label: "Rencontrer les fondateurs d'Alkymya" },
-        { href: "/contact/", label: "Contacter Alkymya à Ozoir-la-Ferrière" }
+        { href: "/contact/", label: "Contacter Alkymya" }
       ]
     }
   },
@@ -129,7 +129,7 @@ export const routes: RouteData[] = [
       }
     ],
     content: {
-      leadParagraph: "Explorez en direct la puissance d'Alkymya, studio IA et organisme de formation à Ozoir-la-Ferrière : accompagnement intelligence artificielle, création d'agents IA sur mesure, personas vidéo et stratégie SEO et GEO.",
+      leadParagraph: "Explorez en direct la puissance d'Alkymya, studio IA et organisme de formation : accompagnement intelligence artificielle, création d'agents IA sur mesure, personas vidéo et stratégie SEO et GEO.",
       sections: [
         {
           h2: "À qui s'adresse notre studio création IA et Générateur d'Idées ?",
@@ -189,9 +189,9 @@ export const routes: RouteData[] = [
   {
     path: '/oeuvres',
     title: "Études de cas SEO, IA & création éditoriale — Alkymya",
-    description: "Trois études de cas mesurées (thelittle77, 75 et 83), agents IA autonomes en production et direction artistique IA par Alkymya à Ozoir-la-Ferrière.",
+    description: "Trois études de cas mesurées (thelittle77, 75 et 83), agents IA autonomes en production et direction artistique IA par Alkymya en France.",
     ogTitle: "Études de cas SEO, IA & création éditoriale — Alkymya",
-    ogDescription: "Trois études de cas mesurées (thelittle77, 75 et 83), agents IA autonomes en production et direction artistique IA par Alkymya à Ozoir-la-Ferrière.",
+    ogDescription: "Trois études de cas mesurées (thelittle77, 75 et 83), agents IA autonomes en production et direction artistique IA par Alkymya en France.",
     h1: "Études de cas SEO, agents IA & création éditoriale.",
     ogImage: "https://alkymya.co/og-oeuvres.jpg",
     lastmod: "2026-11-15",
@@ -343,7 +343,7 @@ export const routes: RouteData[] = [
       }
     ],
     content: {
-      leadParagraph: "Alkymya, studio IA et organisme de formation à Ozoir-la-Ferrière, publie ici les résultats mesurés de ses trois études de cas éditoriales en production (thelittle77.fr, thelittle75.fr et thelittle83.fr), ses quatre agents IA autonomes et ses séries de direction artistique générative.",
+      leadParagraph: "Alkymya, studio IA et organisme de formation, publie ici les résultats mesurés de ses trois études de cas éditoriales en production (thelittle77.fr, thelittle75.fr et thelittle83.fr), ses quatre agents IA autonomes et ses séries de direction artistique générative.",
       sections: [
         {
           h2: "Trois études de cas SEO & GEO mesurées en production (relevé du 12 nov. 2026)",
@@ -352,7 +352,7 @@ export const routes: RouteData[] = [
             "À ce jour, ces trois plateformes cumulent 387 URLs indexables, 279 198 mots éditoriaux publiés et 1 219 images documentées sur le terrain."
           ],
           listItems: [
-            "thelittle77.fr (Créateur : Cyril Garnier) — Construit en 3 mois : 216 URLs, 149 392 mots, 652 images, 275 000 vues mensuelles sans publicité, 1ère page Google sur les paysages de Seine-et-Marne et position 7 devant Wikipedia sur Moulin de Belle-Assise, avec 93 apparitions AI Overviews.",
+            "thelittle77.fr (Créateur : Cyril Garnier) — Construit en 3 mois : 216 URLs, 149 392 mots, 652 images, 275 000 vues mensuelles sur Facebook sans publicité, 1ère page Google sur les paysages de Seine-et-Marne et position 7 devant Wikipedia sur Moulin de Belle-Assise, avec 93 apparitions AI Overviews.",
             "thelittle75.fr (Créateur : Léonie Egesipe) — Construit en 2 mois : 39 URLs, 27 839 mots, 53 images (-91 % sur le poids des visuels), 2ème résultat Google sur chronique Belleville Paris récit et score technique SEO passé de 45 à 77 en 48 heures.",
             "thelittle83.fr (Créateur : Cyril Garnier) — Lancé le 8 novembre 2026 en 24 heures : 132 URLs bilingues, 101 967 mots, 514 images, indexé par Google AI en moins d'une heure et 1er résultat image dès le lendemain sur aigrette garzette Hyères."
           ]
@@ -387,7 +387,7 @@ export const routes: RouteData[] = [
       ],
       internalLinks: [
         { href: "/newbusiness/", label: "Appliquer cette méthode avec New Business MVP" },
-        { href: "/ateliers/", label: "Se former à nos outils lors d'un atelier IA Qualiopi" },
+        { href: "/ateliers/", label: "Se former à nos outils lors d'un atelier IA pratique" },
         { href: "/alchimistes/", label: "Rencontrer Cyril Garnier et Léonie Egesipe" },
         { href: "/contact/", label: "Lancer un projet éditorial ou agent IA →" }
       ]
@@ -396,13 +396,13 @@ export const routes: RouteData[] = [
   {
     path: '/ateliers',
     title: "Ateliers IA pour équipes en Île-de-France — Alkymya",
-    description: "Ateliers IA pratiques en Île-de-France depuis Ozoir-la-Ferrière : formation IA certifiée Qualiopi finançable OPCO, agents IA métiers et conformité IA Act.",
-    h1: "Atelier IA pratique & formation IA entreprise Qualiopi.",
+    description: "Ateliers IA pratiques en Île-de-France : formation IA finançable OPCO via partenaires certifiés Qualiopi, agents IA métiers et conformité IA Act.",
+    h1: "Atelier IA pratique & formation IA en entreprise.",
     ogImage: "https://alkymya.co/og-ateliers.jpg",
     lastmod: "2026-11-15",
     schemaType: "Course",
     content: {
-      leadParagraph: "Ateliers IA pour équipes en Île-de-France avec Alkymya, studio IA et organisme de formation à Ozoir-la-Ferrière : formation IA entreprise certifiée Qualiopi finançable OPCO, audit Capital IA et création d'agents IA métiers.",
+      leadParagraph: "Ateliers IA pour équipes en Île-de-France avec Alkymya, studio IA et organisme de formation : formations IA finançables OPCO via nos partenaires certifiés Qualiopi (tels qu'INATEC), audit Capital IA et création d'agents IA métiers.",
       sections: [
         {
           h2: "À qui s'adressent nos ateliers IA pratiques, audits Capital IA et formations OPCO ?",
@@ -423,7 +423,7 @@ export const routes: RouteData[] = [
             "Chaque participant bénéficie d'un accès permanent aux espaces collaboratifs Alkymya et à l'ensemble des ressources pédagogiques mises à jour en continu."
           ],
           listItems: [
-            "Formation Core IA (14h) : bibliothèque de prompts maîtres prêts à l'emploi, guides pas-à-pas de prompt engineering, supports complets, attestation de fin de formation Qualiopi et suivi post-formation pendant 1 mois.",
+            "Formation Core IA (14h) : bibliothèque de prompts maîtres prêts à l'emploi, guides pas-à-pas de prompt engineering, supports complets, attestation de fin de formation (via nos partenaires certifiés Qualiopi) et suivi post-formation pendant 1 mois.",
             "Option A — Agents IA (3h30) : conception et déploiement effectif de 3 agents intelligents autonomes connectés à Slack, Notion ou CRM, scénarios Make/Zapier exportables et documentation technique.",
             "Option B — App No-Code (3h30) : une application web interne déployée sur URL sécurisée, interconnectée aux API de Google Gemini ou OpenAI GPT, avec formation à l'administration.",
             "Option C — Éthique & IA Act (3h30) : matrice d'audit de conformité réglementaire, grille de classification des risques et protocole de sécurisation des données d'entreprise."
@@ -444,9 +444,9 @@ export const routes: RouteData[] = [
           ]
         },
         {
-          h2: "Preuves de performance, certification Qualiopi et financements OPCO",
+          h2: "Preuves de performance, partenaires certifiés Qualiopi et financements OPCO",
           paragraphs: [
-            "Portée en alliance avec l'école INATEC et titulaire de la certification d'État Qualiopi pour les actions de formation, notre offre est éligible à une prise en charge financière pouvant atteindre 100 % par votre Opérateur de Compétences (OPCO).",
+            "Alkymya n'est pas certifié Qualiopi directement : nous collaborons avec des organisations partenaires certifiées Qualiopi — dont l'école INATEC — pour permettre une prise en charge financière pouvant atteindre 100 % par votre Opérateur de Compétences (OPCO).",
             "Nos chiffres parlent d'eux-mêmes : 99,3 % des participants recommandent nos ateliers, avec plus de 175 professionnels formés et évalués lors de la dernière campagne annuelle et une note de progression continue de +1,6 point sur douze mois. De prestigieuses institutions comme HETIC, Ynov, l'IÉSEG et le CFA Itis nous confient régulièrement leurs promotions."
           ]
         }
@@ -477,7 +477,7 @@ export const routes: RouteData[] = [
       }
     ],
     content: {
-      leadParagraph: "Bibliothèque ouverte d'Alkymya, studio IA et organisme de formation à Ozoir-la-Ferrière : quatre pôles de ressources en accès libre réunissant nos analyseurs intelligents, nos enquêtes longitudinales Génération IA, le business game NoNo BanaBa et les capsules vidéo Qualiopi avec INATEC.",
+      leadParagraph: "Bibliothèque ouverte d'Alkymya, studio IA et organisme de formation : quatre pôles de ressources en accès libre réunissant nos analyseurs intelligents, nos enquêtes longitudinales Génération IA, le business game NoNo BanaBa et les capsules vidéo avec notre partenaire certifié Qualiopi INATEC.",
       sections: [
         {
           h2: "1. Nos analyseurs IA gratuits en production",
@@ -506,7 +506,7 @@ export const routes: RouteData[] = [
           h2: "3. Business Game NoNo BanaBa & capsules vidéo Alkymya x INATEC",
           paragraphs: [
             "Pour ancrer les concepts de stratégie data, de marketing digital et de modèle économique par le jeu, nos intervenants déploient le business game NoNo BanaBa en séminaires d'équipe et en grandes écoles.",
-            "Enfin, cinq capsules vidéo réalisées avec notre partenaire Qualiopi INATEC (Partenariat d'Avenir, Efficacité Augmentée, Synergie Créative, Le Futur en Marche, Performance Digitale) illustrent comment déployer une formation IA finançable jusqu'à 100 % par votre OPCO."
+            "Enfin, cinq capsules vidéo réalisées avec notre partenaire certifié Qualiopi INATEC (Partenariat d'Avenir, Efficacité Augmentée, Synergie Créative, Le Futur en Marche, Performance Digitale) illustrent comment déployer une formation IA finançable jusqu'à 100 % par votre OPCO."
           ]
         }
       ],
@@ -522,7 +522,7 @@ export const routes: RouteData[] = [
     path: '/alchimistes',
     title: "Experts IA France & Fondateurs Agence IA | Alkymya",
     description: "Experts IA France : Cyril Garnier, Léonie Egesipe, Véronique Landereau et Mariana Didier Laurent. Accompagnement IA dirigeants et indépendants.",
-    h1: "Experts IA France : l'équipe d'Alkymya à Ozoir-la-Ferrière.",
+    h1: "Experts IA France : l'équipe d'Alkymya.",
     ogImage: "https://alkymya.co/og-alchimistes.jpg",
     lastmod: "2026-11-15",
     schemaType: "AboutPage",
@@ -571,7 +571,7 @@ export const routes: RouteData[] = [
       }
     ],
     content: {
-      leadParagraph: "Derrière Alkymya, studio IA et organisme de formation à Ozoir-la-Ferrière, six alchimistes complémentaires assurent l'accompagnement IA dirigeants et indépendants, la stratégie SEO et GEO, la gouvernance data, l'insertion professionnelle, l'innovation santé et les services à la personne.",
+      leadParagraph: "Derrière Alkymya, studio IA et organisme de formation, six alchimistes complémentaires assurent l'accompagnement IA dirigeants et indépendants, la stratégie SEO et GEO, la gouvernance data, l'insertion professionnelle, l'innovation santé et les services à la personne.",
       sections: [
         {
           h2: "Cyril Garnier — Directeur Associé & Fondateur",
@@ -635,10 +635,10 @@ export const routes: RouteData[] = [
       },
       {
         src: "https://res.cloudinary.com/dokzioyu4/image/upload/v1777818451/WhatsApp_Image_2026-02-27_at_15.38.53_utvfxs.jpg",
-        alt: "Logo INATEC — partenaire certification Qualiopi et financement OPCO avec Alkymya",
+        alt: "Logo INATEC — organisme partenaire certifié Qualiopi et financement OPCO avec Alkymya",
         width: 240,
         height: 120,
-        caption: "INATEC — Portage Qualiopi & Ingénierie Pédagogique"
+        caption: "INATEC — Partenaire Certifié Qualiopi & Ingénierie Pédagogique"
       },
       {
         src: "https://res.cloudinary.com/dokzioyu4/image/upload/v1759785816/logo-hetic_fnt2zy.png",
@@ -678,7 +678,7 @@ export const routes: RouteData[] = [
       }
     ],
     content: {
-      leadParagraph: "Alkymya, studio IA et organisme de formation à Ozoir-la-Ferrière, fédère plus de 15 écoles supérieures, fondations et partenaires d'insertion autour de trois missions concrètes : le recrutement d'alternants, les interventions pédagogiques en école et la supervision de projets étudiants réels.",
+      leadParagraph: "Alkymya, studio IA et organisme de formation, fédère plus de 15 écoles supérieures, fondations et partenaires d'insertion autour de trois missions concrètes : le recrutement d'alternants, les interventions pédagogiques en école et la supervision de projets étudiants réels.",
       sections: [
         {
           h2: "Recrutement d'alternants & insertion avec Objectif Alternance",
@@ -695,9 +695,9 @@ export const routes: RouteData[] = [
           ]
         },
         {
-          h2: "Alliances Qualiopi, territoires et entreprises engagées",
+          h2: "Partenaires certifiés Qualiopi, territoires et entreprises engagées",
           paragraphs: [
-            "Grâce au portage pédagogique et à la certification Qualiopi d'INATEC, l'ensemble de nos formations inter et intra-entreprises bénéficie d'une éligibilité OPCO pouvant couvrir jusqu'à 100 % du coût pédagogique pour les TPE, PME et grands comptes d'Île-de-France.",
+            "Alkymya travaille avec des organisations partenaires certifiées Qualiopi telles qu'INATEC : grâce à ce portage pédagogique, nos formations inter et intra-entreprises bénéficient d'une éligibilité OPCO pouvant couvrir jusqu'à 100 % du coût pédagogique pour les TPE, PME et grands comptes d'Île-de-France.",
             "Notre écosystème réunit également des acteurs de terrain et d'innovation tels que SNCF, Morning Coworking (accueil d'ateliers en présentiel en Île-de-France), la Fondation GRDF, SEALESTER, la Fondation Flamenca, Azimuto, La Ressourcerie Gaillarde, Onecub, New Health Paradigm et Esperanta Services.",
             "Chaque partenariat donne lieu à des livrables tangibles : diagnostics de maturité IA pour dirigeants, déploiement de workflows documentaires conformes à l'IA Act, ateliers de direction artistique générative et accompagnement vers la création d'activité ou l'employabilité durable des apprenants."
           ]
@@ -713,31 +713,31 @@ export const routes: RouteData[] = [
   },
   {
     path: '/contact',
-    title: "Contact — formation IA et conseil, Ozoir-la-Ferrière",
-    description: "Contactez Alkymya, studio IA et organisme de formation à Ozoir-la-Ferrière (77) : devis formation Qualiopi OPCO, ateliers IA et accompagnement dirigeants.",
-    h1: "Contactez Alkymya : formation IA & conseil à Ozoir-la-Ferrière.",
+    title: "Contact — formation IA et conseil en France | Alkymya",
+    description: "Contactez Alkymya, studio IA en France : devis formation IA OPCO via partenaires certifiés Qualiopi, ateliers et accompagnement dirigeants.",
+    h1: "Contactez Alkymya : formation IA & conseil en France.",
     ogImage: "https://alkymya.co/og-contact.jpg",
     lastmod: "2026-11-15",
     schemaType: "ContactPage",
     content: {
-      leadParagraph: "Échangez avec Alkymya, studio IA et organisme de formation à Ozoir-la-Ferrière (Seine-et-Marne), pour un devis formation IA Qualiopi finançable OPCO, un atelier d'agents IA en Île-de-France ou un accompagnement New Business MVP.",
+      leadParagraph: "Échangez avec Alkymya, studio IA et organisme de formation en France, pour un devis formation IA (finançable OPCO via nos partenaires certifiés Qualiopi), un atelier d'agents IA en Île-de-France ou un accompagnement New Business MVP.",
       sections: [
         {
-          h2: "Devis formation IA Qualiopi & accompagnement dirigeants",
+          h2: "Devis formation IA (OPCO) & accompagnement dirigeants",
           paragraphs: [
             "Que vous représentiez une grande école souhaitant intégrer un module IA innovant, une PME d'Île-de-France en quête d'optimisation de ses processus, ou un porteur de projet visant à lancer son MVP, notre équipe vous répond sous 24 à 48 heures."
           ],
           listItems: [
-            "Formations certifiantes éligibles au financement OPCO (Qualiopi via INATEC).",
+            "Formations professionnelles éligibles au financement OPCO via nos partenaires certifiés Qualiopi (dont INATEC).",
             "Ateliers intensifs de création d'agents IA et de prompt engineering.",
             "Accompagnement New Business MVP pour valider votre offre terrain en 6 mois.",
             "Conférences, keynotes inspirantes et business games pour vos séminaires."
           ]
         },
         {
-          h2: "Nos coordonnées et localisation en Seine-et-Marne",
+          h2: "Nos coordonnées et zone d'intervention",
           paragraphs: [
-            "Alkymya — Studio IA et organisme de formation, Ozoir-la-Ferrière, Seine-et-Marne (77330), Île-de-France.",
+            "Alkymya — Studio IA et organisme de formation, Île-de-France, France.",
             "Email direct : contact@alkymya.co • Téléphone : +33 1 89 71 32 40."
           ]
         }
@@ -751,33 +751,33 @@ export const routes: RouteData[] = [
   },
   {
     path: '/faq',
-    title: "FAQ Agence IA : Qualiopi, OPCO & Agents IA | Alkymya",
-    description: "Réponses sur Alkymya (studio IA à Ozoir-la-Ferrière), formation IA entreprise certifiée Qualiopi, financement OPCO et création d'agents IA.",
-    h1: "FAQ Alkymya : identité, formation Qualiopi & agents IA.",
+    title: "FAQ Agence IA : Financement OPCO & Agents IA | Alkymya",
+    description: "Réponses sur Alkymya (studio IA et organisme de formation), financement OPCO via nos partenaires certifiés Qualiopi, agents IA et MVP.",
+    h1: "FAQ Alkymya : identité, OPCO & agents IA.",
     ogImage: "https://alkymya.co/og-faq.jpg",
     lastmod: "2026-11-15",
     schemaType: "FAQPage",
     content: {
-      leadParagraph: "Toutes les réponses sur Alkymya (studio IA et organisme de formation à Ozoir-la-Ferrière), la formation IA entreprise certifiée Qualiopi finançable OPCO, la création d'agents IA sur mesure et le programme New Business MVP.",
+      leadParagraph: "Toutes les réponses sur Alkymya (studio IA et organisme de formation), le financement OPCO via nos organismes partenaires certifiés Qualiopi, la création d'agents IA sur mesure et le programme New Business MVP.",
       sections: [
         {
           h2: "Identité d'Alkymya & désambiguïsation",
           paragraphs: [
-            "Alkymya (alkymya.co) est un studio d'intelligence artificielle et organisme de formation professionnelle fondé par Cyril Garnier et Léonie Egesipe, implanté à Ozoir-la-Ferrière en Seine-et-Marne (77)."
+            "Alkymya (alkymya.co) est un studio d'intelligence artificielle et organisme de formation professionnelle fondé par Cyril Garnier et Léonie Egesipe en Île-de-France."
           ],
           listItems: [
-            "Qu'est-ce qu'Alkymya ? Alkymya (alkymya.co) est un studio IA et organisme de formation certifié Qualiopi basé à Ozoir-la-Ferrière (Seine-et-Marne), spécialisé en formation IA en entreprise, création d'agents IA sur mesure, stratégie SEO/GEO et accompagnement New Business MVP.",
-            "Alkymya, est-ce un restaurant ? Non. Alkymya (alkymya.co) est exclusivement un studio d'intelligence artificielle et organisme de formation professionnelle en France (Ozoir-la-Ferrière, 77) — sans aucun lien avec le restaurant Alkymya Bellini de Naples, ni avec le groupe de musique Alkymya Music, ni avec le livre brésilien Alkymya de Assustos."
+            "Qu'est-ce qu'Alkymya ? Alkymya (alkymya.co) est un studio IA et organisme de formation basé en Île-de-France, spécialisé en formation IA en entreprise (OPCO via partenaires certifiés Qualiopi), création d'agents IA sur mesure, stratégie SEO/GEO et accompagnement New Business MVP.",
+            "Alkymya, est-ce un restaurant ? Non. Alkymya (alkymya.co) est exclusivement un studio d'intelligence artificielle et organisme de formation professionnelle en France — sans aucun lien avec le restaurant Alkymya Bellini de Naples, ni avec le groupe de musique Alkymya Music, ni avec le livre brésilien Alkymya de Assustos."
           ]
         },
         {
-          h2: "Questions fréquentes : formation IA Qualiopi, OPCO & agents IA",
+          h2: "Questions fréquentes : financement OPCO, partenaires Qualiopi & agents IA",
           paragraphs: [
             "Nous mettons un point d'honneur à apporter une transparence totale sur le contenu de nos formations, les profils des intervenants et les modalités financières."
           ],
           listItems: [
             "Quel est le format des ateliers d'agents IA ? Des sessions intensives de 3h30 pour concevoir et déployer 3 agents intelligents autonomes connectés à vos outils métiers.",
-            "Les formations sont-elles finançables par un OPCO ? Oui, grâce au partenariat avec INATEC et à la certification d'État Qualiopi, la prise en charge peut atteindre 100%.",
+            "Les formations sont-elles finançables par un OPCO ? Oui : Alkymya n'est pas certifié Qualiopi directement mais collabore avec des organisations partenaires certifiées Qualiopi (telles qu'INATEC), permettant une prise en charge jusqu'à 100%.",
             "Qu'est-ce que l'offre New Business MVP ? Un accompagnement de 6 mois à 200 € / mois pour concevoir votre MVP, tester votre offre auprès de clients réels et piloter avec lucidité.",
             "Quels établissements font confiance à Alkymya ? HETIC, Ynov, IÉSEG, CFA Itis, Paris École de Management, SNCF, Morning Coworking, Fondation GRDF et Objectif Alternance."
           ]
@@ -792,13 +792,13 @@ export const routes: RouteData[] = [
   {
     path: '/rejoindre',
     title: "Rejoindre l'Agence IA Alkymya | Experts IA France",
-    description: "Rejoignez Alkymya à Ozoir-la-Ferrière : formateurs IA Qualiopi, concepteurs d'agents autonomes et alternants formés sur des projets réels en production.",
+    description: "Rejoignez Alkymya en Île-de-France : formateurs IA, concepteurs d'agents autonomes et alternants formés sur des projets réels en production.",
     h1: "Rejoindre Alkymya : experts IA, formateurs & jeunes talents.",
     ogImage: "https://alkymya.co/og-rejoindre.jpg",
     lastmod: "2026-11-15",
     schemaType: "WebPage",
     content: {
-      leadParagraph: "Alkymya, studio IA et organisme de formation à Ozoir-la-Ferrière, recrute des formateurs Qualiopi, des concepteurs d'agents IA et accueille chaque année des alternants et jeunes talents sur des projets en production réelle.",
+      leadParagraph: "Alkymya, studio IA et organisme de formation, recrute des formateurs IA terrain, des concepteurs d'agents IA et accueille chaque année des alternants et jeunes talents sur des projets en production réelle.",
       sections: [
         {
           h2: "Pourquoi rejoindre Alkymya et notre collectif d'alchimistes ?",
@@ -864,7 +864,7 @@ export const routes: RouteData[] = [
       }
     ],
     content: {
-      leadParagraph: "Accompagnement IA dirigeants et indépendants sur 6 mois avec Alkymya (Ozoir-la-Ferrière) : concevez votre MVP, déployez des agents IA sur mesure et validez votre stratégie SEO et GEO auprès de vrais clients grâce aux méthodes éprouvées sur nos trois études de cas TheLittle.",
+      leadParagraph: "Accompagnement IA dirigeants et indépendants sur 6 mois avec Alkymya : concevez votre MVP, déployez des agents IA sur mesure et validez votre stratégie SEO et GEO auprès de vrais clients grâce aux méthodes éprouvées sur nos trois études de cas TheLittle.",
       sections: [
         {
           h2: "À qui s'adresse cet accompagnement IA dirigeants et indépendants ?",
@@ -925,18 +925,18 @@ export const routes: RouteData[] = [
   {
     path: '/mentions-legales',
     title: "Mentions Légales Agence IA & RGPD | Alkymya",
-    description: "Mentions légales d'Alkymya, studio IA et organisme de formation à Ozoir-la-Ferrière : conformité RGPD, hébergement cloud et propriété intellectuelle.",
-    h1: "Mentions légales Alkymya (Ozoir-la-Ferrière) & RGPD.",
+    description: "Mentions légales d'Alkymya, studio IA et organisme de formation en France : conformité RGPD, hébergement cloud et propriété intellectuelle.",
+    h1: "Mentions légales Alkymya & RGPD.",
     ogImage: "https://alkymya.co/og-mentions.jpg",
     lastmod: "2026-11-15",
     schemaType: "WebPage",
     content: {
-      leadParagraph: "Consultez les mentions légales d'Alkymya, studio IA et organisme de formation à Ozoir-la-Ferrière (Seine-et-Marne), ainsi que notre politique stricte de confidentialité RGPD.",
+      leadParagraph: "Consultez les mentions légales d'Alkymya, studio IA et organisme de formation en France, ainsi que notre politique stricte de confidentialité RGPD.",
       sections: [
         {
           h2: "Éditeur du site et direction de publication",
           paragraphs: [
-            "Le site internet alkymya.co est édité par Alkymya, studio IA et organisme de formation professionnelle, domicilié à Ozoir-la-Ferrière, Seine-et-Marne (77330), France.",
+            "Le site internet alkymya.co est édité par Alkymya, studio IA et organisme de formation professionnelle en Île-de-France, France.",
             "Direction de la publication : Cyril Garnier (cyrilgarnier.fr) et Léonie Egesipe. Contact : contact@alkymya.co."
           ]
         },
@@ -955,7 +955,7 @@ export const routes: RouteData[] = [
       ],
       internalLinks: [
         { href: "/", label: "Retourner à la page d'accueil d'Alkymya" },
-        { href: "/ateliers/", label: "Consulter nos formations certifiées Qualiopi" },
+        { href: "/ateliers/", label: "Consulter nos formations et ateliers IA" },
         { href: "/contact/", label: "Exercer vos droits d'accès aux données personnelles" }
       ]
     }

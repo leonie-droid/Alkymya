@@ -9,15 +9,12 @@
       "url": "https://alkymya.co/",
       "logo": "https://res.cloudinary.com/dokzioyu4/image/upload/f_auto,q_auto,w_600,c_limit/v1758096912/logo_principal_bleu_gbnyuu.png",
       "image": "https://alkymya.co/og-image.jpg",
-      "description": "Alkymya, studio IA et organisme de formation à Ozoir-la-Ferrière (Seine-et-Marne, France) : accompagnement intelligence artificielle, création d'agents IA sur mesure, stratégie SEO et GEO Google AI, formation IA entreprise certifiée Qualiopi finançable OPCO.",
+      "description": "Alkymya, studio IA et organisme de formation en France : accompagnement intelligence artificielle, création d'agents IA sur mesure, stratégie SEO et GEO Google AI, formations finançables OPCO via nos partenaires certifiés Qualiopi.",
       "telephone": "+33 1 89 71 32 40",
       "email": "contact@alkymya.co",
       "address": {
         "@type": "PostalAddress",
-        "streetAddress": "Ozoir-la-Ferrière",
-        "addressLocality": "Ozoir-la-Ferrière",
-        "postalCode": "77330",
-        "addressRegion": "Seine-et-Marne",
+        "addressRegion": "Île-de-France",
         "addressCountry": "FR"
       },
       "geo": {
@@ -98,8 +95,8 @@
     {
       "@type": "Course",
       "@id": "https://alkymya.co/ateliers/#course-ia",
-      "name": "Atelier IA pratique & Formation IA entreprise certifiée Qualiopi",
-      "description": "Formation IA entreprise certifiée Qualiopi finançable OPCO, audit IA PME (Capital IA), créer son agent IA métier, valorisation d'archives photo et vidéo et conformité IA Act.",
+      "name": "Atelier IA pratique & Formation IA entreprise (OPCO via partenaires Qualiopi)",
+      "description": "Formation IA entreprise finançable OPCO via nos organismes partenaires certifiés Qualiopi (tels qu'INATEC), audit IA PME (Capital IA), créer son agent IA métier, valorisation d'archives photo et vidéo et conformité IA Act.",
       "provider": { "@id": "https://alkymya.co/#organization" }
     }
   ]

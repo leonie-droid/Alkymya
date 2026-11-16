@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Alkymya — Studio d'Innovation IA &amp; Formations Qualiopi</title>
+    <title>Alkymya — Studio d'Innovation IA &amp; Formations</title>
     <link>https://alkymya.co/</link>
-    <description>Actualités, réalisations concrètes en intelligence artificielle, médias éditoriaux (TheLittle77, TheLittle83, TheLittle75) et formations professionnelles certifiées Qualiopi par Alkymya.</description>
+    <description>Actualités, réalisations concrètes en intelligence artificielle, médias éditoriaux (TheLittle77, TheLittle83, TheLittle75) et formations professionnelles par Alkymya, finançables OPCO via nos partenaires certifiés Qualiopi.</description>
     <language>fr-FR</language>
     <lastBuildDate>Mon, 09 Nov 2026 09:00:00 +0100</lastBuildDate>
     <atom:link href="https://alkymya.co/rss.xml" rel="self" type="application/rss+xml"/>
@@ -33,7 +33,7 @@
     </item>
 
     <item>
-      <title>Sessions d'Ateliers &amp; Formations IA Certifiées Qualiopi</title>
+      <title>Sessions d'Ateliers &amp; Formations IA (OPCO via partenaires Qualiopi)</title>
       <link>https://alkymya.co/ateliers/</link>
       <guid isPermaLink="true">https://alkymya.co/ateliers/#qualopi-sessions</guid>
       <pubDate>Mon, 02 Nov 2026 09:00:00 +0100</pubDate>

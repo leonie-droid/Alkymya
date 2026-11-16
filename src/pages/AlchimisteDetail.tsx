@@ -414,7 +414,7 @@ export default function AlchimisteDetail() {
           Échangez avec <strong className="font-medium text-white">{person.name}</strong> et l'équipe Alkymya
         </h2>
         <p className="text-[1.05rem] text-white/85 max-w-[520px] mx-auto mb-8 leading-[1.7] font-light">
-          Un projet de formation Qualiopi, d'atelier pratique ou d'accompagnement ? Contactez directement notre collectif.
+          Un projet de formation IA (OPCO via nos partenaires certifiés Qualiopi), d'atelier pratique ou d'accompagnement ? Contactez directement notre collectif.
         </p>
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
           <Link

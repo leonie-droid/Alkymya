@@ -10,7 +10,7 @@ const MentionsLegales: React.FC = () => {
     <div className="bg-[#f4f6f9] text-[#1F4F6E] min-h-screen font-['Roboto',sans-serif] selection:bg-[#C06721] selection:text-white">
       <SEO
         title="Mentions Légales Agence IA & RGPD | Alkymya"
-        description="Mentions légales de l'agence IA Alkymya, experts IA France à Ozoir-la-Ferrière : conformité RGPD, hébergement cloud et co-création assistée par IA."
+        description="Mentions légales de l'agence IA Alkymya, experts IA France : conformité RGPD, hébergement cloud et co-création assistée par IA."
         keywords="agence IA, experts IA France, conformité IA Act, RGPD, studio création IA"
         canonicalPath="/mentions-legales"
         type="WebPage"

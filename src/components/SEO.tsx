@@ -95,7 +95,7 @@ export const SEO: React.FC<SEOProps> = ({
     "image": "https://res.cloudinary.com/dokzioyu4/image/upload/f_auto,q_auto,w_600,c_limit/v1758096912/logo_principal_bleu_gbnyuu.png",
     "@id": "https://alkymya.co/#organization",
     "url": "https://alkymya.co/",
-    "description": "Alkymya, studio IA et organisme de formation à Ozoir-la-Ferrière (Seine-et-Marne, France) : accompagnement intelligence artificielle, création d'agents IA sur mesure, stratégie SEO et GEO Google AI et formation IA Qualiopi OPCO.",
+    "description": "Alkymya, studio IA et organisme de formation en France : accompagnement intelligence artificielle, création d'agents IA sur mesure, stratégie SEO et GEO Google AI et formations OPCO via nos partenaires certifiés Qualiopi.",
     "founder": {
       "@type": "Person",
       "@id": "https://alkymya.co/#cyril-garnier",
@@ -114,12 +114,10 @@ export const SEO: React.FC<SEOProps> = ({
     ],
     "address": {
       "@type": "PostalAddress",
-      "addressLocality": "Ozoir-la-Ferrière",
-      "postalCode": "77330",
-      "addressRegion": "Seine-et-Marne",
+      "addressRegion": "Île-de-France",
       "addressCountry": "FR"
     },
-    "areaServed": ["Seine-et-Marne", "Île-de-France", "France"],
+    "areaServed": ["Île-de-France", "France"],
     "geo": {
       "@type": "GeoCoordinates",
       "latitude": 48.7667,
@@ -138,7 +136,7 @@ export const SEO: React.FC<SEOProps> = ({
     "@type": "EducationalOrganization",
     "name": "Alkymya",
     "alternateName": ["Alkymya.co", "Studio Alkymya"],
-    "description": "Alkymya, studio IA et organisme de formation à Ozoir-la-Ferrière : formation IA entreprise certifiée Qualiopi finançable OPCO, atelier IA pratique et accompagnement IA dirigeants et indépendants.",
+    "description": "Alkymya, studio IA et organisme de formation en France : formation IA entreprise finançable OPCO via nos partenaires certifiés Qualiopi, atelier IA pratique et accompagnement IA dirigeants et indépendants.",
     "url": "https://alkymya.co/",
     "founder": {
       "@id": "https://alkymya.co/#cyril-garnier"
@@ -151,9 +149,7 @@ export const SEO: React.FC<SEOProps> = ({
     ],
     "address": {
       "@type": "PostalAddress",
-      "addressLocality": "Ozoir-la-Ferrière",
-      "postalCode": "77330",
-      "addressRegion": "Seine-et-Marne",
+      "addressRegion": "Île-de-France",
       "addressCountry": "FR"
     }
   };

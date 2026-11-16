@@ -10,8 +10,8 @@ export default function Home() {
   return (
     <div className="bg-[#f4f6f9] text-[#1F4F6E] min-h-screen font-['Roboto',sans-serif] selection:bg-[#C06721] selection:text-white">
       <SEO
-        title="Formation IA en entreprise à Ozoir-la-Ferrière — Alkymya"
-        description="Alkymya, studio IA et organisme de formation à Ozoir-la-Ferrière : ateliers pratiques Qualiopi OPCO, création d'agents IA et accompagnement dirigeants."
+        title="Formation IA en entreprise en Île-de-France — Alkymya"
+        description="Alkymya, studio IA et organisme de formation : ateliers pratiques OPCO via nos partenaires certifiés Qualiopi, agents IA et accompagnement dirigeants."
         canonicalPath="/"
         ogImage="https://alkymya.co/og-image.jpg"
         type="LocalBusiness"
@@ -57,7 +57,7 @@ export default function Home() {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {[
             { value: "99,3%", label: "des participants recommandent nos ateliers", highlight: "Recommandation" },
-            { value: "175", label: "apprenants accompagnés et certifiés en 2024-2025", highlight: "Apprenants certifiés" },
+            { value: "175", label: "apprenants accompagnés et évalués en 2024-2025", highlight: "Apprenants formés" },
             { value: "+1,6 pts", label: "de progression moyenne sur les compétences IA", highlight: "Progression compétences" },
             { value: "90,9%", label: "se sentent plus performants dès le premier mois", highlight: "Performance directe" }
           ].map((stat, i) => (
@@ -93,7 +93,7 @@ export default function Home() {
           Ce que vous repartez avec <strong className="font-medium text-[#1F4F6E]">et nos trois formats</strong>
         </h2>
         <p className="text-[1.05rem] text-[#4a6a80] max-w-[680px] leading-[1.7] mb-12 font-normal">
-          Alkymya, studio IA et organisme de formation à Ozoir-la-Ferrière, privilégie 80 % de mise en pratique. Vos équipes repartent avec des agents IA connectés, une application web interne, une bibliothèque de prompts maîtres et une grille de conformité AI Act.
+          Alkymya, studio IA et organisme de formation, privilégie 80 % de mise en pratique. Vos équipes repartent avec des agents IA connectés, une application web interne, une bibliothèque de prompts maîtres et une grille de conformité AI Act.
         </p>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-7 mb-10">
@@ -103,10 +103,10 @@ export default function Home() {
                 Format 1 · 14 heures
               </span>
               <h3 className="text-[1.15rem] font-medium text-[#1F4F6E] mb-2">
-                Formation Core IA (Qualiopi &amp; OPCO)
+                Formation Core IA (OPCO via partenaires Qualiopi)
               </h3>
               <p className="text-[0.94rem] text-[#5a7a90] leading-[1.6] mb-4 font-normal">
-                Quatre demi-journées en présentiel en Île-de-France ou en classe virtuelle. Vos équipes maîtrisent prompt engineering avancé, rédaction, création visuelle et synthèse documentaire avec prise en charge OPCO jusqu'à 100 %.
+                Quatre demi-journées en présentiel en Île-de-France ou en classe virtuelle. Vos équipes maîtrisent prompt engineering avancé, rédaction, création visuelle et synthèse documentaire, finançables jusqu'à 100 % OPCO via nos partenaires certifiés Qualiopi.
               </p>
             </div>
             <Link to="/ateliers" className="text-[0.88rem] font-medium text-[#02ADAB] hover:text-[#037971] inline-flex items-center gap-1.5">
@@ -156,7 +156,7 @@ export default function Home() {
           <div className="flex items-start gap-3">
             <CheckCircle2 className="w-5 h-5 text-[#02ADAB] shrink-0 mt-0.5" />
             <p className="text-[0.95rem] text-[#4a6a80] leading-[1.6]">
-              <strong className="font-medium text-[#1F4F6E]">Preuves vérifiables :</strong> nos méthodes propulsent nos propres médias éditoriaux (thelittle77.fr, thelittle75.fr, thelittle83.fr — jusqu'à 275k vues/mois et cités dans Google AI Overviews).
+              <strong className="font-medium text-[#1F4F6E]">Preuves vérifiables :</strong> nos méthodes propulsent nos propres médias éditoriaux (thelittle77.fr, thelittle75.fr, thelittle83.fr — jusqu'à 275k vues/mois sur Facebook et cités dans Google AI Overviews).
             </p>
           </div>
           <Link to="/oeuvres" className="text-sm font-medium text-[#C06721] hover:underline shrink-0">

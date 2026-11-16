@@ -261,7 +261,7 @@ export default function Alchimistes() {
       <SEO
         title="Experts IA France & Fondateurs Agence IA | Alkymya"
         description="Experts IA France : Cyril Garnier, Léonie Egesipe, Véronique Landereau et Mariana Didier Laurent. Accompagnement IA dirigeants et indépendants."
-        keywords="experts IA France, accompagnement IA dirigeants et indépendants, agence IA, studio création IA, devis formation IA Qualiopi"
+        keywords="experts IA France, accompagnement IA dirigeants et indépendants, agence IA, studio création IA, formation IA OPCO"
         canonicalPath="/alchimistes"
         ogImage="https://res.cloudinary.com/dokzioyu4/image/upload/v1758192982/66cffcd8-15f1-415f-b423-9f428d63e22f_gqjd53.png"
         type="AboutPage"
@@ -348,7 +348,7 @@ export default function Alchimistes() {
           Accompagnement IA dirigeants <strong className="font-medium text-[#1F4F6E]">&amp; experts de terrain</strong>
         </h2>
         <p className="text-[1.05rem] text-[#4a6a80] max-w-[640px] leading-[1.7] mb-12 font-normal">
-          Chaque alchimiste de notre agence IA apporte un regard affûté pour l'accompagnement IA dirigeants et indépendants, la direction artistique et la formation Qualiopi.
+          Chaque alchimiste de notre agence IA apporte un regard affûté pour l'accompagnement IA dirigeants et indépendants, la direction artistique et les ateliers pratiques en entreprise.
         </p>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-7">

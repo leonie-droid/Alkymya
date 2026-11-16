@@ -87,7 +87,7 @@ const partenaires = [
     name: "INATEC",
     logo: "https://res.cloudinary.com/dokzioyu4/image/upload/v1777818451/WhatsApp_Image_2026-02-27_at_15.38.53_utvfxs.jpg",
     category: "Expertise Pédagogique",
-    outcome: "Portage Qualiopi et ingénierie pédagogique permettant un financement OPCO jusqu'à 100 % des formations."
+    outcome: "Organisme partenaire certifié Qualiopi assurant le portage administratif et permettant un financement OPCO jusqu'à 100 % des formations."
   },
   {
     name: "Morning",
@@ -103,7 +103,7 @@ export default function Partenaires() {
       <SEO
         title="Partenaires Formation IA & Grandes Écoles | Alkymya"
         description="Partenariats formation IA Alkymya : recrutement d'alternants avec Objectif Alternance, interventions en école (HETIC, Ynov, IÉSEG) et projets étudiants."
-        keywords="agence IA, accompagnement intelligence artificielle, formation IA entreprise certifiée Qualiopi, experts IA France, studio création IA"
+        keywords="agence IA, accompagnement intelligence artificielle, partenaires certifiés Qualiopi, formation IA finançable OPCO, experts IA France, studio création IA"
         canonicalPath="/partenaires"
         ogImage="https://res.cloudinary.com/dokzioyu4/image/upload/v1788507182/logo_objectif_code_u3otua.png"
         type="WebPage"
@@ -113,7 +113,7 @@ export default function Partenaires() {
       <header className="bg-[#1F4F6E] text-white py-20 px-6 sm:px-10 text-center relative overflow-hidden">
         <div className="max-w-[700px] mx-auto relative z-10">
           <p className="text-[0.85rem] tracking-[0.15em] uppercase text-[#02ADAB] mb-4 font-normal">
-            Agence IA &amp; Partenaires Formation Qualiopi
+            Agence IA &amp; Partenaires Certifiés Qualiopi
           </p>
 
           <h1 className="font-light text-[2.4rem] sm:text-[2.6rem] leading-[1.2] mb-5 text-white">
@@ -122,7 +122,7 @@ export default function Partenaires() {
           </h1>
 
           <p className="text-[1.05rem] sm:text-[1.1rem] text-white/75 max-w-[600px] mx-auto leading-[1.7] font-light mb-8">
-            Notre agence IA et studio création IA collabore avec grandes écoles, fondations et acteurs de l'alternance pour déployer l'accompagnement intelligence artificielle et la formation IA entreprise certifiée Qualiopi.
+            Notre agence IA et studio création IA collabore avec grandes écoles, fondations, acteurs de l'alternance et organisations partenaires certifiées Qualiopi (telles qu'INATEC) pour déployer l'accompagnement intelligence artificielle et des formations finançables OPCO.
           </p>
 
           {/* Stats Ribbon */}
@@ -156,7 +156,7 @@ export default function Partenaires() {
           Partenariat formation IA <strong className="font-medium text-[#1F4F6E]">et insertion en vedette</strong>
         </h2>
         <p className="text-[1.05rem] text-[#4a6a80] max-w-[640px] leading-[1.7] mb-10 font-normal">
-          Un accompagnement intelligence artificielle conjoint entre insertion professionnelle, alternance et atelier IA pratique certifié Qualiopi.
+          Un accompagnement intelligence artificielle conjoint entre insertion professionnelle, alternance et atelier IA pratique (finançable OPCO via nos partenaires certifiés Qualiopi).
         </p>
 
         <motion.div
@@ -182,7 +182,7 @@ export default function Partenaires() {
                     width={320}
                     height={160}
                     loading="lazy"
-                    alt="Logo Objectif Alternance — partenaire formation IA entreprise certifiée Qualiopi et insertion avec Alkymya"
+                    alt="Logo Objectif Alternance — partenaire formation IA et insertion professionnelle avec Alkymya"
                     className="max-h-full max-w-full object-contain group-hover:scale-105 transition-transform duration-300"
                     referrerPolicy="no-referrer"
                   />
@@ -302,7 +302,7 @@ export default function Partenaires() {
             </div>
             <h3 className="text-[1.15rem] font-medium text-[#1F4F6E] mb-3">Enseignement Supérieur &amp; Atelier IA</h3>
             <p className="text-[0.95rem] text-[#5a7a90] leading-[1.6] font-normal">
-              Modules certifiants, masterclasses et jurys d'innovation dans les écoles de commerce, de design et d'ingénieurs.
+              Modules pratiques, masterclasses et jurys d'innovation dans les écoles de commerce, de design et d'ingénieurs.
             </p>
           </div>
 
@@ -310,9 +310,9 @@ export default function Partenaires() {
             <div className="w-12 h-12 rounded-[10px] bg-[#02ADAB]/15 text-[#02ADAB] flex items-center justify-center mb-6">
               <Building2 className="w-6 h-6" />
             </div>
-            <h3 className="text-[1.15rem] font-medium text-[#1F4F6E] mb-3">Entreprises &amp; Formation IA Qualiopi</h3>
+            <h3 className="text-[1.15rem] font-medium text-[#1F4F6E] mb-3">Entreprises &amp; Financement OPCO</h3>
             <p className="text-[0.95rem] text-[#5a7a90] leading-[1.6] font-normal">
-              Acculturation des équipes métiers, création d'agents IA sur mesure, prototypage et formation IA finançable OPCO.
+              Acculturation des équipes métiers, création d'agents IA sur mesure, prototypage et formation IA finançable OPCO via nos partenaires certifiés Qualiopi.
             </p>
           </div>
 
@@ -337,7 +337,7 @@ export default function Partenaires() {
           Nouvelles Alliances
         </p>
         <h2 className="text-[2rem] font-light mb-3.5 text-white">
-          Bâtissons votre <strong className="font-medium text-white">programme formation IA Qualiopi</strong>
+          Bâtissons votre <strong className="font-medium text-white">programme de formation IA</strong>
         </h2>
         <p className="text-[1.05rem] text-white/85 max-w-[560px] mx-auto mb-8 leading-[1.7] font-light">
           Vous êtes une école, une université, une entreprise ou une institution ? Échangeons sur les synergies possibles pour former vos apprenants ou accélérer vos équipes.

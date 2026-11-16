@@ -10,7 +10,7 @@ export default function Logo({ className, variant = 'default' }: LogoProps) {
   return (
     <img 
       src={cloudinaryUrl("https://res.cloudinary.com/dokzioyu4/image/upload/v1758096912/logo_principal_bleu_gbnyuu.png", 600)} 
-      alt="Alkymya, studio IA et organisme de formation à Ozoir-la-Ferrière" 
+      alt="Alkymya, studio IA et organisme de formation" 
       width={150}
       height={38}
       className={cn(

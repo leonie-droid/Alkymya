@@ -18,7 +18,7 @@ const values = [
   {
     icon: Users,
     title: "Experts IA France & Intelligence Collective",
-    description: "Alkymya est un espace d'hybridation des savoirs où experts IA France, formateurs Qualiopi, artistes numériques et développeurs co-créent."
+    description: "Alkymya est un espace d'hybridation des savoirs où experts IA France, formateurs terrain, artistes numériques et développeurs co-créent."
   }
 ];
 
@@ -27,8 +27,8 @@ export default function JoinUs() {
     <div className="bg-[#f4f6f9] text-[#1F4F6E] min-h-screen font-['Roboto',sans-serif] selection:bg-[#C06721] selection:text-white">
       <SEO
         title="Rejoindre l'Agence IA Alkymya | Experts IA France"
-        description="Rejoignez notre studio création IA et agence IA : formateurs Qualiopi, créateurs d'agents IA sur mesure et experts IA France engagés."
-        keywords="agence IA, experts IA France, studio création IA, création d'agents IA sur mesure, devis formation IA Qualiopi"
+        description="Rejoignez notre studio création IA et agence IA : formateurs IA, créateurs d'agents IA sur mesure et experts IA France engagés."
+        keywords="agence IA, experts IA France, studio création IA, création d'agents IA sur mesure, formation IA OPCO"
         canonicalPath="/rejoindre"
         type="WebPage"
       />
@@ -46,7 +46,7 @@ export default function JoinUs() {
           </h1>
 
           <p className="text-[1.05rem] sm:text-[1.1rem] text-white/75 max-w-[600px] mx-auto leading-[1.7] font-light mb-8">
-            Notre studio création IA et agence IA recrute des experts IA France, formateurs Qualiopi et concepteurs d'agents IA sur mesure pour accélérer l'accompagnement intelligence artificielle.
+            Notre studio création IA et agence IA recrute des experts IA France, formateurs terrain et concepteurs d'agents IA sur mesure pour accélérer l'accompagnement intelligence artificielle.
           </p>
 
           {/* Stats Ribbon */}

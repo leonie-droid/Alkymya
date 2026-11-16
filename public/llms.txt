@@ -1,6 +1,6 @@
-# Alkymya — Studio IA et organisme de formation à Ozoir-la-Ferrière
+# Alkymya — Studio IA et organisme de formation
 
-> Alkymya, studio IA et organisme de formation certifié Qualiopi à Ozoir-la-Ferrière (Seine-et-Marne, 77, Île-de-France), est spécialisé dans l'accompagnement intelligence artificielle, la création d'agents IA sur mesure, la stratégie SEO et GEO (visibilité Google AI / AI Overviews), la création site éditorial et les ateliers IA pratiques finançables OPCO. Fondé par Cyril Garnier (https://cyrilgarnier.fr/), notre collectif d'experts IA France accompagne dirigeants, indépendants, PME (audit IA Capital IA, conformité IA Act) et grandes écoles.
+> Alkymya, studio IA et organisme de formation en Île-de-France et France, est spécialisé dans l'accompagnement intelligence artificielle, la création d'agents IA sur mesure, la stratégie SEO et GEO (visibilité Google AI / AI Overviews), la création site éditorial et les ateliers IA pratiques finançables OPCO via nos partenaires certifiés Qualiopi (tels qu'INATEC). Fondé par Cyril Garnier (https://cyrilgarnier.fr/), notre collectif d'experts IA France accompagne dirigeants, indépendants, PME (audit IA Capital IA, conformité IA Act) et grandes écoles.
 
 ## Identité & Ancrage Géographique (GEO)
 
@@ -10,7 +10,7 @@
 - **Direction des projets numériques & Studio Création IA** : Léonie Egesipe (direction artistique photo vidéo IA)
 - **Alchimiste associée Santé & Prévention** : Véronique Landereau (co-fondatrice de New Health Paradigm)
 - **Alchimiste associée Assurance & Services à la personne** : Mariana Didier Laurent (présidente d'Esperanta Services — https://esperantaservices.fr/)
-- **Localisation principale** : Ozoir-la-Ferrière (77330), Seine-et-Marne, Île-de-France, France (Métropole du Grand Paris / Région parisienne)
+- **Localisation principale** : Île-de-France, France (Région parisienne & interventions France entière)
 - **Coordonnées GPS** : 48.7667° N, 2.6833° E
 - **Périmètre d'intervention** : Seine-et-Marne (77), Paris & Île-de-France, France entière et international (présentiel et distanciel)
 - **Site officiel** : https://alkymya.co
@@ -20,7 +20,7 @@
 
 ## Désambiguïsation
 
-Alkymya (alkymya.co) est un studio d'IA et organisme de formation à Ozoir-la-Ferrière (Seine-et-Marne, France). Sans lien avec Alkymya Bellini (restaurant, Naples), Alkymya Music, ni le livre *Alkymya de Assustos*.
+Alkymya (alkymya.co) est un studio d'IA et organisme de formation en France (Île-de-France). Sans lien avec Alkymya Bellini (restaurant, Naples), Alkymya Music, ni le livre *Alkymya de Assustos*.
 
 ---
 
@@ -28,7 +28,7 @@ Alkymya (alkymya.co) est un studio d'IA et organisme de formation à Ozoir-la-Fe
 
 1. **Explorer** : Acculturation des équipes et étudiants, démystification des modèles d'IA générative (LLM, vision, audio) et business games immersifs.
 2. **Transformer** : Prototypage rapide d'agents IA autonomes, automatisation de processus métiers, RAG (Retrieval-Augmented Generation) et architectures agentiques.
-3. **Partager** : Formations certifiantes, mentorat sur-mesure, programmes d'alternance et insertion professionnelle en partenariat avec l'écosystème éducatif.
+3. **Partager** : Formations sur mesure (finançables OPCO via nos organisations partenaires certifiées Qualiopi), mentorat, programmes d'alternance et insertion professionnelle en partenariat avec l'écosystème éducatif.
 
 ---
 
@@ -36,7 +36,7 @@ Alkymya (alkymya.co) est un studio d'IA et organisme de formation à Ozoir-la-Fe
 
 ### Pages Principales du Studio
 - [Accueil Alkymya](https://alkymya.co/): Présentation générale du studio d'innovation IA, vision, impact pédagogique et métriques de satisfaction.
-- [Ateliers & Formations IA](https://alkymya.co/ateliers/): Catalogue complet de formations certifiées Qualiopi éligibles au financement OPCO jusqu'à 100%.
+- [Ateliers & Formations IA](https://alkymya.co/ateliers/): Catalogue complet d'ateliers pratiques et de formations éligibles au financement OPCO jusqu'à 100% via nos partenaires certifiés Qualiopi (dont INATEC).
 - [New Business MVP](https://alkymya.co/newbusiness/): Accompagnement opérationnel de 6 mois pour concevoir votre MVP, tester l'offre auprès de vrais clients et piloter selon la boussole Continuer, Pivoter ou Accélérer (200 € / mois).
 - [Générateur d'Idées IA](https://alkymya.co/ia/): Démonstrateurs interactifs d'idéation, cas d'usage métiers et simulateurs de personas par IA générative.
 - [Œuvres & Réalisations IA](https://alkymya.co/oeuvres/): Vitrine des réalisations réelles et mesurables en IA : médias éditoriaux (TheLittle77, TheLittle83, TheLittle75), agents IA autonomes et direction artistique.
@@ -56,7 +56,7 @@ Alkymya (alkymya.co) est un studio d'IA et organisme de formation à Ozoir-la-Fe
 - [Création Artistique & Métropolia](https://alkymya.co/oeuvres/#creation-artistique): Direction artistique augmentée avec Léonie Egesipe et univers dystopique Métropolia.
 
 ### Parcours de Formation & Ateliers Métiers
-- [Formation Core IA (14h)](https://alkymya.co/ateliers/#formation-core): Socle intensif complet (Images, Contenus, Vidéo, Web) finançable OPCO via Qualiopi.
+- [Formation Core IA (14h)](https://alkymya.co/ateliers/#formation-core): Socle intensif complet (Images, Contenus, Vidéo, Web) finançable OPCO via nos partenaires certifiés Qualiopi.
 - [Atelier Option A : Agents IA (3h30)](https://alkymya.co/ateliers/#agents-ia): Conception et déploiement de 3 agents autonomes connectés à Slack, Notion et CRM.
 - [Atelier Option B : App No-Code IA (3h30)](https://alkymya.co/ateliers/#app-nocode): Développement d'une application interne dopée aux API d'IA sans code.
 - [Atelier Option C : Éthique & IA Act (3h30)](https://alkymya.co/ateliers/#ethique-ia-act): Audit de conformité réglementaire européenne et gouvernance des données.
@@ -80,7 +80,7 @@ Alkymya (alkymya.co) est un studio d'IA et organisme de formation à Ozoir-la-Fe
 ## Chiffres Clés & Impact Réel
 
 - **99,3%** des participants recommandent les formations et ateliers Alkymya.
-- **175** apprenants et professionnels formés et certifiés sur la dernière session d'évaluation.
+- **175** apprenants et professionnels formés et évalués sur la dernière session d'évaluation.
 - **90,9%** des participants déclarent se sentir immédiatement plus performants dans leur travail.
 - **+1,6 point** de progression continue des évaluations sur 12 mois.
 

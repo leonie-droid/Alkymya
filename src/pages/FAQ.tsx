@@ -21,11 +21,11 @@ const faqCategories: FAQCategory[] = [
     items: [
       {
         question: "Qu'est-ce qu'Alkymya ?",
-        answer: "Alkymya (alkymya.co) est un studio d'intelligence artificielle et organisme de formation professionnelle certifié Qualiopi basé à Ozoir-la-Ferrière (Seine-et-Marne, Île-de-France), fondé par Cyril Garnier avec Léonie Egesipe. Nous accompagnons les dirigeants, indépendants, PME et grandes écoles dans la formation IA entreprise finançable OPCO, la création d'agents IA sur mesure, l'audit Capital IA et la stratégie SEO & GEO."
+        answer: "Alkymya (alkymya.co) est un studio d'intelligence artificielle et organisme de formation basé en Île-de-France (France), fondé par Cyril Garnier avec Léonie Egesipe. Nous accompagnons les dirigeants, indépendants, PME et grandes écoles dans la formation IA en entreprise (finançable OPCO via nos partenaires certifiés Qualiopi tels qu'INATEC), la création d'agents IA sur mesure, l'audit Capital IA et la stratégie SEO & GEO."
       },
       {
         question: "Alkymya, est-ce un restaurant ?",
-        answer: "Non. Alkymya (alkymya.co) est exclusivement un studio d'intelligence artificielle et organisme de formation professionnelle situé à Ozoir-la-Ferrière en France. Notre studio n'a aucun lien avec le restaurant napolitain « Alkymya Bellini », ni avec le groupe « Alkymya Music », ni avec l'ouvrage brésilien *Alkymya de Assustos*."
+        answer: "Non. Alkymya (alkymya.co) est exclusivement un studio d'intelligence artificielle et organisme de formation professionnelle en France. Notre studio n'a aucun lien avec le restaurant napolitain « Alkymya Bellini », ni avec le groupe « Alkymya Music », ni avec l'ouvrage brésilien *Alkymya de Assustos*."
       }
     ]
   },
@@ -94,7 +94,7 @@ const faqCategories: FAQCategory[] = [
       },
       {
         question: "Qu'est-ce que le programme \"Formation Core IA\" (Best Value) ?",
-        answer: "La Formation Core est notre programme complet de 14h réparties sur 4 demi-journées pour maîtriser la stack IA (prompt engineering avancé, studio graphique & branding, rédaction stratégique, synthèse décisionnelle et prototypage audiovisuel). Elle est certifiée Qualiopi via notre partenaire INATEC et finançable jusqu'à 100% par votre OPCO."
+        answer: "La Formation Core est notre programme complet de 14h réparties sur 4 demi-journées pour maîtriser la stack IA (prompt engineering avancé, studio graphique & branding, rédaction stratégique, synthèse décisionnelle et prototypage audiovisuel). Alkymya n'étant pas certifié Qualiopi en nom propre, nous travaillons avec des organisations partenaires certifiées Qualiopi (comme INATEC) pour la rendre finançable jusqu'à 100% par votre OPCO."
       },
       {
         question: "En quoi consistent les options \"Agents IA\" et \"App No-Code\" ?",
@@ -128,7 +128,7 @@ const faqCategories: FAQCategory[] = [
       },
       {
         question: "Les formations Alkymya sont-elles finançables par un OPCO ?",
-        answer: "Oui ! Portée en partenariat avec l'école INATEC et disposant de la certification d'État Qualiopi, votre formation chez Alkymya est finançable jusqu'à 100% par votre OPCO, selon vos droits et votre budget de formation disponible."
+        answer: "Oui ! Alkymya n'est pas certifié Qualiopi en nom propre : nous collaborons avec des organisations partenaires certifiées Qualiopi (telles que l'école INATEC). Grâce à ce portage partenaire, votre formation est finançable jusqu'à 100% par votre OPCO, selon vos droits et votre budget de formation disponible."
       },
       {
         question: "Quels établissements et entreprises font confiance à Alkymya ?",
@@ -294,9 +294,9 @@ export default function FAQ() {
   return (
     <div className="bg-[#f4f6f9] text-[#1F4F6E] min-h-screen font-['Roboto',sans-serif] selection:bg-[#C06721] selection:text-white">
       <SEO
-        title="FAQ Agence IA : Qualiopi, OPCO & Agents IA | Alkymya"
-        description="Réponses sur notre formation IA entreprise certifiée Qualiopi, financement OPCO, création d'agents IA sur mesure et accompagnement dirigeants."
-        keywords="formation IA entreprise certifiée Qualiopi, formation IA finançable OPCO, création d'agents IA sur mesure, agence IA, accompagnement IA dirigeants et indépendants"
+        title="FAQ Agence IA : Financement OPCO & Agents IA | Alkymya"
+        description="Réponses sur nos formations IA entreprise finançables OPCO via nos partenaires certifiés Qualiopi, création d'agents IA et accompagnement dirigeants."
+        keywords="formation IA finançable OPCO, partenaires certifiés Qualiopi, création d'agents IA sur mesure, agence IA, accompagnement IA dirigeants et indépendants"
         canonicalPath="/faq"
         type="FAQPage"
         faqData={flattenedFaq}
@@ -306,14 +306,14 @@ export default function FAQ() {
       <header className="bg-[#1F4F6E] text-white py-20 px-6 sm:px-10 text-center relative overflow-hidden">
         <div className="max-w-[700px] mx-auto relative z-10">
           <p className="text-[0.85rem] tracking-[0.15em] uppercase text-[#02ADAB] mb-4 font-normal">
-            FAQ Agence IA · Qualiopi, OPCO &amp; Agents IA
+            FAQ Agence IA · Financement OPCO &amp; Agents IA
           </p>
           <h1 className="font-light text-[2.4rem] sm:text-[2.6rem] leading-[1.2] mb-5 text-white">
-            FAQ agence IA : Qualiopi, OPCO &amp;<br />
+            FAQ agence IA : OPCO, partenaires Qualiopi &amp;<br />
             <strong className="font-medium text-white">agents IA sur mesure.</strong>
           </h1>
           <p className="text-[1.05rem] sm:text-[1.1rem] text-white/75 max-w-[620px] mx-auto leading-[1.7] font-light mb-8">
-            Toutes les réponses sur la formation IA entreprise certifiée Qualiopi, la formation IA finançable OPCO, la création d'agents IA sur mesure et l'accompagnement IA dirigeants et indépendants.
+            Toutes les réponses sur l'accompagnement IA dirigeants et indépendants, la création d'agents IA sur mesure et le financement OPCO via nos organisations partenaires certifiées Qualiopi.
           </p>
 
           <div className="pt-8 border-t border-white/10 grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
@@ -326,8 +326,8 @@ export default function FAQ() {
               <div className="text-xs text-white/70 font-normal uppercase tracking-wider">Transparence &amp; Clarté</div>
             </div>
             <div>
-              <div className="text-2xl sm:text-3xl font-light text-white mb-0.5">Qualiopi</div>
-              <div className="text-xs text-white/70 font-normal uppercase tracking-wider">Conformité OPCO</div>
+              <div className="text-2xl sm:text-3xl font-light text-white mb-0.5">OPCO</div>
+              <div className="text-xs text-white/70 font-normal uppercase tracking-wider">Via partenaires Qualiopi</div>
             </div>
             <div>
               <div className="text-2xl sm:text-3xl font-light text-[#02ADAB] mb-0.5">&lt; 24h</div>
@@ -376,7 +376,7 @@ export default function FAQ() {
       {/* CTA FINAL : BANNIÈRE ORANGE #C06721 */}
       <div className="bg-[#C06721] text-white text-center py-[70px] px-10">
         <h2 className="text-[2rem] font-light mb-3.5 text-white">
-          Demandez votre <strong className="font-medium text-white">devis formation IA Qualiopi</strong>
+          Demandez votre <strong className="font-medium text-white">devis formation IA &amp; OPCO</strong>
         </h2>
         <p className="text-[1.05rem] text-white/80 max-w-[540px] mx-auto mb-8 leading-[1.7] font-light">
           Contactez-nous directement. Nous prenons le temps d'étudier votre cas spécifique et de vous orienter vers la solution la plus adaptée.

@@ -30,7 +30,7 @@ function generatePageBody(route: RouteData): string {
     <header style="background: #ffffff; border-bottom: 1px solid #e2e8f0; padding: 1rem 1.5rem; position: sticky; top: 0; z-index: 50;">
       <div style="max-width: 1280px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem;">
         <a href="/" aria-label="Accueil Alkymya" style="display: flex; align-items: center; text-decoration: none;">
-          <img src="${cloudinaryUrl('https://res.cloudinary.com/dokzioyu4/image/upload/v1758096912/logo_principal_bleu_gbnyuu.png', 600)}" alt="Alkymya, studio IA et organisme de formation à Ozoir-la-Ferrière" width="150" height="38" style="height: 38px; width: auto;" />
+          <img src="${cloudinaryUrl('https://res.cloudinary.com/dokzioyu4/image/upload/v1758096912/logo_principal_bleu_gbnyuu.png', 600)}" alt="Alkymya, studio IA et organisme de formation" width="150" height="38" style="height: 38px; width: auto;" />
         </a>
         <nav aria-label="Navigation principale" style="display: flex; flex-wrap: wrap; gap: 1rem; font-size: 0.8125rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em;">
           ${navItems.map(item => `
@@ -116,7 +116,7 @@ function generatePageBody(route: RouteData): string {
     <footer style="background: #1F4F6E; color: #ffffff; padding: 3rem 1.5rem; margin-top: 4rem; font-family: system-ui, -apple-system, sans-serif;">
       <div style="max-width: 1200px; margin: 0 auto; display: flex; flex-direction: column; align-items: center; justify-content: space-between; gap: 1.5rem; text-align: center;">
         <p style="margin: 0; font-size: 0.875rem; color: #cbd5e1;">
-          © 2026 <strong>Alkymya.co</strong> — Alkymya, studio IA et organisme de formation à Ozoir-la-Ferrière, Seine-et-Marne (77), France.
+          © 2026 <strong>Alkymya.co</strong> — Alkymya, studio IA et organisme de formation en Île-de-France, France.
         </p>
         <nav aria-label="Liens de pied de page" style="display: flex; flex-wrap: wrap; justify-content: center; gap: 1.5rem; font-size: 0.8125rem; text-transform: uppercase; letter-spacing: 0.05em; font-weight: 600;">
           <a href="https://cyrilgarnier.fr/" target="_blank" rel="noopener noreferrer" style="color: #02ADAB; text-decoration: none;">Voir le site de Cyril Garnier →</a>
@@ -148,11 +148,11 @@ const breadcrumbNames: Record<string, string> = {
 const faqQuestions = [
   {
     name: "Qu'est-ce qu'Alkymya ?",
-    answer: "Alkymya (alkymya.co) est un studio IA et organisme de formation professionnelle certifié Qualiopi basé à Ozoir-la-Ferrière en Seine-et-Marne (77), fondé par Cyril Garnier et Léonie Egesipe. Nous formons les équipes en entreprise, concevons des agents IA sur mesure et accompagnons les dirigeants dans le programme New Business MVP."
+    answer: "Alkymya (alkymya.co) est un studio IA et organisme de formation professionnelle basé en Île-de-France (France), fondé par Cyril Garnier et Léonie Egesipe. Nous formons les équipes en entreprise (avec financement OPCO via nos partenaires certifiés Qualiopi), concevons des agents IA sur mesure et accompagnons les dirigeants dans le programme New Business MVP."
   },
   {
     name: "Alkymya, est-ce un restaurant ?",
-    answer: "Non. Alkymya (alkymya.co) est un studio d'intelligence artificielle et organisme de formation professionnelle en France (Ozoir-la-Ferrière, Seine-et-Marne), sans aucun lien avec le restaurant Alkymya Bellini à Naples, le groupe Alkymya Music ni le livre brésilien Alkymya de Assustos."
+    answer: "Non. Alkymya (alkymya.co) est un studio d'intelligence artificielle et organisme de formation professionnelle en France (Île-de-France), sans aucun lien avec le restaurant Alkymya Bellini à Naples, le groupe Alkymya Music ni le livre brésilien Alkymya de Assustos."
   },
   {
     name: "Quel est le format des ateliers d'agents IA ?",
@@ -160,7 +160,7 @@ const faqQuestions = [
   },
   {
     name: "Les formations Alkymya sont-elles finançables par un OPCO ?",
-    answer: "Oui ! Portée en partenariat avec l'école INATEC et disposant de la certification d'État Qualiopi, votre formation chez Alkymya est finançable jusqu'à 100% par votre OPCO, selon vos droits et votre budget de formation disponible."
+    answer: "Oui ! Alkymya n'est pas certifié Qualiopi directement : nous travaillons avec des organisations partenaires certifiées Qualiopi (telles que l'école INATEC). Grâce à ce partenariat, votre formation est finançable jusqu'à 100% par votre OPCO, selon vos droits et votre budget disponible."
   },
   {
     name: "Qu'est-ce que l'offre New Business MVP (studio new business) ?",
@@ -168,7 +168,7 @@ const faqQuestions = [
   },
   {
     name: "Qu'est-ce que le programme Formation Core IA (Best Value) ?",
-    answer: "La Formation Core est notre programme complet de 14h réparties sur 4 demi-journées pour maîtriser la stack IA (prompt engineering avancé, studio graphique & branding, rédaction stratégique et prototypage). Finançable jusqu'à 100% OPCO via Qualiopi."
+    answer: "La Formation Core est notre programme complet de 14h réparties sur 4 demi-journées pour maîtriser la stack IA (prompt engineering avancé, studio graphique & branding, rédaction stratégique et prototypage). Finançable jusqu'à 100% OPCO via nos partenaires certifiés Qualiopi."
   },
   {
     name: "Quels établissements et entreprises font confiance à Alkymya ?",
@@ -271,7 +271,7 @@ function buildJsonLd(route: RouteData, canonicalUrl: string) {
     "url": "https://alkymya.co/",
     "logo": cloudinaryUrl("https://res.cloudinary.com/dokzioyu4/image/upload/v1758096912/logo_principal_bleu_gbnyuu.png", 600),
     "image": "https://alkymya.co/og-image.jpg",
-    "description": "Alkymya, studio IA et organisme de formation certifié Qualiopi à Ozoir-la-Ferrière (77) : accompagnement intelligence artificielle, création d'agents IA sur mesure, stratégie SEO et GEO Google AI.",
+    "description": "Alkymya, studio IA et organisme de formation en France : accompagnement intelligence artificielle, création d'agents IA sur mesure, stratégie SEO et GEO Google AI et formations finançables OPCO via nos partenaires certifiés Qualiopi.",
     "founder": {
       "@id": "https://alkymya.co/#cyril-garnier"
     },
@@ -279,10 +279,7 @@ function buildJsonLd(route: RouteData, canonicalUrl: string) {
     "email": "contact@alkymya.co",
     "address": {
       "@type": "PostalAddress",
-      "streetAddress": "Ozoir-la-Ferrière",
-      "addressLocality": "Ozoir-la-Ferrière",
-      "postalCode": "77330",
-      "addressRegion": "Seine-et-Marne",
+      "addressRegion": "Île-de-France",
       "addressCountry": "FR"
     },
     "geo": {
@@ -336,7 +333,7 @@ function buildJsonLd(route: RouteData, canonicalUrl: string) {
       "@type": "Course",
       "@id": "https://alkymya.co/ateliers/#course-ia",
       "name": "Formations & Ateliers Pratiques en Intelligence Artificielle Générative",
-      "description": "Formations opérationnelles et ateliers certifiés Qualiopi en IA générative, création d'agents autonomes, prompt engineering et conformité européenne de l'IA Act en France.",
+      "description": "Formations opérationnelles et ateliers pratiques en IA générative, création d'agents autonomes, prompt engineering et conformité européenne de l'IA Act en France (éligibles OPCO via nos partenaires certifiés Qualiopi).",
       "provider": {
         "@id": "https://alkymya.co/#organization"
       },
@@ -344,7 +341,7 @@ function buildJsonLd(route: RouteData, canonicalUrl: string) {
         {
           "@type": "CourseInstance",
           "name": "Formation Core IA (14h - 4 demi-journées)",
-          "description": "Programme intensif certifié Qualiopi éligible OPCO pour maîtriser la stack d'IA générative et de prompt engineering.",
+          "description": "Programme intensif éligible OPCO via nos partenaires certifiés Qualiopi (tels qu'INATEC) pour maîtriser la stack d'IA générative et de prompt engineering.",
           "courseMode": ["blended", "onsite", "online"],
           "courseWorkload": "PT14H",
           "instructor": [

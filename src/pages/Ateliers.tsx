@@ -31,7 +31,7 @@ export default function Ateliers() {
     <div className="bg-[#f4f6f9] text-[#1F4F6E] min-h-screen font-['Roboto',sans-serif] selection:bg-[#C06721] selection:text-white">
       <SEO
         title="Ateliers IA pour équipes en Île-de-France — Alkymya"
-        description="Alkymya, studio IA et organisme de formation à Ozoir-la-Ferrière : ateliers pratiques Qualiopi finançables OPCO, agents IA métiers et audit Capital IA."
+        description="Alkymya, studio IA en France : ateliers pratiques, agents IA métiers, audit Capital IA et financement OPCO via partenaires certifiés Qualiopi."
         canonicalPath="/ateliers"
         ogImage="https://alkymya.co/og-ateliers.jpg"
         type="Course"
@@ -41,14 +41,14 @@ export default function Ateliers() {
       <header className="bg-[#1F4F6E] text-white py-20 px-6 sm:px-10 text-center relative overflow-hidden">
         <div className="max-w-[700px] mx-auto relative z-10">
           <p className="text-[0.85rem] tracking-[0.15em] uppercase text-[#02ADAB] mb-4 font-normal">
-            Atelier IA pratique &amp; formation IA entreprise certifiée Qualiopi
+            Atelier IA pratique &amp; formation IA entreprise
           </p>
           <h1 className="font-light text-[2.4rem] sm:text-[2.6rem] leading-[1.2] mb-5 text-white">
-            Atelier IA pratique &amp; formation Qualiopi :<br />
+            Atelier IA pratique &amp; formation en entreprise :<br />
             <strong className="font-medium text-white">repartez avec du réel.</strong>
           </h1>
           <p className="text-[1.05rem] sm:text-[1.1rem] text-white/75 max-w-[620px] mx-auto leading-[1.7] font-light">
-            Formation IA finançable OPCO, audit IA PME (Capital IA), créer son agent IA métier, valorisation d'archives photo et vidéo et conformité IA Act sans slides théoriques.
+            Formation IA finançable OPCO via nos partenaires certifiés Qualiopi, audit IA PME (Capital IA), créer son agent IA métier, valorisation d'archives photo et vidéo et conformité IA Act sans slides théoriques.
           </p>
         </div>
       </header>
@@ -140,7 +140,7 @@ export default function Ateliers() {
 
             <div className="p-5 sm:px-7 border-t border-[rgba(31,79,110,0.07)]">
               <div className="text-[1.4rem] font-medium text-[#1F4F6E] mb-1">1 500 € HT</div>
-              <div className="text-[0.8rem] text-[#7a9ab0] mb-4">Financement OPCO possible selon statut</div>
+              <div className="text-[0.8rem] text-[#7a9ab0] mb-4">Financement OPCO possible via partenaires certifiés Qualiopi</div>
               <Link
                 to="/contact"
                 className="block text-center bg-[#1F4F6E] hover:bg-[#02ADAB] text-white py-3 px-5 rounded-[8px] text-[0.9rem] font-medium no-underline transition-colors"
@@ -328,13 +328,13 @@ export default function Ateliers() {
       <div className="bg-white py-[70px]" id="collectifs">
         <div className="max-w-[1100px] mx-auto px-6">
           <p className="text-[0.75rem] tracking-[0.18em] uppercase text-[#02ADAB] mb-2.5 font-medium">
-            Formation IA entreprise certifiée Qualiopi
+            Formation IA entreprise · Financement OPCO via partenaires Qualiopi
           </p>
           <h2 className="text-[1.9rem] font-light mb-3.5 text-[#1F4F6E] leading-tight">
             Formation IA finançable OPCO <strong className="font-medium text-[#1F4F6E]">pour vos équipes</strong>
           </h2>
-          <p className="text-[1.05rem] text-[#4a6a80] max-w-[640px] leading-[1.7] mb-12 font-normal">
-            Formation IA entreprise certifiée Qualiopi, finançable OPCO jusqu'à 100%. 80% d'atelier IA pratique pour créer son agent IA métier et assurer votre conformité IA Act.
+          <p className="text-[1.05rem] text-[#4a6a80] max-w-[680px] leading-[1.7] mb-12 font-normal">
+            Alkymya n'est pas certifié Qualiopi en nom propre : nous collaborons avec des organisations partenaires certifiées Qualiopi (telles qu'INATEC) pour permettre un financement OPCO jusqu'à 100 %. 80 % d'atelier IA pratique pour créer son agent IA métier et assurer votre conformité IA Act.
           </p>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-start">
@@ -361,7 +361,7 @@ export default function Ateliers() {
 
               <div className="inline-flex items-center gap-2 bg-[rgba(3,121,113,0.1)] text-[#037971] py-2.5 px-4 rounded-[8px] text-[0.88rem] font-medium mb-6">
                 <CheckCircle2 className="w-4 h-4 text-[#037971] shrink-0" />
-                <span>Certification Qualiopi · Financement OPCO jusqu'à 100%</span>
+                <span>Partenaires certifiés Qualiopi · Financement OPCO jusqu'à 100 %</span>
               </div>
 
               <p className="text-[0.9rem] text-[#7a9ab0] leading-[1.6]">
@@ -377,9 +377,9 @@ export default function Ateliers() {
                     Core · 14h
                   </span>
                   <div>
-                    <h3 className="text-[0.95rem] font-medium text-[#1F4F6E]">Formation Core IA — Socle entreprise Qualiopi</h3>
+                    <h3 className="text-[0.95rem] font-medium text-[#1F4F6E]">Formation Core IA — Socle entreprise</h3>
                     <div className="text-[0.85rem] text-[#7a9ab0] leading-[1.5] mt-0.5">
-                      Prompts maîtres, workflows IA, outils opérationnels. Le socle indispensable — finançable OPCO et praticable dès le lendemain.
+                      Prompts maîtres, workflows IA, outils opérationnels. Le socle indispensable — finançable OPCO via nos partenaires certifiés Qualiopi et praticable dès le lendemain.
                     </div>
                   </div>
                 </li>
@@ -425,7 +425,7 @@ export default function Ateliers() {
                 to="/contact"
                 className="block text-center no-underline bg-[#1F4F6E] hover:bg-[#02ADAB] text-white py-3.5 px-6 rounded-[8px] font-medium text-[0.95rem] transition-colors"
               >
-                Demander un devis formation IA Qualiopi →
+                Demander un devis formation IA &amp; OPCO →
               </Link>
             </div>
           </div>
@@ -435,16 +435,16 @@ export default function Ateliers() {
       {/* CTA FINAL — Exact Maquette Orange #C06721 */}
       <div className="bg-[#C06721] text-white text-center py-[70px] px-10">
         <h2 className="text-[2rem] font-light mb-3.5 text-white">
-          Quel atelier IA pratique ou <strong className="font-medium text-white">formation Qualiopi OPCO vous convient ?</strong>
+          Quel atelier IA pratique ou <strong className="font-medium text-white">formation finançable OPCO vous convient ?</strong>
         </h2>
-        <p className="text-[1.05rem] text-white/80 max-w-[480px] mx-auto mb-8 leading-[1.7] font-light">
-          On fait un point de 30 minutes sur votre audit IA PME ou formation entreprise. Vous repartez avec une recommandation claire.
+        <p className="text-[1.05rem] text-white/80 max-w-[520px] mx-auto mb-8 leading-[1.7] font-light">
+          On fait un point de 30 minutes sur votre audit IA PME, votre formation entreprise ou son financement OPCO via nos partenaires certifiés Qualiopi.
         </p>
         <Link
           to="/contact"
           className="inline-block bg-white text-[#C06721] text-[0.95rem] font-medium py-3.5 px-8 rounded-[8px] no-underline tracking-[0.04em] transition-transform duration-150 hover:-translate-y-0.5 hover:shadow-[0_6px_20px_rgba(0,0,0,0.15)]"
         >
-          Demander un devis Qualiopi →
+          Demander un devis formation →
         </Link>
       </div>
     </div>
