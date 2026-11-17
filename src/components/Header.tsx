@@ -30,52 +30,51 @@ export default function Header() {
 
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-background/80 backdrop-blur-md">
-      <div className="w-full flex h-20 items-center justify-between px-3 sm:px-4 2xl:px-6 gap-2.5">
-        {/* Left & Nav: shifted left to remove empty space before logo while preserving original font sizes */}
-        <div className="flex items-center gap-3 lg:gap-4 2xl:gap-6 min-w-0">
-          <div className="shrink-0 z-10">
-            <Link to="/" className="flex items-center">
-              <Logo className="h-8 md:h-10" />
-            </Link>
-          </div>
-
-          <nav className="hidden lg:flex items-center gap-2 lg:gap-2.5 xl:gap-3 2xl:gap-5 min-w-0">
-            {navItems.map((item) => {
-              const isActive =
-                item.href === '/'
-                  ? location.pathname === '/'
-                  : location.pathname === item.href ||
-                    location.pathname.startsWith(`${item.href}/`);
-
-              return (
-                <Link
-                  key={item.name}
-                  to={item.href}
-                  className={cn(
-                    "text-[10px] lg:text-[11px] xl:text-[12px] uppercase tracking-normal 2xl:tracking-wider font-bold transition-all hover:text-accent relative group py-2 whitespace-nowrap",
-                    isActive ? "text-accent" : "text-muted-foreground"
-                  )}
-                >
-                  {item.name}
-                  <span
-                    className={cn(
-                      "absolute bottom-0 left-0 h-0.5 bg-accent transition-all group-hover:w-full",
-                      isActive ? "w-full" : "w-0"
-                    )}
-                  />
-                </Link>
-              );
-            })}
-          </nav>
+      <div className="max-w-[1560px] mx-auto w-full flex h-20 items-center justify-between px-4 2xl:px-6 gap-2 xl:gap-3 2xl:gap-5">
+        {/* Left: Logo */}
+        <div className="shrink-0 z-10 flex items-center">
+          <Link to="/" className="flex items-center">
+            <Logo className="h-8 md:h-9 2xl:h-10" />
+          </Link>
         </div>
 
-        {/* Right column: Newsletter button, Socials & Mobile Menu */}
-        <div className="shrink-0 flex items-center gap-3 z-10 justify-end">
+        {/* Center: Navigation tabs centered & spaced to optimize available width */}
+        <nav className="hidden lg:flex flex-1 items-center justify-center gap-2 lg:gap-2.5 xl:gap-3 2xl:gap-5 min-w-0 px-1 xl:px-2">
+          {navItems.map((item) => {
+            const isActive =
+              item.href === '/'
+                ? location.pathname === '/'
+                : location.pathname === item.href ||
+                  location.pathname.startsWith(`${item.href}/`);
+
+            return (
+              <Link
+                key={item.name}
+                to={item.href}
+                className={cn(
+                  "text-[10px] lg:text-[11px] xl:text-[12px] uppercase tracking-normal 2xl:tracking-wider font-bold transition-all hover:text-accent relative group py-2 whitespace-nowrap",
+                  isActive ? "text-accent" : "text-muted-foreground"
+                )}
+              >
+                {item.name}
+                <span
+                  className={cn(
+                    "absolute bottom-0 left-0 h-0.5 bg-accent transition-all group-hover:w-full",
+                    isActive ? "w-full" : "w-0"
+                  )}
+                />
+              </Link>
+            );
+          })}
+        </nav>
+
+        {/* Right: Newsletter button, Socials & Mobile Menu */}
+        <div className="shrink-0 flex items-center gap-2.5 sm:gap-3 z-10 justify-end">
           <div className="hidden sm:flex items-center shrink-0">
             <NewsletterButton variant="header" size="sm" label="Newsletter" />
           </div>
 
-          <div className="hidden xl:flex items-center gap-3 text-muted-foreground border-l border-border pl-3 shrink-0">
+          <div className="hidden xl:flex items-center gap-2.5 2xl:gap-3.5 text-muted-foreground border-l border-border pl-2.5 2xl:pl-3.5 shrink-0">
             <a
               href="https://www.instagram.com/alkymya_cyril"
               target="_blank"
