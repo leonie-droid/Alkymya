@@ -142,7 +142,7 @@ const breadcrumbNames: Record<string, string> = {
   '/ressources/business-game': 'Business Game',
   '/ressources/alkymya-x-inatec': 'Alkymya x Inatec',
   '/ressources/partenaires': 'Partenaires',
-  '/ressources/partenaires/awa-cloud': 'AWA Cloud',
+  '/ressources/partenaires/awa-cloud': 'AWACLOUD',
   '/partenaires': 'Nos Partenaires',
   '/contact': 'Contact',
   '/faq': 'FAQ',

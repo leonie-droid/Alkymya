@@ -107,14 +107,14 @@ export const resourceCategories: ResourceCategory[] = [
     h1Lead: "Les outils et acteurs avec lesquels",
     h1Accent: "nous travaillons.",
     description:
-      "Technologie, formation, territoire : un écosystème choisi pour sa fiabilité, sa souveraineté et son utilité concrète, dont AWA Cloud.",
+      "Un partenaire technologique choisi pour sa fiabilité, sa souveraineté et son utilité concrète : AWACLOUD.",
     seoTitle: "Nos Partenaires IA & Technologie | Ressources Alkymya",
     seoDescription:
-      "Découvrez l'écosystème de partenaires technologiques et pédagogiques d'Alkymya : AWA Cloud, INATEC et les laboratoires éditoriaux TheLittle.",
+      "Découvrez AWACLOUD, le partenaire technologique d'Alkymya : bibliothèques et logiciels français pour convertir vos documents localement.",
     keywords:
-      "partenaires IA France, AWA Cloud, INATEC Qualiopi, TheLittle SEO GEO, ressources partenaires Alkymya",
+      "partenaires IA France, AWACLOUD, RAG local, souveraineté documentaire, ressources partenaires Alkymya",
     cardSummary:
-      "Les outils et acteurs recommandés par Alkymya : AWA Cloud (documents & RAG local), INATEC et TheLittle."
+      "Le partenaire technologique recommandé par Alkymya : AWACLOUD (documents & RAG local)."
   }
 ];
 

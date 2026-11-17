@@ -30,52 +30,78 @@ export default function Header() {
 
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-background/80 backdrop-blur-md">
-      <div className="max-w-[1440px] mx-auto flex h-20 items-center justify-between px-6 lg:px-10 relative">
-        {/* Left column: Logo */}
-        <div className="flex-none z-10">
-          <Link to="/" className="flex items-center">
-            <Logo className="h-8 md:h-10" />
-          </Link>
+      <div className="w-full flex h-20 items-center justify-between px-3 sm:px-4 2xl:px-6 gap-2.5">
+        {/* Left & Nav: shifted left to remove empty space before logo while preserving original font sizes */}
+        <div className="flex items-center gap-3 lg:gap-4 2xl:gap-6 min-w-0">
+          <div className="shrink-0 z-10">
+            <Link to="/" className="flex items-center">
+              <Logo className="h-8 md:h-10" />
+            </Link>
+          </div>
+
+          <nav className="hidden lg:flex items-center gap-2 lg:gap-2.5 xl:gap-3 2xl:gap-5 min-w-0">
+            {navItems.map((item) => {
+              const isActive =
+                item.href === '/'
+                  ? location.pathname === '/'
+                  : location.pathname === item.href ||
+                    location.pathname.startsWith(`${item.href}/`);
+
+              return (
+                <Link
+                  key={item.name}
+                  to={item.href}
+                  className={cn(
+                    "text-[10px] lg:text-[11px] xl:text-[12px] uppercase tracking-normal 2xl:tracking-wider font-bold transition-all hover:text-accent relative group py-2 whitespace-nowrap",
+                    isActive ? "text-accent" : "text-muted-foreground"
+                  )}
+                >
+                  {item.name}
+                  <span
+                    className={cn(
+                      "absolute bottom-0 left-0 h-0.5 bg-accent transition-all group-hover:w-full",
+                      isActive ? "w-full" : "w-0"
+                    )}
+                  />
+                </Link>
+              );
+            })}
+          </nav>
         </div>
 
-        {/* Center column: Navigation, widely spaced */}
-        <nav className="hidden lg:flex items-center justify-center gap-3 lg:gap-6 xl:gap-8 mx-auto px-4">
-          {navItems.map((item) => (
-            <Link
-              key={item.name}
-              to={item.href}
-              className={cn(
-                "text-[10px] lg:text-[11px] xl:text-[12px] uppercase tracking-wide xl:tracking-widest font-bold transition-all hover:text-accent relative group py-2 whitespace-nowrap",
-                location.pathname === item.href ? "text-accent" : "text-muted-foreground"
-              )}
-            >
-              {item.name}
-              <span className={cn(
-                "absolute bottom-0 left-0 h-0.5 bg-accent transition-all group-hover:w-full",
-                location.pathname === item.href ? "w-full" : "w-0"
-              )} />
-            </Link>
-          ))}
-        </nav>
-
-        {/* Right column: Socials, Newsletter button & Mobile Menu */}
-        <div className="flex-none flex items-center gap-3 sm:gap-4 z-10 min-w-[40px] justify-end">
-          <div className="hidden sm:flex items-center">
+        {/* Right column: Newsletter button, Socials & Mobile Menu */}
+        <div className="shrink-0 flex items-center gap-3 z-10 justify-end">
+          <div className="hidden sm:flex items-center shrink-0">
             <NewsletterButton variant="header" size="sm" label="Newsletter" />
           </div>
-          
-          <div className="hidden xl:flex items-center gap-4 text-muted-foreground border-l border-border pl-4 ml-1">
-            <a href="https://www.instagram.com/alkymya_cyril" target="_blank" rel="noopener noreferrer">
+
+          <div className="hidden xl:flex items-center gap-3 text-muted-foreground border-l border-border pl-3 shrink-0">
+            <a
+              href="https://www.instagram.com/alkymya_cyril"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Instagram Alkymya"
+            >
               <Instagram className="h-4 w-4 hover:text-accent cursor-pointer transition-colors" />
             </a>
-            <a href="https://www.youtube.com/channel/UCon0sR5rVfTCuHOWG7LhAig" target="_blank" rel="noopener noreferrer">
+            <a
+              href="https://www.youtube.com/channel/UCon0sR5rVfTCuHOWG7LhAig"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="YouTube Alkymya"
+            >
               <Youtube className="h-4 w-4 hover:text-accent cursor-pointer transition-colors" />
             </a>
-            <a href="https://www.linkedin.com/in/cyril-garnier-89697b1/" target="_blank" rel="noopener noreferrer">
+            <a
+              href="https://www.linkedin.com/in/cyril-garnier-89697b1/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="LinkedIn Alkymya"
+            >
               <Linkedin className="h-4 w-4 hover:text-accent cursor-pointer transition-colors" />
             </a>
           </div>
-          
+
           <div className="lg:hidden">
             <Sheet open={isOpen} onOpenChange={setIsOpen}>
               <SheetTrigger

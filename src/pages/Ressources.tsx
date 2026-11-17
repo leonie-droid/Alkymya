@@ -227,10 +227,10 @@ export default function Ressources() {
             {resourceCategories.map((cat, idx) => {
               const isPartenaires = cat.slug === 'partenaires';
               const count = isPartenaires
-                ? 3
+                ? 1
                 : resources.filter((r) => r.categorySlug === cat.slug).length;
               const badgeText = isPartenaires
-                ? `${count} partenaires`
+                ? `${count} partenaire`
                 : `${count} ${count > 1 ? 'ressources' : 'ressource'}`;
               return (
                 <Link
