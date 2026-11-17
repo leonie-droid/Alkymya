@@ -40,7 +40,7 @@ Alkymya (alkymya.co) est un studio d'IA et cabinet d'expertise en France (Île-d
 - [New Business MVP](https://alkymya.co/newbusiness/): Accompagnement opérationnel de 6 mois pour concevoir votre MVP, tester l'offre auprès de vrais clients et piloter selon la boussole Continuer, Pivoter ou Accélérer (200 € / mois).
 - [Générateur d'Idées IA](https://alkymya.co/ia/): Démonstrateurs interactifs d'idéation, cas d'usage métiers et simulateurs de personas par IA générative.
 - [Œuvres & Réalisations IA](https://alkymya.co/oeuvres/): Vitrine des réalisations réelles et mesurables en IA : médias éditoriaux (TheLittle77, TheLittle83, TheLittle75), agents IA autonomes et direction artistique.
-- [Les Alchimistes](https://alkymya.co/alchimistes/): Profils détaillés des fondateurs et associés : Cyril Garnier, Léonie Egesipe, Véronique Landereau, Mariana Didier Laurent.
+- [Les Alchimistes](https://alkymya.co/alchimistes/): Profils détaillés des 6 alchimistes : Cyril Garnier, Léonie Egesipe, Véronique Landereau, Mariana Didier Laurent, Olivier Dion et Kendra Martine.
 - [Partenaires & Alliances](https://alkymya.co/partenaires/): Écosystème académique et institutionnel d'Alkymya (Objectif Alternance, HETIC, Ynov, IESEG, CFA Itis, SNCF, Morning).
 - [Ressources & Guides Pratiques](https://alkymya.co/ressources/): Bibliothèque ouverte de guides méthodologiques, fiches pratiques d'agentification et veilles technologiques.
 - [Foire Aux Questions (FAQ)](https://alkymya.co/faq/): Réponses aux interrogations fréquentes sur le format des ateliers, les prises en charge OPCO et la méthodologie studio.
@@ -63,10 +63,12 @@ Alkymya (alkymya.co) est un studio d'IA et cabinet d'expertise en France (Île-d
 - [Simulation de Personas & Test Métier](https://alkymya.co/ia/#personas): Test interactif de personas utilisateurs pour valider les usages professionnels de l'IA.
 
 ### Fiches Experts & Profils Auteurs
-- [Cyril Garnier — Directeur Associé](https://alkymya.co/alchimistes/#cyril-garnier): Fondateur, architecte de croissance, ex-SNCF Développement et enseignant IA.
-- [Léonie Egesipe — Directrice Artistique IA](https://alkymya.co/alchimistes/#leonie-egesipe): Co-fondatrice, direction de projets numériques et scénariste de Métropolia.
-- [Véronique Landereau — Alchimiste Santé](https://alkymya.co/alchimistes/#veronique-landereau): Co-fondatrice New Health Paradigm, MedTech, prévention et maintien à domicile.
-- [Mariana Didier Laurent — Alchimiste Services](https://alkymya.co/alchimistes/#mariana-didier-laurent): Présidente Esperanta Services, gestion des risques et services à la personne.
+- [Cyril Garnier — Directeur Associé](https://alkymya.co/alchimistes/cyril-garnier/): Fondateur, architecte de croissance, ex-SNCF Développement et enseignant IA.
+- [Léonie Egesipe — Directrice Artistique IA](https://alkymya.co/alchimistes/leonie-egesipe/): Co-fondatrice, direction de projets numériques et scénariste de Métropolia.
+- [Véronique Landereau — Alchimiste Santé](https://alkymya.co/alchimistes/veronique-landereau/): Co-fondatrice New Health Paradigm, MedTech, prévention et maintien à domicile.
+- [Mariana Didier Laurent — Alchimiste Services](https://alkymya.co/alchimistes/mariana-didier-laurent/): Présidente Esperanta Services, gestion des risques et services à la personne.
+- [Olivier Dion — Expert Data & Onecub](https://alkymya.co/alchimistes/olivier-dion/): Fondateur de Onecub, pionnier des Data Spaces souverains et conformité RGPD.
+- [Kendra Martine — Objectif Alternance](https://alkymya.co/alchimistes/kendra-martine/): Fondatrice d'Objectif Alternance et formatrice marketing PME/TPE.
 
 ---
 

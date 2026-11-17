@@ -5,6 +5,7 @@ import os from 'node:os';
 import { Resend } from 'resend';
 import { GoogleGenAI } from "@google/genai";
 import { evaluateAntiBotSubmission, escapeHtml } from './utils/antiBotServer';
+import { alchimistes } from './data/alchimistes';
 
 const PROGRAM_PRICE = 200;
 
@@ -275,7 +276,7 @@ export function createApiApp(): Express {
     return res.redirect(301, '/newbusiness/');
   });
 
-  // Valid routes set for the site (12 routes)
+  // Valid routes set for the site
   const validSiteRoutes = new Set([
     '',
     'ia',
@@ -289,6 +290,7 @@ export function createApiApp(): Express {
     'ressources/partenaires',
     'ressources/partenaires/awa-cloud',
     'alchimistes',
+    ...alchimistes.map((person) => `alchimistes/${person.id}`),
     'partenaires',
     'contact',
     'faq',
@@ -312,14 +314,31 @@ export function createApiApp(): Express {
 
       // Check if it's a known valid route
       if (validSiteRoutes.has(cleanPath)) {
+        // Harmonisation canonique : redirection 301 vers l'URL avec slash final
+        if (req.path !== '/' && !req.path.endsWith('/')) {
+          const queryIdx = req.url.indexOf('?');
+          const querySuffix = queryIdx !== -1 ? req.url.slice(queryIdx) : '';
+          return res.redirect(301, `/${cleanPath}/${querySuffix}`);
+        }
+
         const possibleFile = cleanPath === ''
           ? path.join(process.cwd(), 'dist', 'index.html')
           : path.join(process.cwd(), 'dist', cleanPath, 'index.html');
 
         const userAgent = (req.headers['user-agent'] || '').toLowerCase();
-        const isBotOrCurl = userAgent.includes('curl') || userAgent.includes('bot') || userAgent.includes('crawler') || userAgent.includes('spider') || req.query.prerender === 'true';
+        const isBotOrCurl =
+          userAgent.includes('curl') ||
+          userAgent.includes('bot') ||
+          userAgent.includes('crawler') ||
+          userAgent.includes('spider') ||
+          userAgent.includes('inspectiontool') ||
+          userAgent.includes('facebookexternalhit') ||
+          userAgent.includes('whatsapp') ||
+          userAgent.includes('slurp') ||
+          userAgent.includes('wget') ||
+          req.query.prerender === 'true';
 
-        if (fs.existsSync(possibleFile) && (isBotOrCurl || cleanPath === 'newbusiness')) {
+        if (fs.existsSync(possibleFile) && (isBotOrCurl || process.env.NODE_ENV === 'production' || cleanPath === 'newbusiness')) {
           return res.sendFile(possibleFile);
         }
       } else {

@@ -40,7 +40,7 @@ const pillars = [
       "Studio création IA & œuvres numériques hybrides",
       "Partage d'études et de ressources libres"
     ],
-    link: "/alchimistes",
+    link: "/alchimistes/",
     linkText: "Rencontrer les experts IA"
   },
 ];

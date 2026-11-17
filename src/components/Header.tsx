@@ -15,7 +15,7 @@ const navItems = [
   { name: 'Accueil', href: '/' },
   { name: 'Génération IA', href: '/ia' },
   { name: 'Nos œuvres', href: '/oeuvres' },
-  { name: 'Nos alchimistes', href: '/alchimistes' },
+  { name: 'Nos alchimistes', href: '/alchimistes/' },
   { name: 'Nos ateliers', href: '/ateliers' },
   { name: 'Nos ressources', href: '/ressources' },
   { name: 'Nos partenaires', href: '/partenaires' },
@@ -41,11 +41,13 @@ export default function Header() {
         {/* Center: Navigation tabs centered & spaced to optimize available width */}
         <nav className="hidden lg:flex flex-1 items-center justify-center gap-2 lg:gap-2.5 xl:gap-3 2xl:gap-5 min-w-0 px-1 xl:px-2">
           {navItems.map((item) => {
+            const currentPath = location.pathname === '/' ? '/' : location.pathname.replace(/\/+$/, '');
+            const itemPath = item.href === '/' ? '/' : item.href.replace(/\/+$/, '');
             const isActive =
-              item.href === '/'
-                ? location.pathname === '/'
-                : location.pathname === item.href ||
-                  location.pathname.startsWith(`${item.href}/`);
+              itemPath === '/'
+                ? currentPath === '/'
+                : currentPath === itemPath ||
+                  currentPath.startsWith(`${itemPath}/`);
 
             return (
               <Link

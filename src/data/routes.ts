@@ -1,3 +1,5 @@
+import { alchimistes } from './alchimistes';
+
 export interface RouteContentSection {
   h2: string;
   paragraphs: string[];
@@ -697,10 +699,10 @@ export const routes: RouteData[] = [
   {
     path: '/alchimistes',
     title: "Experts IA France & Fondateurs Agence IA | Alkymya",
-    description: "Experts IA France : Cyril Garnier, Léonie Egesipe, Véronique Landereau et Mariana Didier Laurent. Accompagnement IA dirigeants et indépendants.",
+    description: "Experts IA France : Cyril Garnier, Léonie Egesipe, Véronique Landereau, Mariana Didier Laurent, Olivier Dion et Kendra Martine.",
     h1: "Experts IA France : l'équipe d'Alkymya.",
     ogImage: "https://alkymya.co/og-alchimistes.jpg",
-    lastmod: "2026-11-15",
+    lastmod: "2026-11-17",
     schemaType: "AboutPage",
     images: [
       {
@@ -786,6 +788,10 @@ export const routes: RouteData[] = [
         }
       ],
       internalLinks: [
+        ...alchimistes.map((person) => ({
+          href: `/alchimistes/${person.id}/`,
+          label: `${person.name} — ${person.kicker}`
+        })),
         { href: "/ateliers/", label: "Être formé par les experts d'Alkymya" },
         { href: "/newbusiness/", label: "Rejoindre le programme New Business MVP" },
         { href: "/oeuvres/", label: "Voir les réalisations des Alchimistes" },
@@ -793,6 +799,58 @@ export const routes: RouteData[] = [
       ]
     }
   },
+  ...alchimistes.map((person): RouteData => ({
+    path: `/alchimistes/${person.id}`,
+    title: person.seoTitle,
+    description: person.seoDescription,
+    h1: `${person.name} — ${person.kicker}`,
+    ogImage: person.image,
+    lastmod: "2026-11-17",
+    schemaType: "ProfilePage",
+    images: [
+      {
+        src: person.image,
+        alt: `${person.name} — ${person.role}, expert IA France Alkymya`,
+        width: 480,
+        height: 600,
+        caption: `${person.name} — ${person.role}`
+      }
+    ],
+    content: {
+      leadParagraph: person.bio,
+      sections: [
+        {
+          h2: `Parcours & expertise de ${person.name}`,
+          paragraphs: [
+            person.details,
+            person.quote ? `« ${person.quote} »` : ''
+          ].filter(Boolean),
+          listItems: person.knowsAbout
+        },
+        ...(person.works.length > 0
+          ? [
+              {
+                h2: `Réalisations et œuvres de ${person.name}`,
+                paragraphs: [
+                  `Retrouvez les projets, publications, réalisations et sites associés de ${person.name} au sein de l'écosystème Alkymya.`
+                ],
+                listItems: person.works.map((work) => `${work.label} (${work.url})`)
+              }
+            ]
+          : [])
+      ],
+      internalLinks: [
+        { href: "/alchimistes/", label: "Tous les Alchimistes d'Alkymya" },
+        ...alchimistes
+          .filter((other) => other.id !== person.id)
+          .map((other) => ({
+            href: `/alchimistes/${other.id}/`,
+            label: `Découvrir ${other.name} — ${other.kicker}`
+          })),
+        { href: "/contact/", label: `Échanger avec ${person.name} et l'équipe Alkymya` }
+      ]
+    }
+  })),
   {
     path: '/partenaires',
     title: "Partenaires Formation IA & Grandes Écoles | Alkymya",

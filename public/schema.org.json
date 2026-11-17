@@ -50,23 +50,24 @@
       "@id": "https://alkymya.co/#cyril-garnier",
       "name": "Cyril Garnier",
       "jobTitle": "Directeur Associé, Expert IA France & Fondateur Alkymya",
-      "url": "https://cyrilgarnier.fr/",
+      "url": "https://alkymya.co/alchimistes/cyril-garnier/",
       "image": "https://res.cloudinary.com/dokzioyu4/image/upload/f_auto,q_auto,w_1200,c_limit/v1758192982/66cffcd8-15f1-415f-b423-9f428d63e22f_gqjd53.png",
       "worksFor": { "@id": "https://alkymya.co/#organization" },
       "sameAs": [
-        "https://www.linkedin.com/in/cyrilgarnier/",
+        "https://www.linkedin.com/in/cyril-garnier-89697b1/",
         "https://cyrilgarnier.fr/"
       ]
     },
     {
       "@type": "Person",
-      "@id": "https://alkymya.co/alchimistes/#leonie-egesipe",
+      "@id": "https://alkymya.co/#leonie-egesipe",
       "name": "Léonie Egesipe",
       "jobTitle": "Co-Fondatrice & Directrice Artistique Studio Création IA",
-      "image": "https://res.cloudinary.com/dokzioyu4/image/upload/v1758192982/c4f25b29-1634-44bf-a6d1-41f2378fbb4d_j10d8m.png",
+      "url": "https://alkymya.co/alchimistes/leonie-egesipe/",
+      "image": "https://res.cloudinary.com/dokzioyu4/image/upload/v1762252984/725879fe-afa3-4afa-a900-229030c002de_1_xoep2v.png",
       "worksFor": { "@id": "https://alkymya.co/#organization" },
       "sameAs": [
-        "https://www.linkedin.com/in/leonie-egesipe/",
+        "https://www.linkedin.com/in/l%C3%A9onie-egesipe-96a283291/",
         "https://leonieegesipe.netlify.app/"
       ]
     },
@@ -75,6 +76,7 @@
       "@id": "https://alkymya.co/alchimistes/#veronique-landereau",
       "name": "Véronique Landereau",
       "jobTitle": "Alchimiste associée, Santé, Prévention & Innovation",
+      "url": "https://alkymya.co/alchimistes/veronique-landereau/",
       "image": "https://res.cloudinary.com/dokzioyu4/image/upload/v1792763449/1792401247516_ussqzm.png",
       "worksFor": { "@id": "https://alkymya.co/#organization" },
       "sameAs": [
@@ -86,10 +88,36 @@
       "@id": "https://alkymya.co/alchimistes/#mariana-didier-laurent",
       "name": "Mariana Didier Laurent",
       "jobTitle": "Alchimiste associée, Assurance & Services à la personne",
+      "url": "https://alkymya.co/alchimistes/mariana-didier-laurent/",
       "image": "https://res.cloudinary.com/dokzioyu4/image/upload/v1794479431/WhatsApp_Image_2026-11-12_at_11.29.28_qwv5le.jpg",
       "worksFor": { "@id": "https://alkymya.co/#organization" },
       "sameAs": [
         "https://esperantaservices.fr/"
+      ]
+    },
+    {
+      "@type": "Person",
+      "@id": "https://alkymya.co/alchimistes/#olivier-dion",
+      "name": "Olivier Dion",
+      "jobTitle": "Fondateur de Onecub & Expert Data",
+      "url": "https://alkymya.co/alchimistes/olivier-dion/",
+      "image": "https://res.cloudinary.com/dokzioyu4/image/upload/v1760374889/Photo_Olivier_Dion_reve_dk2c5e.png",
+      "worksFor": { "@id": "https://alkymya.co/#organization" },
+      "sameAs": [
+        "https://onecub.com/",
+        "https://www.linkedin.com/in/olivierdion/"
+      ]
+    },
+    {
+      "@type": "Person",
+      "@id": "https://alkymya.co/alchimistes/#kendra-martine",
+      "name": "Kendra Martine",
+      "jobTitle": "Fondatrice d'Objectif Alternance & Formatrice",
+      "url": "https://alkymya.co/alchimistes/kendra-martine/",
+      "image": "https://res.cloudinary.com/dokzioyu4/image/upload/v1788941994/0c39dd0a7f91200361816f2b88d68802_cwzov0.jpg",
+      "worksFor": { "@id": "https://alkymya.co/#organization" },
+      "sameAs": [
+        "https://www.objectifalternance.fr/"
       ]
     },
     {

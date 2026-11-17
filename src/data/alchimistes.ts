@@ -18,6 +18,14 @@ export interface AlchimisteProfile {
   name: string;
   role: string;
   kicker: string;
+  seoTitle: string;
+  seoDescription: string;
+  knowsAbout: string[];
+  alumniOf?: string;
+  homeLocation?: {
+    city: string;
+    country: string;
+  };
   website: string;
   websiteLabel: string;
   websiteTag?: string;
@@ -43,6 +51,15 @@ export const alchimistes: AlchimisteProfile[] = [
     name: "Cyril Garnier",
     role: "Directeur Associé",
     kicker: "Directeur Associé & Fondateur",
+    seoTitle: "Cyril Garnier — Directeur Associé & Expert IA | Alkymya",
+    seoDescription: "Cyril Garnier, Directeur Associé d'Alkymya et ex-DG de SNCF Développement : accompagnement dirigeants, Go-to-Market et stratégie IA en France.",
+    knowsAbout: [
+      "Intelligence Artificielle Générative",
+      "Go-to-Market",
+      "Accompagnement dirigeants",
+      "Stratégie SEO & GEO",
+      "Agents IA autonomes"
+    ],
     website: "https://cyrilgarnier.fr/",
     websiteLabel: "cyrilgarnier.fr",
     bio: "Expert reconnu de l'accompagnement entrepreneurial, Cyril Garnier occupe aujourd'hui le poste de Directeur Associé chez Alkymya. Fort d'une expérience marquante à la tête de SNCF Développement, où il a soutenu la création de milliers d'emplois, il met désormais son savoir-faire au service de l'innovation de rupture. Au sein d'Alkymya, il agit comme un architecte de la croissance, spécialisé dans la transformation d'idées complexes en succès commerciaux concrets.",
@@ -83,6 +100,15 @@ export const alchimistes: AlchimisteProfile[] = [
     name: "Léonie Egesipe",
     role: "Chef de Projet Digital",
     kicker: "Co-Fondatrice & Directrice Artistique IA",
+    seoTitle: "Léonie Egesipe — Directrice Artistique IA | Alkymya",
+    seoDescription: "Léonie Egesipe, co-fondatrice et Cheffe de Projet Digital chez Alkymya : déploiement numérique, direction artistique IA générative et Métropolia.",
+    knowsAbout: [
+      "Direction Artistique IA",
+      "Gestion de projet digital",
+      "IA générative visuelle et vidéo",
+      "Expérience utilisateur",
+      "Création éditoriale"
+    ],
     website: "https://leonieegesipe.netlify.app/",
     websiteLabel: "leonieegesipe.netlify.app",
     bio: "Etudiante en chef de Projet Digital. Au sein d’Alkymya, Léonie occupe un rôle central dans le déploiement opérationnel des stratégies d’innovation. En binôme étroit avec Cyril Garnier, elle assure la direction des projets numériques, transformant les visions stratégiques du studio en dispositifs digitaux concrets et performants.",
@@ -114,6 +140,20 @@ export const alchimistes: AlchimisteProfile[] = [
     name: "Véronique Landereau",
     role: "Alchimiste associée — Santé, Prévention & Innovation",
     kicker: "Alchimiste associée, Santé",
+    seoTitle: "Véronique Landereau — Santé & Innovation IA | Alkymya",
+    seoDescription: "Véronique Landereau, Alchimiste associée Santé chez Alkymya et co-fondatrice de New Health Paradigm : prévention, MedTech et maintien à domicile.",
+    knowsAbout: [
+      "Santé",
+      "Prévention",
+      "Maintien à domicile",
+      "MedTech",
+      "Intelligence artificielle en santé"
+    ],
+    alumniOf: "Gustave Roussy Éducation",
+    homeLocation: {
+      city: "Nantes",
+      country: "FR"
+    },
     website: "https://www.linkedin.com/in/veronique-landereau-97729a59/",
     websiteLabel: "linkedin.com/in/veronique-landereau",
     websiteTag: "Profil LinkedIn",
@@ -140,6 +180,20 @@ export const alchimistes: AlchimisteProfile[] = [
     name: "Mariana Didier Laurent",
     role: "Alchimiste associée — Services à la personne & Autonomie",
     kicker: "Alchimiste associée, Services à la personne",
+    seoTitle: "Mariana Didier Laurent — Services & Autonomie | Alkymya",
+    seoDescription: "Mariana Didier Laurent, Alchimiste associée Alkymya et présidente d'Esperanta Services : aide à domicile, gestion des risques et entrepreneuriat.",
+    knowsAbout: [
+      "Assurance IARD",
+      "Courtage",
+      "Services à la personne",
+      "Aide à domicile",
+      "Création d'entreprise"
+    ],
+    alumniOf: "École Supérieure d'Assurance",
+    homeLocation: {
+      city: "Le Plessis-Trévise",
+      country: "FR"
+    },
     website: "https://esperantaservices.fr/",
     websiteLabel: "esperantaservices.fr",
     websiteTag: "Entreprise & Réseau",
@@ -167,6 +221,15 @@ export const alchimistes: AlchimisteProfile[] = [
     name: "Olivier Dion",
     role: "Fondateur de Onecub & Expert Data",
     kicker: "Expert Data & Espaces de Données",
+    seoTitle: "Olivier Dion — Expert Data & Onecub | Alkymya",
+    seoDescription: "Olivier Dion, Alchimiste Alkymya et fondateur de Onecub : expert Data Spaces souverains, conformité RGPD, gouvernance des données et IA européenne.",
+    knowsAbout: [
+      "Espaces de Données",
+      "Data Spaces souverains",
+      "Gouvernance numérique",
+      "Conformité RGPD",
+      "GAIA-X"
+    ],
     website: "https://onecub.com/",
     websiteLabel: "onecub.com",
     bio: "Pionnier des Espaces de Données et expert en gouvernance numérique, le fondateur de Onecub est une figure centrale de la conformité réglementaire européenne. Entrepreneur engagé (notamment via Themy-x), il accompagne la transformation digitale de secteurs stratégiques comme la mobilité, l'énergie et l'agriculture en bâtissant des Data Spaces souverains.",
@@ -199,6 +262,15 @@ export const alchimistes: AlchimisteProfile[] = [
     name: "Kendra Martine",
     role: "Fondatrice d'Objectif Alternance & Formatrice",
     kicker: "Partenaire Alternance & Formatrice",
+    seoTitle: "Kendra Martine — Objectif Alternance | Alkymya",
+    seoDescription: "Kendra Martine, Alchimiste Alkymya, fondatrice d'Objectif Alternance et formatrice marketing : recrutement d'alternants, coaching emploi PME et TPE.",
+    knowsAbout: [
+      "Recrutement d'alternants",
+      "Coaching emploi",
+      "Insertion professionnelle",
+      "Stratégie marketing",
+      "Formation PME & TPE"
+    ],
     website: "https://www.objectifalternance.fr/",
     websiteLabel: "objectifalternance.fr",
     bio: "Fondatrice d’« Objectif Alternance », Kendra Martine est spécialisée dans le recrutement d’alternants et de profils en reconversion, ainsi que dans le coaching emploi et alternance ciblant principalement les TPE et PME. Passionnée par l'humain et l'insertion professionnelle, elle bâtit des passerelles solides entre talents émergents et entreprises en développement.",

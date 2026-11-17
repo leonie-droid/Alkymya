@@ -119,10 +119,10 @@ const AlchimisteCard: React.FC<{ person: any, index: number, handleWorkClick: (e
       className="flex flex-col h-full scroll-mt-28"
     >
       <div className="group flex flex-col h-full overflow-hidden rounded-[12px] bg-white shadow-[0_2px_16px_rgba(31,79,110,0.08)] hover:shadow-[0_8px_32px_rgba(31,79,110,0.14)] hover:-translate-y-1 transition-all duration-200">
-        {/* Profile Header: Clickable Image & Name -> /alchimistes/:id */}
+        {/* Profile Header: Clickable Image & Name -> /alchimistes/:id/ */}
         <div className="relative aspect-[4/5] overflow-hidden">
           <Link
-            to={`/alchimistes/${person.id}`}
+            to={`/alchimistes/${person.id}/`}
             className="block w-full h-full relative"
             aria-label={`Découvrir le profil de ${person.name}`}
           >
@@ -189,7 +189,7 @@ const AlchimisteCard: React.FC<{ person: any, index: number, handleWorkClick: (e
           <div>
             <p className="text-sm font-bold text-deep-blue/60 uppercase tracking-widest mb-3">{person.role}</p>
             <Link
-              to={`/alchimistes/${person.id}`}
+              to={`/alchimistes/${person.id}/`}
               className="inline-flex items-center gap-1.5 text-sm font-medium text-[#02ADAB] hover:text-[#037971] transition-colors"
             >
               <span>Découvrir sa présentation</span>
@@ -256,15 +256,92 @@ export default function Alchimistes() {
     }
   };
 
+  const directoryStructuredData = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "AboutPage",
+        "@id": "https://alkymya.co/alchimistes/#webpage",
+        "url": "https://alkymya.co/alchimistes/",
+        "name": "Experts IA France & Fondateurs Agence IA | Alkymya",
+        "description": "Experts IA France : Cyril Garnier, Léonie Egesipe, Véronique Landereau, Mariana Didier Laurent, Olivier Dion et Kendra Martine.",
+        "inLanguage": "fr-FR",
+        "breadcrumb": { "@id": "https://alkymya.co/alchimistes/#breadcrumb" },
+        "mainEntity": {
+          "@type": "ItemList",
+          "name": "Les Alchimistes d'Alkymya",
+          "numberOfItems": alchimistes.length,
+          "itemListElement": alchimistes.map((person, idx) => ({
+            "@type": "ListItem",
+            "position": idx + 1,
+            "name": person.name,
+            "url": `https://alkymya.co/alchimistes/${person.id}/`
+          }))
+        }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://alkymya.co/alchimistes/#breadcrumb",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Accueil",
+            "item": "https://alkymya.co/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Nos Alchimistes",
+            "item": "https://alkymya.co/alchimistes/"
+          }
+        ]
+      },
+      ...alchimistes.map((person) => {
+        const canonicalProfileUrl = `https://alkymya.co/alchimistes/${person.id}/`;
+        const personId =
+          person.id === 'cyril-garnier'
+            ? 'https://alkymya.co/#cyril-garnier'
+            : person.id === 'leonie-egesipe'
+            ? 'https://alkymya.co/#leonie-egesipe'
+            : `https://alkymya.co/alchimistes/#${person.id}`;
+        const sameAs = Array.from(
+          new Set(
+            [
+              person.website,
+              person.socials.linkedin,
+              person.socials.instagram,
+              person.socials.tiktok,
+              person.socials.youtube
+            ].filter((u): u is string => Boolean(u && u.trim()))
+          )
+        );
+        return {
+          "@type": "Person",
+          "@id": personId,
+          "name": person.name,
+          "jobTitle": person.role,
+          "description": person.bio,
+          "url": canonicalProfileUrl,
+          "image": cloudinaryUrl(person.image, 600),
+          "worksFor": { "@id": "https://alkymya.co/#organization" },
+          "knowsAbout": person.knowsAbout,
+          ...(sameAs.length > 0 ? { "sameAs": sameAs } : {})
+        };
+      })
+    ]
+  };
+
   return (
     <div className="bg-[#f4f6f9] text-[#1F4F6E] min-h-screen font-['Roboto',sans-serif] selection:bg-[#C06721] selection:text-white">
       <SEO
         title="Experts IA France & Fondateurs Agence IA | Alkymya"
-        description="Experts IA France : Cyril Garnier, Léonie Egesipe, Véronique Landereau et Mariana Didier Laurent. Accompagnement IA dirigeants et indépendants."
+        description="Experts IA France : Cyril Garnier, Léonie Egesipe, Véronique Landereau, Mariana Didier Laurent, Olivier Dion et Kendra Martine."
         keywords="experts IA France, accompagnement IA dirigeants et indépendants, agence IA, studio création IA, formation IA OPCO"
-        canonicalPath="/alchimistes"
+        canonicalPath="/alchimistes/"
         ogImage="https://res.cloudinary.com/dokzioyu4/image/upload/v1758192982/66cffcd8-15f1-415f-b423-9f428d63e22f_gqjd53.png"
         type="AboutPage"
+        structuredData={directoryStructuredData}
       />
       {/* Video Modal */}
       <AnimatePresence>
@@ -429,13 +506,13 @@ export default function Alchimistes() {
         </p>
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
           <Link
-            to="/rejoindre"
+            to="/rejoindre/"
             className="inline-block bg-white text-[#C06721] text-[0.95rem] font-medium py-3.5 px-8 rounded-[8px] no-underline tracking-[0.04em] transition-transform duration-150 hover:-translate-y-0.5 hover:shadow-[0_6px_20px_rgba(0,0,0,0.15)]"
           >
             Postuler pour nous rejoindre →
           </Link>
           <Link
-            to="/contact?subject=Rejoindre%20le%20collectif%20Alkymya"
+            to="/contact/?subject=Rejoindre%20le%20collectif%20Alkymya"
             className="inline-block bg-white/10 hover:bg-white/20 text-white text-[0.95rem] font-medium py-3.5 px-8 rounded-[8px] no-underline tracking-[0.04em] transition-transform duration-150 hover:-translate-y-0.5 border border-white/25"
           >
             Écrire au collectif

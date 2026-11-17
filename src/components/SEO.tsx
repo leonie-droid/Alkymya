@@ -19,6 +19,7 @@ interface SEOProps {
     | 'EducationalOccupationalProgram'
     | 'ProfilePage';
   faqData?: Array<{ question: string; answer: string }>;
+  structuredData?: Record<string, any>;
 }
 
 function upsertMeta(attr: 'name' | 'property', key: string, content: string) {
@@ -51,6 +52,7 @@ export const SEO: React.FC<SEOProps> = ({
   ogImage,
   type = 'WebPage',
   faqData,
+  structuredData,
 }) => {
   useEffect(() => {
     if (title) {
@@ -190,22 +192,28 @@ export const SEO: React.FC<SEOProps> = ({
           {JSON.stringify(faqSchema)}
         </script>
       )}
-      {(title || description) && (
+      {structuredData ? (
         <script type="application/ld+json">
-          {JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": type === 'LocalBusiness' || type === 'EducationalOrganization' ? 'WebPage' : type,
-            "name": title || "Agence IA & Studio Création IA | Alkymya",
-            "description": description || "Agence IA et studio création IA : accompagnement intelligence artificielle, création d'agents IA sur mesure, stratégie SEO et GEO.",
-            "url": pageUrl,
-            "inLanguage": "fr-FR",
-            "publisher": {
-              "@type": "Organization",
-              "name": "Alkymya",
-              "url": "https://alkymya.co"
-            }
-          })}
+          {JSON.stringify(structuredData)}
         </script>
+      ) : (
+        (title || description) && (
+          <script type="application/ld+json">
+            {JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": type === 'LocalBusiness' || type === 'EducationalOrganization' ? 'WebPage' : type,
+              "name": title || "Agence IA & Studio Création IA | Alkymya",
+              "description": description || "Agence IA et studio création IA : accompagnement intelligence artificielle, création d'agents IA sur mesure, stratégie SEO et GEO.",
+              "url": pageUrl,
+              "inLanguage": "fr-FR",
+              "publisher": {
+                "@type": "Organization",
+                "name": "Alkymya",
+                "url": "https://alkymya.co/"
+              }
+            })}
+          </script>
+        )
       )}
     </>
   );

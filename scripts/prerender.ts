@@ -1,6 +1,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { routes, RouteData } from '../src/data/routes';
+import { alchimistes, AlchimisteProfile } from '../src/data/alchimistes';
 import { cloudinaryUrl, cloudinarySrcSet } from '../src/utils/cloudinary';
 
 function escapeHtml(str: string): string {
@@ -33,17 +34,32 @@ function generatePageBody(route: RouteData): string {
           <img src="${cloudinaryUrl('https://res.cloudinary.com/dokzioyu4/image/upload/v1758096912/logo_principal_bleu_gbnyuu.png', 600)}" alt="Alkymya, studio d'expertise et de création IA" width="150" height="38" style="height: 38px; width: auto;" />
         </a>
         <nav aria-label="Navigation principale" style="display: flex; flex-wrap: wrap; gap: 1rem; font-size: 0.8125rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em;">
-          ${navItems.map(item => `
-            <a href="${item.href}" style="color: ${item.href === (route.path === '/' ? '/' : `${route.path}/`) ? '#d97706' : '#1e293b'}; text-decoration: none; padding: 0.25rem 0.5rem;">
+          ${navItems.map(item => {
+            const isCurrent =
+              item.href === (route.path === '/' ? '/' : `${route.path}/`) ||
+              (item.href === '/alchimistes/' && route.path.startsWith('/alchimistes/')) ||
+              (item.href === '/ressources/' && route.path.startsWith('/ressources/'));
+            return `
+            <a href="${item.href}" style="color: ${isCurrent ? '#d97706' : '#1e293b'}; text-decoration: none; padding: 0.25rem 0.5rem;">
               ${item.label}
             </a>
-          `).join('')}
+          `;
+          }).join('')}
         </nav>
       </div>
     </header>
 
     <main id="main-content" style="max-width: 1200px; margin: 0 auto; padding: 3rem 1.5rem; font-family: system-ui, -apple-system, sans-serif; color: #1e293b; line-height: 1.6;">
       <article>
+        ${route.path.startsWith('/alchimistes/') ? `
+        <nav aria-label="Fil d'Ariane" style="max-width: 900px; margin: 0 auto 1.5rem auto; font-size: 0.875rem; color: #475569; text-align: center;">
+          <a href="/" style="color: #037971; text-decoration: none;">Accueil</a>
+          <span aria-hidden="true" style="margin: 0 0.5rem;">/</span>
+          <a href="/alchimistes/" style="color: #037971; text-decoration: none;">Nos Alchimistes</a>
+          <span aria-hidden="true" style="margin: 0 0.5rem;">/</span>
+          <span aria-current="page" style="color: #1F4F6E; font-weight: 600;">${escapeHtml(breadcrumbNames[route.path] || route.h1)}</span>
+        </nav>
+        ` : ''}
         <header style="text-align: center; max-width: 900px; margin: 0 auto 3.5rem auto;">
           <h1 style="font-size: 2.75rem; font-weight: 900; color: #1F4F6E; margin-bottom: 1.5rem; line-height: 1.2;">
             ${escapeHtml(route.h1)}
@@ -148,8 +164,72 @@ const breadcrumbNames: Record<string, string> = {
   '/faq': 'FAQ',
   '/rejoindre': 'Nous Rejoindre',
   '/newbusiness': 'New Business MVP',
-  '/mentions-legales': 'Mentions Légales'
+  '/mentions-legales': 'Mentions Légales',
+  ...Object.fromEntries(alchimistes.map(person => [`/alchimistes/${person.id}`, person.name]))
 };
+
+function getPersonSchemaId(person: AlchimisteProfile): string {
+  if (person.id === 'cyril-garnier') return 'https://alkymya.co/#cyril-garnier';
+  if (person.id === 'leonie-egesipe') return 'https://alkymya.co/#leonie-egesipe';
+  return `https://alkymya.co/alchimistes/#${person.id}`;
+}
+
+function buildPersonNode(person: AlchimisteProfile, profileUrlOverride?: string): Record<string, any> {
+  const canonicalProfileUrl = profileUrlOverride || `https://alkymya.co/alchimistes/${person.id}/`;
+  const sameAs = Array.from(
+    new Set(
+      [
+        person.website,
+        person.socials.linkedin,
+        person.socials.instagram,
+        person.socials.tiktok,
+        person.socials.youtube
+      ].filter((u): u is string => Boolean(u && u.trim()))
+    )
+  );
+
+  const node: Record<string, any> = {
+    "@type": "Person",
+    "@id": getPersonSchemaId(person),
+    "name": person.name,
+    "jobTitle": person.role,
+    "description": person.bio,
+    "url": canonicalProfileUrl,
+    "mainEntityOfPage": {
+      "@type": "ProfilePage",
+      "@id": `${canonicalProfileUrl}#webpage`
+    },
+    "image": cloudinaryUrl(person.image, 600),
+    "worksFor": {
+      "@id": "https://alkymya.co/#organization"
+    },
+    "knowsAbout": person.knowsAbout
+  };
+
+  if (person.alumniOf) {
+    node.alumniOf = {
+      "@type": "EducationalOrganization",
+      "name": person.alumniOf
+    };
+  }
+
+  if (person.homeLocation) {
+    node.homeLocation = {
+      "@type": "Place",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": person.homeLocation.city,
+        "addressCountry": person.homeLocation.country
+      }
+    };
+  }
+
+  if (sameAs.length > 0) {
+    node.sameAs = sameAs;
+  }
+
+  return node;
+}
 
 const faqQuestions = [
   {
@@ -187,8 +267,12 @@ function buildJsonLd(route: RouteData, canonicalUrl: string) {
   let webpageType = 'WebPage';
   if (route.path === '/faq') webpageType = 'FAQPage';
   else if (route.path === '/alchimistes') webpageType = 'AboutPage';
+  else if (route.path.startsWith('/alchimistes/')) webpageType = 'ProfilePage';
   else if (route.path === '/contact') webpageType = 'ContactPage';
   else if (route.path === '/oeuvres' || route.path === '/ressources') webpageType = 'CollectionPage';
+
+  const isLeonieGraphNodeIncluded =
+    route.path === '/alchimistes' || route.path === '/alchimistes/leonie-egesipe';
 
   const webpageNode: Record<string, any> = {
     "@type": webpageType,
@@ -215,12 +299,14 @@ function buildJsonLd(route: RouteData, canonicalUrl: string) {
       {
         "@id": "https://alkymya.co/#cyril-garnier"
       },
-      {
-        "@type": "Person",
-        "@id": "https://alkymya.co/#leonie-egesipe",
-        "name": "Léonie Egesipe",
-        "url": "https://alkymya.co/alchimistes/leonie-egesipe/"
-      }
+      isLeonieGraphNodeIncluded
+        ? { "@id": "https://alkymya.co/#leonie-egesipe" }
+        : {
+            "@type": "Person",
+            "@id": "https://alkymya.co/#leonie-egesipe",
+            "name": "Léonie Egesipe",
+            "url": "https://alkymya.co/alchimistes/leonie-egesipe/"
+          }
     ],
     "breadcrumb": {
       "@id": `${canonicalUrl}#breadcrumb`
@@ -275,6 +361,27 @@ function buildJsonLd(route: RouteData, canonicalUrl: string) {
           {
             "@type": "ListItem",
             "position": 4,
+            "name": breadcrumbNames[route.path] || route.h1,
+            "item": canonicalUrl
+          }
+        ]
+      : route.path.startsWith('/alchimistes/')
+      ? [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Accueil",
+            "item": "https://alkymya.co/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Nos Alchimistes",
+            "item": "https://alkymya.co/alchimistes/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
             "name": breadcrumbNames[route.path] || route.h1,
             "item": canonicalUrl
           }
@@ -427,92 +534,46 @@ function buildJsonLd(route: RouteData, canonicalUrl: string) {
     });
   }
 
-  // 5. Schéma Person pour /alchimistes/ (Léonie Egesipe, Véronique Landereau & Mariana Didier Laurent — Cyril Garnier déjà inclus dans graphNodes)
+  // 5. Schéma Person complet pour /alchimistes/ et chaque fiche individuelle /alchimistes/<id>/
   if (route.path === '/alchimistes') {
-    graphNodes.push(
-      {
-        "@type": "Person",
-        "@id": "https://alkymya.co/#leonie-egesipe",
-        "name": "Léonie Egesipe",
-        "jobTitle": "Co-Fondatrice & Directrice Artistique IA",
-        "image": cloudinaryUrl("https://res.cloudinary.com/dokzioyu4/image/upload/v1762252984/725879fe-afa3-4afa-a900-229030c002de_1_xoep2v.png", 600),
-        "worksFor": {
-          "@id": "https://alkymya.co/#organization"
-        },
-        "sameAs": [
-          "https://www.linkedin.com/in/leonie-egesipe/",
-          "https://leonieegesipe.netlify.app/"
-        ]
-      },
-      {
-        "@type": "Person",
-        "@id": "https://alkymya.co/alchimistes/#veronique-landereau",
-        "name": "Véronique Landereau",
-        "jobTitle": "Alchimiste associée, Santé, Prévention & Innovation",
-        "image": "https://res.cloudinary.com/dokzioyu4/image/upload/v1792763449/1792401247516_ussqzm.png",
-        "worksFor": {
-          "@type": "Organization",
-          "name": "Alkymya",
-          "url": "https://alkymya.co"
-        },
-        "alumniOf": {
-          "@type": "EducationalOrganization",
-          "name": "Gustave Roussy Éducation"
-        },
-        "knowsAbout": [
-          "Santé",
-          "Prévention",
-          "Maintien à domicile",
-          "MedTech",
-          "Intelligence artificielle en santé"
-        ],
-        "homeLocation": {
-          "@type": "Place",
-          "address": {
-            "@type": "PostalAddress",
-            "addressLocality": "Nantes",
-            "addressCountry": "FR"
-          }
-        },
-        "sameAs": [
-          "https://www.linkedin.com/in/veronique-landereau-97729a59/"
-        ]
-      },
-      {
-        "@type": "Person",
-        "@id": "https://alkymya.co/alchimistes/#mariana-didier-laurent",
-        "name": "Mariana Didier Laurent",
-        "jobTitle": "Alchimiste associée, Assurance & Services à la personne",
-        "image": "https://res.cloudinary.com/dokzioyu4/image/upload/v1794479431/WhatsApp_Image_2026-11-12_at_11.29.28_qwv5le.jpg",
-        "worksFor": {
-          "@type": "Organization",
-          "name": "Alkymya",
-          "url": "https://alkymya.co"
-        },
-        "alumniOf": {
-          "@type": "EducationalOrganization",
-          "name": "École Supérieure d'Assurance"
-        },
-        "knowsAbout": [
-          "Assurance IARD",
-          "Courtage",
-          "Services à la personne",
-          "Aide à domicile",
-          "Création d'entreprise"
-        ],
-        "homeLocation": {
-          "@type": "Place",
-          "address": {
-            "@type": "PostalAddress",
-            "addressLocality": "Le Plessis-Trévise",
-            "addressCountry": "FR"
-          }
-        },
-        "sameAs": [
-          "https://esperantaservices.fr/"
-        ]
+    webpageNode.mainEntity = {
+      "@type": "ItemList",
+      "name": "Les Alchimistes d'Alkymya",
+      "numberOfItems": alchimistes.length,
+      "itemListElement": alchimistes.map((person, index) => ({
+        "@type": "ListItem",
+        "position": index + 1,
+        "name": person.name,
+        "url": `https://alkymya.co/alchimistes/${person.id}/`
+      }))
+    };
+
+    for (const person of alchimistes) {
+      if (person.id === 'cyril-garnier') {
+        const cyrilIdx = graphNodes.indexOf(cyrilGarnierNode);
+        if (cyrilIdx !== -1) {
+          graphNodes[cyrilIdx] = buildPersonNode(person, 'https://alkymya.co/alchimistes/cyril-garnier/');
+        }
+      } else {
+        graphNodes.push(buildPersonNode(person));
       }
-    );
+    }
+  } else if (route.path.startsWith('/alchimistes/')) {
+    const slug = route.path.replace('/alchimistes/', '').replace(/\/$/, '');
+    const person = alchimistes.find(p => p.id === slug);
+    if (person) {
+      const personId = getPersonSchemaId(person);
+      webpageNode.mainEntity = { "@id": personId };
+      webpageNode.about = { "@id": personId };
+      if (person.id === 'cyril-garnier') {
+        const cyrilIdx = graphNodes.indexOf(cyrilGarnierNode);
+        if (cyrilIdx !== -1) {
+          graphNodes[cyrilIdx] = buildPersonNode(person, canonicalUrl);
+        }
+      } else {
+        graphNodes.push(buildPersonNode(person, canonicalUrl));
+      }
+    }
   }
 
   // 6. Schéma EducationalOccupationalProgram pour /newbusiness/
@@ -611,7 +672,7 @@ async function prerender() {
   const baseHtml = fs.readFileSync(templatePath, 'utf-8');
   console.log(`[prerender] Template de base chargé (${baseHtml.length} octets).`);
 
-  // 1. Pré-rendre chacune des 12 routes canoniques
+  // 1. Pré-rendre chacune des routes canoniques
   for (const route of routes) {
     const canonicalUrl = route.path === '/' 
       ? 'https://alkymya.co/' 
@@ -745,11 +806,11 @@ ${JSON.stringify(jsonLd, null, 2)}
 
   console.log(`[prerender] Redirections 301 statiques créées pour new-business et cohorte-fondatrice.`);
 
-  // 3. Générer le sitemap.xml avec les 12 URL canoniques et slash final
+  // 3. Générer le sitemap.xml avec toutes les URLs canoniques et slash final
   const sitemapXml = generateSitemapXml(routes);
   fs.writeFileSync(path.join(distDir, 'sitemap.xml'), sitemapXml, 'utf-8');
   fs.writeFileSync(path.join(process.cwd(), 'public', 'sitemap.xml'), sitemapXml, 'utf-8');
-  console.log(`[prerender] Sitemap XML généré avec les 12 URL canoniques (dist/sitemap.xml & public/sitemap.xml).`);
+  console.log(`[prerender] Sitemap XML généré avec ${routes.length} URLs canoniques (dist/sitemap.xml & public/sitemap.xml).`);
 
   // 4. Copier 404.html et _redirects vers dist/
   const public404 = path.join(process.cwd(), 'public', '404.html');

@@ -52,7 +52,7 @@ export default function AlchimisteDetail() {
             Ce profil d'alchimiste n'existe pas ou a été déplacé.
           </p>
           <Link
-            to="/alchimistes"
+            to="/alchimistes/"
             className="inline-flex items-center gap-2 bg-[#1F4F6E] hover:bg-[#02ADAB] text-white text-sm font-medium py-3 px-6 rounded-[8px] transition-colors"
           >
             <ArrowLeft className="w-4 h-4" />
@@ -64,8 +64,110 @@ export default function AlchimisteDetail() {
   }
 
   const otherAlchimistes = alchimistes.filter((a) => a.id !== person.id);
-  const seoTitle = `${person.name} — Expert IA France | Alkymya`.slice(0, 60);
-  const seoDescription = `${person.name}, ${person.role} chez Alkymya. ${person.bio}`.slice(0, 152).trim() + '...';
+  const seoTitle = person.seoTitle;
+  const seoDescription = person.seoDescription;
+  const canonicalProfileUrl = `https://alkymya.co/alchimistes/${person.id}/`;
+  const personId =
+    person.id === 'cyril-garnier'
+      ? 'https://alkymya.co/#cyril-garnier'
+      : person.id === 'leonie-egesipe'
+      ? 'https://alkymya.co/#leonie-egesipe'
+      : `https://alkymya.co/alchimistes/#${person.id}`;
+  const sameAsUrls = Array.from(
+    new Set(
+      [
+        person.website,
+        person.socials.linkedin,
+        person.socials.instagram,
+        person.socials.tiktok,
+        person.socials.youtube
+      ].filter((u): u is string => Boolean(u && u.trim()))
+    )
+  );
+
+  const profileStructuredData = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "ProfilePage",
+        "@id": `${canonicalProfileUrl}#webpage`,
+        "url": canonicalProfileUrl,
+        "name": seoTitle,
+        "headline": `${person.name} — ${person.kicker}`,
+        "description": seoDescription,
+        "inLanguage": "fr-FR",
+        "mainEntity": { "@id": personId },
+        "about": { "@id": personId },
+        "breadcrumb": { "@id": `${canonicalProfileUrl}#breadcrumb` },
+        "publisher": { "@id": "https://alkymya.co/#organization" }
+      },
+      {
+        "@type": "Person",
+        "@id": personId,
+        "name": person.name,
+        "jobTitle": person.role,
+        "description": person.bio,
+        "url": canonicalProfileUrl,
+        "mainEntityOfPage": {
+          "@type": "ProfilePage",
+          "@id": `${canonicalProfileUrl}#webpage`
+        },
+        "image": cloudinaryUrl(person.image, 600),
+        "worksFor": {
+          "@type": "Organization",
+          "@id": "https://alkymya.co/#organization",
+          "name": "Alkymya",
+          "url": "https://alkymya.co/"
+        },
+        "knowsAbout": person.knowsAbout,
+        ...(person.alumniOf
+          ? {
+              "alumniOf": {
+                "@type": "EducationalOrganization",
+                "name": person.alumniOf
+              }
+            }
+          : {}),
+        ...(person.homeLocation
+          ? {
+              "homeLocation": {
+                "@type": "Place",
+                "address": {
+                  "@type": "PostalAddress",
+                  "addressLocality": person.homeLocation.city,
+                  "addressCountry": person.homeLocation.country
+                }
+              }
+            }
+          : {}),
+        ...(sameAsUrls.length > 0 ? { "sameAs": sameAsUrls } : {})
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": `${canonicalProfileUrl}#breadcrumb`,
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Accueil",
+            "item": "https://alkymya.co/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Nos Alchimistes",
+            "item": "https://alkymya.co/alchimistes/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": person.name,
+            "item": canonicalProfileUrl
+          }
+        ]
+      }
+    ]
+  };
 
   const profileUrls: { label: string; url: string; displayUrl: string; isMail?: boolean }[] = [];
   if (person.website) {
@@ -117,9 +219,10 @@ export default function AlchimisteDetail() {
       <SEO
         title={seoTitle}
         description={seoDescription}
-        canonicalPath={`/alchimistes/${person.id}`}
+        canonicalPath={`/alchimistes/${person.id}/`}
         ogImage={person.image}
         type="ProfilePage"
+        structuredData={profileStructuredData}
       />
 
       {/* Video Modal */}
@@ -163,8 +266,22 @@ export default function AlchimisteDetail() {
       {/* HERO PROFILE */}
       <header className="bg-[#1F4F6E] text-white py-14 sm:py-20 px-6">
         <div className="max-w-[1000px] mx-auto">
+          <nav aria-label="Fil d'Ariane" className="flex flex-wrap items-center gap-2 text-xs text-white/70 mb-4">
+            <Link to="/" className="hover:text-[#02ADAB] transition-colors">
+              Accueil
+            </Link>
+            <span aria-hidden="true">/</span>
+            <Link to="/alchimistes/" className="hover:text-[#02ADAB] transition-colors">
+              Nos Alchimistes
+            </Link>
+            <span aria-hidden="true">/</span>
+            <span className="text-white font-medium" aria-current="page">
+              {person.name}
+            </span>
+          </nav>
+
           <Link
-            to="/alchimistes"
+            to="/alchimistes/"
             className="inline-flex items-center gap-2 text-xs uppercase tracking-[0.15em] text-[#02ADAB] hover:text-white transition-colors mb-8 font-medium"
           >
             <ArrowLeft className="w-4 h-4" />
@@ -383,7 +500,7 @@ export default function AlchimisteDetail() {
             {otherAlchimistes.map((other) => (
               <Link
                 key={other.id}
-                to={`/alchimistes/${other.id}`}
+                to={`/alchimistes/${other.id}/`}
                 className="bg-white rounded-[12px] p-4 shadow-[0_2px_16px_rgba(31,79,110,0.08)] hover:shadow-[0_8px_24px_rgba(31,79,110,0.14)] hover:-translate-y-0.5 transition-all flex items-center gap-3.5 group"
               >
                 <img
@@ -418,13 +535,13 @@ export default function AlchimisteDetail() {
         </p>
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
           <Link
-            to="/contact"
+            to="/contact/"
             className="inline-block bg-white text-[#C06721] text-[0.95rem] font-medium py-3.5 px-8 rounded-[8px] no-underline tracking-[0.04em] transition-transform duration-150 hover:-translate-y-0.5 hover:shadow-[0_6px_20px_rgba(0,0,0,0.15)]"
           >
             Contacter l'équipe →
           </Link>
           <Link
-            to="/alchimistes"
+            to="/alchimistes/"
             className="inline-block bg-white/10 hover:bg-white/20 text-white text-[0.95rem] font-medium py-3.5 px-8 rounded-[8px] no-underline tracking-[0.04em] transition-transform duration-150 hover:-translate-y-0.5 border border-white/25"
           >
             Tous les Alchimistes
