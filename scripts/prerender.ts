@@ -141,6 +141,8 @@ const breadcrumbNames: Record<string, string> = {
   '/ressources/nos-etudes': 'Nos études',
   '/ressources/business-game': 'Business Game',
   '/ressources/alkymya-x-inatec': 'Alkymya x Inatec',
+  '/ressources/partenaires': 'Partenaires',
+  '/ressources/partenaires/awa-cloud': 'AWA Cloud',
   '/partenaires': 'Nos Partenaires',
   '/contact': 'Contact',
   '/faq': 'FAQ',
@@ -248,6 +250,33 @@ function buildJsonLd(route: RouteData, canonicalUrl: string) {
             "position": 1,
             "name": "Accueil",
             "item": "https://alkymya.co/"
+          }
+        ]
+      : route.path.startsWith('/ressources/partenaires/')
+      ? [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Accueil",
+            "item": "https://alkymya.co/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Nos Ressources",
+            "item": "https://alkymya.co/ressources/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Partenaires",
+            "item": "https://alkymya.co/ressources/partenaires/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 4,
+            "name": breadcrumbNames[route.path] || route.h1,
+            "item": canonicalUrl
           }
         ]
       : route.path.startsWith('/ressources/')

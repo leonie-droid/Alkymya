@@ -286,6 +286,8 @@ export function createApiApp(): Express {
     'ressources/nos-etudes',
     'ressources/business-game',
     'ressources/alkymya-x-inatec',
+    'ressources/partenaires',
+    'ressources/partenaires/awa-cloud',
     'alchimistes',
     'partenaires',
     'contact',

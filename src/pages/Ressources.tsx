@@ -223,14 +223,22 @@ export default function Ressources() {
             </h2>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
-            {resourceCategories.map((cat) => {
-              const count = resources.filter((r) => r.categorySlug === cat.slug).length;
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+            {resourceCategories.map((cat, idx) => {
+              const isPartenaires = cat.slug === 'partenaires';
+              const count = isPartenaires
+                ? 3
+                : resources.filter((r) => r.categorySlug === cat.slug).length;
+              const badgeText = isPartenaires
+                ? `${count} partenaires`
+                : `${count} ${count > 1 ? 'ressources' : 'ressource'}`;
               return (
                 <Link
                   key={cat.slug}
                   to={`/ressources/${cat.slug}`}
-                  className="group bg-white rounded-[12px] p-6 shadow-[0_2px_16px_rgba(31,79,110,0.08)] hover:shadow-[0_8px_32px_rgba(31,79,110,0.14)] hover:-translate-y-1 transition-all duration-200 flex flex-col justify-between text-left border border-transparent hover:border-[#02ADAB]/30"
+                  className={`group bg-white rounded-[12px] p-6 shadow-[0_2px_16px_rgba(31,79,110,0.08)] hover:shadow-[0_8px_32px_rgba(31,79,110,0.14)] hover:-translate-y-1 transition-all duration-200 flex flex-col justify-between text-left border border-transparent hover:border-[#02ADAB]/30 ${
+                    idx === resourceCategories.length - 1 ? 'sm:col-span-2 lg:col-span-2' : ''
+                  }`}
                 >
                   <div>
                     <div className="flex items-center justify-between gap-2 mb-3">
@@ -238,7 +246,7 @@ export default function Ressources() {
                         <FolderOpen className="w-4 h-4" />
                       </span>
                       <span className="text-[11px] font-medium text-[#4a6a80] bg-[#f4f6f9] px-2.5 py-1 rounded-[4px]">
-                        {count} {count > 1 ? 'ressources' : 'ressource'}
+                        {badgeText}
                       </span>
                     </div>
                     <h3 className="text-[1.1rem] font-medium text-[#1F4F6E] group-hover:text-[#C06721] transition-colors mb-2">

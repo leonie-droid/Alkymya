@@ -99,6 +99,22 @@ export const resourceCategories: ResourceCategory[] = [
       "Alkymya INATEC, organisme partenaire certifié Qualiopi, formation IA OPCO, capsules vidéo IA entreprise",
     cardSummary:
       "Cinq capsules vidéo dédiées à la performance digitale et au portage OPCO avec notre partenaire certifié Qualiopi INATEC."
+  },
+  {
+    slug: "partenaires",
+    name: "Partenaires",
+    eyebrow: "Ressources · Partenaires",
+    h1Lead: "Les outils et acteurs avec lesquels",
+    h1Accent: "nous travaillons.",
+    description:
+      "Technologie, formation, territoire : un écosystème choisi pour sa fiabilité, sa souveraineté et son utilité concrète, dont AWA Cloud.",
+    seoTitle: "Nos Partenaires IA & Technologie | Ressources Alkymya",
+    seoDescription:
+      "Découvrez l'écosystème de partenaires technologiques et pédagogiques d'Alkymya : AWA Cloud, INATEC et les laboratoires éditoriaux TheLittle.",
+    keywords:
+      "partenaires IA France, AWA Cloud, INATEC Qualiopi, TheLittle SEO GEO, ressources partenaires Alkymya",
+    cardSummary:
+      "Les outils et acteurs recommandés par Alkymya : AWA Cloud (documents & RAG local), INATEC et TheLittle."
   }
 ];
 

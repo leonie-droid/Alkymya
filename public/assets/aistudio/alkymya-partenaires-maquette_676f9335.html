@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="fr"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Nos partenaires · Alkymya (maquette)</title>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{--bleu:#1F4F6E;--vert:#037971;--orange:#C06721;--turq:#02ADAB;--bg:#f8fafc;--tx:#1e293b;--mu:#64748b;--bd:#e2e8f0}
+*{box-sizing:border-box;margin:0;padding:0}body{font-family:Roboto,sans-serif;background:var(--bg);color:var(--tx);line-height:1.6}
+h1,h2,h3{font-family:Geist,sans-serif}a{color:inherit}
+nav{background:var(--bleu);padding:14px 32px;display:flex;gap:24px;align-items:center;color:#fff;font-family:Geist}
+nav b{font-size:1.1rem;margin-right:auto}nav a{text-decoration:none;opacity:.8;font-size:.92rem}nav a.on{opacity:1;border-bottom:2px solid var(--turq)}
+.wrap{max-width:1040px;margin:0 auto;padding:48px 24px}
+.crumb{font-size:.85rem;color:var(--mu);margin-bottom:18px}.crumb a{color:var(--vert)}
+.hero{background:linear-gradient(135deg,var(--bleu),#0d3550);color:#fff;padding:64px 24px}
+.hero .wrap{padding:0 24px}.hero h1{font-size:2.3rem;line-height:1.2;margin-bottom:14px}.hero p{max-width:640px;opacity:.9;font-size:1.05rem}
+.tag{display:inline-block;background:rgba(2,173,171,.2);color:var(--turq);padding:3px 12px;border-radius:99px;font-size:.8rem;margin-bottom:16px;font-weight:500}
+.btn{display:inline-block;background:var(--orange);color:#fff;padding:12px 24px;border-radius:8px;text-decoration:none;font-weight:500;margin:22px 12px 0 0}
+.btn.alt{background:transparent;border:1px solid rgba(255,255,255,.5)}
+h2{color:var(--bleu);font-size:1.5rem;margin-bottom:8px}.sub{color:var(--mu);margin-bottom:28px;max-width:680px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px}
+.card{background:#fff;border:1px solid var(--bd);border-radius:12px;padding:24px}
+.card h3{font-size:1.1rem;color:var(--bleu);margin-bottom:6px}.card p{font-size:.93rem;color:#475569}
+.card .ico{font-size:1.8rem;margin-bottom:8px}
+.pcard{border-top:4px solid var(--vert);cursor:pointer;transition:.2s}.pcard:hover{transform:translateY(-3px);box-shadow:0 8px 24px rgba(0,0,0,.08)}
+.pcard.soon{border-top-color:var(--bd);opacity:.55;cursor:default}.pcard.soon:hover{transform:none;box-shadow:none}
+.pill{display:inline-block;font-size:.72rem;padding:2px 10px;border-radius:99px;background:#e6f4f3;color:var(--vert);margin-top:12px}
+.sec{padding:20px 0 40px}.alt-bg{background:#fff;border-top:1px solid var(--bd);border-bottom:1px solid var(--bd)}
+.flow{display:flex;gap:12px;align-items:stretch;flex-wrap:wrap}
+.flow .st{flex:1;min-width:150px;background:#f0f9f8;border-radius:10px;padding:16px;text-align:center;font-size:.9rem}
+.flow .ar{align-self:center;color:var(--vert);font-size:1.4rem}
+.cta{background:var(--bleu);color:#fff;border-radius:16px;padding:40px;text-align:center}.cta h2{color:#fff}
+.note{background:#fff7ed;border:1px dashed var(--orange);border-radius:8px;padding:12px 16px;font-size:.82rem;color:#92400e;margin-top:28px}
+.view{display:none}.view.on{display:block}
+footer{text-align:center;color:var(--mu);font-size:.8rem;padding:32px}
+</style></head><body>
+<nav><b>Alkymya</b><a href="#">Formations</a><a href="#">Ateliers</a><a href="#" class="on">Ressources</a><a href="#">Contact</a></nav>
+
+<!-- VUE 1 : HUB PARTENAIRES -->
+<div class="view on" id="hub">
+<div class="hero"><div class="wrap"><span class="tag">Ressources · Partenaires</span>
+<h1>Les outils et acteurs avec lesquels nous travaillons</h1>
+<p>Nous ne recommandons que ce que nous utilisons nous-mêmes. Chaque partenaire est présenté avec son rôle réel dans nos projets et nos formations.</p></div></div>
+<div class="wrap"><h2>Nos partenaires</h2><p class="sub">Technologie, formation, territoire : un écosystème choisi pour sa fiabilité, sa souveraineté et son utilité concrète.</p>
+<div class="grid">
+<div class="card pcard" onclick="go('awa')"><div class="ico">📄</div><h3>AWA Cloud</h3><p>Bibliothèques et logiciels français qui lisent, convertissent et produisent vos documents, sans envoyer un fichier à l'extérieur.</p><span class="pill">Partenaire technologique · Voir la page →</span></div>
+<div class="card pcard soon"><div class="ico">🎓</div><h3>INATEC</h3><p>Organisme de formation certifié Qualiopi, porteur de nos formations finançables OPCO.</p><span class="pill" style="background:#eee;color:#777">Page à venir</span></div>
+<div class="card pcard soon"><div class="ico">🌿</div><h3>TheLittle (77 · 75 · 83)</h3><p>Nos laboratoires éditoriaux : la preuve par la pratique de notre approche SEO et GEO.</p><span class="pill" style="background:#eee;color:#777">Page à venir</span></div>
+</div></div></div>
+
+<!-- VUE 2 : PAGE AWA -->
+<div class="view" id="awa">
+<div class="hero"><div class="wrap"><div class="crumb" style="color:#9fb8cc"><a href="#" onclick="go('hub');return false" style="color:var(--turq)">Ressources</a> › <a href="#" onclick="go('hub');return false" style="color:var(--turq)">Nos partenaires</a> › AWA Cloud</div>
+<span class="tag">Partenaire technologique</span>
+<h1>AWA Cloud : vos documents, lisibles par l'IA, sans quitter votre ordinateur</h1>
+<p>Un éditeur français (fondé en 2016) qui publie des bibliothèques pour lire, convertir, signer et vérifier vos fichiers Word, Excel, PowerPoint, PDF et OpenDocument. Tout se passe localement : aucun fichier envoyé.</p>
+<a class="btn" href="https://awacloud.com/fr/apps" target="_blank">Essayer les applications gratuites</a><a class="btn alt" href="https://awacloud.com" target="_blank">Découvrir awacloud.com</a></div></div>
+
+<div class="wrap sec"><h2>Pourquoi nous l'avons choisi</h2><p class="sub">Une IA ne lit bien que du texte structuré. Vos documents arrivent en PDF, Word, PowerPoint : il faut les convertir, et le faire sans exposer vos données.</p>
+<div class="grid">
+<div class="card"><div class="ico">🔒</div><h3>Confidentiel par conception</h3><p>Le traitement se fait sur vos machines. Rien n'est envoyé à AWA ni à un tiers.</p></div>
+<div class="card"><div class="ico">🇫🇷</div><h3>Souverain</h3><p>Éditeur français. Code publié et vérifiable, sans dépendance externe à auditer.</p></div>
+<div class="card"><div class="ico">🧩</div><h3>Simple à intégrer</h3><p>Une bibliothèque, pas une infrastructure : pas de serveur de conversion à installer.</p></div>
+</div></div>
+
+<div class="alt-bg"><div class="wrap sec"><h2>Leurs logiciels</h2><p class="sub">Trois applications gratuites qui tournent dans le navigateur et fonctionnent hors ligne.</p>
+<div class="grid">
+<div class="card"><div class="ico">👁️</div><h3>AWA Viewer</h3><p>Ouvre et lit PDF, Word, Excel, PowerPoint, OpenDocument et Markdown. Indique ce que la vue n'affiche pas.</p><a href="https://viewer.awacloud.com/" target="_blank" style="color:var(--vert);font-size:.9rem">Ouvrir →</a></div>
+<div class="card"><div class="ico">📝</div><h3>AWA Notepad</h3><p>Éditeur de texte brut, avec encodages, recherche et remplacement. Un bloc-notes qui reste un bloc-notes.</p><a href="https://notepad.awacloud.com/" target="_blank" style="color:var(--vert);font-size:.9rem">Ouvrir →</a></div>
+<div class="card"><div class="ico">✍️</div><h3>AWA Writer <small>(bêta)</small></h3><p>Traitement de texte pour documents DOCX et ODT. Bêta : gardez une copie de vos fichiers importants.</p><a href="https://writer.awacloud.com/" target="_blank" style="color:var(--vert);font-size:.9rem">Ouvrir →</a></div>
+</div>
+<h3 style="margin:36px 0 12px;color:var(--bleu)">Pour les développeurs : les bibliothèques</h3>
+<div class="grid">
+<div class="card"><h3>AWA Convert</h3><p>Transforme Word, OpenDocument, Excel, PowerPoint et PDF en Markdown structuré, pour les pipelines IA et RAG.</p></div>
+<div class="card"><h3>AWA PDF</h3><p>Produit des PDF, contrôle l'accessibilité (PDF/UA) et signe (PAdES), dans le navigateur.</p></div>
+<div class="card"><h3>AWA Office</h3><p>Lit et écrit les six formats bureautiques, sans LibreOffice ni serveur.</p></div>
+</div></div></div>
+<div class="wrap sec"><h2>Tokens et RAG : ce que la conversion change vraiment</h2><p class="sub">Une IA facture et raisonne au « token ». Plus un document est lourd ou mal structuré, plus il coûte cher et plus l'IA se trompe. Voici ce que nous avons mesuré.</p>
+<div class="grid">
+<div class="card"><h3>Notre mesure</h3><p style="margin-bottom:10px">Rapport de 39 pages (PDF, 773 Ko) :</p>
+<table style="width:100%;font-size:.88rem;border-collapse:collapse">
+<tr style="border-bottom:1px solid var(--bd)"><td style="padding:6px 0">PDF d'origine</td><td style="text-align:right"><b>773 Ko</b> (binaire)</td></tr>
+<tr style="border-bottom:1px solid var(--bd)"><td style="padding:6px 0">Texte brut extrait</td><td style="text-align:right"><b>77 794</b> caractères</td></tr>
+<tr><td style="padding:6px 0">Markdown AWA structuré</td><td style="text-align:right"><b>86 187</b> caractères · 309 blocs</td></tr></table>
+<p style="font-size:.8rem;margin-top:10px;color:var(--mu)">Conversion en moins d'une seconde, en local.</p></div>
+<div class="card"><h3>Ce que ça veut dire</h3><p>Face à une simple extraction de texte, le Markdown n'est pas plus court. Son intérêt est ailleurs : il rend lisibles les formats que l'IA lit mal (PDF, PowerPoint, Word) et il <b>garde la structure</b> : titres, sections, tableaux.</p></div>
+<div class="card"><h3>Là où l'économie se fait</h3><p>Une fois le document structuré, l'IA n'a plus besoin de le lire en entier. On ne lui transmet que les sections utiles : environ 1 000 à 3 000 tokens pour une question précise, contre 25 000 pour le rapport complet.</p></div>
+</div>
+<h3 style="margin:32px 0 12px;color:var(--bleu)">Dans un pipeline RAG</h3>
+<div class="flow"><div class="st">📄<br><b>1. Convertir</b><br>AWA Convert → Markdown</div><div class="ar">→</div><div class="st">✂️<br><b>2. Découper</b><br>par titres, pas au hasard</div><div class="ar">→</div><div class="st">🗂️<br><b>3. Indexer</b><br>base vectorielle</div><div class="ar">→</div><div class="st">🔎<br><b>4. Retrouver</b><br>2 à 5 passages</div><div class="ar">→</div><div class="st">🤖<br><b>5. Répondre</b><br>l'IA cite sa source</div></div>
+<p class="sub" style="margin-top:18px">Le découpage par section est la vraie valeur : un passage retrouvé garde son titre et son contexte, donc l'IA répond mieux et on peut vérifier d'où vient la réponse. Limite connue : les tableurs très denses (XLSX) ne gagnent rien à la conversion.</p></div>
+
+
+<div class="wrap sec"><h2>Les usages avec Alkymya</h2><p class="sub">Comment nous l'utilisons concrètement, et comment vos équipes peuvent le faire.</p>
+<div class="flow"><div class="st">📥<br><b>Vos documents</b><br>PDF, Word, PPT, Excel</div><div class="ar">→</div><div class="st">⚙️<br><b>AWA Convert</b><br>Markdown propre, en local</div><div class="ar">→</div><div class="st">🤖<br><b>Votre IA</b><br>lit, résume, interroge</div><div class="ar">→</div><div class="st">📤<br><b>Livrables</b><br>DOCX, PDF, ODT</div></div>
+<div class="grid" style="margin-top:28px">
+<div class="card"><h3>Chez Alkymya</h3><p>Nous convertissons nos sources avant de les confier à l'IA, puis nous ne lisons que les passages utiles.</p></div>
+<div class="card"><h3>En entreprise</h3><p>Alimenter un assistant interne avec vos procédures, contrats ou rapports, sans les envoyer à un service tiers.</p></div>
+<div class="card"><h3>En formation</h3><p>Un cas concret pour comprendre le rôle des outils dans un agent IA, et choisir des briques souveraines.</p></div>
+</div></div>
+
+<div class="wrap" style="padding-top:0"><div class="cta"><h2>Un projet de documents et d'IA ?</h2><p style="opacity:.85;margin:8px 0 0">Parlons de votre cas : quels documents, quelle confidentialité, quel résultat attendu.</p><a class="btn" href="mailto:cyril@alkymya.co">Prendre rendez-vous</a></div>
+<div class="note"><b>À valider avant mise en ligne :</b> accord d'AWA Cloud sur la mention « partenaire » et l'usage de leur nom et logo · logo AWA à ajouter · section Tokens/RAG : chiffres issus de notre test du 16/11/2026 (1 seul document), à refaire sur 3-4 documents avant publication, et à relire avec AWA.</div></div>
+</div>
+
+<footer>Maquette Alkymya · novembre 2026 · contenus AWA issus de awacloud.com</footer>
+<script>function go(v){document.querySelectorAll('.view').forEach(e=>e.classList.remove('on'));document.getElementById(v).classList.add('on');scrollTo(0,0)}</script></body></html>

@@ -630,6 +630,73 @@ export const routes: RouteData[] = [
     }
   },
   {
+    path: '/ressources/partenaires',
+    title: "Nos Partenaires IA & Technologie | Ressources Alkymya",
+    description: "Découvrez l'écosystème de partenaires technologiques et pédagogiques d'Alkymya : AWA Cloud, INATEC et les laboratoires éditoriaux TheLittle.",
+    h1: "Les outils et acteurs avec lesquels nous travaillons",
+    ogImage: "https://alkymya.co/og-ressources.jpg",
+    lastmod: "2026-11-17",
+    schemaType: "CollectionPage",
+    content: {
+      leadParagraph: "Nous ne recommandons que ce que nous utilisons nous-mêmes. Chaque partenaire est présenté avec son rôle réel dans nos projets et nos formations.",
+      sections: [
+        {
+          h2: "Nos partenaires : technologie, formation, territoire",
+          paragraphs: [
+            "Un écosystème choisi pour sa fiabilité, sa souveraineté et son utilité concrète dans nos projets IA et nos ateliers."
+          ],
+          listItems: [
+            "AWA Cloud (Partenaire technologique) : bibliothèques et logiciels français qui lisent, convertissent et produisent vos documents localement, sans envoyer un fichier à l'extérieur.",
+            "INATEC : organisme partenaire certifié Qualiopi, porteur de nos formations finançables OPCO.",
+            "TheLittle (77 · 75 · 83) : nos laboratoires éditoriaux, preuve par la pratique de notre approche SEO et GEO."
+          ]
+        }
+      ],
+      internalLinks: [
+        { href: "/ressources/partenaires/awa-cloud/", label: "Découvrir la page dédiée AWA Cloud" },
+        { href: "/ressources/", label: "Retour à toutes nos ressources" },
+        { href: "/contact/", label: "Prendre rendez-vous avec Alkymya" }
+      ]
+    }
+  },
+  {
+    path: '/ressources/partenaires/awa-cloud',
+    title: "AWA Cloud : Documents & RAG Local | Partenaires Alkymya",
+    description: "Partenaire technologique AWA Cloud : bibliothèques et logiciels français pour convertir PDF, Word et Excel en Markdown localement sans fuite de données.",
+    h1: "AWA Cloud : vos documents, lisibles par l'IA, sans quitter votre ordinateur",
+    ogImage: "https://alkymya.co/og-ressources.jpg",
+    lastmod: "2026-11-17",
+    schemaType: "WebPage",
+    content: {
+      leadParagraph: "Un éditeur français (fondé en 2016) qui publie des bibliothèques pour lire, convertir, signer et vérifier vos fichiers Word, Excel, PowerPoint, PDF et OpenDocument. Tout se passe localement : aucun fichier envoyé.",
+      sections: [
+        {
+          h2: "Pourquoi nous avons choisi AWA Cloud",
+          paragraphs: [
+            "Une IA ne lit bien que du texte structuré. Vos documents arrivent en PDF, Word, PowerPoint : il faut les convertir sans exposer vos données."
+          ],
+          listItems: [
+            "Confidentiel par conception : traitement sur vos machines, rien n'est envoyé à AWA ni à un tiers.",
+            "Souverain : éditeur français, code publié et vérifiable.",
+            "Simple à intégrer : une bibliothèque, sans serveur de conversion à installer."
+          ]
+        },
+        {
+          h2: "Logiciels gratuits, bibliothèques et pipeline RAG",
+          paragraphs: [
+            "Trois applications gratuites dans le navigateur hors ligne (AWA Viewer, AWA Notepad, AWA Writer bêta) et trois bibliothèques développeurs (AWA Convert, AWA PDF, AWA Office).",
+            "Sur un rapport PDF de 39 pages (773 Ko), AWA Convert produit 86 187 caractères de Markdown structuré en 309 blocs en moins d'une seconde en local, permettant à un pipeline RAG de n'envoyer que 1 000 à 3 000 tokens pertinents au lieu de 25 000."
+          ]
+        }
+      ],
+      internalLinks: [
+        { href: "/ressources/partenaires/", label: "Retour à Nos partenaires" },
+        { href: "/ressources/", label: "Retour à toutes nos ressources" },
+        { href: "/contact/", label: "Discuter d'un projet documentaire et IA" }
+      ]
+    }
+  },
+  {
     path: '/alchimistes',
     title: "Experts IA France & Fondateurs Agence IA | Alkymya",
     description: "Experts IA France : Cyril Garnier, Léonie Egesipe, Véronique Landereau et Mariana Didier Laurent. Accompagnement IA dirigeants et indépendants.",
