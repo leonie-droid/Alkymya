@@ -164,7 +164,7 @@ export const alchimistes: AlchimisteProfile[] = [
     image: "https://res.cloudinary.com/dokzioyu4/image/upload/v1792763449/1792401247516_ussqzm.png",
     socials: {
       linkedin: "https://www.linkedin.com/in/veronique-landereau-97729a59/",
-      mail: "contact@alkymya.co"
+      mail: "cyril@alkymya.co"
     },
     works: [
       { label: "New Health Paradigm", url: "https://www.linkedin.com/in/veronique-landereau-97729a59/" },
@@ -205,7 +205,7 @@ export const alchimistes: AlchimisteProfile[] = [
     socials: {
       website: "https://esperantaservices.fr/",
       linkedin: "https://esperantaservices.fr/",
-      mail: "contact@alkymya.co"
+      mail: "cyril@alkymya.co"
     },
     works: [
       { label: "Esperanta Services", url: "https://esperantaservices.fr/" },

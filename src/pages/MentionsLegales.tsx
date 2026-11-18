@@ -30,7 +30,7 @@ const MentionsLegales: React.FC = () => {
             Informations réglementaires de notre agence IA et studio création IA en France : éditeur, hébergement, conformité IA Act et gestion des cookies RGPD.
           </p>
           <span className="inline-block bg-white/10 text-white/80 text-xs font-medium uppercase tracking-wider px-3.5 py-1.5 rounded-[4px]">
-            Version 2.2 · Mise à jour Mars 2026
+            Version 2.3 · Mise à jour 18 novembre 2026
           </span>
         </div>
       </header>
@@ -39,19 +39,83 @@ const MentionsLegales: React.FC = () => {
       <section className="max-w-[1100px] mx-auto py-[70px] px-6 space-y-10">
         {/* Content Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-7">
-          {/* Éditeur */}
+          {/* Éditeur du site */}
           <div className="p-7 rounded-[12px] bg-white shadow-[0_2px_16px_rgba(31,79,110,0.08)] space-y-4">
             <div className="flex items-center gap-3 text-[#1F4F6E]">
               <div className="w-10 h-10 rounded-[8px] bg-[rgba(2,173,171,0.1)] text-[#02ADAB] flex items-center justify-center">
                 <User className="w-5 h-5" />
               </div>
-              <h2 className="text-[1.25rem] font-medium text-[#1F4F6E]">Éditeur de l'agence IA Alkymya</h2>
+              <h2 className="text-[1.25rem] font-medium text-[#1F4F6E]">Éditeur du site</h2>
             </div>
-            <div className="space-y-2.5 text-[0.95rem] text-[#5a7a90]">
-              <p><strong className="text-[#1F4F6E] font-medium">Nom :</strong> Cyril Garnier</p>
-              <p><strong className="text-[#1F4F6E] font-medium">Qualité :</strong> Enseignant-Explorateur, Expert IA France &amp; Innovation</p>
-              <p><strong className="text-[#1F4F6E] font-medium">Société :</strong> Cyril Garnier Consulting</p>
-              <p><strong className="text-[#1F4F6E] font-medium">Email de contact :</strong> <a href="mailto:cyril@alkymya.co" className="text-[#02ADAB] hover:text-[#037971] font-medium">cyril@alkymya.co</a></p>
+            <p className="text-[0.95rem] text-[#5a7a90] leading-[1.6]">
+              Le site <strong className="text-[#1F4F6E] font-medium">alkymya.co</strong> est édité par <strong className="text-[#1F4F6E] font-medium">CYRIL GARNIER CONSULTING</strong>, SASU au capital de 1 500 €, dont le siège social est situé 2 rue Sacha Guitry, 77330 Ozoir-la-Ferrière, France.
+            </p>
+            <div className="space-y-2 text-[0.92rem] text-[#5a7a90]">
+              <p><strong className="text-[#1F4F6E] font-medium">Raison sociale :</strong> CYRIL GARNIER CONSULTING</p>
+              <p><strong className="text-[#1F4F6E] font-medium">Forme juridique :</strong> SASU au capital de 1 500 €</p>
+              <p><strong className="text-[#1F4F6E] font-medium">Siège social :</strong> 2 rue Sacha Guitry, 77330 Ozoir-la-Ferrière</p>
+              <p><strong className="text-[#1F4F6E] font-medium">RCS :</strong> 842 403 669 R.C.S. Melun, immatriculée le 17 septembre 2018</p>
+              <p><strong className="text-[#1F4F6E] font-medium">SIREN :</strong> 842 403 669 — <strong className="text-[#1F4F6E] font-medium">SIRET (siège) :</strong> 842 403 669 00018</p>
+              <p><strong className="text-[#1F4F6E] font-medium">TVA intracommunautaire :</strong> FR 82 842403669</p>
+              <p><strong className="text-[#1F4F6E] font-medium">Code APE :</strong> 70.22Z</p>
+              <p><strong className="text-[#1F4F6E] font-medium">Directeur de la publication :</strong> Cyril Garnier</p>
+              <p>
+                <strong className="text-[#1F4F6E] font-medium">Contact :</strong>{' '}
+                <a href="mailto:cyril@alkymya.co" className="text-[#02ADAB] hover:text-[#037971] font-medium">cyril@alkymya.co</a>
+                {' — '}
+                <a href="tel:+33643649777" className="text-[#02ADAB] hover:text-[#037971] font-medium">06 43 64 97 77</a>
+              </p>
+            </div>
+          </div>
+
+          {/* Hébergement & Marques */}
+          <div className="p-7 rounded-[12px] bg-white shadow-[0_2px_16px_rgba(31,79,110,0.08)] space-y-5">
+            <div className="space-y-3">
+              <div className="flex items-center gap-3 text-[#1F4F6E]">
+                <div className="w-10 h-10 rounded-[8px] bg-[rgba(31,79,110,0.08)] text-[#1F4F6E] flex items-center justify-center">
+                  <Info className="w-5 h-5" />
+                </div>
+                <h2 className="text-[1.25rem] font-medium text-[#1F4F6E]">Hébergement</h2>
+              </div>
+              <p className="text-[0.95rem] text-[#5a7a90] leading-[1.6]">
+                Le site est hébergé par <strong className="text-[#1F4F6E] font-medium">Netlify, Inc.</strong>, 44 Montgomery Street, Suite 300, San Francisco, CA 94104, États-Unis —{' '}
+                <a href="https://www.netlify.com" target="_blank" rel="noopener noreferrer" className="text-[#02ADAB] hover:text-[#037971] font-medium">
+                  www.netlify.com
+                </a>
+              </p>
+            </div>
+
+            <div className="pt-4 border-t border-[rgba(31,79,110,0.08)] space-y-2">
+              <h2 className="text-[1.15rem] font-medium text-[#1F4F6E]">Marques</h2>
+              <p className="text-[0.95rem] text-[#5a7a90] leading-[1.6]">
+                Alkymya, TheLittle77, TheLittle75 et TheLittle83 sont des marques exploitées par <strong className="text-[#1F4F6E] font-medium">CYRIL GARNIER CONSULTING</strong>.
+              </p>
+            </div>
+          </div>
+
+          {/* Responsable & Contacts */}
+          <div className="p-7 rounded-[12px] bg-[#1F4F6E] text-white shadow-[0_2px_16px_rgba(31,79,110,0.12)] space-y-5">
+            <div>
+              <span className="text-[0.72rem] font-medium uppercase tracking-[0.15em] text-[#02ADAB] mb-1 block">
+                Publication
+              </span>
+              <h2 className="text-[1.25rem] font-medium mb-1.5 text-white">Directeur de la publication</h2>
+              <p className="text-white/75 text-[0.95rem]">Cyril Garnier — Président de CYRIL GARNIER CONSULTING</p>
+            </div>
+
+            <div className="pt-4 border-t border-white/10 space-y-2.5 text-[0.9rem]">
+              <div className="flex items-center gap-3">
+                <Mail className="w-4 h-4 text-[#02ADAB] shrink-0" />
+                <span className="text-white/90">Contact unique &amp; Ateliers : <a href="mailto:cyril@alkymya.co" className="hover:underline font-medium">cyril@alkymya.co</a></span>
+              </div>
+              <div className="flex items-center gap-3">
+                <Mail className="w-4 h-4 text-[#02ADAB] shrink-0" />
+                <span className="text-white/90">Téléphone : <a href="tel:+33643649777" className="hover:underline font-medium">06 43 64 97 77</a></span>
+              </div>
+              <div className="flex items-center gap-3">
+                <Globe className="w-4 h-4 text-[#C06721] shrink-0" />
+                <span className="text-white/90">Réseaux : @alkymya_cyril / @alkymya_leonie</span>
+              </div>
             </div>
           </div>
 
@@ -72,49 +136,6 @@ const MentionsLegales: React.FC = () => {
                   {agent}
                 </span>
               ))}
-            </div>
-          </div>
-
-          {/* Responsable & Contacts */}
-          <div className="p-7 rounded-[12px] bg-[#1F4F6E] text-white shadow-[0_2px_16px_rgba(31,79,110,0.12)] space-y-5">
-            <div>
-              <span className="text-[0.72rem] font-medium uppercase tracking-[0.15em] text-[#02ADAB] mb-1 block">
-                Publication
-              </span>
-              <h2 className="text-[1.25rem] font-medium mb-1.5 text-white">Responsable de publication</h2>
-              <p className="text-white/75 text-[0.95rem]">Cyril Garnier — Directeur Associé Alkymya</p>
-            </div>
-
-            <div className="pt-4 border-t border-white/10 space-y-2.5 text-[0.9rem]">
-              <div className="flex items-center gap-3">
-                <Mail className="w-4 h-4 text-[#02ADAB] shrink-0" />
-                <span className="text-white/90">Direction &amp; Ateliers : <a href="mailto:cyril@alkymya.co" className="hover:underline font-medium">cyril@alkymya.co</a></span>
-              </div>
-              <div className="flex items-center gap-3">
-                <Mail className="w-4 h-4 text-[#02ADAB] shrink-0" />
-                <span className="text-white/90">Direction Artistique : <a href="mailto:leonie@alkymya.co" className="hover:underline font-medium">leonie@alkymya.co</a></span>
-              </div>
-              <div className="flex items-center gap-3">
-                <Globe className="w-4 h-4 text-[#C06721] shrink-0" />
-                <span className="text-white/90">Réseaux : @alkymya_cyril / @alkymya_leonie</span>
-              </div>
-            </div>
-          </div>
-
-          {/* Hébergement */}
-          <div className="p-7 rounded-[12px] bg-white shadow-[0_2px_16px_rgba(31,79,110,0.08)] space-y-4">
-            <div className="flex items-center gap-3 text-[#1F4F6E]">
-              <div className="w-10 h-10 rounded-[8px] bg-[rgba(31,79,110,0.08)] text-[#1F4F6E] flex items-center justify-center">
-                <Info className="w-5 h-5" />
-              </div>
-              <h2 className="text-[1.25rem] font-medium text-[#1F4F6E]">Hébergement &amp; Cloud</h2>
-            </div>
-            <p className="text-[0.95rem] text-[#5a7a90] leading-[1.6]">
-              Cette application et ses serveurs de traitement sont hébergés par l'infrastructure cloud haute performance :
-            </p>
-            <div className="p-4 rounded-[8px] bg-[#f4f6f9] text-sm">
-              <p className="font-medium text-[#1F4F6E]">Google Cloud Platform (GCP)</p>
-              <p className="text-xs text-[#5a7a90] mt-0.5">Google LLC, 1600 Amphitheatre Parkway, Mountain View, CA 94043, USA.</p>
             </div>
           </div>
         </div>

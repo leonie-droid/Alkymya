@@ -147,7 +147,7 @@ export default function Header() {
                     <a href="https://www.youtube.com/channel/UCon0sR5rVfTCuHOWG7LhAig" target="_blank" rel="noopener noreferrer">
                       <Youtube className="h-6 w-6 text-muted-foreground hover:text-accent cursor-pointer" />
                     </a>
-                    <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer">
+                    <a href="https://www.facebook.com/cyril.garnier.969" target="_blank" rel="noopener noreferrer" aria-label="Facebook Alkymya / Cyril Garnier">
                       <Facebook className="h-6 w-6 text-muted-foreground hover:text-accent cursor-pointer" />
                     </a>
                     <a href="https://www.linkedin.com/in/cyril-garnier-89697b1/" target="_blank" rel="noopener noreferrer">

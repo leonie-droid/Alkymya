@@ -971,8 +971,7 @@ export const routes: RouteData[] = [
         {
           h2: "Nos coordonnées et zone d'intervention",
           paragraphs: [
-            "Alkymya — Studio d'expertise et de création IA, Île-de-France, France.",
-            "Email direct : contact@alkymya.co • Téléphone : +33 1 89 71 32 40."
+            "Alkymya — studio d'expertise et de création IA de CYRIL GARNIER CONSULTING, 2 rue Sacha Guitry, 77330 Ozoir-la-Ferrière. Email direct : cyril@alkymya.co • Téléphone : 06 43 64 97 77."
           ]
         }
       ],
@@ -1160,26 +1159,48 @@ export const routes: RouteData[] = [
   {
     path: '/mentions-legales',
     title: "Mentions Légales Agence IA & RGPD | Alkymya",
-    description: "Mentions légales d'Alkymya, studio d'expertise et de création IA en France : conformité RGPD, hébergement cloud et propriété intellectuelle.",
+    description: "Mentions légales d'Alkymya (marque de CYRIL GARNIER CONSULTING, SASU, 2 rue Sacha Guitry, 77330 Ozoir-la-Ferrière) : RCS Melun, hébergement Netlify et RGPD.",
     h1: "Mentions légales Alkymya & RGPD.",
     ogImage: "https://alkymya.co/og-mentions.jpg",
-    lastmod: "2026-11-15",
+    lastmod: "2026-11-18",
     schemaType: "WebPage",
     content: {
-      leadParagraph: "Consultez les mentions légales d'Alkymya, studio d'expertise et de création IA en France, ainsi que notre politique stricte de confidentialité RGPD.",
+      leadParagraph: "Consultez les mentions légales du site alkymya.co (marque exploitée par CYRIL GARNIER CONSULTING) et notre politique stricte de confidentialité RGPD.",
       sections: [
         {
-          h2: "Éditeur du site et direction de publication",
+          h2: "Éditeur du site",
           paragraphs: [
-            "Le site internet alkymya.co est édité par Alkymya, studio d'expertise et de création IA en Île-de-France, France.",
-            "Direction de la publication : Cyril Garnier (cyrilgarnier.fr) et Léonie Egesipe. Contact : contact@alkymya.co."
+            "Le site alkymya.co est édité par CYRIL GARNIER CONSULTING, SASU au capital de 1 500 €, dont le siège social est situé 2 rue Sacha Guitry, 77330 Ozoir-la-Ferrière, France."
+          ],
+          listItems: [
+            "Raison sociale : CYRIL GARNIER CONSULTING",
+            "Forme juridique : SASU au capital de 1 500 €",
+            "Siège social : 2 rue Sacha Guitry, 77330 Ozoir-la-Ferrière",
+            "RCS : 842 403 669 R.C.S. Melun, immatriculée le 17 septembre 2018",
+            "SIREN : 842 403 669 — SIRET (siège) : 842 403 669 00018",
+            "TVA intracommunautaire : FR 82 842403669",
+            "Code APE : 70.22Z",
+            "Directeur de la publication : Cyril Garnier",
+            "Contact : cyril@alkymya.co — 06 43 64 97 77"
+          ]
+        },
+        {
+          h2: "Hébergement",
+          paragraphs: [
+            "Le site est hébergé par Netlify, Inc., 44 Montgomery Street, Suite 300, San Francisco, CA 94104, États-Unis — www.netlify.com"
+          ]
+        },
+        {
+          h2: "Marques",
+          paragraphs: [
+            "Alkymya, TheLittle77, TheLittle75 et TheLittle83 sont des marques exploitées par CYRIL GARNIER CONSULTING."
           ]
         },
         {
           h2: "Protection des données personnelles et respect du RGPD",
           paragraphs: [
             "Conformément au Règlement Général sur la Protection des Données (RGPD) et à la loi Informatique et Libertés, les informations recueillies via nos formulaires sont exclusivement destinées au traitement de vos demandes de contact ou de candidature.",
-            "Aucune donnée personnelle n'est cédée, louée ou vendue à des tiers. Vous disposez d'un droit d'accès, de rectification et de suppression de vos données en écrivant à contact@alkymya.co."
+            "Aucune donnée personnelle n'est cédée, louée ou vendue à des tiers. Vous disposez d'un droit d'accès, de rectification et de suppression de vos données en écrivant à cyril@alkymya.co."
           ],
           listItems: [
             "Hébergement sécurisé respectant les normes de souveraineté des données.",

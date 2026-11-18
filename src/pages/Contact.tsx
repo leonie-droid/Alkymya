@@ -266,6 +266,24 @@ export default function Contact() {
             </a>
           </div>
         </div>
+
+        {/* COORDONNÉES OFFICIELLES & ÉDITEUR */}
+        <div className="mt-7 p-6 sm:p-8 rounded-[12px] bg-white shadow-[0_2px_16px_rgba(31,79,110,0.08)] border border-[rgba(31,79,110,0.06)]">
+          <p className="text-[0.72rem] font-medium tracking-[0.12em] uppercase text-[#02ADAB] mb-2">
+            Coordonnées officielles
+          </p>
+          <p className="text-[0.98rem] text-[#1F4F6E] leading-[1.7] font-normal">
+            Alkymya — studio d'expertise et de création IA de <strong className="font-medium">CYRIL GARNIER CONSULTING</strong>, 2 rue Sacha Guitry, 77330 Ozoir-la-Ferrière. Email direct :{' '}
+            <a href="mailto:cyril@alkymya.co" className="text-[#02ADAB] hover:text-[#037971] font-medium underline">
+              cyril@alkymya.co
+            </a>{' '}
+            • Téléphone :{' '}
+            <a href="tel:+33643649777" className="text-[#02ADAB] hover:text-[#037971] font-medium underline">
+              06 43 64 97 77
+            </a>
+            .
+          </p>
+        </div>
       </section>
 
       {/* SÉPARATEUR */}

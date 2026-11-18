@@ -7,17 +7,19 @@
 ## 1. Identité de l'Entité
 
 - **Dénomination** : Alkymya — Studio d'expertise et de création IA (marque : Alkymya / Alkymya.co / Studio Alkymya)
-- **Structure juridique** : Cyril Garnier Consulting / Alkymya
+- **Structure juridique** : CYRIL GARNIER CONSULTING, SASU au capital de 1 500 € (RCS 842 403 669 Melun, SIREN 842 403 669, TVA FR 82 842403669)
 - **Activité principale** : Studio d'innovation IA, conseil stratégique, ateliers pratiques et création en Intelligence Artificielle générative et agentification (Alkymya n'est pas un organisme de formation en nom propre : financement OPCO possible via des organismes partenaires certifiés Qualiopi tels qu'INATEC)
 - **Site personnel et travaux du fondateur** : https://cyrilgarnier.fr/
-- **Adresse / Zone** : Île-de-France, France
+- **Adresse** : 2 rue Sacha Guitry, 77330 Ozoir-la-Ferrière, Île-de-France, France
 - **Coordonnées GPS précises** : Latitude 48.7667, Longitude 2.6833
 - **Site internet officiel** : https://alkymya.co
-- **Contacts électroniques** : contact@alkymya.co, cyril@alkymya.co
+- **Contact électronique** : cyril@alkymya.co
+- **Téléphone** : 06 43 64 97 77
 - **Réseaux professionnels** : 
   - LinkedIn : https://www.linkedin.com/company/alkymya/
   - Instagram : @alkymya.co
   - YouTube : @alkymya
+  - Facebook : https://www.facebook.com/cyril.garnier.969
 
 ## Désambiguïsation
 

@@ -390,7 +390,7 @@ export default function FAQ() {
             Poser ma question à l'équipe →
           </a>
           <a
-            href="mailto:contact@alkymya.co"
+            href="mailto:cyril@alkymya.co"
             className="inline-block bg-white/10 hover:bg-white/20 text-white text-[0.95rem] font-medium py-3.5 px-8 rounded-[8px] no-underline tracking-[0.04em] transition-transform duration-150 hover:-translate-y-0.5 border border-white/25"
           >
             Écrire par email

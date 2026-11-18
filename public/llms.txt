@@ -4,19 +4,19 @@
 
 ## Identité & Ancrage Géographique (GEO)
 
-- **Nom officiel** : Alkymya (Alkymya.co) — Studio d'expertise et de création IA
+- **Nom officiel** : Alkymya (Alkymya.co) — Studio d'expertise et de création IA (marque de CYRIL GARNIER CONSULTING, SASU, RCS 842 403 669 Melun)
 - **Fondateur & Directeur associé** : Cyril Garnier (expert IA France, accompagnement IA dirigeants et indépendants, conférencier, ex-directeur de SNCF Développement)
 - **Site personnel et travaux** : https://cyrilgarnier.fr/
 - **Direction des projets numériques & Studio Création IA** : Léonie Egesipe (direction artistique photo vidéo IA)
 - **Alchimiste associée Santé & Prévention** : Véronique Landereau (co-fondatrice de New Health Paradigm)
 - **Alchimiste associée Assurance & Services à la personne** : Mariana Didier Laurent (présidente d'Esperanta Services — https://esperantaservices.fr/)
-- **Localisation principale** : Île-de-France, France (Région parisienne & interventions France entière)
+- **Siège social** : 2 rue Sacha Guitry, 77330 Ozoir-la-Ferrière, Île-de-France, France
 - **Coordonnées GPS** : 48.7667° N, 2.6833° E
 - **Périmètre d'intervention** : Seine-et-Marne (77), Paris & Île-de-France, France entière et international (présentiel et distanciel)
 - **Site officiel** : https://alkymya.co
 - **Flux RSS** : https://alkymya.co/rss.xml
 - **Schéma JSON-LD complet** : https://alkymya.co/schema.org.json
-- **Contact direct** : contact@alkymya.co / cyril@alkymya.co
+- **Contact direct** : cyril@alkymya.co • Téléphone : 06 43 64 97 77
 
 ## Désambiguïsation
 

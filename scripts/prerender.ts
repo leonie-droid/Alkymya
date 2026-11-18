@@ -75,16 +75,26 @@ function generatePageBody(route: RouteData): string {
               <h2 style="font-size: 1.625rem; font-weight: 800; color: #1F4F6E; margin-top: 0; margin-bottom: 1rem;">
                 ${escapeHtml(section.h2)}
               </h2>
-              ${section.paragraphs.map(p => `
+              ${section.paragraphs.map(p => {
+                const escaped = escapeHtml(p)
+                  .replace(/06 43 64 97 77/g, '<a href="tel:+33643649777" style="color: #037971; text-decoration: underline;">06 43 64 97 77</a>')
+                  .replace(/cyril@alkymya\.co/g, '<a href="mailto:cyril@alkymya.co" style="color: #037971; text-decoration: underline;">cyril@alkymya.co</a>');
+                return `
                 <p style="font-size: 1rem; color: #334155; margin-bottom: 1rem; line-height: 1.7;">
-                  ${escapeHtml(p)}
+                  ${escaped}
                 </p>
-              `).join('')}
+              `;
+              }).join('')}
               ${section.listItems && section.listItems.length > 0 ? `
                 <ul style="margin: 1.25rem 0 0.5rem 0; padding-left: 1.5rem; color: #334155; font-size: 0.95rem; line-height: 1.8;">
-                  ${section.listItems.map(item => `
-                    <li style="margin-bottom: 0.5rem;">${escapeHtml(item)}</li>
-                  `).join('')}
+                  ${section.listItems.map(item => {
+                    const escapedItem = escapeHtml(item)
+                      .replace(/06 43 64 97 77/g, '<a href="tel:+33643649777" style="color: #037971; text-decoration: underline;">06 43 64 97 77</a>')
+                      .replace(/cyril@alkymya\.co/g, '<a href="mailto:cyril@alkymya.co" style="color: #037971; text-decoration: underline;">cyril@alkymya.co</a>');
+                    return `
+                    <li style="margin-bottom: 0.5rem;">${escapedItem}</li>
+                  `;
+                  }).join('')}
                 </ul>
               ` : ''}
             </section>
@@ -132,7 +142,7 @@ function generatePageBody(route: RouteData): string {
     <footer style="background: #1F4F6E; color: #ffffff; padding: 3rem 1.5rem; margin-top: 4rem; font-family: system-ui, -apple-system, sans-serif;">
       <div style="max-width: 1200px; margin: 0 auto; display: flex; flex-direction: column; align-items: center; justify-content: space-between; gap: 1.5rem; text-align: center;">
         <p style="margin: 0; font-size: 0.875rem; color: #cbd5e1;">
-          © 2026 <strong>Alkymya.co</strong> — Alkymya, studio d'expertise et de création IA en Île-de-France, France.
+          © 2026 <strong>Alkymya.co</strong> — Marque de <strong>CYRIL GARNIER CONSULTING</strong> (SASU, 2 rue Sacha Guitry, 77330 Ozoir-la-Ferrière, France).
         </p>
         <nav aria-label="Liens de pied de page" style="display: flex; flex-wrap: wrap; justify-content: center; gap: 1.5rem; font-size: 0.8125rem; text-transform: uppercase; letter-spacing: 0.05em; font-weight: 600;">
           <a href="https://cyrilgarnier.fr/" target="_blank" rel="noopener noreferrer" style="color: #02ADAB; text-decoration: none;">Voir le site de Cyril Garnier →</a>
@@ -428,6 +438,7 @@ function buildJsonLd(route: RouteData, canonicalUrl: string) {
     "@type": ["ProfessionalService", "LocalBusiness"],
     "@id": "https://alkymya.co/#organization",
     "name": "Alkymya",
+    "legalName": "CYRIL GARNIER CONSULTING",
     "alternateName": ["Alkymya.co", "Studio Alkymya"],
     "url": "https://alkymya.co/",
     "logo": cloudinaryUrl("https://res.cloudinary.com/dokzioyu4/image/upload/v1758096912/logo_principal_bleu_gbnyuu.png", 600),
@@ -436,10 +447,15 @@ function buildJsonLd(route: RouteData, canonicalUrl: string) {
     "founder": {
       "@id": "https://alkymya.co/#cyril-garnier"
     },
-    "telephone": "+33 1 89 71 32 40",
-    "email": "contact@alkymya.co",
+    "telephone": "+33643649777",
+    "email": "cyril@alkymya.co",
+    "vatID": "FR82842403669",
+    "taxID": "842403669",
     "address": {
       "@type": "PostalAddress",
+      "streetAddress": "2 rue Sacha Guitry",
+      "postalCode": "77330",
+      "addressLocality": "Ozoir-la-Ferrière",
       "addressRegion": "Île-de-France",
       "addressCountry": "FR"
     },
@@ -457,7 +473,8 @@ function buildJsonLd(route: RouteData, canonicalUrl: string) {
       "https://www.linkedin.com/company/alkymya/",
       "https://www.youtube.com/@alkymya",
       "https://www.instagram.com/alkymya.co/",
-      "https://cyrilgarnier.fr/"
+      "https://cyrilgarnier.fr/",
+      "https://www.facebook.com/cyril.garnier.969"
     ],
     "openingHoursSpecification": [
       {

@@ -184,8 +184,8 @@ export default function Footer() {
 
         <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-[11px] uppercase tracking-[0.2em] text-primary-foreground/50 font-bold">
           <div className="flex flex-wrap items-center justify-center md:justify-start gap-4 sm:gap-6">
-            <p>© 2026 Alkymya.co. Tous droits réservés.</p>
-            <Link to="/mentions-legales" className="hover:text-accent transition-colors">
+            <p>© 2026 Alkymya.co — CYRIL GARNIER CONSULTING. Tous droits réservés.</p>
+            <Link to="/mentions-legales/" className="hover:text-accent transition-colors">
               Mentions Légales
             </Link>
             <Link to="/newbusiness/" className="hover:text-accent transition-colors">

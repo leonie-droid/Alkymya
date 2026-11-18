@@ -93,8 +93,10 @@ export const SEO: React.FC<SEOProps> = ({
     "@context": "https://schema.org",
     "@type": ["LocalBusiness", "ProfessionalService"],
     "name": "Alkymya",
+    "legalName": "CYRIL GARNIER CONSULTING",
     "alternateName": ["Alkymya.co", "Studio Alkymya"],
-    "image": "https://res.cloudinary.com/dokzioyu4/image/upload/f_auto,q_auto,w_600,c_limit/v1758096912/logo_principal_bleu_gbnyuu.png",
+    "image": "https://alkymya.co/og-image.jpg",
+    "logo": "https://res.cloudinary.com/dokzioyu4/image/upload/f_auto,q_auto,w_600,c_limit/v1758096912/logo_principal_bleu_gbnyuu.png",
     "@id": "https://alkymya.co/#organization",
     "url": "https://alkymya.co/",
     "description": "Alkymya, studio d'expertise et de création IA en France : accompagnement intelligence artificielle, création d'agents IA sur mesure, stratégie SEO et GEO Google AI et formations OPCO via nos organismes partenaires certifiés Qualiopi.",
@@ -108,38 +110,57 @@ export const SEO: React.FC<SEOProps> = ({
         "https://www.linkedin.com/in/cyril-garnier-89697b1/"
       ]
     },
+    "telephone": "+33643649777",
+    "email": "cyril@alkymya.co",
+    "vatID": "FR82842403669",
+    "taxID": "842403669",
     "sameAs": [
       "https://www.linkedin.com/company/alkymya/",
       "https://www.youtube.com/@alkymya",
       "https://www.instagram.com/alkymya.co/",
-      "https://cyrilgarnier.fr/"
+      "https://cyrilgarnier.fr/",
+      "https://www.facebook.com/cyril.garnier.969"
     ],
     "address": {
       "@type": "PostalAddress",
+      "streetAddress": "2 rue Sacha Guitry",
+      "postalCode": "77330",
+      "addressLocality": "Ozoir-la-Ferrière",
       "addressRegion": "Île-de-France",
       "addressCountry": "FR"
     },
-    "areaServed": ["Île-de-France", "France"],
+    "areaServed": [
+      { "@type": "AdministrativeArea", "name": "Seine-et-Marne" },
+      { "@type": "AdministrativeArea", "name": "Île-de-France" },
+      { "@type": "Country", "name": "France" }
+    ],
     "geo": {
       "@type": "GeoCoordinates",
       "latitude": 48.7667,
       "longitude": 2.6833
     },
-    "openingHoursSpecification": {
-      "@type": "OpeningHoursSpecification",
-      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-      "opens": "09:00",
-      "closes": "18:00"
-    }
+    "openingHoursSpecification": [
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+        "opens": "09:00",
+        "closes": "18:30"
+      }
+    ]
   };
 
   const educationalOrgSchema = {
     "@context": "https://schema.org",
     "@type": "ProfessionalService",
     "name": "Alkymya",
+    "legalName": "CYRIL GARNIER CONSULTING",
     "alternateName": ["Alkymya.co", "Studio Alkymya"],
     "description": "Alkymya, studio d'expertise et de création IA en France : atelier IA pratique, création d'agents IA, accompagnement dirigeants et formations finançables OPCO via nos organismes partenaires certifiés Qualiopi.",
     "url": "https://alkymya.co/",
+    "telephone": "+33643649777",
+    "email": "cyril@alkymya.co",
+    "vatID": "FR82842403669",
+    "taxID": "842403669",
     "founder": {
       "@id": "https://alkymya.co/#cyril-garnier"
     },
@@ -147,10 +168,14 @@ export const SEO: React.FC<SEOProps> = ({
       "https://www.linkedin.com/company/alkymya/",
       "https://www.youtube.com/@alkymya",
       "https://www.instagram.com/alkymya.co/",
-      "https://cyrilgarnier.fr/"
+      "https://cyrilgarnier.fr/",
+      "https://www.facebook.com/cyril.garnier.969"
     ],
     "address": {
       "@type": "PostalAddress",
+      "streetAddress": "2 rue Sacha Guitry",
+      "postalCode": "77330",
+      "addressLocality": "Ozoir-la-Ferrière",
       "addressRegion": "Île-de-France",
       "addressCountry": "FR"
     }
