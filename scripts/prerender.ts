@@ -247,8 +247,12 @@ const faqQuestions = [
     answer: "Alkymya (alkymya.co) est un studio IA et cabinet d'expertise en Île-de-France (France), fondé par Cyril Garnier et Léonie Egesipe. Alkymya n'est pas un organisme de formation en nom propre : nous collaborons avec des partenaires certifiés Qualiopi (comme INATEC) pour proposer des formations IA en entreprise finançables OPCO, concevons des agents IA sur mesure et accompagnons les dirigeants dans le programme New Business MVP."
   },
   {
-    name: "Alkymya, est-ce un restaurant ?",
-    answer: "Non. Alkymya (alkymya.co) est un studio d'intelligence artificielle et cabinet d'expertise en France (Île-de-France), sans aucun lien avec le restaurant Alkymya Bellini à Naples, le groupe Alkymya Music ni le livre brésilien Alkymya de Assustos."
+    name: "À qui s'adressent les accompagnements et solutions d'Alkymya ?",
+    answer: "Nos solutions s'adressent aux dirigeants, PME, ETI, équipes marketing, RH et opérationnelles, aux porteurs de projets (via le programme New Business MVP), ainsi qu'aux grandes écoles et universités, de l'acculturation des équipes jusqu'au déploiement d'agents IA autonomes connectés à vos outils métiers."
+  },
+  {
+    name: "Comment s'articule le rôle du studio Alkymya avec ses partenaires Qualiopi ?",
+    answer: "Alkymya est un studio opérationnel d'expertise, de création d'agents IA et de conseil stratégique exploité par CYRIL GARNIER CONSULTING. Pour les actions de formation professionnelle, nous collaborons avec des organismes partenaires certifiés Qualiopi (tels qu'INATEC) afin de permettre un financement OPCO tout en profitant d'ateliers animés par des praticiens."
   },
   {
     name: "Quel est le format des ateliers d'agents IA ?",
@@ -269,6 +273,10 @@ const faqQuestions = [
   {
     name: "Quels établissements et entreprises font confiance à Alkymya ?",
     answer: "HETIC, Ynov Campus, IÉSEG School of Management, CFA Itis, Paris École de Management, SNCF, Morning Coworking, Fondation GRDF et notre partenaire officiel Objectif Alternance."
+  },
+  {
+    name: "Sur quels réseaux sociaux suivre Alkymya ?",
+    answer: "Vous pouvez suivre Alkymya sur LinkedIn (page Alkymya et profil Cyril Garnier), Instagram (@alkymya_cyril), YouTube (chaîne Alkymya pour nos créations vidéo dont Métropolia), TikTok (@cyrilgarnierphoto) et Facebook."
   }
 ];
 

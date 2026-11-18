@@ -17,16 +17,20 @@ interface FAQCategory {
 
 const faqCategories: FAQCategory[] = [
   {
-    title: "Identité d'Alkymya & Désambiguïsation",
+    title: "À propos d'Alkymya",
     icon: HelpCircle,
     items: [
       {
         question: "Qu'est-ce qu'Alkymya ?",
-        answer: "Alkymya (alkymya.co) est un studio d'intelligence artificielle et cabinet d'expertise basé en Île-de-France (France), fondé par Cyril Garnier avec Léonie Egesipe. Alkymya n'est pas un organisme de formation en nom propre : nous intervenons en tant qu'experts IA et collaborons avec des organismes partenaires certifiés Qualiopi (tels qu'INATEC) pour proposer des formations IA en entreprise finançables OPCO, aux côtés de nos missions de création d'agents IA sur mesure, d'audit Capital IA et de stratégie SEO & GEO."
+        answer: "Alkymya (alkymya.co) est un studio d'intelligence artificielle et cabinet d'expertise basé en Île-de-France (France), fondé par Cyril Garnier avec Léonie Egesipe et exploité par CYRIL GARNIER CONSULTING. Alkymya n'est pas un organisme de formation en nom propre : nous intervenons en tant qu'experts IA et collaborons avec des organismes partenaires certifiés Qualiopi (tels qu'INATEC) pour proposer des formations IA en entreprise finançables OPCO, aux côtés de nos missions de création d'agents IA sur mesure, d'audit Capital IA et de stratégie SEO & GEO."
       },
       {
-        question: "Alkymya, est-ce un restaurant ?",
-        answer: "Non. Alkymya (alkymya.co) est exclusivement un studio d'intelligence artificielle et cabinet d'expertise et de conseil en France. Notre studio n'a aucun lien avec le restaurant napolitain « Alkymya Bellini », ni avec le groupe « Alkymya Music », ni avec l'ouvrage brésilien *Alkymya de Assustos*."
+        question: "À qui s'adressent les accompagnements et solutions d'Alkymya ?",
+        answer: "Nos solutions s'adressent aux dirigeants, PME, ETI, équipes marketing, RH et opérationnelles, aux porteurs de projets (via le programme New Business MVP), ainsi qu'aux grandes écoles et universités. Chaque intervention est adaptée à votre niveau de maturité IA, de l'acculturation des équipes au déploiement d'agents IA autonomes connectés à vos outils métiers."
+      },
+      {
+        question: "Comment s'articule le rôle du studio Alkymya avec ses partenaires Qualiopi ?",
+        answer: "Alkymya est un studio opérationnel d'expertise, de création d'agents IA et de conseil stratégique. Pour les actions de formation professionnelle, nous intervenons aux côtés d'organismes partenaires certifiés Qualiopi (comme l'école INATEC), ce qui permet aux entreprises d'accéder à un financement OPCO tout en bénéficiant d'ateliers concrets animés par des praticiens de l'IA."
       }
     ]
   },
@@ -164,18 +168,6 @@ const faqCategories: FAQCategory[] = [
       {
         question: "À quoi sert 'Soda, l'agent IA pédagogique' ?",
         answer: "Soda est un agent IA qui agit comme un véritable coach pour vous aider dans vos projets d'analyse de marché, d'innovation produit ou service. C'est un outil puissant pour les étudiants et entrepreneurs, qui nécessite un compte Genspark pour être utilisé."
-      },
-      {
-        question: "Existe-t-il une boutique de goodies Alkymya ?",
-        answer: (
-          <p>
-            Oui ! Vous pouvez retrouver nos t-shirts, mugs et accessoires exclusifs sur notre boutique en ligne : <a href="https://shop.alkymya.co/" target="_blank" rel="noopener noreferrer" className="text-copper-orange hover:underline">https://shop.alkymya.co/</a>. C'est le meilleur moyen d'afficher votre appartenance à la communauté des alchimistes de l'IA.
-          </p>
-        )
-      },
-      {
-        question: "Où trouver des tutoriels et formations gratuites sur l'IA ?",
-        answer: "La Chaîne YouTube Alkymya propose des tutoriels, formations et analyses sur l'IA, l'innovation et la transformation digitale."
       }
     ]
   },
@@ -240,6 +232,34 @@ const faqCategories: FAQCategory[] = [
       {
         question: "Alkymya propose-t-il des formations à distance ?",
         answer: "Nous privilégions les formats présentiels interactifs, mais nous proposons aussi des ressources en ligne et pouvons étudier des formats hybrides."
+      },
+      {
+        question: "Sur quels réseaux sociaux suivre Alkymya ?",
+        answer: (
+          <div className="space-y-3">
+            <p>
+              Vous pouvez suivre nos actualités, projets créatifs et prises de parole sur nos différents réseaux sociaux :
+            </p>
+            <ul className="list-disc pl-5 space-y-1.5">
+              <li>
+                <strong>LinkedIn</strong> : <a href="https://www.linkedin.com/company/alkymya/" target="_blank" rel="noopener noreferrer" className="text-copper-orange hover:underline">Alkymya</a> et <a href="https://www.linkedin.com/in/cyril-garnier-89697b1/" target="_blank" rel="noopener noreferrer" className="text-copper-orange hover:underline">Cyril Garnier</a>
+              </li>
+              <li>
+                <strong>Instagram</strong> : <a href="https://www.instagram.com/alkymya_cyril" target="_blank" rel="noopener noreferrer" className="text-copper-orange hover:underline">@alkymya_cyril</a>
+              </li>
+              <li>
+                <strong>YouTube</strong> : <a href="https://www.youtube.com/channel/UCon0sR5rVfTCuHOWG7LhAig" target="_blank" rel="noopener noreferrer" className="text-copper-orange hover:underline">Chaîne Alkymya</a> (projets et créations vidéo dont la série Métropolia)
+              </li>
+              <li>
+                <strong>TikTok</strong> : <a href="https://www.tiktok.com/@cyrilgarnierphoto" target="_blank" rel="noopener noreferrer" className="text-copper-orange hover:underline">@cyrilgarnierphoto</a>
+              </li>
+              <li>
+                <strong>Facebook</strong> : <a href="https://www.facebook.com/cyril.garnier.969" target="_blank" rel="noopener noreferrer" className="text-copper-orange hover:underline">Cyril Garnier</a>
+              </li>
+            </ul>
+          </div>
+        ),
+        schemaAnswer: "Vous pouvez suivre Alkymya sur LinkedIn (page Alkymya et profil Cyril Garnier), Instagram (@alkymya_cyril), YouTube (chaîne Alkymya pour nos créations vidéo et projets comme Métropolia), TikTok (@cyrilgarnierphoto) et Facebook."
       }
     ]
   }

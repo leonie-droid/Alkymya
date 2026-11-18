@@ -994,13 +994,14 @@ export const routes: RouteData[] = [
       leadParagraph: "Toutes les réponses sur Alkymya : nos ateliers pratiques, la création d'agents IA, le financement OPCO via nos organismes partenaires certifiés Qualiopi et le programme New Business MVP.",
       sections: [
         {
-          h2: "Identité d'Alkymya & désambiguïsation",
+          h2: "À propos d'Alkymya et de notre modèle d'intervention",
           paragraphs: [
-            "Alkymya (alkymya.co) est un studio d'intelligence artificielle et cabinet d'expertise fondé par Cyril Garnier et Léonie Egesipe en Île-de-France. Alkymya n'est pas un organisme de formation en nom propre."
+            "Alkymya (alkymya.co) est un studio d'intelligence artificielle et cabinet d'expertise fondé par Cyril Garnier et Léonie Egesipe en Île-de-France, exploité par CYRIL GARNIER CONSULTING. Alkymya n'est pas un organisme de formation en nom propre."
           ],
           listItems: [
             "Qu'est-ce qu'Alkymya ? Alkymya (alkymya.co) est un studio d'expertise et de création IA basé en Île-de-France (et non un organisme de formation en nom propre), collaborant avec des partenaires certifiés Qualiopi pour les formations IA en entreprise finançables OPCO, la création d'agents IA sur mesure, la stratégie SEO/GEO et l'accompagnement New Business MVP.",
-            "Alkymya, est-ce un restaurant ? Non. Alkymya (alkymya.co) est exclusivement un studio d'intelligence artificielle et cabinet d'expertise en France — sans aucun lien avec le restaurant Alkymya Bellini de Naples, ni avec le groupe de musique Alkymya Music, ni avec le livre brésilien Alkymya de Assustos."
+            "À qui s'adressent les accompagnements d'Alkymya ? Aux dirigeants, PME, ETI, équipes marketing/RH/opérations, porteurs de projets (New Business MVP) ainsi qu'aux grandes écoles et universités, avec des formats adaptés de l'acculturation jusqu'au déploiement d'agents IA autonomes.",
+            "Comment s'articule le studio avec ses partenaires Qualiopi ? Alkymya assure la conception et l'animation opérationnelle des ateliers IA, tandis que le portage administratif et la certification Qualiopi pour le financement OPCO sont assurés par nos organismes partenaires tels qu'INATEC."
           ]
         },
         {
