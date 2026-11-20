@@ -17,7 +17,8 @@ interface SEOProps {
     | 'ContactPage'
     | 'WebApplication'
     | 'EducationalOccupationalProgram'
-    | 'ProfilePage';
+    | 'ProfilePage'
+    | 'Article';
   faqData?: Array<{ question: string; answer: string }>;
   structuredData?: Record<string, any>;
 }

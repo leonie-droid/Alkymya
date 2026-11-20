@@ -276,6 +276,20 @@ export function createApiApp(): Express {
     return res.redirect(301, '/newbusiness/');
   });
 
+  // 301 Permanent Redirects for Partenaires & Ressources restructuring
+  const legacyRedirects: Array<[string[], string]> = [
+    [['/ressources/partenaires', '/ressources/partenaires/'], '/partenaires/outils/'],
+    [['/ressources/partenaires/awa-cloud', '/ressources/partenaires/awa-cloud/'], '/partenaires/outils/awa-cloud/'],
+    [['/ressources/nos-etudes', '/ressources/nos-etudes/'], '/ressources/etudes/'],
+    [['/ressources/nos-etudes/interview-gemini-4', '/ressources/nos-etudes/interview-gemini-4/'], '/ressources/etudes/interview-gemini-4/'],
+    [['/ressources/nos-analyseurs', '/ressources/nos-analyseurs/'], '/ressources/analyseurs/'],
+    [['/ressources/alkymya-x-inatec', '/ressources/alkymya-x-inatec/'], '/partenaires/formations-certifiees/inatec/'],
+  ];
+
+  for (const [sources, target] of legacyRedirects) {
+    app.get(sources, (req, res) => res.redirect(301, target));
+  }
+
   // Valid routes set for the site
   const validSiteRoutes = new Set([
     '',
@@ -283,15 +297,32 @@ export function createApiApp(): Express {
     'oeuvres',
     'ateliers',
     'ressources',
-    'ressources/nos-analyseurs',
-    'ressources/nos-etudes',
+    'ressources/etudes',
+    'ressources/etudes/generation-ia-2026',
+    'ressources/etudes/generation-ia-2025',
+    'ressources/etudes/generation-ia-2024',
+    'ressources/etudes/doctrine-iag',
+    'ressources/etudes/interview-gemini-4',
+    'ressources/analyseurs',
+    'ressources/analyseurs/analyseur-de-photo',
+    'ressources/analyseurs/analyseur-de-cv',
+    'ressources/analyseurs/analyseur-de-memoire',
     'ressources/business-game',
-    'ressources/alkymya-x-inatec',
-    'ressources/partenaires',
-    'ressources/partenaires/awa-cloud',
     'alchimistes',
     ...alchimistes.map((person) => `alchimistes/${person.id}`),
     'partenaires',
+    'partenaires/ecoles',
+    'partenaires/ecoles/euridis',
+    'partenaires/ecoles/ieseg',
+    'partenaires/insertion',
+    'partenaires/insertion/objectif-alternance',
+    'partenaires/formations-certifiees',
+    'partenaires/formations-certifiees/inatec',
+    'partenaires/lieux',
+    'partenaires/entreprises',
+    'partenaires/outils',
+    'partenaires/outils/awa-cloud',
+    'partenaires/outils/onecub',
     'contact',
     'faq',
     'rejoindre',

@@ -2,150 +2,596 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://alkymya.co/</loc>
-    <lastmod>2026-11-10</lastmod>
+    <lastmod>2026-11-20</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
     <image:image>
       <image:loc>https://alkymya.co/og-image.jpg</image:loc>
-      <image:title>Alkymya | Studio d'Innovation et Formations IA — Alkymya</image:title>
+      <image:title>Formation IA en entreprise en Île-de-France — Alkymya — Alkymya</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://res.cloudinary.com/dokzioyu4/image/upload/f_auto,q_auto,w_1200,c_limit/v1794758649/duo_office_bifqwq.jpg</image:loc>
+      <image:title>Cyril Garnier et Léonie Egesipe, co-fondateurs d'Alkymya — le binôme qui accompagne vos équipes sur le terrain.</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://res.cloudinary.com/dokzioyu4/image/upload/f_auto,q_auto,w_1200,c_limit/v1758192982/66cffcd8-15f1-415f-b423-9f428d63e22f_gqjd53.png</image:loc>
+      <image:title>Cyril Garnier — Directeur Associé &amp; Fondateur</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://res.cloudinary.com/dokzioyu4/image/upload/f_auto,q_auto,w_1200,c_limit/v1762252984/725879fe-afa3-4afa-a900-229030c002de_1_xoep2v.png</image:loc>
+      <image:title>Léonie Egesipe — Cheffe de Projet Digital &amp; DA IA</image:title>
     </image:image>
   </url>
   <url>
     <loc>https://alkymya.co/ia/</loc>
-    <lastmod>2026-11-10</lastmod>
+    <lastmod>2026-11-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
       <image:loc>https://alkymya.co/og-ia.jpg</image:loc>
-      <image:title>Générateur IA | Outils d'Idéation Alkymya — Alkymya</image:title>
+      <image:title>Génération IA : une génération, de nouveaux usages | Alkymya — Alkymya</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://res.cloudinary.com/dokzioyu4/image/upload/f_auto,q_auto,w_1200,c_limit/v1777491204/Capture_GENERATION_IA_lrxvdx.png</image:loc>
+      <image:title>Méthodologie Génération IA 2024-2026 — Enquêtes et personas</image:title>
     </image:image>
   </url>
   <url>
     <loc>https://alkymya.co/oeuvres/</loc>
-    <lastmod>2026-11-10</lastmod>
+    <lastmod>2026-11-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
       <image:loc>https://alkymya.co/og-oeuvres.jpg</image:loc>
-      <image:title>Nos Œuvres &amp; Créations Artistiques — Alkymya — Alkymya</image:title>
+      <image:title>Études de cas SEO, IA &amp; création éditoriale — Alkymya — Alkymya</image:title>
     </image:image>
     <image:image>
-      <image:loc>https://res.cloudinary.com/dokzioyu4/image/upload/v1772112521/e23iKTwc_u35aql.png</image:loc>
-      <image:title>Création IA — Angela Davis</image:title>
+      <image:loc>https://res.cloudinary.com/dokzioyu4/image/upload/f_auto,q_auto,w_1200,c_limit/v1788941703/PHOTO-2026-09-08-06-54-57_ynrbkt.jpg</image:loc>
+      <image:title>thelittle77.fr — Créateur Cyril Garnier</image:title>
     </image:image>
     <image:image>
-      <image:loc>https://res.cloudinary.com/dokzioyu4/image/upload/v1772112521/d9eRiVt6_pmcd6l.png</image:loc>
-      <image:title>Création IA — Joséphine Baker</image:title>
+      <image:loc>https://res.cloudinary.com/dokzioyu4/image/upload/f_auto,q_auto,w_1200,c_limit/v1788941670/Logo_thelittle75.fr_d1tmes.jpg</image:loc>
+      <image:title>thelittle75.fr — Créateur Léonie Egesipe</image:title>
     </image:image>
     <image:image>
-      <image:loc>https://res.cloudinary.com/dokzioyu4/image/upload/v1772111909/giJ307Jk_hcidx5.png</image:loc>
-      <image:title>Création IA — Pop Culture</image:title>
+      <image:loc>https://res.cloudinary.com/dyooqwryq/image/upload/f_auto,q_auto,w_1200,c_limit/v1794124042/thelittle83-logo_op3yvm.svg</image:loc>
+      <image:title>thelittle83.fr — Créateur Cyril Garnier</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://res.cloudinary.com/dokzioyu4/image/upload/f_auto,q_auto,w_1200,c_limit/v1767128574/kk25As37_y8rw27.png</image:loc>
+      <image:title>Direction artistique Alkymya — Cyril Garnier &amp; Léonie Egesipe</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://res.cloudinary.com/dokzioyu4/image/upload/f_auto,q_auto,w_1200,c_limit/v1767128268/n0DtTbCd_n4wyfq.png</image:loc>
+      <image:title>Alkymya Vision #02 — Matières brutes &amp; grain argentique</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://res.cloudinary.com/dokzioyu4/image/upload/f_auto,q_auto,w_1200,c_limit/v1767127553/MVpvT2RW_s1n5ul.png</image:loc>
+      <image:title>Alkymya Vision #03 — Drapé algorithmique &amp; fluidité textile</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://res.cloudinary.com/dokzioyu4/image/upload/f_auto,q_auto,w_1200,c_limit/v1767127109/ya7Z8TI3_iaygii.png</image:loc>
+      <image:title>Alkymya Vision #04 — Profil sculptural &amp; ombres portées</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://res.cloudinary.com/dokzioyu4/image/upload/f_auto,q_auto,w_1200,c_limit/v1767127394/kXMN69tr_iskmoq.png</image:loc>
+      <image:title>Alkymya Vision #05 — Scénographie numérique &amp; abstraction</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://res.cloudinary.com/dokzioyu4/image/upload/f_auto,q_auto,w_1200,c_limit/v1767126747/8YHpK93A_c1xlyq.png</image:loc>
+      <image:title>Alkymya Vision #06 — Épure minérale &amp; palette signature</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://res.cloudinary.com/dokzioyu4/image/upload/f_auto,q_auto,w_1200,c_limit/v1767007589/WhatsApp_Image_2025-12-13_at_19.07.53_beeekx.jpg</image:loc>
+      <image:title>Alkymya Vision #07 — Instant décisif &amp; matière de terrain</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://res.cloudinary.com/dokzioyu4/image/upload/f_auto,q_auto,w_1200,c_limit/v1770044606/4333e2ce-3ca9-43ca-9498-5149956f55a8_pzltlj.jpg</image:loc>
+      <image:title>Métropolia — Narration générative urbaine</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://res.cloudinary.com/dokzioyu4/image/upload/f_auto,q_auto,w_1200,c_limit/v1770044606/d54d1975-3bf2-43bf-83da-c03d78f7ab96_f0jcm2.jpg</image:loc>
+      <image:title>Métropolia #02 — Nocturne cyberpunk &amp; flux de données</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://res.cloudinary.com/dokzioyu4/image/upload/f_auto,q_auto,w_1200,c_limit/v1770044606/1e9ba31e-8c38-48c3-ab3c-26b3337a305d_ynksne.jpg</image:loc>
+      <image:title>Métropolia #03 — Perspectives cinématiques &amp; architecture brute</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://res.cloudinary.com/dokzioyu4/image/upload/f_auto,q_auto,w_1200,c_limit/v1770044606/IMG_2742_yfl8fu.jpg</image:loc>
+      <image:title>Métropolia #04 — Passages secrets &amp; interstices urbains</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://res.cloudinary.com/dokzioyu4/image/upload/f_auto,q_auto,w_1200,c_limit/v1770044606/fcecdf84-531c-4531-85bd-405b0c861c7d_tpdkpz.jpg</image:loc>
+      <image:title>Métropolia #05 — Brume industrielle &amp; horizon crépusculaire</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://res.cloudinary.com/dokzioyu4/image/upload/f_auto,q_auto,w_1200,c_limit/v1770044605/etudiante_tbrydi.jpg</image:loc>
+      <image:title>Métropolia #06 — Silhouette citadine &amp; errance narrative</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://res.cloudinary.com/dokzioyu4/image/upload/f_auto,q_auto,w_1200,c_limit/v1770044605/IMG_2525_jsdqwk.jpg</image:loc>
+      <image:title>Métropolia #07 — Réalité brute &amp; texture urbaine originelle</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://res.cloudinary.com/dokzioyu4/image/upload/f_auto,q_auto,w_1200,c_limit/v1772112521/e23iKTwc_u35aql.png</image:loc>
+      <image:title>Portraits &amp; Figures historiques — Série sérigraphique IA</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://res.cloudinary.com/dokzioyu4/image/upload/f_auto,q_auto,w_1200,c_limit/v1772112521/d9eRiVt6_pmcd6l.png</image:loc>
+      <image:title>Portrait Joséphine Baker — Résistance, engagement patriotique &amp; audace</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://res.cloudinary.com/dokzioyu4/image/upload/f_auto,q_auto,w_1200,c_limit/v1772112521/jnya8Go8_e6eczn.png</image:loc>
+      <image:title>Portrait Katherine Johnson — Génie mathématique &amp; conquête spatiale</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://res.cloudinary.com/dokzioyu4/image/upload/f_auto,q_auto,w_1200,c_limit/v1772112521/ucGK9H1u_xjx5t7.png</image:loc>
+      <image:title>Portrait Rosa Parks — Dignité inébranlable &amp; résistance pacifique</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://res.cloudinary.com/dokzioyu4/image/upload/f_auto,q_auto,w_1200,c_limit/v1772112520/moVD6Z2d_pm4jnx.png</image:loc>
+      <image:title>New York 70s — Émancipation culturelle &amp; énergie urbaine</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://res.cloudinary.com/dokzioyu4/image/upload/f_auto,q_auto,w_1200,c_limit/v1772112520/grq2NVff_rcr9vi.png</image:loc>
+      <image:title>Portrait Shirley Chisholm — Pionnière politique &amp; Maison Blanche</image:title>
     </image:image>
   </url>
   <url>
     <loc>https://alkymya.co/ateliers/</loc>
-    <lastmod>2026-11-10</lastmod>
+    <lastmod>2026-11-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
     <image:image>
       <image:loc>https://alkymya.co/og-ateliers.jpg</image:loc>
-      <image:title>Nos Ateliers — Alkymya — Alkymya</image:title>
+      <image:title>Ateliers IA pour équipes en Île-de-France — Alkymya — Alkymya</image:title>
     </image:image>
   </url>
   <url>
     <loc>https://alkymya.co/ressources/</loc>
-    <lastmod>2026-11-10</lastmod>
+    <lastmod>2026-11-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <image:image>
       <image:loc>https://alkymya.co/og-ressources.jpg</image:loc>
-      <image:title>Ressources et Guides IA | Studio Alkymya — Alkymya</image:title>
+      <image:title>Ressources IA, Études &amp; Analyseurs Gratuits | Alkymya — Alkymya</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://res.cloudinary.com/dokzioyu4/image/upload/f_auto,q_auto,w_1200,c_limit/v1788941994/0c39dd0a7f91200361816f2b88d68802_cwzov0.jpg</image:loc>
+      <image:title>Kendra Martine — Partenaire Analyseur de CV &amp; Coaching Alternance</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://alkymya.co/ressources/etudes/</loc>
+    <lastmod>2026-11-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://alkymya.co/og-ressources.jpg</image:loc>
+      <image:title>Études IA : Génération IA 2024–2026, Gemini 4 &amp; IAG | Alkymya — Alkymya</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://alkymya.co/ressources/etudes/generation-ia-2026/</loc>
+    <lastmod>2026-11-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://res.cloudinary.com/dokzioyu4/image/upload/v1777491204/Capture_GENERATION_IA_lrxvdx.png</image:loc>
+      <image:title>Étude Génération IA 2024–2026 (1 082 étudiants) | Alkymya — Alkymya</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://alkymya.co/ressources/etudes/generation-ia-2025/</loc>
+    <lastmod>2026-11-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://res.cloudinary.com/dokzioyu4/image/upload/v1777491204/Capture_GENERATION_IA_lrxvdx.png</image:loc>
+      <image:title>Étude Génération IA 2025 : 5 Personas Étudiants | Alkymya — Alkymya</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://alkymya.co/ressources/etudes/generation-ia-2024/</loc>
+    <lastmod>2026-11-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://res.cloudinary.com/dokzioyu4/image/upload/v1777491204/Capture_GENERATION_IA_lrxvdx.png</image:loc>
+      <image:title>Étude Génération IA 2024 (n=326 étudiants) | Alkymya — Alkymya</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://alkymya.co/ressources/etudes/doctrine-iag/</loc>
+    <lastmod>2026-11-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://alkymya.co/og-ressources.jpg</image:loc>
+      <image:title>La Doctrine IAG : Géopolitique &amp; Stratégie IA (PDF + Audio) | Alkymya — Alkymya</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://alkymya.co/ressources/etudes/interview-gemini-4/</loc>
+    <lastmod>2026-11-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://alkymya.co/og-ressources.jpg</image:loc>
+      <image:title>Interview Gemini 4 : Retour Terrain IA | Alkymya — Alkymya</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://alkymya.co/ressources/analyseurs/</loc>
+    <lastmod>2026-11-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://alkymya.co/og-ressources.jpg</image:loc>
+      <image:title>Analyseurs IA Gratuits : Photo, CV &amp; Mémoire | Alkymya — Alkymya</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://alkymya.co/ressources/analyseurs/analyseur-de-photo/</loc>
+    <lastmod>2026-11-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://alkymya.co/og-ressources.jpg</image:loc>
+      <image:title>Analyseur de Photo IA Gratuit | Ressources Alkymya — Alkymya</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://alkymya.co/ressources/analyseurs/analyseur-de-cv/</loc>
+    <lastmod>2026-11-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://alkymya.co/og-ressources.jpg</image:loc>
+      <image:title>Analyseur de CV IA Gratuit (Objectif Alternance) | Alkymya — Alkymya</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://alkymya.co/ressources/analyseurs/analyseur-de-memoire/</loc>
+    <lastmod>2026-11-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://alkymya.co/og-ressources.jpg</image:loc>
+      <image:title>Analyseur de Mémoire &amp; Thèse IA Gratuit | Alkymya — Alkymya</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://alkymya.co/ressources/business-game/</loc>
+    <lastmod>2026-11-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://alkymya.co/og-ressources.jpg</image:loc>
+      <image:title>Business Game NoNo BanaBa : Stratégie &amp; Data | Alkymya — Alkymya</image:title>
     </image:image>
   </url>
   <url>
     <loc>https://alkymya.co/alchimistes/</loc>
-    <lastmod>2026-11-10</lastmod>
+    <lastmod>2026-11-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
       <image:loc>https://alkymya.co/og-alchimistes.jpg</image:loc>
-      <image:title>Nos Alchimistes | L'Équipe du Studio Alkymya — Alkymya</image:title>
+      <image:title>Experts IA France &amp; Fondateurs Agence IA | Alkymya — Alkymya</image:title>
     </image:image>
+    <image:image>
+      <image:loc>https://res.cloudinary.com/dokzioyu4/image/upload/f_auto,q_auto,w_1200,c_limit/v1758192982/66cffcd8-15f1-415f-b423-9f428d63e22f_gqjd53.png</image:loc>
+      <image:title>Cyril Garnier — Directeur Associé (cyrilgarnier.fr)</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://res.cloudinary.com/dokzioyu4/image/upload/f_auto,q_auto,w_1200,c_limit/v1762252984/725879fe-afa3-4afa-a900-229030c002de_1_xoep2v.png</image:loc>
+      <image:title>Léonie Egesipe — Cheffe de Projet Digital &amp; DA IA</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://res.cloudinary.com/dokzioyu4/image/upload/f_auto,q_auto,w_1200,c_limit/v1792763449/1792401247516_ussqzm.png</image:loc>
+      <image:title>Véronique Landereau — Santé, Prévention &amp; MedTech</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://res.cloudinary.com/dokzioyu4/image/upload/f_auto,q_auto,w_1200,c_limit/v1794479431/WhatsApp_Image_2026-11-12_at_11.29.28_qwv5le.jpg</image:loc>
+      <image:title>Mariana Didier Laurent — Présidente d'Esperanta Services</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://res.cloudinary.com/dokzioyu4/image/upload/f_auto,q_auto,w_1200,c_limit/v1760374889/Photo_Olivier_Dion_reve_dk2c5e.png</image:loc>
+      <image:title>Olivier Dion — Expert Data &amp; Gouvernance Européenne</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://res.cloudinary.com/dokzioyu4/image/upload/f_auto,q_auto,w_1200,c_limit/v1788941994/0c39dd0a7f91200361816f2b88d68802_cwzov0.jpg</image:loc>
+      <image:title>Kendra Martine — Recrutement Alternance &amp; Coaching Emploi</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://alkymya.co/alchimistes/cyril-garnier/</loc>
+    <lastmod>2026-11-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
     <image:image>
       <image:loc>https://res.cloudinary.com/dokzioyu4/image/upload/v1758192982/66cffcd8-15f1-415f-b423-9f428d63e22f_gqjd53.png</image:loc>
-      <image:title>Cyril Garnier — Directeur Associé Alkymya</image:title>
+      <image:title>Cyril Garnier — Directeur Associé &amp; Expert IA | Alkymya — Alkymya</image:title>
     </image:image>
     <image:image>
-      <image:loc>https://res.cloudinary.com/dokzioyu4/image/upload/v1758192982/c4f25b29-1634-44bf-a6d1-41f2378fbb4d_j10d8m.png</image:loc>
-      <image:title>Léonie Egesipe — Directrice Artistique IA Alkymya</image:title>
+      <image:loc>https://res.cloudinary.com/dokzioyu4/image/upload/f_auto,q_auto,w_1200,c_limit/v1758192982/66cffcd8-15f1-415f-b423-9f428d63e22f_gqjd53.png</image:loc>
+      <image:title>Cyril Garnier — Directeur Associé</image:title>
     </image:image>
+  </url>
+  <url>
+    <loc>https://alkymya.co/alchimistes/leonie-egesipe/</loc>
+    <lastmod>2026-11-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://res.cloudinary.com/dokzioyu4/image/upload/v1762252984/725879fe-afa3-4afa-a900-229030c002de_1_xoep2v.png</image:loc>
+      <image:title>Léonie Egesipe — Directrice Artistique IA | Alkymya — Alkymya</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://res.cloudinary.com/dokzioyu4/image/upload/f_auto,q_auto,w_1200,c_limit/v1762252984/725879fe-afa3-4afa-a900-229030c002de_1_xoep2v.png</image:loc>
+      <image:title>Léonie Egesipe — Chef de Projet Digital</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://alkymya.co/alchimistes/veronique-landereau/</loc>
+    <lastmod>2026-11-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
     <image:image>
       <image:loc>https://res.cloudinary.com/dokzioyu4/image/upload/v1792763449/1792401247516_ussqzm.png</image:loc>
-      <image:title>Véronique Landereau — Alchimiste associée Santé</image:title>
+      <image:title>Véronique Landereau — Santé &amp; Innovation IA | Alkymya — Alkymya</image:title>
     </image:image>
     <image:image>
-      <image:loc>https://alkymya.co/img/alchimistes/mariana-didier-laurent.jpg</image:loc>
-      <image:title>Mariana Didier Laurent — Alchimiste associée Services</image:title>
+      <image:loc>https://res.cloudinary.com/dokzioyu4/image/upload/f_auto,q_auto,w_1200,c_limit/v1792763449/1792401247516_ussqzm.png</image:loc>
+      <image:title>Véronique Landereau — Alchimiste associée — Santé, Prévention &amp; Innovation</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://alkymya.co/alchimistes/mariana-didier-laurent/</loc>
+    <lastmod>2026-11-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://res.cloudinary.com/dokzioyu4/image/upload/v1794479431/WhatsApp_Image_2026-11-12_at_11.29.28_qwv5le.jpg</image:loc>
+      <image:title>Mariana Didier Laurent — Services &amp; Autonomie | Alkymya — Alkymya</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://res.cloudinary.com/dokzioyu4/image/upload/f_auto,q_auto,w_1200,c_limit/v1794479431/WhatsApp_Image_2026-11-12_at_11.29.28_qwv5le.jpg</image:loc>
+      <image:title>Mariana Didier Laurent — Alchimiste associée — Services à la personne &amp; Autonomie</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://alkymya.co/alchimistes/olivier-dion/</loc>
+    <lastmod>2026-11-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://res.cloudinary.com/dokzioyu4/image/upload/v1760374889/Photo_Olivier_Dion_reve_dk2c5e.png</image:loc>
+      <image:title>Olivier Dion — Expert Data &amp; Onecub | Alkymya — Alkymya</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://res.cloudinary.com/dokzioyu4/image/upload/f_auto,q_auto,w_1200,c_limit/v1760374889/Photo_Olivier_Dion_reve_dk2c5e.png</image:loc>
+      <image:title>Olivier Dion — Fondateur de Onecub &amp; Expert Data</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://alkymya.co/alchimistes/kendra-martine/</loc>
+    <lastmod>2026-11-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://res.cloudinary.com/dokzioyu4/image/upload/v1788941994/0c39dd0a7f91200361816f2b88d68802_cwzov0.jpg</image:loc>
+      <image:title>Kendra Martine — Objectif Alternance | Alkymya — Alkymya</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://res.cloudinary.com/dokzioyu4/image/upload/f_auto,q_auto,w_1200,c_limit/v1788941994/0c39dd0a7f91200361816f2b88d68802_cwzov0.jpg</image:loc>
+      <image:title>Kendra Martine — Fondatrice d'Objectif Alternance &amp; Formatrice</image:title>
     </image:image>
   </url>
   <url>
     <loc>https://alkymya.co/partenaires/</loc>
-    <lastmod>2026-11-10</lastmod>
+    <lastmod>2026-11-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
       <image:loc>https://alkymya.co/og-partenaires.jpg</image:loc>
-      <image:title>Partenaires Alkymya | Écosystème Académique &amp; IA — Alkymya</image:title>
+      <image:title>Partenaires IA, Écoles, OPCO &amp; Outils Souverains | Alkymya — Alkymya</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://res.cloudinary.com/dokzioyu4/image/upload/f_auto,q_auto,w_1200,c_limit/v1788507182/logo_objectif_code_u3otua.png</image:loc>
+      <image:title>Objectif Alternance — Partenaire Insertion &amp; Alternance</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://res.cloudinary.com/dokzioyu4/image/upload/f_auto,q_auto,w_1200,c_limit/v1777818451/WhatsApp_Image_2026-02-27_at_15.38.53_utvfxs.jpg</image:loc>
+      <image:title>INATEC — Organisme Certifié Qualiopi (OPCO)</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://res.cloudinary.com/dokzioyu4/image/upload/f_auto,q_auto,w_1200,c_limit/v1759785816/logo-hetic_fnt2zy.png</image:loc>
+      <image:title>Logo HETIC — école partenaire pour ateliers IA et jurys de projets étudiants</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://res.cloudinary.com/dokzioyu4/image/upload/f_auto,q_auto,w_1200,c_limit/v1759785824/ynov-campus_logo_e1ma2q.png</image:loc>
+      <image:title>Logo Ynov Campus — école partenaire pour modules prompt engineering et hackathons IA</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://alkymya.co/partenaires/ecoles/</loc>
+    <lastmod>2026-11-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://alkymya.co/og-partenaires.jpg</image:loc>
+      <image:title>Partenaires École &amp; Grandes Écoles IA | Alkymya — Alkymya</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://alkymya.co/partenaires/ecoles/ieseg/</loc>
+    <lastmod>2026-11-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://alkymya.co/og-partenaires.jpg</image:loc>
+      <image:title>IÉSEG x Alkymya : Innovation, Mentorat Mémoires &amp; IA | Partenaires — Alkymya</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://alkymya.co/partenaires/ecoles/euridis/</loc>
+    <lastmod>2026-11-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://alkymya.co/og-partenaires.jpg</image:loc>
+      <image:title>Euridis Business School x Alkymya : Diriger l'IA &amp; Agent Harness — Alkymya</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://alkymya.co/partenaires/insertion/</loc>
+    <lastmod>2026-11-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://alkymya.co/og-partenaires.jpg</image:loc>
+      <image:title>Partenaires Insertion &amp; Alternance IA | Alkymya — Alkymya</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://alkymya.co/partenaires/insertion/objectif-alternance/</loc>
+    <lastmod>2026-11-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://alkymya.co/og-partenaires.jpg</image:loc>
+      <image:title>Objectif Alternance x Alkymya : Insertion &amp; IA | Partenaires — Alkymya</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://alkymya.co/partenaires/formations-certifiees/</loc>
+    <lastmod>2026-11-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://alkymya.co/og-partenaires.jpg</image:loc>
+      <image:title>Formations IA Certifiées Qualiopi &amp; OPCO via INATEC | Alkymya — Alkymya</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://alkymya.co/partenaires/formations-certifiees/inatec/</loc>
+    <lastmod>2026-11-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://alkymya.co/og-partenaires.jpg</image:loc>
+      <image:title>Alkymya x INATEC : Portage Qualiopi &amp; OPCO | Partenaires — Alkymya</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://alkymya.co/partenaires/lieux/</loc>
+    <lastmod>2026-11-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://alkymya.co/og-partenaires.jpg</image:loc>
+      <image:title>Lieux &amp; Coworking Partenaires | Alkymya — Alkymya</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://alkymya.co/partenaires/entreprises/</loc>
+    <lastmod>2026-11-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://alkymya.co/og-partenaires.jpg</image:loc>
+      <image:title>Entreprises &amp; Fondations Partenaires | Alkymya — Alkymya</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://alkymya.co/partenaires/outils/</loc>
+    <lastmod>2026-11-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://alkymya.co/og-partenaires.jpg</image:loc>
+      <image:title>Outils &amp; Partenaires Technologiques Souverains | Alkymya — Alkymya</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://alkymya.co/partenaires/outils/awa-cloud/</loc>
+    <lastmod>2026-11-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://alkymya.co/og-ressources.jpg</image:loc>
+      <image:title>AWACLOUD : Documents &amp; RAG Local | Partenaires Alkymya — Alkymya</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://alkymya.co/partenaires/outils/onecub/</loc>
+    <lastmod>2026-11-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://alkymya.co/og-partenaires.jpg</image:loc>
+      <image:title>Onecub x Alkymya : Data Spaces Souverains &amp; RGPD | Partenaires — Alkymya</image:title>
     </image:image>
   </url>
   <url>
     <loc>https://alkymya.co/contact/</loc>
-    <lastmod>2026-11-10</lastmod>
+    <lastmod>2026-11-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
       <image:loc>https://alkymya.co/og-contact.jpg</image:loc>
-      <image:title>Contactez Alkymya | Experts en IA Générative — Alkymya</image:title>
+      <image:title>Contact — formation IA et conseil en France | Alkymya — Alkymya</image:title>
     </image:image>
   </url>
   <url>
     <loc>https://alkymya.co/faq/</loc>
-    <lastmod>2026-11-10</lastmod>
+    <lastmod>2026-11-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
       <image:loc>https://alkymya.co/og-faq.jpg</image:loc>
-      <image:title>FAQ Alkymya | Réponses sur Nos Formations IA — Alkymya</image:title>
+      <image:title>FAQ Alkymya | Questions Fréquentes, IA &amp; OPCO — Alkymya</image:title>
     </image:image>
   </url>
   <url>
     <loc>https://alkymya.co/rejoindre/</loc>
-    <lastmod>2026-11-10</lastmod>
+    <lastmod>2026-11-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
       <image:loc>https://alkymya.co/og-rejoindre.jpg</image:loc>
-      <image:title>Rejoindre Alkymya | Opportunités et Talents IA — Alkymya</image:title>
+      <image:title>Rejoindre l'Agence IA Alkymya | Experts IA France — Alkymya</image:title>
     </image:image>
   </url>
   <url>
     <loc>https://alkymya.co/newbusiness/</loc>
-    <lastmod>2026-11-10</lastmod>
+    <lastmod>2026-11-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
     <image:image>
       <image:loc>https://alkymya.co/og-newbusiness.jpg</image:loc>
-      <image:title>New Business MVP | Validation Client et Offre IA — Alkymya</image:title>
+      <image:title>New Business MVP : valider son offre en 6 mois — Alkymya — Alkymya</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://res.cloudinary.com/dokzioyu4/image/upload/f_auto,q_auto,w_1200,c_limit/v1758192982/66cffcd8-15f1-415f-b423-9f428d63e22f_gqjd53.png</image:loc>
+      <image:title>Cyril Garnier — Stratégie &amp; Viabilité Économique</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://res.cloudinary.com/dokzioyu4/image/upload/f_auto,q_auto,w_1200,c_limit/v1758192982/c4f25b29-1634-44bf-a6d1-41f2378fbb4d_j10d8m.png</image:loc>
+      <image:title>Léonie Egesipe — Direction Artistique &amp; Ergonomie MVP</image:title>
     </image:image>
   </url>
   <url>
     <loc>https://alkymya.co/mentions-legales/</loc>
-    <lastmod>2026-11-10</lastmod>
+    <lastmod>2026-11-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
       <image:loc>https://alkymya.co/og-mentions.jpg</image:loc>
-      <image:title>Mentions Légales et RGPD | Studio Alkymya — Alkymya</image:title>
+      <image:title>Mentions Légales Agence IA &amp; RGPD | Alkymya — Alkymya</image:title>
     </image:image>
   </url>
 </urlset>

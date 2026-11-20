@@ -141,7 +141,7 @@ export const alchimistes: AlchimisteProfile[] = [
     role: "Alchimiste associée — Santé, Prévention & Innovation",
     kicker: "Alchimiste associée, Santé",
     seoTitle: "Véronique Landereau — Santé & Innovation IA | Alkymya",
-    seoDescription: "Véronique Landereau, Alchimiste associée Santé chez Alkymya et co-fondatrice de New Health Paradigm : prévention, MedTech et maintien à domicile.",
+    seoDescription: "Véronique Landereau, Alchimiste associée Santé chez Alkymya et fondatrice d'AvecLouise : prévention, maintien à domicile et accompagnement des aidants.",
     knowsAbout: [
       "Santé",
       "Prévention",
@@ -154,22 +154,22 @@ export const alchimistes: AlchimisteProfile[] = [
       city: "Nantes",
       country: "FR"
     },
-    website: "https://www.linkedin.com/in/veronique-landereau-97729a59/",
-    websiteLabel: "linkedin.com/in/veronique-landereau",
-    websiteTag: "Profil LinkedIn",
-    websiteIcon: "linkedin",
-    bio: "Co-fondatrice de New Health Paradigm, Véronique Landereau consacre son activité aux projets de santé qui placent la prévention, le maintien à domicile et l'accompagnement des aidants au cœur de leur modèle. Formée à Gustave Roussy Éducation, elle évolue au quotidien dans l'écosystème MedTech et dispositifs médicaux.",
+    website: "https://aveclouise.fr/",
+    websiteLabel: "aveclouise.fr",
+    websiteTag: "Site officiel",
+    websiteIcon: "globe",
+    bio: "Fondatrice d'AvecLouise, Véronique Landereau consacre son activité aux projets de santé qui placent la prévention, le maintien à domicile et l'accompagnement des aidants au cœur de leur modèle. Formée à Gustave Roussy Éducation, elle évolue au quotidien dans l'écosystème MedTech et dispositifs médicaux.",
     details: "Nantaise, elle évolue au quotidien entre dispositifs médicaux, prévention et perte d'autonomie, et suit de près les innovations françaises du secteur comme les tours de financement des jeunes entreprises de santé. Sa conviction : les technologies ne prennent véritablement leur sens que lorsqu'elles sont portées par des femmes et des hommes capables de créer de la confiance et du lien.",
     quote: "Les technologies ne prennent véritablement leur sens que lorsqu'elles sont portées par des femmes et des hommes capables de créer de la confiance et du lien.",
     image: "https://res.cloudinary.com/dokzioyu4/image/upload/v1792763449/1792401247516_ussqzm.png",
     socials: {
       linkedin: "https://www.linkedin.com/in/veronique-landereau-97729a59/",
-      mail: "cyril@alkymya.co"
+      mail: ""
     },
     works: [
-      { label: "New Health Paradigm", url: "https://www.linkedin.com/in/veronique-landereau-97729a59/" },
-      { label: "Prévention & parcours de soins", url: "https://www.linkedin.com/in/veronique-landereau-97729a59/" },
-      { label: "Maintien à domicile & aidants", url: "https://www.linkedin.com/in/veronique-landereau-97729a59/" },
+      { label: "AvecLouise", url: "https://aveclouise.fr/" },
+      { label: "Prévention & parcours de soins", url: "https://aveclouise.fr/" },
+      { label: "Maintien à domicile & aidants", url: "https://aveclouise.fr/" },
       { label: "MedTech & dispositifs médicaux", url: "https://www.linkedin.com/in/veronique-landereau-97729a59/" },
       { label: "Financement de l'innovation santé", url: "https://www.linkedin.com/in/veronique-landereau-97729a59/" }
     ]
@@ -205,7 +205,7 @@ export const alchimistes: AlchimisteProfile[] = [
     socials: {
       website: "https://esperantaservices.fr/",
       linkedin: "https://esperantaservices.fr/",
-      mail: "cyril@alkymya.co"
+      mail: ""
     },
     works: [
       { label: "Esperanta Services", url: "https://esperantaservices.fr/" },

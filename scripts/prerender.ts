@@ -2,6 +2,16 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { routes, RouteData } from '../src/data/routes';
 import { alchimistes, AlchimisteProfile } from '../src/data/alchimistes';
+import { INTERVIEW_GEMINI_4_PDF_URL, etudeGemini4Data } from '../src/data/etudeGemini4';
+import { studiesList } from '../src/data/etudes';
+import { analyseursList } from '../src/data/analyseurs';
+import {
+  partnerCategories,
+  allPartners,
+  partnerDetails,
+  euridisFormationData,
+  iesegFormationData
+} from '../src/data/partenaires';
 import { cloudinaryUrl, cloudinarySrcSet } from '../src/utils/cloudinary';
 
 function escapeHtml(str: string): string {
@@ -10,6 +20,485 @@ function escapeHtml(str: string): string {
     .replace(/</g, '&lt;')
     .replace(/>/g, '&gt;')
     .replace(/"/g, '&quot;');
+}
+
+function getPartnerCategorySlugFromPath(routePath: string): string | null {
+  const parts = routePath.split('/').filter(Boolean);
+  if (parts[0] === 'partenaires' && parts.length === 2) return parts[1];
+  return null;
+}
+
+function getPartnerDetailFromPath(routePath: string) {
+  const parts = routePath.split('/').filter(Boolean);
+  if (parts[0] === 'partenaires' && parts.length === 3) {
+    const detail = partnerDetails[parts[2]];
+    if (detail && detail.categorySlug === parts[1]) return detail;
+  }
+  return undefined;
+}
+
+function buildBreadcrumbHtml(route: RouteData): string {
+  const crumbs: Array<{ label: string; href?: string }> = [{ label: 'Accueil', href: '/' }];
+
+  if (route.path.startsWith('/alchimistes/')) {
+    crumbs.push({ label: 'Nos Alchimistes', href: '/alchimistes/' });
+    crumbs.push({ label: breadcrumbNames[route.path] || route.h1 });
+  } else if (route.path.startsWith('/partenaires/')) {
+    crumbs.push({ label: 'Nos Partenaires', href: '/partenaires/' });
+    const parts = route.path.split('/').filter(Boolean);
+    const catMeta = partnerCategories.find((c) => c.slug === parts[1]);
+    if (parts.length === 2) {
+      crumbs.push({ label: catMeta?.name || breadcrumbNames[route.path] || route.h1 });
+    } else if (parts.length === 3) {
+      crumbs.push({ label: catMeta?.name || parts[1], href: `/partenaires/${parts[1]}/` });
+      crumbs.push({ label: breadcrumbNames[route.path] || route.h1 });
+    }
+  } else if (route.path === '/ressources/etudes') {
+    crumbs.push({ label: 'Nos Ressources', href: '/ressources/' });
+    crumbs.push({ label: 'Nos études' });
+  } else if (route.path.startsWith('/ressources/etudes/')) {
+    crumbs.push({ label: 'Nos Ressources', href: '/ressources/' });
+    crumbs.push({ label: 'Nos études', href: '/ressources/etudes/' });
+    crumbs.push({ label: breadcrumbNames[route.path] || route.h1 });
+  } else if (route.path === '/ressources/analyseurs') {
+    crumbs.push({ label: 'Nos Ressources', href: '/ressources/' });
+    crumbs.push({ label: 'Nos Analyseurs' });
+  } else if (route.path.startsWith('/ressources/analyseurs/')) {
+    crumbs.push({ label: 'Nos Ressources', href: '/ressources/' });
+    crumbs.push({ label: 'Nos Analyseurs', href: '/ressources/analyseurs/' });
+    crumbs.push({ label: breadcrumbNames[route.path] || route.h1 });
+  } else if (route.path === '/ressources/business-game') {
+    crumbs.push({ label: 'Nos Ressources', href: '/ressources/' });
+    crumbs.push({ label: 'Business Game NoNo BanaBa' });
+  } else {
+    return '';
+  }
+
+  return `
+        <nav aria-label="Fil d'Ariane" style="max-width: 900px; margin: 0 auto 1.5rem auto; font-size: 0.875rem; color: #475569; text-align: center;">
+          ${crumbs
+            .map((c, i) => {
+              const sep = i > 0 ? '<span aria-hidden="true" style="margin: 0 0.5rem;">/</span>' : '';
+              if (c.href) {
+                return `${sep}<a href="${c.href}" style="color: #037971; text-decoration: none;">${escapeHtml(c.label)}</a>`;
+              }
+              return `${sep}<span aria-current="page" style="color: #1F4F6E; font-weight: 600;">${escapeHtml(c.label)}</span>`;
+            })
+            .join('')}
+        </nav>`;
+}
+
+function generateStudyStaticHtml(routePath: string): string {
+  const slug = routePath.replace('/ressources/etudes/', '').replace(/\/$/, '');
+  if (slug === 'interview-gemini-4') {
+    return `
+        <section style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 1.25rem; padding: 2rem 2.5rem; margin-bottom: 2.5rem;">
+          <h2 style="font-size: 1.5rem; font-weight: 800; color: #1F4F6E; margin-top: 0;">${escapeHtml(etudeGemini4Data.title)}</h2>
+          <p style="color: #334155;">${escapeHtml(etudeGemini4Data.intro)}</p>
+          <p style="font-size: 0.9rem; color: #475569;">${escapeHtml(etudeGemini4Data.transparencyNote)}</p>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 1rem; margin-top: 1.5rem;">
+            ${etudeGemini4Data.highlights
+              .map(
+                (h) => `
+              <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 0.75rem; padding: 1rem;">
+                <div style="font-size: 1.5rem; font-weight: 800; color: #C06721;">${escapeHtml(h.value)}</div>
+                <div style="font-size: 0.85rem; font-weight: 700; color: #1F4F6E; margin: 0.25rem 0;">${escapeHtml(h.label)}</div>
+                <div style="font-size: 0.82rem; color: #475569;">${escapeHtml(h.detail)}</div>
+              </div>`
+              )
+              .join('')}
+          </div>
+        </section>
+
+        <section style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 1.25rem; padding: 2rem 2.5rem; margin-bottom: 2.5rem;">
+          <h2 style="font-size: 1.35rem; font-weight: 800; color: #1F4F6E; margin-top: 0;">Les 4 temps forts du retour d'expérience terrain</h2>
+          ${etudeGemini4Data.sections
+            .map(
+              (sec) => `
+            <div style="margin-bottom: 1.5rem; padding-bottom: 1.25rem; border-bottom: 1px solid #e2e8f0;">
+              <h3 style="font-size: 1.15rem; color: #1F4F6E; margin: 0 0 0.5rem 0;">${escapeHtml(sec.number)}. ${escapeHtml(sec.title)}</h3>
+              <p style="color: #334155;">${escapeHtml(sec.summary)}</p>
+              <ul style="padding-left: 1.5rem; color: #475569;">
+                ${sec.keyPoints.map((kp) => `<li style="margin-bottom: 0.3rem;">${escapeHtml(kp)}</li>`).join('')}
+              </ul>
+              <blockquote style="margin: 0.75rem 0 0 0; padding-left: 1rem; border-left: 3px solid #02ADAB; color: #1F4F6E; font-style: italic;">« ${escapeHtml(sec.quote)} »</blockquote>
+            </div>`
+            )
+            .join('')}
+        </section>
+
+        <section style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 1.25rem; padding: 2rem 2.5rem; margin-bottom: 2.5rem; overflow-x: auto;">
+          <h2 style="font-size: 1.35rem; font-weight: 800; color: #1F4F6E; margin-top: 0;">Gamme Gemini 4 &amp; Données de performance officielles (${escapeHtml(etudeGemini4Data.version)})</h2>
+          <table style="width: 100%; border-collapse: collapse; font-size: 0.92rem; text-align: left; margin-bottom: 2rem;">
+            <thead>
+              <tr style="background: #1F4F6E; color: #ffffff;">
+                <th style="padding: 0.75rem 1rem; border: 1px solid #cbd5e1;">Modèle</th>
+                <th style="padding: 0.75rem 1rem; border: 1px solid #cbd5e1;">Date de sortie</th>
+                <th style="padding: 0.75rem 1rem; border: 1px solid #cbd5e1;">Positionnement</th>
+                <th style="padding: 0.75rem 1rem; border: 1px solid #cbd5e1;">Spécifications &amp; tarifs API</th>
+              </tr>
+            </thead>
+            <tbody>
+              ${etudeGemini4Data.models
+                .map(
+                  (m, idx) => `
+                <tr style="background: ${idx % 2 === 0 ? '#ffffff' : '#f8fafc'};">
+                  <td style="padding: 0.75rem 1rem; border: 1px solid #e2e8f0; font-weight: 700; color: #1F4F6E;">${escapeHtml(m.model)}</td>
+                  <td style="padding: 0.75rem 1rem; border: 1px solid #e2e8f0; color: #334155;">${escapeHtml(m.releaseDate)}</td>
+                  <td style="padding: 0.75rem 1rem; border: 1px solid #e2e8f0; color: #334155;">${escapeHtml(m.positioning)}</td>
+                  <td style="padding: 0.75rem 1rem; border: 1px solid #e2e8f0; color: #334155;">${escapeHtml(m.specsAndPricing)}</td>
+                </tr>`
+                )
+                .join('')}
+            </tbody>
+          </table>
+
+          <table style="width: 100%; border-collapse: collapse; font-size: 0.92rem; text-align: left;">
+            <thead>
+              <tr style="background: #1F4F6E; color: #ffffff;">
+                <th style="padding: 0.75rem 1rem; border: 1px solid #cbd5e1;">Indicateur</th>
+                <th style="padding: 0.75rem 1rem; border: 1px solid #cbd5e1;">Résultat mesuré</th>
+                <th style="padding: 0.75rem 1rem; border: 1px solid #cbd5e1;">Source</th>
+              </tr>
+            </thead>
+            <tbody>
+              ${etudeGemini4Data.benchmarks
+                .map(
+                  (b, idx) => `
+                <tr style="background: ${idx % 2 === 0 ? '#ffffff' : '#f8fafc'};">
+                  <td style="padding: 0.75rem 1rem; border: 1px solid #e2e8f0; font-weight: 700; color: #1F4F6E;">${escapeHtml(b.metric)}</td>
+                  <td style="padding: 0.75rem 1rem; border: 1px solid #e2e8f0; color: #C06721; font-weight: 700;">${escapeHtml(b.result)}</td>
+                  <td style="padding: 0.75rem 1rem; border: 1px solid #e2e8f0; color: #334155;">${escapeHtml(b.source)}</td>
+                </tr>`
+                )
+                .join('')}
+            </tbody>
+          </table>
+
+          <div style="margin-top: 1.5rem;">
+            <a href="${etudeGemini4Data.pdfUrl}" target="_blank" rel="noopener noreferrer" download="Interview_Gemini_4_Cyril_Garnier_V9.pdf" style="display: inline-block; background: #C06721; color: #ffffff; font-weight: 700; text-decoration: none; padding: 0.85rem 1.5rem; border-radius: 0.5rem;">
+              Télécharger l'étude complète Interview Gemini 4 (PDF · ${escapeHtml(etudeGemini4Data.version)}) →
+            </a>
+          </div>
+        </section>`;
+  }
+  const study = studiesList.find((s) => s.slug === slug);
+  if (!study) return '';
+
+  return `
+        <section style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 1.25rem; padding: 2rem 2.5rem; margin-bottom: 2.5rem;">
+          <h2 style="font-size: 1.5rem; font-weight: 800; color: #1F4F6E; margin-top: 0;">Question de recherche &amp; Protocole (${escapeHtml(study.period)})</h2>
+          <p style="color: #334155;">${escapeHtml(study.researchQuestion)}</p>
+          <p style="color: #475569;">${escapeHtml(study.methodSummary)}</p>
+          <ul style="padding-left: 1.5rem; color: #334155;">
+            ${study.methodBullets.map((b) => `<li style="margin-bottom: 0.4rem;">${escapeHtml(b)}</li>`).join('')}
+          </ul>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 1rem; margin-top: 1.5rem;">
+            ${study.quantifiedResults
+              .map(
+                (r) => `
+              <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 0.75rem; padding: 1rem;">
+                <div style="font-size: 1.5rem; font-weight: 800; color: #C06721;">${escapeHtml(r.figure)}</div>
+                <div style="font-size: 0.85rem; font-weight: 700; color: #1F4F6E; margin: 0.25rem 0;">${escapeHtml(r.label)}</div>
+                <div style="font-size: 0.82rem; color: #475569;">${escapeHtml(r.explanation)}</div>
+              </div>`
+              )
+              .join('')}
+          </div>
+        </section>
+
+        ${study.tables
+          .map(
+            (table) => `
+        <section style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 1.25rem; padding: 2rem 2.5rem; margin-bottom: 2.5rem; overflow-x: auto;">
+          <h2 style="font-size: 1.35rem; font-weight: 800; color: #1F4F6E; margin-top: 0;">${escapeHtml(table.caption)}</h2>
+          <table style="width: 100%; border-collapse: collapse; font-size: 0.92rem; text-align: left;">
+            <thead>
+              <tr style="background: #1F4F6E; color: #ffffff;">
+                ${table.headers.map((h) => `<th style="padding: 0.75rem 1rem; border: 1px solid #cbd5e1;">${escapeHtml(h)}</th>`).join('')}
+              </tr>
+            </thead>
+            <tbody>
+              ${table.rows
+                .map(
+                  (row, idx) => `
+                <tr style="background: ${idx % 2 === 0 ? '#ffffff' : '#f8fafc'};">
+                  ${row.map((cell) => `<td style="padding: 0.75rem 1rem; border: 1px solid #e2e8f0; color: #334155;">${escapeHtml(cell)}</td>`).join('')}
+                </tr>`
+                )
+                .join('')}
+            </tbody>
+          </table>
+        </section>`
+          )
+          .join('')}
+
+        <section style="background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 1.25rem; padding: 2rem 2.5rem; margin-bottom: 2.5rem;">
+          <h2 style="font-size: 1.35rem; font-weight: 800; color: #1F4F6E; margin-top: 0;">En clair, limites méthodologiques &amp; recommandation datée</h2>
+          ${study.enClairBoxes
+            .map(
+              (box) => `
+            <div style="background: #ffffff; border-left: 4px solid #02ADAB; padding: 1rem 1.25rem; margin-bottom: 1rem; border-radius: 0.5rem;">
+              <strong style="color: #1F4F6E; display: block; margin-bottom: 0.25rem;">${escapeHtml(box.title)}</strong>
+              <span style="color: #334155;">${escapeHtml(box.takeaway)}</span>
+            </div>`
+            )
+            .join('')}
+          <ul style="padding-left: 1.5rem; color: #475569; margin: 1rem 0;">
+            ${study.limits.map((l) => `<li style="margin-bottom: 0.35rem;">${escapeHtml(l)}</li>`).join('')}
+          </ul>
+          <p style="font-size: 0.9rem; color: #C06721; font-weight: 700;">${escapeHtml(study.recommendationDate)}</p>
+          <p style="color: #1F4F6E;">${escapeHtml(study.operationalRecommendation)}</p>
+          <div style="display: flex; flex-wrap: wrap; gap: 1rem; margin-top: 1.25rem;">
+            <a href="${study.pdfUrl}" target="_blank" rel="noopener noreferrer" download="${escapeHtml(study.pdfFilename)}" style="display: inline-block; background: #C06721; color: #ffffff; font-weight: 700; text-decoration: none; padding: 0.85rem 1.5rem; border-radius: 0.5rem;">
+              Télécharger ${escapeHtml(study.shortTitle)} (PDF · ${escapeHtml(study.version)}) →
+            </a>
+            ${
+              study.audioUrl
+                ? `<a href="${study.audioUrl}" target="_blank" rel="noopener noreferrer" style="display: inline-block; background: #1F4F6E; color: #ffffff; font-weight: 700; text-decoration: none; padding: 0.85rem 1.5rem; border-radius: 0.5rem;">
+                    Écouter le podcast audio (${escapeHtml(study.audioDuration || 'Audio')}) →
+                  </a>`
+                : ''
+            }
+          </div>
+        </section>`;
+}
+
+function generatePartnerStaticHtml(routePath: string): string {
+  if (routePath === '/partenaires') {
+    return `
+        <section style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 1.25rem; padding: 2rem 2.5rem; margin-bottom: 2.5rem;">
+          <h2 style="font-size: 1.5rem; font-weight: 800; color: #1F4F6E; margin-top: 0;">Les 6 pôles de partenaires et leurs liens vérifiés</h2>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1rem;">
+            ${partnerCategories
+              .map(
+                (cat) => `
+              <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 0.75rem; padding: 1.25rem;">
+                <h3 style="margin: 0 0 0.5rem 0; font-size: 1.1rem; color: #1F4F6E;">
+                  <a href="/partenaires/${cat.slug}/" style="color: #1F4F6E; text-decoration: underline;">${escapeHtml(cat.name)}</a>
+                </h3>
+                <p style="margin: 0; font-size: 0.9rem; color: #475569;">${escapeHtml(cat.cardSummary)}</p>
+              </div>`
+              )
+              .join('')}
+          </div>
+          <h3 style="margin-top: 2rem; font-size: 1.15rem; color: #1F4F6E;">Toutes les organisations liées</h3>
+          <ul style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 0.65rem; list-style: none; padding: 0;">
+            ${allPartners
+              .map(
+                (p) => `
+              <li>
+                <a href="${escapeHtml(p.websiteUrl)}" target="_blank" rel="noopener noreferrer" style="color: #037971; font-weight: 600; text-decoration: underline;">${escapeHtml(p.name)}</a>
+                <span style="color: #64748b; font-size: 0.85rem;"> — ${escapeHtml(p.relation)}</span>
+              </li>`
+              )
+              .join('')}
+          </ul>
+        </section>`;
+  }
+
+  const catSlug = getPartnerCategorySlugFromPath(routePath);
+  if (catSlug) {
+    const partners = allPartners.filter((p) => p.categorySlug === catSlug);
+    const catMeta = partnerCategories.find((c) => c.slug === catSlug);
+    return `
+        <section style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 1.25rem; padding: 2rem 2.5rem; margin-bottom: 2.5rem;">
+          <h2 style="font-size: 1.5rem; font-weight: 800; color: #1F4F6E; margin-top: 0;">${escapeHtml(catMeta?.name || 'Partenaires')} — Annuaire lié</h2>
+          <div style="display: grid; gap: 1rem;">
+            ${partners
+              .map(
+                (p) => `
+              <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 0.75rem; padding: 1.25rem;">
+                <h3 style="margin: 0 0 0.35rem 0; color: #1F4F6E;">${escapeHtml(p.name)} <span style="font-weight: 400; font-size: 0.9rem; color: #64748b;">(${escapeHtml(p.city)})</span></h3>
+                <p style="margin: 0 0 0.75rem 0; color: #334155;">${escapeHtml(p.summary)}</p>
+                <div style="display: flex; flex-wrap: wrap; gap: 1rem; font-size: 0.9rem;">
+                  <a href="${escapeHtml(p.websiteUrl)}" target="_blank" rel="noopener noreferrer" style="color: #037971; font-weight: 700; text-decoration: underline;">Site officiel : ${escapeHtml(p.name)} →</a>
+                  ${p.hasDetailPage ? `<a href="/partenaires/${p.categorySlug}/${p.slug}/" style="color: #C06721; font-weight: 700; text-decoration: underline;">Fiche partenariat ${escapeHtml(p.name)} →</a>` : ''}
+                  ${p.alchimistePath ? `<a href="${p.alchimistePath}" style="color: #1F4F6E; font-weight: 600; text-decoration: underline;">Profil alchimiste associé</a>` : ''}
+                </div>
+              </div>`
+              )
+              .join('')}
+          </div>
+        </section>`;
+  }
+
+  const detail = getPartnerDetailFromPath(routePath);
+  if (detail) {
+    return `
+        <section style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 1.25rem; padding: 2rem 2.5rem; margin-bottom: 2.5rem;">
+          <h2 style="font-size: 1.5rem; font-weight: 800; color: #1F4F6E; margin-top: 0;">Rôle de ${escapeHtml(detail.name)} aux côtés d'Alkymya</h2>
+          <p style="color: #334155;">${escapeHtml(detail.roleSummary)}</p>
+          <p style="margin-top: 1rem;">
+            <a href="${escapeHtml(detail.ctaUrl)}" target="_blank" rel="noopener noreferrer" style="display: inline-block; background: #1F4F6E; color: #ffffff; font-weight: 700; text-decoration: none; padding: 0.75rem 1.25rem; border-radius: 0.5rem;">
+              ${escapeHtml(detail.ctaLabel)} (${escapeHtml(detail.name)}) →
+            </a>
+          </p>
+          <ul style="padding-left: 1.5rem; color: #334155; margin-top: 1.25rem;">
+            ${detail.jointActions.map((a) => `<li style="margin-bottom: 0.4rem;"><strong>${escapeHtml(a.title)} :</strong> ${escapeHtml(a.detail)}</li>`).join('')}
+          </ul>
+          ${
+            detail.videos && detail.videos.length > 0
+              ? `<h3 style="margin-top: 1.5rem; color: #1F4F6E;">Les 5 capsules vidéo Alkymya x INATEC</h3>
+                 <ul style="padding-left: 1.5rem; color: #334155;">
+                   ${detail.videos.map((v) => `<li style="margin-bottom: 0.4rem;"><strong>${escapeHtml(v.title)} :</strong> ${escapeHtml(v.description)} (<a href="${escapeHtml(v.url)}" target="_blank" rel="noopener noreferrer" style="color: #037971;">Voir la capsule vidéo</a>)</li>`).join('')}
+                 </ul>`
+              : ''
+          }
+          ${
+            detail.slug === 'euridis'
+              ? `<div style="margin-top: 2rem; border-top: 1px solid #e2e8f0; padding-top: 1.5rem;">
+                   <p style="font-weight: 700; color: #1F4F6E; margin: 0 0 0.35rem 0;">${escapeHtml(euridisFormationData.ruleStatement)} ${escapeHtml(euridisFormationData.coreThesis)}</p>
+                   <p style="color: #334155;">${escapeHtml(euridisFormationData.introNote)}</p>
+                   <h3 style="color: #1F4F6E; margin-top: 1.25rem;">${escapeHtml(euridisFormationData.day1.title)}</h3>
+                   <p style="font-weight: 700; color: #1F4F6E; margin-bottom: 0.4rem;">${escapeHtml(euridisFormationData.day1.morningTitle)}</p>
+                   <ul style="padding-left: 1.5rem; color: #334155;">
+                     ${euridisFormationData.day1.morningItems.map((i) => `<li style="margin-bottom: 0.3rem;">${escapeHtml(i)}</li>`).join('')}
+                   </ul>
+                   <p style="font-weight: 700; color: #1F4F6E; margin: 0.75rem 0 0.25rem 0;">${escapeHtml(euridisFormationData.day1.afternoonTitle)}</p>
+                   <p style="color: #334155;">${escapeHtml(euridisFormationData.day1.afternoonSummary)}</p>
+                   <h3 style="color: #1F4F6E; margin-top: 1.25rem;">${escapeHtml(euridisFormationData.day2.title)}</h3>
+                   <p style="color: #334155;">${escapeHtml(euridisFormationData.day2.intro)}</p>
+                   <ol style="padding-left: 1.5rem; color: #334155;">
+                     ${euridisFormationData.day2.steps.map((s) => `<li style="margin-bottom: 0.35rem;"><strong>${escapeHtml(s.title)} :</strong> ${escapeHtml(s.detail)}</li>`).join('')}
+                   </ol>
+                   <p style="color: #334155;">${escapeHtml(euridisFormationData.day2.synthesisNote)}</p>
+                   <h3 style="color: #1F4F6E; margin-top: 1.25rem;">${escapeHtml(euridisFormationData.harness.title)}</h3>
+                   <p style="color: #334155;">${escapeHtml(euridisFormationData.harness.intro)}</p>
+                   <ul style="padding-left: 1.5rem; color: #334155;">
+                     ${euridisFormationData.harness.components.map((c) => `<li style="margin-bottom: 0.3rem;"><strong>${escapeHtml(c.name)} :</strong> ${escapeHtml(c.detail)}</li>`).join('')}
+                   </ul>
+                   <p style="color: #334155;">${escapeHtml(euridisFormationData.harness.capitalIaLink)}</p>
+                   <h3 style="color: #1F4F6E; margin-top: 1.25rem;">La stack de la formation</h3>
+                   <table style="width: 100%; border-collapse: collapse; font-size: 0.9rem; text-align: left; margin-top: 0.5rem;">
+                     <thead>
+                       <tr style="background: #1F4F6E; color: #ffffff;">
+                         <th style="padding: 0.65rem 0.9rem; border: 1px solid #cbd5e1;">Pôle</th>
+                         <th style="padding: 0.65rem 0.9rem; border: 1px solid #cbd5e1;">Outils &amp; briques pratiqués</th>
+                       </tr>
+                     </thead>
+                     <tbody>
+                       ${euridisFormationData.stack
+                         .map(
+                           (row, idx) => `<tr style="background: ${idx % 2 === 0 ? '#ffffff' : '#f8fafc'};">
+                             <td style="padding: 0.65rem 0.9rem; border: 1px solid #e2e8f0; font-weight: 700; color: #1F4F6E;">${escapeHtml(row.category)}</td>
+                             <td style="padding: 0.65rem 0.9rem; border: 1px solid #e2e8f0; color: #334155;">${escapeHtml(row.tools)}</td>
+                           </tr>`
+                         )
+                         .join('')}
+                     </tbody>
+                   </table>
+                   <h3 style="color: #1F4F6E; margin-top: 1.25rem;">Ce que les étudiants emportent</h3>
+                   <ul style="padding-left: 1.5rem; color: #334155;">
+                     ${euridisFormationData.takeaways.map((t) => `<li style="margin-bottom: 0.3rem;">${escapeHtml(t)}</li>`).join('')}
+                   </ul>
+                   <h3 style="color: #1F4F6E; margin-top: 1.25rem;">Questions fréquentes</h3>
+                   <dl style="color: #334155;">
+                     ${euridisFormationData.faq.map((q) => `<dt style="font-weight: 700; color: #1F4F6E; margin-top: 0.6rem;">${escapeHtml(q.question)}</dt><dd style="margin: 0.2rem 0 0.5rem 0;">${escapeHtml(q.answer)}</dd>`).join('')}
+                   </dl>
+                   <p style="font-style: italic; color: #475569; margin-top: 1rem;">${escapeHtml(euridisFormationData.attribution)}</p>
+                 </div>`
+              : ''
+          }
+          ${
+            detail.slug === 'ieseg'
+              ? `<div style="margin-top: 2rem; border-top: 1px solid #e2e8f0; padding-top: 1.5rem;">
+                   <p style="font-weight: 700; color: #1F4F6E; margin: 0 0 0.35rem 0;">${escapeHtml(iesegFormationData.conviction)}</p>
+                   <p style="color: #334155;">${escapeHtml(iesegFormationData.intro)}</p>
+                   <h3 style="color: #1F4F6E; margin-top: 1.25rem;">Quatre façons d'intervenir</h3>
+                   <ol style="padding-left: 1.5rem; color: #334155;">
+                     ${iesegFormationData.interventions
+                       .map(
+                         (item) => `<li style="margin-bottom: 0.65rem;">
+                           <strong>${escapeHtml(item.title)} :</strong> ${escapeHtml(item.description)}
+                           ${
+                             item.bullets
+                               ? `<ul style="padding-left: 1.25rem; margin-top: 0.35rem;">${item.bullets.map((b) => `<li>${escapeHtml(b)}</li>`).join('')}</ul>`
+                               : ''
+                           }
+                         </li>`
+                       )
+                       .join('')}
+                   </ol>
+                   <h3 style="color: #1F4F6E; margin-top: 1.25rem;">${escapeHtml(iesegFormationData.fieldObservation.title)}</h3>
+                   <p style="font-weight: 700; color: #1F4F6E;">${escapeHtml(iesegFormationData.fieldObservation.leadStat)}</p>
+                   <p style="color: #334155;">${escapeHtml(iesegFormationData.fieldObservation.summary)}</p>
+                   <p style="color: #334155;">${escapeHtml(iesegFormationData.fieldObservation.finding)}</p>
+                   <p style="font-style: italic; color: #475569;">${escapeHtml(iesegFormationData.fieldObservation.methodologyNote)}</p>
+                   <h3 style="color: #1F4F6E; margin-top: 1.25rem;">${escapeHtml(iesegFormationData.soda.title)}</h3>
+                   <p style="color: #334155;">${escapeHtml(iesegFormationData.soda.description)}</p>
+                   <blockquote style="margin: 0.75rem 0; padding: 1rem; background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 0.5rem; color: #1F4F6E; font-style: italic;">
+                     « ${escapeHtml(iesegFormationData.soda.review.quote)} » — <strong>${escapeHtml(iesegFormationData.soda.review.author)}</strong> (${escapeHtml(iesegFormationData.soda.review.source)})
+                   </blockquote>
+                   <h3 style="color: #1F4F6E; margin-top: 1.25rem;">Ce qu'en disent les étudiants sur l'accompagnement</h3>
+                   ${iesegFormationData.testimonials
+                     .map(
+                       (t) => `<blockquote style="margin: 0.75rem 0; padding: 1rem; background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 0.5rem; color: #334155; font-style: italic;">
+                         « ${escapeHtml(t.quote)} » — <strong style="color: #1F4F6E;">${escapeHtml(t.author)}</strong> (${escapeHtml(t.roleAndSource)})
+                       </blockquote>`
+                     )
+                     .join('')}
+                   <h3 style="color: #1F4F6E; margin-top: 1.25rem;">Les mots-clés de l'accompagnement</h3>
+                   <table style="width: 100%; border-collapse: collapse; font-size: 0.9rem; text-align: left; margin-top: 0.5rem;">
+                     <thead>
+                       <tr style="background: #1F4F6E; color: #ffffff;">
+                         <th style="padding: 0.65rem 0.9rem; border: 1px solid #cbd5e1;">Axe</th>
+                         <th style="padding: 0.65rem 0.9rem; border: 1px solid #cbd5e1;">Notions &amp; pratiques</th>
+                       </tr>
+                     </thead>
+                     <tbody>
+                       ${iesegFormationData.keywordGroups
+                         .map(
+                           (row, idx) => `<tr style="background: ${idx % 2 === 0 ? '#ffffff' : '#f8fafc'};">
+                             <td style="padding: 0.65rem 0.9rem; border: 1px solid #e2e8f0; font-weight: 700; color: #1F4F6E;">${escapeHtml(row.category)}</td>
+                             <td style="padding: 0.65rem 0.9rem; border: 1px solid #e2e8f0; color: #334155;">${escapeHtml(row.keywords)}</td>
+                           </tr>`
+                         )
+                         .join('')}
+                     </tbody>
+                   </table>
+                   <h3 style="color: #1F4F6E; margin-top: 1.25rem;">Questions fréquentes</h3>
+                   <dl style="color: #334155;">
+                     ${iesegFormationData.faq.map((q) => `<dt style="font-weight: 700; color: #1F4F6E; margin-top: 0.6rem;">${escapeHtml(q.question)}</dt><dd style="margin: 0.2rem 0 0.5rem 0;">${escapeHtml(q.answer)}</dd>`).join('')}
+                   </dl>
+                   <p style="font-style: italic; color: #475569; margin-top: 1rem;">${escapeHtml(iesegFormationData.attribution)}</p>
+                 </div>`
+              : ''
+          }
+        </section>`;
+  }
+
+  return '';
+}
+
+function generateToolStaticHtml(routePath: string): string {
+  if (routePath === '/ressources/business-game') {
+    return `
+        <div style="text-align: center; margin-bottom: 2rem;">
+          <a href="https://nonobanaba.netlify.app/" target="_blank" rel="noopener noreferrer" style="display: inline-block; background: #C06721; color: #ffffff; font-weight: 700; text-decoration: none; padding: 0.9rem 1.6rem; border-radius: 0.5rem;">
+            Accéder au Business Game NoNo BanaBa →
+          </a>
+        </div>`;
+  }
+  const slug = routePath.replace('/ressources/analyseurs/', '').replace(/\/$/, '');
+  const tool = analyseursList.find((a) => a.slug === slug);
+  if (!tool) return '';
+
+  return `
+        <section style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 1.25rem; padding: 2rem 2.5rem; margin-bottom: 2.5rem;">
+          <h2 style="font-size: 1.5rem; font-weight: 800; color: #1F4F6E; margin-top: 0;">${escapeHtml(tool.name)} — Mode d'emploi, limites et confidentialité</h2>
+          <p style="color: #334155;">${escapeHtml(tool.whatItDoes)}</p>
+          <p style="margin: 1rem 0;">
+            <a href="${escapeHtml(tool.subdomain)}" target="_blank" rel="noopener noreferrer" style="display: inline-block; background: #02ADAB; color: #ffffff; font-weight: 700; text-decoration: none; padding: 0.85rem 1.5rem; border-radius: 0.5rem;">
+              Ouvrir ${escapeHtml(tool.name)} (${escapeHtml(tool.subdomain.replace(/^https?:\/\//, '').replace(/\/$/, ''))}) →
+            </a>
+          </p>
+          <h3 style="color: #1F4F6E;">Ce que cet outil ne fait pas</h3>
+          <ul style="padding-left: 1.5rem; color: #475569;">
+            ${tool.whatItDoesNotDo.map((l) => `<li style="margin-bottom: 0.35rem;">${escapeHtml(l)}</li>`).join('')}
+          </ul>
+          <p style="color: #334155; font-size: 0.95rem;"><strong>Confidentialité :</strong> ${escapeHtml(tool.privacy)}</p>
+        </section>`;
 }
 
 function generatePageBody(route: RouteData): string {
@@ -27,6 +516,17 @@ function generatePageBody(route: RouteData): string {
     { href: '/contact/', label: 'Contact' }
   ];
 
+  const breadcrumbHtml = buildBreadcrumbHtml(route);
+  const studyStaticHtml = route.path.startsWith('/ressources/etudes/')
+    ? generateStudyStaticHtml(route.path)
+    : '';
+  const partnerStaticHtml = route.path === '/partenaires' || route.path.startsWith('/partenaires/')
+    ? generatePartnerStaticHtml(route.path)
+    : '';
+  const toolStaticHtml = route.path.startsWith('/ressources/analyseurs/') || route.path === '/ressources/business-game'
+    ? generateToolStaticHtml(route.path)
+    : '';
+
   return `
     <header style="background: #ffffff; border-bottom: 1px solid #e2e8f0; padding: 1rem 1.5rem; position: sticky; top: 0; z-index: 50;">
       <div style="max-width: 1280px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem;">
@@ -38,7 +538,8 @@ function generatePageBody(route: RouteData): string {
             const isCurrent =
               item.href === (route.path === '/' ? '/' : `${route.path}/`) ||
               (item.href === '/alchimistes/' && route.path.startsWith('/alchimistes/')) ||
-              (item.href === '/ressources/' && route.path.startsWith('/ressources/'));
+              (item.href === '/ressources/' && route.path.startsWith('/ressources/')) ||
+              (item.href === '/partenaires/' && route.path.startsWith('/partenaires/'));
             return `
             <a href="${item.href}" style="color: ${isCurrent ? '#d97706' : '#1e293b'}; text-decoration: none; padding: 0.25rem 0.5rem;">
               ${item.label}
@@ -51,15 +552,7 @@ function generatePageBody(route: RouteData): string {
 
     <main id="main-content" style="max-width: 1200px; margin: 0 auto; padding: 3rem 1.5rem; font-family: system-ui, -apple-system, sans-serif; color: #1e293b; line-height: 1.6;">
       <article>
-        ${route.path.startsWith('/alchimistes/') ? `
-        <nav aria-label="Fil d'Ariane" style="max-width: 900px; margin: 0 auto 1.5rem auto; font-size: 0.875rem; color: #475569; text-align: center;">
-          <a href="/" style="color: #037971; text-decoration: none;">Accueil</a>
-          <span aria-hidden="true" style="margin: 0 0.5rem;">/</span>
-          <a href="/alchimistes/" style="color: #037971; text-decoration: none;">Nos Alchimistes</a>
-          <span aria-hidden="true" style="margin: 0 0.5rem;">/</span>
-          <span aria-current="page" style="color: #1F4F6E; font-weight: 600;">${escapeHtml(breadcrumbNames[route.path] || route.h1)}</span>
-        </nav>
-        ` : ''}
+        ${breadcrumbHtml}
         <header style="text-align: center; max-width: 900px; margin: 0 auto 3.5rem auto;">
           <h1 style="font-size: 2.75rem; font-weight: 900; color: #1F4F6E; margin-bottom: 1.5rem; line-height: 1.2;">
             ${escapeHtml(route.h1)}
@@ -67,7 +560,18 @@ function generatePageBody(route: RouteData): string {
           <p style="font-size: 1.25rem; color: #475569; line-height: 1.6; margin: 0;">
             ${escapeHtml(route.content.leadParagraph)}
           </p>
+          ${route.path === '/ressources/etudes/interview-gemini-4' ? `
+          <div style="margin-top: 1.75rem;">
+            <a href="${INTERVIEW_GEMINI_4_PDF_URL}" target="_blank" rel="noopener noreferrer" download="Interview_Gemini_4_Retour_experience_enseignant_IA_et_performances_V9.pdf" style="display: inline-block; background: #C06721; color: #ffffff; font-weight: 700; text-decoration: none; padding: 0.85rem 1.5rem; border-radius: 0.5rem;">
+              Télécharger l'étude complète (PDF · V9) →
+            </a>
+          </div>
+          ` : ''}
         </header>
+
+        ${studyStaticHtml}
+        ${partnerStaticHtml}
+        ${toolStaticHtml}
 
         <div style="display: grid; gap: 2.5rem; margin-bottom: 4rem;">
           ${route.content.sections.map(section => `
@@ -163,13 +667,30 @@ const breadcrumbNames: Record<string, string> = {
   '/alchimistes': 'Nos Alchimistes',
   '/ateliers': 'Nos Ateliers',
   '/ressources': 'Nos Ressources',
-  '/ressources/nos-analyseurs': 'Nos Analyseurs',
-  '/ressources/nos-etudes': 'Nos études',
-  '/ressources/business-game': 'Business Game',
-  '/ressources/alkymya-x-inatec': 'Alkymya x Inatec',
-  '/ressources/partenaires': 'Partenaires',
-  '/ressources/partenaires/awa-cloud': 'AWACLOUD',
+  '/ressources/etudes': 'Nos études',
+  '/ressources/etudes/generation-ia-2026': 'Génération IA 2026',
+  '/ressources/etudes/generation-ia-2025': 'Génération IA 2025',
+  '/ressources/etudes/generation-ia-2024': 'Génération IA 2024',
+  '/ressources/etudes/doctrine-iag': 'La Doctrine IAG',
+  '/ressources/etudes/interview-gemini-4': 'Interview Gemini 4',
+  '/ressources/analyseurs': 'Nos Analyseurs',
+  '/ressources/analyseurs/analyseur-de-photo': 'Analyseur de photo',
+  '/ressources/analyseurs/analyseur-de-cv': 'Analyseur de CV',
+  '/ressources/analyseurs/analyseur-de-memoire': 'Analyseur de mémoire',
+  '/ressources/business-game': 'Business Game NoNo BanaBa',
   '/partenaires': 'Nos Partenaires',
+  '/partenaires/ecoles': 'Partenaires École',
+  '/partenaires/ecoles/euridis': 'Euridis Business School',
+  '/partenaires/ecoles/ieseg': 'IÉSEG School of Management',
+  '/partenaires/insertion': 'Insertion & Alternance',
+  '/partenaires/insertion/objectif-alternance': 'Objectif Alternance',
+  '/partenaires/formations-certifiees': 'Formations Certifiées & OPCO',
+  '/partenaires/formations-certifiees/inatec': 'INATEC',
+  '/partenaires/lieux': 'Lieux & Coworking',
+  '/partenaires/entreprises': 'Entreprises & Fondations',
+  '/partenaires/outils': 'Outils & Technologies',
+  '/partenaires/outils/awa-cloud': 'AWACLOUD',
+  '/partenaires/outils/onecub': 'Onecub',
   '/contact': 'Contact',
   '/faq': 'FAQ',
   '/rejoindre': 'Nous Rejoindre',
@@ -280,14 +801,83 @@ const faqQuestions = [
   }
 ];
 
+function buildBreadcrumbItems(route: RouteData, canonicalUrl: string) {
+  if (route.path === '/') {
+    return [{ "@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://alkymya.co/" }];
+  }
+  if (route.path.startsWith('/alchimistes/')) {
+    return [
+      { "@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://alkymya.co/" },
+      { "@type": "ListItem", "position": 2, "name": "Nos Alchimistes", "item": "https://alkymya.co/alchimistes/" },
+      { "@type": "ListItem", "position": 3, "name": breadcrumbNames[route.path] || route.h1, "item": canonicalUrl }
+    ];
+  }
+  if (route.path.startsWith('/partenaires/')) {
+    const parts = route.path.split('/').filter(Boolean);
+    const catMeta = partnerCategories.find((c) => c.slug === parts[1]);
+    if (parts.length === 2) {
+      return [
+        { "@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://alkymya.co/" },
+        { "@type": "ListItem", "position": 2, "name": "Nos Partenaires", "item": "https://alkymya.co/partenaires/" },
+        { "@type": "ListItem", "position": 3, "name": catMeta?.name || breadcrumbNames[route.path] || route.h1, "item": canonicalUrl }
+      ];
+    }
+    return [
+      { "@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://alkymya.co/" },
+      { "@type": "ListItem", "position": 2, "name": "Nos Partenaires", "item": "https://alkymya.co/partenaires/" },
+      { "@type": "ListItem", "position": 3, "name": catMeta?.name || parts[1], "item": `https://alkymya.co/partenaires/${parts[1]}/` },
+      { "@type": "ListItem", "position": 4, "name": breadcrumbNames[route.path] || route.h1, "item": canonicalUrl }
+    ];
+  }
+  if (route.path.startsWith('/ressources/etudes/')) {
+    return [
+      { "@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://alkymya.co/" },
+      { "@type": "ListItem", "position": 2, "name": "Nos Ressources", "item": "https://alkymya.co/ressources/" },
+      { "@type": "ListItem", "position": 3, "name": "Nos études", "item": "https://alkymya.co/ressources/etudes/" },
+      { "@type": "ListItem", "position": 4, "name": breadcrumbNames[route.path] || route.h1, "item": canonicalUrl }
+    ];
+  }
+  if (route.path.startsWith('/ressources/analyseurs/')) {
+    return [
+      { "@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://alkymya.co/" },
+      { "@type": "ListItem", "position": 2, "name": "Nos Ressources", "item": "https://alkymya.co/ressources/" },
+      { "@type": "ListItem", "position": 3, "name": "Nos Analyseurs", "item": "https://alkymya.co/ressources/analyseurs/" },
+      { "@type": "ListItem", "position": 4, "name": breadcrumbNames[route.path] || route.h1, "item": canonicalUrl }
+    ];
+  }
+  if (route.path.startsWith('/ressources/')) {
+    return [
+      { "@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://alkymya.co/" },
+      { "@type": "ListItem", "position": 2, "name": "Nos Ressources", "item": "https://alkymya.co/ressources/" },
+      { "@type": "ListItem", "position": 3, "name": breadcrumbNames[route.path] || route.h1, "item": canonicalUrl }
+    ];
+  }
+  return [
+    { "@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://alkymya.co/" },
+    { "@type": "ListItem", "position": 2, "name": breadcrumbNames[route.path] || route.h1, "item": canonicalUrl }
+  ];
+}
+
 function buildJsonLd(route: RouteData, canonicalUrl: string) {
+  const partnerCategorySlug = getPartnerCategorySlugFromPath(route.path);
+  const partnerDetail = getPartnerDetailFromPath(route.path);
+
   // 1. Déterminer le type précis du document WebPage
   let webpageType = 'WebPage';
   if (route.path === '/faq') webpageType = 'FAQPage';
   else if (route.path === '/alchimistes') webpageType = 'AboutPage';
   else if (route.path.startsWith('/alchimistes/')) webpageType = 'ProfilePage';
   else if (route.path === '/contact') webpageType = 'ContactPage';
-  else if (route.path === '/oeuvres' || route.path === '/ressources') webpageType = 'CollectionPage';
+  else if (
+    route.path === '/oeuvres' ||
+    route.path === '/ressources' ||
+    route.path === '/ressources/etudes' ||
+    route.path === '/ressources/analyseurs' ||
+    route.path === '/partenaires' ||
+    Boolean(partnerCategorySlug)
+  ) {
+    webpageType = 'CollectionPage';
+  }
 
   const isLeonieGraphNodeIncluded =
     route.path === '/alchimistes' || route.path === '/alchimistes/leonie-egesipe';
@@ -347,98 +937,7 @@ function buildJsonLd(route: RouteData, canonicalUrl: string) {
   const breadcrumbNode: Record<string, any> = {
     "@type": "BreadcrumbList",
     "@id": `${canonicalUrl}#breadcrumb`,
-    "itemListElement": route.path === '/'
-      ? [
-          {
-            "@type": "ListItem",
-            "position": 1,
-            "name": "Accueil",
-            "item": "https://alkymya.co/"
-          }
-        ]
-      : route.path.startsWith('/ressources/partenaires/')
-      ? [
-          {
-            "@type": "ListItem",
-            "position": 1,
-            "name": "Accueil",
-            "item": "https://alkymya.co/"
-          },
-          {
-            "@type": "ListItem",
-            "position": 2,
-            "name": "Nos Ressources",
-            "item": "https://alkymya.co/ressources/"
-          },
-          {
-            "@type": "ListItem",
-            "position": 3,
-            "name": "Partenaires",
-            "item": "https://alkymya.co/ressources/partenaires/"
-          },
-          {
-            "@type": "ListItem",
-            "position": 4,
-            "name": breadcrumbNames[route.path] || route.h1,
-            "item": canonicalUrl
-          }
-        ]
-      : route.path.startsWith('/alchimistes/')
-      ? [
-          {
-            "@type": "ListItem",
-            "position": 1,
-            "name": "Accueil",
-            "item": "https://alkymya.co/"
-          },
-          {
-            "@type": "ListItem",
-            "position": 2,
-            "name": "Nos Alchimistes",
-            "item": "https://alkymya.co/alchimistes/"
-          },
-          {
-            "@type": "ListItem",
-            "position": 3,
-            "name": breadcrumbNames[route.path] || route.h1,
-            "item": canonicalUrl
-          }
-        ]
-      : route.path.startsWith('/ressources/')
-      ? [
-          {
-            "@type": "ListItem",
-            "position": 1,
-            "name": "Accueil",
-            "item": "https://alkymya.co/"
-          },
-          {
-            "@type": "ListItem",
-            "position": 2,
-            "name": "Nos Ressources",
-            "item": "https://alkymya.co/ressources/"
-          },
-          {
-            "@type": "ListItem",
-            "position": 3,
-            "name": breadcrumbNames[route.path] || route.h1,
-            "item": canonicalUrl
-          }
-        ]
-      : [
-          {
-            "@type": "ListItem",
-            "position": 1,
-            "name": "Accueil",
-            "item": "https://alkymya.co/"
-          },
-          {
-            "@type": "ListItem",
-            "position": 2,
-            "name": breadcrumbNames[route.path] || route.h1,
-            "item": canonicalUrl
-          }
-        ]
+    "itemListElement": buildBreadcrumbItems(route, canonicalUrl)
   };
 
   // 3. Fiche Organization enrichie (LocalBusiness + ProfessionalService)
@@ -617,6 +1116,192 @@ function buildJsonLd(route: RouteData, canonicalUrl: string) {
         "price": "1200",
         "priceCurrency": "EUR",
         "description": "200 € / mois sur 6 mois"
+      }
+    });
+  }
+
+  // 7. Hubs ItemList (CollectionPage) pour Partenaires & Ressources
+  if (route.path === '/partenaires') {
+    webpageNode.mainEntity = {
+      "@type": "ItemList",
+      "name": "Catégories de partenaires Alkymya",
+      "numberOfItems": partnerCategories.length,
+      "itemListElement": partnerCategories.map((cat, index) => ({
+        "@type": "ListItem",
+        "position": index + 1,
+        "name": cat.name,
+        "url": `https://alkymya.co/partenaires/${cat.slug}/`
+      }))
+    };
+  } else if (partnerCategorySlug) {
+    const partnersInCat = allPartners.filter((p) => p.categorySlug === partnerCategorySlug);
+    const catMeta = partnerCategories.find((c) => c.slug === partnerCategorySlug);
+    webpageNode.mainEntity = {
+      "@type": "ItemList",
+      "name": catMeta?.name || route.h1,
+      "numberOfItems": partnersInCat.length,
+      "itemListElement": partnersInCat.map((p, index) => ({
+        "@type": "ListItem",
+        "position": index + 1,
+        "name": p.name,
+        "url": p.hasDetailPage ? `https://alkymya.co/partenaires/${p.categorySlug}/${p.slug}/` : p.websiteUrl
+      }))
+    };
+  } else if (route.path === '/ressources') {
+    webpageNode.mainEntity = {
+      "@type": "ItemList",
+      "name": "Pôles de ressources Alkymya",
+      "numberOfItems": 4,
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Nos études", "url": "https://alkymya.co/ressources/etudes/" },
+        { "@type": "ListItem", "position": 2, "name": "Nos Analyseurs", "url": "https://alkymya.co/ressources/analyseurs/" },
+        { "@type": "ListItem", "position": 3, "name": "Business Game NoNo BanaBa", "url": "https://alkymya.co/ressources/business-game/" },
+        { "@type": "ListItem", "position": 4, "name": "Outils & Technologies partenaires", "url": "https://alkymya.co/partenaires/outils/" }
+      ]
+    };
+  } else if (route.path === '/ressources/etudes') {
+    webpageNode.mainEntity = {
+      "@type": "ItemList",
+      "name": "Études et publications Alkymya",
+      "numberOfItems": 5,
+      "itemListElement": [
+        ...studiesList.map((s, idx) => ({
+          "@type": "ListItem",
+          "position": idx + 1,
+          "name": s.title,
+          "url": `https://alkymya.co${s.path}`
+        })),
+        {
+          "@type": "ListItem",
+          "position": studiesList.length + 1,
+          "name": "Interview Gemini 4 : Retour d'expérience d'un enseignant en IA",
+          "url": "https://alkymya.co/ressources/etudes/interview-gemini-4/"
+        }
+      ]
+    };
+  } else if (route.path === '/ressources/analyseurs') {
+    webpageNode.mainEntity = {
+      "@type": "ItemList",
+      "name": "Analyseurs IA gratuits Alkymya",
+      "numberOfItems": analyseursList.length,
+      "itemListElement": analyseursList.map((tool, index) => ({
+        "@type": "ListItem",
+        "position": index + 1,
+        "name": tool.name,
+        "url": `https://alkymya.co${tool.path}`
+      }))
+    };
+  }
+
+  // 8. Fiche partenaire : WebPage + Organization partenaire (jamais LocalBusiness ni adresse Alkymya)
+  if (partnerDetail) {
+    const partnerEntry = allPartners.find((p) => p.slug === partnerDetail.slug);
+    const partnerNodeId = `${canonicalUrl}#partner`;
+    webpageNode.mainEntity = { "@id": partnerNodeId };
+    webpageNode.about = { "@id": partnerNodeId };
+    graphNodes.push({
+      "@type": "Organization",
+      "@id": partnerNodeId,
+      "name": partnerDetail.name,
+      "url": partnerEntry?.websiteUrl || partnerDetail.ctaUrl,
+      ...(partnerEntry?.sameAs && partnerEntry.sameAs.length > 0 ? { "sameAs": partnerEntry.sameAs } : {})
+    });
+  }
+
+  // 9. Études (/ressources/etudes/*) : Article + Dataset
+  if (route.path === '/ressources/etudes/interview-gemini-4') {
+    const articleId = `${canonicalUrl}#article`;
+    webpageNode.mainEntity = { "@id": articleId };
+    graphNodes.push({
+      "@type": ["Article", "Dataset"],
+      "@id": articleId,
+      "name": route.h1,
+      "headline": route.h1,
+      "description": route.description,
+      "image": route.ogImage,
+      "datePublished": "2026-11-20",
+      "dateModified": "2026-11-20",
+      "inLanguage": "fr-FR",
+      "author": { "@id": "https://alkymya.co/#cyril-garnier" },
+      "publisher": { "@id": "https://alkymya.co/#organization" },
+      "mainEntityOfPage": { "@id": `${canonicalUrl}#webpage` },
+      "distribution": {
+        "@type": "DataDownload",
+        "contentUrl": INTERVIEW_GEMINI_4_PDF_URL,
+        "encodingFormat": "application/pdf",
+        "name": "Interview Gemini 4 : Retour d'expérience d'un enseignant en IA et données de performance V9.pdf"
+      }
+    });
+  } else if (route.path.startsWith('/ressources/etudes/')) {
+    const slug = route.path.replace('/ressources/etudes/', '').replace(/\/$/, '');
+    const study = studiesList.find((s) => s.slug === slug);
+    if (study) {
+      const articleId = `${canonicalUrl}#dataset`;
+      webpageNode.mainEntity = { "@id": articleId };
+      graphNodes.push({
+        "@type": ["Article", "Dataset"],
+        "@id": articleId,
+        "name": study.title,
+        "headline": study.h1,
+        "description": study.seoDescription,
+        "datePublished": study.datePublished,
+        "dateModified": study.dateModified,
+        "temporalCoverage": study.period,
+        "inLanguage": "fr-FR",
+        "author": { "@id": "https://alkymya.co/#cyril-garnier" },
+        "publisher": { "@id": "https://alkymya.co/#organization" },
+        "mainEntityOfPage": { "@id": `${canonicalUrl}#webpage` },
+        "distribution": {
+          "@type": "DataDownload",
+          "contentUrl": study.pdfUrl,
+          "encodingFormat": "application/pdf",
+          "name": study.pdfFilename
+        }
+      });
+    }
+  }
+
+  // 10. Outils (/ressources/analyseurs/* et /ressources/business-game) : SoftwareApplication (0 €)
+  if (route.path.startsWith('/ressources/analyseurs/')) {
+    const slug = route.path.replace('/ressources/analyseurs/', '').replace(/\/$/, '');
+    const tool = analyseursList.find((t) => t.slug === slug);
+    if (tool) {
+      const appId = `${canonicalUrl}#software`;
+      webpageNode.mainEntity = { "@id": appId };
+      graphNodes.push({
+        "@type": "SoftwareApplication",
+        "@id": appId,
+        "name": tool.name,
+        "description": tool.seoDescription,
+        "url": tool.subdomain,
+        "applicationCategory": "EducationalApplication",
+        "operatingSystem": "Web",
+        "inLanguage": "fr-FR",
+        "provider": { "@id": "https://alkymya.co/#organization" },
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "EUR"
+        }
+      });
+    }
+  } else if (route.path === '/ressources/business-game') {
+    const appId = `${canonicalUrl}#software`;
+    webpageNode.mainEntity = { "@id": appId };
+    graphNodes.push({
+      "@type": "SoftwareApplication",
+      "@id": appId,
+      "name": "NoNo BanaBa — Business Game",
+      "description": route.description,
+      "url": "https://nonobanaba.netlify.app/",
+      "applicationCategory": "EducationalApplication",
+      "operatingSystem": "Web",
+      "inLanguage": "fr-FR",
+      "provider": { "@id": "https://alkymya.co/#organization" },
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "EUR"
       }
     });
   }

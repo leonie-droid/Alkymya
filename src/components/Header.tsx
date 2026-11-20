@@ -13,15 +13,15 @@ import NewsletterButton from './NewsletterButton';
 
 const navItems = [
   { name: 'Accueil', href: '/' },
-  { name: 'Génération IA', href: '/ia' },
-  { name: 'Nos œuvres', href: '/oeuvres' },
+  { name: 'Génération IA', href: '/ia/' },
+  { name: 'Nos œuvres', href: '/oeuvres/' },
   { name: 'Nos alchimistes', href: '/alchimistes/' },
-  { name: 'Nos ateliers', href: '/ateliers' },
-  { name: 'Nos ressources', href: '/ressources' },
-  { name: 'Nos partenaires', href: '/partenaires' },
-  { name: 'Nous rejoindre', href: '/rejoindre' },
-  { name: 'FAQ', href: '/faq' },
-  { name: 'Contact', href: '/contact' },
+  { name: 'Nos ateliers', href: '/ateliers/' },
+  { name: 'Nos ressources', href: '/ressources/' },
+  { name: 'Nos partenaires', href: '/partenaires/' },
+  { name: 'Nous rejoindre', href: '/rejoindre/' },
+  { name: 'FAQ', href: '/faq/' },
+  { name: 'Contact', href: '/contact/' },
 ];
 
 export default function Header() {
@@ -126,19 +126,27 @@ export default function Header() {
                     />
                   </div>
 
-                  {navItems.map((item) => (
-                    <Link
-                      key={item.name}
-                      to={item.href}
-                      onClick={() => setIsOpen(false)}
-                      className={cn(
-                        "text-xl font-heading font-bold hover:text-accent transition-colors",
-                        location.pathname === item.href ? "text-accent" : "text-primary"
-                      )}
-                    >
-                      {item.name}
-                    </Link>
-                  ))}
+                  {navItems.map((item) => {
+                    const currentPath = location.pathname === '/' ? '/' : location.pathname.replace(/\/+$/, '');
+                    const itemPath = item.href === '/' ? '/' : item.href.replace(/\/+$/, '');
+                    const isActive =
+                      itemPath === '/'
+                        ? currentPath === '/'
+                        : currentPath === itemPath || currentPath.startsWith(`${itemPath}/`);
+                    return (
+                      <Link
+                        key={item.name}
+                        to={item.href}
+                        onClick={() => setIsOpen(false)}
+                        className={cn(
+                          "text-xl font-heading font-bold hover:text-accent transition-colors",
+                          isActive ? "text-accent" : "text-primary"
+                        )}
+                      >
+                        {item.name}
+                      </Link>
+                    );
+                  })}
                   
                   <div className="flex gap-4 mt-6 pt-6 border-t border-border">
                     <a href="https://www.instagram.com/alkymya_cyril" target="_blank" rel="noopener noreferrer">

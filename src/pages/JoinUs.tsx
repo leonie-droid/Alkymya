@@ -206,7 +206,7 @@ export default function JoinUs() {
             </p>
             <div className="pt-2">
               <Link
-                to="/contact"
+                to="/contact/"
                 className="inline-flex items-center gap-2 px-7 py-3.5 bg-[#C06721] hover:bg-[#a85517] text-white rounded-[8px] font-medium text-sm tracking-[0.03em] transition-all shadow-sm"
               >
                 <Mail className="w-4 h-4" />
@@ -233,14 +233,14 @@ export default function JoinUs() {
         </p>
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
           <Link
-            to="/oeuvres"
+            to="/oeuvres/"
             className="inline-flex items-center justify-center gap-2 bg-white text-[#C06721] text-[0.95rem] font-medium py-3.5 px-8 rounded-[8px] no-underline tracking-[0.04em] transition-transform duration-150 hover:-translate-y-0.5 hover:shadow-[0_6px_20px_rgba(0,0,0,0.15)]"
           >
             <span>Voir nos œuvres</span>
             <ArrowRight className="w-4 h-4" />
           </Link>
           <Link
-            to="/ressources"
+            to="/ressources/"
             className="inline-block bg-white/10 hover:bg-white/20 text-white text-[0.95rem] font-medium py-3.5 px-8 rounded-[8px] no-underline tracking-[0.04em] transition-transform duration-150 hover:-translate-y-0.5 border border-white/25"
           >
             Consulter les ressources

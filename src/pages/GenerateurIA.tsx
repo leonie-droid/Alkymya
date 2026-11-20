@@ -266,75 +266,104 @@ export default function GenerateurIA() {
           </div>
         </div>
 
-        {/* Row 2: PDFs */}
+        {/* Row 2: PDFs + Pages études HTML */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-7">
-          <a
-            href="https://res.cloudinary.com/dokzioyu4/image/upload/v1777491668/Generation_IA-2024-V1_Mars_2025_2_cxtaeh_ygnyce.pdf"
-            download="Synthese_Generation_IA_2024.pdf"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="block p-8 rounded-[12px] bg-[#1F4F6E] text-white shadow-[0_2px_16px_rgba(31,79,110,0.12)] hover:shadow-[0_8px_32px_rgba(31,79,110,0.2)] hover:-translate-y-1 transition-all group"
-          >
-            <div className="flex justify-between items-start mb-4">
-              <div className="w-11 h-11 rounded-[10px] bg-[rgba(2,173,171,0.2)] flex items-center justify-center">
-                <FileText className="w-5 h-5 text-[#02ADAB]" />
+          <div className="p-8 rounded-[12px] bg-[#1F4F6E] text-white shadow-[0_2px_16px_rgba(31,79,110,0.12)] flex flex-col justify-between">
+            <div>
+              <div className="flex justify-between items-start mb-4">
+                <div className="w-11 h-11 rounded-[10px] bg-[rgba(2,173,171,0.2)] flex items-center justify-center">
+                  <FileText className="w-5 h-5 text-[#02ADAB]" />
+                </div>
+                <span className="text-xs font-medium uppercase tracking-wider text-[#02ADAB]">Étude &amp; PDF • 2024</span>
               </div>
-              <span className="text-xs font-medium uppercase tracking-wider text-[#02ADAB]">PDF • Synthèse 2024</span>
+              <h3 className="text-[1.25rem] font-medium mb-3 text-white">Génération IA 2024 : L'Enquête</h3>
+              <p className="text-[0.92rem] text-white/75 leading-[1.6] mb-6 font-light">
+                Analyse approfondie de l’utilisation de l’IA générative (n = 326) : tendances, outils de prédilection, besoins de formation et enjeux critiques.
+              </p>
             </div>
-            <h3 className="text-[1.25rem] font-medium mb-3 text-white">Génération IA 2024 : L'Enquête</h3>
-            <p className="text-[0.92rem] text-white/75 leading-[1.6] mb-6 font-light">
-              Analyse approfondie de l’utilisation de l’IA générative : tendances, outils de prédilection, besoins de formation et enjeux critiques.
-            </p>
-            <div className="flex items-center gap-2 text-xs font-medium uppercase tracking-wider text-[#02ADAB] group-hover:translate-x-1 transition-transform">
-              <span>Télécharger la synthèse</span>
-              <Download className="w-4 h-4" />
+            <div className="flex flex-wrap items-center gap-4 pt-2">
+              <Link
+                to="/ressources/etudes/generation-ia-2024/"
+                className="inline-flex items-center gap-2 text-xs font-medium uppercase tracking-wider text-white bg-[#02ADAB] hover:bg-[#029997] px-4 py-2.5 rounded-[8px] transition-colors"
+              >
+                <span>Lire l'étude Génération IA 2024</span>
+                <ArrowRight className="w-4 h-4" />
+              </Link>
+              <a
+                href="https://res.cloudinary.com/dokzioyu4/image/upload/v1777491668/Generation_IA-2024-V1_Mars_2025_2_cxtaeh_ygnyce.pdf"
+                download="Synthese_Generation_IA_2024.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1.5 text-xs font-medium uppercase tracking-wider text-[#02ADAB] hover:underline"
+              >
+                <span>PDF</span>
+                <Download className="w-4 h-4" />
+              </a>
             </div>
-          </a>
+          </div>
 
-          <a
-            href="https://res.cloudinary.com/dokzioyu4/image/upload/v1777491985/generation_ia_2025_personas_20251105051526_qvl18j_1_jjn9s4.pdf"
-            download="Generation_IA_2025.pdf"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="block p-8 rounded-[12px] bg-white shadow-[0_2px_16px_rgba(31,79,110,0.08)] hover:shadow-[0_8px_32px_rgba(31,79,110,0.14)] hover:-translate-y-1 transition-all group"
-          >
-            <div className="flex justify-between items-start mb-4">
-              <div className="w-11 h-11 rounded-[10px] bg-[#02ADAB]/15 flex items-center justify-center">
-                <Download className="w-5 h-5 text-[#02ADAB]" />
+          <div className="p-8 rounded-[12px] bg-white shadow-[0_2px_16px_rgba(31,79,110,0.08)] flex flex-col justify-between">
+            <div>
+              <div className="flex justify-between items-start mb-4">
+                <div className="w-11 h-11 rounded-[10px] bg-[#02ADAB]/15 flex items-center justify-center">
+                  <BarChart3 className="w-5 h-5 text-[#02ADAB]" />
+                </div>
+                <span className="text-xs font-medium uppercase tracking-wider text-[#C06721]">Étude &amp; PDF • 2025</span>
               </div>
-              <span className="text-xs font-medium uppercase tracking-wider text-[#C06721]">PDF • Personas 2025</span>
+              <h3 className="text-[1.25rem] font-medium mb-3 text-[#1F4F6E]">Les Personas de l'IA (2025)</h3>
+              <p className="text-[0.92rem] text-[#5a7a90] leading-[1.6] mb-6 font-normal">
+                Segmentation détaillée des 5 profils types d'usagers (n = 387) pour adapter vos cursus et stratégies d'entreprise aux pratiques effectives.
+              </p>
             </div>
-            <h3 className="text-[1.25rem] font-medium mb-3 text-[#1F4F6E]">Les Personas de l'IA (2025)</h3>
-            <p className="text-[0.92rem] text-[#5a7a90] leading-[1.6] mb-6 font-normal">
-              Segmentation détaillée des 5 profils types d'usagers pour adapter vos cursus et stratégies d'entreprise aux pratiques effectives.
-            </p>
-            <div className="flex items-center gap-2 text-xs font-medium uppercase tracking-wider text-[#02ADAB] group-hover:translate-x-1 transition-transform">
-              <span>Télécharger les personas</span>
-              <Download className="w-4 h-4" />
+            <div className="flex flex-wrap items-center gap-4 pt-2">
+              <Link
+                to="/ressources/etudes/generation-ia-2025/"
+                className="inline-flex items-center gap-2 text-xs font-medium uppercase tracking-wider text-white bg-[#1F4F6E] hover:bg-[#02ADAB] px-4 py-2.5 rounded-[8px] transition-colors"
+              >
+                <span>Lire l'étude Génération IA 2025</span>
+                <ArrowRight className="w-4 h-4" />
+              </Link>
+              <a
+                href="https://res.cloudinary.com/dokzioyu4/image/upload/v1777491985/generation_ia_2025_personas_20251105051526_qvl18j_1_jjn9s4.pdf"
+                download="Generation_IA_2025.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1.5 text-xs font-medium uppercase tracking-wider text-[#02ADAB] hover:underline"
+              >
+                <span>PDF</span>
+                <Download className="w-4 h-4" />
+              </a>
             </div>
-          </a>
+          </div>
         </div>
 
         {/* Row 3: Rapport 2026 */}
         <div className="p-8 md:p-12 rounded-[12px] bg-[#C06721] text-white shadow-[0_2px_16px_rgba(31,79,110,0.12)] text-center">
           <div className="max-w-2xl mx-auto space-y-4">
             <span className="inline-block px-3 py-1 rounded-[4px] bg-white/15 text-white text-xs font-medium uppercase tracking-wider">
-              Exclusivité 2026
+              Exclusivité 2026 · 1 082 répondants
             </span>
             <h3 className="text-[1.8rem] sm:text-[2rem] font-light text-white">
               Rapport Prospectif : <strong className="font-medium text-white">Génération IA 2026</strong>
             </h3>
             <p className="text-white/85 text-[1rem] leading-[1.7] font-light">
-              Découvrez et téléchargez notre nouveau rapport complet sur l'impact futur, l'évolution des compétences et les mutations de l'IA générative en entreprise pour 2026.
+              Consultez les tableaux complets de l'enquête longitudinale 2024–2026 (98,1 % d'adoption, split-stack 52,3 %, ambivalence productive 3:1) ou téléchargez le rapport V10.
             </p>
-            <div className="pt-2">
+            <div className="pt-2 flex flex-col sm:flex-row items-center justify-center gap-4">
+              <Link
+                to="/ressources/etudes/generation-ia-2026/"
+                className="inline-flex items-center gap-2 px-7 py-3.5 bg-white text-[#C06721] font-medium text-sm rounded-[8px] hover:shadow-[0_6px_20px_rgba(0,0,0,0.15)] hover:-translate-y-0.5 transition-all"
+              >
+                <span>Consulter l'étude Génération IA 2026</span>
+                <ArrowRight className="w-4 h-4" />
+              </Link>
               <a
                 href="https://res.cloudinary.com/dokzioyu4/image/upload/v1780148789/rapport-generation-ia-2026_v10_20260528_tymyph.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-7 py-3.5 bg-white text-[#C06721] font-medium text-sm rounded-[8px] hover:shadow-[0_6px_20px_rgba(0,0,0,0.15)] hover:-translate-y-0.5 transition-all"
+                className="inline-flex items-center gap-2 px-7 py-3.5 bg-white/15 hover:bg-white/25 text-white font-medium text-sm rounded-[8px] border border-white/30 transition-all"
               >
-                <span>Télécharger le rapport 2026</span>
+                <span>Télécharger le rapport 2026 (PDF)</span>
                 <ExternalLink className="w-4 h-4" />
               </a>
             </div>

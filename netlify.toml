@@ -33,6 +33,78 @@
   force = true
 
 [[redirects]]
+  from = "/ressources/partenaires"
+  to = "/partenaires/outils/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/ressources/partenaires/"
+  to = "/partenaires/outils/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/ressources/partenaires/awa-cloud"
+  to = "/partenaires/outils/awa-cloud/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/ressources/partenaires/awa-cloud/"
+  to = "/partenaires/outils/awa-cloud/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/ressources/nos-etudes"
+  to = "/ressources/etudes/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/ressources/nos-etudes/"
+  to = "/ressources/etudes/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/ressources/nos-etudes/interview-gemini-4"
+  to = "/ressources/etudes/interview-gemini-4/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/ressources/nos-etudes/interview-gemini-4/"
+  to = "/ressources/etudes/interview-gemini-4/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/ressources/nos-analyseurs"
+  to = "/ressources/analyseurs/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/ressources/nos-analyseurs/"
+  to = "/ressources/analyseurs/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/ressources/alkymya-x-inatec"
+  to = "/partenaires/formations-certifiees/inatec/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/ressources/alkymya-x-inatec/"
+  to = "/partenaires/formations-certifiees/inatec/"
+  status = 301
+  force = true
+
+[[redirects]]
   from = "/api/*"
   to = "/.netlify/functions/server/:splat"
   status = 200

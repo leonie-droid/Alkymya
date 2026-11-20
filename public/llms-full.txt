@@ -105,3 +105,29 @@ Alkymya propose des formats modulaires adaptés aux écoles, PME, ETI et grands 
   - Agentification et agents IA d'entreprise
   - Business Game IA Grandes Écoles
   - Partenaire formation IA Objectif Alternance
+
+---
+
+## 8. Architecture Ressources & Partenaires (Mise à jour novembre 2026)
+
+### Études publiées en HTML + Tableaux + PDF (`/ressources/etudes/`)
+- `https://alkymya.co/ressources/etudes/generation-ia-2026/` — Rapport longitudinal sur 3 vagues (`n = 1 082` étudiants, 5 écoles A–E) : 98,1 % d'adoption, 61,0 % d'usage quotidien, 52,3 % de split-stack, ratio 3:1 négatif/positif et 21 % d'ambivalence productive, fracture TikTok Shop ×12.
+- `https://alkymya.co/ressources/etudes/generation-ia-2025/` — `n = 387` répondants 16–25 ans, 5 personas comportementaux et top 5 outils.
+- `https://alkymya.co/ressources/etudes/generation-ia-2024/` — `n = 326` répondants, vague fondatrice (> 90 % adoption académique).
+- `https://alkymya.co/ressources/etudes/doctrine-iag/` — Les 5 piliers géopolitiques et énergétiques de la course à l'AGI (HTML + tableau + PDF + podcast audio 5 min 43).
+- `https://alkymya.co/ressources/etudes/interview-gemini-4/` — Retour terrain de Cyril Garnier sur Gemini 4 et benchmarks officiels Google DeepMind (V9).
+
+### Analyseurs gratuits & Business Game (`/ressources/analyseurs/` & `/ressources/business-game/`)
+- `https://alkymya.co/ressources/analyseurs/analyseur-de-photo/` → `https://analyseurdephoto.alkymya.co/`
+- `https://alkymya.co/ressources/analyseurs/analyseur-de-cv/` → `https://analysercvpro.alkymya.co/` (avec Kendra Martine / Objectif Alternance)
+- `https://alkymya.co/ressources/analyseurs/analyseur-de-memoire/` → `https://analyseurdememoire.alkymya.co/`
+- `https://alkymya.co/ressources/business-game/` → `https://nonobanaba.netlify.app/` (NoNo BanaBa)
+
+### Architecture Partenaires en 6 pôles (`/partenaires/`)
+- `/partenaires/ecoles/` + `/partenaires/ecoles/euridis/` + `/partenaires/ecoles/ieseg/` : HETIC, Ynov Campus, IÉSEG School of Management (depuis 2019 : sprint M1, IA & marketing digital avancés, mentorat mémoires 100 % réussite, SODA), CFA Itis, Euridis Business School (2 jours B3/Mastère, site en ligne & agent harness Claude/Gemini), ISCOM, Paris École de Management
+- `/partenaires/insertion/` + `/partenaires/insertion/objectif-alternance/` : Objectif Alternance
+- `/partenaires/formations-certifiees/` + `/partenaires/formations-certifiees/inatec/` : portage Qualiopi INATEC (NDA 11771056077) & 5 capsules vidéo
+- `/partenaires/lieux/` : Morning (Paris) & DG Services Torcy (77200)
+- `/partenaires/entreprises/` : SNCF, Fondation GRDF, SEALESTER, Azimuto, AvecLouise, Esperanta Services, La fondation Flamenca, La Ressourcerie Gaillarde
+- `/partenaires/outils/` + `/partenaires/outils/awa-cloud/` + `/partenaires/outils/onecub/` : AWACLOUD (RAG local) & Onecub (Data Spaces souverains)
+

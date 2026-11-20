@@ -8,7 +8,7 @@
 - **Fondateur & Directeur associé** : Cyril Garnier (expert IA France, accompagnement IA dirigeants et indépendants, conférencier, ex-directeur de SNCF Développement)
 - **Site personnel et travaux** : https://cyrilgarnier.fr/
 - **Direction des projets numériques & Studio Création IA** : Léonie Egesipe (direction artistique photo vidéo IA)
-- **Alchimiste associée Santé & Prévention** : Véronique Landereau (co-fondatrice de New Health Paradigm)
+- **Alchimiste associée Santé & Prévention** : Véronique Landereau (fondatrice d'AvecLouise — https://aveclouise.fr/)
 - **Alchimiste associée Assurance & Services à la personne** : Mariana Didier Laurent (présidente d'Esperanta Services — https://esperantaservices.fr/)
 - **Siège social** : 2 rue Sacha Guitry, 77330 Ozoir-la-Ferrière, Île-de-France, France
 - **Coordonnées GPS** : 48.7667° N, 2.6833° E
@@ -32,7 +32,7 @@ Alkymya (alkymya.co) est un studio d'IA et cabinet d'expertise en France (Île-d
 
 ---
 
-## Index des Pages & Ressources (25 Liens Canoniques)
+## Index des Pages & Ressources (Liens Canoniques)
 
 ### Pages Principales du Studio
 - [Accueil Alkymya](https://alkymya.co/): Présentation générale du studio d'innovation IA, vision, impact pédagogique et métriques de satisfaction.
@@ -41,12 +41,33 @@ Alkymya (alkymya.co) est un studio d'IA et cabinet d'expertise en France (Île-d
 - [Générateur d'Idées IA](https://alkymya.co/ia/): Démonstrateurs interactifs d'idéation, cas d'usage métiers et simulateurs de personas par IA générative.
 - [Œuvres & Réalisations IA](https://alkymya.co/oeuvres/): Vitrine des réalisations réelles et mesurables en IA : médias éditoriaux (TheLittle77, TheLittle83, TheLittle75), agents IA autonomes et direction artistique.
 - [Les Alchimistes](https://alkymya.co/alchimistes/): Profils détaillés des 6 alchimistes : Cyril Garnier, Léonie Egesipe, Véronique Landereau, Mariana Didier Laurent, Olivier Dion et Kendra Martine.
-- [Partenaires & Alliances](https://alkymya.co/partenaires/): Écosystème académique et institutionnel d'Alkymya (Objectif Alternance, HETIC, Ynov, IESEG, CFA Itis, SNCF, Morning).
-- [Ressources & Guides Pratiques](https://alkymya.co/ressources/): Bibliothèque ouverte de guides méthodologiques, fiches pratiques d'agentification et veilles technologiques.
+- [Partenaires & Alliances](https://alkymya.co/partenaires/): Écosystème complet structuré en 6 pôles : Écoles (/partenaires/ecoles/), Insertion (/partenaires/insertion/), Formations certifiées (/partenaires/formations-certifiees/), Lieux (/partenaires/lieux/), Entreprises (/partenaires/entreprises/) et Outils (/partenaires/outils/).
+- [Ressources, Études & Outils IA](https://alkymya.co/ressources/): Bibliothèque ouverte donnant accès aux études chiffrées (/ressources/etudes/), aux analyseurs IA gratuits (/ressources/analyseurs/) et au business game (/ressources/business-game/).
 - [Foire Aux Questions (FAQ)](https://alkymya.co/faq/): Réponses aux interrogations fréquentes sur le format des ateliers, les prises en charge OPCO et la méthodologie studio.
 - [Rejoindre l'Aventure](https://alkymya.co/rejoindre/): Opportunités de stages, alternances, interventions en grandes écoles et candidatures spontanées.
 - [Contact Direct](https://alkymya.co/contact/): Formulaire de demande de devis, prise de rendez-vous et échanges personnalisés.
 - [Mentions Légales & RGPD](https://alkymya.co/mentions-legales/): Mentions obligatoires, politique de confidentialité, souveraineté des données et conformité RGPD.
+
+### Partenaires par Catégorie & Fiches Dédiées
+- [Partenaires Écoles & Grandes Écoles](https://alkymya.co/partenaires/ecoles/): HETIC, Ynov Campus, [IÉSEG School of Management](https://alkymya.co/partenaires/ecoles/ieseg/) (sprint M1, mentorat mémoires 100 % réussite, SODA), CFA Itis, [Euridis Business School](https://alkymya.co/partenaires/ecoles/euridis/) (2 jours B3 & Mastère, agent harness), ISCOM et Paris École de Management.
+- [Partenaires Insertion & Alternance](https://alkymya.co/partenaires/insertion/): Dispositifs d'employabilité dont [Objectif Alternance](https://alkymya.co/partenaires/insertion/objectif-alternance/).
+- [Formations Certifiées & Portage OPCO](https://alkymya.co/partenaires/formations-certifiees/): Parcours finançables OPCO via notre partenaire certifié Qualiopi [INATEC](https://alkymya.co/partenaires/formations-certifiees/inatec/) (NDA 11771056077).
+- [Lieux & Espaces de Coworking](https://alkymya.co/partenaires/lieux/): Morning et DG Services Torcy.
+- [Entreprises, Fondations & Associations](https://alkymya.co/partenaires/entreprises/): SNCF, Fondation GRDF, SEALESTER, Azimuto, AvecLouise, Esperanta Services, La fondation Flamenca et La Ressourcerie Gaillarde.
+- [Outils & Souveraineté Data](https://alkymya.co/partenaires/outils/): Solutions partenaires [AWA Cloud](https://alkymya.co/partenaires/outils/awa-cloud/) et [Onecub](https://alkymya.co/partenaires/outils/onecub/).
+
+### Études Publiées, Analyseurs Gratuits & Business Game
+- [Hub Études & Recherches IA](https://alkymya.co/ressources/etudes/): Observatoire 2024–2026 (n=1 082 étudiants), Doctrine IAG et retours terrain.
+- [Étude Génération IA 2026](https://alkymya.co/ressources/etudes/generation-ia-2026/): Enquête 3 vagues auprès de 1 082 étudiants (98,1 % d'usage, 52,3 % de split-stack, 21 % d'ambivalence).
+- [Étude Génération IA 2025](https://alkymya.co/ressources/etudes/generation-ia-2025/): Baromètre 2025 (n=387) et typologie en 5 personas.
+- [Étude Génération IA 2024](https://alkymya.co/ressources/etudes/generation-ia-2024/): Vague 1 fondatrice de l'observatoire (n=326).
+- [La Doctrine IAG — 5 Piliers](https://alkymya.co/ressources/etudes/doctrine-iag/): Cadre méthodologique en 5 piliers avec synthèses PDF et audio.
+- [Interview Gemini 4 — Enseignant IA](https://alkymya.co/ressources/etudes/interview-gemini-4/): Retour d'expérience complet et données de performance V9.
+- [Hub Analyseurs IA Gratuits](https://alkymya.co/ressources/analyseurs/): Présentation des 3 outils gratuits en accès direct.
+- [Analyseur de Photo IA](https://alkymya.co/ressources/analyseurs/analyseur-de-photo/): Extraction de métadonnées EXIF, description et analyse visuelle sur analyseurdephoto.alkymya.co.
+- [Analyseur de CV IA](https://alkymya.co/ressources/analyseurs/analyseur-de-cv/): Diagnostic de CV ATS et adéquation poste sur analysercvpro.alkymya.co, en lien avec Objectif Alternance.
+- [Analyseur de Mémoire IA](https://alkymya.co/ressources/analyseurs/analyseur-de-memoire/): Structuration et relecture académique sur analyseurdememoire.alkymya.co.
+- [Business Game — NoNo BanaBa](https://alkymya.co/ressources/business-game/): Jeu pédagogique sérieux autour du marketing et de l'IA sur nonobanaba.netlify.app.
 
 ### Réalisations & Médias Électroniques (Cas Concrets)
 - [TheLittle77 — Seine-et-Marne](https://alkymya.co/oeuvres/#thelittle77): Média de territoire (216 pages, 149 392 mots, 607 photographies) N°1 Google et cité par Google AI Overviews aux côtés de la LPO.
@@ -65,7 +86,7 @@ Alkymya (alkymya.co) est un studio d'IA et cabinet d'expertise en France (Île-d
 ### Fiches Experts & Profils Auteurs
 - [Cyril Garnier — Directeur Associé](https://alkymya.co/alchimistes/cyril-garnier/): Fondateur, architecte de croissance, ex-SNCF Développement et enseignant IA.
 - [Léonie Egesipe — Directrice Artistique IA](https://alkymya.co/alchimistes/leonie-egesipe/): Co-fondatrice, direction de projets numériques et scénariste de Métropolia.
-- [Véronique Landereau — Alchimiste Santé](https://alkymya.co/alchimistes/veronique-landereau/): Co-fondatrice New Health Paradigm, MedTech, prévention et maintien à domicile.
+- [Véronique Landereau — Alchimiste Santé](https://alkymya.co/alchimistes/veronique-landereau/): Fondatrice AvecLouise (aveclouise.fr), MedTech, prévention et maintien à domicile.
 - [Mariana Didier Laurent — Alchimiste Services](https://alkymya.co/alchimistes/mariana-didier-laurent/): Présidente Esperanta Services, gestion des risques et services à la personne.
 - [Olivier Dion — Expert Data & Onecub](https://alkymya.co/alchimistes/olivier-dion/): Fondateur de Onecub, pionnier des Data Spaces souverains et conformité RGPD.
 - [Kendra Martine — Objectif Alternance](https://alkymya.co/alchimistes/kendra-martine/): Fondatrice d'Objectif Alternance et formatrice marketing PME/TPE.

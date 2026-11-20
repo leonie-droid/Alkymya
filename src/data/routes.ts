@@ -463,11 +463,11 @@ export const routes: RouteData[] = [
   },
   {
     path: '/ressources',
-    title: "Ressources IA, Veille SEO & Outils Gratuits | Alkymya",
-    description: "Veille SEO IA, analyseurs intelligents gratuits, études Génération IA et création site éditorial par l'agence IA et studio création IA Alkymya.",
-    h1: "Ressources IA, veille SEO IA & outils gratuits.",
+    title: "Ressources IA, Études & Analyseurs Gratuits | Alkymya",
+    description: "Quatre portes ouvertes : nos 5 études (Génération IA 2024–2026, Gemini 4, Doctrine IAG), 3 analyseurs IA gratuits, Business Game NoNo BanaBa et outils partenaires.",
+    h1: "Ressources IA, études et outils gratuits en production.",
     ogImage: "https://alkymya.co/og-ressources.jpg",
-    lastmod: "2026-11-15",
+    lastmod: "2026-11-20",
     schemaType: "CollectionPage",
     images: [
       {
@@ -479,220 +479,394 @@ export const routes: RouteData[] = [
       }
     ],
     content: {
-      leadParagraph: "Bibliothèque ouverte d'Alkymya, studio d'expertise et de création IA : quatre pôles de ressources en accès libre réunissant nos analyseurs intelligents, nos enquêtes longitudinales Génération IA, le business game NoNo BanaBa et les capsules vidéo avec notre partenaire certifié Qualiopi INATEC.",
+      leadParagraph: "Bibliothèque ouverte d'Alkymya, studio d'expertise et de création IA : quatre portes d'entrée réunissant nos cinq études complètes en HTML et PDF, trois analyseurs IA documentés et gratuits, le business game NoNo BanaBa et les outils technologiques partenaires.",
       sections: [
         {
-          h2: "1. Nos analyseurs IA gratuits en production",
+          h2: "1. Nos études (Génération IA 2024 → 2026, Gemini 4 & Doctrine IAG)",
           paragraphs: [
-            "Alkymya met à disposition des étudiants, candidats et équipes éditoriales des applications web gratuites permettant d'éprouver immédiatement les apports de l'intelligence artificielle générative sur des documents réels."
+            "Trois années d'enquête longitudinale menée auprès de 1 082 étudiants franciliens, nos analyses géopolitiques (La Doctrine IAG en PDF et podcast audio de 5 min 43) et l'Interview Gemini 4 sont publiées en pages HTML indexées avec tableaux complets, limites méthodologiques et PDF téléchargeables."
           ],
           listItems: [
-            "Analyseur de photo (analyseurdephoto.alkymya.co) : explorer, retoucher et extraire des métadonnées ou descriptions alt exploitables pour vos séries visuelles et sites éditoriaux.",
-            "Analyseur de CV (analysercvpro.alkymya.co), conçu avec Kendra Martine d'Objectif Alternance : comparer vos compétences aux offres d'emploi ou d'alternance cibles et obtenir des reformulations directement actionnables.",
-            "Analyseur de mémoire (analyseurdememoire.alkymya.co) : diagnostiquer la cohérence des plans de mémoires et thèses académiques, vérifier les sources clés et repérer les angles morts méthodologiques."
+            "Génération IA 2024 → 2026 (n = 1 082 répondants, 5 écoles) : adoption à 98,1 %, split-stack 52,3 %, ambivalence 3:1.",
+            "Génération IA 2025 (n = 387) : 5 personas comportementaux et top 5 outils.",
+            "Génération IA 2024 (n = 326) : vague fondatrice sur l'adoption académique (> 90 %).",
+            "La Doctrine IAG (PDF + podcast 5 min 43) & Interview Gemini 4 (retour terrain + benchmarks Google DeepMind V9)."
           ]
         },
         {
-          h2: "2. Nos études Génération IA (2024-2026) & La Doctrine IAG",
+          h2: "2. Nos Analyseurs IA gratuits en production",
           paragraphs: [
-            "Chaque année depuis 2024, Alkymya publie en accès libre les résultats empiriques de son enquête Génération IA menée auprès de plus de 380 étudiants et enseignants issus d'écoles partenaires (HETIC, IÉSEG, ISCOM, Ynov). Ces études documentent l'évolution des usages, les freins éthiques et les besoins d'encadrement en entreprise.",
-            "Notre bibliothèque inclut également La Doctrine IAG (dialogue en PDF et podcast audio de 5 min 43) consacrée aux enjeux industriels, technologiques et géopolitiques de l'intelligence artificielle générative pour les dirigeants et stratèges."
+            "Trois applications web accessibles sans inscription obligatoire, dotées chacune d'une fiche de méthode expliquant ce qu'elles font, leurs limites et nos recommandations de confidentialité."
           ],
           listItems: [
-            "Rapport Génération IA 2026 : métriques terrain, signaux faibles et recommandations opérationnelles pour les DRH et responsables pédagogiques.",
-            "Génération IA 2025 (Personas) : segmentation comportementale en 5 profils types pour calibrer vos cursus et agents IA.",
-            "Génération IA 2024 & La Doctrine IAG (PDF + Podcast audio) : accès libre sans inscription obligatoire."
+            "Analyseur de photo (analyseurdephoto.alkymya.co) : composition, recadrage et descriptions alt SEO fidèles.",
+            "Analyseur de CV (analysercvpro.alkymya.co) avec Kendra Martine d'Objectif Alternance : adéquation CV / offre d'alternance.",
+            "Analyseur de mémoire (analyseurdememoire.alkymya.co) : pré-lecture méthodologique et cohérence de plan."
           ]
         },
         {
-          h2: "3. Business Game NoNo BanaBa & capsules vidéo Alkymya x INATEC",
+          h2: "3. Business Game NoNo BanaBa & Outils partenaires",
           paragraphs: [
-            "Pour ancrer les concepts de stratégie data, de marketing digital et de modèle économique par le jeu, nos intervenants déploient le business game NoNo BanaBa en séminaires d'équipe et en grandes écoles.",
-            "Enfin, cinq capsules vidéo réalisées avec notre partenaire certifié Qualiopi INATEC (Partenariat d'Avenir, Efficacité Augmentée, Synergie Créative, Le Futur en Marche, Performance Digitale) illustrent comment déployer une formation IA finançable jusqu'à 100 % par votre OPCO."
+            "Expérimentez la stratégie data et le web-marketing Gen Z avec le Business Game NoNo BanaBa (nonobanaba.netlify.app), et retrouvez nos partenaires technologiques souverains AWACLOUD et Onecub directement dans le pôle dédié des Partenaires."
           ]
         }
       ],
       internalLinks: [
-        { href: "/ressources/nos-analyseurs/", label: "Nos Analyseurs IA gratuits" },
-        { href: "/ressources/nos-etudes/", label: "Nos études Génération IA & Doctrine IAG" },
+        { href: "/ressources/etudes/", label: "Nos études IA (Génération IA, Gemini 4, Doctrine IAG)" },
+        { href: "/ressources/analyseurs/", label: "Nos Analyseurs IA gratuits (Photo, CV, Mémoire)" },
         { href: "/ressources/business-game/", label: "Business Game NoNo BanaBa" },
-        { href: "/ressources/alkymya-x-inatec/", label: "Capsules Alkymya x INATEC (OPCO)" }
+        { href: "/partenaires/outils/", label: "Outils partenaires souverains (AWACLOUD & Onecub)" }
       ]
     }
   },
   {
-    path: '/ressources/nos-analyseurs',
-    title: "Nos Analyseurs IA Gratuits | Ressources Alkymya",
-    description: "Analyseur de photo, Analyseur de CV avec Kendra Martine et Analyseur de mémoire : outils IA gratuits en production par Alkymya.",
+    path: '/ressources/etudes',
+    title: "Études IA : Génération IA 2024–2026, Gemini 4 & IAG | Alkymya",
+    description: "Consultez les 5 études publiées par Alkymya avec chiffres clés, tableaux HTML et PDF : Génération IA 2026 (1 082 étudiants), 2025, 2024, Doctrine IAG et Gemini 4.",
+    h1: "Nos études Génération IA, Gemini 4 & Doctrine IAG.",
+    ogImage: "https://alkymya.co/og-ressources.jpg",
+    lastmod: "2026-11-20",
+    schemaType: "CollectionPage",
+    content: {
+      leadParagraph: "L'intégralité de nos recherches empiriques et analyses prospectives publiées en pages HTML indexées : question de recherche, méthodologie, tableaux chiffrés HTML, limites assumées, recommandations datées et exports PDF.",
+      sections: [
+        {
+          h2: "Cinq études accessibles en HTML, tableaux structurés et PDF",
+          paragraphs: [
+            "Contrairement à de simples PDF isolés, chaque publication Alkymya expose directement ses métriques vérifiables et ses tableaux de données pour éclairer dirigeants, DRH, responsables pédagogiques et étudiants."
+          ],
+          listItems: [
+            "Génération IA 2024 → 2026 (Rapport longitudinal, n = 1 082) : adoption à 98,1 %, split-stack 52,3 %, ambivalence productive 3:1.",
+            "Génération IA 2025 (Les 5 Personas, n = 387) : segmentation comportementale 16–25 ans.",
+            "Génération IA 2024 (Enquête fondatrice, n = 326) : adoption académique initiale > 90 %.",
+            "La Doctrine IAG (PDF + Podcast audio 5 min 43) : les 5 piliers géopolitiques et énergétiques de la course à l'AGI.",
+            "Interview Gemini 4 (V9) : retour terrain indépendant de Cyril Garnier et benchmarks Google DeepMind."
+          ]
+        }
+      ],
+      internalLinks: [
+        { href: "/ressources/etudes/generation-ia-2026/", label: "Étude Génération IA 2024 → 2026 (1 082 étudiants)" },
+        { href: "/ressources/etudes/generation-ia-2025/", label: "Étude Génération IA 2025 : Les 5 Personas" },
+        { href: "/ressources/etudes/generation-ia-2024/", label: "Étude Génération IA 2024 : Enquête fondatrice" },
+        { href: "/ressources/etudes/doctrine-iag/", label: "La Doctrine IAG (Étude, tableau & podcast)" },
+        { href: "/ressources/etudes/interview-gemini-4/", label: "Interview Gemini 4 : Retour d'expérience & V9" }
+      ]
+    }
+  },
+  {
+    path: '/ressources/etudes/generation-ia-2026',
+    title: "Étude Génération IA 2024–2026 (1 082 étudiants) | Alkymya",
+    description: "Rapport longitudinal Alkymya (n=1 082, 5 écoles franciliennes) : adoption à 98,1 %, usage quotidien à 61 %, split-stack Claude, ambivalence 3:1 et TikTok Shop ×12.",
+    h1: "Génération IA 2024 → 2026 : 1 082 étudiants français face à l’IA et à l’attention",
+    ogImage: "https://res.cloudinary.com/dokzioyu4/image/upload/v1777491204/Capture_GENERATION_IA_lrxvdx.png",
+    lastmod: "2026-11-20",
+    schemaType: "Dataset",
+    content: {
+      leadParagraph: "Trois années d'enquête continue menée par Cyril Garnier auprès de 1 082 étudiants de cinq grandes écoles franciliennes révèlent une adoption saturée (98,1 %), le basculement vers le multi-outils (52,3 % en split-stack) et un paradoxe majeur : 21 % d'ambivalence productive.",
+      sections: [
+        {
+          h2: "Question de recherche & méthodologie (3 vagues · n = 1 082)",
+          paragraphs: [
+            "Design longitudinal par cohortes successives indépendantes administré en ligne entre mai 2024 et avril 2026 auprès d'étudiants Bachelor à Master issus de 5 grandes écoles d'Île-de-France anonymisées (codes A à E), croisé avec 10 benchmarks internationaux."
+          ],
+          listItems: [
+            "Vague 1 (mai–déc. 2024) : n = 326 répondants.",
+            "Vague 2 (janv.–déc. 2025) : n = 387 répondants.",
+            "Vague 3 (sept. 2025–avr. 2026) : n = 369 répondants (98,1 % d'adoption, 61,0 % d'usage quotidien).",
+            "Segmentation K-means (k = 3) : Power Users (41,2 %), Productivistes (17,9 %), Observateurs (40,9 %)."
+          ]
+        },
+        {
+          h2: "Limites assumées & recommandation opérationnelle (juin / nov. 2026)",
+          paragraphs: [
+            "L'étude porte sur des cohortes successives franciliennes (non un panel individuel suivi sur 3 ans) avec un score silhouette K-means modéré (0,16). En clair, interdire l'IA échoue : la seule réponse robuste associe socle multi-modèles, signalétique transparente rouge/orange/vert et évaluation par la trace et l'oral."
+          ]
+        }
+      ],
+      internalLinks: [
+        { href: "/ressources/etudes/", label: "Toutes nos études IA" },
+        { href: "/ressources/etudes/generation-ia-2025/", label: "Comparer avec Génération IA 2025 (5 Personas)" },
+        { href: "/partenaires/ecoles/", label: "Nos 7 partenaires École" },
+        { href: "/ia/", label: "Simulateur de personas sur /ia/" }
+      ]
+    }
+  },
+  {
+    path: '/ressources/etudes/generation-ia-2025',
+    title: "Étude Génération IA 2025 : 5 Personas Étudiants | Alkymya",
+    description: "Enquête Génération IA 2025 (387 répondants 16–25 ans : HETIC, IÉSEG, ISCOM, Ynov) : 5 personas comportementaux, top 5 outils et 4 recommandations pédagogiques.",
+    h1: "Génération IA 2025 : cinq personas pour comprendre les usages étudiants de l’IA",
+    ogImage: "https://res.cloudinary.com/dokzioyu4/image/upload/v1777491204/Capture_GENERATION_IA_lrxvdx.png",
+    lastmod: "2026-11-20",
+    schemaType: "Dataset",
+    content: {
+      leadParagraph: "Réalisée auprès de 387 répondants âgés de 16 à 25 ans (HETIC, IÉSEG, ISCOM, Ynov…), l'édition 2025 de Génération IA dépasse le simple taux d'adoption pour modéliser cinq comportements types face aux outils génératifs.",
+      sections: [
+        {
+          h2: "Segmentation en 5 personas et top 5 des outils (n = 387)",
+          paragraphs: [
+            "Les usages se structurent autour de cinq profils distincts et d'un classement dominé par ChatGPT (95 %), Gemini (55 %), Midjourney (40 %), Microsoft Copilot (35 %) et Perplexity (30 %)."
+          ],
+          listItems: [
+            "Explorateurs engagés (15–20 %) : 5+ outils chaînés, 40 % paient déjà des licences.",
+            "Pragmatiques productifs (40–45 %) : cœur majoritaire des promotions (gain de temps).",
+            "Apprentis connectés (20–25 %) : 16–20 ans, usage scolaire et ChatGPT gratuit.",
+            "Créatifs numériques (10–15 %) & Observateurs prudents (5–10 %)."
+          ]
+        }
+      ],
+      internalLinks: [
+        { href: "/ressources/etudes/", label: "Toutes nos études IA" },
+        { href: "/ressources/etudes/generation-ia-2026/", label: "Lire la vague 3 (2024 → 2026, n = 1 082)" },
+        { href: "/ia/", label: "Visionner les 5 personas en vidéo sur /ia/" }
+      ]
+    }
+  },
+  {
+    path: '/ressources/etudes/generation-ia-2024',
+    title: "Étude Génération IA 2024 (n=326 étudiants) | Alkymya",
+    description: "Première vague Génération IA (mai–déc. 2024, 326 répondants Bachelor, Master et enseignants) : usages académiques (>90 %), outils et demande de pédagogie « IA First ».",
+    h1: "Génération IA 2024 : l’étude fondatrice sur le paradoxe de l’IA à l’école",
+    ogImage: "https://res.cloudinary.com/dokzioyu4/image/upload/v1777491204/Capture_GENERATION_IA_lrxvdx.png",
+    lastmod: "2026-11-20",
+    schemaType: "Dataset",
+    content: {
+      leadParagraph: "Première vague empirique menée entre mai et décembre 2024 auprès de 326 répondants (Bachelor, Master, enseignants) révélant dès 2024 plus de 90 % d'adoption académique et 80 % d'usage hors des cours.",
+      sections: [
+        {
+          h2: "Résultats fondateurs (Vague 1 · n = 326)",
+          paragraphs: [
+            "Alors que de nombreux établissements tentaient d'interdire les LLM, 95 % des répondants utilisaient l'IA pour la recherche d'information, 90 % pour la rédaction/synthèse et 70 % la jugeaient déjà indispensable pour leur carrière."
+          ],
+          listItems: [
+            "Adoption académique > 90 % dès le second semestre 2024.",
+            "Usage hors des études : 80 % ; tricherie spontanément citée à seulement ~5 %.",
+            "Recommandation mars 2025 : adopter une pédagogie « IA First » plutôt que le contrôle policier."
+          ]
+        }
+      ],
+      internalLinks: [
+        { href: "/ressources/etudes/", label: "Toutes nos études IA" },
+        { href: "/ressources/etudes/generation-ia-2025/", label: "Lire la vague 2 (2025 : 5 Personas)" },
+        { href: "/ressources/etudes/generation-ia-2026/", label: "Lire le rapport complet 2024 → 2026" }
+      ]
+    }
+  },
+  {
+    path: '/ressources/etudes/doctrine-iag',
+    title: "La Doctrine IAG : Géopolitique & Stratégie IA (PDF + Audio) | Alkymya",
+    description: "Analyse prospective de Cyril Garnier : les 5 piliers de la « Doctrine IAG » américaine (déréglementation, énergie, puces, minerais, Europe) en HTML, PDF et podcast 5 min 43.",
+    h1: "La Doctrine IAG : décrypter la stratégie géopolitique et énergétique de la course à l’AGI",
+    ogImage: "https://alkymya.co/og-ressources.jpg",
+    lastmod: "2026-11-20",
+    schemaType: "Article",
+    content: {
+      leadParagraph: "Construite sous forme de dialogue analytique entre Cyril Garnier et Gemini le 5 novembre 2025, cette étude relie déréglementation américaine, politique énergétique, contrôle des semi-conducteurs et souveraineté des minerais critiques.",
+      sections: [
+        {
+          h2: "Les 5 piliers de la « Doctrine de l'IAG » & podcast audio (5 min 43)",
+          paragraphs: [
+            "Des décisions apparemment disparates (abrogation du décret 14110, relance énergétique pour data centers, restrictions GPU NVIDIA/AMD, accords bilatéraux sur les minerais critiques et pression sur l'AI Act européen) obéissent à une stratégie cohérente d'avance vers l'IAG."
+          ],
+          listItems: [
+            "1. Moteur national : déréglementation et « doctrine de la vélocité ».",
+            "2. Alimentation énergétique : électricité massive, gaz hors-réseau, nucléaire et fusion.",
+            "3. Endiguement géopolitique des puces & 4. Chaîne d'approvisionnement des minerais critiques.",
+            "5. Gestion des alliés : pression sur l'AI Act, le DMA et le DSA européens — urgence de briques souveraines (AWACLOUD, Onecub)."
+          ]
+        }
+      ],
+      internalLinks: [
+        { href: "/ressources/etudes/", label: "Toutes nos études IA" },
+        { href: "/partenaires/outils/awa-cloud/", label: "Brique souveraine documentaire : AWACLOUD" },
+        { href: "/partenaires/outils/onecub/", label: "Brique souveraine data : Onecub" },
+        { href: "/ateliers/", label: "Atelier Option C : Éthique & IA Act" }
+      ]
+    }
+  },
+  {
+    path: '/ressources/etudes/interview-gemini-4',
+    title: "Interview Gemini 4 : Retour Terrain IA | Alkymya",
+    description: "Retour d'expérience de Cyril Garnier sur Gemini 4 : agents IA, inclusion pédagogique, limites cloud vs local et benchmarks officiels Google. PDF V9.",
+    h1: "Gemini 4 à l'épreuve du terrain : regard croisé avec Cyril Garnier",
+    ogImage: "https://alkymya.co/og-ressources.jpg",
+    lastmod: "2026-11-20",
+    schemaType: "Article",
+    content: {
+      leadParagraph: "Retour d'expérience indépendant de Cyril Garnier (enseignant en IA, fondateur d'Alkymya et de CYRIL GARNIER CONSULTING) sur la famille Gemini 4, croisé avec les données officielles de performance Google et Google DeepMind (Automne 2026 · Version V9).",
+      sections: [
+        {
+          h2: "Synthèse des 4 axes de l'entretien",
+          paragraphs: [
+            "L'entretien aborde sans filtre l'adoption pratique des agents Gemini 4 en atelier, la vitesse d'exécution au quotidien et la souveraineté intellectuelle face à des outils toujours plus autonomes.",
+            "Sans lien commercial avec Google, Cyril Garnier confronte Gemini 4 Hydrogen et Gemini Live aux environnements de développement agentiques locaux (Claude Code, Genspark, OpenClaw)."
+          ],
+          listItems: [
+            "Démocratisation et inclusion : création rapide de micro-agents Gmail/Drive et réduction de la barrière technique, tout en alertant sur la fracture d'accès pour les publics hors enseignement supérieur.",
+            "Confiance née de l'instantané : préparation de supports pédagogiques complets et vérifiés en moins de deux minutes, et interaction vocale fluide via Gemini Live.",
+            "Souveraineté intellectuelle : priorité donnée à l'esprit critique, à l'équité des chances et à la capacité à ne pas déléguer l'intégralité de son raisonnement à l'IA.",
+            "Multimodalité et limites cloud : analyse vidéo en temps réel sur smartphone via Gemini Live, et périmètre d'action cloud des agents Gemini comparé aux outils CLI locaux."
+          ]
+        },
+        {
+          h2: "Les quatre enseignements clés et données officielles Google DeepMind",
+          paragraphs: [
+            "Le dossier technique V9 rassemble les spécifications officielles de la gamme Gemini 4 (Argon, Carbon, Hydrogen, Neon) lancée à l'automne 2026 ainsi que les benchmarks mesurés sur Google AI Studio et Vertex AI."
+          ],
+          listItems: [
+            "Débit moyen de Gemini 4 Hydrogen : 156 tokens/seconde pour une latence initiale (TTFT) de 1,78 s à 2,26 s et un contexte unifié de 1M tokens.",
+            "Fiabilité agentique : taux d'erreur d'appel d'outils de 0,04 % sur Google AI Studio (Priority), 0,01 % sur les sorties structurées et -81 % d'actions excessives par rapport à Gemini 3.8 Flash.",
+            "Raisonnement et véracité : 51 (High) / 54 (xHigh) sur Artificial Analysis Intelligence Index, 78,0 % sur CritPt v2 High et 91,3 % de taux de non-hallucination (AA-Omniscience).",
+            "Téléchargement intégral : le document complet Interview Gemini 4 (V9) est librement téléchargeable au format PDF."
+          ]
+        }
+      ],
+      internalLinks: [
+        { href: "/ressources/etudes/", label: "Retour à la rubrique Nos études" },
+        { href: "/ressources/", label: "Explorer toutes nos ressources IA" },
+        { href: "/ateliers/", label: "Découvrir nos ateliers d'agents IA" }
+      ]
+    }
+  },
+  {
+    path: '/ressources/analyseurs',
+    title: "Analyseurs IA Gratuits : Photo, CV & Mémoire | Alkymya",
+    description: "Découvrez et lancez nos 3 analyseurs IA gratuits en production (Photo, CV avec Objectif Alternance, Mémoire académique) avec mode d’emploi et garanties de confidentialité.",
     h1: "Nos Analyseurs IA gratuits en production.",
     ogImage: "https://alkymya.co/og-ressources.jpg",
-    lastmod: "2026-11-16",
+    lastmod: "2026-11-20",
     schemaType: "CollectionPage",
     content: {
-      leadParagraph: "Testez nos trois outils IA ouverts sans inscription : Analyseur de photo, Analyseur de CV (avec Kendra Martine d'Objectif Alternance) et Analyseur de mémoire académique.",
+      leadParagraph: "Trois applications web gratuites accessibles sans inscription préalable : chacune dispose désormais de sa page dédiée détaillant son usage, son public cible, ses limites et nos consignes de confidentialité.",
       sections: [
         {
-          h2: "Trois analyseurs IA directement exploitables en ligne",
+          h2: "Trois analyseurs IA documentés et reliés au domaine principal",
           paragraphs: [
-            "Conçus par le studio Alkymya pour expérimenter immédiatement l'intelligence artificielle générative sur vos documents, nos analyseurs couvrent le traitement visuel, l'employabilité et l'accompagnement académique."
+            "Conçus par le studio Alkymya pour expérimenter immédiatement l'intelligence artificielle générative sur des documents réels, nos analyseurs couvrent le traitement visuel, l'employabilité et la rigueur académique."
           ],
           listItems: [
-            "Analyseur de photo (analyseurdephoto.alkymya.co) : explorer, retoucher et extraire des descriptions alt exploitables pour vos séries visuelles.",
-            "Analyseur de CV (analysercvpro.alkymya.co) en partenariat avec Kendra Martine d'Objectif Alternance : optimiser votre CV et comparer vos compétences aux offres cibles.",
-            "Analyseur de mémoire (analyseurdememoire.alkymya.co) : vérifier la cohérence des plans académiques, points de vigilance méthodologiques et synthèse des sources."
+            "Analyseur de photo (analyseurdephoto.alkymya.co) : composition, recadrage et descriptions alt SEO fidèles.",
+            "Analyseur de CV (analysercvpro.alkymya.co), en partenariat avec Kendra Martine d'Objectif Alternance : adéquation CV / fiche de poste.",
+            "Analyseur de mémoire (analyseurdememoire.alkymya.co) : pré-lecture méthodologique et cohérence problématique/plan."
           ]
         }
       ],
       internalLinks: [
-        { href: "/ressources/", label: "Retour à toutes nos ressources" },
-        { href: "/ressources/nos-etudes/", label: "Découvrir nos études Génération IA" },
-        { href: "/ateliers/", label: "Participer à un atelier pratique" }
+        { href: "/ressources/analyseurs/analyseur-de-photo/", label: "Analyseur de photo IA" },
+        { href: "/ressources/analyseurs/analyseur-de-cv/", label: "Analyseur de CV IA (avec Objectif Alternance)" },
+        { href: "/ressources/analyseurs/analyseur-de-memoire/", label: "Analyseur de mémoire IA" },
+        { href: "/ressources/", label: "Retour à toutes nos ressources" }
       ]
     }
   },
   {
-    path: '/ressources/nos-etudes',
-    title: "Nos Études Génération IA & Doctrine IAG | Alkymya",
-    description: "Téléchargez gratuitement nos études Génération IA (2024, 2025, 2026) auprès de 1 082 étudiants et La Doctrine IAG en PDF et podcast.",
-    h1: "Nos études Génération IA & Doctrine IAG.",
+    path: '/ressources/analyseurs/analyseur-de-photo',
+    title: "Analyseur de Photo IA Gratuit | Ressources Alkymya",
+    description: "Outil IA gratuit en ligne : analysez vos photographies, préparez vos retouches de cadrage et générez des descriptions alt SEO exploitables sans inscription.",
+    h1: "Analyseur de photo IA : explorer, analyser et structurer vos visuels en un instant",
     ogImage: "https://alkymya.co/og-ressources.jpg",
-    lastmod: "2026-11-16",
-    schemaType: "CollectionPage",
+    lastmod: "2026-11-20",
+    schemaType: "SoftwareApplication",
     content: {
-      leadParagraph: "Consultez et téléchargez gratuitement nos trois rapports longitudinaux Génération IA (2024, 2025, 2026) auprès de 1 082 étudiants ainsi que La Doctrine IAG en PDF et podcast audio.",
+      leadParagraph: "Développé par le studio Alkymya à l'intersection de la pratique photographique de terrain (TheLittle77, TheLittle83, TheLittle75) et de la vision par ordinateur, l'Analyseur de photo aide à lire, qualifier et préparer vos images pour le web et vos séries éditoriales.",
       sections: [
         {
-          h2: "Enquêtes Génération IA (2024-2026) et La Doctrine IAG",
+          h2: "Ce qu'il fait, pour qui, comment l'utiliser et ce qu'il ne fait pas",
           paragraphs: [
-            "Chaque publication est accessible librement en PDF ou en format audio pour éclairer les dirigeants, DRH, responsables pédagogiques et étudiants sur l'évolution concrète des usages de l'IA."
-          ],
-          listItems: [
-            "Génération IA 2026 : rapport complet sur l'impact futur, les signaux faibles et les recommandations opérationnelles.",
-            "Génération IA 2025 : segmentation comportementale en 5 personas types documentés.",
-            "Génération IA 2024 : enquête empirique initiale auprès des étudiants de l'enseignement supérieur.",
-            "La Doctrine IAG (PDF & Podcast audio) : dialogue sur les enjeux géopolitiques et industriels de l'IA générative."
+            "L'application examine instantanément votre image dans le navigateur sur analyseurdephoto.alkymya.co pour proposer une lecture de composition, des pistes de recadrage et des textes alternatifs (alt) SEO fidèles.",
+            "Il ne remplace pas un photographe professionnel ni un logiciel d'étalonnage avancé, et ne doit pas servir à identifier des visages privés. Aucune inscription n'est requise."
           ]
         }
       ],
       internalLinks: [
-        { href: "/ressources/", label: "Retour à toutes nos ressources" },
-        { href: "/ia/", label: "Visionner les 5 personas Génération IA en vidéo" },
-        { href: "/ressources/nos-analyseurs/", label: "Tester nos analyseurs IA gratuits" }
+        { href: "/ressources/analyseurs/", label: "Tous nos Analyseurs IA" },
+        { href: "/oeuvres/", label: "Voir nos créations photographiques TheLittle" },
+        { href: "/ateliers/", label: "Atelier Direction Artistique & Visuels IA" }
+      ]
+    }
+  },
+  {
+    path: '/ressources/analyseurs/analyseur-de-cv',
+    title: "Analyseur de CV IA Gratuit (Objectif Alternance) | Alkymya",
+    description: "Optimisez gratuitement votre CV face à une offre d’emploi ou d’alternance cible grâce à l’Analyseur de CV IA co-construit avec Kendra Martine d’Objectif Alternance.",
+    h1: "Analyseur de CV IA : confrontez votre CV à l’offre cible avant de postuler",
+    ogImage: "https://alkymya.co/og-ressources.jpg",
+    lastmod: "2026-11-20",
+    schemaType: "SoftwareApplication",
+    content: {
+      leadParagraph: "Conçu par Alkymya en partenariat avec Kendra Martine, fondatrice d'Objectif Alternance, cet outil gratuit passe votre CV au crible d'une offre réelle sur analysercvpro.alkymya.co.",
+      sections: [
+        {
+          h2: "Double boucle IA + coaching humain avec Objectif Alternance",
+          paragraphs: [
+            "L'Analyseur de CV identifie les compétences manquantes face à la fiche de poste et suggère des reformulations orientées résultats, sans jamais inventer de faux diplômes ni conserver votre CV dans une CVthèque commerciale.",
+            "Il complète le coaching humain de Kendra Martine au sein d'Objectif Alternance pour réussir les entretiens d'alternance et de reconversion."
+          ]
+        }
+      ],
+      internalLinks: [
+        { href: "/partenaires/insertion/objectif-alternance/", label: "Partenariat Objectif Alternance" },
+        { href: "/alchimistes/kendra-martine/", label: "Fiche de Kendra Martine" },
+        { href: "/ressources/analyseurs/", label: "Tous nos Analyseurs IA" }
+      ]
+    }
+  },
+  {
+    path: '/ressources/analyseurs/analyseur-de-memoire',
+    title: "Analyseur de Mémoire & Thèse IA Gratuit | Alkymya",
+    description: "Diagnostiquez gratuitement la structure, la problématique et la cohérence méthodologique de votre mémoire ou rapport de stage sur analyseurdememoire.alkymya.co.",
+    h1: "Analyseur de mémoire : diagnostiquer la rigueur méthodologique de vos travaux",
+    ogImage: "https://alkymya.co/og-ressources.jpg",
+    lastmod: "2026-11-20",
+    schemaType: "SoftwareApplication",
+    content: {
+      leadParagraph: "Conçu par Cyril Garnier à partir des jurys encadrés en grandes écoles, l'Analyseur de mémoire (analyseurdememoire.alkymya.co) aide les étudiants à vérifier la solidité de leur problématique et de leur plan avant la remise finale.",
+      sections: [
+        {
+          h2: "Un relecteur méthodologique critique — jamais un rédacteur automatique",
+          paragraphs: [
+            "L'outil évalue l'alignement titre / problématique / hypothèses, signale les affirmations non sourcées et synthétise les points de vigilance pour votre soutenance.",
+            "Il ne rédige pas votre mémoire à votre place, ne génère pas de fausses bibliographies et ne remplace pas les consignes de votre tuteur académique."
+          ]
+        }
+      ],
+      internalLinks: [
+        { href: "/ressources/analyseurs/", label: "Tous nos Analyseurs IA" },
+        { href: "/ressources/etudes/generation-ia-2026/", label: "Étude Génération IA 2026 (évaluation & intégrité)" },
+        { href: "/partenaires/ecoles/", label: "Nos 7 partenaires École" }
       ]
     }
   },
   {
     path: '/ressources/business-game',
-    title: "Business Game NoNo BanaBa | Ressources Alkymya",
-    description: "Découvrez NoNo BanaBa, le business game pédagogique d'Alkymya pour explorer data, web-marketing et stratégie en école ou entreprise.",
-    h1: "Business Game NoNo BanaBa en action.",
+    title: "Business Game NoNo BanaBa : Stratégie & Data | Alkymya",
+    description: "NoNo BanaBa : le business game pédagogique d’Alkymya pour expérimenter data, web-marketing, IA et modèles économiques en grande école ou séminaire d’entreprise.",
+    h1: "Business Game NoNo BanaBa : apprendre le web-marketing, la data et l’IA par la simulation",
     ogImage: "https://alkymya.co/og-ressources.jpg",
-    lastmod: "2026-11-16",
-    schemaType: "CollectionPage",
+    lastmod: "2026-11-20",
+    schemaType: "SoftwareApplication",
     content: {
-      leadParagraph: "Explorez le web-marketing, l'analyse de données et les business modèles contemporains au travers de notre simulation interactive utilisée en grandes écoles et séminaires d'équipe.",
+      leadParagraph: "Conçu et animé par Alkymya autour de la marque fashion Gen Z NoNo BanaBa (nonobanaba.netlify.app), ce business game immersif place étudiants et collaborateurs aux commandes d'une croissance numérique sous contrainte de rentabilité et d'éthique IA.",
       sections: [
         {
-          h2: "Apprendre la stratégie data et IA par la simulation",
+          h2: "Un simulateur entreprenariat, acquisition & arbitrages IA",
           paragraphs: [
-            "Au travers de la marque fashion Gen Z NoNo BanaBa (nonobanaba.netlify.app), étudiants et collaborateurs manipulent données commerciales, positionnement marketing et arbitrages économiques en conditions ludiques."
-          ]
-        }
-      ],
-      internalLinks: [
-        { href: "/ressources/", label: "Retour à toutes nos ressources" },
-        { href: "/partenaires/", label: "Découvrir nos écoles partenaires" },
-        { href: "/ateliers/", label: "Organiser un séminaire ou atelier" }
-      ]
-    }
-  },
-  {
-    path: '/ressources/alkymya-x-inatec',
-    title: "Alkymya x INATEC : Capsules & OPCO | Ressources",
-    description: "Découvrez nos 5 capsules vidéo réalisées avec INATEC, organisme partenaire certifié Qualiopi, pour des formations IA finançables OPCO.",
-    h1: "Alkymya x INATEC : capsules vidéo & OPCO.",
-    ogImage: "https://alkymya.co/og-ressources.jpg",
-    lastmod: "2026-11-16",
-    schemaType: "CollectionPage",
-    content: {
-      leadParagraph: "Cinq capsules vidéo illustrant notre collaboration avec INATEC, organisme partenaire certifié Qualiopi, pour déployer des formations IA pratiques et finançables OPCO.",
-      sections: [
-        {
-          h2: "Cinq capsules vidéo pour passer à l'action avec l'OPCO",
-          paragraphs: [
-            "Retrouvez les cinq capsules vidéo issues de notre collaboration avec INATEC : Partenariat d'Avenir, Efficacité Augmentée, Synergie Créative, Le Futur en Marche et Performance Digitale."
-          ]
-        }
-      ],
-      internalLinks: [
-        { href: "/ressources/", label: "Retour à toutes nos ressources" },
-        { href: "/ateliers/", label: "Voir les parcours finançables OPCO" },
-        { href: "/partenaires/", label: "En savoir plus sur le partenariat INATEC" }
-      ]
-    }
-  },
-  {
-    path: '/ressources/partenaires',
-    title: "Nos Partenaires IA & Technologie | Ressources Alkymya",
-    description: "Découvrez AWACLOUD, le partenaire technologique d'Alkymya : bibliothèques et logiciels français pour convertir vos documents localement.",
-    h1: "Les outils et acteurs avec lesquels nous travaillons",
-    ogImage: "https://alkymya.co/og-ressources.jpg",
-    lastmod: "2026-11-17",
-    schemaType: "CollectionPage",
-    content: {
-      leadParagraph: "Nous ne recommandons que ce que nous utilisons nous-mêmes. Chaque partenaire est présenté avec son rôle réel dans nos projets et nos formations.",
-      sections: [
-        {
-          h2: "Notre partenaire technologique",
-          paragraphs: [
-            "Un outil choisi pour sa fiabilité, sa souveraineté et son utilité concrète dans nos projets IA et nos ateliers."
+            "Plutôt que d'empiler des diapositives théoriques sur le web-marketing ou l'IA, les équipes gèrent en temps contraint le positionnement de la marque, le mix acquisition (TikTok Shop, social media, contenu éditorial), la lecture d'indicateurs data et les arbitrages de marge.",
+            "Déployé dans nos écoles partenaires (HETIC, Ynov, IÉSEG, ISCOM, Paris École de Management) comme lors de séminaires d'équipe en entreprise, NoNo BanaBa ancre durablement les réflexes d'analyse et de décision."
           ],
           listItems: [
-            "AWACLOUD (Partenaire technologique) : bibliothèques et logiciels français qui lisent, convertissent et produisent vos documents localement, sans envoyer un fichier à l'extérieur."
+            "Séquence 1 (45 min) : cadrage marché, lecture des personas Gen Z et positionnement.",
+            "Séquence 2 (1 h) : arbitrages budgétaires, campagnes acquisition et signaux faibles data.",
+            "Séquence 3 (1 h) : production assistée par IA (charte, prompts, fiches produits) avec contrôle qualité.",
+            "Séquence 4 (45 min) : soutenance devant jury et débriefing ROI / éthique."
           ]
         }
       ],
       internalLinks: [
-        { href: "/ressources/partenaires/awa-cloud/", label: "Découvrir la page dédiée AWACLOUD" },
         { href: "/ressources/", label: "Retour à toutes nos ressources" },
-        { href: "/contact/", label: "Prendre rendez-vous avec Alkymya" }
-      ]
-    }
-  },
-  {
-    path: '/ressources/partenaires/awa-cloud',
-    title: "AWACLOUD : Documents & RAG Local | Partenaires Alkymya",
-    description: "Partenaire technologique AWACLOUD : bibliothèques et logiciels français pour convertir PDF, Word et Excel en Markdown localement sans fuite de données.",
-    h1: "AWACLOUD : vos documents, lisibles par l'IA, sans quitter votre ordinateur",
-    ogImage: "https://alkymya.co/og-ressources.jpg",
-    lastmod: "2026-11-17",
-    schemaType: "WebPage",
-    content: {
-      leadParagraph: "Un éditeur français (fondé en 2016) qui publie des bibliothèques pour lire, convertir, signer et vérifier vos fichiers Word, Excel, PowerPoint, PDF et OpenDocument. Tout se passe localement : aucun fichier envoyé.",
-      sections: [
-        {
-          h2: "Pourquoi nous avons choisi AWACLOUD",
-          paragraphs: [
-            "Une IA ne lit bien que du texte structuré. Vos documents arrivent en PDF, Word, PowerPoint : il faut les convertir sans exposer vos données."
-          ],
-          listItems: [
-            "Confidentiel par conception : traitement sur vos machines, rien n'est envoyé à AWA ni à un tiers.",
-            "Souverain : éditeur français, code publié et vérifiable.",
-            "Simple à intégrer : une bibliothèque, sans serveur de conversion à installer."
-          ]
-        },
-        {
-          h2: "Logiciels gratuits, bibliothèques et pipeline RAG",
-          paragraphs: [
-            "Trois applications gratuites dans le navigateur hors ligne (AWA Viewer, AWA Notepad, AWA Writer bêta), AwaForge (un socle de technologies web open source et souveraines) et trois bibliothèques développeurs (AWA Convert, AWA PDF, AWA Office).",
-            "Sur un rapport PDF de 39 pages (773 Ko), AWA Convert produit 86 187 caractères de Markdown structuré en 309 blocs en moins d'une seconde en local, permettant à un pipeline RAG de n'envoyer que 1 000 à 3 000 tokens pertinents au lieu de 25 000."
-          ]
-        }
-      ],
-      internalLinks: [
-        { href: "/ressources/partenaires/", label: "Retour à Nos partenaires" },
-        { href: "/ressources/", label: "Retour à toutes nos ressources" },
-        { href: "/contact/", label: "Discuter d'un projet documentaire et IA" }
+        { href: "/partenaires/ecoles/", label: "Voir les 7 écoles où le business game est animé" },
+        { href: "/ateliers/", label: "Organiser un séminaire ou atelier en entreprise" },
+        { href: "/contact/", label: "Demander une session NoNo BanaBa" }
       ]
     }
   },
@@ -768,7 +942,7 @@ export const routes: RouteData[] = [
         {
           h2: "Véronique Landereau — Alchimiste associée, Santé, Prévention & Innovation",
           paragraphs: [
-            "Co-fondatrice de New Health Paradigm et formée à Gustave Roussy Éducation, Véronique Landereau consacre son activité aux projets de santé qui placent la prévention, le maintien à domicile et l'accompagnement des aidants au cœur de leur modèle.",
+            "Fondatrice d'AvecLouise (aveclouise.fr) et formée à Gustave Roussy Éducation, Véronique Landereau consacre son activité aux projets de santé qui placent la prévention, le maintien à domicile et l'accompagnement des aidants au cœur de leur modèle.",
             "Basée à Nantes, elle évolue au quotidien dans l'écosystème MedTech et dispositifs médicaux."
           ]
         },
@@ -853,12 +1027,12 @@ export const routes: RouteData[] = [
   })),
   {
     path: '/partenaires',
-    title: "Partenaires Formation IA & Grandes Écoles | Alkymya",
-    description: "Partenariats formation IA Alkymya : recrutement d'alternants avec Objectif Alternance, interventions en école (HETIC, Ynov, IÉSEG) et projets étudiants.",
-    h1: "Partenaires formation IA & alliances stratégiques.",
+    title: "Partenaires IA, Écoles, OPCO & Outils Souverains | Alkymya",
+    description: "Six pôles de partenaires liés : 7 grandes écoles, insertion Objectif Alternance, portage Qualiopi INATEC, lieux d'accueil, entreprises et outils souverains.",
+    h1: "Partenaires formation IA, écoles & écosystème souverain.",
     ogImage: "https://alkymya.co/og-partenaires.jpg",
-    lastmod: "2026-11-15",
-    schemaType: "WebPage",
+    lastmod: "2026-11-20",
+    schemaType: "CollectionPage",
     images: [
       {
         src: "https://res.cloudinary.com/dokzioyu4/image/upload/v1788507182/logo_objectif_code_u3otua.png",
@@ -872,7 +1046,7 @@ export const routes: RouteData[] = [
         alt: "Logo INATEC — organisme partenaire certifié Qualiopi et financement OPCO avec Alkymya",
         width: 240,
         height: 120,
-        caption: "INATEC — Partenaire Certifié Qualiopi & Ingénierie Pédagogique"
+        caption: "INATEC — Organisme Certifié Qualiopi (OPCO)"
       },
       {
         src: "https://res.cloudinary.com/dokzioyu4/image/upload/v1759785816/logo-hetic_fnt2zy.png",
@@ -885,63 +1059,364 @@ export const routes: RouteData[] = [
         alt: "Logo Ynov Campus — école partenaire pour modules prompt engineering et hackathons IA",
         width: 240,
         height: 120
-      },
-      {
-        src: "https://res.cloudinary.com/dokzioyu4/image/upload/v1759785830/IESEG_logo_zzx1aa.jpg",
-        alt: "Logo IÉSEG — école de management partenaire séminaires stratégie et IA",
-        width: 240,
-        height: 120
-      },
-      {
-        src: "https://res.cloudinary.com/dokzioyu4/image/upload/v1759785836/CFA_ITIS_logo_vetgdg.webp",
-        alt: "Logo CFA Itis — formation apprentis en Seine-et-Marne et Île-de-France",
-        width: 240,
-        height: 120
-      },
-      {
-        src: "https://res.cloudinary.com/dokzioyu4/image/upload/v1777819108/t%C3%A9l%C3%A9chargement_16_j060qu.jpg",
-        alt: "Logo SNCF — partenaire historique d'accompagnement entrepreneurial",
-        width: 240,
-        height: 120
-      },
-      {
-        src: "https://res.cloudinary.com/dokzioyu4/image/upload/v1759925019/logo-fondation-grdf_wx9kpo.png",
-        alt: "Logo Fondation GRDF — accompagnement de projets à impact territorial",
-        width: 240,
-        height: 120
       }
     ],
     content: {
-      leadParagraph: "Alkymya, studio d'expertise et de création IA, fédère plus de 15 écoles supérieures, fondations et partenaires d'insertion autour de trois missions concrètes : le recrutement d'alternants, les interventions pédagogiques en école et la supervision de projets étudiants réels.",
+      leadParagraph: "Alkymya ne cite aucun partenaire sans lien vérifiable. Notre annuaire s'organise en six sous-hubs clairs : Partenaires École, Insertion & Alternance, Formations Certifiées & OPCO, Lieux & Coworking, Entreprises & Fondations et Outils & Technologies souveraines.",
       sections: [
         {
-          h2: "Recrutement d'alternants & insertion avec Objectif Alternance",
+          h2: "Six pôles de partenaires complémentaires",
           paragraphs: [
-            "Notre alliance stratégique avec Objectif Alternance (dirigé par Kendra Martine) relie directement les TPE/PME en croissance aux jeunes talents formés aux outils d'intelligence artificielle générative. Ensemble, nous couplons l'Analyseur de CV IA gratuit d'Alkymya à un coaching emploi humain sur mesure.",
-            "Les alternants intégrés dans nos entreprises partenaires maîtrisent dès la prise de poste la veille automatisée, la structuration éditoriale SEO/GEO et l'usage responsable des modèles de langage, raccourcissant de moitié leur temps de montée en autonomie."
-          ]
-        },
-        {
-          h2: "Interventions en école, hackathons et jurys de projets étudiants",
-          paragraphs: [
-            "Nos alchimistes interviennent chaque semestre dans les cursus de plus de huit grandes écoles et campus spécialisés : HETIC (ateliers produit web et jurys), Ynov Campus (prompt engineering, agents IA et hackathons), IÉSEG (séminaires de stratégie business), CFA Itis (parcours apprentis en Seine-et-Marne), EURIDIS (prospection B2B augmentée), ISCOM (direction artistique et stratégie de marque) et Paris École de Management.",
-            "Plus de 450 étudiants et apprentis ont déjà éprouvé nos business games (NoNo BanaBa) et nos démonstrateurs métiers, alimentant en retour nos enquêtes annuelles Génération IA 2024, 2025 et 2026."
-          ]
-        },
-        {
-          h2: "Partenaires certifiés Qualiopi, territoires et entreprises engagées",
-          paragraphs: [
-            "Alkymya travaille avec des organisations partenaires certifiées Qualiopi telles qu'INATEC : grâce à ce portage pédagogique, nos formations inter et intra-entreprises bénéficient d'une éligibilité OPCO pouvant couvrir jusqu'à 100 % du coût pédagogique pour les TPE, PME et grands comptes d'Île-de-France.",
-            "Notre écosystème réunit également des acteurs de terrain et d'innovation tels que SNCF, Morning Coworking (accueil d'ateliers en présentiel en Île-de-France), la Fondation GRDF, SEALESTER, la Fondation Flamenca, Azimuto, La Ressourcerie Gaillarde, Onecub, New Health Paradigm et Esperanta Services.",
-            "Chaque partenariat donne lieu à des livrables tangibles : diagnostics de maturité IA pour dirigeants, déploiement de workflows documentaires conformes à l'IA Act, ateliers de direction artistique générative et accompagnement vers la création d'activité ou l'employabilité durable des apprenants."
+            "Chaque catégorie regroupe les organismes, écoles, entreprises et éditeurs avec lesquels Cyril Garnier Consulting et Alkymya collaborent sur le terrain, avec liens sortants vérifiés et fiches détaillées lorsque la documentation est réunie."
+          ],
+          listItems: [
+            "Partenaires École (7 établissements) : HETIC, Ynov Campus, IÉSEG, CFA Itis, Euridis, ISCOM, Paris École de Management.",
+            "Insertion & Alternance : Objectif Alternance (fiche dédiée et Analyseur de CV IA gratuit).",
+            "Formations Certifiées & OPCO : portage Qualiopi assuré par INATEC (NDA 11771056077) — fiche dédiée et 5 capsules vidéo.",
+            "Lieux & Coworking : Morning (Paris) et DG Services Torcy (77200).",
+            "Entreprises & Fondations : SNCF, Fondation GRDF, SEALESTER, Azimuto, AvecLouise, Esperanta Services, La fondation Flamenca, La Ressourcerie Gaillarde.",
+            "Outils & Technologies souveraines : AWACLOUD (RAG et conversion locale) et Onecub (Data Spaces RGPD d'Olivier Dion)."
           ]
         }
       ],
       internalLinks: [
-        { href: "/rejoindre/", label: "Découvrir le parcours de nos jeunes talents & alternants" },
-        { href: "/ateliers/", label: "Découvrir les programmes dispensés aux partenaires" },
-        { href: "/alchimistes/", label: "Rencontrer notre équipe pédagogique" },
-        { href: "/contact/", label: "Devenir établissement ou entreprise partenaire" }
+        { href: "/partenaires/ecoles/", label: "Partenaires École (7 établissements)" },
+        { href: "/partenaires/insertion/", label: "Insertion & Alternance (Objectif Alternance)" },
+        { href: "/partenaires/formations-certifiees/", label: "Formations Certifiées & OPCO (INATEC)" },
+        { href: "/partenaires/lieux/", label: "Lieux & Coworking (Morning & Torcy)" },
+        { href: "/partenaires/entreprises/", label: "Entreprises & Fondations (8 organisations)" },
+        { href: "/partenaires/outils/", label: "Outils & Technologies (AWACLOUD & Onecub)" }
+      ]
+    }
+  },
+  {
+    path: '/partenaires/ecoles',
+    title: "Partenaires École & Grandes Écoles IA | Alkymya",
+    description: "HETIC, Ynov, IÉSEG, CFA Itis, Euridis, ISCOM et Paris École de Management : découvrez les 7 écoles partenaires où Alkymya déploie ses ateliers IA.",
+    h1: "Partenaires École : 7 grandes écoles et CFA où Alkymya enseigne l’IA",
+    ogImage: "https://alkymya.co/og-partenaires.jpg",
+    lastmod: "2026-11-20",
+    schemaType: "CollectionPage",
+    content: {
+      leadParagraph: "Depuis 2024, Alkymya intervient au cœur des cursus Bachelor, Master et alternance dans sept établissements d'enseignement supérieur. Ces cours nourrissent directement notre enquête longitudinale Génération IA (1 082 étudiants interrogés).",
+      sections: [
+        {
+          h2: "Sept établissements reliés par des modules pratiques IA",
+          paragraphs: [
+            "Nos intervenants animent des modules de prompt engineering, création d'agents IA, jurys et sessions Business Game NoNo BanaBa directement dans les maquettes pédagogiques."
+          ],
+          listItems: [
+            "HETIC (Montreuil) — Interventions & jurys IA générative.",
+            "Ynov Campus (Paris / Nanterre) — Modules prompt engineering & hackathons.",
+            "IÉSEG School of Management — Depuis 2019 : sprint design M1, cours IA & marketing digital avancés, mentorat mémoires (100 % réussite) et incubateur.",
+            "CFA Itis (Évry) — Parcours IA pour apprentis en informatique.",
+            "Euridis Business School — 2 jours pour diriger l'IA, mesurer AWA/tokens et concevoir un agent harness commercial.",
+            "ISCOM (Paris) — Direction artistique & création éditoriale IA.",
+            "Paris École de Management — Cas pratiques & Business Game NoNo BanaBa."
+          ]
+        }
+      ],
+      internalLinks: [
+        { href: "/partenaires/ecoles/euridis/", label: "Fiche Euridis : 2 jours pour diriger l'IA" },
+        { href: "/partenaires/ecoles/ieseg/", label: "Fiche IÉSEG : cours, mentorat & agent SODA" },
+        { href: "/partenaires/", label: "Retour au hub Nos Partenaires" },
+        { href: "/ressources/etudes/generation-ia-2026/", label: "Lire l'étude Génération IA 2024 → 2026" }
+      ]
+    }
+  },
+  {
+    path: '/partenaires/ecoles/ieseg',
+    title: "IÉSEG x Alkymya : Innovation, Mentorat Mémoires & IA | Partenaires",
+    description: "Intervenant en Master à l'IÉSEG depuis 2019 : sprint design M1, IA et marketing digital avancés, mentorat mémoires (100 % réussite), incubateur et agent SODA.",
+    h1: "IÉSEG : innover, accompagner, mener des étudiants jusqu'au mémoire",
+    ogImage: "https://alkymya.co/og-partenaires.jpg",
+    lastmod: "2026-11-20",
+    schemaType: "WebPage",
+    content: {
+      leadParagraph: "Intervenant dans le Master de l'IÉSEG depuis 2019, Cyril Garnier y enseigne l'innovation et l'IA, accompagne chaque année 6 à 10 étudiants dans leurs projets de création d'entreprise et leurs mémoires de consulting (100 % de réussite) avec l'agent SODA, et est mentor à l'incubateur de l'IÉSEG.",
+      sections: [
+        {
+          h2: "Quatre façons d'intervenir à l'IÉSEG",
+          paragraphs: [
+            "Sprint design de rentrée des M1, cours d'innovation et d'IA & marketing digital avancés, mentorat annuel de 6 à 10 mémoires par promotion (avec deux visites en entreprise par an et des sujets comme le commerce agentique) et accompagnement de porteurs de projets à l'incubateur."
+          ]
+        },
+        {
+          h2: "Observatoire du shadow IA et agent de recherche SODA",
+          paragraphs: [
+            "La moitié des étudiants accompagnés travaillent sur le déploiement de l'IA dans leur propre entreprise, offrant un poste d'observation concret sur la conduite du changement et le shadow IA. L'agent SODA aide les étudiants à structurer leur étude et à challenger leurs hypothèses tout en leur laissant la direction et la signature du mémoire."
+          ]
+        }
+      ],
+      internalLinks: [
+        { href: "/partenaires/ecoles/", label: "Retour aux 7 Partenaires École" },
+        { href: "/alchimistes/cyril-garnier/", label: "Profil de Cyril Garnier, intervenant & mentor" },
+        { href: "/ressources/analyseurs/analyseur-de-memoire/", label: "Tester l'Analyseur de mémoire gratuit" },
+        { href: "/partenaires/ecoles/euridis/", label: "Voir aussi la fiche Euridis Business School" }
+      ]
+    }
+  },
+  {
+    path: '/partenaires/ecoles/euridis',
+    title: "Euridis Business School x Alkymya : Diriger l'IA & Agent Harness",
+    description: "Deux journées IA à Euridis (B3 & Mastère) : ~80 % de finalisation du TP, mise en ligne d'un site le Jour 1, mesure AWA et harnais d'agent commercial Claude/Gemini le Jour 2.",
+    h1: "Euridis : deux journées pour apprendre à diriger l'IA, puis à en mesurer la valeur",
+    ogImage: "https://alkymya.co/og-partenaires.jpg",
+    lastmod: "2026-11-20",
+    schemaType: "WebPage",
+    content: {
+      leadParagraph: "À Euridis Business School, les étudiants de B3 et de Mastère mettent l'IA au travail en deux journées autour d'une règle — l'IA exécute, vous dirigez — et d'une idée centrale : le modèle est interchangeable, le harnais ne l'est pas (~80 % de finalisation TP, y compris sur tablette ou smartphone).",
+      sections: [
+        {
+          h2: "Jour 1 : de l'observation à un site en ligne",
+          paragraphs: [
+            "Le matin : jeu de cartes Capital IA, recherche sourcée sur son voisin et son entreprise avec Perplexity et Deep Research, analyse documentaire sans inventer via NotebookLM (et podcast audio), compréhension des modèles de langage (tokens, embeddings, attention, RAG) et pratique créative avec ChatGPT, Claude, Gemini et Canva IA.",
+            "L'après-midi : chaque étudiant choisit un sujet (portfolio professionnel, passion ou « moi dans dix ans »), rédige un guide de style, met son site en ligne et le défend lors d'une battle de pitchs de deux minutes."
+          ]
+        },
+        {
+          h2: "Jour 2 : mode agence, mesure AWA et harnais d'agent commercial",
+          paragraphs: [
+            "Les étudiants deviennent une agence avec l'intervenant comme client : quiz comparatif Google vs assistants, enquête sur un site (sans IA, puis AI Overviews et navigateurs IA), mesure du coût en tokens et conversion Markdown avec AWA Cloud, conception sans modèle fourni du harnais d'un agent commercial (instructions, outils, mémoire, boucle, garde-fous) avec Claude ou Gemini et note de synthèse présentée en fin de journée."
+          ]
+        }
+      ],
+      internalLinks: [
+        { href: "/partenaires/ecoles/", label: "Retour aux 7 Partenaires École" },
+        { href: "/alchimistes/cyril-garnier/", label: "Cyril Garnier, concepteur de la formation" },
+        { href: "/partenaires/outils/awa-cloud/", label: "Découvrir AWA Cloud (mesure Markdown & tokens)" },
+        { href: "/ressources/etudes/generation-ia-2026/", label: "Étude Génération IA 2024 → 2026" }
+      ]
+    }
+  },
+  {
+    path: '/partenaires/insertion',
+    title: "Partenaires Insertion & Alternance IA | Alkymya",
+    description: "Objectif Alternance et Alkymya : coaching emploi, recrutement d'alternants en TPE/PME et Analyseur de CV IA gratuit en production.",
+    h1: "Partenaires Insertion & Alternance : relier IA pratique et accès à l’emploi",
+    ogImage: "https://alkymya.co/og-partenaires.jpg",
+    lastmod: "2026-11-20",
+    schemaType: "CollectionPage",
+    content: {
+      leadParagraph: "Avec Objectif Alternance, fondé par Kendra Martine (Alchimiste associée), nous associons coaching humain exigeant et outillage IA gratuit pour accélérer l'insertion professionnelle en TPE et PME.",
+      sections: [
+        {
+          h2: "Une passerelle directe entre Analyseur de CV et coaching emploi",
+          paragraphs: [
+            "L'Analyseur de CV gratuit (analysercvpro.alkymya.co) prépare le diagnostic d'adéquation face à une offre, prolongé par l'accompagnement humain d'Objectif Alternance."
+          ]
+        }
+      ],
+      internalLinks: [
+        { href: "/partenaires/insertion/objectif-alternance/", label: "Fiche partenaire Objectif Alternance" },
+        { href: "/ressources/analyseurs/analyseur-de-cv/", label: "Tester l'Analyseur de CV gratuit" },
+        { href: "/alchimistes/kendra-martine/", label: "Profil de Kendra Martine" }
+      ]
+    }
+  },
+  {
+    path: '/partenaires/insertion/objectif-alternance',
+    title: "Objectif Alternance x Alkymya : Insertion & IA | Partenaires",
+    description: "Partenariat Objectif Alternance (Kendra Martine) et Alkymya : coaching emploi TPE/PME, alternance et Analyseur de CV IA gratuit en production.",
+    h1: "Objectif Alternance : relier l’IA pratique et le coaching humain vers l’emploi",
+    ogImage: "https://alkymya.co/og-partenaires.jpg",
+    lastmod: "2026-11-20",
+    schemaType: "WebPage",
+    content: {
+      leadParagraph: "Fondé par Kendra Martine, Alchimiste associée d'Alkymya, Objectif Alternance accompagne les TPE/PME dans leur recrutement d'alternants et prépare les candidats avec des outils concrets.",
+      sections: [
+        {
+          h2: "Actions conjointes & impact pour les candidats et TPE/PME",
+          paragraphs: [
+            "L'alliance réunit l'Analyseur de CV gratuit en ligne (analysercvpro.alkymya.co) et le coaching individuel fondé sur 7 ans d'expérience marketing en PME et d'enseignement."
+          ]
+        }
+      ],
+      internalLinks: [
+        { href: "/partenaires/insertion/", label: "Retour au pôle Insertion & Alternance" },
+        { href: "/ressources/analyseurs/analyseur-de-cv/", label: "Tester l'Analyseur de CV gratuit" },
+        { href: "/alchimistes/kendra-martine/", label: "Fiche de Kendra Martine" }
+      ]
+    }
+  },
+  {
+    path: '/partenaires/formations-certifiees',
+    title: "Formations IA Certifiées Qualiopi & OPCO via INATEC | Alkymya",
+    description: "Comment financer votre formation IA par votre OPCO grâce au portage Qualiopi assuré par notre partenaire INATEC (NDA 11771056077).",
+    h1: "Formations Certifiées & Portage OPCO : le partenariat Alkymya x INATEC",
+    ogImage: "https://alkymya.co/og-partenaires.jpg",
+    lastmod: "2026-11-20",
+    schemaType: "CollectionPage",
+    content: {
+      leadParagraph: "Alkymya (marque de CYRIL GARNIER CONSULTING) n'est pas un organisme de formation certifié Qualiopi en nom propre. Pour financer vos formations IA par les OPCO jusqu'à 100 %, nous collaborons avec INATEC (certifié Qualiopi, NDA 11771056077).",
+      sections: [
+        {
+          h2: "Séparation claire entre studio opérationnel et portage Qualiopi",
+          paragraphs: [
+            "INATEC établit les conventions de formation, assure la conformité administrative Qualiopi et gère les dossiers OPCO ; Alkymya conçoit et anime les ateliers IA pratiques sur le terrain."
+          ]
+        }
+      ],
+      internalLinks: [
+        { href: "/partenaires/formations-certifiees/inatec/", label: "Fiche complète INATEC x Alkymya (5 vidéos)" },
+        { href: "/ateliers/", label: "Voir les programmes éligibles OPCO" },
+        { href: "/contact/", label: "Monter un dossier OPCO" }
+      ]
+    }
+  },
+  {
+    path: '/partenaires/formations-certifiees/inatec',
+    title: "Alkymya x INATEC : Portage Qualiopi & OPCO | Partenaires",
+    description: "Partenariat Alkymya x INATEC (NDA 11771056077, certifié Qualiopi) : 5 capsules vidéo et financement OPCO jusqu’à 100 % pour vos formations IA en entreprise.",
+    h1: "INATEC x Alkymya : portage Qualiopi et formations IA finançables OPCO",
+    ogImage: "https://alkymya.co/og-partenaires.jpg",
+    lastmod: "2026-11-20",
+    schemaType: "WebPage",
+    content: {
+      leadParagraph: "INATEC est l'organisme de formation et CFA partenaire certifié Qualiopi (certification ICPF, NDA 11771056077) permettant le financement OPCO jusqu'à 100 % des formations IA animées par Alkymya.",
+      sections: [
+        {
+          h2: "5 capsules vidéo Alkymya x INATEC & portage Formation Core IA (14 h)",
+          paragraphs: [
+            "Retrouvez sur cette fiche les cinq capsules vidéo réalisées conjointement (Partenariat d'Avenir, Efficacité Augmentée, Synergie Créative, Le Futur en Marche, Performance Digitale) ainsi que les modalités de montage OPCO."
+          ]
+        }
+      ],
+      internalLinks: [
+        { href: "/partenaires/formations-certifiees/", label: "Retour au pôle Formations Certifiées" },
+        { href: "/ateliers/", label: "Consulter le catalogue des ateliers" },
+        { href: "/contact/", label: "Demander un devis avec portage OPCO INATEC" }
+      ]
+    }
+  },
+  {
+    path: '/partenaires/lieux',
+    title: "Lieux & Coworking Partenaires | Alkymya",
+    description: "Morning Coworking à Paris et DG Services à Torcy (77200) : découvrez les espaces qui accueillent les ateliers IA et sessions d’Alkymya.",
+    h1: "Lieux & Coworking partenaires : où se déroulent les ateliers Alkymya",
+    ogImage: "https://alkymya.co/og-partenaires.jpg",
+    lastmod: "2026-11-20",
+    schemaType: "CollectionPage",
+    content: {
+      leadParagraph: "Nos ateliers IA pratiques, bootcamps New Business MVP et rencontres d'entrepreneurs s'appuient sur des espaces physiques à Paris (Morning) et en Seine-et-Marne (DG Services Torcy).",
+      sections: [
+        {
+          h2: "Couverture Paris & Marne-la-Vallée (Torcy 77200)",
+          paragraphs: [
+            "Morning accueille nos sessions en cœur de Paris tandis que DG Services Torcy (22 rue Pierre-Mendès-France, 77200 Torcy) offre des salles au pied du RER A pour le tissu économique du 77."
+          ]
+        }
+      ],
+      internalLinks: [
+        { href: "/partenaires/", label: "Retour au hub Nos Partenaires" },
+        { href: "/ateliers/", label: "Réserver un atelier en présentiel" },
+        { href: "/contact/", label: "Organiser une session dans vos locaux" }
+      ]
+    }
+  },
+  {
+    path: '/partenaires/entreprises',
+    title: "Entreprises & Fondations Partenaires | Alkymya",
+    description: "SNCF, Fondation GRDF, SEALESTER, Azimuto, AvecLouise, Esperanta Services, Fondation Flamenca et Ressourcerie Gaillarde : nos partenaires.",
+    h1: "Entreprises, fondations et collectifs partenaires d’Alkymya",
+    ogImage: "https://alkymya.co/og-partenaires.jpg",
+    lastmod: "2026-11-20",
+    schemaType: "CollectionPage",
+    content: {
+      leadParagraph: "Huit organisations, fondations et entreprises innovantes collaborent avec Alkymya sur l'entrepreneuriat, la santé, les services à la personne, la culture et l'économie circulaire.",
+      sections: [
+        {
+          h2: "Huit organisations reliées avec liens vérifiés",
+          paragraphs: [
+            "Chaque entreprise ou fondation est directement liée vers son site officiel, et deux d'entre elles (AvecLouise et Esperanta Services) sont portées au quotidien par des alchimistes associées d'Alkymya."
+          ],
+          listItems: [
+            "SNCF · Fondation GRDF · SEALESTER · Azimuto",
+            "AvecLouise (Véronique Landereau) · Esperanta Services (Mariana Didier Laurent)",
+            "La fondation Flamenca · La Ressourcerie Gaillarde"
+          ]
+        }
+      ],
+      internalLinks: [
+        { href: "/partenaires/", label: "Retour au hub Nos Partenaires" },
+        { href: "/alchimistes/veronique-landereau/", label: "Profil de Véronique Landereau" },
+        { href: "/alchimistes/mariana-didier-laurent/", label: "Profil de Mariana Didier Laurent" }
+      ]
+    }
+  },
+  {
+    path: '/partenaires/outils',
+    title: "Outils & Partenaires Technologiques Souverains | Alkymya",
+    description: "AWACLOUD (conversion documents et RAG local) et Onecub (Data Spaces souverains par Olivier Dion) : les technologies partenaires d’Alkymya.",
+    h1: "Outils & Partenaires technologiques : les briques souveraines recommandées par Alkymya",
+    ogImage: "https://alkymya.co/og-partenaires.jpg",
+    lastmod: "2026-11-20",
+    schemaType: "CollectionPage",
+    content: {
+      leadParagraph: "Nous ne recommandons que des solutions technologiques françaises ou européennes éprouvées dans nos propres pipelines RAG, ateliers et conseils en gouvernance des données.",
+      sections: [
+        {
+          h2: "AWACLOUD & Onecub : souveraineté documentaire et Data Spaces",
+          paragraphs: [
+            "AWACLOUD assure la lecture et conversion locale de documents PDF/Office en Markdown structuré sans envoi cloud ; Onecub, fondée par l'alchimiste Olivier Dion, structure les Data Spaces souverains conformes au RGPD."
+          ]
+        }
+      ],
+      internalLinks: [
+        { href: "/partenaires/outils/awa-cloud/", label: "Fiche partenaire AWACLOUD" },
+        { href: "/partenaires/outils/onecub/", label: "Fiche partenaire Onecub" },
+        { href: "/partenaires/", label: "Retour au hub Nos Partenaires" }
+      ]
+    }
+  },
+  {
+    path: '/partenaires/outils/awa-cloud',
+    title: "AWACLOUD : Documents & RAG Local | Partenaires Alkymya",
+    description: "Partenaire technologique AWACLOUD : bibliothèques et logiciels français pour convertir PDF, Word et Excel en Markdown localement sans fuite de données.",
+    h1: "AWACLOUD : vos documents, lisibles par l'IA, sans quitter votre ordinateur",
+    ogImage: "https://alkymya.co/og-ressources.jpg",
+    lastmod: "2026-11-20",
+    schemaType: "WebPage",
+    content: {
+      leadParagraph: "Éditeur français fondé en 2016 publiant des bibliothèques et applications pour lire, convertir, signer et vérifier vos fichiers Word, Excel, PowerPoint, PDF et OpenDocument localement, sans envoyer aucun fichier sur le cloud.",
+      sections: [
+        {
+          h2: "Applications hors ligne et test RAG local (< 1 seconde)",
+          paragraphs: [
+            "Applications gratuites dans le navigateur (AWA Viewer, AWA Notepad, AWA Writer bêta), socle AwaForge et bibliothèques développeurs AWA Convert, AWA PDF et AWA Office.",
+            "Mesure interne sur un rapport PDF de 39 pages (773 Ko) : AWA Convert produit 86 187 caractères de Markdown structuré en 309 blocs en moins d'une seconde en local, réduisant le contexte envoyé au LLM à 1 000–3 000 tokens utiles au lieu de 25 000."
+          ]
+        }
+      ],
+      internalLinks: [
+        { href: "/partenaires/outils/", label: "Retour au pôle Outils & Technologies" },
+        { href: "/partenaires/outils/onecub/", label: "Voir aussi Onecub (Data Spaces)" },
+        { href: "/contact/", label: "Discuter d'un pipeline RAG souverain" }
+      ]
+    }
+  },
+  {
+    path: '/partenaires/outils/onecub',
+    title: "Onecub x Alkymya : Data Spaces Souverains & RGPD | Partenaires",
+    description: "Onecub, fondé par Olivier Dion (Alchimiste Alkymya) : Data Spaces souverains, conformité RGPD, standards GAIA-X et gouvernance des données IA.",
+    h1: "Onecub : bâtir des espaces de données souverains et conformes pour l’IA européenne",
+    ogImage: "https://alkymya.co/og-partenaires.jpg",
+    lastmod: "2026-11-20",
+    schemaType: "WebPage",
+    content: {
+      leadParagraph: "Fondée par Olivier Dion (Alchimiste associé d'Alkymya), Onecub conçoit des architectures Data Spaces souveraines et des mécanismes de portabilité conformes au RGPD, au Data Act et aux standards GAIA-X.",
+      sections: [
+        {
+          h2: "Gouvernance des données, RGPD et souveraineté européenne",
+          paragraphs: [
+            "Intervenant régulier auprès de la Commission Européenne, de GAIA-X et de MyData, Olivier Dion apporte à l'écosystème Alkymya un éclairage de terrain sur la donnée de confiance en mobilité, énergie, courrier et agriculture."
+          ]
+        }
+      ],
+      internalLinks: [
+        { href: "/partenaires/outils/", label: "Retour au pôle Outils & Technologies" },
+        { href: "/alchimistes/olivier-dion/", label: "Profil complet d'Olivier Dion" },
+        { href: "/partenaires/outils/awa-cloud/", label: "Voir aussi AWACLOUD" }
       ]
     }
   },

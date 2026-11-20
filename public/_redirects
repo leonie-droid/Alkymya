@@ -13,6 +13,20 @@ http://alkymya.co/*        https://alkymya.co/:splat   301!
 /cohorte-fondatrice        /newbusiness/               301!
 /cohorte                   /newbusiness/               301!
 
+# Redirections 301 structure Partenaires et Ressources (novembre 2026)
+/ressources/partenaires                      /partenaires/outils/                      301!
+/ressources/partenaires/                     /partenaires/outils/                      301!
+/ressources/partenaires/awa-cloud            /partenaires/outils/awa-cloud/            301!
+/ressources/partenaires/awa-cloud/           /partenaires/outils/awa-cloud/            301!
+/ressources/nos-etudes                       /ressources/etudes/                       301!
+/ressources/nos-etudes/                      /ressources/etudes/                       301!
+/ressources/nos-etudes/interview-gemini-4    /ressources/etudes/interview-gemini-4/    301!
+/ressources/nos-etudes/interview-gemini-4/   /ressources/etudes/interview-gemini-4/    301!
+/ressources/nos-analyseurs                   /ressources/analyseurs/                   301!
+/ressources/nos-analyseurs/                  /ressources/analyseurs/                   301!
+/ressources/alkymya-x-inatec                 /partenaires/formations-certifiees/inatec/ 301!
+/ressources/alkymya-x-inatec/                /partenaires/formations-certifiees/inatec/ 301!
+
 # API proxy vers la fonction serverless Netlify
 /api/*                     /.netlify/functions/server/:splat    200
 

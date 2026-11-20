@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Navigate, useLocation } from 'react-router-dom';
 import { useEffect } from 'react';
 import Header from './components/Header';
 import Footer from './components/Footer';
@@ -6,11 +6,18 @@ import Home from './pages/Home';
 import Oeuvres from './pages/Oeuvres';
 import Ateliers from './pages/Ateliers';
 import Ressources from './pages/Ressources';
-import RessourcesPartenaires from './pages/RessourcesPartenaires';
+import EtudesHub from './pages/EtudesHub';
+import EtudeDetail from './pages/EtudeDetail';
+import EtudeGemini4 from './pages/EtudeGemini4';
+import AnalyseursHub from './pages/AnalyseursHub';
+import AnalyseurDetail from './pages/AnalyseurDetail';
+import BusinessGame from './pages/BusinessGame';
 import GenerateurIA from './pages/GenerateurIA';
 import Alchimistes from './pages/Alchimistes';
 import AlchimisteDetail from './pages/AlchimisteDetail';
 import Partenaires from './pages/Partenaires';
+import PartenairesSubHub from './pages/PartenairesSubHub';
+import PartenaireDetail from './pages/PartenaireDetail';
 import Contact from './pages/Contact';
 import FAQ from './pages/FAQ';
 import JoinUs from './pages/JoinUs';
@@ -48,15 +55,29 @@ export default function App() {
              <Route path="/alchimistes/:id" element={<AlchimisteDetail />} />
              <Route path="/ateliers" element={<Ateliers />} />
              <Route path="/ressources" element={<Ressources />} />
-             <Route path="/ressources/partenaires" element={<RessourcesPartenaires />} />
-             <Route path="/ressources/partenaires/:partnerSlug" element={<RessourcesPartenaires />} />
-             <Route path="/ressources/:categorySlug" element={<Ressources />} />
+             <Route path="/ressources/etudes" element={<EtudesHub />} />
+             <Route path="/ressources/etudes/interview-gemini-4" element={<EtudeGemini4 />} />
+             <Route path="/ressources/etudes/:studySlug" element={<EtudeDetail />} />
+             <Route path="/ressources/analyseurs" element={<AnalyseursHub />} />
+             <Route path="/ressources/analyseurs/:toolSlug" element={<AnalyseurDetail />} />
+             <Route path="/ressources/business-game" element={<BusinessGame />} />
+             {/* Redirections client des anciennes URLs Ressources */}
+             <Route path="/ressources/partenaires" element={<Navigate to="/partenaires/outils/" replace />} />
+             <Route path="/ressources/partenaires/awa-cloud" element={<Navigate to="/partenaires/outils/awa-cloud/" replace />} />
+             <Route path="/ressources/nos-etudes" element={<Navigate to="/ressources/etudes/" replace />} />
+             <Route path="/ressources/nos-etudes/interview-gemini-4" element={<Navigate to="/ressources/etudes/interview-gemini-4/" replace />} />
+             <Route path="/ressources/nos-analyseurs" element={<Navigate to="/ressources/analyseurs/" replace />} />
+             <Route path="/ressources/alkymya-x-inatec" element={<Navigate to="/partenaires/formations-certifiees/inatec/" replace />} />
+             <Route path="/ressources/:categorySlug" element={<Navigate to="/ressources/" replace />} />
+             {/* Architecture Partenaires */}
              <Route path="/partenaires" element={<Partenaires />} />
+             <Route path="/partenaires/:categorySlug" element={<PartenairesSubHub />} />
+             <Route path="/partenaires/:categorySlug/:partnerSlug" element={<PartenaireDetail />} />
              <Route path="/contact" element={<Contact />} />
              <Route path="/faq" element={<FAQ />} />
              <Route path="/rejoindre" element={<JoinUs />} />
              <Route path="/newbusiness" element={<NewBusiness />} />
-             <Route path="/new-business" element={<NewBusiness />} />
+             <Route path="/new-business" element={<Navigate to="/newbusiness/" replace />} />
              <Route path="/mentions-legales" element={<MentionsLegales />} />
            </Routes>
          </main>
