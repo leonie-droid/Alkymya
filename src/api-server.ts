@@ -196,6 +196,16 @@ export function createApiApp(): Express {
   const app = express();
   app.use(express.json());
 
+  // HTTP X-Robots-Tag protection for APIs and internal mockup assets
+  app.use('/api', (_req, res, next) => {
+    res.setHeader('X-Robots-Tag', 'noindex, nofollow');
+    next();
+  });
+  app.use('/assets/aistudio', (_req, res, next) => {
+    res.setHeader('X-Robots-Tag', 'noindex, nofollow');
+    next();
+  });
+
   // Initialize Resend lazily
   let resend: Resend | null = null;
   const getResend = () => {
@@ -352,6 +362,10 @@ export function createApiApp(): Express {
           return res.redirect(301, `/${cleanPath}/${querySuffix}`);
         }
 
+        const canonicalUrl = cleanPath === '' ? 'https://alkymya.co/' : `https://alkymya.co/${cleanPath}/`;
+        res.setHeader('X-Robots-Tag', 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1');
+        res.setHeader('Link', `<${canonicalUrl}>; rel="canonical"`);
+
         const possibleFile = cleanPath === ''
           ? path.join(process.cwd(), 'dist', 'index.html')
           : path.join(process.cwd(), 'dist', cleanPath, 'index.html');
@@ -363,8 +377,20 @@ export function createApiApp(): Express {
           userAgent.includes('crawler') ||
           userAgent.includes('spider') ||
           userAgent.includes('inspectiontool') ||
+          userAgent.includes('googleother') ||
+          userAgent.includes('google-extended') ||
+          userAgent.includes('anthropic-ai') ||
+          userAgent.includes('chatgpt-user') ||
           userAgent.includes('facebookexternalhit') ||
           userAgent.includes('whatsapp') ||
+          userAgent.includes('slack') ||
+          userAgent.includes('discord') ||
+          userAgent.includes('telegram') ||
+          userAgent.includes('duckduckgo') ||
+          userAgent.includes('yandex') ||
+          userAgent.includes('lighthouse') ||
+          userAgent.includes('headlesschrome') ||
+          userAgent.includes('screaming frog') ||
           userAgent.includes('slurp') ||
           userAgent.includes('wget') ||
           req.query.prerender === 'true';
@@ -374,6 +400,7 @@ export function createApiApp(): Express {
         }
       } else {
         // Unknown route -> return true 404 Not Found (fixes soft 404)
+        res.setHeader('X-Robots-Tag', 'noindex, follow');
         const notFoundFile = path.join(process.cwd(), 'dist', '404.html');
         const fallback404 = path.join(process.cwd(), 'public', '404.html');
         const fileToSend = fs.existsSync(notFoundFile) ? notFoundFile : fallback404;

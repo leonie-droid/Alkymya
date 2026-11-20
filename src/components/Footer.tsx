@@ -185,11 +185,32 @@ export default function Footer() {
         <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-[11px] uppercase tracking-[0.2em] text-primary-foreground/50 font-bold">
           <div className="flex flex-wrap items-center justify-center md:justify-start gap-4 sm:gap-6">
             <p>© 2026 Alkymya.co — CYRIL GARNIER CONSULTING. Tous droits réservés.</p>
-            <Link to="/mentions-legales/" className="hover:text-accent transition-colors">
-              Mentions Légales
+            <Link to="/ateliers/" className="hover:text-accent transition-colors">
+              Ateliers
+            </Link>
+            <Link to="/ressources/etudes/" className="hover:text-accent transition-colors">
+              Études IA
+            </Link>
+            <Link to="/ressources/analyseurs/" className="hover:text-accent transition-colors">
+              Analyseurs
+            </Link>
+            <Link to="/partenaires/" className="hover:text-accent transition-colors">
+              Partenaires
+            </Link>
+            <Link to="/alchimistes/" className="hover:text-accent transition-colors">
+              Alchimistes
             </Link>
             <Link to="/newbusiness/" className="hover:text-accent transition-colors">
               New business
+            </Link>
+            <Link to="/faq/" className="hover:text-accent transition-colors">
+              FAQ
+            </Link>
+            <Link to="/contact/" className="hover:text-accent transition-colors">
+              Contact
+            </Link>
+            <Link to="/mentions-legales/" className="hover:text-accent transition-colors">
+              Mentions Légales
             </Link>
             <a
               href="https://cyrilgarnier.fr/"

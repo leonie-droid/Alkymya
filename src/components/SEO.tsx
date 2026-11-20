@@ -21,6 +21,7 @@ interface SEOProps {
     | 'Article';
   faqData?: Array<{ question: string; answer: string }>;
   structuredData?: Record<string, any>;
+  noIndex?: boolean;
 }
 
 function upsertMeta(attr: 'name' | 'property', key: string, content: string) {
@@ -54,8 +55,16 @@ export const SEO: React.FC<SEOProps> = ({
   type = 'WebPage',
   faqData,
   structuredData,
+  noIndex = false,
 }) => {
   useEffect(() => {
+    upsertMeta(
+      'name',
+      'robots',
+      noIndex
+        ? 'noindex, follow'
+        : 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1'
+    );
     if (title) {
       document.title = title;
       upsertMeta('property', 'og:title', title);
@@ -88,7 +97,7 @@ export const SEO: React.FC<SEOProps> = ({
       upsertMeta('property', 'og:url', fullUrl);
       upsertMeta('name', 'twitter:url', fullUrl);
     }
-  }, [title, description, keywords, canonicalPath, ogImage]);
+  }, [title, description, keywords, canonicalPath, ogImage, noIndex]);
 
   const localBusinessSchema = {
     "@context": "https://schema.org",

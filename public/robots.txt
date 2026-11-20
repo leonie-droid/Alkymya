@@ -2,6 +2,27 @@
 User-agent: *
 Allow: /
 Disallow: /api/
+Disallow: /assets/aistudio/
+
+User-agent: Googlebot
+Allow: /
+Disallow: /api/
+Disallow: /assets/aistudio/
+
+User-agent: GoogleOther
+Allow: /
+Disallow: /api/
+Disallow: /assets/aistudio/
+
+User-agent: Bingbot
+Allow: /
+Disallow: /api/
+Disallow: /assets/aistudio/
+
+User-agent: Applebot
+Allow: /
+Disallow: /api/
+Disallow: /assets/aistudio/
 
 # AI Search Engines & LLM Context (GEO)
 # Standards: https://llmstxt.org

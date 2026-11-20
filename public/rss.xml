@@ -5,8 +5,56 @@
     <link>https://alkymya.co/</link>
     <description>Actualités, réalisations concrètes en intelligence artificielle, médias éditoriaux (TheLittle77, TheLittle83, TheLittle75) et formations professionnelles par Alkymya, finançables OPCO via nos partenaires certifiés Qualiopi.</description>
     <language>fr-FR</language>
-    <lastBuildDate>Mon, 09 Nov 2026 09:00:00 +0100</lastBuildDate>
+    <lastBuildDate>Fri, 20 Nov 2026 14:30:00 +0100</lastBuildDate>
     <atom:link href="https://alkymya.co/rss.xml" rel="self" type="application/rss+xml"/>
+
+    <item>
+      <title>Partenariat IÉSEG School of Management : cours IA, mentorat &amp; agent SODA</title>
+      <link>https://alkymya.co/partenaires/ecoles/ieseg/</link>
+      <guid isPermaLink="true">https://alkymya.co/partenaires/ecoles/ieseg/</guid>
+      <pubDate>Fri, 20 Nov 2026 13:00:00 +0100</pubDate>
+      <description><![CDATA[Intervenant en Master à l'IÉSEG depuis 2019 : sprint design M1, cours d'IA et marketing digital avancés, mentorat de mémoires (100 % de réussite), shadow IA en entreprise et agent de recherche SODA.]]></description>
+    </item>
+
+    <item>
+      <title>Partenariat Euridis Business School : 2 jours pour diriger l'IA et mesurer la valeur</title>
+      <link>https://alkymya.co/partenaires/ecoles/euridis/</link>
+      <guid isPermaLink="true">https://alkymya.co/partenaires/ecoles/euridis/</guid>
+      <pubDate>Fri, 20 Nov 2026 11:30:00 +0100</pubDate>
+      <description><![CDATA[Retour sur le dispositif B3 &amp; Mastère à Euridis Business School (~80 % de finalisation TP) : mise en ligne de site le Jour 1, mesure Markdown/tokens avec AWA Cloud et harnais d'agent commercial Claude/Gemini le Jour 2.]]></description>
+    </item>
+
+    <item>
+      <title>Observatoire Génération IA 2024–2026 : 1 082 étudiants interrogés sur 3 vagues</title>
+      <link>https://alkymya.co/ressources/etudes/generation-ia-2026/</link>
+      <guid isPermaLink="true">https://alkymya.co/ressources/etudes/generation-ia-2026/</guid>
+      <pubDate>Thu, 19 Nov 2026 15:00:00 +0100</pubDate>
+      <description><![CDATA[Publication intégrale des tableaux et chiffres de l'Observatoire Génération IA 2024–2026 (n = 1 082) : 98,1 % d'adoption, 52,3 % de split-stack et 21 % d'ambivalence productive.]]></description>
+    </item>
+
+    <item>
+      <title>Interview Gemini 4 — Retour d'expérience d'un enseignant en IA (V9)</title>
+      <link>https://alkymya.co/ressources/etudes/interview-gemini-4/</link>
+      <guid isPermaLink="true">https://alkymya.co/ressources/etudes/interview-gemini-4/</guid>
+      <pubDate>Wed, 18 Nov 2026 10:00:00 +0100</pubDate>
+      <description><![CDATA[Analyse complète et données de performance V9 sur l'écosystème Gemini 4, avec tableaux comparatifs et téléchargement du document PDF intégral.]]></description>
+    </item>
+
+    <item>
+      <title>Architecture Partenaires &amp; Briques Souveraines : INATEC, Objectif Alternance, AWACLOUD et Onecub</title>
+      <link>https://alkymya.co/partenaires/</link>
+      <guid isPermaLink="true">https://alkymya.co/partenaires/</guid>
+      <pubDate>Tue, 17 Nov 2026 10:00:00 +0100</pubDate>
+      <description><![CDATA[Six pôles structurés reliant les 7 écoles partenaires, le portage Qualiopi/OPCO INATEC (NDA 11771056077), Objectif Alternance, les espaces de travail, entreprises et outils souverains AWACLOUD et Onecub.]]></description>
+    </item>
+
+    <item>
+      <title>Analyseurs IA gratuits : Photo, CV ATS et Mémoire académique</title>
+      <link>https://alkymya.co/ressources/analyseurs/</link>
+      <guid isPermaLink="true">https://alkymya.co/ressources/analyseurs/</guid>
+      <pubDate>Mon, 16 Nov 2026 09:00:00 +0100</pubDate>
+      <description><![CDATA[Trois outils gratuits en accès direct : Analyseur de Photo (métadonnées EXIF), Analyseur de CV (avec Objectif Alternance) et Analyseur de Mémoire.]]></description>
+    </item>
     
     <item>
       <title>Refonte de la page Œuvres : médias de territoire, agents IA et création</title>
@@ -22,14 +70,6 @@
       <guid isPermaLink="true">https://alkymya.co/oeuvres/#thelittle83</guid>
       <pubDate>Sun, 08 Nov 2026 10:00:00 +0100</pubDate>
       <description><![CDATA[Mise en ligne de TheLittle83 dans le Var : 132 pages en deux langues, 101 967 mots et 144 photographies, indexé par les moteurs d'IA dès son premier jour.]]></description>
-    </item>
-
-    <item>
-      <title>Première newsletter TheLittle77 envoyée avec succès via notre Agent IA</title>
-      <link>https://alkymya.co/oeuvres/#agents-ia</link>
-      <guid isPermaLink="true">https://alkymya.co/oeuvres/#newsletter-thelittle77</guid>
-      <pubDate>Thu, 05 Nov 2026 14:00:00 +0100</pubDate>
-      <description><![CDATA[L'Agent Newsletter autonome d'Alkymya a assuré son premier cycle complet d'envoi et de tracking le 5 novembre 2026 pour TheLittle77.]]></description>
     </item>
 
     <item>
