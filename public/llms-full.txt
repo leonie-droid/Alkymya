@@ -127,7 +127,7 @@ Alkymya propose des formats modulaires adaptés aux écoles, PME, ETI et grands 
 - `/partenaires/ecoles/` + `/partenaires/ecoles/euridis/` + `/partenaires/ecoles/ieseg/` : HETIC, Ynov Campus, IÉSEG School of Management (depuis 2019 : sprint M1, IA & marketing digital avancés, mentorat mémoires 100 % réussite, SODA), CFA Itis, Euridis Business School (2 jours B3/Mastère, site en ligne & agent harness Claude/Gemini), ISCOM, Paris École de Management
 - `/partenaires/insertion/` + `/partenaires/insertion/objectif-alternance/` : Objectif Alternance
 - `/partenaires/formations-certifiees/` + `/partenaires/formations-certifiees/inatec/` : portage Qualiopi INATEC (NDA 11771056077) & 5 capsules vidéo
-- `/partenaires/lieux/` : Morning (Paris) & DG Services Torcy (77200)
-- `/partenaires/entreprises/` : SNCF, Fondation GRDF, SEALESTER, Azimuto, AvecLouise, Esperanta Services, La fondation Flamenca, La Ressourcerie Gaillarde
+- `/partenaires/lieux/` + `/partenaires/lieux/morning/` : Morning (ateliers découverte IA gratuits à Pereire 17e et Saint-Augustin 8e) & DG Services Torcy (77200)
+- `/partenaires/entreprises/` + `/partenaires/entreprises/cmi-systemes/` + `/partenaires/entreprises/cpme-77/` : CMI Systèmes (informatique TPE/PME & centre Qualiopi cybersécurité en Seine-et-Marne), CPME 77 (Les Entrepreneurs Seine-et-Marne — matinées dirigeants IA par Alkymya et cybersécurité par CMI Systèmes), SNCF, Fondation GRDF, SEALESTER, Azimuto, AvecLouise, Esperanta Services, La fondation Flamenca, La Ressourcerie Gaillarde
 - `/partenaires/outils/` + `/partenaires/outils/awa-cloud/` + `/partenaires/outils/onecub/` : AWACLOUD (RAG local) & Onecub (Data Spaces souverains)
 

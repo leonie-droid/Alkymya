@@ -5,8 +5,32 @@
     <link>https://alkymya.co/</link>
     <description>Actualités, réalisations concrètes en intelligence artificielle, médias éditoriaux (TheLittle77, TheLittle83, TheLittle75) et formations professionnelles par Alkymya, finançables OPCO via nos partenaires certifiés Qualiopi.</description>
     <language>fr-FR</language>
-    <lastBuildDate>Fri, 20 Nov 2026 14:30:00 +0100</lastBuildDate>
+    <lastBuildDate>Mon, 23 Nov 2026 12:00:00 +0100</lastBuildDate>
     <atom:link href="https://alkymya.co/rss.xml" rel="self" type="application/rss+xml"/>
+
+    <item>
+      <title>Partenariat CMI Systèmes : informatique TPE/PME, cybersécurité Qualiopi &amp; IA en entreprise</title>
+      <link>https://alkymya.co/partenaires/entreprises/cmi-systemes/</link>
+      <guid isPermaLink="true">https://alkymya.co/partenaires/entreprises/cmi-systemes/</guid>
+      <pubDate>Mon, 23 Nov 2026 12:00:00 +0100</pubDate>
+      <description><![CDATA[Partenariat en Seine-et-Marne entre Alkymya (IA et usages) et CMI Systèmes (infrastructure informatique TPE/PME/collectivités et centre de formation certifié Qualiopi pour la cybersécurité).]]></description>
+    </item>
+
+    <item>
+      <title>Partenariat Morning : deux ateliers de découverte de l'IA à Paris (Pereire &amp; Saint-Augustin)</title>
+      <link>https://alkymya.co/partenaires/lieux/morning/</link>
+      <guid isPermaLink="true">https://alkymya.co/partenaires/lieux/morning/</guid>
+      <pubDate>Mon, 23 Nov 2026 10:00:00 +0100</pubDate>
+      <description><![CDATA[Retour sur deux ateliers gratuits de découverte de l'IA générative animés par Alkymya en 2026 pour les clients des espaces Morning Pereire (Paris 17e, 23 avril) et Morning Saint-Augustin (Paris 8e, 19 mai).]]></description>
+    </item>
+
+    <item>
+      <title>Partenariat CPME 77 : matinées dirigeants IA (Alkymya) &amp; cybersécurité (CMI Systèmes)</title>
+      <link>https://alkymya.co/partenaires/entreprises/cpme-77/</link>
+      <guid isPermaLink="true">https://alkymya.co/partenaires/entreprises/cpme-77/</guid>
+      <pubDate>Mon, 23 Nov 2026 09:00:00 +0100</pubDate>
+      <description><![CDATA[Retour sur les deux matinées organisées par Les Entrepreneurs Seine-et-Marne (CPME 77) pour les dirigeants de TPE et PME : IA au quotidien et shadow IA (Alkymya, 13 octobre) et risque cyber (CMI Systèmes, 29 octobre).]]></description>
+    </item>
 
     <item>
       <title>Partenariat IÉSEG School of Management : cours IA, mentorat &amp; agent SODA</title>

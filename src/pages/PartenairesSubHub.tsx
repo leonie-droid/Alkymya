@@ -20,6 +20,7 @@ import { cloudinaryUrl } from '../utils/cloudinary';
 export default function PartenairesSubHub() {
   const { categorySlug } = useParams<{ categorySlug: string }>();
   const meta = categorySlug ? getPartnerCategoryMeta(categorySlug) : undefined;
+  const [failedLogos, setFailedLogos] = React.useState<Record<string, boolean>>({});
 
   if (!meta) {
     return (
@@ -202,19 +203,28 @@ export default function PartenairesSubHub() {
                         : 'bg-[#f8fafc] border-[#e2e8f0]'
                     }`}
                   >
-                    <img
-                      src={
-                        partner.logo.toLowerCase().endsWith('.svg')
-                          ? partner.logo
-                          : cloudinaryUrl(partner.logo, 320)
-                      }
-                      width={96}
-                      height={56}
-                      loading="lazy"
-                      alt={`Logo ${partner.name} — partenaire Alkymya`}
-                      referrerPolicy="no-referrer"
-                      className="max-w-full max-h-full object-contain"
-                    />
+                    {failedLogos[partner.slug] ? (
+                      <span className="text-[11px] font-semibold text-[#1F4F6E] text-center leading-tight">
+                        {partner.name.split(' ')[0]}
+                      </span>
+                    ) : (
+                      <img
+                        src={
+                          partner.logo.toLowerCase().endsWith('.svg')
+                            ? partner.logo
+                            : cloudinaryUrl(partner.logo, 320)
+                        }
+                        width={96}
+                        height={56}
+                        loading="lazy"
+                        alt={`Logo ${partner.name} — partenaire Alkymya`}
+                        referrerPolicy="no-referrer"
+                        onError={() =>
+                          setFailedLogos((prev) => ({ ...prev, [partner.slug]: true }))
+                        }
+                        className="max-w-full max-h-full object-contain"
+                      />
+                    )}
                   </div>
                   <div className="min-w-0">
                     <span className="text-[11px] font-medium uppercase tracking-wider text-[#C06721] block mb-0.5">

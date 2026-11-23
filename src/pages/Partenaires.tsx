@@ -54,6 +54,24 @@ const featuredFiches = [
     summary: "Éditeur français de bibliothèques locales pour convertir PDF et Word en Markdown structuré sans fuite cloud."
   },
   {
+    name: 'CPME 77 (Les Entrepreneurs Seine-et-Marne)',
+    category: 'Entreprises & Collectifs',
+    href: '/partenaires/entreprises/cpme-77/',
+    summary: "Deux matinées dirigeants à l'automne 2026 en Seine-et-Marne : IA (Alkymya, 13 octobre) et cybersécurité (CMI Systèmes, 29 octobre)."
+  },
+  {
+    name: 'CMI Systèmes',
+    category: 'Entreprises & Cybersécurité',
+    href: '/partenaires/entreprises/cmi-systemes/',
+    summary: "Entreprise informatique de Seine-et-Marne (cybersécurité, infogérance TPE/PME et centre Qualiopi cyber), partenaire IA & cyber d'Alkymya."
+  },
+  {
+    name: 'Morning',
+    category: 'Lieux & Coworking',
+    href: '/partenaires/lieux/morning/',
+    summary: "Deux ateliers gratuits de découverte de l'IA générative en 2026 à Paris : Morning Pereire (17e, 15 places) et Morning Saint-Augustin (8e)."
+  },
+  {
     name: 'Onecub',
     category: 'Data Spaces & RGPD',
     href: '/partenaires/outils/onecub/',
@@ -74,7 +92,7 @@ export default function Partenaires() {
         name: 'Écosystème Partenaires Alkymya : Écoles, OPCO, Entreprises & Outils',
         headline: 'Les partenaires d’Alkymya : 6 pôles de collaboration IA sur le terrain',
         description:
-          "Annuaire structuré des partenaires d'Alkymya : 7 grandes écoles, Objectif Alternance, portage Qualiopi/OPCO via INATEC, lieux coworking, 8 entreprises et briques souveraines AWACLOUD & Onecub.",
+          "Annuaire structuré des partenaires d'Alkymya : 7 grandes écoles, Objectif Alternance, portage Qualiopi/OPCO via INATEC, lieux coworking (dont Morning), 10 entreprises et collectifs dont la CPME 77 et CMI Systèmes, et briques souveraines AWACLOUD & Onecub.",
         inLanguage: 'fr-FR',
         isPartOf: { '@id': 'https://alkymya.co/#website' },
         publisher: { '@id': 'https://alkymya.co/#organization' },
@@ -135,7 +153,7 @@ export default function Partenaires() {
           {/* Chiffres écosystème */}
           <div className="pt-8 border-t border-white/12 grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
             <div>
-              <div className="text-2xl sm:text-3xl font-light text-white mb-0.5">21</div>
+              <div className="text-2xl sm:text-3xl font-light text-white mb-0.5 tabular-nums">23</div>
               <div className="text-xs text-white/70 uppercase tracking-wider">Organisations liées</div>
             </div>
             <div>

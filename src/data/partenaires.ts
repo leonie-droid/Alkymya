@@ -190,8 +190,8 @@ export const partnerCategories: PartnerCategoryMeta[] = [
       }
     ],
     crossLinks: [
+      { href: '/partenaires/lieux/morning/', label: 'Fiche Morning : ateliers découverte IA à Paris' },
       { href: '/ateliers/', label: 'Réserver un atelier en présentiel' },
-      { href: '/newbusiness/', label: 'Découvrir le programme New Business MVP' },
       { href: '/contact/', label: 'Organiser une session dans vos locaux' }
     ]
   },
@@ -200,26 +200,26 @@ export const partnerCategories: PartnerCategoryMeta[] = [
     name: 'Entreprises & Fondations',
     shortTitle: 'Entreprises & Fondations',
     cardSummary:
-      "Huit entreprises, fondations et structures d'impact accompagnées autour de l'entrepreneuriat, du numérique et des territoires.",
+      "Dix entreprises, fondations et collectifs accompagnés autour de l'IA, de la cybersécurité, de l'entrepreneuriat, du numérique et des territoires.",
     eyebrow: 'Écosystème Économique & Impact',
     h1: 'Entreprises, fondations et collectifs partenaires d’Alkymya',
     heroIntro:
-      "De grands opérateurs industriels aux fondations territoriales et jeunes entreprises innovantes, Alkymya collabore avec huit organisations sur des programmes d'entrepreneuriat, de transformation numérique et d'IA responsable.",
-    seoTitle: 'Entreprises & Fondations Partenaires | Alkymya',
+      "De grands opérateurs industriels aux fondations territoriales, syndicats patronaux, spécialistes informatiques & cybersécurité et jeunes entreprises innovantes, Alkymya collabore avec dix organisations.",
+    seoTitle: 'Entreprises, Fondations & Collectifs Partenaires | Alkymya',
     seoDescription:
-      'SNCF, Fondation GRDF, SEALESTER, Azimuto, AvecLouise, Esperanta Services, Fondation Flamenca et Ressourcerie Gaillarde : nos partenaires.',
+      'CMI Systèmes, CPME 77, SNCF, Fondation GRDF, SEALESTER, Azimuto, AvecLouise, Esperanta Services, Fondation Flamenca et Ressourcerie Gaillarde : nos partenaires.',
     keywords:
-      'SNCF, Fondation GRDF, SEALESTER, Azimuto, AvecLouise, Esperanta Services, Fondation Flamenca, Ressourcerie Gaillarde',
+      'CMI Systèmes, CPME 77, Les Entrepreneurs Seine-et-Marne, SNCF, Fondation GRDF, SEALESTER, Azimuto, AvecLouise, Esperanta Services, Fondation Flamenca, Ressourcerie Gaillarde',
     proofStats: [
-      { value: '8', label: 'Organisations & fondations' },
+      { value: '10', label: 'Organisations & collectifs' },
       { value: '2', label: 'Alchimistes dirigeants dédiés' },
       { value: '15+ ans', label: 'Expérience direction (ex-SNCF Dév.)' },
       { value: 'France', label: 'Déploiement national & territorial' }
     ],
     crossLinks: [
-      { href: '/alchimistes/veronique-landereau/', label: 'Véronique Landereau — AvecLouise' },
-      { href: '/alchimistes/mariana-didier-laurent/', label: 'Mariana Didier Laurent — Esperanta Services' },
-      { href: '/oeuvres/', label: 'Voir nos œuvres et agents en production' }
+      { href: '/partenaires/entreprises/cmi-systemes/', label: 'Fiche CMI Systèmes : informatique & cybersécurité' },
+      { href: '/partenaires/entreprises/cpme-77/', label: 'Fiche CPME 77 : matinées IA & cybersécurité' },
+      { href: '/alchimistes/veronique-landereau/', label: 'Véronique Landereau — AvecLouise' }
     ]
   },
   {
@@ -389,17 +389,18 @@ export const allPartners: PartnerEntry[] = [
 
   // 4. LIEUX
   {
-    slug: 'morning-coworking',
+    slug: 'morning',
     name: 'Morning',
     categorySlug: 'lieux',
-    badge: 'Espaces de Coworking',
+    badge: 'Espaces de Bureaux & Coworking · Paris',
     city: 'Paris & Île-de-France',
-    relation: 'Accueil ateliers IA en présentiel & événements',
+    relation: 'Ateliers de découverte IA pour les communautés d’espaces (Pereire & Saint-Augustin)',
     summary:
-      "Accueil d'ateliers pratiques en présentiel, de séminaires de direction et de rencontres d'entrepreneurs dans des espaces collaboratifs parisiens.",
+      "Partenariat avec le réseau d'espaces de bureaux et de coworking Morning : accueil de deux ateliers gratuits de découverte de l'IA générative en 2026 à Morning Pereire (Paris 17e) et Morning Saint-Augustin (Paris 8e).",
     websiteUrl: 'https://www.morning.fr/',
+    sameAs: ['https://www.morning.fr/'],
     logo: 'https://res.cloudinary.com/dokzioyu4/image/upload/v1779185919/Logo_Morning_sma32y.png',
-    hasDetailPage: false
+    hasDetailPage: true
   },
   {
     slug: 'dgs-services-torcy',
@@ -416,6 +417,38 @@ export const allPartners: PartnerEntry[] = [
   },
 
   // 5. ENTREPRISES & FONDATIONS
+  {
+    slug: 'cmi-systemes',
+    name: 'CMI Systèmes',
+    categorySlug: 'entreprises',
+    badge: 'Informatique, Infogérance & Cybersécurité · Qualiopi Cyber',
+    city: 'Seine-et-Marne (77)',
+    relation: 'Partenaire infrastructure & cybersécurité (interventions conjointes IA & cyber)',
+    summary:
+      "Entreprise informatique de Seine-et-Marne fondée en 2011 par Cyril Milan (25 ans d'expertise), partenaire clé en main des TPE, PME et collectivités, dotée d'un centre de formation certifié Qualiopi pour la cybersécurité.",
+    websiteUrl: 'https://cmisystemes.com/',
+    sameAs: ['https://cmisystemes.com/'],
+    logo: 'https://res.cloudinary.com/dokzioyu4/image/upload/v1795435262/logo_sans_fond_mnd5ud.png',
+    hasDetailPage: true
+  },
+  {
+    slug: 'cpme-77',
+    name: 'CPME 77 (Les Entrepreneurs Seine-et-Marne)',
+    categorySlug: 'entreprises',
+    badge: 'Organisation Patronale · TPE & PME 77',
+    city: 'Seine-et-Marne (77)',
+    relation: 'Matinées dirigeants IA & cybersécurité (avec CMI Systèmes)',
+    summary:
+      "Organisation à l'automne 2026 de deux matinées d'échanges pour les dirigeants de TPE et PME de Seine-et-Marne : la matinée IA animée par Alkymya et la matinée cybersécurité animée par CMI Systèmes.",
+    websiteUrl: 'https://www.cpme77.fr/',
+    sameAs: [
+      'https://www.cpme77.fr/',
+      'https://www.facebook.com/CPME77',
+      'https://x.com/cpme77'
+    ],
+    logo: 'https://www.cpme77.fr/wp-content/themes/test/assets/img/logo-cpme77.png',
+    hasDetailPage: true
+  },
   {
     slug: 'sncf',
     name: 'SNCF',
@@ -535,7 +568,7 @@ export const allPartners: PartnerEntry[] = [
       "Bibliothèques et logiciels français (AWA Convert, AWA Viewer, AWA PDF, AWA Office) qui lisent, convertissent et signent vos documents localement sans envoyer aucun fichier sur le cloud.",
     websiteUrl: 'https://awacloud.com/',
     sameAs: ['https://awacloud.com/', 'https://awacloud.com/fr/apps'],
-    logo: 'https://res.cloudinary.com/dokzioyu4/image/upload/v1794917700/images_24_vt8z75.jpg',
+    logo: 'https://res.cloudinary.com/dokzioyu4/image/upload/v1795185378/logo-awacloud_wm3ldx.png',
     hasDetailPage: true
   },
   {
@@ -902,7 +935,576 @@ export const iesegFormationData: IesegFormationData = {
   attribution: "Intervenant et mentor : Cyril Garnier, Alkymya."
 };
 
+export interface Cpme77PartnershipData {
+  conviction: string;
+  intro: string;
+  morningAi: {
+    heading: string;
+    dateAndTime: string;
+    speaker: string;
+    summary: string;
+    programmeIntro: string;
+    programme: string[];
+  };
+  morningCyber: {
+    heading: string;
+    dateAndTime: string;
+    speaker: string;
+    summary: string;
+  };
+  whyCombine: {
+    heading: string;
+    body: string;
+  };
+  tripartite: {
+    heading: string;
+    actors: Array<{
+      name: string;
+      role: string;
+      url?: string;
+      internalHref?: string;
+    }>;
+  };
+  keywordGroups: Array<{ category: string; keywords: string }>;
+  faq: Array<{ question: string; answer: string }>;
+  attribution: string;
+}
+
+export const cpme77Data: Cpme77PartnershipData = {
+  conviction: "L'IA exécute, vous dirigez.",
+  intro:
+    "Les Entrepreneurs Seine-et-Marne (CPME 77) ont organisé à l'automne 2026 deux matinées d'échanges destinées aux dirigeants de TPE et de PME, sur deux sujets qui les concernent directement : l'intelligence artificielle et la cybersécurité. Alkymya animait la matinée consacrée à l'IA, en partenariat avec CMI Systèmes, qui animait celle sur la cybersécurité.",
+  morningAi: {
+    heading:
+      "Matinée IA : « Comment faire de l'IA un allié du quotidien sans perdre la maîtrise de ce que l'on délègue ? »",
+    dateAndTime: "Mardi 13 octobre 2026, de 9 h 30 à 11 h 30",
+    speaker: "Animée par Cyril Garnier, dirigeant d'Alkymya.",
+    summary:
+      "Le fil rouge tient dans la question du titre : l'IA exécute, vous dirigez. La matinée s'adresse à des dirigeants qui utilisent déjà l'IA, ou qui hésitent, et qui veulent savoir comment l'intégrer sans perdre le contrôle.",
+    programmeIntro: "Au programme :",
+    programme: [
+      "les usages concrets de l'IA pour un dirigeant, au quotidien ;",
+      "le choix des outils ;",
+      "ce qu'on peut déléguer à une IA, ce qu'on garde, et comment vérifier ce qu'elle produit ;",
+      "un temps d'échange : les participants pouvaient poser leurs questions en amont."
+    ]
+  },
+  morningCyber: {
+    heading:
+      "Matinée cybersécurité : « Prise de conscience et enjeux du risque cyber »",
+    dateAndTime: "Jeudi 29 octobre 2026, de 9 h 30 à 11 h 30",
+    speaker: "Animée par un formateur de CMI Systèmes.",
+    summary:
+      "Un angle par le risque : identifier les principales menaces, comprendre les conséquences possibles pour son entreprise, et réfléchir au niveau de protection réellement nécessaire pour son activité."
+  },
+  whyCombine: {
+    heading: "Pourquoi associer IA et cybersécurité ?",
+    body:
+      "Adopter l'IA, c'est aussi ouvrir de nouvelles portes : des données d'entreprise confiées à des outils, des usages qui se développent dans les équipes sans cadre (le shadow IA), de nouveaux risques d'arnaque et d'hameçonnage. Les deux sujets se répondent : on ne déploie pas l'IA sans se poser la question de la sécurité, et on ne protège pas son entreprise en ignorant ce que ses équipes utilisent déjà."
+  },
+  tripartite: {
+    heading: "Un partenariat à trois",
+    actors: [
+      {
+        name: "La CPME 77 (Les Entrepreneurs Seine-et-Marne)",
+        role: "Organise les rencontres et invite ses adhérents.",
+        url: "https://www.cpme77.fr/"
+      },
+      {
+        name: "Alkymya",
+        role: "Conçoit et anime la matinée IA.",
+        internalHref: "/alchimistes/cyril-garnier/"
+      },
+      {
+        name: "CMI Systèmes, entreprise informatique",
+        role: "Anime la matinée cybersécurité.",
+        url: "https://cmisystemes.com/"
+      }
+    ]
+  },
+  keywordGroups: [
+    {
+      category: "Usages",
+      keywords: "IA au quotidien, assistants IA, délégation, vérification des résultats"
+    },
+    {
+      category: "Gouvernance",
+      keywords: "maîtrise de l'IA, shadow IA, règles d'usage, données de l'entreprise"
+    },
+    {
+      category: "Public",
+      keywords: "dirigeants de TPE et PME, adhérents de la CPME 77, Seine-et-Marne"
+    }
+  ],
+  faq: [
+    {
+      question: "À qui s'adressent ces matinées ?",
+      answer:
+        "Aux dirigeants de TPE et de PME, en particulier aux adhérents de la CPME 77."
+    },
+    {
+      question: "Faut-il déjà utiliser l'IA ?",
+      answer:
+        "Non. La matinée convient aussi bien aux dirigeants qui utilisent déjà l'IA qu'à ceux qui hésitent et veulent comprendre comment l'intégrer sans perdre le contrôle."
+    },
+    {
+      question:
+        "Peut-on organiser une matinée similaire dans notre réseau ou notre entreprise ?",
+      answer:
+        "Oui. Le format s'adapte aux fédérations professionnelles, clubs de dirigeants et entreprises : contactez Alkymya (cyril@alkymya.co)."
+    },
+    {
+      question:
+        "Existe-t-il des formations plus longues finançables par les OPCO ?",
+      answer:
+        "Oui. Alkymya conçoit et anime des ateliers et formations plus approfondis, portés administrativement par des organismes partenaires certifiés Qualiopi tels qu'INATEC (NDA 11771056077)."
+    }
+  ],
+  attribution: "Matinale IA animée par Cyril Garnier, Alkymya."
+};
+
+export interface MorningPartnershipData {
+  intro: string;
+  workshops: Array<{
+    number: string;
+    heading: string;
+    dateAndTime: string;
+    capacity: string;
+    detail: string;
+    feedback: string;
+  }>;
+  whyFormat: Array<{ audience: string; benefit: string }>;
+  coveredTopics: string[];
+  keywordGroups: Array<{ category: string; keywords: string }>;
+  faq: Array<{ question: string; answer: string }>;
+  attribution: string;
+}
+
+export const morningData: MorningPartnershipData = {
+  intro:
+    "Alkymya a animé en 2026 deux ateliers de découverte de l'IA générative dans des espaces Morning, le réseau d'espaces de bureaux et de coworking. Le principe, défini avec Morning : un partenariat. Morning met à disposition son réseau de clients, le lieu et la communication autour de la session ; l'intervenant offre son expertise, gratuitement, à ces communautés.",
+  workshops: [
+    {
+      number: "Atelier 1",
+      heading: "Morning Pereire (Paris 17e) : « Booster sa productivité avec les IA »",
+      dateAndTime: "Jeudi 23 avril 2026, de 12 h 30 à 13 h 30",
+      capacity: "15 places ouvertes",
+      detail:
+        "Un atelier de découverte de l'IA générative pour les clients de l'espace, animé par Cyril Garnier. L'espace avait ouvert 15 places.",
+      feedback:
+        "À la suite de la session, l'équipe de Morning Pereire a relayé un retour très positif : les clients ont beaucoup apprécié l'atelier, et une vidéo de la session leur a été transmise."
+    },
+    {
+      number: "Atelier 2",
+      heading: "Morning Saint-Augustin (Paris 8e) : atelier IA",
+      dateAndTime: "Mardi 19 mai 2026",
+      capacity: "Jauge d'une douzaine de personnes",
+      detail:
+        "Un atelier IA pour les clients de l'espace, à l'initiative de la manager du lieu, avec une jauge d'une douzaine de personnes.",
+      feedback:
+        "Le retour de Morning après la session : des retours très positifs sur l'atelier."
+    }
+  ],
+  whyFormat: [
+    {
+      audience: "Pour les participants",
+      benefit:
+        "Découvrir ce que l'IA fait concrètement pour leur quotidien professionnel, sans engagement, au cœur de leur lieu de travail."
+    },
+    {
+      audience: "Pour les espaces",
+      benefit:
+        "Proposer à leur communauté des rencontres utiles, sans coût."
+    },
+    {
+      audience: "Pour Alkymya",
+      benefit:
+        "Rencontrer des indépendants, des dirigeants de petites structures et des équipes, et comprendre leurs usages réels de l'IA."
+    }
+  ],
+  coveredTopics: [
+    "Comprendre ce qu'est l'IA générative, ce qu'elle fait bien et ce qu'elle fait mal.",
+    "Des usages concrets pour gagner du temps : rédaction, recherche, synthèse, préparation de réunions.",
+    "Choisir ses outils.",
+    "Garder la main sur ce qu'on délègue : vérifier les sources, protéger ses données."
+  ],
+  keywordGroups: [
+    {
+      category: "Usages",
+      keywords: "IA générative, productivité, assistants IA, gain de temps"
+    },
+    {
+      category: "Format",
+      keywords: "atelier de découverte, conférence, coworking, réseau Morning"
+    },
+    {
+      category: "Public",
+      keywords: "indépendants, dirigeants de TPE et de PME, équipes en espace partagé"
+    }
+  ],
+  faq: [
+    {
+      question: "À qui s'adressent ces ateliers ?",
+      answer:
+        "Aux clients des espaces Morning : indépendants, entrepreneurs, équipes de petites entreprises."
+    },
+    {
+      question: "Faut-il déjà utiliser l'IA ?",
+      answer: "Non. L'atelier est une découverte."
+    },
+    {
+      question: "Les ateliers sont-ils gratuits ?",
+      answer:
+        "Oui pour les participants : l'espace accueille et communique, l'intervenant offre la session."
+    },
+    {
+      question: "Peut-on en organiser un dans notre espace ou notre entreprise ?",
+      answer: "Oui. Le format s'adapte : contactez Alkymya."
+    },
+    {
+      question: "Existe-t-il des formations plus longues ?",
+      answer:
+        "Oui : ateliers et formations finançables par les OPCO via des partenaires certifiés Qualiopi. Les conditions dépendent de l'entreprise."
+    }
+  ],
+  attribution: "Ateliers animés par Cyril Garnier, Alkymya."
+};
+
+export interface CmiSystemesPartnershipData {
+  identity: {
+    founded: string;
+    expertise: string;
+    president: string;
+    pillars: string[];
+    summary: string;
+    collaboration: string;
+  };
+  whatTheyDo: {
+    title: string;
+    subtitle: string;
+    services: string[];
+  };
+  cyberAcademy: {
+    title: string;
+    description: string;
+    qualiopiNote: string;
+  };
+  whyTogether: {
+    title: string;
+    body: string;
+  };
+  jointWork: {
+    title: string;
+    items: Array<{ label: string; detail: string }>;
+    enrichmentNote: string;
+  };
+  keywordGroups: Array<{ category: string; keywords: string }>;
+  faq: Array<{ question: string; answer: string }>;
+}
+
+export const cmiSystemesData: CmiSystemesPartnershipData = {
+  identity: {
+    founded: "Fondée en 2011",
+    expertise: "25 ans d'expertise",
+    president: "Président : Cyril Milan",
+    pillars: ["Expertise", "Proximité", "Réactivité", "Confidentialité"],
+    summary:
+      "CMI Systèmes est une entreprise informatique de Seine-et-Marne qui pilote, avec ses clients ou à leur place, leur système d'information. Fondée en 2011, elle revendique 25 ans d'expertise, une taille humaine et quatre maîtres mots : expertise, proximité, réactivité, confidentialité. Son président est Cyril Milan.",
+    collaboration:
+      "Alkymya et CMI Systèmes travaillent ensemble : ils interviennent côte à côte auprès des entreprises, de la CPME 77 et d'organisations publiques, l'une sur l'IA et ses usages, l'autre sur l'infrastructure et la cybersécurité."
+  },
+  whatTheyDo: {
+    title: "Ce que fait CMI Systèmes",
+    subtitle:
+      "Un partenaire informatique « clé en main » pour les TPE, PME, groupes et marchés publics, avec des interventions ponctuelles ou un accompagnement régulier :",
+    services: [
+      "migration de la messagerie ;",
+      "passage au cloud ;",
+      "préparation et installation de matériel spécifique ;",
+      "accompagnement lors d'un déménagement ;",
+      "assistance quotidienne, avec un outil de demandes de service qui assure traçabilité, suivi et analyse ;",
+      "audit gratuit et sans engagement pour démarrer."
+    ]
+  },
+  cyberAcademy: {
+    title: "Un centre de formation à la cybersécurité",
+    description:
+      "CMI Systèmes dispose d'un centre de formation qui aide ses clients à comprendre les risques cyber. Sa formation « Introduction à la cybersécurité dans un contexte professionnel » dure deux jours : chacun apprend à détecter les menaces actuelles et à agir. L'entreprise propose aussi des solutions de sensibilisation intégrées aux outils du quotidien, sous forme de quiz adaptés au niveau de chaque utilisateur.",
+    qualiopiNote:
+      "Le centre de formation de CMI Systèmes est certifié Qualiopi pour la cybersécurité, ce qui permet, selon les cas, une prise en charge par les OPCO."
+  },
+  whyTogether: {
+    title: "Pourquoi IA et cybersécurité vont ensemble",
+    body:
+      "Adopter l'IA, c'est confier des données à de nouveaux outils, voir apparaître des usages dans les équipes sans cadre (le shadow IA), et s'exposer à de nouveaux risques. Les deux sujets se répondent. C'est l'esprit des deux matinées organisées avec la CPME 77 à l'automne 2026 : l'IA animée par Alkymya, la cybersécurité par CMI Systèmes."
+  },
+  jointWork: {
+    title: "Ce que nous faisons ensemble",
+    items: [
+      {
+        label: "Les matinales de la CPME 77",
+        detail: "une matinée IA et une matinée cybersécurité, pour les dirigeants de TPE et PME."
+      },
+      {
+        label: "Des interventions en entreprise",
+        detail: "sensibilisation à l'IA et à la cyber, adaptées à chaque structure."
+      },
+      {
+        label: "Des projets avec des organisations publiques",
+        detail: "où infrastructure, sécurité et usages de l'IA doivent être pensés ensemble."
+      }
+    ],
+    enrichmentNote: "Cette fiche s'enrichira au fil de nos interventions."
+  },
+  keywordGroups: [
+    {
+      category: "CMI Systèmes",
+      keywords:
+        "infogérance, informatique TPE PME, cybersécurité, formation cyber, Qualiopi, Seine-et-Marne"
+    },
+    {
+      category: "Avec Alkymya",
+      keywords:
+        "IA et cybersécurité, shadow IA, sensibilisation, formation en entreprise, CPME 77"
+    }
+  ],
+  faq: [
+    {
+      question: "Qui est CMI Systèmes ?",
+      answer:
+        "Une entreprise informatique de Seine-et-Marne fondée en 2011, avec un centre de formation à la cybersécurité."
+    },
+    {
+      question: "Quel est le lien avec Alkymya ?",
+      answer:
+        "Un partenariat : Alkymya apporte l'IA et la pédagogie, CMI l'infrastructure et la cybersécurité. Ils interviennent ensemble auprès d'entreprises."
+    },
+    {
+      question: "Les formations sont-elles finançables ?",
+      answer:
+        "Le centre de formation de CMI est certifié Qualiopi pour la cybersécurité. La prise en charge par un OPCO dépend de l'entreprise et du dossier."
+    },
+    {
+      question: "Peut-on organiser une intervention commune dans notre entreprise ?",
+      answer: "Oui. Contactez Alkymya ou CMI Systèmes."
+    }
+  ]
+};
+
 export const partnerDetails: Record<string, PartnerDetailContent> = {
+  'cmi-systemes': {
+    slug: 'cmi-systemes',
+    categorySlug: 'entreprises',
+    name: 'CMI Systèmes',
+    seoTitle: "CMI Systèmes x Alkymya : Informatique TPE/PME & Cybersécurité | Partenaires",
+    seoDescription:
+      "CMI Systèmes, entreprise informatique de Seine-et-Marne (président Cyril Milan), partenaire d'Alkymya sur l'IA et la cybersécurité : infogérance TPE/PME et centre Qualiopi cyber.",
+    keywords:
+      'CMI Systèmes, Cyril Milan, cybersécurité Seine-et-Marne, infogérance TPE PME, IA et cybersécurité, shadow IA, Qualiopi cybersécurité, CPME 77, Alkymya',
+    h1: "CMI Systèmes : l'informatique de confiance des TPE, PME et collectivités",
+    lead: "CMI Systèmes est une entreprise informatique de Seine-et-Marne qui pilote, avec ses clients ou à leur place, leur système d'information. Fondée en 2011, elle revendique 25 ans d'expertise, une taille humaine et quatre maîtres mots : expertise, proximité, réactivité, confidentialité. Son président est Cyril Milan.",
+    roleSummary:
+      "Alkymya et CMI Systèmes travaillent ensemble : ils interviennent côte à côte auprès des entreprises, de la CPME 77 et d'organisations publiques, Alkymya sur l'IA et ses usages, CMI Systèmes sur l'infrastructure, l'infogérance clé en main et la cybersécurité.",
+    whySelected: [
+      {
+        title: "Expertise, proximité, réactivité, confidentialité",
+        text: "Fondée en 2011 et présidée par Cyril Milan, CMI Systèmes associe 25 ans d'expertise et une organisation à taille humaine en Seine-et-Marne."
+      },
+      {
+        title: "Un centre de formation certifié Qualiopi cybersécurité",
+        text: "Formation de deux jours « Introduction à la cybersécurité dans un contexte professionnel » et quiz quotidiens adaptés au niveau de chaque utilisateur."
+      },
+      {
+        title: "Réponse conjointe à l'IA et au shadow IA",
+        text: "Penser ensemble le déploiement des outils d'IA (Alkymya) et la maîtrise des données, de l'infrastructure et du risque cyber (CMI Systèmes)."
+      }
+    ],
+    jointActions: [
+      {
+        title: "Les matinales de la CPME 77",
+        detail: "Une matinée IA animée par Alkymya et une matinée cybersécurité animée par CMI Systèmes à l'automne 2026 pour les dirigeants de TPE et PME."
+      },
+      {
+        title: "Interventions conjointes en entreprise",
+        detail: "Sensibilisation croisée à l'IA, au shadow IA et à la cybersécurité adaptée à chaque structure."
+      },
+      {
+        title: "Projets avec des organisations publiques",
+        detail: "Accompagnement où infrastructure informatique, sécurité des systèmes et usages concrets de l'IA sont pensés ensemble."
+      }
+    ],
+    measurableResults: [
+      {
+        metric: "Depuis 2011",
+        label: "25 ans d'expertise SI",
+        context: "Entreprise informatique à taille humaine implantée en Seine-et-Marne"
+      },
+      {
+        metric: "2 jours",
+        label: "Formation cybersécurité Qualiopi",
+        context: "Centre de formation CMI Systèmes certifié Qualiopi pour la cybersécurité"
+      },
+      {
+        metric: "IA + Cyber",
+        label: "Interventions conjointes",
+        context: "CPME 77, TPE/PME et organisations publiques aux côtés d'Alkymya"
+      }
+    ],
+    audience: [
+      "Dirigeants de TPE, PME, groupes et collectivités de Seine-et-Marne et d'Île-de-France",
+      "Organisations publiques devant concilier infrastructure sécurisée et déploiement encadré de l'IA",
+      "Entreprises cherchant une sensibilisation conjointe IA (Alkymya) et cybersécurité (CMI Systèmes)"
+    ],
+    ctaLabel: 'Visiter cmisystemes.com',
+    ctaUrl: 'https://cmisystemes.com/',
+    secondaryLinks: [
+      { href: '/partenaires/entreprises/cpme-77/', label: 'Voir les matinales CPME 77 (IA & Cyber)' },
+      { href: '/partenaires/entreprises/', label: 'Retour aux Entreprises & Collectifs' },
+      { href: '/alchimistes/cyril-garnier/', label: 'Profil de Cyril Garnier (Alkymya)' }
+    ]
+  },
+  'cpme-77': {
+    slug: 'cpme-77',
+    categorySlug: 'entreprises',
+    name: 'CPME 77 (Les Entrepreneurs Seine-et-Marne)',
+    seoTitle: "CPME 77 x Alkymya : Matinées Dirigeants IA & Cybersécurité | Partenaires",
+    seoDescription:
+      "Deux matinées CPME 77 à l'automne 2026 pour dirigeants de TPE et PME : matinée IA par Alkymya (13 octobre) et matinée cybersécurité par CMI Systèmes (29 octobre).",
+    keywords:
+      'CPME 77, Les Entrepreneurs Seine-et-Marne, IA dirigeants TPE PME, CMI Systèmes, cybersécurité PME, shadow IA, gouvernance IA, Alkymya',
+    h1: "CPME 77 : deux matinées pour que les dirigeants gardent la main sur l'IA et sur le risque cyber",
+    lead: "Les Entrepreneurs Seine-et-Marne (CPME 77) ont organisé à l'automne 2026 deux matinées d'échanges destinées aux dirigeants de TPE et de PME, sur deux sujets qui les concernent directement : l'intelligence artificielle et la cybersécurité. Alkymya animait la matinée consacrée à l'IA, en partenariat avec CMI Systèmes, qui animait celle sur la cybersécurité.",
+    roleSummary:
+      "Organisation patronale de proximité en Seine-et-Marne (77), la CPME 77 rassemble les dirigeants de TPE et de PME du territoire. Dans le cadre de ces deux matinées complémentaires d'octobre 2026, elle réunit Alkymya pour le volet intelligence artificielle et CMI Systèmes pour la prise de conscience du risque cyber.",
+    whySelected: [
+      {
+        title: "Ancrage TPE/PME en Seine-et-Marne",
+        text: "Des échanges pensés directement pour la réalité opérationnelle des dirigeants de TPE et PME adhérents de la CPME 77."
+      },
+      {
+        title: "Complémentarité IA & cybersécurité",
+        text: "Associer l'IA (Alkymya) et la sécurité informatique (CMI Systèmes) évite de déployer des assistants sans maîtriser données, shadow IA ni hameçonnage."
+      },
+      {
+        title: "Un fil rouge clair : l'IA exécute, vous dirigez",
+        text: "Définir ce que l'on délègue, ce que l'on garde en interne et comment vérifier systématiquement les résultats produits par les outils."
+      }
+    ],
+    jointActions: [
+      {
+        title: "Matinée IA — 13 octobre 2026 (9 h 30 – 11 h 30)",
+        detail: "Animation par Cyril Garnier (Alkymya) autour des usages concrets du dirigeant, du choix des outils, de la délégation vérifiée et des questions préparées en amont."
+      },
+      {
+        title: "Matinée cybersécurité — 29 octobre 2026 (9 h 30 – 11 h 30)",
+        detail: "Animation par CMI Systèmes sous l'angle du risque : identifier les menaces, mesurer les conséquences possibles et ajuster le niveau de protection nécessaire."
+      },
+      {
+        title: "Sensibilisation croisée shadow IA & gouvernance",
+        detail: "Articulation concrète entre usages IA non encadrés dans les équipes, confidentialité des données d'entreprise et nouveaux vecteurs d'arnaque."
+      }
+    ],
+    measurableResults: [
+      {
+        metric: "2 matinées",
+        label: "Automne 2026 · 9 h 30 – 11 h 30",
+        context: "Mardi 13 octobre (IA · Alkymya) et Jeudi 29 octobre (Cybersécurité · CMI Systèmes)"
+      },
+      {
+        metric: "3 acteurs",
+        label: "Partenariat territorial 77",
+        context: "CPME 77 (Les Entrepreneurs Seine-et-Marne), Alkymya et CMI Systèmes"
+      },
+      {
+        metric: "TPE & PME",
+        label: "Dirigeants de Seine-et-Marne",
+        context: "Format accessible aux dirigeants déjà utilisateurs comme à ceux qui hésitent"
+      }
+    ],
+    audience: [
+      "Dirigeants de TPE et de PME adhérents de la CPME 77 en Seine-et-Marne",
+      "Chefs d'entreprise souhaitant encadrer le shadow IA et protéger les données internes",
+      "Fédérations professionnelles et clubs de dirigeants cherchant une intervention croisée IA & cyber"
+    ],
+    ctaLabel: 'Visiter cpme77.fr',
+    ctaUrl: 'https://www.cpme77.fr/',
+    secondaryLinks: [
+      { href: '/partenaires/entreprises/', label: 'Retour aux Entreprises & Collectifs' },
+      { href: '/alchimistes/cyril-garnier/', label: 'Profil de Cyril Garnier (animateur IA)' },
+      { href: '/ateliers/', label: 'Voir nos ateliers & formats dirigeants' }
+    ]
+  },
+  morning: {
+    slug: 'morning',
+    categorySlug: 'lieux',
+    name: 'Morning',
+    seoTitle: "Morning x Alkymya : Ateliers Découverte IA en Coworking Paris | Partenaires",
+    seoDescription:
+      "Deux ateliers gratuits de découverte de l'IA générative animés par Alkymya en 2026 dans les espaces Morning Pereire (Paris 17e) et Morning Saint-Augustin (Paris 8e).",
+    keywords:
+      'Morning, coworking, IA générative, productivité, atelier IA, entrepreneurs, Paris, Alkymya, Morning Pereire, Morning Saint-Augustin',
+    h1: "Morning : deux ateliers de découverte de l'IA pour les clients des espaces de coworking",
+    lead: "Alkymya a animé en 2026 deux ateliers de découverte de l'IA générative dans des espaces Morning, le réseau d'espaces de bureaux et de coworking. Le principe, défini avec Morning : un partenariat. Morning met à disposition son réseau de clients, le lieu et la communication autour de la session ; l'intervenant offre son expertise, gratuitement, à ces communautés.",
+    roleSummary:
+      "Acteur de référence des espaces de bureaux et de coworking à Paris et en Île-de-France, Morning ouvre ses lieux à des interventions utiles pour sa communauté de résidents. À Morning Pereire (Paris 17e) en avril 2026 puis à Morning Saint-Augustin (Paris 8e) en mai 2026, Alkymya a animé deux sessions de découverte de l'IA générative accessibles gratuitement aux clients des espaces.",
+    whySelected: [
+      {
+        title: "Un format gagnant-gagnant pour les communautés",
+        text: "Morning met à disposition le lieu, son réseau et sa communication ; l'intervenant offre son expertise sans frais pour les résidents."
+      },
+      {
+        title: "Une découverte concrète sur le lieu de travail",
+        text: "Des formats courts (comme 12 h 30 – 13 h 30 à Pereire) centrés sur la productivité quotidienne : rédaction, recherche, synthèse et réunions."
+      },
+      {
+        title: "Maîtrise de la délégation et des données",
+        text: "Chaque atelier rappelle ce que l'IA générative fait bien ou mal, comment choisir ses outils, vérifier ses sources et protéger ses données."
+      }
+    ],
+    jointActions: [
+      {
+        title: "Morning Pereire (Paris 17e) — 23 avril 2026 (12 h 30 – 13 h 30)",
+        detail: "Atelier « Booster sa productivité avec les IA » sur 15 places ouvertes, suivi de retours très positifs et transmission d'une vidéo de la session à l'équipe du lieu."
+      },
+      {
+        title: "Morning Saint-Augustin (Paris 8e) — 19 mai 2026",
+        detail: "Atelier IA organisé à l'initiative de la manager de l'espace pour une douzaine de personnes, avec des retours très positifs."
+      },
+      {
+        title: "Programme pragmatique en 4 volets",
+        detail: "Fonctionnement réel de l'IA générative, cas d'usage de gain de temps, choix des outils et vérification des sources et données."
+      }
+    ],
+    measurableResults: [
+      {
+        metric: "2 ateliers",
+        label: "Printemps 2026 à Paris",
+        context: "Morning Pereire (Paris 17e, 23 avril) et Morning Saint-Augustin (Paris 8e, 19 mai)"
+      },
+      {
+        metric: "12–15 places",
+        label: "Jauges de proximité",
+        context: "Formats interactifs dédiés aux indépendants, TPE, PME et équipes résidentes"
+      },
+      {
+        metric: "0 €",
+        label: "Pour les participants",
+        context: "Partenariat d'animation communautaire : lieu & communication Morning, expertise offerte par Alkymya"
+      }
+    ],
+    audience: [
+      "Clients des espaces Morning : indépendants, entrepreneurs et équipes de petites entreprises",
+      "Managers d'espaces de coworking souhaitant proposer des ateliers utiles sans coût à leur communauté",
+      "Entreprises cherchant ensuite à déployer des ateliers ou formations plus longues finançables OPCO via partenaires Qualiopi"
+    ],
+    ctaLabel: 'Découvrir morning.fr',
+    ctaUrl: 'https://www.morning.fr/',
+    secondaryLinks: [
+      { href: '/partenaires/lieux/', label: 'Retour au pôle Lieux & Coworking' },
+      { href: '/alchimistes/cyril-garnier/', label: 'Profil de Cyril Garnier (intervenant)' },
+      { href: '/ateliers/', label: 'Voir nos ateliers & formats entreprise' }
+    ]
+  },
   ieseg: {
     slug: 'ieseg',
     categorySlug: 'ecoles',

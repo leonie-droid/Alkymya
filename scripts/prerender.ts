@@ -9,8 +9,11 @@ import {
   partnerCategories,
   allPartners,
   partnerDetails,
+  cmiSystemesData,
+  cpme77Data,
   euridisFormationData,
-  iesegFormationData
+  iesegFormationData,
+  morningData
 } from '../src/data/partenaires';
 import { cloudinaryUrl, cloudinarySrcSet } from '../src/utils/cloudinary';
 
@@ -463,6 +466,153 @@ function generatePartnerStaticHtml(routePath: string): string {
                    </dl>
                    <p style="font-style: italic; color: #475569; margin-top: 1rem;">${escapeHtml(iesegFormationData.attribution)}</p>
                  </div>`
+              : detail.slug === 'cpme-77'
+              ? `<div style="margin-top: 1.75rem; border-top: 1px solid #e2e8f0; padding-top: 1.5rem;">
+                   <p style="font-weight: 700; color: #1F4F6E; margin: 0 0 0.35rem 0;">${escapeHtml(cpme77Data.conviction)}</p>
+                   <p style="color: #334155;">${escapeHtml(cpme77Data.intro)}</p>
+                   <h3 style="color: #1F4F6E; margin-top: 1.25rem;">${escapeHtml(cpme77Data.morningAi.heading)}</h3>
+                   <p style="font-weight: 700; color: #037971; margin: 0.25rem 0;">${escapeHtml(cpme77Data.morningAi.dateAndTime)} — ${escapeHtml(cpme77Data.morningAi.speaker)}</p>
+                   <p style="color: #334155;">${escapeHtml(cpme77Data.morningAi.summary)}</p>
+                   <p style="font-weight: 700; color: #1F4F6E; margin-bottom: 0.4rem;">${escapeHtml(cpme77Data.morningAi.programmeIntro)}</p>
+                   <ul style="padding-left: 1.5rem; color: #334155;">
+                     ${cpme77Data.morningAi.programme.map((i) => `<li style="margin-bottom: 0.3rem;">${escapeHtml(i)}</li>`).join('')}
+                   </ul>
+                   <h3 style="color: #1F4F6E; margin-top: 1.25rem;">${escapeHtml(cpme77Data.morningCyber.heading)}</h3>
+                   <p style="font-weight: 700; color: #C06721; margin: 0.25rem 0;">${escapeHtml(cpme77Data.morningCyber.dateAndTime)} — ${escapeHtml(cpme77Data.morningCyber.speaker)}</p>
+                   <p style="color: #334155;">${escapeHtml(cpme77Data.morningCyber.summary)}</p>
+                   <h3 style="color: #1F4F6E; margin-top: 1.25rem;">${escapeHtml(cpme77Data.whyCombine.heading)}</h3>
+                   <p style="color: #334155;">${escapeHtml(cpme77Data.whyCombine.body)}</p>
+                   <h3 style="color: #1F4F6E; margin-top: 1.25rem;">${escapeHtml(cpme77Data.tripartite.heading)}</h3>
+                   <ul style="padding-left: 1.5rem; color: #334155;">
+                     ${cpme77Data.tripartite.actors
+                       .map(
+                         (a) =>
+                           `<li style="margin-bottom: 0.35rem;"><strong>${escapeHtml(a.name)}</strong> : ${escapeHtml(a.role)}${
+                             a.url
+                               ? ` (<a href="${escapeHtml(a.url)}" target="_blank" rel="noopener noreferrer" style="color: #037971;">${escapeHtml(a.url)}</a>)`
+                               : ''
+                           }</li>`
+                       )
+                       .join('')}
+                   </ul>
+                   <h3 style="color: #1F4F6E; margin-top: 1.25rem;">Les mots-clés de la matinée IA</h3>
+                   <table style="width: 100%; border-collapse: collapse; font-size: 0.9rem; text-align: left; margin-top: 0.5rem;">
+                     <thead>
+                       <tr style="background: #1F4F6E; color: #ffffff;">
+                         <th style="padding: 0.65rem 0.9rem; border: 1px solid #cbd5e1;">Axe</th>
+                         <th style="padding: 0.65rem 0.9rem; border: 1px solid #cbd5e1;">Notions &amp; thèmes</th>
+                       </tr>
+                     </thead>
+                     <tbody>
+                       ${cpme77Data.keywordGroups
+                         .map(
+                           (row, idx) => `<tr style="background: ${idx % 2 === 0 ? '#ffffff' : '#f8fafc'};">
+                             <td style="padding: 0.65rem 0.9rem; border: 1px solid #e2e8f0; font-weight: 700; color: #1F4F6E;">${escapeHtml(row.category)}</td>
+                             <td style="padding: 0.65rem 0.9rem; border: 1px solid #e2e8f0; color: #334155;">${escapeHtml(row.keywords)}</td>
+                           </tr>`
+                         )
+                         .join('')}
+                     </tbody>
+                   </table>
+                   <h3 style="color: #1F4F6E; margin-top: 1.25rem;">Questions fréquentes</h3>
+                   <dl style="color: #334155;">
+                     ${cpme77Data.faq.map((q) => `<dt style="font-weight: 700; color: #1F4F6E; margin-top: 0.6rem;">${escapeHtml(q.question)}</dt><dd style="margin: 0.2rem 0 0.5rem 0;">${escapeHtml(q.answer)}</dd>`).join('')}
+                   </dl>
+                   <p style="font-style: italic; color: #475569; margin-top: 1rem;">${escapeHtml(cpme77Data.attribution)}</p>
+                 </div>`
+              : detail.slug === 'morning'
+              ? `<div style="margin-top: 1.75rem; border-top: 1px solid #e2e8f0; padding-top: 1.5rem;">
+                   <p style="color: #334155;">${escapeHtml(morningData.intro)}</p>
+                   ${morningData.workshops
+                     .map(
+                       (ws) => `
+                   <h3 style="color: #1F4F6E; margin-top: 1.25rem;">${escapeHtml(ws.number)}, ${escapeHtml(ws.heading)}</h3>
+                   <p style="font-weight: 700; color: #037971; margin: 0.25rem 0;">${escapeHtml(ws.dateAndTime)} — ${escapeHtml(ws.capacity)}</p>
+                   <p style="color: #334155;">${escapeHtml(ws.detail)}</p>
+                   <p style="color: #475569;"><strong>Retour :</strong> ${escapeHtml(ws.feedback)}</p>`
+                     )
+                     .join('')}
+                   <h3 style="color: #1F4F6E; margin-top: 1.25rem;">Pourquoi ce format ?</h3>
+                   <ul style="padding-left: 1.5rem; color: #334155;">
+                     ${morningData.whyFormat
+                       .map(
+                         (w) =>
+                           `<li style="margin-bottom: 0.35rem;"><strong>${escapeHtml(w.audience)} :</strong> ${escapeHtml(w.benefit)}</li>`
+                       )
+                       .join('')}
+                   </ul>
+                   <h3 style="color: #1F4F6E; margin-top: 1.25rem;">Ce que couvre un atelier de découverte</h3>
+                   <ul style="padding-left: 1.5rem; color: #334155;">
+                     ${morningData.coveredTopics.map((t) => `<li style="margin-bottom: 0.3rem;">${escapeHtml(t)}</li>`).join('')}
+                   </ul>
+                   <h3 style="color: #1F4F6E; margin-top: 1.25rem;">Les mots-clés</h3>
+                   <table style="width: 100%; border-collapse: collapse; font-size: 0.9rem; text-align: left; margin-top: 0.5rem;">
+                     <thead>
+                       <tr style="background: #1F4F6E; color: #ffffff;">
+                         <th style="padding: 0.65rem 0.9rem; border: 1px solid #cbd5e1;">Axe</th>
+                         <th style="padding: 0.65rem 0.9rem; border: 1px solid #cbd5e1;">Notions &amp; pratiques</th>
+                       </tr>
+                     </thead>
+                     <tbody>
+                       ${morningData.keywordGroups
+                         .map(
+                           (row, idx) => `<tr style="background: ${idx % 2 === 0 ? '#ffffff' : '#f8fafc'};">
+                             <td style="padding: 0.65rem 0.9rem; border: 1px solid #e2e8f0; font-weight: 700; color: #1F4F6E;">${escapeHtml(row.category)}</td>
+                             <td style="padding: 0.65rem 0.9rem; border: 1px solid #e2e8f0; color: #334155;">${escapeHtml(row.keywords)}</td>
+                           </tr>`
+                         )
+                         .join('')}
+                     </tbody>
+                   </table>
+                   <h3 style="color: #1F4F6E; margin-top: 1.25rem;">Questions fréquentes</h3>
+                   <dl style="color: #334155;">
+                     ${morningData.faq.map((q) => `<dt style="font-weight: 700; color: #1F4F6E; margin-top: 0.6rem;">${escapeHtml(q.question)}</dt><dd style="margin: 0.2rem 0 0.5rem 0;">${escapeHtml(q.answer)}</dd>`).join('')}
+                   </dl>
+                   <p style="font-style: italic; color: #475569; margin-top: 1rem;">${escapeHtml(morningData.attribution)}</p>
+                 </div>`
+              : detail.slug === 'cmi-systemes'
+              ? `<div style="margin-top: 1.75rem; border-top: 1px solid #e2e8f0; padding-top: 1.5rem;">
+                   <p style="color: #334155;">${escapeHtml(cmiSystemesData.identity.summary)}</p>
+                   <p style="color: #334155;">${escapeHtml(cmiSystemesData.identity.collaboration)}</p>
+                   <h3 style="color: #1F4F6E; margin-top: 1.25rem;">${escapeHtml(cmiSystemesData.whatTheyDo.title)}</h3>
+                   <p style="color: #334155;">${escapeHtml(cmiSystemesData.whatTheyDo.subtitle)}</p>
+                   <ul style="padding-left: 1.5rem; color: #334155;">
+                     ${cmiSystemesData.whatTheyDo.services.map((s) => `<li style="margin-bottom: 0.3rem;">${escapeHtml(s)}</li>`).join('')}
+                   </ul>
+                   <h3 style="color: #1F4F6E; margin-top: 1.25rem;">${escapeHtml(cmiSystemesData.cyberAcademy.title)}</h3>
+                   <p style="color: #334155;">${escapeHtml(cmiSystemesData.cyberAcademy.description)}</p>
+                   <p style="font-weight: 700; color: #1F4F6E;">${escapeHtml(cmiSystemesData.cyberAcademy.qualiopiNote)}</p>
+                   <h3 style="color: #1F4F6E; margin-top: 1.25rem;">${escapeHtml(cmiSystemesData.whyTogether.title)}</h3>
+                   <p style="color: #334155;">${escapeHtml(cmiSystemesData.whyTogether.body)}</p>
+                   <h3 style="color: #1F4F6E; margin-top: 1.25rem;">${escapeHtml(cmiSystemesData.jointWork.title)}</h3>
+                   <ul style="padding-left: 1.5rem; color: #334155;">
+                     ${cmiSystemesData.jointWork.items.map((i) => `<li style="margin-bottom: 0.35rem;"><strong>${escapeHtml(i.label)} :</strong> ${escapeHtml(i.detail)}</li>`).join('')}
+                   </ul>
+                   <p style="font-style: italic; color: #475569;">${escapeHtml(cmiSystemesData.jointWork.enrichmentNote)}</p>
+                   <h3 style="color: #1F4F6E; margin-top: 1.25rem;">Les mots-clés</h3>
+                   <table style="width: 100%; border-collapse: collapse; font-size: 0.9rem; text-align: left; margin-top: 0.5rem;">
+                     <thead>
+                       <tr style="background: #1F4F6E; color: #ffffff;">
+                         <th style="padding: 0.65rem 0.9rem; border: 1px solid #cbd5e1;">Pôle</th>
+                         <th style="padding: 0.65rem 0.9rem; border: 1px solid #cbd5e1;">Expertises &amp; champs d'intervention</th>
+                       </tr>
+                     </thead>
+                     <tbody>
+                       ${cmiSystemesData.keywordGroups
+                         .map(
+                           (row, idx) => `<tr style="background: ${idx % 2 === 0 ? '#ffffff' : '#f8fafc'};">
+                             <td style="padding: 0.65rem 0.9rem; border: 1px solid #e2e8f0; font-weight: 700; color: #1F4F6E;">${escapeHtml(row.category)}</td>
+                             <td style="padding: 0.65rem 0.9rem; border: 1px solid #e2e8f0; color: #334155;">${escapeHtml(row.keywords)}</td>
+                           </tr>`
+                         )
+                         .join('')}
+                     </tbody>
+                   </table>
+                   <h3 style="color: #1F4F6E; margin-top: 1.25rem;">Questions fréquentes</h3>
+                   <dl style="color: #334155;">
+                     ${cmiSystemesData.faq.map((q) => `<dt style="font-weight: 700; color: #1F4F6E; margin-top: 0.6rem;">${escapeHtml(q.question)}</dt><dd style="margin: 0.2rem 0 0.5rem 0;">${escapeHtml(q.answer)}</dd>`).join('')}
+                   </dl>
+                 </div>`
               : ''
           }
         </section>`;
@@ -687,7 +837,10 @@ const breadcrumbNames: Record<string, string> = {
   '/partenaires/formations-certifiees': 'Formations Certifiées & OPCO',
   '/partenaires/formations-certifiees/inatec': 'INATEC',
   '/partenaires/lieux': 'Lieux & Coworking',
+  '/partenaires/lieux/morning': 'Morning',
   '/partenaires/entreprises': 'Entreprises & Fondations',
+  '/partenaires/entreprises/cmi-systemes': 'CMI Systèmes',
+  '/partenaires/entreprises/cpme-77': 'CPME 77',
   '/partenaires/outils': 'Outils & Technologies',
   '/partenaires/outils/awa-cloud': 'AWACLOUD',
   '/partenaires/outils/onecub': 'Onecub',

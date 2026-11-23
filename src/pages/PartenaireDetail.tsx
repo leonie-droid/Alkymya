@@ -4,6 +4,7 @@ import {
   ArrowLeft,
   ArrowRight,
   Building2,
+  Calendar,
   CheckCircle2,
   ChevronDown,
   Cpu,
@@ -15,20 +16,25 @@ import {
   Layers,
   Lock,
   Mail,
+  MapPin,
   NotebookPen,
   PenTool,
   Play,
   Scissors,
   Search,
   ServerOff,
+  ShieldCheck,
   Sparkles,
   Users
 } from 'lucide-react';
 import { SEO } from '../components/SEO';
 import {
   allPartners,
+  cmiSystemesData,
+  cpme77Data,
   euridisFormationData,
   iesegFormationData,
+  morningData,
   getPartnerCategoryMeta,
   getPartnerDetail
 } from '../data/partenaires';
@@ -123,7 +129,11 @@ export default function PartenaireDetail() {
   const isAwaCloud = detail.slug === 'awa-cloud';
   const isEuridis = detail.slug === 'euridis';
   const isIeseg = detail.slug === 'ieseg';
+  const isCpme77 = detail.slug === 'cpme-77';
+  const isMorning = detail.slug === 'morning';
+  const isCmiSystemes = detail.slug === 'cmi-systemes';
   const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(0);
+  const [logoError, setLogoError] = useState(false);
 
   return (
     <div className="bg-[#f4f6f9] text-[#1F4F6E] min-h-screen font-['Roboto',sans-serif] selection:bg-[#C06721] selection:text-white">
@@ -169,18 +179,25 @@ export default function PartenaireDetail() {
                     : 'w-16 h-16 sm:w-20 sm:h-20 bg-white p-2'
                 }`}
               >
-                <img
-                  src={
-                    entry.logo.toLowerCase().endsWith('.svg')
-                      ? entry.logo
-                      : cloudinaryUrl(entry.logo, 320)
-                  }
-                  width={entry.logoBgDark ? 128 : 80}
-                  height={80}
-                  alt={`Logo ${detail.name}`}
-                  referrerPolicy="no-referrer"
-                  className="w-full h-full object-contain"
-                />
+                {logoError ? (
+                  <span className="text-xs font-semibold text-[#1F4F6E] text-center px-1 leading-tight">
+                    {detail.name.split(' ')[0]}
+                  </span>
+                ) : (
+                  <img
+                    src={
+                      entry.logo.toLowerCase().endsWith('.svg')
+                        ? entry.logo
+                        : cloudinaryUrl(entry.logo, 320)
+                    }
+                    width={entry.logoBgDark ? 128 : 80}
+                    height={80}
+                    alt={`Logo ${detail.name}`}
+                    referrerPolicy="no-referrer"
+                    onError={() => setLogoError(true)}
+                    className="w-full h-full object-contain"
+                  />
+                )}
               </a>
               <div>
                 <span className="inline-block text-[11px] font-medium uppercase tracking-[0.12em] text-[#02ADAB] bg-white/10 px-2.5 py-0.5 rounded-[4px] mb-2">
@@ -747,6 +764,582 @@ export default function PartenaireDetail() {
               </h2>
               <div className="space-y-3">
                 {iesegFormationData.faq.map((item, idx) => {
+                  const isOpen = openFaqIndex === idx;
+                  return (
+                    <div
+                      key={item.question}
+                      className="bg-[#f8fafc] border border-[#e2e8f0] rounded-[10px] overflow-hidden"
+                    >
+                      <button
+                        type="button"
+                        aria-expanded={isOpen}
+                        onClick={() => setOpenFaqIndex(isOpen ? null : idx)}
+                        className="w-full px-5 py-4 text-left flex items-center justify-between gap-4 hover:bg-white transition-colors"
+                      >
+                        <span className="font-medium text-[0.98rem] text-[#1F4F6E]">
+                          {item.question}
+                        </span>
+                        <ChevronDown
+                          className={`w-4 h-4 text-[#037971] shrink-0 transition-transform duration-200 ${
+                            isOpen ? 'rotate-180' : ''
+                          }`}
+                        />
+                      </button>
+                      {isOpen && (
+                        <div className="px-5 pb-4 text-[0.92rem] text-[#475569] leading-[1.65] bg-white border-t border-[#e2e8f0] pt-3">
+                          {item.answer}
+                        </div>
+                      )}
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* SECTION SPÉCIFIQUE CPME 77 : MATINÉES IA & CYBERSÉCURITÉ */}
+      {isCpme77 && (
+        <section className="bg-white border-y border-[#e2e8f0] py-14 px-6 my-4">
+          <div className="max-w-[1040px] mx-auto space-y-12">
+            {/* Bandeau fil rouge */}
+            <div className="bg-[#f8fafc] border border-[#e2e8f0] rounded-[12px] p-6 sm:p-7 flex flex-col lg:flex-row lg:items-center lg:justify-between gap-5">
+              <div className="max-w-[680px]">
+                <p className="text-xs uppercase tracking-[0.14em] text-[#037971] font-medium mb-1">
+                  Fil rouge · Seine-et-Marne (Automne 2026)
+                </p>
+                <p className="text-[1.2rem] sm:text-[1.35rem] font-medium text-[#1F4F6E]">
+                  {cpme77Data.conviction}
+                </p>
+                <p className="text-[0.94rem] text-[#475569] leading-[1.65] mt-2">
+                  {cpme77Data.intro}
+                </p>
+              </div>
+              <div className="shrink-0 bg-white border border-[#e2e8f0] rounded-[10px] px-5 py-4 text-left">
+                <div className="text-xs uppercase tracking-wider text-[#C06721] font-medium mb-1">
+                  Public visé
+                </div>
+                <div className="text-[1rem] font-medium text-[#1F4F6E]">
+                  Dirigeants de TPE &amp; PME
+                </div>
+                <div className="text-xs text-[#475569] mt-0.5 tabular-nums">
+                  13 &amp; 29 octobre 2026 · 9 h 30 – 11 h 30
+                </div>
+              </div>
+            </div>
+
+            {/* Deux matinées : IA & Cybersécurité */}
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+              {/* Matinée IA */}
+              <article className="bg-[#f8fafc] border border-[#e2e8f0] rounded-[12px] p-6 flex flex-col">
+                <div className="flex flex-wrap items-center gap-2 text-xs text-[#037971] font-medium tabular-nums mb-2">
+                  <Calendar className="w-4 h-4 shrink-0" />
+                  <span>{cpme77Data.morningAi.dateAndTime}</span>
+                  <span aria-hidden="true">·</span>
+                  <span>{cpme77Data.morningAi.speaker}</span>
+                </div>
+                <h2 className="text-[1.22rem] sm:text-[1.32rem] font-medium text-[#1F4F6E] leading-snug mb-3">
+                  {cpme77Data.morningAi.heading}
+                </h2>
+                <p className="text-[0.93rem] text-[#475569] leading-[1.65] mb-4">
+                  {cpme77Data.morningAi.summary}
+                </p>
+                <p className="text-xs uppercase tracking-[0.12em] text-[#1F4F6E] font-medium mb-2.5">
+                  {cpme77Data.morningAi.programmeIntro}
+                </p>
+                <ul className="space-y-2.5 pt-2 border-t border-[#e2e8f0]">
+                  {cpme77Data.morningAi.programme.map((item) => (
+                    <li
+                      key={item}
+                      className="flex items-start gap-2.5 text-[0.92rem] text-[#475569] leading-[1.6]"
+                    >
+                      <CheckCircle2 className="w-4 h-4 text-[#02ADAB] shrink-0 mt-1" />
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </article>
+
+              {/* Matinée Cybersécurité + Pourquoi associer les deux */}
+              <div className="flex flex-col gap-6">
+                <article className="bg-[#f8fafc] border border-[#e2e8f0] rounded-[12px] p-6">
+                  <div className="flex flex-wrap items-center gap-2 text-xs text-[#C06721] font-medium tabular-nums mb-2">
+                    <ShieldCheck className="w-4 h-4 shrink-0" />
+                    <span>{cpme77Data.morningCyber.dateAndTime}</span>
+                    <span aria-hidden="true">·</span>
+                    <span>{cpme77Data.morningCyber.speaker}</span>
+                  </div>
+                  <h2 className="text-[1.22rem] sm:text-[1.32rem] font-medium text-[#1F4F6E] leading-snug mb-3">
+                    {cpme77Data.morningCyber.heading}
+                  </h2>
+                  <p className="text-[0.93rem] text-[#475569] leading-[1.65]">
+                    {cpme77Data.morningCyber.summary}
+                  </p>
+                </article>
+
+                <article className="bg-white border border-[#e2e8f0] rounded-[12px] p-6 flex-1">
+                  <h2 className="text-[1.18rem] font-medium text-[#1F4F6E] mb-3">
+                    {cpme77Data.whyCombine.heading}
+                  </h2>
+                  <p className="text-[0.93rem] text-[#475569] leading-[1.68]">
+                    {cpme77Data.whyCombine.body}
+                  </p>
+                </article>
+              </div>
+            </div>
+
+            {/* Un partenariat à trois */}
+            <div>
+              <h2 className="text-[1.45rem] sm:text-[1.6rem] font-medium text-[#1F4F6E] mb-5">
+                {cpme77Data.tripartite.heading}
+              </h2>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+                {cpme77Data.tripartite.actors.map((actor) => (
+                  <div
+                    key={actor.name}
+                    className="bg-[#f8fafc] border border-[#e2e8f0] rounded-[12px] p-6 flex flex-col justify-between gap-4"
+                  >
+                    <div>
+                      <h3 className="text-[1.06rem] font-medium text-[#1F4F6E] mb-2">
+                        {actor.name}
+                      </h3>
+                      <p className="text-[0.92rem] text-[#475569] leading-[1.6]">{actor.role}</p>
+                    </div>
+                    {actor.url ? (
+                      <a
+                        href={actor.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-1.5 text-xs font-medium text-[#037971] hover:text-[#C06721] transition-colors"
+                      >
+                        <span>Site officiel</span>
+                        <ExternalLink className="w-3.5 h-3.5" />
+                      </a>
+                    ) : actor.internalHref ? (
+                      <Link
+                        to={actor.internalHref}
+                        className="inline-flex items-center gap-1.5 text-xs font-medium text-[#037971] hover:text-[#C06721] transition-colors"
+                      >
+                        <span>Profil de Cyril Garnier</span>
+                        <ArrowRight className="w-3.5 h-3.5" />
+                      </Link>
+                    ) : null}
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Les mots-clés de la matinée IA */}
+            <div className="bg-[#f8fafc] border border-[#e2e8f0] rounded-[12px] p-6">
+              <h2 className="text-[1.35rem] font-medium text-[#1F4F6E] mb-4">
+                Les mots-clés de la matinée IA
+              </h2>
+              <div className="overflow-x-auto">
+                <table className="w-full text-left border-collapse text-[0.9rem]">
+                  <thead>
+                    <tr className="border-b border-[#cbd5e1] text-[#1F4F6E]">
+                      <th className="py-2.5 pr-4 font-medium">Axe</th>
+                      <th className="py-2.5 font-medium">Notions &amp; thèmes abordés</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {cpme77Data.keywordGroups.map((row) => (
+                      <tr key={row.category} className="border-b border-[#e2e8f0] last:border-b-0">
+                        <td className="py-2.5 pr-4 font-medium text-[#1F4F6E] align-top whitespace-nowrap">
+                          {row.category}
+                        </td>
+                        <td className="py-2.5 text-[#475569]">{row.keywords}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+              <div className="mt-4 pt-3 border-t border-[#e2e8f0] flex flex-wrap items-center justify-between gap-4 text-xs text-[#475569]">
+                <span className="italic">{cpme77Data.attribution}</span>
+                <Link
+                  to="/alchimistes/cyril-garnier/"
+                  className="inline-flex items-center gap-1 font-medium text-[#037971] hover:text-[#C06721] transition-colors"
+                >
+                  <span>Profil complet de Cyril Garnier</span>
+                  <ArrowRight className="w-3.5 h-3.5" />
+                </Link>
+              </div>
+            </div>
+
+            {/* Questions fréquentes CPME 77 */}
+            <div>
+              <h2 className="text-[1.45rem] sm:text-[1.6rem] font-medium text-[#1F4F6E] mb-5">
+                Questions fréquentes
+              </h2>
+              <div className="space-y-3">
+                {cpme77Data.faq.map((item, idx) => {
+                  const isOpen = openFaqIndex === idx;
+                  return (
+                    <div
+                      key={item.question}
+                      className="bg-[#f8fafc] border border-[#e2e8f0] rounded-[10px] overflow-hidden"
+                    >
+                      <button
+                        type="button"
+                        aria-expanded={isOpen}
+                        onClick={() => setOpenFaqIndex(isOpen ? null : idx)}
+                        className="w-full px-5 py-4 text-left flex items-center justify-between gap-4 hover:bg-white transition-colors"
+                      >
+                        <span className="font-medium text-[0.98rem] text-[#1F4F6E]">
+                          {item.question}
+                        </span>
+                        <ChevronDown
+                          className={`w-4 h-4 text-[#037971] shrink-0 transition-transform duration-200 ${
+                            isOpen ? 'rotate-180' : ''
+                          }`}
+                        />
+                      </button>
+                      {isOpen && (
+                        <div className="px-5 pb-4 text-[0.92rem] text-[#475569] leading-[1.65] bg-white border-t border-[#e2e8f0] pt-3">
+                          {item.answer}
+                        </div>
+                      )}
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* SECTION SPÉCIFIQUE MORNING : ATELIERS DÉCOUVERTE IA EN COWORKING */}
+      {isMorning && (
+        <section className="bg-white border-y border-[#e2e8f0] py-14 px-6 my-4">
+          <div className="max-w-[1040px] mx-auto space-y-12">
+            {/* Principe du partenariat */}
+            <div className="bg-[#f8fafc] border border-[#e2e8f0] rounded-[12px] p-6 sm:p-7 flex flex-col lg:flex-row lg:items-center lg:justify-between gap-5">
+              <div className="max-w-[680px]">
+                <p className="text-xs uppercase tracking-[0.14em] text-[#037971] font-medium mb-1">
+                  Partenariat communautés · Paris (2026)
+                </p>
+                <p className="text-[1.15rem] sm:text-[1.28rem] font-medium text-[#1F4F6E]">
+                  Lieu et communauté Morning · Expertise IA offerte par Alkymya
+                </p>
+                <p className="text-[0.94rem] text-[#475569] leading-[1.65] mt-2">
+                  {morningData.intro}
+                </p>
+              </div>
+              <div className="shrink-0 bg-white border border-[#e2e8f0] rounded-[10px] px-5 py-4 text-left">
+                <div className="text-xs uppercase tracking-wider text-[#C06721] font-medium mb-1">
+                  Sessions 2026
+                </div>
+                <div className="text-[1rem] font-medium text-[#1F4F6E]">
+                  Pereire (17e) &amp; Saint-Augustin (8e)
+                </div>
+                <div className="text-xs text-[#475569] mt-0.5 tabular-nums">
+                  23 avril &amp; 19 mai 2026 · Gratuit résidents
+                </div>
+              </div>
+            </div>
+
+            {/* Deux ateliers à Paris */}
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+              {morningData.workshops.map((ws) => (
+                <article
+                  key={ws.number}
+                  className="bg-[#f8fafc] border border-[#e2e8f0] rounded-[12px] p-6 flex flex-col justify-between gap-4"
+                >
+                  <div>
+                    <div className="flex flex-wrap items-center gap-2 text-xs text-[#037971] font-medium tabular-nums mb-2">
+                      <Calendar className="w-4 h-4 shrink-0" />
+                      <span>{ws.dateAndTime}</span>
+                      <span aria-hidden="true">·</span>
+                      <span className="text-[#C06721]">{ws.capacity}</span>
+                    </div>
+                    <h2 className="text-[1.2rem] sm:text-[1.28rem] font-medium text-[#1F4F6E] leading-snug mb-3">
+                      {ws.number}, {ws.heading}
+                    </h2>
+                    <p className="text-[0.93rem] text-[#475569] leading-[1.65] mb-3">
+                      {ws.detail}
+                    </p>
+                  </div>
+                  <div className="bg-white border border-[#e2e8f0] rounded-[8px] px-4 py-3 text-[0.89rem] text-[#475569] leading-[1.6]">
+                    <span className="font-medium text-[#1F4F6E]">Retour post-session : </span>
+                    {ws.feedback}
+                  </div>
+                </article>
+              ))}
+            </div>
+
+            {/* Pourquoi ce format & Ce que couvre un atelier de découverte */}
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
+              <div className="lg:col-span-6 space-y-4">
+                <h2 className="text-[1.4rem] sm:text-[1.55rem] font-medium text-[#1F4F6E]">
+                  Pourquoi ce format ?
+                </h2>
+                <div className="space-y-3">
+                  {morningData.whyFormat.map((item) => (
+                    <div
+                      key={item.audience}
+                      className="bg-[#f8fafc] border border-[#e2e8f0] rounded-[10px] p-4"
+                    >
+                      <h3 className="text-[0.98rem] font-medium text-[#1F4F6E] mb-1">
+                        {item.audience}
+                      </h3>
+                      <p className="text-[0.91rem] text-[#475569] leading-[1.6]">
+                        {item.benefit}
+                      </p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              <div className="lg:col-span-6">
+                <h2 className="text-[1.4rem] sm:text-[1.55rem] font-medium text-[#1F4F6E] mb-4">
+                  Ce que couvre un atelier de découverte
+                </h2>
+                <div className="bg-[#f8fafc] border border-[#e2e8f0] rounded-[12px] p-6">
+                  <ul className="space-y-3">
+                    {morningData.coveredTopics.map((topic) => (
+                      <li
+                        key={topic}
+                        className="flex items-start gap-2.5 text-[0.93rem] text-[#475569] leading-[1.6]"
+                      >
+                        <CheckCircle2 className="w-4 h-4 text-[#02ADAB] shrink-0 mt-1" />
+                        <span>{topic}</span>
+                      </li>
+                    ))}
+                  </ul>
+                  <div className="mt-5 pt-4 border-t border-[#e2e8f0] flex items-center gap-2 text-xs text-[#475569]">
+                    <MapPin className="w-4 h-4 text-[#C06721] shrink-0" />
+                    <span>Paris 17e (Pereire) &amp; Paris 8e (Saint-Augustin) — Réseau Morning</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Tableau mots-clés */}
+            <div className="bg-[#f8fafc] border border-[#e2e8f0] rounded-[12px] p-6">
+              <h2 className="text-[1.35rem] font-medium text-[#1F4F6E] mb-4">
+                Les mots-clés
+              </h2>
+              <div className="overflow-x-auto">
+                <table className="w-full text-left border-collapse text-[0.9rem]">
+                  <thead>
+                    <tr className="border-b border-[#cbd5e1] text-[#1F4F6E]">
+                      <th className="py-2.5 pr-4 font-medium">Axe</th>
+                      <th className="py-2.5 font-medium">Notions &amp; pratiques couvertes</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {morningData.keywordGroups.map((row) => (
+                      <tr key={row.category} className="border-b border-[#e2e8f0] last:border-b-0">
+                        <td className="py-2.5 pr-4 font-medium text-[#1F4F6E] align-top whitespace-nowrap">
+                          {row.category}
+                        </td>
+                        <td className="py-2.5 text-[#475569]">{row.keywords}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+              <div className="mt-4 pt-3 border-t border-[#e2e8f0] flex flex-wrap items-center justify-between gap-4 text-xs text-[#475569]">
+                <span className="italic">{morningData.attribution}</span>
+                <Link
+                  to="/alchimistes/cyril-garnier/"
+                  className="inline-flex items-center gap-1 font-medium text-[#037971] hover:text-[#C06721] transition-colors"
+                >
+                  <span>Profil complet de Cyril Garnier</span>
+                  <ArrowRight className="w-3.5 h-3.5" />
+                </Link>
+              </div>
+            </div>
+
+            {/* Questions fréquentes Morning */}
+            <div>
+              <h2 className="text-[1.45rem] sm:text-[1.6rem] font-medium text-[#1F4F6E] mb-5">
+                Questions fréquentes
+              </h2>
+              <div className="space-y-3">
+                {morningData.faq.map((item, idx) => {
+                  const isOpen = openFaqIndex === idx;
+                  return (
+                    <div
+                      key={item.question}
+                      className="bg-[#f8fafc] border border-[#e2e8f0] rounded-[10px] overflow-hidden"
+                    >
+                      <button
+                        type="button"
+                        aria-expanded={isOpen}
+                        onClick={() => setOpenFaqIndex(isOpen ? null : idx)}
+                        className="w-full px-5 py-4 text-left flex items-center justify-between gap-4 hover:bg-white transition-colors"
+                      >
+                        <span className="font-medium text-[0.98rem] text-[#1F4F6E]">
+                          {item.question}
+                        </span>
+                        <ChevronDown
+                          className={`w-4 h-4 text-[#037971] shrink-0 transition-transform duration-200 ${
+                            isOpen ? 'rotate-180' : ''
+                          }`}
+                        />
+                      </button>
+                      {isOpen && (
+                        <div className="px-5 pb-4 text-[0.92rem] text-[#475569] leading-[1.65] bg-white border-t border-[#e2e8f0] pt-3">
+                          {item.answer}
+                        </div>
+                      )}
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* SECTION SPÉCIFIQUE CMI SYSTÈMES : INFORMATIQUE, CYBERSÉCURITÉ & PARTENARIAT IA */}
+      {isCmiSystemes && (
+        <section className="bg-white border-y border-[#e2e8f0] py-14 px-6 my-4">
+          <div className="max-w-[1040px] mx-auto space-y-12">
+            {/* Bandeau identité & gouvernance */}
+            <div className="bg-[#f8fafc] border border-[#e2e8f0] rounded-[12px] p-6 sm:p-7 flex flex-col lg:flex-row lg:items-center lg:justify-between gap-6">
+              <div className="max-w-[680px]">
+                <p className="text-xs uppercase tracking-[0.14em] text-[#037971] font-medium mb-1">
+                  Seine-et-Marne · {cmiSystemesData.identity.founded} · {cmiSystemesData.identity.expertise}
+                </p>
+                <p className="text-[1.15rem] sm:text-[1.25rem] font-medium text-[#1F4F6E]">
+                  {cmiSystemesData.identity.pillars.join(' · ')}
+                </p>
+                <p className="text-[0.94rem] text-[#475569] leading-[1.65] mt-2">
+                  {cmiSystemesData.identity.collaboration}
+                </p>
+              </div>
+              <div className="shrink-0 bg-white border border-[#e2e8f0] rounded-[10px] px-5 py-4 text-left">
+                <div className="text-xs uppercase tracking-wider text-[#C06721] font-medium mb-1">
+                  Direction &amp; Certification
+                </div>
+                <div className="text-[0.98rem] font-medium text-[#1F4F6E]">
+                  {cmiSystemesData.identity.president}
+                </div>
+                <div className="text-xs text-[#475569] mt-0.5">
+                  Qualiopi pour la cybersécurité (CMI)
+                </div>
+              </div>
+            </div>
+
+            {/* Ce que fait CMI Systèmes + Centre de formation cyber */}
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
+              <article className="lg:col-span-6 bg-[#f8fafc] border border-[#e2e8f0] rounded-[12px] p-6 flex flex-col">
+                <h2 className="text-[1.35rem] sm:text-[1.45rem] font-medium text-[#1F4F6E] mb-2">
+                  {cmiSystemesData.whatTheyDo.title}
+                </h2>
+                <p className="text-[0.93rem] text-[#475569] leading-[1.65] mb-4">
+                  {cmiSystemesData.whatTheyDo.subtitle}
+                </p>
+                <ul className="space-y-2.5 pt-3 border-t border-[#e2e8f0]">
+                  {cmiSystemesData.whatTheyDo.services.map((srv) => (
+                    <li
+                      key={srv}
+                      className="flex items-start gap-2.5 text-[0.92rem] text-[#475569] leading-[1.6]"
+                    >
+                      <CheckCircle2 className="w-4 h-4 text-[#02ADAB] shrink-0 mt-1" />
+                      <span>{srv}</span>
+                    </li>
+                  ))}
+                </ul>
+              </article>
+
+              <div className="lg:col-span-6 flex flex-col gap-6">
+                <article className="bg-[#f8fafc] border border-[#e2e8f0] rounded-[12px] p-6">
+                  <div className="flex items-center gap-2 text-xs text-[#C06721] font-medium mb-2">
+                    <ShieldCheck className="w-4 h-4 shrink-0" />
+                    <span>Centre de formation CMI · Qualiopi Cybersécurité</span>
+                  </div>
+                  <h2 className="text-[1.3rem] font-medium text-[#1F4F6E] mb-3">
+                    {cmiSystemesData.cyberAcademy.title}
+                  </h2>
+                  <p className="text-[0.93rem] text-[#475569] leading-[1.65] mb-3">
+                    {cmiSystemesData.cyberAcademy.description}
+                  </p>
+                  <p className="text-[0.9rem] text-[#1F4F6E] bg-white border border-[#e2e8f0] rounded-[8px] px-4 py-3 leading-[1.6]">
+                    {cmiSystemesData.cyberAcademy.qualiopiNote}
+                  </p>
+                </article>
+
+                <article className="bg-white border border-[#e2e8f0] rounded-[12px] p-6 flex-1">
+                  <h2 className="text-[1.22rem] font-medium text-[#1F4F6E] mb-2.5">
+                    {cmiSystemesData.whyTogether.title}
+                  </h2>
+                  <p className="text-[0.93rem] text-[#475569] leading-[1.68]">
+                    {cmiSystemesData.whyTogether.body}
+                  </p>
+                  <div className="mt-4 pt-3 border-t border-[#e2e8f0]">
+                    <Link
+                      to="/partenaires/entreprises/cpme-77/"
+                      className="inline-flex items-center gap-1.5 text-xs font-medium text-[#037971] hover:text-[#C06721] transition-colors"
+                    >
+                      <span>Voir la fiche des deux matinées CPME 77 (automne 2026)</span>
+                      <ArrowRight className="w-3.5 h-3.5" />
+                    </Link>
+                  </div>
+                </article>
+              </div>
+            </div>
+
+            {/* Ce que nous faisons ensemble */}
+            <div>
+              <h2 className="text-[1.45rem] sm:text-[1.6rem] font-medium text-[#1F4F6E] mb-5">
+                {cmiSystemesData.jointWork.title}
+              </h2>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+                {cmiSystemesData.jointWork.items.map((item) => (
+                  <div
+                    key={item.label}
+                    className="bg-[#f8fafc] border border-[#e2e8f0] rounded-[12px] p-6"
+                  >
+                    <h3 className="text-[1.06rem] font-medium text-[#1F4F6E] mb-2">
+                      {item.label}
+                    </h3>
+                    <p className="text-[0.92rem] text-[#475569] leading-[1.6]">{item.detail}</p>
+                  </div>
+                ))}
+              </div>
+              <p className="text-xs italic text-[#5a7a90] mt-4">
+                {cmiSystemesData.jointWork.enrichmentNote}
+              </p>
+            </div>
+
+            {/* Les mots-clés */}
+            <div className="bg-[#f8fafc] border border-[#e2e8f0] rounded-[12px] p-6">
+              <h2 className="text-[1.35rem] font-medium text-[#1F4F6E] mb-4">
+                Les mots-clés
+              </h2>
+              <div className="overflow-x-auto">
+                <table className="w-full text-left border-collapse text-[0.9rem]">
+                  <thead>
+                    <tr className="border-b border-[#cbd5e1] text-[#1F4F6E]">
+                      <th className="py-2.5 pr-4 font-medium">Pôle</th>
+                      <th className="py-2.5 font-medium">Expertises &amp; champs d’intervention</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {cmiSystemesData.keywordGroups.map((row) => (
+                      <tr key={row.category} className="border-b border-[#e2e8f0] last:border-b-0">
+                        <td className="py-2.5 pr-4 font-medium text-[#1F4F6E] align-top whitespace-nowrap">
+                          {row.category}
+                        </td>
+                        <td className="py-2.5 text-[#475569]">{row.keywords}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            {/* Questions fréquentes CMI Systèmes */}
+            <div>
+              <h2 className="text-[1.45rem] sm:text-[1.6rem] font-medium text-[#1F4F6E] mb-5">
+                Questions fréquentes
+              </h2>
+              <div className="space-y-3">
+                {cmiSystemesData.faq.map((item, idx) => {
                   const isOpen = openFaqIndex === idx;
                   return (
                     <div
