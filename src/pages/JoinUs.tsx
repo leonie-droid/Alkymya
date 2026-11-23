@@ -27,9 +27,10 @@ export default function JoinUs() {
     <div className="bg-[#f4f6f9] text-[#1F4F6E] min-h-screen font-['Roboto',sans-serif] selection:bg-[#C06721] selection:text-white">
       <SEO
         title="Rejoindre l'Agence IA Alkymya | Experts IA France"
-        description="Rejoignez notre studio création IA et agence IA : formateurs IA, créateurs d'agents IA sur mesure et experts IA France engagés."
+        description="Rejoignez Alkymya en Île-de-France : formateurs IA, concepteurs d'agents autonomes et alternants formés sur des projets réels en production."
         keywords="agence IA, experts IA France, studio création IA, création d'agents IA sur mesure, formation IA OPCO"
         canonicalPath="/rejoindre"
+        ogImage="https://alkymya.co/og-rejoindre.jpg"
         type="WebPage"
       />
 

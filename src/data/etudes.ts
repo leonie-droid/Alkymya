@@ -66,7 +66,7 @@ export const studiesList: StudyPageData[] = [
     coAuthors: 'Analyse & production assistées par Claw (Claude Sonnet), Gemini, Perplexity AI, Python/Matplotlib et Typst (agrégats anonymisés uniquement).',
     seoTitle: 'Étude Génération IA 2024–2026 (1 082 étudiants) | Alkymya',
     seoDescription:
-      'Rapport longitudinal Alkymya (n=1 082, 5 écoles franciliennes) : adoption à 98,1 %, usage quotidien à 61 %, split-stack Claude, ambivalence 3:1 et fracture TikTok Shop ×12.',
+      "Rapport longitudinal Alkymya (n=1 082, 5 écoles) : 98,1 % d'adoption, 61 % d'usage quotidien, split-stack Claude, ambivalence 3:1 et TikTok Shop.",
     keywords:
       'étude Génération IA 2026, Cyril Garnier, 1082 étudiants IA France, split-stack Claude ChatGPT, ambivalence productive, TikTok Shop étudiants',
     h1: 'Génération IA 2024 → 2026 : 1 082 étudiants français face à l’IA et à l’attention',
@@ -326,7 +326,7 @@ export const studiesList: StudyPageData[] = [
     author: 'Cyril Garnier',
     seoTitle: 'Étude Génération IA 2024 (n=326 étudiants) | Alkymya',
     seoDescription:
-      'Première vague Génération IA (mai–déc. 2024, 326 répondants Bachelor, Master et enseignants) : usages académiques (>90 %), outils et demande de pédagogie « IA First ».',
+      'Vague 1 Génération IA (2024, 326 répondants Bachelor, Master et enseignants) : usages académiques (>90 %), outils et pédagogie « IA First ».',
     keywords:
       'Génération IA 2024, sondage IA étudiants 2024, Cyril Garnier, IA First enseignement supérieur, ChatGPT 2024 étudiants',
     h1: 'Génération IA 2024 : l’étude fondatrice sur le paradoxe de l’IA à l’école',
@@ -444,9 +444,9 @@ export const studiesList: StudyPageData[] = [
     dateModified: '2026-11-20',
     version: 'Édition originale (5 nov. 2025)',
     author: 'Cyril Garnier (avec Gemini)',
-    seoTitle: 'La Doctrine IAG : Géopolitique & Stratégie IA (PDF + Audio) | Alkymya',
+    seoTitle: 'La Doctrine IAG : Géopolitique & Stratégie IA | Alkymya',
     seoDescription:
-      'Analyse prospective de Cyril Garnier : les 5 piliers de la « Doctrine IAG » américaine (déréglementation, énergie, puces, minerais, Europe) en texte, tableau, PDF et podcast 5 min 43.',
+      'Analyse de Cyril Garnier : les 5 piliers de la Doctrine IAG américaine (déréglementation, énergie, puces, minerais, Europe) en HTML, PDF et audio.',
     keywords:
       'Doctrine IAG, Cyril Garnier, géopolitique intelligence artificielle, AGI Trump administration, AI Action Plan, podcast IA Alkymya',
     h1: 'La Doctrine IAG : décrypter la stratégie géopolitique et énergétique de la course à l’AGI',

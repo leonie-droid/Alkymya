@@ -60,7 +60,7 @@ export default function GenerateurIA() {
         description="Comment les étudiants intègrent-ils l'IA ? Trois années d'enquête (2024-2026) auprès de 1 082 étudiants : pratiques, attentes et inquiétudes."
         keywords="studio création IA, création d'agents IA sur mesure, accompagnement intelligence artificielle, agence IA, stratégie SEO et GEO"
         canonicalPath="/ia"
-        ogImage="https://res.cloudinary.com/dokzioyu4/image/upload/v1777491204/Capture_GENERATION_IA_lrxvdx.png"
+        ogImage="https://alkymya.co/og-ia.jpg"
         type="WebApplication"
       />
 

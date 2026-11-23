@@ -28,10 +28,10 @@ export default function BusinessGame() {
         '@type': 'WebPage',
         '@id': `${canonicalUrl}#webpage`,
         url: canonicalUrl,
-        name: 'Business Game NoNo BanaBa : Simulation Stratégie & Data | Alkymya',
+        name: 'Business Game NoNo BanaBa : Stratégie & Data | Alkymya',
         headline: 'Business Game NoNo BanaBa : apprendre le web-marketing et la data par le jeu',
         description:
-          "Découvrez NoNo BanaBa, le business game pédagogique conçu par Alkymya pour former étudiants de grandes écoles et équipes dirigeantes à la data, au marketing digital et aux business modèles.",
+          "NoNo BanaBa : le business game pédagogique d’Alkymya pour expérimenter data, web-marketing, IA et modèles économiques en grande école ou entreprise.",
         inLanguage: 'fr-FR',
         isPartOf: { '@id': 'https://alkymya.co/#website' },
         mainEntity: { '@id': `${canonicalUrl}#app` },
@@ -68,7 +68,7 @@ export default function BusinessGame() {
     <div className="bg-[#f4f6f9] text-[#1F4F6E] min-h-screen font-['Roboto',sans-serif] selection:bg-[#C06721] selection:text-white">
       <SEO
         title="Business Game NoNo BanaBa : Stratégie & Data | Alkymya"
-        description="NoNo BanaBa : simulation interactive conçue par Alkymya pour expérimenter web-marketing, analyse de données, IA et business modèles en grande école ou séminaire PME."
+        description="NoNo BanaBa : le business game pédagogique d’Alkymya pour expérimenter data, web-marketing, IA et modèles économiques en grande école ou entreprise."
         keywords="NoNo BanaBa, business game IA, jeu pédagogique marketing data, atelier grande école Alkymya, simulation stratégie"
         canonicalPath="/ressources/business-game/"
         ogImage="https://alkymya.co/og-ressources.jpg"

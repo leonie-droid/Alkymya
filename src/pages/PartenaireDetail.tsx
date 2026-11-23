@@ -76,6 +76,25 @@ export default function PartenaireDetail() {
   const canonicalPath = `/partenaires/${categoryMeta.slug}/${detail.slug}/`;
   const canonicalUrl = `https://alkymya.co${canonicalPath}`;
 
+  const isAwaCloud = detail.slug === 'awa-cloud';
+  const isEuridis = detail.slug === 'euridis';
+  const isIeseg = detail.slug === 'ieseg';
+  const isCpme77 = detail.slug === 'cpme-77';
+  const isMorning = detail.slug === 'morning';
+  const isCmiSystemes = detail.slug === 'cmi-systemes';
+
+  const partnerFaqItems = isEuridis
+    ? euridisFormationData.faq
+    : isIeseg
+    ? iesegFormationData.faq
+    : isCpme77
+    ? cpme77Data.faq
+    : isMorning
+    ? morningData.faq
+    : isCmiSystemes
+    ? cmiSystemesData.faq
+    : [];
+
   // Règle d'entité (Principe 5) : WebPage + Organization partenaire (url + sameAs).
   // JAMAIS de LocalBusiness et JAMAIS l'adresse d'Alkymya sur un nœud partenaire.
   const structuredData = {
@@ -122,16 +141,26 @@ export default function PartenaireDetail() {
           },
           { '@type': 'ListItem', position: 4, name: detail.name, item: canonicalUrl }
         ]
-      }
+      },
+      ...(partnerFaqItems.length > 0
+        ? [
+            {
+              '@type': 'FAQPage',
+              '@id': `${canonicalUrl}#faq`,
+              mainEntity: partnerFaqItems.map((q) => ({
+                '@type': 'Question',
+                name: q.question,
+                acceptedAnswer: {
+                  '@type': 'Answer',
+                  text: q.answer
+                }
+              }))
+            }
+          ]
+        : [])
     ]
   };
 
-  const isAwaCloud = detail.slug === 'awa-cloud';
-  const isEuridis = detail.slug === 'euridis';
-  const isIeseg = detail.slug === 'ieseg';
-  const isCpme77 = detail.slug === 'cpme-77';
-  const isMorning = detail.slug === 'morning';
-  const isCmiSystemes = detail.slug === 'cmi-systemes';
   const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(0);
   const [logoError, setLogoError] = useState(false);
 
@@ -142,7 +171,7 @@ export default function PartenaireDetail() {
         description={detail.seoDescription}
         keywords={detail.keywords}
         canonicalPath={canonicalPath}
-        ogImage={cloudinaryUrl(entry.logo, 600)}
+        ogImage="https://alkymya.co/og-partenaires.jpg"
         type="WebPage"
         structuredData={structuredData}
       />

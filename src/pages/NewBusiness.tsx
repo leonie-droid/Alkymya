@@ -127,7 +127,7 @@ export default function NewBusiness() {
         description="Accompagnement IA dirigeants et indépendants sur 6 mois : création de MVP, validation client, agents IA sur mesure et stratégie SEO et GEO."
         keywords="accompagnement IA dirigeants et indépendants, création d'agents IA sur mesure, stratégie SEO et GEO, experts IA France, agence IA"
         canonicalPath="/newbusiness"
-        ogImage="https://res.cloudinary.com/dokzioyu4/image/upload/v1758192982/66cffcd8-15f1-415f-b423-9f428d63e22f_gqjd53.png"
+        ogImage="https://alkymya.co/og-newbusiness.jpg"
         type="EducationalOccupationalProgram"
       />
 

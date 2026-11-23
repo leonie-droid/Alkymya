@@ -1104,6 +1104,15 @@ function buildJsonLd(route: RouteData, canonicalUrl: string) {
     "logo": cloudinaryUrl("https://res.cloudinary.com/dokzioyu4/image/upload/v1758096912/logo_principal_bleu_gbnyuu.png", 600),
     "image": "https://alkymya.co/og-image.jpg",
     "description": "Alkymya, studio d'expertise et de création IA en France : accompagnement intelligence artificielle, création d'agents IA sur mesure, stratégie SEO et GEO Google AI et formations finançables OPCO via nos organismes partenaires certifiés Qualiopi.",
+    "knowsAbout": [
+      "Intelligence Artificielle Générative",
+      "Création d'Agents IA Sur Mesure",
+      "Stratégie SEO et GEO Google AI",
+      "Formation IA Entreprise OPCO",
+      "Audit Capital IA",
+      "RAG Local et Souveraineté des Données",
+      "Conformité IA Act et RGPD"
+    ],
     "founder": {
       "@id": "https://alkymya.co/#cyril-garnier"
     },
@@ -1346,7 +1355,7 @@ function buildJsonLd(route: RouteData, canonicalUrl: string) {
     };
   }
 
-  // 8. Fiche partenaire : WebPage + Organization partenaire (jamais LocalBusiness ni adresse Alkymya)
+  // 8. Fiche partenaire : WebPage + Organization partenaire (jamais LocalBusiness ni adresse Alkymya) + FAQPage si FAQ visible
   if (partnerDetail) {
     const partnerEntry = allPartners.find((p) => p.slug === partnerDetail.slug);
     const partnerNodeId = `${canonicalUrl}#partner`;
@@ -1358,6 +1367,51 @@ function buildJsonLd(route: RouteData, canonicalUrl: string) {
       "name": partnerDetail.name,
       "url": partnerEntry?.websiteUrl || partnerDetail.ctaUrl,
       ...(partnerEntry?.sameAs && partnerEntry.sameAs.length > 0 ? { "sameAs": partnerEntry.sameAs } : {})
+    });
+
+    const partnerFaqItems =
+      partnerDetail.slug === 'euridis'
+        ? euridisFormationData.faq
+        : partnerDetail.slug === 'ieseg'
+        ? iesegFormationData.faq
+        : partnerDetail.slug === 'cpme-77'
+        ? cpme77Data.faq
+        : partnerDetail.slug === 'morning'
+        ? morningData.faq
+        : partnerDetail.slug === 'cmi-systemes'
+        ? cmiSystemesData.faq
+        : [];
+
+    if (partnerFaqItems.length > 0) {
+      graphNodes.push({
+        "@type": "FAQPage",
+        "@id": `${canonicalUrl}#faq`,
+        "mainEntity": partnerFaqItems.map((q) => ({
+          "@type": "Question",
+          "name": q.question,
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": q.answer
+          }
+        }))
+      });
+    }
+  }
+
+  // 8b. Schéma WebApplication pour /ia/ (Générateur IA & Observatoire)
+  if (route.path === '/ia') {
+    const webAppId = 'https://alkymya.co/ia/#webapp';
+    webpageNode.mainEntity = { "@id": webAppId };
+    graphNodes.push({
+      "@type": "WebApplication",
+      "@id": webAppId,
+      "name": "Génération IA & Simulateur de Personas Alkymya",
+      "description": route.description,
+      "url": canonicalUrl,
+      "applicationCategory": "EducationalApplication",
+      "operatingSystem": "Web",
+      "inLanguage": "fr-FR",
+      "provider": { "@id": "https://alkymya.co/#organization" }
     });
   }
 
@@ -1510,7 +1564,7 @@ function generateSitemapXml(allRoutes: RouteData[]): string {
 
     return `  <url>
     <loc>${loc}</loc>
-    <lastmod>${today}</lastmod>
+    <lastmod>${r.lastmod || today}</lastmod>
     <changefreq>${changefreq}</changefreq>
     <priority>${priority}</priority>
 ${imageXml}

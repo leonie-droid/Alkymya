@@ -104,9 +104,9 @@ export const analyseursList: AnalyserToolData[] = [
     shortName: 'Analyseur de CV',
     subdomain: 'https://analysercvpro.alkymya.co/',
     categoryLabel: 'Employabilité · En partenariat avec Objectif Alternance',
-    seoTitle: 'Analyseur de CV IA Gratuit (avec Objectif Alternance) | Alkymya',
+    seoTitle: 'Analyseur de CV IA Gratuit (Objectif Alternance) | Alkymya',
     seoDescription:
-      'Optimisez gratuitement votre CV face à une offre d’emploi ou d’alternance cible grâce à l’Analyseur de CV IA co-construit avec Kendra Martine d’Objectif Alternance.',
+      'Optimisez gratuitement votre CV face à une offre d’emploi ou d’alternance grâce à l’Analyseur de CV IA co-construit avec Kendra Martine.',
     keywords:
       'analyseur de CV IA gratuit, optimiser CV alternance, analysercvpro.alkymya.co, Kendra Martine Objectif Alternance, Alkymya',
     h1: 'Analyseur de CV IA : confrontez votre CV à l’offre cible avant de postuler',

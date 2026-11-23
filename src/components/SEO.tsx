@@ -80,7 +80,11 @@ export const SEO: React.FC<SEOProps> = ({
     }
     if (ogImage) {
       upsertMeta('property', 'og:image', ogImage);
+      upsertMeta('property', 'og:image:secure_url', ogImage);
       upsertMeta('name', 'twitter:image', ogImage);
+      const imgAlt = title || 'Alkymya — Agence IA & Studio Création IA en France';
+      upsertMeta('property', 'og:image:alt', imgAlt);
+      upsertMeta('name', 'twitter:image:alt', imgAlt);
     }
     if (canonicalPath || title) {
       const origin = 'https://alkymya.co';
@@ -99,6 +103,16 @@ export const SEO: React.FC<SEOProps> = ({
     }
   }, [title, description, keywords, canonicalPath, ogImage, noIndex]);
 
+  const alkymyaKnowsAbout = [
+    "Intelligence Artificielle Générative",
+    "Création d'Agents IA Sur Mesure",
+    "Stratégie SEO et GEO Google AI",
+    "Formation IA Entreprise OPCO",
+    "Audit Capital IA",
+    "RAG Local et Souveraineté des Données",
+    "Conformité IA Act et RGPD"
+  ];
+
   const localBusinessSchema = {
     "@context": "https://schema.org",
     "@type": ["LocalBusiness", "ProfessionalService"],
@@ -110,6 +124,7 @@ export const SEO: React.FC<SEOProps> = ({
     "@id": "https://alkymya.co/#organization",
     "url": "https://alkymya.co/",
     "description": "Alkymya, studio d'expertise et de création IA en France : accompagnement intelligence artificielle, création d'agents IA sur mesure, stratégie SEO et GEO Google AI et formations OPCO via nos organismes partenaires certifiés Qualiopi.",
+    "knowsAbout": alkymyaKnowsAbout,
     "founder": {
       "@type": "Person",
       "@id": "https://alkymya.co/#cyril-garnier",
@@ -166,6 +181,7 @@ export const SEO: React.FC<SEOProps> = ({
     "legalName": "CYRIL GARNIER CONSULTING",
     "alternateName": ["Alkymya.co", "Studio Alkymya"],
     "description": "Alkymya, studio d'expertise et de création IA en France : atelier IA pratique, création d'agents IA, accompagnement dirigeants et formations finançables OPCO via nos organismes partenaires certifiés Qualiopi.",
+    "knowsAbout": alkymyaKnowsAbout,
     "url": "https://alkymya.co/",
     "telephone": "+33643649777",
     "email": "cyril@alkymya.co",

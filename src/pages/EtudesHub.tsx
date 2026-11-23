@@ -76,7 +76,7 @@ export default function EtudesHub() {
         '@type': 'CollectionPage',
         '@id': `${canonicalUrl}#webpage`,
         url: canonicalUrl,
-        name: 'Études IA Alkymya : Génération IA 2024–2026, Gemini 4 & Doctrine IAG',
+        name: 'Études IA : Génération IA, Gemini 4 & IAG | Alkymya',
         headline: 'Les 5 études publiées par Alkymya en texte, tableaux et PDF',
         description:
           "Consultez nos 5 études empiriques et prospectives avec chiffres clés, tableaux HTML, limites méthodologiques et exports PDF.",
@@ -113,8 +113,8 @@ export default function EtudesHub() {
   return (
     <div className="bg-[#f4f6f9] text-[#1F4F6E] min-h-screen font-['Roboto',sans-serif] selection:bg-[#C06721] selection:text-white">
       <SEO
-        title="Études IA : Génération IA 2024–2026, Gemini 4 & IAG | Alkymya"
-        description="Consultez les 5 études publiées par Alkymya avec tableaux HTML, méthodologie et PDF : Génération IA 2026 (1 082 étudiants), 2025, 2024, Doctrine IAG et Gemini 4."
+        title="Études IA : Génération IA, Gemini 4 & IAG | Alkymya"
+        description="Consultez les 5 études publiées par Alkymya avec tableaux HTML et PDF : Génération IA 2026 (1 082 étudiants), 2025, 2024, Doctrine IAG et Gemini 4."
         keywords="études IA Alkymya, Génération IA 2026 1082 étudiants, Génération IA 2025 personas, La Doctrine IAG, Interview Gemini 4"
         canonicalPath="/ressources/etudes/"
         ogImage="https://alkymya.co/og-ressources.jpg"

@@ -95,7 +95,7 @@ export default function PartenairesSubHub() {
         description={meta.seoDescription}
         keywords={meta.keywords}
         canonicalPath={canonicalPath}
-        ogImage="https://res.cloudinary.com/dokzioyu4/image/upload/v1788507182/logo_objectif_code_u3otua.png"
+        ogImage="https://alkymya.co/og-partenaires.jpg"
         type="CollectionPage"
         structuredData={structuredData}
       />

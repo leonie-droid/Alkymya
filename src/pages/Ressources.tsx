@@ -30,7 +30,7 @@ export default function Ressources() {
         '@type': 'CollectionPage',
         '@id': `${canonicalUrl}#webpage`,
         url: canonicalUrl,
-        name: 'Ressources IA, Études & Outils Gratuits | Alkymya',
+        name: 'Ressources IA, Études & Analyseurs Gratuits | Alkymya',
         headline: 'La bibliothèque ouverte d’Alkymya : 4 portes d’entrée opérationnelles',
         description:
           "Accédez à nos 5 études longitudinales et prospectives (Génération IA 2024–2026, Gemini 4, La Doctrine IAG), nos 3 analyseurs IA gratuits, le Business Game NoNo BanaBa et nos partenaires technologiques souverains.",
@@ -66,8 +66,8 @@ export default function Ressources() {
   return (
     <div className="bg-[#f4f6f9] text-[#1F4F6E] min-h-screen font-['Roboto',sans-serif] selection:bg-[#C06721] selection:text-white">
       <SEO
-        title="Ressources IA, Études & Outils Gratuits | Alkymya"
-        description="5 études complètes en HTML et PDF (Génération IA 2024–2026, Gemini 4, Doctrine IAG), 3 analyseurs IA gratuits documentés et Business Game NoNo BanaBa."
+        title="Ressources IA, Études & Analyseurs Gratuits | Alkymya"
+        description="Découvrez nos 5 études (Génération IA 2024–2026, Gemini 4, Doctrine IAG), 3 analyseurs IA gratuits, Business Game NoNo BanaBa et outils."
         keywords="études IA Alkymya, Génération IA 2026 1082 étudiants, analyseurs IA gratuits, Business Game NoNo BanaBa, Doctrine IAG"
         canonicalPath="/ressources/"
         ogImage="https://alkymya.co/og-ressources.jpg"

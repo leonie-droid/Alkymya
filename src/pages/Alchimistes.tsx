@@ -339,7 +339,7 @@ export default function Alchimistes() {
         description="Experts IA France : Cyril Garnier, Léonie Egesipe, Véronique Landereau, Mariana Didier Laurent, Olivier Dion et Kendra Martine."
         keywords="experts IA France, accompagnement IA dirigeants et indépendants, agence IA, studio création IA, formation IA OPCO"
         canonicalPath="/alchimistes/"
-        ogImage="https://res.cloudinary.com/dokzioyu4/image/upload/v1758192982/66cffcd8-15f1-415f-b423-9f428d63e22f_gqjd53.png"
+        ogImage="https://alkymya.co/og-alchimistes.jpg"
         type="AboutPage"
         structuredData={directoryStructuredData}
       />

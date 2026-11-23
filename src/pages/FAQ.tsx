@@ -319,6 +319,7 @@ export default function FAQ() {
         description="Réponses aux questions fréquentes sur Alkymya : accompagnement IA, agents autonomes, financement OPCO via partenaires Qualiopi et New Business MVP."
         keywords="FAQ IA, accompagnement intelligence artificielle, partenaires certifiés Qualiopi, financement OPCO, formation IA entreprise, création agents IA, prompt engineering, Génération IA"
         canonicalPath="/faq"
+        ogImage="https://alkymya.co/og-faq.jpg"
         type="FAQPage"
         faqData={flattenedFaq}
       />

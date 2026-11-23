@@ -2,6 +2,15 @@
   "@context": "https://schema.org",
   "@graph": [
     {
+      "@type": "WebSite",
+      "@id": "https://alkymya.co/#website",
+      "url": "https://alkymya.co/",
+      "name": "Alkymya",
+      "description": "Studio d'expertise et de création IA en France : accompagnement intelligence artificielle, agents IA sur mesure, stratégie SEO et GEO et formations OPCO via partenaires Qualiopi.",
+      "inLanguage": "fr-FR",
+      "publisher": { "@id": "https://alkymya.co/#organization" }
+    },
+    {
       "@type": ["ProfessionalService", "LocalBusiness"],
       "@id": "https://alkymya.co/#organization",
       "name": "Alkymya",
@@ -11,6 +20,15 @@
       "logo": "https://res.cloudinary.com/dokzioyu4/image/upload/f_auto,q_auto,w_600,c_limit/v1758096912/logo_principal_bleu_gbnyuu.png",
       "image": "https://alkymya.co/og-image.jpg",
       "description": "Alkymya, studio d'expertise et de création IA en France : accompagnement intelligence artificielle, création d'agents IA sur mesure, stratégie SEO et GEO Google AI et formations finançables OPCO via nos organismes partenaires certifiés Qualiopi.",
+      "knowsAbout": [
+        "Intelligence Artificielle Générative",
+        "Création d'Agents IA Sur Mesure",
+        "Stratégie SEO et GEO Google AI",
+        "Formation IA Entreprise OPCO",
+        "Audit Capital IA",
+        "RAG Local et Souveraineté des Données",
+        "Conformité IA Act et RGPD"
+      ],
       "founder": {
         "@id": "https://alkymya.co/#cyril-garnier"
       },
@@ -87,6 +105,7 @@
       "image": "https://res.cloudinary.com/dokzioyu4/image/upload/v1792763449/1792401247516_ussqzm.png",
       "worksFor": { "@id": "https://alkymya.co/#organization" },
       "sameAs": [
+        "https://aveclouise.fr/",
         "https://www.linkedin.com/in/veronique-landereau-97729a59/"
       ]
     },
@@ -133,6 +152,98 @@
       "name": "Atelier IA pratique & Formation IA entreprise (OPCO via partenaires Qualiopi)",
       "description": "Formation IA entreprise finançable OPCO via nos organismes partenaires certifiés Qualiopi (tels qu'INATEC), audit IA PME (Capital IA), créer son agent IA métier, valorisation d'archives photo et vidéo et conformité IA Act.",
       "provider": { "@id": "https://alkymya.co/#organization" }
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://alkymya.co/partenaires/entreprises/cmi-systemes/#partner",
+      "name": "CMI Systèmes",
+      "url": "https://cmisystemes.com/",
+      "sameAs": ["https://cmisystemes.com/"],
+      "description": "Entreprise informatique de Seine-et-Marne fondée en 2011 (infogérance TPE/PME/collectivités, cybersécurité et centre de formation certifié Qualiopi cyber), partenaire IA & cybersécurité d'Alkymya."
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://alkymya.co/partenaires/entreprises/cpme-77/#partner",
+      "name": "CPME 77 (Les Entrepreneurs Seine-et-Marne)",
+      "url": "https://www.cpme77.fr/",
+      "sameAs": [
+        "https://www.cpme77.fr/",
+        "https://www.facebook.com/CPME77",
+        "https://x.com/cpme77"
+      ],
+      "description": "Organisation patronale des TPE et PME en Seine-et-Marne, organisatrice des matinées dirigeants IA (Alkymya) et cybersécurité (CMI Systèmes)."
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://alkymya.co/partenaires/lieux/morning/#partner",
+      "name": "Morning",
+      "url": "https://www.morning.fr/",
+      "sameAs": ["https://www.morning.fr/"],
+      "description": "Réseau d'espaces de bureaux et de coworking à Paris et en Île-de-France accueillant les ateliers gratuits de découverte IA d'Alkymya (Pereire 17e et Saint-Augustin 8e)."
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://alkymya.co/partenaires/formations-certifiees/inatec/#partner",
+      "name": "INATEC",
+      "url": "https://www.inatec.fr/",
+      "sameAs": ["https://www.inatec.fr/"],
+      "description": "Organisme de formation et CFA certifié Qualiopi (NDA 11771056077) assurant le portage administratif et le financement OPCO des formations IA d'Alkymya."
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://alkymya.co/partenaires/insertion/objectif-alternance/#partner",
+      "name": "Objectif Alternance",
+      "url": "https://www.objectifalternance.fr/",
+      "sameAs": ["https://www.objectifalternance.fr/"],
+      "description": "Partenaire officiel d'Alkymya pour le recrutement d'alternants TPE/PME et le coaching emploi avec Kendra Martine, relié à l'Analyseur de CV IA gratuit."
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://alkymya.co/partenaires/outils/awa-cloud/#partner",
+      "name": "AWACLOUD",
+      "url": "https://awacloud.com/",
+      "sameAs": ["https://awacloud.com/", "https://awacloud.com/fr/apps"],
+      "description": "Éditeur français de bibliothèques et applications locales (AWA Convert, AWA Viewer, AWA PDF, AWA Office) convertissant documents PDF et Office en Markdown sans envoi cloud."
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://alkymya.co/partenaires/outils/onecub/#partner",
+      "name": "Onecub",
+      "url": "https://onecub.com/",
+      "sameAs": ["https://onecub.com/", "https://www.linkedin.com/in/olivierdion/"],
+      "description": "Entreprise fondée par Olivier Dion concevant des Data Spaces souverains conformes au RGPD, au Data Act et aux standards européens GAIA-X."
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://alkymya.co/partenaires/ecoles/euridis/#partner",
+      "name": "Euridis Business School",
+      "url": "https://www.euridis-ecole.com/",
+      "sameAs": ["https://www.euridis-ecole.com/"],
+      "description": "Grande école de commerce B2B partenaire où Alkymya forme les étudiants de B3 et Mastère à diriger l'IA, mesurer la valeur (AWA/tokens) et concevoir un harnais d'agent commercial."
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://alkymya.co/partenaires/ecoles/ieseg/#partner",
+      "name": "IÉSEG School of Management",
+      "url": "https://www.ieseg.fr/",
+      "sameAs": ["https://www.ieseg.fr/"],
+      "description": "Grande école de management partenaire depuis 2019 : sprint design M1, cours d'innovation, IA et marketing digital avancés, mentorat de mémoires (100 % réussite, agent SODA) et incubateur."
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://alkymya.co/partenaires/entreprises/#aveclouise",
+      "name": "AvecLouise",
+      "url": "https://aveclouise.fr/",
+      "sameAs": ["https://aveclouise.fr/"],
+      "description": "Initiative portée par Véronique Landereau dédiée au maintien à domicile, à la prévention santé et au soutien des proches aidants."
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://alkymya.co/partenaires/entreprises/#esperanta-services",
+      "name": "Esperanta Services",
+      "url": "https://esperantaservices.fr/",
+      "sameAs": ["https://esperantaservices.fr/"],
+      "description": "Structure d'aide à domicile et de services à la personne au Plessis-Trévise fondée et présidée par Mariana Didier Laurent."
     }
   ]
 }

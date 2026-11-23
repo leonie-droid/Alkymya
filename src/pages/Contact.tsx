@@ -81,10 +81,10 @@ export default function Contact() {
     <div className="bg-[#f4f6f9] text-[#1F4F6E] min-h-screen font-['Roboto',sans-serif] selection:bg-[#C06721] selection:text-white">
       <SEO
         title="Contact — formation IA et conseil en France | Alkymya"
-        description="Demandez un devis formation IA (OPCO via nos partenaires certifiés Qualiopi) ou un accompagnement dirigeants auprès d'Alkymya en France."
+        description="Contactez Alkymya, studio IA en France : devis formation IA OPCO via partenaires certifiés Qualiopi, ateliers et accompagnement dirigeants."
         keywords="devis formation IA OPCO, partenaires certifiés Qualiopi, experts IA France, accompagnement IA dirigeants et indépendants, formation IA Île-de-France"
         canonicalPath="/contact"
-        ogImage="https://res.cloudinary.com/dokzioyu4/image/upload/v1758192982/66cffcd8-15f1-415f-b423-9f428d63e22f_gqjd53.png"
+        ogImage="https://alkymya.co/og-contact.jpg"
         type="ContactPage"
       />
       {/* HERO SECTION */}

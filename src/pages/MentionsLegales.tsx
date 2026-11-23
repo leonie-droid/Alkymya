@@ -10,9 +10,10 @@ const MentionsLegales: React.FC = () => {
     <div className="bg-[#f4f6f9] text-[#1F4F6E] min-h-screen font-['Roboto',sans-serif] selection:bg-[#C06721] selection:text-white">
       <SEO
         title="Mentions Légales Agence IA & RGPD | Alkymya"
-        description="Mentions légales de l'agence IA Alkymya, experts IA France : conformité RGPD, hébergement cloud et co-création assistée par IA."
+        description="Mentions légales d'Alkymya (marque de CYRIL GARNIER CONSULTING, SASU, 2 rue Sacha Guitry, 77330 Ozoir-la-Ferrière) : RCS Melun, hébergement Netlify et RGPD."
         keywords="agence IA, experts IA France, conformité IA Act, RGPD, studio création IA"
         canonicalPath="/mentions-legales"
+        ogImage="https://alkymya.co/og-mentions.jpg"
         type="WebPage"
       />
 

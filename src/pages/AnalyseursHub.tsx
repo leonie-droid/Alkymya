@@ -52,7 +52,7 @@ export default function AnalyseursHub() {
     <div className="bg-[#f4f6f9] text-[#1F4F6E] min-h-screen font-['Roboto',sans-serif] selection:bg-[#C06721] selection:text-white">
       <SEO
         title="Analyseurs IA Gratuits : Photo, CV & Mémoire | Alkymya"
-        description="Testez nos 3 analyseurs IA gratuits sans inscription : Analyseur de photo, Analyseur de CV (avec Objectif Alternance) et Analyseur de mémoire."
+        description="Lancez nos 3 analyseurs IA gratuits en production (Photo, CV avec Objectif Alternance, Mémoire académique) avec mode d’emploi et confidentialité."
         keywords="analyseur de photo IA, analyseur de CV gratuit, analyseur de mémoire IA, outils IA gratuits Alkymya"
         canonicalPath="/ressources/analyseurs/"
         ogImage="https://alkymya.co/og-ressources.jpg"

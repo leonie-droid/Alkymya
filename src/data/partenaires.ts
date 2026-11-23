@@ -135,7 +135,7 @@ export const partnerCategories: PartnerCategoryMeta[] = [
     h1: 'Formations Certifiées & Portage OPCO : le partenariat Alkymya x INATEC',
     heroIntro:
       "Alkymya (marque de CYRIL GARNIER CONSULTING) est un studio d'expertise et de création IA, pas un organisme de formation certifié Qualiopi en nom propre. Pour rendre nos ateliers finançables par les OPCO jusqu'à 100 %, nous travaillons avec l'organisme certifié Qualiopi INATEC.",
-    seoTitle: 'Formations IA Certifiées Qualiopi & OPCO via INATEC | Alkymya',
+    seoTitle: 'Formations IA Qualiopi & OPCO via INATEC | Alkymya',
     seoDescription:
       "Comment financer votre formation IA par votre OPCO grâce au portage Qualiopi assuré par notre partenaire INATEC (NDA 11771056077).",
     keywords:
@@ -1296,9 +1296,9 @@ export const partnerDetails: Record<string, PartnerDetailContent> = {
     slug: 'cmi-systemes',
     categorySlug: 'entreprises',
     name: 'CMI Systèmes',
-    seoTitle: "CMI Systèmes x Alkymya : Informatique TPE/PME & Cybersécurité | Partenaires",
+    seoTitle: "CMI Systèmes x Alkymya : IT & Cybersécurité | Partenaires",
     seoDescription:
-      "CMI Systèmes, entreprise informatique de Seine-et-Marne (président Cyril Milan), partenaire d'Alkymya sur l'IA et la cybersécurité : infogérance TPE/PME et centre Qualiopi cyber.",
+      "CMI Systèmes (Seine-et-Marne, Cyril Milan), partenaire d'Alkymya sur l'IA et la cybersécurité : infogérance TPE/PME et centre Qualiopi cyber.",
     keywords:
       'CMI Systèmes, Cyril Milan, cybersécurité Seine-et-Marne, infogérance TPE PME, IA et cybersécurité, shadow IA, Qualiopi cybersécurité, CPME 77, Alkymya',
     h1: "CMI Systèmes : l'informatique de confiance des TPE, PME et collectivités",
@@ -1367,9 +1367,9 @@ export const partnerDetails: Record<string, PartnerDetailContent> = {
     slug: 'cpme-77',
     categorySlug: 'entreprises',
     name: 'CPME 77 (Les Entrepreneurs Seine-et-Marne)',
-    seoTitle: "CPME 77 x Alkymya : Matinées Dirigeants IA & Cybersécurité | Partenaires",
+    seoTitle: "CPME 77 x Alkymya : Matinées IA & Cyber | Partenaires",
     seoDescription:
-      "Deux matinées CPME 77 à l'automne 2026 pour dirigeants de TPE et PME : matinée IA par Alkymya (13 octobre) et matinée cybersécurité par CMI Systèmes (29 octobre).",
+      "Deux matinées CPME 77 à l'automne 2026 pour dirigeants de TPE/PME : matinée IA par Alkymya (13 oct.) et cybersécurité par CMI Systèmes (29 oct.).",
     keywords:
       'CPME 77, Les Entrepreneurs Seine-et-Marne, IA dirigeants TPE PME, CMI Systèmes, cybersécurité PME, shadow IA, gouvernance IA, Alkymya',
     h1: "CPME 77 : deux matinées pour que les dirigeants gardent la main sur l'IA et sur le risque cyber",
@@ -1438,9 +1438,9 @@ export const partnerDetails: Record<string, PartnerDetailContent> = {
     slug: 'morning',
     categorySlug: 'lieux',
     name: 'Morning',
-    seoTitle: "Morning x Alkymya : Ateliers Découverte IA en Coworking Paris | Partenaires",
+    seoTitle: "Morning x Alkymya : Ateliers IA Coworking | Partenaires",
     seoDescription:
-      "Deux ateliers gratuits de découverte de l'IA générative animés par Alkymya en 2026 dans les espaces Morning Pereire (Paris 17e) et Morning Saint-Augustin (Paris 8e).",
+      "Deux ateliers gratuits de découverte de l'IA générative animés par Alkymya en 2026 à Morning Pereire (Paris 17e) et Morning Saint-Augustin (8e).",
     keywords:
       'Morning, coworking, IA générative, productivité, atelier IA, entrepreneurs, Paris, Alkymya, Morning Pereire, Morning Saint-Augustin',
     h1: "Morning : deux ateliers de découverte de l'IA pour les clients des espaces de coworking",
@@ -1509,7 +1509,7 @@ export const partnerDetails: Record<string, PartnerDetailContent> = {
     slug: 'ieseg',
     categorySlug: 'ecoles',
     name: 'IÉSEG School of Management',
-    seoTitle: "IÉSEG x Alkymya : Innovation, Mentorat Mémoires & IA | Partenaires",
+    seoTitle: "IÉSEG x Alkymya : Innovation & Mentorat IA | Partenaires",
     seoDescription:
       "Intervenant en Master à l'IÉSEG depuis 2019 : sprint design M1, IA et marketing digital avancés, mentorat mémoires (100 % réussite), incubateur et agent SODA.",
     keywords:
@@ -1584,9 +1584,9 @@ export const partnerDetails: Record<string, PartnerDetailContent> = {
     slug: 'euridis',
     categorySlug: 'ecoles',
     name: 'Euridis Business School',
-    seoTitle: "Euridis Business School x Alkymya : Diriger l'IA & Agent Harness",
+    seoTitle: "Euridis x Alkymya : Diriger l'IA & Agents | Partenaires",
     seoDescription:
-      "Deux journées IA à Euridis (B3 & Mastère) : 80 % de finalisation du TP, mise en ligne d'un site le Jour 1, mesure AWA et agent harness commercial Claude/Gemini le Jour 2.",
+      "Deux journées IA à Euridis (B3 & Mastère) : 80 % de TP finalisé, site en ligne le Jour 1, mesure AWA et agent commercial le Jour 2.",
     keywords:
       'Euridis Business School IA, formation IA Euridis, agent harness, harness engineering, Capital IA, Cyril Garnier Alkymya, Claude Gemini étudiants',
     h1: "Euridis : deux journées pour apprendre à diriger l'IA, puis à en mesurer la valeur",
@@ -1908,7 +1908,7 @@ export const partnerDetails: Record<string, PartnerDetailContent> = {
     categorySlug: 'outils',
     name: 'Onecub',
     categoryBadge: undefined,
-    seoTitle: 'Onecub x Alkymya : Data Spaces Souverains & RGPD | Partenaires',
+    seoTitle: 'Onecub x Alkymya : Data Spaces & RGPD | Partenaires',
     seoDescription:
       'Onecub, fondé par Olivier Dion (Alchimiste Alkymya) : Data Spaces souverains, conformité RGPD, standards GAIA-X et gouvernance des données IA.',
     keywords:

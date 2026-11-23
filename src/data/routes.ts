@@ -464,7 +464,7 @@ export const routes: RouteData[] = [
   {
     path: '/ressources',
     title: "Ressources IA, Études & Analyseurs Gratuits | Alkymya",
-    description: "Quatre portes ouvertes : nos 5 études (Génération IA 2024–2026, Gemini 4, Doctrine IAG), 3 analyseurs IA gratuits, Business Game NoNo BanaBa et outils partenaires.",
+    description: "Découvrez nos 5 études (Génération IA 2024–2026, Gemini 4, Doctrine IAG), 3 analyseurs IA gratuits, Business Game NoNo BanaBa et outils.",
     h1: "Ressources IA, études et outils gratuits en production.",
     ogImage: "https://alkymya.co/og-ressources.jpg",
     lastmod: "2026-11-20",
@@ -521,8 +521,8 @@ export const routes: RouteData[] = [
   },
   {
     path: '/ressources/etudes',
-    title: "Études IA : Génération IA 2024–2026, Gemini 4 & IAG | Alkymya",
-    description: "Consultez les 5 études publiées par Alkymya avec chiffres clés, tableaux HTML et PDF : Génération IA 2026 (1 082 étudiants), 2025, 2024, Doctrine IAG et Gemini 4.",
+    title: "Études IA : Génération IA, Gemini 4 & IAG | Alkymya",
+    description: "Consultez les 5 études publiées par Alkymya avec tableaux HTML et PDF : Génération IA 2026 (1 082 étudiants), 2025, 2024, Doctrine IAG et Gemini 4.",
     h1: "Nos études Génération IA, Gemini 4 & Doctrine IAG.",
     ogImage: "https://alkymya.co/og-ressources.jpg",
     lastmod: "2026-11-20",
@@ -556,7 +556,7 @@ export const routes: RouteData[] = [
   {
     path: '/ressources/etudes/generation-ia-2026',
     title: "Étude Génération IA 2024–2026 (1 082 étudiants) | Alkymya",
-    description: "Rapport longitudinal Alkymya (n=1 082, 5 écoles franciliennes) : adoption à 98,1 %, usage quotidien à 61 %, split-stack Claude, ambivalence 3:1 et TikTok Shop ×12.",
+    description: "Rapport longitudinal Alkymya (n=1 082, 5 écoles) : 98,1 % d'adoption, 61 % d'usage quotidien, split-stack Claude, ambivalence 3:1 et TikTok Shop.",
     h1: "Génération IA 2024 → 2026 : 1 082 étudiants français face à l’IA et à l’attention",
     ogImage: "https://res.cloudinary.com/dokzioyu4/image/upload/v1777491204/Capture_GENERATION_IA_lrxvdx.png",
     lastmod: "2026-11-20",
@@ -625,7 +625,7 @@ export const routes: RouteData[] = [
   {
     path: '/ressources/etudes/generation-ia-2024',
     title: "Étude Génération IA 2024 (n=326 étudiants) | Alkymya",
-    description: "Première vague Génération IA (mai–déc. 2024, 326 répondants Bachelor, Master et enseignants) : usages académiques (>90 %), outils et demande de pédagogie « IA First ».",
+    description: "Vague 1 Génération IA (2024, 326 répondants Bachelor, Master et enseignants) : usages académiques (>90 %), outils et pédagogie « IA First ».",
     h1: "Génération IA 2024 : l’étude fondatrice sur le paradoxe de l’IA à l’école",
     ogImage: "https://res.cloudinary.com/dokzioyu4/image/upload/v1777491204/Capture_GENERATION_IA_lrxvdx.png",
     lastmod: "2026-11-20",
@@ -654,8 +654,8 @@ export const routes: RouteData[] = [
   },
   {
     path: '/ressources/etudes/doctrine-iag',
-    title: "La Doctrine IAG : Géopolitique & Stratégie IA (PDF + Audio) | Alkymya",
-    description: "Analyse prospective de Cyril Garnier : les 5 piliers de la « Doctrine IAG » américaine (déréglementation, énergie, puces, minerais, Europe) en HTML, PDF et podcast 5 min 43.",
+    title: "La Doctrine IAG : Géopolitique & Stratégie IA | Alkymya",
+    description: "Analyse de Cyril Garnier : les 5 piliers de la Doctrine IAG américaine (déréglementation, énergie, puces, minerais, Europe) en HTML, PDF et audio.",
     h1: "La Doctrine IAG : décrypter la stratégie géopolitique et énergétique de la course à l’AGI",
     ogImage: "https://alkymya.co/og-ressources.jpg",
     lastmod: "2026-11-20",
@@ -731,7 +731,7 @@ export const routes: RouteData[] = [
   {
     path: '/ressources/analyseurs',
     title: "Analyseurs IA Gratuits : Photo, CV & Mémoire | Alkymya",
-    description: "Découvrez et lancez nos 3 analyseurs IA gratuits en production (Photo, CV avec Objectif Alternance, Mémoire académique) avec mode d’emploi et garanties de confidentialité.",
+    description: "Lancez nos 3 analyseurs IA gratuits en production (Photo, CV avec Objectif Alternance, Mémoire académique) avec mode d’emploi et confidentialité.",
     h1: "Nos Analyseurs IA gratuits en production.",
     ogImage: "https://alkymya.co/og-ressources.jpg",
     lastmod: "2026-11-20",
@@ -788,7 +788,7 @@ export const routes: RouteData[] = [
   {
     path: '/ressources/analyseurs/analyseur-de-cv',
     title: "Analyseur de CV IA Gratuit (Objectif Alternance) | Alkymya",
-    description: "Optimisez gratuitement votre CV face à une offre d’emploi ou d’alternance cible grâce à l’Analyseur de CV IA co-construit avec Kendra Martine d’Objectif Alternance.",
+    description: "Optimisez gratuitement votre CV face à une offre d’emploi ou d’alternance grâce à l’Analyseur de CV IA co-construit avec Kendra Martine.",
     h1: "Analyseur de CV IA : confrontez votre CV à l’offre cible avant de postuler",
     ogImage: "https://alkymya.co/og-ressources.jpg",
     lastmod: "2026-11-20",
@@ -840,7 +840,7 @@ export const routes: RouteData[] = [
   {
     path: '/ressources/business-game',
     title: "Business Game NoNo BanaBa : Stratégie & Data | Alkymya",
-    description: "NoNo BanaBa : le business game pédagogique d’Alkymya pour expérimenter data, web-marketing, IA et modèles économiques en grande école ou séminaire d’entreprise.",
+    description: "NoNo BanaBa : le business game pédagogique d’Alkymya pour expérimenter data, web-marketing, IA et modèles économiques en grande école ou entreprise.",
     h1: "Business Game NoNo BanaBa : apprendre le web-marketing, la data et l’IA par la simulation",
     ogImage: "https://alkymya.co/og-ressources.jpg",
     lastmod: "2026-11-20",
@@ -1028,10 +1028,10 @@ export const routes: RouteData[] = [
   {
     path: '/partenaires',
     title: "Partenaires IA, Écoles, OPCO & Outils Souverains | Alkymya",
-    description: "Six pôles de partenaires liés : 7 grandes écoles, insertion Objectif Alternance, portage Qualiopi INATEC, lieux d'accueil, entreprises et outils souverains.",
+    description: "Écosystème de partenaires Alkymya : 7 grandes écoles, Objectif Alternance, portage Qualiopi INATEC, Morning, CMI Systèmes, CPME 77, AWACLOUD et Onecub.",
     h1: "Partenaires formation IA, écoles & écosystème souverain.",
     ogImage: "https://alkymya.co/og-partenaires.jpg",
-    lastmod: "2026-11-20",
+    lastmod: "2026-11-23",
     schemaType: "CollectionPage",
     images: [
       {
@@ -1129,7 +1129,7 @@ export const routes: RouteData[] = [
   },
   {
     path: '/partenaires/ecoles/ieseg',
-    title: "IÉSEG x Alkymya : Innovation, Mentorat Mémoires & IA | Partenaires",
+    title: "IÉSEG x Alkymya : Innovation & Mentorat IA | Partenaires",
     description: "Intervenant en Master à l'IÉSEG depuis 2019 : sprint design M1, IA et marketing digital avancés, mentorat mémoires (100 % réussite), incubateur et agent SODA.",
     h1: "IÉSEG : innover, accompagner, mener des étudiants jusqu'au mémoire",
     ogImage: "https://alkymya.co/og-partenaires.jpg",
@@ -1161,8 +1161,8 @@ export const routes: RouteData[] = [
   },
   {
     path: '/partenaires/ecoles/euridis',
-    title: "Euridis Business School x Alkymya : Diriger l'IA & Agent Harness",
-    description: "Deux journées IA à Euridis (B3 & Mastère) : ~80 % de finalisation du TP, mise en ligne d'un site le Jour 1, mesure AWA et harnais d'agent commercial Claude/Gemini le Jour 2.",
+    title: "Euridis x Alkymya : Diriger l'IA & Agents | Partenaires",
+    description: "Deux journées IA à Euridis (B3 & Mastère) : 80 % de TP finalisé, site en ligne le Jour 1, mesure AWA et agent commercial le Jour 2.",
     h1: "Euridis : deux journées pour apprendre à diriger l'IA, puis à en mesurer la valeur",
     ogImage: "https://alkymya.co/og-partenaires.jpg",
     lastmod: "2026-11-20",
@@ -1244,7 +1244,7 @@ export const routes: RouteData[] = [
   },
   {
     path: '/partenaires/formations-certifiees',
-    title: "Formations IA Certifiées Qualiopi & OPCO via INATEC | Alkymya",
+    title: "Formations IA Qualiopi & OPCO via INATEC | Alkymya",
     description: "Comment financer votre formation IA par votre OPCO grâce au portage Qualiopi assuré par notre partenaire INATEC (NDA 11771056077).",
     h1: "Formations Certifiées & Portage OPCO : le partenariat Alkymya x INATEC",
     ogImage: "https://alkymya.co/og-partenaires.jpg",
@@ -1320,8 +1320,8 @@ export const routes: RouteData[] = [
   },
   {
     path: '/partenaires/lieux/morning',
-    title: "Morning x Alkymya : Ateliers Découverte IA en Coworking Paris | Partenaires",
-    description: "Deux ateliers gratuits de découverte de l'IA générative animés par Alkymya en 2026 dans les espaces Morning Pereire (Paris 17e) et Morning Saint-Augustin (Paris 8e).",
+    title: "Morning x Alkymya : Ateliers IA Coworking | Partenaires",
+    description: "Deux ateliers gratuits de découverte de l'IA générative animés par Alkymya en 2026 à Morning Pereire (Paris 17e) et Morning Saint-Augustin (8e).",
     h1: "Morning : deux ateliers de découverte de l'IA pour les clients des espaces de coworking",
     ogImage: "https://alkymya.co/og-partenaires.jpg",
     lastmod: "2026-11-23",
@@ -1385,8 +1385,8 @@ export const routes: RouteData[] = [
   },
   {
     path: '/partenaires/entreprises/cmi-systemes',
-    title: "CMI Systèmes x Alkymya : Informatique TPE/PME & Cybersécurité | Partenaires",
-    description: "CMI Systèmes, entreprise informatique de Seine-et-Marne (président Cyril Milan), partenaire d'Alkymya sur l'IA et la cybersécurité : infogérance TPE/PME et centre Qualiopi cyber.",
+    title: "CMI Systèmes x Alkymya : IT & Cybersécurité | Partenaires",
+    description: "CMI Systèmes (Seine-et-Marne, Cyril Milan), partenaire d'Alkymya sur l'IA et la cybersécurité : infogérance TPE/PME et centre Qualiopi cyber.",
     h1: "CMI Systèmes : l'informatique de confiance des TPE, PME et collectivités",
     ogImage: "https://alkymya.co/og-partenaires.jpg",
     lastmod: "2026-11-23",
@@ -1416,8 +1416,8 @@ export const routes: RouteData[] = [
   },
   {
     path: '/partenaires/entreprises/cpme-77',
-    title: "CPME 77 x Alkymya : Matinées Dirigeants IA & Cybersécurité | Partenaires",
-    description: "Deux matinées CPME 77 à l'automne 2026 pour dirigeants de TPE et PME : matinée IA par Alkymya (13 octobre) et matinée cybersécurité par CMI Systèmes (29 octobre).",
+    title: "CPME 77 x Alkymya : Matinées IA & Cyber | Partenaires",
+    description: "Deux matinées CPME 77 à l'automne 2026 pour dirigeants de TPE/PME : matinée IA par Alkymya (13 oct.) et cybersécurité par CMI Systèmes (29 oct.).",
     h1: "CPME 77 : deux matinées pour que les dirigeants gardent la main sur l'IA et sur le risque cyber",
     ogImage: "https://alkymya.co/og-partenaires.jpg",
     lastmod: "2026-11-23",
@@ -1481,7 +1481,7 @@ export const routes: RouteData[] = [
     title: "AWACLOUD : Documents & RAG Local | Partenaires Alkymya",
     description: "Partenaire technologique AWACLOUD : bibliothèques et logiciels français pour convertir PDF, Word et Excel en Markdown localement sans fuite de données.",
     h1: "AWACLOUD : vos documents, lisibles par l'IA, sans quitter votre ordinateur",
-    ogImage: "https://alkymya.co/og-ressources.jpg",
+    ogImage: "https://alkymya.co/og-partenaires.jpg",
     lastmod: "2026-11-20",
     schemaType: "WebPage",
     content: {
@@ -1504,7 +1504,7 @@ export const routes: RouteData[] = [
   },
   {
     path: '/partenaires/outils/onecub',
-    title: "Onecub x Alkymya : Data Spaces Souverains & RGPD | Partenaires",
+    title: "Onecub x Alkymya : Data Spaces & RGPD | Partenaires",
     description: "Onecub, fondé par Olivier Dion (Alchimiste Alkymya) : Data Spaces souverains, conformité RGPD, standards GAIA-X et gouvernance des données IA.",
     h1: "Onecub : bâtir des espaces de données souverains et conformes pour l’IA européenne",
     ogImage: "https://alkymya.co/og-partenaires.jpg",
