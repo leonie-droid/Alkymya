@@ -407,7 +407,7 @@
     <priority>0.8</priority>
     <image:image>
       <image:loc>https://alkymya.co/og-partenaires.jpg</image:loc>
-      <image:title>Partenaires IA, Écoles, OPCO &amp; Outils Souverains | Alkymya — Alkymya</image:title>
+      <image:title>Partenaires IA, Écoles, OPCO &amp; Outils | Alkymya — Alkymya</image:title>
     </image:image>
     <image:image>
       <image:loc>https://res.cloudinary.com/dokzioyu4/image/upload/f_auto,q_auto,w_1200,c_limit/v1788507182/logo_objectif_code_u3otua.png</image:loc>
@@ -473,7 +473,7 @@
     <priority>0.8</priority>
     <image:image>
       <image:loc>https://alkymya.co/og-partenaires.jpg</image:loc>
-      <image:title>Objectif Alternance x Alkymya : Insertion &amp; IA | Partenaires — Alkymya</image:title>
+      <image:title>Objectif Alternance x Alkymya : Insertion | Alkymya — Alkymya</image:title>
     </image:image>
   </url>
   <url>
@@ -523,7 +523,7 @@
     <priority>0.8</priority>
     <image:image>
       <image:loc>https://alkymya.co/og-partenaires.jpg</image:loc>
-      <image:title>Entreprises, Fondations &amp; Collectifs Partenaires | Alkymya — Alkymya</image:title>
+      <image:title>Entreprises, Fondations &amp; Collectifs | Alkymya — Alkymya</image:title>
     </image:image>
   </url>
   <url>
@@ -533,7 +533,7 @@
     <priority>0.8</priority>
     <image:image>
       <image:loc>https://alkymya.co/og-partenaires.jpg</image:loc>
-      <image:title>CMI Systèmes x Alkymya : IT &amp; Cybersécurité | Partenaires — Alkymya</image:title>
+      <image:title>CMI Systèmes x Alkymya : IT &amp; Cyber | Partenaires — Alkymya</image:title>
     </image:image>
   </url>
   <url>
@@ -652,6 +652,16 @@
     <image:image>
       <image:loc>https://alkymya.co/og-mentions.jpg</image:loc>
       <image:title>Déclaration d'accessibilité RGAA &amp; WCAG | Alkymya — Alkymya</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://alkymya.co/plan-du-site/</loc>
+    <lastmod>2026-11-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://alkymya.co/og-image.jpg</image:loc>
+      <image:title>Plan du site — Toutes les pages Alkymya — Alkymya</image:title>
     </image:image>
   </url>
 </urlset>

@@ -15,7 +15,7 @@
 - **Siège social** : 2 rue Sacha Guitry, 77330 Ozoir-la-Ferrière, Île-de-France, France
 - **Coordonnées GPS** : 48.7667° N, 2.6833° E
 - **Périmètre d'intervention** : Seine-et-Marne (77), Paris & Île-de-France, France entière et international (présentiel et distanciel)
-- **Site officiel** : https://alkymya.co (47 pages canoniques indexées)
+- **Site officiel** : https://alkymya.co (48 pages canoniques indexées)
 - **Fiche Google Maps & Avis vérifiée** : https://www.google.com/maps?cid=10471291206194913670 (5,0 / 5 sur 11 avis)
 - **Flux RSS** : https://alkymya.co/rss.xml
 - **Schéma JSON-LD complet** : https://alkymya.co/schema.org.json
@@ -36,7 +36,7 @@ Alkymya (alkymya.co) est un studio d'IA et cabinet d'expertise en France (Île-d
 
 ---
 
-## Index des Pages & Ressources (47 Liens Canoniques)
+## Index des Pages & Ressources (48 Liens Canoniques)
 
 ### Pages Principales du Studio
 - [Accueil Alkymya](https://alkymya.co/): Présentation générale du studio d'expertise et de création IA, vision, impact pédagogique et études de cas.
@@ -53,6 +53,7 @@ Alkymya (alkymya.co) est un studio d'IA et cabinet d'expertise en France (Île-d
 - [Mentions Légales](https://alkymya.co/mentions-legales/): Informations juridiques CYRIL GARNIER CONSULTING et hébergement Netlify.
 - [Politique de confidentialité & cookies RGPD](https://alkymya.co/politique-confidentialite/): Données collectées, Google Analytics Consent Mode v2, durées de conservation, sous-traitants et droits RGPD/CNIL.
 - [Déclaration d'accessibilité RGAA & WCAG](https://alkymya.co/accessibilite/): Mesures d'accessibilité numérique, navigation clavier, skip link, contrastes et contact dédié.
+- [Plan du site HTML](https://alkymya.co/plan-du-site/): Index complet et hiérarchisé des 48 URLs canoniques, études, analyseurs, Alchimistes et partenaires d'Alkymya.
 
 ### Partenaires par Catégorie & 9 Fiches Dédiées
 - [Partenaires Écoles & Grandes Écoles](https://alkymya.co/partenaires/ecoles/): HETIC, Ynov Campus, [IÉSEG School of Management](https://alkymya.co/partenaires/ecoles/ieseg/) (depuis 2019 : sprint M1, mentorat mémoires 100 % réussite, SODA), CFA Itis, [Euridis Business School](https://alkymya.co/partenaires/ecoles/euridis/) (2 jours B3 & Mastère, ~80 % TP finalisé, harnais d'agent Claude/Gemini), ISCOM et Paris École de Management.
@@ -105,9 +106,9 @@ Alkymya (alkymya.co) est un studio d'IA et cabinet d'expertise en France (Île-d
 
 ## Documentation Complète pour LLMs
 
-- [llms.txt](https://alkymya.co/llms.txt): Sommaire structuré des connaissances et des 47 liens canoniques.
+- [llms.txt](https://alkymya.co/llms.txt): Sommaire structuré des connaissances et des 48 liens canoniques.
 - [llm.txt](https://alkymya.co/llm.txt): Miroir strictement synchronisé de llms.txt.
 - [llms-full.txt](https://alkymya.co/llms-full.txt): Contexte exhaustif et détaillé pour l'ingestion par les moteurs et modèles d'IA.
 - [schema.org.json](https://alkymya.co/schema.org.json): Graphe JSON-LD complet d'Alkymya, des 6 Alchimistes et des partenaires clés.
-- [sitemap.xml](https://alkymya.co/sitemap.xml): Sitemap XML des 47 URLs canoniques et de leurs images.
+- [sitemap.xml](https://alkymya.co/sitemap.xml): Sitemap XML des 48 URLs canoniques et de leurs images.
 - [rss.xml](https://alkymya.co/rss.xml): Flux RSS des actualités, études et partenariats du studio.

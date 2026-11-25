@@ -13,7 +13,7 @@
 - **Siège social** : 2 rue Sacha Guitry, 77330 Ozoir-la-Ferrière, Seine-et-Marne, Île-de-France, France
 - **Coordonnées GPS** : Latitude 48.7667° N, Longitude 2.6833° E
 - **Périmètre d'intervention** : Seine-et-Marne (77), Paris & Île-de-France, France entière et francophonie (présentiel et distanciel)
-- **Site officiel** : https://alkymya.co/ (47 pages canoniques indexées)
+- **Site officiel** : https://alkymya.co/ (48 pages canoniques indexées)
 - **Fiche Google Maps & Avis** : https://www.google.com/maps?cid=10471291206194913670 (5,0 / 5 sur 11 avis clients vérifiés)
 - **Site personnel du fondateur** : https://cyrilgarnier.fr/
 - **Contact direct** : cyril@alkymya.co • Téléphone : +33 6 43 64 97 77 (06 43 64 97 77)
@@ -179,9 +179,9 @@ Toutes les études de cas sont mesurées en production réelle, sans publicité 
 
 ---
 
-## 9. Index Complet des 47 URLs Canoniques & Fichiers Machine-Readable
+## 9. Index Complet des 48 URLs Canoniques & Fichiers Machine-Readable
 
-### Pages principales & conformité (14)
+### Pages principales & conformité (15)
 - https://alkymya.co/
 - https://alkymya.co/ateliers/
 - https://alkymya.co/newbusiness/
@@ -196,6 +196,7 @@ Toutes les études de cas sont mesurées en production réelle, sans publicité 
 - https://alkymya.co/mentions-legales/
 - https://alkymya.co/politique-confidentialite/
 - https://alkymya.co/accessibilite/
+- https://alkymya.co/plan-du-site/
 
 ### Profils Alchimistes (6)
 - https://alkymya.co/alchimistes/cyril-garnier/

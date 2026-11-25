@@ -5,8 +5,16 @@
     <link>https://alkymya.co/</link>
     <description>Actualités, réalisations concrètes en intelligence artificielle, médias éditoriaux (TheLittle77, TheLittle83, TheLittle75) et formations professionnelles par Alkymya, finançables OPCO via nos partenaires certifiés Qualiopi.</description>
     <language>fr-FR</language>
-    <lastBuildDate>Wed, 25 Nov 2026 16:30:00 +0100</lastBuildDate>
+    <lastBuildDate>Wed, 25 Nov 2026 17:30:00 +0100</lastBuildDate>
     <atom:link href="https://alkymya.co/rss.xml" rel="self" type="application/rss+xml"/>
+
+    <item>
+      <title>Plan du site HTML (/plan-du-site/), IndexNow &amp; schémas E-E-A-T étendus sur 48 pages</title>
+      <link>https://alkymya.co/plan-du-site/</link>
+      <guid isPermaLink="true">https://alkymya.co/plan-du-site/#maj-2026-11-25</guid>
+      <pubDate>Wed, 25 Nov 2026 17:30:00 +0100</pubDate>
+      <description><![CDATA[Déploiement du plan du site HTML (/plan-du-site/) reliant les 48 URLs canoniques à deux clics, activation d'IndexNow (/alkymya-indexnow-2026.txt), pré-rendu statique des avis Google vérifiés (&lt;section aria-labelledby=&quot;avis&quot;&gt; + Review JSON-LD) et des nœuds ImageObject avec auteur, ainsi que l'unification stricte des liens canoniques avec slash final.]]></description>
+    </item>
 
     <item>
       <title>Mise en conformité RGPD, accessibilité RGAA, sécurité CSP et fiche Google Maps vérifiée</title>

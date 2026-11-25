@@ -89,7 +89,7 @@ export default function Partenaires() {
         '@type': 'CollectionPage',
         '@id': `${canonicalUrl}#webpage`,
         url: canonicalUrl,
-        name: 'Partenaires IA, Écoles, OPCO & Outils Souverains | Alkymya',
+        name: 'Partenaires IA, Écoles, OPCO & Outils | Alkymya',
         headline: 'Les partenaires d’Alkymya : 6 pôles de collaboration IA sur le terrain',
         description:
           "Annuaire structuré des partenaires d'Alkymya : 7 grandes écoles, Objectif Alternance, portage Qualiopi/OPCO via INATEC, lieux coworking (dont Morning), 10 entreprises et collectifs dont la CPME 77 et CMI Systèmes, et briques souveraines AWACLOUD & Onecub.",
@@ -125,7 +125,7 @@ export default function Partenaires() {
   return (
     <div className="bg-[#f4f6f9] text-[#1F4F6E] min-h-screen font-['Roboto',sans-serif] selection:bg-[#C06721] selection:text-white">
       <SEO
-        title="Partenaires IA, Écoles, OPCO & Outils Souverains | Alkymya"
+        title="Partenaires IA, Écoles, OPCO & Outils | Alkymya"
         description="Écosystème de partenaires Alkymya : 7 grandes écoles, Objectif Alternance, portage Qualiopi INATEC, Morning, CMI Systèmes, CPME 77, AWACLOUD et Onecub."
         keywords="partenaires Alkymya, HETIC Ynov IESEG Euridis, INATEC Qualiopi OPCO, Objectif Alternance, CMI Systèmes, CPME 77, AWACLOUD, Onecub, Morning coworking"
         canonicalPath="/partenaires/"

@@ -218,6 +218,9 @@ export default function Footer() {
             <Link to="/accessibilite/" className="hover:text-accent transition-colors">
               Accessibilité RGAA
             </Link>
+            <Link to="/plan-du-site/" className="hover:text-accent transition-colors">
+              Plan du site
+            </Link>
             <a
               href="https://www.google.com/maps?cid=10471291206194913670"
               target="_blank"

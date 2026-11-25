@@ -205,7 +205,7 @@ export const partnerCategories: PartnerCategoryMeta[] = [
     h1: 'Entreprises, fondations et collectifs partenaires d’Alkymya',
     heroIntro:
       "De grands opérateurs industriels aux fondations territoriales, syndicats patronaux, spécialistes informatiques & cybersécurité et jeunes entreprises innovantes, Alkymya collabore avec dix organisations.",
-    seoTitle: 'Entreprises, Fondations & Collectifs Partenaires | Alkymya',
+    seoTitle: 'Entreprises, Fondations & Collectifs | Alkymya',
     seoDescription:
       'CMI Systèmes, CPME 77, SNCF, Fondation GRDF, SEALESTER, Azimuto, AvecLouise, Esperanta Services, Fondation Flamenca et Ressourcerie Gaillarde : nos partenaires.',
     keywords:
@@ -1296,7 +1296,7 @@ export const partnerDetails: Record<string, PartnerDetailContent> = {
     slug: 'cmi-systemes',
     categorySlug: 'entreprises',
     name: 'CMI Systèmes',
-    seoTitle: "CMI Systèmes x Alkymya : IT & Cybersécurité | Partenaires",
+    seoTitle: "CMI Systèmes x Alkymya : IT & Cyber | Partenaires",
     seoDescription:
       "CMI Systèmes (Seine-et-Marne, Cyril Milan), partenaire d'Alkymya sur l'IA et la cybersécurité : infogérance TPE/PME et centre Qualiopi cyber.",
     keywords:
@@ -1659,7 +1659,7 @@ export const partnerDetails: Record<string, PartnerDetailContent> = {
     slug: 'objectif-alternance',
     categorySlug: 'insertion',
     name: 'Objectif Alternance',
-    seoTitle: 'Objectif Alternance x Alkymya : Insertion & IA | Partenaires',
+    seoTitle: 'Objectif Alternance x Alkymya : Insertion | Alkymya',
     seoDescription:
       'Partenariat Objectif Alternance (Kendra Martine) et Alkymya : coaching emploi TPE/PME, alternance et Analyseur de CV IA gratuit en production.',
     keywords:

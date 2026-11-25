@@ -595,14 +595,14 @@ export default function Oeuvres() {
             </div>
             <div className="flex flex-wrap gap-3 shrink-0">
               <Link
-                to="/newbusiness"
+                to="/newbusiness/"
                 className="inline-flex items-center gap-2 px-5 py-3 rounded-[8px] bg-[#1F4F6E] hover:bg-[#02ADAB] text-white text-sm font-medium transition-colors"
               >
                 <span>Découvrir New Business MVP</span>
                 <ArrowRight className="w-4 h-4" />
               </Link>
               <Link
-                to="/ateliers"
+                to="/ateliers/"
                 className="inline-flex items-center gap-2 px-5 py-3 rounded-[8px] bg-white border border-[rgba(31,79,110,0.18)] hover:border-[#02ADAB] text-[#1F4F6E] text-sm font-medium transition-colors"
               >
                 <span>Ateliers SEO &amp; Agents IA</span>
@@ -813,7 +813,7 @@ export default function Oeuvres() {
           Référencement naturel Google, visibilité AI Overviews ou direction artistique photo vidéo IA : chaque projet démarre par un échange concret.
         </p>
         <Link
-          to="/ateliers"
+          to="/ateliers/"
           className="inline-block bg-white text-[#C06721] text-[0.95rem] font-medium py-3.5 px-8 rounded-[8px] no-underline tracking-[0.04em] transition-transform duration-150 hover:-translate-y-0.5 hover:shadow-[0_6px_20px_rgba(0,0,0,0.15)]"
         >
           Découvrir nos ateliers →

@@ -171,13 +171,13 @@ export default function NewBusiness() {
               <ArrowRight className="w-4 h-4" />
             </a>
             <Link
-              to="/oeuvres"
+              to="/oeuvres/"
               className="w-full sm:w-auto px-8 py-3.5 bg-white/10 text-white font-medium text-sm rounded-[8px] border border-white/25 hover:bg-white/20 transition-all flex items-center justify-center"
             >
               Voir nos 3 études de cas TheLittle →
             </Link>
             <Link
-              to="/ateliers"
+              to="/ateliers/"
               className="w-full sm:w-auto px-8 py-3.5 bg-white/10 text-white font-medium text-sm rounded-[8px] border border-white/25 hover:bg-white/20 transition-all flex items-center justify-center"
             >
               Voir tous les ateliers IA
@@ -519,7 +519,7 @@ export default function NewBusiness() {
               Merci pour votre démarche. Cyril Garnier et Léonie Egesipe étudieront votre dossier sous 48h et reviendront vers vous pour un échange de qualification.
             </p>
             <div className="pt-4">
-              <Link to="/ateliers" className="inline-flex items-center gap-2 text-xs font-medium uppercase tracking-wider text-[#02ADAB] hover:text-[#037971] transition-colors">
+              <Link to="/ateliers/" className="inline-flex items-center gap-2 text-xs font-medium uppercase tracking-wider text-[#02ADAB] hover:text-[#037971] transition-colors">
                 <span>Découvrir nos autres ateliers</span>
                 <ArrowRight className="w-4 h-4" />
               </Link>
@@ -691,7 +691,7 @@ export default function NewBusiness() {
         </p>
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
           <Link
-            to="/contact"
+            to="/contact/"
             className="inline-flex items-center justify-center gap-2 bg-white text-[#C06721] text-[0.95rem] font-medium py-3.5 px-8 rounded-[8px] no-underline tracking-[0.04em] transition-transform duration-150 hover:-translate-y-0.5 hover:shadow-[0_6px_20px_rgba(0,0,0,0.15)]"
           >
             <span>Poser une question</span>

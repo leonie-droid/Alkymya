@@ -1057,7 +1057,7 @@ export const routes: RouteData[] = [
   })),
   {
     path: '/partenaires',
-    title: "Partenaires IA, Écoles, OPCO & Outils Souverains | Alkymya",
+    title: "Partenaires IA, Écoles, OPCO & Outils | Alkymya",
     description: "Écosystème de partenaires Alkymya : 7 grandes écoles, Objectif Alternance, portage Qualiopi INATEC, Morning, CMI Systèmes, CPME 77, AWACLOUD et Onecub.",
     h1: "Partenaires formation IA, écoles & écosystème souverain.",
     ogImage: "https://alkymya.co/og-partenaires.jpg",
@@ -1249,7 +1249,7 @@ export const routes: RouteData[] = [
   },
   {
     path: '/partenaires/insertion/objectif-alternance',
-    title: "Objectif Alternance x Alkymya : Insertion & IA | Partenaires",
+    title: "Objectif Alternance x Alkymya : Insertion | Alkymya",
     description: "Partenariat Objectif Alternance (Kendra Martine) et Alkymya : coaching emploi TPE/PME, alternance et Analyseur de CV IA gratuit en production.",
     h1: "Objectif Alternance : relier l’IA pratique et le coaching humain vers l’emploi",
     ogImage: "https://alkymya.co/og-partenaires.jpg",
@@ -1381,7 +1381,7 @@ export const routes: RouteData[] = [
   },
   {
     path: '/partenaires/entreprises',
-    title: "Entreprises, Fondations & Collectifs Partenaires | Alkymya",
+    title: "Entreprises, Fondations & Collectifs | Alkymya",
     description: "CMI Systèmes, CPME 77, SNCF, Fondation GRDF, SEALESTER, Azimuto, AvecLouise, Esperanta Services, Fondation Flamenca et Ressourcerie Gaillarde : nos partenaires.",
     h1: "Entreprises, fondations et collectifs partenaires d’Alkymya",
     ogImage: "https://alkymya.co/og-partenaires.jpg",
@@ -1415,7 +1415,7 @@ export const routes: RouteData[] = [
   },
   {
     path: '/partenaires/entreprises/cmi-systemes',
-    title: "CMI Systèmes x Alkymya : IT & Cybersécurité | Partenaires",
+    title: "CMI Systèmes x Alkymya : IT & Cyber | Partenaires",
     description: "CMI Systèmes (Seine-et-Marne, Cyril Milan), partenaire d'Alkymya sur l'IA et la cybersécurité : infogérance TPE/PME et centre Qualiopi cyber.",
     h1: "CMI Systèmes : l'informatique de confiance des TPE, PME et collectivités",
     ogImage: "https://alkymya.co/og-partenaires.jpg",
@@ -1908,6 +1908,37 @@ export const routes: RouteData[] = [
         { href: "/politique-confidentialite/", label: "Politique de confidentialité & cookies RGPD" },
         { href: "/mentions-legales/", label: "Mentions légales" },
         { href: "/contact/", label: "Signaler un défaut d'accessibilité" }
+      ]
+    }
+  },
+  {
+    path: '/plan-du-site',
+    title: "Plan du site — Toutes les pages Alkymya",
+    description: "Index complet des 48 pages d'Alkymya : ateliers IA OPCO, New Business MVP, études Génération IA, analyseurs gratuits, Alchimistes et partenaires.",
+    h1: "Plan du site Alkymya : toutes les pages.",
+    ogImage: "https://alkymya.co/og-image.jpg",
+    lastmod: "2026-11-25",
+    schemaType: "CollectionPage",
+    content: {
+      leadParagraph: "Accès direct et hiérarchisé à l'ensemble des 48 pages canoniques publiées sur alkymya.co : studio IA, ateliers et formations OPCO via partenaires Qualiopi, études chiffrées, analyseurs gratuits, profils d'Alchimistes et écosystème de partenaires.",
+      sections: [
+        {
+          h2: "Navigation thématique complète",
+          paragraphs: [
+            "Ce plan du site facilite l'exploration pour nos visiteurs comme pour les moteurs de recherche (Googlebot, Bingbot, GPTBot, PerplexityBot). Toutes les URLs canoniques se terminent par un slash final et renvoient un HTML pré-rendu complet."
+          ]
+        }
+      ],
+      internalLinks: [
+        { href: "/", label: "Accueil Alkymya" },
+        { href: "/ateliers/", label: "Ateliers & Formations IA (OPCO via Qualiopi)" },
+        { href: "/newbusiness/", label: "Programme New Business MVP" },
+        { href: "/oeuvres/", label: "Œuvres & Études de cas SEO/GEO" },
+        { href: "/ressources/", label: "Ressources, Études & Analyseurs IA" },
+        { href: "/alchimistes/", label: "Les 6 Alchimistes d'Alkymya" },
+        { href: "/partenaires/", label: "Écosystème Partenaires (6 pôles & 9 fiches)" },
+        { href: "/faq/", label: "Foire Aux Questions & Avis Google" },
+        { href: "/contact/", label: "Contact & Devis" }
       ]
     }
   }

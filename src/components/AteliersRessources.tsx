@@ -70,7 +70,7 @@ export default function AteliersRessources() {
               </p>
             </div>
             <Link 
-              to="/ateliers"
+              to="/ateliers/"
               className="inline-flex items-center text-accent font-medium group hover:underline text-sm"
             >
               Voir tous les ateliers <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />

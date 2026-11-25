@@ -14,7 +14,7 @@ const pillars = [
       "Approche pédagogique immersive",
       "Veille prospective et inspiration continue"
     ],
-    link: "/ateliers",
+    link: "/ateliers/",
     linkText: "Voir les ateliers IA"
   },
   { 
@@ -27,7 +27,7 @@ const pillars = [
       "Stratégie d'intégration de l'IA générative",
       "Transformation organisationnelle sur-mesure"
     ],
-    link: "/new-business",
+    link: "/newbusiness/",
     linkText: "Programme MVP 6 mois"
   },
   { 
@@ -64,13 +64,13 @@ export default function Hero() {
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12">
             <Link
-              to="/ateliers"
+              to="/ateliers/"
               className="inline-block bg-[#C06721] hover:bg-[#a85517] text-white text-[0.95rem] font-medium py-3.5 px-8 rounded-[8px] no-underline tracking-[0.04em] transition-transform duration-150 hover:-translate-y-0.5 hover:shadow-[0_6px_20px_rgba(0,0,0,0.15)] shadow-md"
             >
               Explorer nos ateliers IA →
             </Link>
             <Link
-              to="/oeuvres"
+              to="/oeuvres/"
               className="inline-block bg-white/10 hover:bg-white/20 text-white text-[0.95rem] font-medium py-3.5 px-8 rounded-[8px] no-underline tracking-[0.04em] transition-transform duration-150 hover:-translate-y-0.5 border border-white/25"
             >
               Découvrir nos œuvres

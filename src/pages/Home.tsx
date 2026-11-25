@@ -81,14 +81,14 @@ export default function Home() {
           ))}
         </div>
 
-        <div className="mt-12 pt-10 border-t border-[rgba(31,79,110,0.1)]">
+        <section aria-labelledby="avis" className="mt-12 pt-10 border-t border-[rgba(31,79,110,0.1)]">
           <GoogleReviewsShowcase
             variant="light"
             kicker="Avis clients vérifiés · Google Business Profile"
             headingPrefix="Retours vérifiés &"
             headingStrong="note 5,0 / 5 sur Google"
           />
-        </div>
+        </section>
       </section>
 
       {/* SÉPARATEUR */}
@@ -119,7 +119,7 @@ export default function Home() {
                 Quatre demi-journées en présentiel en Île-de-France ou en classe virtuelle. Vos équipes maîtrisent prompt engineering avancé, rédaction, création visuelle et synthèse documentaire, finançables jusqu'à 100 % OPCO via nos partenaires certifiés Qualiopi.
               </p>
             </div>
-            <Link to="/ateliers" className="text-[0.88rem] font-medium text-[#02ADAB] hover:text-[#037971] inline-flex items-center gap-1.5">
+            <Link to="/ateliers/" className="text-[0.88rem] font-medium text-[#02ADAB] hover:text-[#037971] inline-flex items-center gap-1.5">
               <span>Voir le programme Core IA</span>
               <ArrowRight className="w-4 h-4" />
             </Link>
@@ -137,7 +137,7 @@ export default function Home() {
                 Une demi-journée ciblée pour repartir avec 3 agents intelligents autonomes reliés à Slack, Notion ou votre CRM, ou une application web interne interconnectée à Gemini et GPT sans écrire une ligne de code.
               </p>
             </div>
-            <Link to="/ateliers" className="text-[0.88rem] font-medium text-[#02ADAB] hover:text-[#037971] inline-flex items-center gap-1.5">
+            <Link to="/ateliers/" className="text-[0.88rem] font-medium text-[#02ADAB] hover:text-[#037971] inline-flex items-center gap-1.5">
               <span>Découvrir les ateliers pratiques</span>
               <ArrowRight className="w-4 h-4" />
             </Link>
@@ -155,7 +155,7 @@ export default function Home() {
                 Accompagnement en binôme par Cyril Garnier et Léonie Egesipe (200 € / mois) pour structurer votre offre, tester votre marché auprès de vrais clients et consulter nos preuves SEO/GEO en production.
               </p>
             </div>
-            <Link to="/oeuvres" className="text-[0.88rem] font-medium text-[#02ADAB] hover:text-[#037971] inline-flex items-center gap-1.5">
+            <Link to="/oeuvres/" className="text-[0.88rem] font-medium text-[#02ADAB] hover:text-[#037971] inline-flex items-center gap-1.5">
               <span>Voir nos 3 études de cas TheLittle</span>
               <ArrowRight className="w-4 h-4" />
             </Link>
@@ -169,7 +169,7 @@ export default function Home() {
               <strong className="font-medium text-[#1F4F6E]">Preuves vérifiables :</strong> nos méthodes propulsent nos propres médias éditoriaux (thelittle77.fr, thelittle75.fr, thelittle83.fr — jusqu'à 275k vues/mois sur Facebook et cités dans Google AI Overviews).
             </p>
           </div>
-          <Link to="/oeuvres" className="text-sm font-medium text-[#C06721] hover:underline shrink-0">
+          <Link to="/oeuvres/" className="text-sm font-medium text-[#C06721] hover:underline shrink-0">
             Explorer les cas clients →
           </Link>
         </div>
@@ -188,13 +188,13 @@ export default function Home() {
         </p>
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
           <Link
-            to="/ateliers"
+            to="/ateliers/"
             className="inline-block bg-white text-[#C06721] text-[0.95rem] font-medium py-3.5 px-8 rounded-[8px] no-underline tracking-[0.04em] transition-transform duration-150 hover:-translate-y-0.5 hover:shadow-[0_6px_20px_rgba(0,0,0,0.15)]"
           >
             Découvrir nos ateliers →
           </Link>
           <Link
-            to="/contact"
+            to="/contact/"
             className="inline-block bg-white/10 hover:bg-white/20 text-white text-[0.95rem] font-medium py-3.5 px-8 rounded-[8px] no-underline tracking-[0.04em] transition-transform duration-150 hover:-translate-y-0.5 border border-white/25"
           >
             Contacter un alchimiste

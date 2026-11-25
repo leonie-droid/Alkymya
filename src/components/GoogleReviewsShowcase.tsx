@@ -8,6 +8,7 @@ interface GoogleReviewsShowcaseProps {
   kicker?: string;
   headingPrefix?: string;
   headingStrong?: string;
+  headingId?: string;
   className?: string;
 }
 
@@ -16,6 +17,7 @@ export const GoogleReviewsShowcase: React.FC<GoogleReviewsShowcaseProps> = ({
   kicker = 'Avis clients vérifiés · Google Business Profile',
   headingPrefix = 'Une satisfaction notée',
   headingStrong = '5,0 / 5 sur Google',
+  headingId = 'avis',
   className = '',
 }) => {
   const { reviews, rating, totalReviewCount, googleMapsUri, source } = useGoogleReviews();
@@ -37,7 +39,7 @@ export const GoogleReviewsShowcase: React.FC<GoogleReviewsShowcaseProps> = ({
             <p className="text-[0.72rem] font-medium tracking-[0.14em] uppercase text-[#02ADAB] mb-2">
               {kicker}
             </p>
-            <h3 className="text-[1.45rem] sm:text-[1.65rem] font-light text-white leading-tight [text-wrap:balance]">
+            <h3 id={headingId} className="text-[1.45rem] sm:text-[1.65rem] font-light text-white leading-tight [text-wrap:balance]">
               {headingPrefix} <strong className="font-medium">{headingStrong}</strong>
             </h3>
           </div>
@@ -157,7 +159,7 @@ export const GoogleReviewsShowcase: React.FC<GoogleReviewsShowcaseProps> = ({
           <p className="text-[0.75rem] tracking-[0.18em] uppercase text-[#037971] mb-2 font-medium">
             {kicker}
           </p>
-          <h2 className="text-[1.75rem] sm:text-[2rem] font-light text-[#1F4F6E] leading-tight [text-wrap:balance]">
+          <h2 id={headingId} className="text-[1.75rem] sm:text-[2rem] font-light text-[#1F4F6E] leading-tight [text-wrap:balance]">
             {headingPrefix} <strong className="font-medium text-[#1F4F6E]">{headingStrong}</strong>
           </h2>
         </div>

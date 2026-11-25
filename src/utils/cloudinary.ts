@@ -17,12 +17,12 @@ export function cloudinaryUrl(url: string, width = 1200): string {
   );
 }
 
-export function cloudinarySrcSet(url: string): string | undefined {
+export function cloudinarySrcSet(url: string, widths: number[] = [600, 1000, 1400]): string | undefined {
   if (!url || !url.includes('res.cloudinary.com') || !url.includes('/image/upload/')) {
     return undefined;
   }
 
-  return [600, 1000, 1400]
+  return widths
     .map((w) => `${cloudinaryUrl(url, w)} ${w}w`)
     .join(', ');
 }

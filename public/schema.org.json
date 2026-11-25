@@ -57,6 +57,26 @@
         "bestRating": "5",
         "worstRating": "1"
       },
+      "review": [
+        {
+          "@type": "Review",
+          "author": { "@type": "Person", "name": "Augustine" },
+          "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5", "worstRating": "1" },
+          "reviewBody": "J'ai participé à l'un des ateliers proposés par Alkymya et je recommande à 100% ! Ce fut à la fois enrichissant et inspirant. Cyril et Léonie ont réussi à démystifier l'IA et à la rendre accessible à travers des exemples concrets et pratiques. Leur méthode d'accompagnement, à la fois ludique et pragmatique, m'a permis d'acquérir des compétences immédiatement applicables dans mon quotidien professionnel."
+        },
+        {
+          "@type": "Review",
+          "author": { "@type": "Person", "name": "Mélinda" },
+          "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5", "worstRating": "1" },
+          "reviewBody": "J'ai eu l'opportunité de suivre le cours d'IA et Marketing Digital de Cyril Garnier lors de mes études à l'IÉSEG, et ce fut une expérience très formatrice. Cyril maîtrise parfaitement son sujet et sait rendre les concepts accessibles grâce à des exercices pratiques et des cas concrets. Ce cours m'a permis d'acquérir des compétences solides que j'utilise aujourd'hui quotidiennement en entreprise."
+        },
+        {
+          "@type": "Review",
+          "author": { "@type": "Person", "name": "Noémie" },
+          "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5", "worstRating": "1" },
+          "reviewBody": "Les cours de Cyril sont vraiment inspirants ! J'ai énormément appris durant ses interventions : des approches innovantes et des cas concrets qui donnent envie de se dépasser. Cyril prend toujours le temps de s'adapter au niveau de chacun et partage son expertise avec enthousiasme et générosité. Merci à toi !!"
+        }
+      ],
       "areaServed": [
         { "@type": "AdministrativeArea", "name": "Seine-et-Marne" },
         { "@type": "AdministrativeArea", "name": "Île-de-France" },
@@ -252,6 +272,36 @@
       "url": "https://esperantaservices.fr/",
       "sameAs": ["https://esperantaservices.fr/"],
       "description": "Structure d'aide à domicile et de services à la personne au Plessis-Trévise fondée et présidée par Mariana Didier Laurent."
+    },
+    {
+      "@type": "ImageObject",
+      "@id": "https://alkymya.co/#image-logo",
+      "url": "https://res.cloudinary.com/dokzioyu4/image/upload/f_auto,q_auto,w_600,c_limit/v1758096912/logo_principal_bleu_gbnyuu.png",
+      "contentUrl": "https://res.cloudinary.com/dokzioyu4/image/upload/f_auto,q_auto,w_600,c_limit/v1758096912/logo_principal_bleu_gbnyuu.png",
+      "width": 600,
+      "height": 200,
+      "name": "Logo officiel Alkymya — Studio d'expertise et de création IA",
+      "caption": "Identité visuelle officielle d'Alkymya (CYRIL GARNIER CONSULTING)",
+      "creditText": "Alkymya — Cyril Garnier & Léonie Egesipe",
+      "license": "https://alkymya.co/mentions-legales/",
+      "author": { "@id": "https://alkymya.co/#cyril-garnier" },
+      "creator": { "@id": "https://alkymya.co/#organization" },
+      "copyrightHolder": { "@id": "https://alkymya.co/#organization" }
+    },
+    {
+      "@type": "ImageObject",
+      "@id": "https://alkymya.co/#image-og",
+      "url": "https://alkymya.co/og-image.jpg",
+      "contentUrl": "https://alkymya.co/og-image.jpg",
+      "width": 1200,
+      "height": 630,
+      "name": "Alkymya — Studio d'expertise et de création IA en France",
+      "caption": "Visuel officiel de présentation du studio Alkymya",
+      "creditText": "Alkymya — Cyril Garnier & Léonie Egesipe",
+      "license": "https://alkymya.co/mentions-legales/",
+      "author": { "@id": "https://alkymya.co/#cyril-garnier" },
+      "creator": { "@id": "https://alkymya.co/#organization" },
+      "copyrightHolder": { "@id": "https://alkymya.co/#organization" }
     }
   ]
 }

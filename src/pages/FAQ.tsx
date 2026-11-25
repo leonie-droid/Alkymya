@@ -219,7 +219,7 @@ export default function FAQ() {
       <hr className="border-none border-t border-[rgba(31,79,110,0.1)] mx-6 max-w-[1100px] md:mx-auto" />
 
       {/* SECTION DÉDIÉE : AVIS CLIENTS VÉRIFIÉS GOOGLE */}
-      <section id="avis-clients" className="max-w-[1100px] mx-auto py-[70px] px-6">
+      <section id="avis-clients" aria-labelledby="avis" className="max-w-[1100px] mx-auto py-[70px] px-6">
         <GoogleReviewsShowcase
           variant="light"
           kicker="Avis clients vérifiés · Fiche Google Business Profile"

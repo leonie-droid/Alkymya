@@ -24,6 +24,7 @@ import JoinUs from './pages/JoinUs';
 import MentionsLegales from './pages/MentionsLegales';
 import PolitiqueConfidentialite from './pages/PolitiqueConfidentialite';
 import Accessibilite from './pages/Accessibilite';
+import PlanDuSite from './pages/PlanDuSite';
 import NewBusiness from './pages/NewBusiness';
 import { SEO } from './components/SEO';
 import CookieBanner from './components/CookieBanner';
@@ -89,6 +90,7 @@ export default function App() {
              <Route path="/mentions-legales" element={<MentionsLegales />} />
              <Route path="/politique-confidentialite" element={<PolitiqueConfidentialite />} />
              <Route path="/accessibilite" element={<Accessibilite />} />
+             <Route path="/plan-du-site" element={<PlanDuSite />} />
            </Routes>
          </main>
          <Footer />

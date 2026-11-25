@@ -262,6 +262,44 @@ export function createApiApp(): Express {
     });
   });
 
+  // Direct static crawl files: never redirect to index.html
+  app.get('/sitemap.xml', (_req, res) => {
+    const distFile = path.join(process.cwd(), 'dist', 'sitemap.xml');
+    const publicFile = path.join(process.cwd(), 'public', 'sitemap.xml');
+    const targetFile =
+      process.env.NODE_ENV === 'production' && fs.existsSync(distFile)
+        ? distFile
+        : fs.existsSync(publicFile)
+          ? publicFile
+          : distFile;
+
+    if (!fs.existsSync(targetFile)) {
+      return res.status(404).type('text/plain; charset=utf-8').send('sitemap.xml not found');
+    }
+    res.setHeader('Content-Type', 'application/xml; charset=utf-8');
+    res.setHeader('Cache-Control', 'public, max-age=0, must-revalidate');
+    res.setHeader('X-Robots-Tag', 'noindex');
+    return res.sendFile(targetFile);
+  });
+
+  app.get('/robots.txt', (_req, res) => {
+    const distFile = path.join(process.cwd(), 'dist', 'robots.txt');
+    const publicFile = path.join(process.cwd(), 'public', 'robots.txt');
+    const targetFile =
+      process.env.NODE_ENV === 'production' && fs.existsSync(distFile)
+        ? distFile
+        : fs.existsSync(publicFile)
+          ? publicFile
+          : distFile;
+
+    if (!fs.existsSync(targetFile)) {
+      return res.status(404).type('text/plain; charset=utf-8').send('robots.txt not found');
+    }
+    res.setHeader('Content-Type', 'text/plain; charset=utf-8');
+    res.setHeader('Cache-Control', 'public, max-age=300, must-revalidate');
+    return res.sendFile(targetFile);
+  });
+
   // Cohorte status API (checks if 10 candidatures reached)
   app.get('/api/cohorte-status', (req, res) => {
     try {
@@ -351,7 +389,8 @@ export function createApiApp(): Express {
     'newbusiness',
     'mentions-legales',
     'politique-confidentialite',
-    'accessibilite'
+    'accessibilite',
+    'plan-du-site'
   ]);
 
   // Serve pre-rendered HTML files from dist for valid routes (or handle 404 for unknown routes)

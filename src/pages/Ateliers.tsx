@@ -143,7 +143,7 @@ export default function Ateliers() {
               <div className="text-[1.4rem] font-medium text-[#1F4F6E] mb-1">1 500 € HT</div>
               <div className="text-[0.8rem] text-[#7a9ab0] mb-4">Financement OPCO possible via partenaires certifiés Qualiopi</div>
               <Link
-                to="/contact"
+                to="/contact/"
                 className="block text-center bg-[#1F4F6E] hover:bg-[#02ADAB] text-white py-3 px-5 rounded-[8px] text-[0.9rem] font-medium no-underline transition-colors"
               >
                 Prendre contact →
@@ -199,7 +199,7 @@ export default function Ateliers() {
               <div className="text-[1.4rem] font-medium text-[#1F4F6E] mb-1">Sur devis</div>
               <div className="text-[0.8rem] text-[#7a9ab0] mb-4">À partir de 2 000 € HT selon périmètre</div>
               <Link
-                to="/contact"
+                to="/contact/"
                 className="block text-center bg-[#1F4F6E] hover:bg-[#02ADAB] text-white py-3 px-5 rounded-[8px] text-[0.9rem] font-medium no-underline transition-colors"
               >
                 Discutons de votre projet →
@@ -255,7 +255,7 @@ export default function Ateliers() {
               <div className="text-[1.4rem] font-medium text-[#1F4F6E] mb-1">500 € HT / mois</div>
               <div className="text-[0.8rem] text-[#7a9ab0] mb-4">Engagement 6 mois · soit 3 000 € HT</div>
               <Link
-                to="/newbusiness"
+                to="/newbusiness/"
                 className="block text-center bg-[#1F4F6E] hover:bg-[#02ADAB] text-white py-3 px-5 rounded-[8px] text-[0.9rem] font-medium no-underline transition-colors"
               >
                 Voir le programme →
@@ -311,7 +311,7 @@ export default function Ateliers() {
               <div className="text-[1.4rem] font-medium text-[#1F4F6E] mb-1">3 000 – 5 000 € HT</div>
               <div className="text-[0.8rem] text-[#7a9ab0] mb-4">Selon périmètre et taille de l'organisation</div>
               <Link
-                to="/contact"
+                to="/contact/"
                 className="block text-center bg-[#1F4F6E] hover:bg-[#02ADAB] text-white py-3 px-5 rounded-[8px] text-[0.9rem] font-medium no-underline transition-colors"
               >
                 Demander un audit →
@@ -435,7 +435,7 @@ export default function Ateliers() {
               </ul>
 
               <Link
-                to="/contact"
+                to="/contact/"
                 className="block text-center no-underline bg-[#1F4F6E] hover:bg-[#02ADAB] text-white py-3.5 px-6 rounded-[8px] font-medium text-[0.95rem] transition-colors"
               >
                 Demander un devis formation IA &amp; OPCO →
@@ -449,7 +449,7 @@ export default function Ateliers() {
       <hr className="border-none border-t border-[rgba(31,79,110,0.1)] mx-6 max-w-[1100px] md:mx-auto" />
 
       {/* SECTION AVIS VÉRIFIÉS GOOGLE */}
-      <section id="avis-clients" className="max-w-[1100px] mx-auto py-[70px] px-6">
+      <section id="avis-clients" aria-labelledby="avis" className="max-w-[1100px] mx-auto py-[70px] px-6">
         <GoogleReviewsShowcase
           variant="light"
           kicker="Avis clients vérifiés · Formations & Accompagnements"
@@ -467,7 +467,7 @@ export default function Ateliers() {
           On fait un point de 30 minutes sur votre audit IA PME, votre formation entreprise ou son financement OPCO via nos partenaires certifiés Qualiopi.
         </p>
         <Link
-          to="/contact"
+          to="/contact/"
           className="inline-block bg-white text-[#C06721] text-[0.95rem] font-medium py-3.5 px-8 rounded-[8px] no-underline tracking-[0.04em] transition-transform duration-150 hover:-translate-y-0.5 hover:shadow-[0_6px_20px_rgba(0,0,0,0.15)]"
         >
           Demander un devis formation →

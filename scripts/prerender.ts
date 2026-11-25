@@ -17,6 +17,13 @@ import {
   morningData
 } from '../src/data/partenaires';
 import { cloudinaryUrl, cloudinarySrcSet } from '../src/utils/cloudinary';
+import {
+  BASE_VERIFIED_REVIEWS,
+  GOOGLE_MAPS_URL,
+  OFFICIAL_ATELIER_RECOMMENDATION,
+  OFFICIAL_GOOGLE_RATING,
+  OFFICIAL_GOOGLE_REVIEW_COUNT,
+} from '../src/data/reviews';
 
 function escapeHtml(str: string): string {
   return str
@@ -652,6 +659,184 @@ function generateToolStaticHtml(routePath: string): string {
         </section>`;
 }
 
+function generateReviewsStaticHtml(routePath: string): string {
+  if (!['/', '/ateliers', '/contact', '/faq'].includes(routePath)) return '';
+
+  return `
+        <section aria-labelledby="avis" style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 1.25rem; padding: 2rem 2.5rem; margin-bottom: 2.5rem;">
+          <p style="font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.14em; color: #037971; font-weight: 700; margin: 0 0 0.4rem 0;">
+            Avis clients vérifiés · Google Business Profile
+          </p>
+          <h2 id="avis" style="font-size: 1.55rem; font-weight: 800; color: #1F4F6E; margin: 0 0 0.65rem 0;">
+            Ce que disent nos clients — Note ${OFFICIAL_GOOGLE_RATING.toFixed(1).replace('.', ',')}/5 (${OFFICIAL_GOOGLE_REVIEW_COUNT} avis Google)
+          </h2>
+          <p style="color: #334155; margin: 0 0 1.25rem 0;">
+            Score vérifié de <strong>${OFFICIAL_GOOGLE_RATING.toFixed(1).replace('.', ',')} / 5</strong> sur ${OFFICIAL_GOOGLE_REVIEW_COUNT} avis clients Google Business Profile et <strong>${escapeHtml(OFFICIAL_ATELIER_RECOMMENDATION)}</strong> de recommandation sur nos ateliers pratiques en entreprise et grande école.
+          </p>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1rem; margin-bottom: 1.25rem;">
+            ${BASE_VERIFIED_REVIEWS.map(
+              (r) => `
+            <article style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 0.75rem; padding: 1.25rem;">
+              <div style="font-size: 0.85rem; font-weight: 700; color: #C06721; margin-bottom: 0.4rem;">★★★★★ 5/5</div>
+              <blockquote style="margin: 0 0 0.75rem 0; color: #1e293b; font-size: 0.92rem; line-height: 1.6;">« ${escapeHtml(r.quote)} »</blockquote>
+              <p style="margin: 0; font-size: 0.82rem; color: #475569;"><strong>${escapeHtml(r.author)}</strong> — ${escapeHtml(r.context)}</p>
+            </article>`
+            ).join('')}
+          </div>
+          <div style="display: flex; flex-wrap: wrap; gap: 1rem; font-size: 0.9rem;">
+            <a href="${GOOGLE_MAPS_URL}" target="_blank" rel="noopener noreferrer" style="color: #037971; font-weight: 700; text-decoration: underline;">Consulter les ${OFFICIAL_GOOGLE_REVIEW_COUNT} avis vérifiés sur Google Maps →</a>
+            <a href="${GOOGLE_MAPS_URL}" target="_blank" rel="noopener noreferrer" style="color: #C06721; font-weight: 700; text-decoration: underline;">Laisser un avis post-mission sur Google →</a>
+          </div>
+        </section>`;
+}
+
+function generateHomeTeamStaticHtml(routePath: string): string {
+  if (routePath !== '/') return '';
+  return `
+        <section aria-labelledby="equipe-studio" style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 1.25rem; padding: 2rem 2.5rem; margin-bottom: 2.5rem;">
+          <p style="font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.14em; color: #037971; font-weight: 700; margin: 0 0 0.4rem 0;">
+            À propos · Studio &amp; Collectif d'Alchimistes
+          </p>
+          <h2 id="equipe-studio" style="font-size: 1.5rem; font-weight: 800; color: #1F4F6E; margin: 0 0 0.75rem 0;">
+            Une équipe de praticiens dirigée par Cyril Garnier et Léonie Egesipe
+          </h2>
+          <p style="color: #334155; margin: 0 0 1rem 0;">
+            Alkymya réunit six experts associés complémentaires en IA générative, direction artistique, gouvernance des données (GAIA-X / RGPD), santé et insertion professionnelle :
+          </p>
+          <ul style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 0.75rem; list-style: none; padding: 0; margin: 0 0 1rem 0;">
+            ${alchimistes
+              .map(
+                (person) => `
+            <li style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 0.65rem; padding: 0.85rem 1rem;">
+              <a href="/alchimistes/${person.id}/" style="color: #1F4F6E; font-weight: 700; text-decoration: underline;">${escapeHtml(person.name)}</a>
+              <div style="font-size: 0.82rem; color: #475569; margin-top: 0.2rem;">${escapeHtml(person.role)}</div>
+            </li>`
+              )
+              .join('')}
+          </ul>
+          <a href="/plan-du-site/" style="color: #037971; font-weight: 700; text-decoration: underline;">Explorer toutes les ${routes.length} pages du studio sur le Plan du site →</a>
+        </section>`;
+}
+
+function generateHubDirectoryStaticHtml(routePath: string): string {
+  if (routePath === '/alchimistes') {
+    return `
+        <section style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 1.25rem; padding: 2rem 2.5rem; margin-bottom: 2.5rem;">
+          <h2 style="font-size: 1.5rem; font-weight: 800; color: #1F4F6E; margin-top: 0;">Fiches complètes des 6 Alchimistes d'Alkymya</h2>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1rem;">
+            ${alchimistes
+              .map(
+                (person) => `
+            <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 0.75rem; padding: 1.25rem;">
+              <h3 style="margin: 0 0 0.35rem 0; font-size: 1.05rem;">
+                <a href="/alchimistes/${person.id}/" style="color: #1F4F6E; text-decoration: underline;">${escapeHtml(person.name)}</a>
+              </h3>
+              <p style="margin: 0 0 0.5rem 0; font-size: 0.84rem; color: #037971; font-weight: 700;">${escapeHtml(person.role)}</p>
+              <p style="margin: 0; font-size: 0.88rem; color: #475569;">${escapeHtml(person.bio)}</p>
+            </div>`
+              )
+              .join('')}
+          </div>
+        </section>`;
+  }
+
+  if (routePath === '/ressources/etudes') {
+    return `
+        <section style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 1.25rem; padding: 2rem 2.5rem; margin-bottom: 2.5rem;">
+          <h2 style="font-size: 1.5rem; font-weight: 800; color: #1F4F6E; margin-top: 0;">Accès direct aux 5 études &amp; publications HTML/PDF</h2>
+          <ul style="display: grid; gap: 0.85rem; list-style: none; padding: 0; margin: 0;">
+            ${studiesList
+              .map(
+                (s) => `
+            <li style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 0.75rem; padding: 1rem 1.25rem;">
+              <a href="${s.path}" style="color: #1F4F6E; font-weight: 700; text-decoration: underline;">${escapeHtml(s.title)}</a>
+              <p style="margin: 0.35rem 0 0 0; font-size: 0.88rem; color: #475569;">${escapeHtml(s.seoDescription)}</p>
+            </li>`
+              )
+              .join('')}
+            <li style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 0.75rem; padding: 1rem 1.25rem;">
+              <a href="/ressources/etudes/interview-gemini-4/" style="color: #1F4F6E; font-weight: 700; text-decoration: underline;">Interview Gemini 4 : Retour d'expérience d'un enseignant en IA (V9)</a>
+              <p style="margin: 0.35rem 0 0 0; font-size: 0.88rem; color: #475569;">${escapeHtml(etudeGemini4Data.intro)}</p>
+            </li>
+          </ul>
+        </section>`;
+  }
+
+  if (routePath === '/ressources/analyseurs') {
+    return `
+        <section style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 1.25rem; padding: 2rem 2.5rem; margin-bottom: 2.5rem;">
+          <h2 style="font-size: 1.5rem; font-weight: 800; color: #1F4F6E; margin-top: 0;">Les 4 analyseurs IA gratuits et leurs fiches dédiées</h2>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1rem;">
+            ${analyseursList
+              .map(
+                (tool) => `
+            <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 0.75rem; padding: 1.25rem;">
+              <h3 style="margin: 0 0 0.35rem 0; font-size: 1.05rem;">
+                <a href="${tool.path}" style="color: #1F4F6E; text-decoration: underline;">${escapeHtml(tool.name)}</a>
+              </h3>
+              <p style="margin: 0 0 0.6rem 0; font-size: 0.86rem; color: #475569;">${escapeHtml(tool.whatItDoes)}</p>
+              <a href="${escapeHtml(tool.subdomain)}" target="_blank" rel="noopener noreferrer" style="color: #037971; font-size: 0.84rem; font-weight: 700;">Lancer l'outil →</a>
+            </div>`
+              )
+              .join('')}
+          </div>
+        </section>`;
+  }
+
+  return '';
+}
+
+function generatePlanDuSiteStaticHtml(routePath: string): string {
+  if (routePath !== '/plan-du-site') return '';
+
+  const categories = [
+    {
+      heading: 'Pages principales, Offres & Conformité',
+      items: routes.filter(
+        (r) =>
+          !r.path.startsWith('/alchimistes/') &&
+          !r.path.startsWith('/partenaires/') &&
+          !r.path.startsWith('/ressources/')
+      ),
+    },
+    {
+      heading: 'Études, Analyseurs & Business Game',
+      items: routes.filter((r) => r.path.startsWith('/ressources/')),
+    },
+    {
+      heading: 'Fiches Experts — Les Alchimistes',
+      items: routes.filter((r) => r.path.startsWith('/alchimistes/')),
+    },
+    {
+      heading: 'Écosystème Partenaires (Pôles & Fiches Dédiées)',
+      items: routes.filter((r) => r.path.startsWith('/partenaires/')),
+    },
+  ];
+
+  return `
+        <section style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 1.25rem; padding: 2rem 2.5rem; margin-bottom: 2.5rem;">
+          <h2 style="font-size: 1.5rem; font-weight: 800; color: #1F4F6E; margin-top: 0;">Index complet des ${routes.length} URLs canoniques alkymya.co</h2>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem;">
+            ${categories
+              .map(
+                (cat) => `
+            <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 0.75rem; padding: 1.25rem;">
+              <h3 style="margin: 0 0 0.75rem 0; font-size: 1.05rem; color: #1F4F6E;">${escapeHtml(cat.heading)} (${cat.items.length})</h3>
+              <ul style="list-style: none; padding: 0; margin: 0; display: grid; gap: 0.45rem;">
+                ${cat.items
+                  .map((item) => {
+                    const href = item.path === '/' ? '/' : `${item.path}/`;
+                    return `<li><a href="${href}" style="color: #037971; font-weight: 600; text-decoration: underline; font-size: 0.9rem;">${escapeHtml(item.title)}</a></li>`;
+                  })
+                  .join('')}
+              </ul>
+            </div>`
+              )
+              .join('')}
+          </div>
+        </section>`;
+}
+
 function generatePageBody(route: RouteData): string {
   const navItems = [
     { href: '/', label: 'Accueil' },
@@ -677,6 +862,10 @@ function generatePageBody(route: RouteData): string {
   const toolStaticHtml = route.path.startsWith('/ressources/analyseurs/') || route.path === '/ressources/business-game'
     ? generateToolStaticHtml(route.path)
     : '';
+  const hubStaticHtml = generateHubDirectoryStaticHtml(route.path);
+  const planDuSiteStaticHtml = generatePlanDuSiteStaticHtml(route.path);
+  const reviewsStaticHtml = generateReviewsStaticHtml(route.path);
+  const homeTeamStaticHtml = generateHomeTeamStaticHtml(route.path);
 
   return `
     <style>
@@ -687,7 +876,7 @@ function generatePageBody(route: RouteData): string {
     <header style="background: #ffffff; border-bottom: 1px solid #e2e8f0; padding: 1rem 1.5rem; position: sticky; top: 0; z-index: 50;">
       <div style="max-width: 1280px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem;">
         <a href="/" aria-label="Accueil Alkymya" style="display: flex; align-items: center; text-decoration: none;">
-          <img src="${cloudinaryUrl('https://res.cloudinary.com/dokzioyu4/image/upload/v1758096912/logo_principal_bleu_gbnyuu.png', 600)}" alt="Alkymya, studio d'expertise et de création IA" width="150" height="38" style="height: 38px; width: auto;" />
+          <img src="${cloudinaryUrl('https://res.cloudinary.com/dokzioyu4/image/upload/v1758096912/logo_principal_bleu_gbnyuu.png', 600)}" srcset="${cloudinarySrcSet('https://res.cloudinary.com/dokzioyu4/image/upload/v1758096912/logo_principal_bleu_gbnyuu.png', [300, 600])}" sizes="150px" alt="Alkymya, studio d'expertise et de création IA" width="150" height="38" style="height: 38px; width: auto;" />
         </a>
         <nav aria-label="Navigation principale" style="display: flex; flex-wrap: wrap; gap: 1rem; font-size: 0.8125rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em;">
           ${navItems.map(item => {
@@ -728,6 +917,10 @@ function generatePageBody(route: RouteData): string {
         ${studyStaticHtml}
         ${partnerStaticHtml}
         ${toolStaticHtml}
+        ${hubStaticHtml}
+        ${planDuSiteStaticHtml}
+        ${reviewsStaticHtml}
+        ${homeTeamStaticHtml}
 
         <div style="display: grid; gap: 2.5rem; margin-bottom: 4rem;">
           ${route.content.sections.map(section => `
@@ -810,6 +1003,7 @@ function generatePageBody(route: RouteData): string {
           <a href="/mentions-legales/" style="color: #cbd5e1; text-decoration: none;">Mentions Légales</a>
           <a href="/politique-confidentialite/" style="color: #cbd5e1; text-decoration: none;">Confidentialité &amp; Cookies</a>
           <a href="/accessibilite/" style="color: #cbd5e1; text-decoration: none;">Accessibilité RGAA</a>
+          <a href="/plan-du-site/" style="color: #cbd5e1; text-decoration: none;">Plan du site</a>
           <a href="/newbusiness/" style="color: #cbd5e1; text-decoration: none;">New Business MVP</a>
           <a href="/faq/" style="color: #cbd5e1; text-decoration: none;">FAQ</a>
           <a href="/contact/" style="color: #cbd5e1; text-decoration: none;">Contact</a>
@@ -861,6 +1055,7 @@ const breadcrumbNames: Record<string, string> = {
   '/mentions-legales': 'Mentions Légales',
   '/politique-confidentialite': 'Politique de confidentialité',
   '/accessibilite': 'Accessibilité RGAA',
+  '/plan-du-site': 'Plan du site',
   ...Object.fromEntries(alchimistes.map(person => [`/alchimistes/${person.id}`, person.name]))
 };
 
@@ -1154,6 +1349,67 @@ function buildJsonLd(route: RouteData, canonicalUrl: string) {
   };
 
   const graphNodes: any[] = [webpageNode, breadcrumbNode, organizationNode, cyrilGarnierNode];
+
+  // Nœuds ImageObject d'auteur / originaux pour indexation médias & E-E-A-T
+  const routeVisuals =
+    route.images && route.images.length > 0
+      ? route.images.map((img) => ({
+          contentUrl: cloudinaryUrl(img.src, 1200),
+          width: img.width,
+          height: img.height,
+          caption: img.caption || img.alt,
+          name: img.alt,
+        }))
+      : [
+          {
+            contentUrl: route.ogImage,
+            width: 1200,
+            height: 630,
+            caption: route.description,
+            name: route.title,
+          },
+        ];
+
+  routeVisuals.forEach((vis, idx) => {
+    const imgId = `${canonicalUrl}#image-${idx + 1}`;
+    if (idx === 0) {
+      webpageNode.primaryImageOfPage = { "@id": imgId };
+    }
+    graphNodes.push({
+      "@type": "ImageObject",
+      "@id": imgId,
+      "url": vis.contentUrl,
+      "contentUrl": vis.contentUrl,
+      "width": vis.width,
+      "height": vis.height,
+      "name": vis.name,
+      "caption": vis.caption,
+      "creditText": "Alkymya — Cyril Garnier & Léonie Egesipe",
+      "license": "https://alkymya.co/mentions-legales/",
+      "acquireLicensePage": "https://alkymya.co/contact/",
+      "author": { "@id": "https://alkymya.co/#cyril-garnier" },
+      "creator": { "@id": "https://alkymya.co/#organization" },
+      "copyrightHolder": { "@id": "https://alkymya.co/#organization" },
+    });
+  });
+
+  // Avis clients vérifiés Schema.org Review sur les pages clés de conversion & confiance
+  if (['/', '/ateliers', '/contact', '/faq'].includes(route.path)) {
+    organizationNode.review = BASE_VERIFIED_REVIEWS.map((r) => ({
+      "@type": "Review",
+      "author": {
+        "@type": "Person",
+        "name": r.author,
+      },
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": String(r.rating),
+        "bestRating": "5",
+        "worstRating": "1",
+      },
+      "reviewBody": r.quote,
+    }));
+  }
 
   // 4. Schéma Course spécifique pour /ateliers/ avec hasCourseInstance
   if (route.path === '/ateliers') {
@@ -1609,7 +1865,8 @@ async function prerender() {
     <!-- Robots Directive for Google Discover & Rich Snippets -->
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
 
-    <!-- RSS Feed Discovery -->
+    <!-- Sitemap & RSS Feed Discovery -->
+    <link rel="sitemap" type="application/xml" title="Sitemap XML" href="https://alkymya.co/sitemap.xml" />
     <link rel="alternate" type="application/rss+xml" title="Flux RSS Alkymya" href="https://alkymya.co/rss.xml" />
 
     <!-- Open Graph / Facebook / LinkedIn (1200x630) -->
@@ -1640,9 +1897,12 @@ ${JSON.stringify(jsonLd, null, 2)}
     </script>
 `;
 
-    // Nettoyer les balises robots, og:, twitter: et json-ld existantes pour éviter les doublons
+    // Nettoyer les balises robots, og:, twitter:, sitemap, rss et json-ld existantes pour éviter les doublons
     html = html
       .replace(/<script\s+type="application\/ld\+json">.*?<\/script>/gis, '')
+      .replace(/<link\s+rel="sitemap"[^>]*>/gi, '')
+      .replace(/<link\s+rel="alternate"\s+type="application\/rss\+xml"[^>]*>/gi, '')
+      .replace(/<meta\s+name="google-site-verification"[^>]*>/gi, '')
       .replace(/<meta\s+name="robots"[^>]*>/gi, '')
       .replace(/<meta\s+property="og:title"[^>]*>/gi, '')
       .replace(/<meta\s+property="og:description"[^>]*>/gi, '')
@@ -1729,7 +1989,7 @@ ${JSON.stringify(jsonLd, null, 2)}
     console.log(`[prerender] Fichier _headers copié dans dist/_headers.`);
   }
 
-  for (const llmsFile of ['llms.txt', 'llm.txt', 'llms-full.txt', 'robots.txt']) {
+  for (const llmsFile of ['llms.txt', 'llm.txt', 'llms-full.txt', 'robots.txt', 'alkymya-indexnow-2026.txt']) {
     const srcLlms = path.join(process.cwd(), 'public', llmsFile);
     if (fs.existsSync(srcLlms)) {
       fs.copyFileSync(srcLlms, path.join(distDir, llmsFile));

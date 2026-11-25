@@ -562,14 +562,14 @@ export default function GenerateurIA() {
         </p>
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
           <Link
-            to="/ateliers"
+            to="/ateliers/"
             className="inline-flex items-center justify-center gap-2 bg-white text-[#C06721] text-[0.95rem] font-medium py-3.5 px-8 rounded-[8px] no-underline tracking-[0.04em] transition-transform duration-150 hover:-translate-y-0.5 hover:shadow-[0_6px_20px_rgba(0,0,0,0.15)]"
           >
             <span>Découvrir nos ateliers</span>
             <ArrowRight className="w-4 h-4" />
           </Link>
           <Link
-            to="/contact"
+            to="/contact/"
             className="inline-block bg-white/10 hover:bg-white/20 text-white text-[0.95rem] font-medium py-3.5 px-8 rounded-[8px] no-underline tracking-[0.04em] transition-transform duration-150 hover:-translate-y-0.5 border border-white/25"
           >
             Organiser une session sur-mesure
