@@ -4,6 +4,7 @@ import { motion } from 'motion/react';
 import { Link } from 'react-router-dom';
 import { ArrowRight, CheckCircle2 } from 'lucide-react';
 import { SEO } from '../components/SEO';
+import { GoogleReviewsShowcase } from '../components/GoogleReviewsShowcase';
 import { cloudinaryUrl, cloudinarySrcSet } from '../utils/cloudinary';
 
 export default function Home() {
@@ -78,6 +79,15 @@ export default function Home() {
               </p>
             </div>
           ))}
+        </div>
+
+        <div className="mt-12 pt-10 border-t border-[rgba(31,79,110,0.1)]">
+          <GoogleReviewsShowcase
+            variant="light"
+            kicker="Avis clients vérifiés · Google Business Profile"
+            headingPrefix="Retours vérifiés &"
+            headingStrong="note 5,0 / 5 sur Google"
+          />
         </div>
       </section>
 

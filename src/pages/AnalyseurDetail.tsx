@@ -7,6 +7,7 @@ import {
   CheckCircle2,
   Cpu,
   ExternalLink,
+  Globe,
   ListChecks,
   Lock,
   Users
@@ -31,7 +32,7 @@ export default function AnalyseurDetail() {
             className="inline-flex items-center gap-2 bg-[#1F4F6E] hover:bg-[#02ADAB] text-white text-sm font-medium py-3 px-6 rounded-[8px] transition-colors"
           >
             <ArrowLeft className="w-4 h-4" />
-            <span>Voir nos 3 Analyseurs IA</span>
+            <span>Voir nos 4 Analyseurs IA</span>
           </Link>
         </div>
       </div>
@@ -147,18 +148,45 @@ export default function AnalyseurDetail() {
           </div>
 
           <div className="lg:col-span-4 flex justify-center">
-            <div className="w-[230px] aspect-[9/16] rounded-[14px] overflow-hidden border border-white/15 shadow-2xl bg-[#16384e]">
-              <video
-                src={tool.videoUrl}
-                muted
-                autoPlay
-                loop
-                playsInline
-                controls
-                title={`Démonstration ${tool.name}`}
-                className="w-full h-full object-cover"
-              />
-            </div>
+            {tool.videoUrl ? (
+              <div className="w-[230px] aspect-[9/16] rounded-[14px] overflow-hidden border border-white/15 shadow-2xl bg-[#16384e]">
+                <video
+                  src={tool.videoUrl}
+                  muted
+                  autoPlay
+                  loop
+                  playsInline
+                  controls
+                  title={`Démonstration ${tool.name}`}
+                  className="w-full h-full object-cover"
+                />
+              </div>
+            ) : (
+              <div className="w-[240px] aspect-[9/16] rounded-[14px] border border-white/15 shadow-2xl bg-gradient-to-b from-[#16384e] to-[#0f293a] p-5 flex flex-col justify-between text-left">
+                <div>
+                  <div className="flex items-center justify-between gap-2 mb-4">
+                    <span className="w-9 h-9 rounded-[8px] bg-[#02ADAB]/20 text-[#02ADAB] flex items-center justify-center">
+                      <Globe className="w-5 h-5" />
+                    </span>
+                    <span className="text-[10px] font-medium uppercase tracking-wider text-white/75">
+                      Audit Web 360°
+                    </span>
+                  </div>
+                  <p className="text-sm font-medium text-white mb-1">{tool.shortName}</p>
+                  <p className="text-xs text-white/65 mb-4">5 piliers analysés · Note / 100</p>
+                  <ul className="space-y-2 text-[11px] text-white/85">
+                    <li className="border-l-2 border-[#02ADAB] pl-2.5">01. UX &amp; Brand Content</li>
+                    <li className="border-l-2 border-[#02ADAB] pl-2.5">02. SEO &amp; GEO (IA)</li>
+                    <li className="border-l-2 border-[#02ADAB] pl-2.5">03. E-E-A-T On/Off-Site</li>
+                    <li className="border-l-2 border-[#C06721] pl-2.5">04. Perf &amp; Sécurité HTTP</li>
+                    <li className="border-l-2 border-[#C06721] pl-2.5">05. RGPD &amp; RGAA</li>
+                  </ul>
+                </div>
+                <div className="pt-3 border-t border-white/10 text-[11px] font-mono text-[#02ADAB]">
+                  scan.alkymya.co
+                </div>
+              </div>
+            )}
           </div>
         </div>
       </header>

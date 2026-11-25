@@ -116,12 +116,19 @@ export default function CookieBanner() {
               </div>
 
               <div className="text-xs text-slate-500 mb-5 pl-14">
-                Vous pouvez accepter, refuser ou personnaliser vos choix à tout moment. Consultez nos{' '}
+                Vous pouvez accepter, refuser ou personnaliser vos choix à tout moment. Consultez notre{' '}
                 <Link
-                  to="/mentions-legales"
+                  to="/politique-confidentialite/"
                   className="underline text-deep-blue hover:text-accent transition-colors font-medium"
                 >
-                  mentions légales et politique de confidentialité
+                  politique de confidentialité et cookies
+                </Link>{' '}
+                et nos{' '}
+                <Link
+                  to="/mentions-legales/"
+                  className="underline text-deep-blue hover:text-accent transition-colors font-medium"
+                >
+                  mentions légales
                 </Link>.
               </div>
 

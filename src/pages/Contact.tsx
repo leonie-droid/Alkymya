@@ -1,9 +1,62 @@
-import React, { useState } from 'react';
-import { motion } from 'motion/react';
-import { Mail, MessageSquare } from 'lucide-react';
-import { Card } from '@/components/ui/card';
+import React, { useState, useEffect } from 'react';
+import {
+  Mail,
+  MapPin,
+  Phone,
+  Globe,
+  Copy,
+  Check,
+  ArrowUpRight,
+} from 'lucide-react';
 import { SEO } from '../components/SEO';
+import { GoogleReviewsShowcase } from '../components/GoogleReviewsShowcase';
+import { GOOGLE_MAPS_URL } from '../data/reviews';
 import { useAntiBot, HoneypotField } from '../hooks/useAntiBot';
+
+interface OfficialCoordinate {
+  id: string;
+  label: string;
+  displayValue: string;
+  copyValue: string;
+  href?: string;
+  icon: 'map' | 'phone' | 'mail' | 'globe';
+  tabular?: boolean;
+}
+
+const OFFICIAL_COORDINATES: OfficialCoordinate[] = [
+  {
+    id: 'address',
+    label: 'Siège & Studio',
+    displayValue: '2 rue Sacha Guitry, 77330 Ozoir-la-Ferrière',
+    copyValue: '2 rue Sacha Guitry, 77330 Ozoir-la-Ferrière',
+    href: GOOGLE_MAPS_URL,
+    icon: 'map',
+  },
+  {
+    id: 'phone',
+    label: 'Téléphone direct',
+    displayValue: '06 43 64 97 77',
+    copyValue: '06 43 64 97 77',
+    href: 'tel:+33643649777',
+    icon: 'phone',
+    tabular: true,
+  },
+  {
+    id: 'email',
+    label: 'Email direct',
+    displayValue: 'cyril@alkymya.co',
+    copyValue: 'cyril@alkymya.co',
+    href: 'mailto:cyril@alkymya.co',
+    icon: 'mail',
+  },
+  {
+    id: 'zone',
+    label: "Zone d'intervention",
+    displayValue: 'Paris & Seine-et-Marne (77) — France entière',
+    copyValue: 'Paris & Seine-et-Marne (77) — France entière',
+    icon: 'globe',
+  },
+];
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -16,6 +69,8 @@ export default function Contact() {
 
   const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
+  const [copiedId, setCopiedId] = useState<string | null>(null);
+
   const {
     honeypotValue,
     setHoneypotValue,
@@ -23,6 +78,33 @@ export default function Contact() {
     resetProtection,
     formInteractionProps,
   } = useAntiBot('contact');
+
+  useEffect(() => {
+    if (!copiedId) return;
+    const timer = window.setTimeout(() => setCopiedId(null), 2000);
+    return () => window.clearTimeout(timer);
+  }, [copiedId]);
+
+  const handleCopy = async (id: string, value: string) => {
+    try {
+      if (navigator.clipboard && window.isSecureContext) {
+        await navigator.clipboard.writeText(value);
+      } else {
+        const textarea = document.createElement('textarea');
+        textarea.value = value;
+        textarea.setAttribute('readonly', '');
+        textarea.style.position = 'fixed';
+        textarea.style.opacity = '0';
+        document.body.appendChild(textarea);
+        textarea.select();
+        document.execCommand('copy');
+        document.body.removeChild(textarea);
+      }
+      setCopiedId(id);
+    } catch {
+      // Silencieux si le navigateur bloque le presse-papiers
+    }
+  };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -267,22 +349,111 @@ export default function Contact() {
           </div>
         </div>
 
-        {/* COORDONNÉES OFFICIELLES & ÉDITEUR */}
-        <div className="mt-7 p-6 sm:p-8 rounded-[12px] bg-white shadow-[0_2px_16px_rgba(31,79,110,0.08)] border border-[rgba(31,79,110,0.06)]">
-          <p className="text-[0.72rem] font-medium tracking-[0.12em] uppercase text-[#02ADAB] mb-2">
-            Coordonnées officielles
-          </p>
-          <p className="text-[0.98rem] text-[#1F4F6E] leading-[1.7] font-normal">
-            Alkymya — studio d'expertise et de création IA de <strong className="font-medium">CYRIL GARNIER CONSULTING</strong>, 2 rue Sacha Guitry, 77330 Ozoir-la-Ferrière. Email direct :{' '}
-            <a href="mailto:cyril@alkymya.co" className="text-[#02ADAB] hover:text-[#037971] font-medium underline">
-              cyril@alkymya.co
-            </a>{' '}
-            • Téléphone :{' '}
-            <a href="tel:+33643649777" className="text-[#02ADAB] hover:text-[#037971] font-medium underline">
-              06 43 64 97 77
-            </a>
-            .
-          </p>
+        {/* DUO ASYMÉTRIQUE : COORDONNÉES OFFICIELLES & AVIS CLIENTS VÉRIFIÉS GOOGLE */}
+        <div className="mt-8 grid grid-cols-1 lg:grid-cols-12 gap-7 items-stretch">
+          {/* Colonne gauche (5/12) : Fiche claire Coordonnées officielles */}
+          <div className="lg:col-span-5 rounded-[12px] bg-white shadow-[0_2px_16px_rgba(31,79,110,0.08)] border border-[rgba(31,79,110,0.08)] p-7 sm:p-8 flex flex-col justify-between gap-6">
+            <div>
+              <p className="text-[0.72rem] font-medium tracking-[0.14em] uppercase text-[#037971] mb-2">
+                Coordonnées officielles
+              </p>
+              <h3 className="text-[1.35rem] font-normal text-[#1F4F6E] leading-snug mb-1">
+                Studio <strong className="font-medium">Alkymya</strong>
+              </h3>
+              <p className="text-xs text-[#5a7a90] tabular-nums mb-5">
+                CYRIL GARNIER CONSULTING · SASU · SIREN 842 403 669 · RCS Melun
+              </p>
+
+              <dl className="divide-y divide-[rgba(31,79,110,0.08)] border-t border-[rgba(31,79,110,0.08)]">
+                {OFFICIAL_COORDINATES.map((item) => {
+                  const isCopied = copiedId === item.id;
+                  const isExternal = item.href?.startsWith('http');
+
+                  return (
+                    <div
+                      key={item.id}
+                      className="py-3.5 flex items-center justify-between gap-3"
+                    >
+                      <div className="flex items-start gap-3 min-w-0">
+                        <span
+                          aria-hidden="true"
+                          className="mt-0.5 w-8 h-8 rounded-[6px] bg-[#f4f6f9] text-[#1F4F6E] flex items-center justify-center shrink-0"
+                        >
+                          {item.icon === 'map' && <MapPin className="w-4 h-4 text-[#037971]" />}
+                          {item.icon === 'phone' && <Phone className="w-4 h-4 text-[#037971]" />}
+                          {item.icon === 'mail' && <Mail className="w-4 h-4 text-[#037971]" />}
+                          {item.icon === 'globe' && <Globe className="w-4 h-4 text-[#037971]" />}
+                        </span>
+                        <div className="min-w-0">
+                          <dt className="text-[0.7rem] font-medium uppercase tracking-[0.1em] text-[#5a7a90] mb-0.5">
+                            {item.label}
+                          </dt>
+                          <dd className={`text-[0.92rem] text-[#1F4F6E] leading-snug break-words ${item.tabular ? 'tabular-nums' : ''}`}>
+                            {item.href ? (
+                              <a
+                                href={item.href}
+                                target={isExternal ? '_blank' : undefined}
+                                rel={isExternal ? 'noopener noreferrer' : undefined}
+                                className="font-medium text-[#1F4F6E] hover:text-[#037971] underline decoration-[rgba(31,79,110,0.22)] underline-offset-2 transition-colors"
+                              >
+                                {item.displayValue}
+                              </a>
+                            ) : (
+                              <span className="font-normal">{item.displayValue}</span>
+                            )}
+                          </dd>
+                        </div>
+                      </div>
+
+                      <button
+                        type="button"
+                        onClick={() => handleCopy(item.id, item.copyValue)}
+                        aria-label={`Copier ${item.label.toLowerCase()} : ${item.copyValue}`}
+                        className={`min-h-[40px] px-3 py-1.5 rounded-[8px] border text-xs font-medium inline-flex items-center gap-1.5 whitespace-nowrap shrink-0 transition-colors cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#02ADAB] ${
+                          isCopied
+                            ? 'bg-[#037971] border-[#037971] text-white'
+                            : 'bg-[#f4f6f9] border-[rgba(31,79,110,0.12)] text-[#1F4F6E] hover:bg-white hover:border-[#02ADAB]'
+                        }`}
+                      >
+                        {isCopied ? (
+                          <>
+                            <Check className="w-3.5 h-3.5" aria-hidden="true" />
+                            <span>Copié</span>
+                          </>
+                        ) : (
+                          <>
+                            <Copy className="w-3.5 h-3.5" aria-hidden="true" />
+                            <span>Copier</span>
+                          </>
+                        )}
+                      </button>
+                    </div>
+                  );
+                })}
+              </dl>
+            </div>
+
+            <div className="pt-4 border-t border-[rgba(31,79,110,0.08)] flex flex-wrap items-center justify-between gap-3">
+              <span className="text-xs text-[#5a7a90]">
+                Réponse sous 24h ouvrées · Visio ou sur site
+              </span>
+              <a
+                href={GOOGLE_MAPS_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-xs font-medium text-[#037971] hover:text-[#1F4F6E] inline-flex items-center gap-1 whitespace-nowrap shrink-0 underline underline-offset-2 transition-colors"
+              >
+                <span>Ouvrir sur Google Maps</span>
+                <ArrowUpRight className="w-3.5 h-3.5" aria-hidden="true" />
+              </a>
+            </div>
+          </div>
+
+          {/* Colonne droite (7/12) : Bloc signature bleu nuit Avis clients vérifiés */}
+          <GoogleReviewsShowcase
+            variant="dark"
+            className="lg:col-span-7"
+          />
         </div>
       </section>
 

@@ -150,7 +150,7 @@
   </url>
   <url>
     <loc>https://alkymya.co/ressources/</loc>
-    <lastmod>2026-11-20</lastmod>
+    <lastmod>2026-11-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <image:image>
@@ -224,12 +224,12 @@
   </url>
   <url>
     <loc>https://alkymya.co/ressources/analyseurs/</loc>
-    <lastmod>2026-11-20</lastmod>
+    <lastmod>2026-11-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
       <image:loc>https://alkymya.co/og-ressources.jpg</image:loc>
-      <image:title>Analyseurs IA Gratuits : Photo, CV &amp; Mémoire | Alkymya — Alkymya</image:title>
+      <image:title>Analyseurs IA : Photo, CV, Mémoire &amp; Site Web | Alkymya — Alkymya</image:title>
     </image:image>
   </url>
   <url>
@@ -260,6 +260,16 @@
     <image:image>
       <image:loc>https://alkymya.co/og-ressources.jpg</image:loc>
       <image:title>Analyseur de Mémoire &amp; Thèse IA Gratuit | Alkymya — Alkymya</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://alkymya.co/ressources/analyseurs/analyseur-de-site-web/</loc>
+    <lastmod>2026-11-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://alkymya.co/og-ressources.jpg</image:loc>
+      <image:title>Analyseur de Site Web IA (SEO, GEO &amp; RGPD) | Alkymya — Alkymya</image:title>
     </image:image>
   </url>
   <url>
@@ -578,12 +588,12 @@
   </url>
   <url>
     <loc>https://alkymya.co/faq/</loc>
-    <lastmod>2026-11-16</lastmod>
+    <lastmod>2026-11-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
       <image:loc>https://alkymya.co/og-faq.jpg</image:loc>
-      <image:title>FAQ Alkymya | Questions Fréquentes, IA &amp; OPCO — Alkymya</image:title>
+      <image:title>FAQ Alkymya | Formations IA, Agents, SEO/GEO &amp; OPCO — Alkymya</image:title>
     </image:image>
   </url>
   <url>
@@ -622,6 +632,26 @@
     <image:image>
       <image:loc>https://alkymya.co/og-mentions.jpg</image:loc>
       <image:title>Mentions Légales Agence IA &amp; RGPD | Alkymya — Alkymya</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://alkymya.co/politique-confidentialite/</loc>
+    <lastmod>2026-11-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://alkymya.co/og-mentions.jpg</image:loc>
+      <image:title>Politique de confidentialité &amp; cookies RGPD | Alkymya — Alkymya</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://alkymya.co/accessibilite/</loc>
+    <lastmod>2026-11-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://alkymya.co/og-mentions.jpg</image:loc>
+      <image:title>Déclaration d'accessibilité RGAA &amp; WCAG | Alkymya — Alkymya</image:title>
     </image:image>
   </url>
 </urlset>

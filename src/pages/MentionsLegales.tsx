@@ -186,6 +186,14 @@ const MentionsLegales: React.FC = () => {
             <p className="text-xs text-[#7a9ab0] pt-2">
               Vous pouvez à tout instant retirer ou modifier votre choix via le bouton ci-dessus ou en cliquant sur le lien « Gestion des cookies » présent dans le pied de page du site.
             </p>
+            <div className="pt-3 border-t border-[rgba(31,79,110,0.08)] flex flex-wrap gap-5 text-xs font-medium">
+              <Link to="/politique-confidentialite/" className="text-[#037971] hover:underline">
+                Consulter la Politique de confidentialité &amp; cookies dédiée →
+              </Link>
+              <Link to="/accessibilite/" className="text-[#037971] hover:underline">
+                Consulter la Déclaration d'accessibilité RGAA →
+              </Link>
+            </div>
           </div>
         </div>
       </section>

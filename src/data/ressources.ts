@@ -70,15 +70,15 @@ export const resourceCategories: ResourceCategory[] = [
     h1Lead: 'Nos Analyseurs IA',
     h1Accent: 'gratuits et documentés.',
     description:
-      "Trois applications web ouvertes sans inscription : Analyseur de photo, Analyseur de CV (en partenariat avec Kendra Martine d'Objectif Alternance) et Analyseur de mémoire académique.",
-    seoTitle: 'Analyseurs IA Gratuits : Photo, CV & Mémoire | Alkymya',
+      "Quatre applications web ouvertes sans inscription : Analyseur de photo, Analyseur de CV (avec Kendra Martine d'Objectif Alternance), Analyseur de mémoire académique et Analyseur de site web (Alkymya Scan).",
+    seoTitle: 'Analyseurs IA : Photo, CV, Mémoire & Site Web | Alkymya',
     seoDescription:
-      'Découvrez et lancez nos 3 analyseurs IA gratuits en production (Photo, CV avec Objectif Alternance, Mémoire académique) avec mode d’emploi et garanties de confidentialité.',
+      'Lancez nos 4 analyseurs IA gratuits en production (Photo, CV, Mémoire, Site web Alkymya Scan) avec mode d’emploi, limites et confidentialité.',
     keywords:
-      'analyseur de photo IA, analyseur de CV gratuit, analyseur de mémoire IA, Objectif Alternance, outils IA gratuits Alkymya',
+      'analyseur de photo IA, analyseur de CV gratuit, analyseur de mémoire IA, analyseur de site web Alkymya Scan, Objectif Alternance, outils IA gratuits Alkymya',
     cardSummary:
-      'Trois outils gratuits documentés (ce qu’ils font, limites, confidentialité) : Photo, CV et Mémoire académique.',
-    countLabel: '3 outils en ligne'
+      'Quatre outils gratuits documentés (ce qu’ils font, limites, confidentialité) : Photo, CV, Mémoire et Site web (Alkymya Scan).',
+    countLabel: '4 outils en ligne'
   },
   {
     slug: 'business-game',
@@ -227,6 +227,18 @@ export const resources: ResourceItem[] = [
     appUrl: 'https://analyseurdememoire.alkymya.co/',
     articlePath: '/ressources/analyseurs/analyseur-de-memoire/',
     type: 'video'
+  },
+  {
+    id: 5,
+    title: 'Analyseur de site web (Alkymya Scan)',
+    category: 'Nos Analyseurs',
+    categorySlug: 'analyseurs',
+    description:
+      "Audit web 360° gratuit sur 5 piliers (UX, SEO & GEO, E-E-A-T, performance & sécurité HTTP, RGPD/RGAA) avec note sur 100 et 3 failles P0.",
+    url: 'https://scan.alkymya.co/#analyseur',
+    appUrl: 'https://scan.alkymya.co/#analyseur',
+    articlePath: '/ressources/analyseurs/analyseur-de-site-web/',
+    type: 'app'
   },
   {
     id: 4,

@@ -164,6 +164,14 @@ export const SEO: React.FC<SEOProps> = ({
       "latitude": 48.7667,
       "longitude": 2.6833
     },
+    "hasMap": "https://www.google.com/maps?cid=10471291206194913670",
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "5.0",
+      "reviewCount": "11",
+      "bestRating": "5",
+      "worstRating": "1"
+    },
     "openingHoursSpecification": [
       {
         "@type": "OpeningHoursSpecification",

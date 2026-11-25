@@ -13,7 +13,8 @@
 - **Siège social** : 2 rue Sacha Guitry, 77330 Ozoir-la-Ferrière, Seine-et-Marne, Île-de-France, France
 - **Coordonnées GPS** : Latitude 48.7667° N, Longitude 2.6833° E
 - **Périmètre d'intervention** : Seine-et-Marne (77), Paris & Île-de-France, France entière et francophonie (présentiel et distanciel)
-- **Site officiel** : https://alkymya.co/ (44 pages canoniques indexées)
+- **Site officiel** : https://alkymya.co/ (47 pages canoniques indexées)
+- **Fiche Google Maps & Avis** : https://www.google.com/maps?cid=10471291206194913670 (5,0 / 5 sur 11 avis clients vérifiés)
 - **Site personnel du fondateur** : https://cyrilgarnier.fr/
 - **Contact direct** : cyril@alkymya.co • Téléphone : +33 6 43 64 97 77 (06 43 64 97 77)
 - **Hébergement** : Netlify, Inc. (44 Montgomery Street, Suite 300, San Francisco, CA 94104, USA)
@@ -144,10 +145,11 @@ Toutes les études de cas sont mesurées en production réelle, sans publicité 
 4. **Génération IA 2025 — Les 5 Visages et Personas** (`/ressources/etudes/generation-ia-2025/`) : Baromètre 2025 (`n = 387` répondants 16–25 ans), typologie en 5 personas (*Explorateurs engagés* 15–20 %, *Pragmatiques productifs* 40–45 %, etc.) et top 5 outils (ChatGPT 95 % à Perplexity 30 %).
 5. **Génération IA 2024 — Le paradoxe à l'école** (`/ressources/etudes/generation-ia-2024/`) : Vague 1 fondatrice (`n = 326` répondants, > 90 % d'adoption académique dès 2024).
 
-### 6.2 Les 3 Analyseurs IA gratuits sans inscription (`/ressources/analyseurs/`)
+### 6.2 Les 4 Analyseurs IA gratuits sans inscription (`/ressources/analyseurs/`)
 1. **Analyseur de Photo** (`/ressources/analyseurs/analyseur-de-photo/` → `https://analyseurdephoto.alkymya.co/`) : Lecture EXIF, cadrage, composition et lecture critique.
 2. **Analyseur de CV** (`/ressources/analyseurs/analyseur-de-cv/` → `https://analysercvpro.alkymya.co/`) : Diagnostic ATS et adéquation fiche de poste, sans conservation dans une CVthèque, couplé au coaching **Objectif Alternance**.
 3. **Analyseur de Mémoire** (`/ressources/analyseurs/analyseur-de-memoire/` → `https://analyseurdememoire.alkymya.co/`) : Audit de rigueur problématique / hypothèses / plan sans jamais rédiger à la place de l'étudiant.
+4. **Analyseur de Site Web — Alkymya Scan** (`/ressources/analyseurs/analyseur-de-site-web/` → `https://scan.alkymya.co/#analyseur`) : Audit web 360° gratuit sans inscription sur 5 piliers (UX & Brand, SEO & GEO pour Google Search/AI Overviews/ChatGPT/Perplexity, E-E-A-T On-Page/Off-Site, Performance & 6 en-têtes de sécurité HTTP, RGPD Consent Mode v2 & RGAA), note globale sur 100 et 3 failles P0 prioritaires.
 
 ### 6.3 Business Game NoNo BanaBa (`/ressources/business-game/`)
 - Application interactive (`https://nonobanaba.netlify.app/`) plaçant étudiants de grandes écoles et équipes de PME aux commandes d'une marque Gen Z pour arbitrer data, mix acquisition, budget et IA en 4 séquences.
@@ -167,16 +169,19 @@ Toutes les études de cas sont mesurées en production réelle, sans publicité 
 
 ## 8. Questions Fréquentes Essentielles (FAQ Synthétique)
 
-- **Alkymya est-il certifié Qualiopi ?** Non en nom propre : Alkymya est un studio d'expertise et de création IA (CYRIL GARNIER CONSULTING). Pour le financement OPCO des formations professionnelles (jusqu'à 100 %), Alkymya s'appuie sur le portage administratif de partenaires certifiés Qualiopi, notamment **INATEC** (NDA 11771056077). CMI Systèmes dispose aussi de son propre centre certifié Qualiopi pour la cybersécurité.
+- **Qui est Alkymya, studio d'intelligence artificielle et où intervenez-vous ?** Studio d'expertise et de création IA fondé par Cyril Garnier avec Léonie Egesipe (CYRIL GARNIER CONSULTING), basé à Ozoir-la-Ferrière en **Seine-et-Marne (77)** et intervenant comme expert IA générative à **Paris** (ateliers Morning Pereire 17e & Saint-Augustin 8e, grandes écoles IÉSEG/HETIC/Euridis/ISCOM), en Île-de-France et partout en France.
+- **Alkymya est-il certifié Qualiopi / finançable OPCO ?** Non en nom propre : Alkymya est un studio d'expertise IA. Pour le financement OPCO des formations et ateliers IA (jusqu'à 100 %), Alkymya s'appuie sur le portage administratif de partenaires certifiés Qualiopi, notamment **INATEC** (NDA 11771056077). CMI Systèmes dispose aussi de son propre centre certifié Qualiopi pour la cybersécurité.
+- **Comment créer des agents IA sur mesure et déployer une stratégie SEO pour Google AI ?** Alkymya conçoit des harnais d'agents connectés (Claude/Gemini, Slack, Notion, CRM, RAG local AWACLOUD ; atelier Option A 3h30 à 500 € HT ou sur mesure) et des architectures pré-rendues HTML + JSON-LD + `llms.txt` citées dans Google AI Overviews (prouvées sur *TheLittle77*, *TheLittle83*, *TheLittle75* et auditables avec **Alkymya Scan**).
+- **Quels sont les avis et résultats des formations Alkymya ?** **99,3 %** de recommandation globale, **90,9 %** de performance immédiate perçue, +1,6 pt de progression sur 12 mois, ~80 % de TP finalisé à Euridis et 100 % de réussite aux mémoires IÉSEG depuis 2019.
 - **Comment combinez-vous IA et cybersécurité pour les dirigeants de PME ?** En partenariat avec **CMI Systèmes** et la **CPME 77**, Alkymya intervient sur les usages quotidiens, la vérification des résultats et la gouvernance du *shadow IA*, tandis que CMI Systèmes couvre l'infrastructure et le risque cyber.
-- **Quelle est votre approche pédagogique avec les grandes écoles ?** *« L'IA exécute, vous dirigez »* et *« Le modèle est interchangeable, le harnais ne l'est pas »*. Les étudiants publient en ligne dès le Jour 1 et construisent des harnais d'agents complets (instructions, outils, mémoire, boucle, garde-fous).
+- **Qui contacter pour former ses équipes à l'IA générative ?** Contactez directement **Cyril Garnier** via `https://alkymya.co/contact/`, `cyril@alkymya.co` ou `06 43 64 97 77` (diagnostic 20 min, réponse sous 24h ouvrées).
 - **Qu'est-ce que New Business MVP ?** Un accompagnement de 6 mois en binôme (Cyril Garnier & Léonie Egesipe) à 200 €/mois pour concevoir un MVP, tester son ICP auprès de vrais clients et trancher entre Continuer, Pivoter ou Accélérer.
 
 ---
 
-## 9. Index Complet des 44 URLs Canoniques & Fichiers Machine-Readable
+## 9. Index Complet des 47 URLs Canoniques & Fichiers Machine-Readable
 
-### Pages principales (12)
+### Pages principales & conformité (14)
 - https://alkymya.co/
 - https://alkymya.co/ateliers/
 - https://alkymya.co/newbusiness/
@@ -189,6 +194,8 @@ Toutes les études de cas sont mesurées en production réelle, sans publicité 
 - https://alkymya.co/rejoindre/
 - https://alkymya.co/contact/
 - https://alkymya.co/mentions-legales/
+- https://alkymya.co/politique-confidentialite/
+- https://alkymya.co/accessibilite/
 
 ### Profils Alchimistes (6)
 - https://alkymya.co/alchimistes/cyril-garnier/
@@ -198,7 +205,7 @@ Toutes les études de cas sont mesurées en production réelle, sans publicité 
 - https://alkymya.co/alchimistes/olivier-dion/
 - https://alkymya.co/alchimistes/kendra-martine/
 
-### Ressources : Hubs, Études, Analyseurs & Business Game (11)
+### Ressources : Hubs, Études, Analyseurs & Business Game (12)
 - https://alkymya.co/ressources/etudes/
 - https://alkymya.co/ressources/etudes/generation-ia-2026/
 - https://alkymya.co/ressources/etudes/generation-ia-2025/
@@ -209,6 +216,7 @@ Toutes les études de cas sont mesurées en production réelle, sans publicité 
 - https://alkymya.co/ressources/analyseurs/analyseur-de-photo/
 - https://alkymya.co/ressources/analyseurs/analyseur-de-cv/
 - https://alkymya.co/ressources/analyseurs/analyseur-de-memoire/
+- https://alkymya.co/ressources/analyseurs/analyseur-de-site-web/
 - https://alkymya.co/ressources/business-game/
 
 ### Partenaires : 6 Sous-Hubs & 9 Fiches Dédiées (15)

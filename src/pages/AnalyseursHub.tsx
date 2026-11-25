@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowLeft, ArrowRight, Cpu, ExternalLink } from 'lucide-react';
+import { ArrowLeft, ArrowRight, Cpu, ExternalLink, Globe } from 'lucide-react';
 import { SEO } from '../components/SEO';
 import { analyseursList } from '../data/analyseurs';
 
@@ -14,8 +14,8 @@ export default function AnalyseursHub() {
         '@type': 'CollectionPage',
         '@id': `${canonicalUrl}#webpage`,
         url: canonicalUrl,
-        name: 'Analyseurs IA Gratuits : Photo, CV & Mémoire | Alkymya',
-        headline: 'Trois analyseurs IA gratuits en production par Alkymya',
+        name: 'Analyseurs IA : Photo, CV, Mémoire & Site Web | Alkymya',
+        headline: 'Quatre analyseurs IA gratuits en production par Alkymya',
         description:
           "Chaque outil web possède sa page documentée (ce qu'il fait, à qui il sert, mode d'emploi, limites, confidentialité) avant de lancer l'application.",
         inLanguage: 'fr-FR',
@@ -27,7 +27,7 @@ export default function AnalyseursHub() {
       {
         '@type': 'ItemList',
         '@id': `${canonicalUrl}#itemlist`,
-        name: 'Nos 3 Analyseurs IA gratuits',
+        name: 'Nos 4 Analyseurs IA gratuits',
         numberOfItems: analyseursList.length,
         itemListElement: analyseursList.map((tool, idx) => ({
           '@type': 'ListItem',
@@ -51,9 +51,9 @@ export default function AnalyseursHub() {
   return (
     <div className="bg-[#f4f6f9] text-[#1F4F6E] min-h-screen font-['Roboto',sans-serif] selection:bg-[#C06721] selection:text-white">
       <SEO
-        title="Analyseurs IA Gratuits : Photo, CV & Mémoire | Alkymya"
-        description="Lancez nos 3 analyseurs IA gratuits en production (Photo, CV avec Objectif Alternance, Mémoire académique) avec mode d’emploi et confidentialité."
-        keywords="analyseur de photo IA, analyseur de CV gratuit, analyseur de mémoire IA, outils IA gratuits Alkymya"
+        title="Analyseurs IA : Photo, CV, Mémoire & Site Web | Alkymya"
+        description="Lancez nos 4 analyseurs IA gratuits en production (Photo, CV, Mémoire, Site web Alkymya Scan) avec mode d’emploi, limites et confidentialité."
+        keywords="analyseur de photo IA, analyseur de CV gratuit, analyseur de mémoire IA, analyseur de site web Alkymya Scan, outils IA gratuits Alkymya"
         canonicalPath="/ressources/analyseurs/"
         ogImage="https://alkymya.co/og-ressources.jpg"
         type="CollectionPage"
@@ -87,24 +87,51 @@ export default function AnalyseursHub() {
       </header>
 
       <section className="max-w-[1040px] mx-auto py-14 px-6">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {analyseursList.map((tool) => (
             <article
               key={tool.slug}
               className="bg-white rounded-[12px] overflow-hidden shadow-[0_2px_16px_rgba(31,79,110,0.08)] flex flex-col justify-between"
             >
               <div>
-                <div className="aspect-[9/16] bg-[#16384e] relative">
-                  <video
-                    src={tool.videoUrl}
-                    muted
-                    autoPlay
-                    loop
-                    playsInline
-                    title={tool.name}
-                    aria-label={`Démonstration de ${tool.name}`}
-                    className="w-full h-full object-cover"
-                  />
+                <div className="h-[340px] bg-[#16384e] relative overflow-hidden">
+                  {tool.videoUrl ? (
+                    <video
+                      src={tool.videoUrl}
+                      muted
+                      autoPlay
+                      loop
+                      playsInline
+                      title={tool.name}
+                      aria-label={`Démonstration de ${tool.name}`}
+                      className="w-full h-full object-cover"
+                    />
+                  ) : (
+                    <div className="w-full h-full bg-gradient-to-br from-[#16384e] via-[#1F4F6E] to-[#0f293a] p-7 flex flex-col justify-between text-white">
+                      <div>
+                        <div className="flex items-center justify-between gap-2 mb-5">
+                          <span className="w-10 h-10 rounded-[8px] bg-[#02ADAB]/20 text-[#02ADAB] flex items-center justify-center">
+                            <Globe className="w-5 h-5" />
+                          </span>
+                          <span className="text-xs font-mono text-[#02ADAB]">scan.alkymya.co</span>
+                        </div>
+                        <p className="text-lg font-medium text-white mb-1">{tool.name}</p>
+                        <p className="text-xs text-white/75 mb-5">
+                          Inspection multi-pages · Note / 100 · 3 failles P0 prioritaires
+                        </p>
+                        <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 text-xs text-white/90">
+                          <li className="border-l-2 border-[#02ADAB] pl-2.5">01. UX &amp; Brand Content</li>
+                          <li className="border-l-2 border-[#02ADAB] pl-2.5">02. SEO &amp; GEO (IA)</li>
+                          <li className="border-l-2 border-[#02ADAB] pl-2.5">03. E-E-A-T On/Off-Site</li>
+                          <li className="border-l-2 border-[#C06721] pl-2.5">04. Perf &amp; Sécurité HTTP</li>
+                          <li className="border-l-2 border-[#C06721] pl-2.5 sm:col-span-2">05. Juridique, RGPD &amp; Accessibilité RGAA</li>
+                        </ul>
+                      </div>
+                      <p className="text-[11px] text-white/65 border-t border-white/10 pt-3">
+                        Audit en ligne gratuit sans inscription · Consent Mode v2
+                      </p>
+                    </div>
+                  )}
                 </div>
 
                 <div className="p-6">

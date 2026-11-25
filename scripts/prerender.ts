@@ -5,6 +5,7 @@ import { alchimistes, AlchimisteProfile } from '../src/data/alchimistes';
 import { INTERVIEW_GEMINI_4_PDF_URL, etudeGemini4Data } from '../src/data/etudeGemini4';
 import { studiesList } from '../src/data/etudes';
 import { analyseursList } from '../src/data/analyseurs';
+import { allFaqItems } from '../src/data/faq';
 import {
   partnerCategories,
   allPartners,
@@ -678,6 +679,11 @@ function generatePageBody(route: RouteData): string {
     : '';
 
   return `
+    <style>
+      .skip-link{position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;z-index:100;}
+      .skip-link:focus{position:fixed;top:1rem;left:1rem;width:auto;height:auto;overflow:visible;padding:0.75rem 1.25rem;background:#1F4F6E;color:#ffffff;font-weight:600;font-size:0.9rem;border-radius:0.5rem;text-decoration:none;box-shadow:0 6px 20px rgba(0,0,0,0.2);outline:2px solid #02ADAB;}
+    </style>
+    <a href="#main-content" class="skip-link">Aller au contenu principal</a>
     <header style="background: #ffffff; border-bottom: 1px solid #e2e8f0; padding: 1rem 1.5rem; position: sticky; top: 0; z-index: 50;">
       <div style="max-width: 1280px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem;">
         <a href="/" aria-label="Accueil Alkymya" style="display: flex; align-items: center; text-decoration: none;">
@@ -700,7 +706,7 @@ function generatePageBody(route: RouteData): string {
       </div>
     </header>
 
-    <main id="main-content" style="max-width: 1200px; margin: 0 auto; padding: 3rem 1.5rem; font-family: system-ui, -apple-system, sans-serif; color: #1e293b; line-height: 1.6;">
+    <main id="main-content" tabindex="-1" style="max-width: 1200px; margin: 0 auto; padding: 3rem 1.5rem; font-family: system-ui, -apple-system, sans-serif; color: #1e293b; line-height: 1.6;">
       <article>
         ${breadcrumbHtml}
         <header style="text-align: center; max-width: 900px; margin: 0 auto 3.5rem auto;">
@@ -799,8 +805,11 @@ function generatePageBody(route: RouteData): string {
           © 2026 <strong>Alkymya.co</strong> — Marque de <strong>CYRIL GARNIER CONSULTING</strong> (SASU, 2 rue Sacha Guitry, 77330 Ozoir-la-Ferrière, France).
         </p>
         <nav aria-label="Liens de pied de page" style="display: flex; flex-wrap: wrap; justify-content: center; gap: 1.5rem; font-size: 0.8125rem; text-transform: uppercase; letter-spacing: 0.05em; font-weight: 600;">
+          <a href="https://www.google.com/maps?cid=10471291206194913670" target="_blank" rel="noopener noreferrer" style="color: #02ADAB; text-decoration: none;">Google Maps &amp; Avis (5,0/5)</a>
           <a href="https://cyrilgarnier.fr/" target="_blank" rel="noopener noreferrer" style="color: #02ADAB; text-decoration: none;">Voir le site de Cyril Garnier →</a>
           <a href="/mentions-legales/" style="color: #cbd5e1; text-decoration: none;">Mentions Légales</a>
+          <a href="/politique-confidentialite/" style="color: #cbd5e1; text-decoration: none;">Confidentialité &amp; Cookies</a>
+          <a href="/accessibilite/" style="color: #cbd5e1; text-decoration: none;">Accessibilité RGAA</a>
           <a href="/newbusiness/" style="color: #cbd5e1; text-decoration: none;">New Business MVP</a>
           <a href="/faq/" style="color: #cbd5e1; text-decoration: none;">FAQ</a>
           <a href="/contact/" style="color: #cbd5e1; text-decoration: none;">Contact</a>
@@ -827,6 +836,7 @@ const breadcrumbNames: Record<string, string> = {
   '/ressources/analyseurs/analyseur-de-photo': 'Analyseur de photo',
   '/ressources/analyseurs/analyseur-de-cv': 'Analyseur de CV',
   '/ressources/analyseurs/analyseur-de-memoire': 'Analyseur de mémoire',
+  '/ressources/analyseurs/analyseur-de-site-web': 'Analyseur de site web',
   '/ressources/business-game': 'Business Game NoNo BanaBa',
   '/partenaires': 'Nos Partenaires',
   '/partenaires/ecoles': 'Partenaires École',
@@ -849,6 +859,8 @@ const breadcrumbNames: Record<string, string> = {
   '/rejoindre': 'Nous Rejoindre',
   '/newbusiness': 'New Business MVP',
   '/mentions-legales': 'Mentions Légales',
+  '/politique-confidentialite': 'Politique de confidentialité',
+  '/accessibilite': 'Accessibilité RGAA',
   ...Object.fromEntries(alchimistes.map(person => [`/alchimistes/${person.id}`, person.name]))
 };
 
@@ -914,45 +926,6 @@ function buildPersonNode(person: AlchimisteProfile, profileUrlOverride?: string)
 
   return node;
 }
-
-const faqQuestions = [
-  {
-    name: "Qu'est-ce qu'Alkymya ?",
-    answer: "Alkymya (alkymya.co) est un studio IA et cabinet d'expertise en Île-de-France (France), fondé par Cyril Garnier et Léonie Egesipe. Alkymya n'est pas un organisme de formation en nom propre : nous collaborons avec des partenaires certifiés Qualiopi (comme INATEC) pour proposer des formations IA en entreprise finançables OPCO, concevons des agents IA sur mesure et accompagnons les dirigeants dans le programme New Business MVP."
-  },
-  {
-    name: "À qui s'adressent les accompagnements et solutions d'Alkymya ?",
-    answer: "Nos solutions s'adressent aux dirigeants, PME, ETI, équipes marketing, RH et opérationnelles, aux porteurs de projets (via le programme New Business MVP), ainsi qu'aux grandes écoles et universités, de l'acculturation des équipes jusqu'au déploiement d'agents IA autonomes connectés à vos outils métiers."
-  },
-  {
-    name: "Comment s'articule le rôle du studio Alkymya avec ses partenaires Qualiopi ?",
-    answer: "Alkymya est un studio opérationnel d'expertise, de création d'agents IA et de conseil stratégique exploité par CYRIL GARNIER CONSULTING. Pour les actions de formation professionnelle, nous collaborons avec des organismes partenaires certifiés Qualiopi (tels qu'INATEC) afin de permettre un financement OPCO tout en profitant d'ateliers animés par des praticiens."
-  },
-  {
-    name: "Quel est le format des ateliers d'agents IA ?",
-    answer: "Des sessions intensives de 3h30 pour concevoir et déployer 3 agents intelligents autonomes connectés à vos outils métiers (Slack, Notion, CRM via Make/Zapier)."
-  },
-  {
-    name: "Les formations Alkymya sont-elles finançables par un OPCO ?",
-    answer: "Oui ! Alkymya n'est pas certifié Qualiopi directement : nous travaillons avec des organisations partenaires certifiées Qualiopi (telles que l'école INATEC). Grâce à ce partenariat, votre formation est finançable jusqu'à 100% par votre OPCO, selon vos droits et votre budget disponible."
-  },
-  {
-    name: "Qu'est-ce que l'offre New Business MVP (studio new business) ?",
-    answer: "Un accompagnement opérationnel de 6 mois à 200 € / mois guidé en binôme par Cyril Garnier et Léonie Egesipe pour concevoir votre MVP, tester l'ICP auprès de vrais clients et piloter selon la boussole Continuer, Pivoter ou Accélérer."
-  },
-  {
-    name: "Qu'est-ce que le programme Formation Core IA (Best Value) ?",
-    answer: "La Formation Core est notre programme complet de 14h réparties sur 4 demi-journées pour maîtriser la stack IA (prompt engineering avancé, studio graphique & branding, rédaction stratégique et prototypage). Finançable jusqu'à 100% OPCO via nos partenaires certifiés Qualiopi."
-  },
-  {
-    name: "Quels établissements et entreprises font confiance à Alkymya ?",
-    answer: "HETIC, Ynov Campus, IÉSEG School of Management, CFA Itis, Paris École de Management, SNCF, Morning Coworking, Fondation GRDF et notre partenaire officiel Objectif Alternance."
-  },
-  {
-    name: "Sur quels réseaux sociaux suivre Alkymya ?",
-    answer: "Vous pouvez suivre Alkymya sur LinkedIn (page Alkymya et profil Cyril Garnier), Instagram (@alkymya_cyril), YouTube (chaîne Alkymya pour nos créations vidéo dont Métropolia), TikTok (@cyrilgarnierphoto) et Facebook."
-  }
-];
 
 function buildBreadcrumbItems(route: RouteData, canonicalUrl: string) {
   if (route.path === '/') {
@@ -1074,14 +1047,14 @@ function buildJsonLd(route: RouteData, canonicalUrl: string) {
     }
   };
 
-  // Si FAQPage, injecter les questions/réponses enrichies dans mainEntity
+  // Si FAQPage, injecter les questions/réponses enrichies depuis la source partagée src/data/faq.ts
   if (route.path === '/faq') {
-    webpageNode.mainEntity = faqQuestions.map(q => ({
+    webpageNode.mainEntity = allFaqItems.map(q => ({
       "@type": "Question",
-      "name": q.name,
+      "name": q.question,
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": q.answer
+        "text": q.plainAnswer
       }
     }));
   }
@@ -1132,6 +1105,14 @@ function buildJsonLd(route: RouteData, canonicalUrl: string) {
       "@type": "GeoCoordinates",
       "latitude": 48.7667,
       "longitude": 2.6833
+    },
+    "hasMap": "https://www.google.com/maps?cid=10471291206194913670",
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "5.0",
+      "reviewCount": "11",
+      "bestRating": "5",
+      "worstRating": "1"
     },
     "areaServed": [
       { "@type": "AdministrativeArea", "name": "Seine-et-Marne" },

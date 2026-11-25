@@ -1,292 +1,115 @@
 import { motion } from "motion/react";
-import { Plus, Minus, HelpCircle, BookOpen, Wrench, BarChart, Users, Zap, Mail } from "lucide-react";
-import { useState, ReactNode, useMemo } from "react";
+import {
+  Plus,
+  Minus,
+  HelpCircle,
+  BookOpen,
+  Wrench,
+  BarChart,
+  Users,
+  Zap,
+  Mail,
+  ExternalLink,
+  ArrowRight
+} from "lucide-react";
+import { useState, useMemo } from "react";
+import { Link } from "react-router-dom";
 import { SEO } from "../components/SEO";
+import { GoogleReviewsShowcase } from "../components/GoogleReviewsShowcase";
+import { faqCategories, allFaqItems, FAQIconKey, FAQItemData } from "../data/faq";
 
-interface FAQData {
-  question: string;
-  answer: string | ReactNode;
-  schemaAnswer?: string;
-}
+const iconMap: Record<FAQIconKey, typeof HelpCircle> = {
+  help: HelpCircle,
+  book: BookOpen,
+  wrench: Wrench,
+  chart: BarChart,
+  users: Users,
+  zap: Zap,
+  mail: Mail
+};
 
-interface FAQCategory {
-  title: string;
-  icon: any;
-  items: FAQData[];
-}
-
-const faqCategories: FAQCategory[] = [
-  {
-    title: "À propos d'Alkymya",
-    icon: HelpCircle,
-    items: [
-      {
-        question: "Qu'est-ce qu'Alkymya ?",
-        answer: "Alkymya (alkymya.co) est un studio d'intelligence artificielle et cabinet d'expertise basé en Île-de-France (France), fondé par Cyril Garnier avec Léonie Egesipe et exploité par CYRIL GARNIER CONSULTING. Alkymya n'est pas un organisme de formation en nom propre : nous intervenons en tant qu'experts IA et collaborons avec des organismes partenaires certifiés Qualiopi (tels qu'INATEC) pour proposer des formations IA en entreprise finançables OPCO, aux côtés de nos missions de création d'agents IA sur mesure, d'audit Capital IA et de stratégie SEO & GEO."
-      },
-      {
-        question: "À qui s'adressent les accompagnements et solutions d'Alkymya ?",
-        answer: "Nos solutions s'adressent aux dirigeants, PME, ETI, équipes marketing, RH et opérationnelles, aux porteurs de projets (via le programme New Business MVP), ainsi qu'aux grandes écoles et universités. Chaque intervention est adaptée à votre niveau de maturité IA, de l'acculturation des équipes au déploiement d'agents IA autonomes connectés à vos outils métiers."
-      },
-      {
-        question: "Comment s'articule le rôle du studio Alkymya avec ses partenaires Qualiopi ?",
-        answer: "Alkymya est un studio opérationnel d'expertise, de création d'agents IA et de conseil stratégique. Pour les actions de formation professionnelle, nous intervenons aux côtés d'organismes partenaires certifiés Qualiopi (comme l'école INATEC), ce qui permet aux entreprises d'accéder à un financement OPCO tout en bénéficiant d'ateliers concrets animés par des praticiens de l'IA."
-      }
-    ]
-  },
-  {
-    title: "Comprendre la Génération IA",
-    icon: HelpCircle,
-    items: [
-      {
-        question: "Qu'est-ce que la Génération IA ?",
-        answer: (
-          <div className="space-y-4">
-            <p>La Génération IA désigne les jeunes professionnels qui grandissent avec ChatGPT et apprivoisent le pouvoir des intelligences artificielles au quotidien. Contrairement aux générations précédentes qui ont dû s'adapter au digital, cette génération intègre naturellement l'IA dans leur flux de travail et leurs études.</p>
-            <p className="font-bold text-deep-blue">Les caractéristiques de la Génération IA :</p>
-            <p>Notre étude Alkymya 2024 le montre : ces jeunes font de l'IA leur nouvel outil, avec talent et inventivité. Ils développent trois compétences distinctives :</p>
-            <ul className="list-disc pl-5 space-y-2">
-              <li><span className="font-bold">Adoption native :</span> Ils utilisent spontanément les outils d'IA générative (ChatGPT, Midjourney, Claude) dans leurs projets académiques et professionnels.</li>
-              <li><span className="font-bold">Compétences hybrides :</span> Ils combinent maîtrise technique (prompt engineering) et esprit critique (vérification des sources).</li>
-              <li><span className="font-bold">Vision pragmatique :</span> Pour eux, l'IA n'est ni une menace ni une magie, mais un levier de productivité à maîtriser.</li>
-            </ul>
-            <p className="font-bold text-deep-blue">Les défis à relever :</p>
-            <p>Mais derrière les superpouvoirs, il y a aussi le vertige : risque de perte d'emplois, transformation des métiers, et nécessité de se réinventer en continu. Partager avec eux, c'est essentiel : leur donner les clés pour rester humains, développer leur esprit critique et construire leur propre trajectoire dans un monde où tout s'accélère.</p>
-            <p><a href="/ia" className="text-copper-orange hover:underline">En savoir plus : Consultez notre Étude Génération IA 2024 pour approfondir.</a></p>
-          </div>
-        )
-      },
-      {
-        question: "Qu'est-ce que l'Étude Génération IA 2024 d'Alkymya ?",
-        answer: (
-          <div className="space-y-4">
-            <p>L'Étude Génération IA 2024 est un rapport complet sur les comportements, attentes et compétences des jeunes face à l'intelligence artificielle, réalisé par Alkymya.</p>
-            <p className="font-bold text-deep-blue">Contenu de l'étude :</p>
-            <p>Cette recherche analyse en profondeur comment la nouvelle génération utilise l'IA au quotidien, les défis qu'elle rencontre, et les transformations des métiers à venir. Elle s'adresse particulièrement aux :</p>
-            <ul className="list-disc pl-5 space-y-1">
-              <li>Professionnels RH et DRH : pour comprendre les attentes des futurs talents.</li>
-              <li>Responsables formation : pour adapter les programmes pédagogiques.</li>
-              <li>Managers : pour mieux encadrer cette nouvelle génération.</li>
-            </ul>
-            <p className="italic">Nous préparons actuellement l'Étude Génération IA 2026. Vous pouvez contribuer en participant à l'étude.</p>
-          </div>
-        )
-      },
-      {
-        question: "Pourquoi les entreprises doivent-elles s'intéresser à la Génération IA ?",
-        answer: (
-          <div className="space-y-4">
-            <p>C'est aux entreprises d'inventer de nouvelles stratégies, de créer du lien et de miser sur les talents de cette génération frontalière du futur.</p>
-            <p className="font-bold text-deep-blue">Trois raisons stratégiques :</p>
-            <ul className="list-decimal pl-5 space-y-2">
-              <li><span className="font-bold">Transformation des compétences :</span> La Génération IA possède déjà des compétences que vos équipes actuelles devront acquérir rapidement. Les former aujourd'hui, c'est préparer votre organisation aux mutations de demain.</li>
-              <li><span className="font-bold">Nouvelles attentes professionnelles :</span> Cette génération recherche des environnements de travail qui intègrent l'IA de manière éthique et productive. Comprendre leurs attentes permet d'améliorer votre attractivité employeur.</li>
-              <li><span className="font-bold">Innovation accélérée :</span> En maîtrisant l'IA dès leur formation, ces jeunes talents peuvent devenir des catalyseurs d'innovation dans vos équipes, à condition de leur donner le bon cadre.</li>
-            </ul>
-            <p><span className="font-bold">Notre approche chez Alkymya :</span> Nous aidons les organisations et les jeunes à inventer ensemble un monde où l'IA est un levier, pas juste un défi. Notre mission de partage passe par trois piliers : Explorer, Transformer, Partager.</p>
-          </div>
-        )
-      }
-    ]
-  },
-  {
-    title: "Nos Formations et Ateliers",
-    icon: BookOpen,
-    items: [
-      {
-        question: "Quels types de formations propose Alkymya ?",
-        answer: "Alkymya propose une expertise complète pour transformer votre organisation avec l'IA, structurée autour de trois piliers : Explorer (formations sur-mesure et acculturation), Transformer (prototypage rapide, agents IA et intégration no-code), et Partager (conseil stratégique, mentorat et transmission)."
-      },
-      {
-        question: "Qu'est-ce que le programme \"Formation Core IA\" (Best Value) ?",
-        answer: "La Formation Core est notre programme complet de 14h réparties sur 4 demi-journées pour maîtriser la stack IA (prompt engineering avancé, studio graphique & branding, rédaction stratégique, synthèse décisionnelle et prototypage audiovisuel). Alkymya n'étant pas certifié Qualiopi en nom propre, nous travaillons avec des organisations partenaires certifiées Qualiopi (comme INATEC) pour la rendre finançable jusqu'à 100% par votre OPCO."
-      },
-      {
-        question: "En quoi consistent les options \"Agents IA\" et \"App No-Code\" ?",
-        answer: "Ce sont deux ateliers intensifs de 3h30 (500 € HT chacun) : l'Option A permet de concevoir et déployer 3 agents intelligents autonomes interconnectés à vos outils (Slack, Notion, CRM via Make/Zapier) ; l'Option B permet de concevoir une application web interne sur-mesure dopée aux API d'IA (Gemini/GPT) sans écrire de code."
-      },
-      {
-        question: "Qu'est-ce que l'offre \"New business MVP\" (studio new business) ?",
-        answer: (
-          <div className="space-y-3">
-            <p>
-              Le programme <strong>New business MVP</strong> est un accompagnement opérationnel de 6 mois conçu pour permettre aux porteurs de projets, créateurs d'entreprise et indépendants de tester et valider leur offre auprès de vrais clients avant d'engager des investissements lourds.
-            </p>
-            <p>
-              Guidé en binôme par <strong>Cyril Garnier</strong> et <strong>Léonie Egesipe</strong>, ce parcours pas à pas vous permet de :
-            </p>
-            <ul className="list-disc pl-5 space-y-1 text-sm text-deep-blue/85">
-              <li>Définir avec précision votre <strong>profil client idéal (ICP)</strong> et ses habitudes réelles de dépenses.</li>
-              <li>Distinguer l'essentiel du superflu pour bâtir un <strong>MVP (produit minimum viable)</strong> percutant.</li>
-              <li>Mettre en place un <strong>pricing optimal</strong> et structurer votre <strong>routine entrepreneuriale</strong>.</li>
-              <li>Construire un <strong>pitch convaincant pour investisseurs et partenaires</strong> fondé sur des retours terrain concrets.</li>
-              <li>Piloter vos décisions stratégiques grâce au cadre <strong>« Continuer, Pivoter ou Accélérer »</strong>.</li>
-            </ul>
-            <p>
-              Tarif : <strong>200 € / mois</strong> pendant 6 mois, avec mentorat direct en binôme par <strong>Cyril Garnier</strong> et <strong>Léonie Egesipe</strong>.
-            </p>
-            <p className="text-sm bg-copper-orange/10 p-3 rounded-xl text-deep-blue font-medium">
-              * Note pratique : il convient de prévoir un portefeuille d'environ 50 € à 150 € pour les abonnements et crédits aux outils d'IA utilisés durant les ateliers pratiques.
-            </p>
-          </div>
-        )
-      },
-      {
-        question: "Les formations Alkymya sont-elles finançables par un OPCO ?",
-        answer: "Oui ! Alkymya n'est pas certifié Qualiopi en nom propre : nous collaborons avec des organisations partenaires certifiées Qualiopi (telles que l'école INATEC). Grâce à ce portage partenaire, votre formation est finançable jusqu'à 100% par votre OPCO, selon vos droits et votre budget de formation disponible."
-      },
-      {
-        question: "Quels établissements et entreprises font confiance à Alkymya ?",
-        answer: "Alkymya collabore avec des établissements prestigieux (HETIC, Ynov, IÉSEG, CFA Itis, Paris École de Management, etc.) et de nombreuses entreprises et institutions (SNCF, Fondation GRDF, Morning, Sealester, INATEC, Objectif Alternance)."
-      },
-      {
-        question: "Qu'est-ce que le projet Métropolia ?",
-        answer: "Métropolia est un projet pédagogique et créatif sous la forme d'une dystopie cyberpunk. C'est une série narrative créée avec l'IA qui suit un personnage nommé LEONIE & LEONIA, explorant une dualité mystérieuse inspirée par l'univers de Fritz Lang, visible sur notre chaîne YouTube."
-      }
-    ]
-  },
-  {
-    title: "Outils Gratuits Alkymya",
-    icon: Wrench,
-    items: [
-      {
-        question: "Qu'est-ce que le Quiz Maturité IA Entreprise ?",
-        answer: "C'est un outil de diagnostic stratégique qui permet aux entreprises d'évaluer leur niveau d'adoption de l'IA. Il aide à identifier les opportunités, les freins et à définir une feuille de route pour une transformation numérique réussie."
-      },
-      {
-        question: "Qu'est-ce que l'Analyseur de CV d'Alkymya ?",
-        answer: (
-          <span>
-            L'Analyseur de CV est un outil IA gratuit pour optimiser votre CV et maximiser vos chances de décrocher le poste de vos rêves. Pour aller plus loin avec un accompagnement sur-mesure en recrutement et alternance, découvrez les programmes de notre Alchimiste <strong>Kendra Martine</strong> sur son site <a href="https://www.objectifalternance.fr/" target="_blank" rel="noopener noreferrer" className="text-copper-orange font-bold hover:underline">Objectif Alternance</a>.
-          </span>
-        )
-      },
-      {
-        question: "Qu'est-ce que le Business Game 'NoNo BanaBa' ?",
-        answer: "C'est un business game pédagogique où vous explorez la data, le web-marketing et les business modèles à travers une marque de mode fictive pour la Gen Z. C'est un excellent outil pour appliquer des concepts théoriques de manière ludique."
-      },
-      {
-        question: "À quoi sert 'Soda, l'agent IA pédagogique' ?",
-        answer: "Soda est un agent IA qui agit comme un véritable coach pour vous aider dans vos projets d'analyse de marché, d'innovation produit ou service. C'est un outil puissant pour les étudiants et entrepreneurs, qui nécessite un compte Genspark pour être utilisé."
-      }
-    ]
-  },
-  {
-    title: "Résultats et Impact",
-    icon: BarChart,
-    items: [
-      {
-        question: "Quels sont les résultats concrets des formations Alkymya ?",
-        answer: "Nos chiffres clés : 99,3% des participants recommandent nos formations, 175 apprenants accompagnés en 2024-2025, 90,9% se sentent plus performants après la formation."
-      }
-    ]
-  },
-  {
-    title: "L'Équipe Alkymya",
-    icon: Users,
-    items: [
-      {
-        question: "Qui est Cyril Garnier, fondateur d'Alkymya ?",
-        answer: "Cyril Garnier est le fondateur d'Alkymya, expert en IA et innovation avec une quadruple expertise : enseignant en grandes écoles, advisory de startups, spécialiste IA, et photographe."
-      }
-    ]
-  },
-  {
-    title: "Quiz IA",
-    icon: Zap,
-    items: [
-      {
-        question: "Qu'est-ce qu'une IA Générative ?",
-        answer: "C'est une IA capable de créer du contenu original (texte, image, son). L'IA générative, comme GPT ou Midjourney, ne se contente pas d'analyser des données, elle en produit de nouvelles."
-      },
-      {
-        question: "Qu'est-ce que le 'prompt engineering' ?",
-        answer: "C'est l'art de formuler des instructions précises pour une IA afin d'obtenir le meilleur résultat. C'est une compétence clé pour interagir efficacement avec les IA génératives."
-      },
-      {
-        question: "Quand ChatGPT a-t-il été lancé ?",
-        answer: "ChatGPT a été lancé par OpenAI le 30 novembre 2022. Cette date est souvent considérée comme le point de départ de l'adoption massive de l'IA générative par le grand public."
-      },
-      {
-        question: "À quoi sert un 'token' dans un modèle de langage (LLM) ?",
-        answer: "Un token représente un morceau de texte (un mot, un caractère ou un sous-mot) que l'IA traite. La taille de la 'fenêtre de contexte' d'une IA est mesurée en tokens, ce qui limite la quantité d'information qu'elle peut gérer en une fois."
-      },
-      {
-        question: "Qu'est-ce qu'une 'hallucination' pour une IA ?",
-        answer: "C'est lorsque l'IA invente une information qui semble plausible mais qui est fausse ou non vérifiée. C'est un point de vigilance majeur qui impose une vérification humaine."
-      },
-      {
-        question: "Que signifie l'acronyme LLM ?",
-        answer: "LLM signifie Large Language Model (Grand Modèle de Langage). Il s'agit d'une catégorie d'IA entraînée sur d'immenses quantités de texte pour comprendre et générer du langage naturel (ex: GPT-4, Claude 3)."
-      }
-    ]
-  },
-  {
-    title: "Nous Contacter",
-    icon: Mail,
-    items: [
-      {
-        question: "Comment contacter Alkymya pour une formation ou un projet ?",
-        answer: "Pour toute demande, le plus simple est de remplir notre formulaire de contact ou d'envoyer un email à cyril@alkymya.co."
-      },
-      {
-        question: "Alkymya propose-t-il des formations à distance ?",
-        answer: "Nous privilégions les formats présentiels interactifs, mais nous proposons aussi des ressources en ligne et pouvons étudier des formats hybrides."
-      },
-      {
-        question: "Sur quels réseaux sociaux suivre Alkymya ?",
-        answer: (
-          <div className="space-y-3">
-            <p>
-              Vous pouvez suivre nos actualités, projets créatifs et prises de parole sur nos différents réseaux sociaux :
-            </p>
-            <ul className="list-disc pl-5 space-y-1.5">
-              <li>
-                <strong>LinkedIn</strong> : <a href="https://www.linkedin.com/company/alkymya/" target="_blank" rel="noopener noreferrer" className="text-copper-orange hover:underline">Alkymya</a> et <a href="https://www.linkedin.com/in/cyril-garnier-89697b1/" target="_blank" rel="noopener noreferrer" className="text-copper-orange hover:underline">Cyril Garnier</a>
-              </li>
-              <li>
-                <strong>Instagram</strong> : <a href="https://www.instagram.com/alkymya_cyril" target="_blank" rel="noopener noreferrer" className="text-copper-orange hover:underline">@alkymya_cyril</a>
-              </li>
-              <li>
-                <strong>YouTube</strong> : <a href="https://www.youtube.com/channel/UCon0sR5rVfTCuHOWG7LhAig" target="_blank" rel="noopener noreferrer" className="text-copper-orange hover:underline">Chaîne Alkymya</a> (projets et créations vidéo dont la série Métropolia)
-              </li>
-              <li>
-                <strong>TikTok</strong> : <a href="https://www.tiktok.com/@cyrilgarnierphoto" target="_blank" rel="noopener noreferrer" className="text-copper-orange hover:underline">@cyrilgarnierphoto</a>
-              </li>
-              <li>
-                <strong>Facebook</strong> : <a href="https://www.facebook.com/cyril.garnier.969" target="_blank" rel="noopener noreferrer" className="text-copper-orange hover:underline">Cyril Garnier</a>
-              </li>
-            </ul>
-          </div>
-        ),
-        schemaAnswer: "Vous pouvez suivre Alkymya sur LinkedIn (page Alkymya et profil Cyril Garnier), Instagram (@alkymya_cyril), YouTube (chaîne Alkymya pour nos créations vidéo et projets comme Métropolia), TikTok (@cyrilgarnierphoto) et Facebook."
-      }
-    ]
-  }
-];
-
-function FAQItem({ question, answer, isOpen, onClick }: { question: string, answer: string | ReactNode, isOpen: boolean, onClick: () => void, key?: any }) {
+function FAQItem({
+  item,
+  indexId,
+  isOpen,
+  onClick
+}: {
+  item: FAQItemData;
+  indexId: string;
+  isOpen: boolean;
+  onClick: () => void;
+  key?: string;
+}) {
   return (
-    <div className="border-b border-[rgba(31,79,110,0.08)] last:border-0">
+    <div id={item.id} className="border-b border-[rgba(31,79,110,0.08)] last:border-0">
       <button
+        type="button"
         onClick={onClick}
-        className="w-full py-5 flex items-center justify-between text-left group cursor-pointer"
+        aria-expanded={isOpen}
+        aria-controls={`${indexId}-panel`}
+        className="w-full py-5 flex items-center justify-between text-left group cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-[#02ADAB] rounded-[6px]"
       >
         <span className="text-[1.05rem] sm:text-[1.12rem] font-medium text-[#1F4F6E] group-hover:text-[#02ADAB] transition-colors pr-8">
-          {question}
+          {item.question}
         </span>
-        <div className={`w-8 h-8 rounded-[8px] flex items-center justify-center flex-shrink-0 transition-all ${isOpen ? 'bg-[#C06721] text-white' : 'bg-[#f4f6f9] text-[#1F4F6E]'}`}>
+        <div
+          className={`w-8 h-8 rounded-[8px] flex items-center justify-center flex-shrink-0 transition-all ${
+            isOpen ? "bg-[#C06721] text-white" : "bg-[#f4f6f9] text-[#1F4F6E]"
+          }`}
+        >
           {isOpen ? <Minus className="h-4 w-4" /> : <Plus className="h-4 w-4" />}
         </div>
       </button>
       <motion.div
+        id={`${indexId}-panel`}
         initial={false}
         animate={{ height: isOpen ? "auto" : 0, opacity: isOpen ? 1 : 0 }}
-        transition={{ duration: 0.3, ease: "easeInOut" }}
+        transition={{ duration: 0.25, ease: "easeInOut" }}
         className="overflow-hidden"
       >
-        <div className="pb-5 text-[0.95rem] text-[#5a7a90] leading-[1.65] font-normal">
-          {answer}
+        <div className="pb-5 text-[0.95rem] text-[#4a6a80] leading-[1.68] font-normal space-y-3">
+          {item.paragraphs.map((p, idx) => (
+            <p key={idx}>{p}</p>
+          ))}
+          {item.bullets && item.bullets.length > 0 && (
+            <ul className="list-disc pl-5 space-y-1.5 text-[0.93rem] text-[#35566c]">
+              {item.bullets.map((b, idx) => (
+                <li key={idx}>{b}</li>
+              ))}
+            </ul>
+          )}
+          {item.note && (
+            <p className="text-sm bg-[#C06721]/10 px-4 py-3 rounded-[8px] text-[#1F4F6E] font-medium">
+              {item.note}
+            </p>
+          )}
+          {item.links && item.links.length > 0 && (
+            <div className="flex flex-wrap gap-3 pt-1">
+              {item.links.map((lnk) =>
+                lnk.external ? (
+                  <a
+                    key={lnk.href}
+                    href={lnk.href}
+                    target={lnk.href.startsWith("mailto:") ? undefined : "_blank"}
+                    rel={lnk.href.startsWith("mailto:") ? undefined : "noopener noreferrer"}
+                    className="inline-flex items-center gap-1.5 text-sm font-medium text-[#C06721] hover:underline"
+                  >
+                    <span>{lnk.label}</span>
+                    <ExternalLink className="w-3.5 h-3.5" />
+                  </a>
+                ) : (
+                  <Link
+                    key={lnk.href}
+                    to={lnk.href}
+                    className="inline-flex items-center gap-1.5 text-sm font-medium text-[#037971] hover:text-[#C06721] transition-colors"
+                  >
+                    <span>{lnk.label}</span>
+                    <ArrowRight className="w-3.5 h-3.5" />
+                  </Link>
+                )
+              )}
+            </div>
+          )}
         </div>
       </motion.div>
     </div>
@@ -297,16 +120,14 @@ export default function FAQ() {
   const [openStates, setOpenStates] = useState<{ [key: string]: number | null }>({});
 
   const flattenedFaq = useMemo(() => {
-    return faqCategories.flatMap(cat => 
-      cat.items.map(item => ({
-        question: item.question,
-        answer: item.schemaAnswer || (typeof item.answer === 'string' ? item.answer : 'Consultez notre FAQ pour plus de détails.')
-      }))
-    );
+    return allFaqItems.map((item) => ({
+      question: item.question,
+      answer: item.plainAnswer
+    }));
   }, []);
 
   const toggleItem = (categoryTitle: string, index: number) => {
-    setOpenStates(prev => ({
+    setOpenStates((prev) => ({
       ...prev,
       [categoryTitle]: prev[categoryTitle] === index ? null : index
     }));
@@ -315,9 +136,9 @@ export default function FAQ() {
   return (
     <div className="bg-[#f4f6f9] text-[#1F4F6E] min-h-screen font-['Roboto',sans-serif] selection:bg-[#C06721] selection:text-white">
       <SEO
-        title="FAQ Alkymya | Questions Fréquentes, IA & OPCO"
-        description="Réponses aux questions fréquentes sur Alkymya : accompagnement IA, agents autonomes, financement OPCO via partenaires Qualiopi et New Business MVP."
-        keywords="FAQ IA, accompagnement intelligence artificielle, partenaires certifiés Qualiopi, financement OPCO, formation IA entreprise, création agents IA, prompt engineering, Génération IA"
+        title="FAQ Alkymya | Formations IA, Agents, SEO/GEO & OPCO"
+        description="Questions fréquentes Alkymya : formations IA en entreprise (Seine-et-Marne, Paris), agents sur mesure, SEO Google AI, financement OPCO et avis."
+        keywords="FAQ Alkymya studio IA, formation IA générative pour entreprise, formation intelligence artificielle Seine-et-Marne, expert IA générative Paris, atelier IA finançable OPCO, stratégie SEO Google AI, créer agents IA sur mesure, avis formations Alkymya"
         canonicalPath="/faq"
         ogImage="https://alkymya.co/og-faq.jpg"
         type="FAQPage"
@@ -326,34 +147,36 @@ export default function FAQ() {
 
       {/* HERO SECTION */}
       <header className="bg-[#1F4F6E] text-white py-20 px-6 sm:px-10 text-center relative overflow-hidden">
-        <div className="max-w-[700px] mx-auto relative z-10">
+        <div className="max-w-[740px] mx-auto relative z-10">
           <p className="text-[0.85rem] tracking-[0.15em] uppercase text-[#02ADAB] mb-4 font-normal">
             Foire Aux Questions · Transparence &amp; Pédagogie
           </p>
-          <h1 className="font-light text-[2.4rem] sm:text-[2.6rem] leading-[1.2] mb-5 text-white">
+          <h1 className="font-light text-[2.2rem] sm:text-[2.6rem] leading-[1.2] mb-5 text-white">
             Questions fréquentes.<br />
             <strong className="font-medium text-white">Vos réponses claires.</strong>
           </h1>
-          <p className="text-[1.05rem] sm:text-[1.1rem] text-white/75 max-w-[620px] mx-auto leading-[1.7] font-light mb-8">
-            Toutes les réponses sur nos ateliers pratiques, la création d'agents IA sur mesure, le financement OPCO via nos organisations partenaires certifiées Qualiopi et la Génération IA.
+          <p className="text-[1.05rem] sm:text-[1.1rem] text-white/75 max-w-[640px] mx-auto leading-[1.7] font-light mb-8">
+            Toutes les réponses sur le studio Alkymya (Seine-et-Marne, Paris &amp; France), nos formations IA en entreprise finançables OPCO via partenaires Qualiopi, la création d'agents sur mesure, la stratégie SEO/GEO Google AI et nos avis clients.
           </p>
 
           <div className="pt-8 border-t border-white/10 grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
             <div>
-              <div className="text-2xl sm:text-3xl font-light text-[#02ADAB] mb-0.5">{faqCategories.length}</div>
-              <div className="text-xs text-white/70 font-normal uppercase tracking-wider">Thématiques majeures</div>
+              <div className="text-2xl sm:text-3xl font-light text-[#02ADAB] mb-0.5 tabular-nums">
+                {allFaqItems.length}
+              </div>
+              <div className="text-xs text-white/70 font-normal uppercase tracking-wider">Réponses détaillées</div>
             </div>
             <div>
-              <div className="text-2xl sm:text-3xl font-light text-white mb-0.5">100%</div>
-              <div className="text-xs text-white/70 font-normal uppercase tracking-wider">Transparence &amp; Clarté</div>
+              <div className="text-2xl sm:text-3xl font-light text-white mb-0.5 tabular-nums">99,3 %</div>
+              <div className="text-xs text-white/70 font-normal uppercase tracking-wider">Recommandation</div>
             </div>
             <div>
               <div className="text-2xl sm:text-3xl font-light text-white mb-0.5">OPCO</div>
               <div className="text-xs text-white/70 font-normal uppercase tracking-wider">Via partenaires Qualiopi</div>
             </div>
             <div>
-              <div className="text-2xl sm:text-3xl font-light text-[#02ADAB] mb-0.5">&lt; 24h</div>
-              <div className="text-xs text-white/70 font-normal uppercase tracking-wider">Assistance par mail</div>
+              <div className="text-2xl sm:text-3xl font-light text-[#02ADAB] mb-0.5 tabular-nums">&lt; 24h</div>
+              <div className="text-xs text-white/70 font-normal uppercase tracking-wider">Réponse directe</div>
             </div>
           </div>
         </div>
@@ -363,7 +186,7 @@ export default function FAQ() {
       <section className="max-w-[1100px] mx-auto py-[70px] px-6">
         <div className="space-y-12">
           {faqCategories.map((category) => {
-            const Icon = category.icon;
+            const Icon = iconMap[category.icon] || HelpCircle;
             return (
               <div key={category.title} className="relative">
                 <div className="flex items-center gap-3.5 mb-5">
@@ -374,13 +197,13 @@ export default function FAQ() {
                     <strong className="font-medium">{category.title}</strong>
                   </h2>
                 </div>
-                
+
                 <div className="bg-white rounded-[12px] p-6 sm:p-8 shadow-[0_2px_16px_rgba(31,79,110,0.08)]">
                   {category.items.map((item, index) => (
                     <FAQItem
-                      key={index}
-                      question={item.question}
-                      answer={item.answer}
+                      key={item.id}
+                      item={item}
+                      indexId={item.id}
                       isOpen={openStates[category.title] === index}
                       onClick={() => toggleItem(category.title, index)}
                     />
@@ -395,26 +218,39 @@ export default function FAQ() {
       {/* SÉPARATEUR */}
       <hr className="border-none border-t border-[rgba(31,79,110,0.1)] mx-6 max-w-[1100px] md:mx-auto" />
 
+      {/* SECTION DÉDIÉE : AVIS CLIENTS VÉRIFIÉS GOOGLE */}
+      <section id="avis-clients" className="max-w-[1100px] mx-auto py-[70px] px-6">
+        <GoogleReviewsShowcase
+          variant="light"
+          kicker="Avis clients vérifiés · Fiche Google Business Profile"
+          headingPrefix="Ce que disent nos clients et"
+          headingStrong="étudiants accompagnés"
+        />
+      </section>
+
+      {/* SÉPARATEUR */}
+      <hr className="border-none border-t border-[rgba(31,79,110,0.1)] mx-6 max-w-[1100px] md:mx-auto" />
+
       {/* CTA FINAL : BANNIÈRE ORANGE #C06721 */}
       <div className="bg-[#C06721] text-white text-center py-[70px] px-10">
         <h2 className="text-[2rem] font-light mb-3.5 text-white">
           Vous avez une <strong className="font-medium text-white">question spécifique ?</strong>
         </h2>
-        <p className="text-[1.05rem] text-white/80 max-w-[540px] mx-auto mb-8 leading-[1.7] font-light">
-          Contactez-nous directement. Nous prenons le temps d'étudier votre cas spécifique et de vous orienter vers la solution la plus adaptée.
+        <p className="text-[1.05rem] text-white/85 max-w-[540px] mx-auto mb-8 leading-[1.7] font-light">
+          Échangez directement avec Cyril Garnier (diagnostic 20 min) pour cadrer votre formation IA OPCO, vos agents sur mesure ou votre visibilité SEO/GEO.
         </p>
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-          <a
-            href="/contact"
+          <Link
+            to="/contact/"
             className="inline-block bg-white text-[#C06721] text-[0.95rem] font-medium py-3.5 px-8 rounded-[8px] no-underline tracking-[0.04em] transition-transform duration-150 hover:-translate-y-0.5 hover:shadow-[0_6px_20px_rgba(0,0,0,0.15)]"
           >
-            Poser ma question à l'équipe →
-          </a>
+            Contacter l'équipe →
+          </Link>
           <a
             href="mailto:cyril@alkymya.co"
             className="inline-block bg-white/10 hover:bg-white/20 text-white text-[0.95rem] font-medium py-3.5 px-8 rounded-[8px] no-underline tracking-[0.04em] transition-transform duration-150 hover:-translate-y-0.5 border border-white/25"
           >
-            Écrire par email
+            Écrire à cyril@alkymya.co
           </a>
         </div>
       </div>

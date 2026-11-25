@@ -1,4 +1,5 @@
 import { alchimistes } from './alchimistes';
+import { faqCategories } from './faq';
 
 export interface RouteContentSection {
   h2: string;
@@ -464,10 +465,10 @@ export const routes: RouteData[] = [
   {
     path: '/ressources',
     title: "Ressources IA, Études & Analyseurs Gratuits | Alkymya",
-    description: "Découvrez nos 5 études (Génération IA 2024–2026, Gemini 4, Doctrine IAG), 3 analyseurs IA gratuits, Business Game NoNo BanaBa et outils.",
+    description: "Découvrez nos 5 études (Génération IA 2024–2026, Gemini 4, Doctrine IAG), 4 analyseurs IA gratuits, Business Game NoNo BanaBa et outils.",
     h1: "Ressources IA, études et outils gratuits en production.",
     ogImage: "https://alkymya.co/og-ressources.jpg",
-    lastmod: "2026-11-20",
+    lastmod: "2026-11-24",
     schemaType: "CollectionPage",
     images: [
       {
@@ -479,7 +480,7 @@ export const routes: RouteData[] = [
       }
     ],
     content: {
-      leadParagraph: "Bibliothèque ouverte d'Alkymya, studio d'expertise et de création IA : quatre portes d'entrée réunissant nos cinq études complètes en HTML et PDF, trois analyseurs IA documentés et gratuits, le business game NoNo BanaBa et les outils technologiques partenaires.",
+      leadParagraph: "Bibliothèque ouverte d'Alkymya, studio d'expertise et de création IA : quatre portes d'entrée réunissant nos cinq études complètes en HTML et PDF, quatre analyseurs IA documentés et gratuits, le business game NoNo BanaBa et les outils technologiques partenaires.",
       sections: [
         {
           h2: "1. Nos études (Génération IA 2024 → 2026, Gemini 4 & Doctrine IAG)",
@@ -496,12 +497,13 @@ export const routes: RouteData[] = [
         {
           h2: "2. Nos Analyseurs IA gratuits en production",
           paragraphs: [
-            "Trois applications web accessibles sans inscription obligatoire, dotées chacune d'une fiche de méthode expliquant ce qu'elles font, leurs limites et nos recommandations de confidentialité."
+            "Quatre applications web accessibles sans inscription obligatoire, dotées chacune d'une fiche de méthode expliquant ce qu'elles font, leurs limites et nos recommandations de confidentialité."
           ],
           listItems: [
             "Analyseur de photo (analyseurdephoto.alkymya.co) : composition, recadrage et descriptions alt SEO fidèles.",
             "Analyseur de CV (analysercvpro.alkymya.co) avec Kendra Martine d'Objectif Alternance : adéquation CV / offre d'alternance.",
-            "Analyseur de mémoire (analyseurdememoire.alkymya.co) : pré-lecture méthodologique et cohérence de plan."
+            "Analyseur de mémoire (analyseurdememoire.alkymya.co) : pré-lecture méthodologique et cohérence de plan.",
+            "Analyseur de site web — Alkymya Scan (scan.alkymya.co/#analyseur) : audit 360° UX, SEO & GEO, E-E-A-T, sécurité HTTP et RGPD/RGAA."
           ]
         },
         {
@@ -513,7 +515,7 @@ export const routes: RouteData[] = [
       ],
       internalLinks: [
         { href: "/ressources/etudes/", label: "Nos études IA (Génération IA, Gemini 4, Doctrine IAG)" },
-        { href: "/ressources/analyseurs/", label: "Nos Analyseurs IA gratuits (Photo, CV, Mémoire)" },
+        { href: "/ressources/analyseurs/", label: "Nos Analyseurs IA gratuits (Photo, CV, Mémoire, Site web)" },
         { href: "/ressources/business-game/", label: "Business Game NoNo BanaBa" },
         { href: "/partenaires/outils/", label: "Outils partenaires souverains (AWACLOUD & Onecub)" }
       ]
@@ -730,24 +732,25 @@ export const routes: RouteData[] = [
   },
   {
     path: '/ressources/analyseurs',
-    title: "Analyseurs IA Gratuits : Photo, CV & Mémoire | Alkymya",
-    description: "Lancez nos 3 analyseurs IA gratuits en production (Photo, CV avec Objectif Alternance, Mémoire académique) avec mode d’emploi et confidentialité.",
+    title: "Analyseurs IA : Photo, CV, Mémoire & Site Web | Alkymya",
+    description: "Lancez nos 4 analyseurs IA gratuits en production (Photo, CV, Mémoire, Site web Alkymya Scan) avec mode d’emploi, limites et confidentialité.",
     h1: "Nos Analyseurs IA gratuits en production.",
     ogImage: "https://alkymya.co/og-ressources.jpg",
-    lastmod: "2026-11-20",
+    lastmod: "2026-11-24",
     schemaType: "CollectionPage",
     content: {
-      leadParagraph: "Trois applications web gratuites accessibles sans inscription préalable : chacune dispose désormais de sa page dédiée détaillant son usage, son public cible, ses limites et nos consignes de confidentialité.",
+      leadParagraph: "Quatre applications web gratuites accessibles sans inscription préalable : chacune dispose de sa page dédiée détaillant son usage, son public cible, ses limites et nos consignes de confidentialité.",
       sections: [
         {
-          h2: "Trois analyseurs IA documentés et reliés au domaine principal",
+          h2: "Quatre analyseurs IA documentés et reliés au domaine principal",
           paragraphs: [
-            "Conçus par le studio Alkymya pour expérimenter immédiatement l'intelligence artificielle générative sur des documents réels, nos analyseurs couvrent le traitement visuel, l'employabilité et la rigueur académique."
+            "Conçus par le studio Alkymya pour expérimenter immédiatement l'intelligence artificielle générative et le diagnostic web sur des cas réels, nos analyseurs couvrent le traitement visuel, l'employabilité, la rigueur académique et l'audit SEO/GEO/RGPD."
           ],
           listItems: [
             "Analyseur de photo (analyseurdephoto.alkymya.co) : composition, recadrage et descriptions alt SEO fidèles.",
             "Analyseur de CV (analysercvpro.alkymya.co), en partenariat avec Kendra Martine d'Objectif Alternance : adéquation CV / fiche de poste.",
-            "Analyseur de mémoire (analyseurdememoire.alkymya.co) : pré-lecture méthodologique et cohérence problématique/plan."
+            "Analyseur de mémoire (analyseurdememoire.alkymya.co) : pré-lecture méthodologique et cohérence problématique/plan.",
+            "Analyseur de site web — Alkymya Scan (scan.alkymya.co/#analyseur) : audit 360° sur 5 piliers (UX, SEO & GEO, E-E-A-T, sécurité HTTP, RGPD/RGAA)."
           ]
         }
       ],
@@ -755,6 +758,7 @@ export const routes: RouteData[] = [
         { href: "/ressources/analyseurs/analyseur-de-photo/", label: "Analyseur de photo IA" },
         { href: "/ressources/analyseurs/analyseur-de-cv/", label: "Analyseur de CV IA (avec Objectif Alternance)" },
         { href: "/ressources/analyseurs/analyseur-de-memoire/", label: "Analyseur de mémoire IA" },
+        { href: "/ressources/analyseurs/analyseur-de-site-web/", label: "Analyseur de site web (Alkymya Scan)" },
         { href: "/ressources/", label: "Retour à toutes nos ressources" }
       ]
     }
@@ -834,6 +838,32 @@ export const routes: RouteData[] = [
         { href: "/ressources/analyseurs/", label: "Tous nos Analyseurs IA" },
         { href: "/ressources/etudes/generation-ia-2026/", label: "Étude Génération IA 2026 (évaluation & intégrité)" },
         { href: "/partenaires/ecoles/", label: "Nos 7 partenaires École" }
+      ]
+    }
+  },
+  {
+    path: '/ressources/analyseurs/analyseur-de-site-web',
+    title: "Analyseur de Site Web IA (SEO, GEO & RGPD) | Alkymya",
+    description: "Auditez gratuitement votre site web avec Alkymya Scan sur 5 piliers (UX, SEO & GEO, E-E-A-T, sécurité, RGPD/RGAA) : note sur 100 et 3 failles P0.",
+    h1: "Analyseur de site web (Alkymya Scan) : audit 360° UX, SEO/GEO, E-E-A-T, sécurité & RGPD",
+    ogImage: "https://alkymya.co/og-ressources.jpg",
+    lastmod: "2026-11-24",
+    schemaType: "SoftwareApplication",
+    content: {
+      leadParagraph: "Développé par le studio Alkymya sur scan.alkymya.co/#analyseur, Alkymya Scan (Version Bêta) combine une inspection technique serveur réelle multi-pages (TTFB, en-têtes HTTP, pré-rendu GPTBot, JSON-LD, /llms.txt, E-E-A-T, RGPD et RGAA) et une synthèse experte.",
+      sections: [
+        {
+          h2: "Les 5 piliers évalués et les limites d’un diagnostic automatisé",
+          paragraphs: [
+            "En une requête sans inscription, Alkymya Scan inspecte vos pages clés (Contact, À propos, Mentions légales, Cas clients, Blog) et calcule une note sur 100 assortie de vos 3 failles P0 prioritaires : UX & Brand, SEO & GEO, E-E-A-T On-Page/Off-Site, Performance & 6 en-têtes de sécurité HTTP, et conformité RGPD/Consent Mode v2/RGAA.",
+            "Diagnostic automatisé indicatif en lecture seule : les sites protégés par pare-feu anti-bot (Cloudflare, DataDome, Akamai) sont détectés comme bloqués afin d'éviter tout faux diagnostic, et l'outil ne remplace ni un DPO ni un test d'intrusion."
+          ]
+        }
+      ],
+      internalLinks: [
+        { href: "/ressources/analyseurs/", label: "Tous nos Analyseurs IA" },
+        { href: "/oeuvres/", label: "Voir nos études de cas SEO & GEO (TheLittle77, 75, 83)" },
+        { href: "/contact/", label: "Réserver un échange 20 min avec Cyril Garnier" }
       ]
     }
   },
@@ -1551,58 +1581,59 @@ export const routes: RouteData[] = [
           ]
         },
         {
-          h2: "Nos coordonnées et zone d'intervention",
+          h2: "Coordonnées officielles & avis clients vérifiés Google",
           paragraphs: [
-            "Alkymya — studio d'expertise et de création IA de CYRIL GARNIER CONSULTING, 2 rue Sacha Guitry, 77330 Ozoir-la-Ferrière. Email direct : cyril@alkymya.co • Téléphone : 06 43 64 97 77."
+            "Alkymya — studio d'expertise et de création IA de CYRIL GARNIER CONSULTING (SASU, SIREN 842 403 669, RCS Melun) : 2 rue Sacha Guitry, 77330 Ozoir-la-Ferrière · Email : cyril@alkymya.co · Téléphone : 06 43 64 97 77 · Zone d'intervention : Paris, Seine-et-Marne (77) et France entière.",
+            "Fiche Google Business Profile vérifiée (5,0 / 5 sur 11 avis clients, 99,3 % de recommandation sur nos ateliers) : https://www.google.com/maps?cid=10471291206194913670"
+          ],
+          listItems: [
+            "Augustine (IÉSEG, avis Google 5/5) : accompagnement très riche, maîtrise de l'IA et vraie pédagogie sur le commerce agentique.",
+            "Mélinda (IÉSEG, avis Google 5/5) : expertise concrète, vision stratégique et accompagnement appliqué du mémoire à la création applicative IA.",
+            "Noémie (avis Google 5/5 sur l'agent SODA) : analyse structurée, approfondie et ouverture de nouvelles perspectives."
           ]
         }
       ],
       internalLinks: [
         { href: "/ateliers/", label: "Explorer le catalogue de nos ateliers" },
         { href: "/faq/", label: "Consulter les réponses aux questions fréquentes" },
-        { href: "/newbusiness/", label: "Candidater au programme New Business MVP" }
+        { href: "/newbusiness/", label: "Candidater au programme New Business MVP" },
+        { href: "/politique-confidentialite/", label: "Politique de confidentialité & cookies RGPD" }
       ]
     }
   },
   {
     path: '/faq',
-    title: "FAQ Alkymya | Questions Fréquentes, IA & OPCO",
-    description: "Réponses aux questions fréquentes sur Alkymya : accompagnement IA, agents autonomes, financement OPCO via partenaires Qualiopi et New Business MVP.",
+    title: "FAQ Alkymya | Formations IA, Agents, SEO/GEO & OPCO",
+    description: "Questions fréquentes Alkymya : formations IA en entreprise (Seine-et-Marne, Paris), agents sur mesure, SEO Google AI, financement OPCO et avis.",
     h1: "Questions fréquentes. Vos réponses claires.",
     ogImage: "https://alkymya.co/og-faq.jpg",
-    lastmod: "2026-11-16",
+    lastmod: "2026-11-25",
     schemaType: "FAQPage",
     content: {
-      leadParagraph: "Toutes les réponses sur Alkymya : nos ateliers pratiques, la création d'agents IA, le financement OPCO via nos organismes partenaires certifiés Qualiopi et le programme New Business MVP.",
+      leadParagraph: "Toutes les réponses sur le studio Alkymya (Seine-et-Marne, Paris et France), nos formations IA en entreprise finançables OPCO via nos partenaires certifiés Qualiopi, la création d'agents IA sur mesure, la stratégie SEO et GEO pour Google AI et nos avis clients.",
       sections: [
+        ...faqCategories.map((cat) => ({
+          h2: cat.title,
+          paragraphs: [cat.items[0]?.plainAnswer || ''],
+          listItems: cat.items.map((item) => `${item.question} — ${item.plainAnswer}`)
+        })),
         {
-          h2: "À propos d'Alkymya et de notre modèle d'intervention",
+          h2: "Avis clients vérifiés Google (5,0 / 5)",
           paragraphs: [
-            "Alkymya (alkymya.co) est un studio d'intelligence artificielle et cabinet d'expertise fondé par Cyril Garnier et Léonie Egesipe en Île-de-France, exploité par CYRIL GARNIER CONSULTING. Alkymya n'est pas un organisme de formation en nom propre."
+            "Alkymya recueille une note moyenne de 5,0 / 5 sur 11 avis clients Google Business Profile (https://www.google.com/maps?cid=10471291206194913670) ainsi qu'un taux de recommandation de 99,3 % sur ses ateliers pratiques.",
           ],
           listItems: [
-            "Qu'est-ce qu'Alkymya ? Alkymya (alkymya.co) est un studio d'expertise et de création IA basé en Île-de-France (et non un organisme de formation en nom propre), collaborant avec des partenaires certifiés Qualiopi pour les formations IA en entreprise finançables OPCO, la création d'agents IA sur mesure, la stratégie SEO/GEO et l'accompagnement New Business MVP.",
-            "À qui s'adressent les accompagnements d'Alkymya ? Aux dirigeants, PME, ETI, équipes marketing/RH/opérations, porteurs de projets (New Business MVP) ainsi qu'aux grandes écoles et universités, avec des formats adaptés de l'acculturation jusqu'au déploiement d'agents IA autonomes.",
-            "Comment s'articule le studio avec ses partenaires Qualiopi ? Alkymya assure la conception et l'animation opérationnelle des ateliers IA, tandis que le portage administratif et la certification Qualiopi pour le financement OPCO sont assurés par nos organismes partenaires tels qu'INATEC."
-          ]
-        },
-        {
-          h2: "Questions fréquentes sur nos ateliers, l'OPCO et le studio",
-          paragraphs: [
-            "Nous apportons une transparence totale sur nos formats pratiques, les profils de nos intervenants et les modalités de prise en charge OPCO via nos partenaires certifiés Qualiopi."
-          ],
-          listItems: [
-            "Qu'est-ce que le programme Formation Core IA (Best Value) ? Un socle complet de 14h sur 4 demi-journées (prompt engineering, rédaction stratégique, studio graphique, workflows) finançable jusqu'à 100 % OPCO via nos partenaires certifiés Qualiopi.",
-            "Les formations sont-elles finançables par un OPCO ? Oui : Alkymya n'est pas certifié Qualiopi directement mais collabore avec des organisations partenaires certifiées Qualiopi (telles qu'INATEC), permettant une prise en charge OPCO jusqu'à 100 %.",
-            "En quoi consistent les options Agents IA et App No-Code ? Deux ateliers intensifs de 3h30 (500 € HT chacun) pour déployer 3 agents autonomes connectés ou concevoir une application web IA sans code.",
-            "Qu'est-ce que l'offre New Business MVP ? Un accompagnement de 6 mois à 200 € / mois guidé en binôme par Cyril Garnier et Léonie Egesipe pour valider votre offre auprès de clients réels.",
-            "Quels établissements font confiance à Alkymya ? HETIC, Ynov, IÉSEG, CFA Itis, Paris École de Management, SNCF, Morning Coworking, Fondation GRDF et Objectif Alternance."
+            "Augustine (IÉSEG, avis Google 5/5) : accompagnement très riche en cours puis en mémoire sur le commerce agentique, maîtrise de l'IA et pédagogie.",
+            "Mélinda (IÉSEG, avis Google 5/5) : expertise concrète en intelligence artificielle, vision stratégique et développement d'une application IA.",
+            "Noémie (avis Google 5/5 sur l'agent SODA) : analyse hyper structurée, approfondie et ouverture de nouvelles perspectives."
           ]
         }
       ],
       internalLinks: [
-        { href: "/ateliers/", label: "Consulter nos offres et ateliers détaillés" },
-        { href: "/contact/", label: "Poser une question spécifique à notre équipe" }
+        { href: "/ateliers/", label: "Consulter nos formations et ateliers IA" },
+        { href: "/oeuvres/", label: "Voir nos agents IA et cas SEO/GEO" },
+        { href: "/ressources/analyseurs/analyseur-de-site-web/", label: "Auditer votre site avec Alkymya Scan" },
+        { href: "/contact/", label: "Contacter Cyril Garnier (diagnostic 20 min)" }
       ]
     }
   },
@@ -1794,8 +1825,89 @@ export const routes: RouteData[] = [
       ],
       internalLinks: [
         { href: "/", label: "Retourner à la page d'accueil d'Alkymya" },
-        { href: "/ateliers/", label: "Consulter nos formations et ateliers IA" },
+        { href: "/politique-confidentialite/", label: "Politique de confidentialité & cookies RGPD" },
+        { href: "/accessibilite/", label: "Déclaration d'accessibilité RGAA" },
         { href: "/contact/", label: "Exercer vos droits d'accès aux données personnelles" }
+      ]
+    }
+  },
+  {
+    path: '/politique-confidentialite',
+    title: "Politique de confidentialité & cookies RGPD | Alkymya",
+    description: "Politique de confidentialité d'Alkymya (CYRIL GARNIER CONSULTING) : données personnelles, Google Analytics Consent Mode v2, conservation et droits RGPD.",
+    h1: "Politique de confidentialité & gestion des cookies.",
+    ogImage: "https://alkymya.co/og-mentions.jpg",
+    lastmod: "2026-11-25",
+    schemaType: "WebPage",
+    content: {
+      leadParagraph: "Politique de protection des données personnelles et de gestion des cookies d'Alkymya (CYRIL GARNIER CONSULTING, 2 rue Sacha Guitry, 77330 Ozoir-la-Ferrière), conforme au RGPD (UE 2016/679) et aux recommandations de la CNIL.",
+      sections: [
+        {
+          h2: "1. Responsable du traitement & données collectées",
+          paragraphs: [
+            "Le responsable du traitement est CYRIL GARNIER CONSULTING (SASU, SIRET 842 403 669 00018, représentant légal Cyril Garnier, cyril@alkymya.co, 06 43 64 97 77). Seules les informations strictement nécessaires à vos demandes de contact, candidatures New Business MVP et inscriptions à la lettre d'information sont collectées."
+          ],
+          listItems: [
+            "Formulaire de contact (/contact/) : prénom, nom, email, sujet et message — conservation 3 ans maximum après le dernier échange.",
+            "Candidature New Business MVP : coordonnées et éléments de cadrage projet — conservation 3 ans ou durée contractuelle.",
+            "Lettre d'information : email (prénom/nom facultatifs) acheminé via Resend — jusqu'au retrait du consentement.",
+            "Analyseurs IA gratuits (Photo, CV, Mémoire, Alkymya Scan) : traitement ponctuel sans revente ni constitution de CVthèque."
+          ]
+        },
+        {
+          h2: "2. Cookies & Google Analytics Consent Mode v2 (G-87HJ0K59JX)",
+          paragraphs: [
+            "Par défaut, Google Consent Mode v2 bloque tout traceur statistique (analytics_storage: denied, ad_storage: denied) tant qu'aucun consentement positif n'est enregistré. En cas d'acceptation, l'adresse IP est systématiquement anonymisée (anonymize_ip: true) et la durée de mémorisation du choix est fixée à 6 mois conformément aux directives CNIL."
+          ]
+        },
+        {
+          h2: "3. Sous-traitants, droits RGPD & réclamation CNIL",
+          paragraphs: [
+            "Aucune donnée personnelle n'est vendue ou cédée à des tiers commerciaux. Les seuls sous-traitants techniques habilités sont Netlify (hébergement), Resend (emails) et Google LLC (mesure d'audience si consentie). Vous pouvez exercer vos droits d'accès, de rectification, d'effacement, de limitation, d'opposition et de portabilité à cyril@alkymya.co (réponse sous 30 jours) ou saisir la CNIL (cnil.fr)."
+          ]
+        }
+      ],
+      internalLinks: [
+        { href: "/mentions-legales/", label: "Consulter les Mentions légales" },
+        { href: "/accessibilite/", label: "Déclaration d'accessibilité RGAA" },
+        { href: "/contact/", label: "Contacter le responsable RGPD (cyril@alkymya.co)" }
+      ]
+    }
+  },
+  {
+    path: '/accessibilite',
+    title: "Déclaration d'accessibilité RGAA & WCAG | Alkymya",
+    description: "Déclaration d'accessibilité numérique d'Alkymya (alkymya.co) : engagements RGAA et WCAG AA, navigation clavier, skip link, contrastes et contact dédié.",
+    h1: "Déclaration d'accessibilité RGAA & WCAG.",
+    ogImage: "https://alkymya.co/og-mentions.jpg",
+    lastmod: "2026-11-25",
+    schemaType: "WebPage",
+    content: {
+      leadParagraph: "Engagement volontaire d'Alkymya (CYRIL GARNIER CONSULTING) en faveur de l'accessibilité numérique sur https://alkymya.co/, selon les bonnes pratiques du Référentiel Général d'Amélioration de l'Accessibilité (RGAA) et des directives WCAG 2.1 niveau AA.",
+      sections: [
+        {
+          h2: "1. Mesures d'accessibilité mises en œuvre",
+          paragraphs: [
+            "Chaque page pré-rendue et chaque écran de l'application respectent une structure sémantique claire, une navigation clavier complète et des contrastes élevés entre texte et arrière-plan."
+          ],
+          listItems: [
+            "Lien d'évitement (« Aller au contenu principal ») en tête de document pointant vers #main-content, visible à la prise de focus clavier.",
+            "Hiérarchie de titres structurée (un unique H1 par page suivi de H2/H3) et balises HTML5 sémantiques (header, nav, main, article, footer).",
+            "Contrôles interactifs accessibles au clavier avec états ARIA explicites (menu, modale cookies, accordéons FAQ, formulaires étiquetés).",
+            "Attributs alt descriptifs et dimensions déclarées sur l'ensemble des photographies et logos, doublés de tableaux HTML natifs pour nos études PDF."
+          ]
+        },
+        {
+          h2: "2. Signalement d'un défaut & voies de recours",
+          paragraphs: [
+            "Si vous rencontrez une difficulté d'accès à un contenu ou service sur alkymya.co, contactez Cyril Garnier à cyril@alkymya.co ou au 06 43 64 97 77 (réponse sous 48h ouvrées). En l'absence de réponse satisfaisante, vous pouvez saisir le Défenseur des droits (defenseurdesdroits.fr ou Libre réponse 71120, 75342 Paris CEDEX 07)."
+          ]
+        }
+      ],
+      internalLinks: [
+        { href: "/politique-confidentialite/", label: "Politique de confidentialité & cookies RGPD" },
+        { href: "/mentions-legales/", label: "Mentions légales" },
+        { href: "/contact/", label: "Signaler un défaut d'accessibilité" }
       ]
     }
   }

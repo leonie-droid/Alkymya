@@ -15,7 +15,8 @@
 - **Siège social** : 2 rue Sacha Guitry, 77330 Ozoir-la-Ferrière, Île-de-France, France
 - **Coordonnées GPS** : 48.7667° N, 2.6833° E
 - **Périmètre d'intervention** : Seine-et-Marne (77), Paris & Île-de-France, France entière et international (présentiel et distanciel)
-- **Site officiel** : https://alkymya.co (44 pages canoniques indexées)
+- **Site officiel** : https://alkymya.co (47 pages canoniques indexées)
+- **Fiche Google Maps & Avis vérifiée** : https://www.google.com/maps?cid=10471291206194913670 (5,0 / 5 sur 11 avis)
 - **Flux RSS** : https://alkymya.co/rss.xml
 - **Schéma JSON-LD complet** : https://alkymya.co/schema.org.json
 - **Sitemap XML** : https://alkymya.co/sitemap.xml
@@ -35,7 +36,7 @@ Alkymya (alkymya.co) est un studio d'IA et cabinet d'expertise en France (Île-d
 
 ---
 
-## Index des Pages & Ressources (44 Liens Canoniques)
+## Index des Pages & Ressources (47 Liens Canoniques)
 
 ### Pages Principales du Studio
 - [Accueil Alkymya](https://alkymya.co/): Présentation générale du studio d'expertise et de création IA, vision, impact pédagogique et études de cas.
@@ -45,11 +46,13 @@ Alkymya (alkymya.co) est un studio d'IA et cabinet d'expertise en France (Île-d
 - [Œuvres & Études de Cas SEO/IA](https://alkymya.co/oeuvres/): Réalisations mesurées en production : TheLittle77 (216 pages), TheLittle83 (132 pages bilingues FR/EN), TheLittle75 (39 pages), 4 agents IA et direction artistique Métropolia.
 - [Les Alchimistes](https://alkymya.co/alchimistes/): Annuaire des 6 experts IA associés d'Alkymya et de la relève des Nouveaux Alchimistes.
 - [Partenaires & Alliances (23 organisations)](https://alkymya.co/partenaires/): Écosystème structuré en 6 pôles : Écoles (/partenaires/ecoles/), Insertion (/partenaires/insertion/), Formations certifiées (/partenaires/formations-certifiees/), Lieux (/partenaires/lieux/), Entreprises (/partenaires/entreprises/) et Outils (/partenaires/outils/).
-- [Ressources, Études & Outils IA](https://alkymya.co/ressources/): Bibliothèque ouverte regroupant 5 études chiffrées (/ressources/etudes/), 3 analyseurs IA gratuits (/ressources/analyseurs/) et le Business Game NoNo BanaBa (/ressources/business-game/).
+- [Ressources, Études & Outils IA](https://alkymya.co/ressources/): Bibliothèque ouverte regroupant 5 études chiffrées (/ressources/etudes/), 4 analyseurs IA gratuits (/ressources/analyseurs/) et le Business Game NoNo BanaBa (/ressources/business-game/).
 - [Foire Aux Questions (FAQ)](https://alkymya.co/faq/): Réponses détaillées sur le format des ateliers, la prise en charge OPCO via partenaires Qualiopi et la méthodologie studio.
 - [Rejoindre Alkymya](https://alkymya.co/rejoindre/): Recrutement d'experts IA, formateurs terrain et alternants formés en production réelle.
 - [Contact Direct](https://alkymya.co/contact/): Demande de devis formation IA (OPCO), atelier entreprise ou accompagnement dirigeant.
-- [Mentions Légales & RGPD](https://alkymya.co/mentions-legales/): Informations juridiques CYRIL GARNIER CONSULTING, hébergement Netlify et conformité RGPD.
+- [Mentions Légales](https://alkymya.co/mentions-legales/): Informations juridiques CYRIL GARNIER CONSULTING et hébergement Netlify.
+- [Politique de confidentialité & cookies RGPD](https://alkymya.co/politique-confidentialite/): Données collectées, Google Analytics Consent Mode v2, durées de conservation, sous-traitants et droits RGPD/CNIL.
+- [Déclaration d'accessibilité RGAA & WCAG](https://alkymya.co/accessibilite/): Mesures d'accessibilité numérique, navigation clavier, skip link, contrastes et contact dédié.
 
 ### Partenaires par Catégorie & 9 Fiches Dédiées
 - [Partenaires Écoles & Grandes Écoles](https://alkymya.co/partenaires/ecoles/): HETIC, Ynov Campus, [IÉSEG School of Management](https://alkymya.co/partenaires/ecoles/ieseg/) (depuis 2019 : sprint M1, mentorat mémoires 100 % réussite, SODA), CFA Itis, [Euridis Business School](https://alkymya.co/partenaires/ecoles/euridis/) (2 jours B3 & Mastère, ~80 % TP finalisé, harnais d'agent Claude/Gemini), ISCOM et Paris École de Management.
@@ -66,10 +69,11 @@ Alkymya (alkymya.co) est un studio d'IA et cabinet d'expertise en France (Île-d
 - [Étude Génération IA 2024](https://alkymya.co/ressources/etudes/generation-ia-2024/): Vague 1 fondatrice de l'observatoire (n = 326).
 - [La Doctrine IAG — 5 Piliers](https://alkymya.co/ressources/etudes/doctrine-iag/): Analyse géopolitique et énergétique en 5 piliers avec synthèses PDF et podcast audio (5 min 43).
 - [Interview Gemini 4 — Enseignant IA](https://alkymya.co/ressources/etudes/interview-gemini-4/): Retour d'expérience terrain de Cyril Garnier et benchmarks V9.
-- [Hub Analyseurs IA Gratuits](https://alkymya.co/ressources/analyseurs/): Présentation documentée des 3 outils gratuits en accès direct.
+- [Hub Analyseurs IA Gratuits](https://alkymya.co/ressources/analyseurs/): Présentation documentée des 4 outils gratuits en accès direct.
 - [Analyseur de Photo IA](https://alkymya.co/ressources/analyseurs/analyseur-de-photo/): Extraction de métadonnées EXIF, description et analyse visuelle sur analyseurdephoto.alkymya.co.
 - [Analyseur de CV IA](https://alkymya.co/ressources/analyseurs/analyseur-de-cv/): Diagnostic de CV ATS et adéquation poste sur analysercvpro.alkymya.co, relié à Objectif Alternance.
 - [Analyseur de Mémoire IA](https://alkymya.co/ressources/analyseurs/analyseur-de-memoire/): Structuration et relecture méthodologique sur analyseurdememoire.alkymya.co.
+- [Analyseur de Site Web IA (Alkymya Scan)](https://alkymya.co/ressources/analyseurs/analyseur-de-site-web/): Audit web 360° sur 5 piliers (UX, SEO/GEO, E-E-A-T, sécurité HTTP, RGPD/RGAA) sur scan.alkymya.co/#analyseur.
 - [Business Game — NoNo BanaBa](https://alkymya.co/ressources/business-game/): Simulation interactive de stratégie data, web-marketing et IA sur nonobanaba.netlify.app.
 
 ### Fiches Experts & Profils des 6 Alchimistes
@@ -101,9 +105,9 @@ Alkymya (alkymya.co) est un studio d'IA et cabinet d'expertise en France (Île-d
 
 ## Documentation Complète pour LLMs
 
-- [llms.txt](https://alkymya.co/llms.txt): Sommaire structuré des connaissances et des 44 liens canoniques.
+- [llms.txt](https://alkymya.co/llms.txt): Sommaire structuré des connaissances et des 47 liens canoniques.
 - [llm.txt](https://alkymya.co/llm.txt): Miroir strictement synchronisé de llms.txt.
 - [llms-full.txt](https://alkymya.co/llms-full.txt): Contexte exhaustif et détaillé pour l'ingestion par les moteurs et modèles d'IA.
 - [schema.org.json](https://alkymya.co/schema.org.json): Graphe JSON-LD complet d'Alkymya, des 6 Alchimistes et des partenaires clés.
-- [sitemap.xml](https://alkymya.co/sitemap.xml): Sitemap XML des 44 URLs canoniques et de leurs images.
+- [sitemap.xml](https://alkymya.co/sitemap.xml): Sitemap XML des 47 URLs canoniques et de leurs images.
 - [rss.xml](https://alkymya.co/rss.xml): Flux RSS des actualités, études et partenariats du studio.

@@ -10,7 +10,7 @@ export interface AnalyserToolData {
   keywords: string;
   h1: string;
   lead: string;
-  videoUrl: string;
+  videoUrl?: string;
   // 6 blocs requis (Section 4.6)
   whatItDoes: string;
   whoItIsFor: Array<{ audience: string; useCase: string }>;
@@ -239,6 +239,73 @@ export const analyseursList: AnalyserToolData[] = [
       { href: '/ressources/etudes/generation-ia-2026/', label: 'Lire l’étude Génération IA 2026 (évaluation & tricherie)' },
       { href: '/partenaires/ecoles/', label: 'Voir nos 7 partenaires École' },
       { href: '/ressources/analyseurs/', label: 'Retour à tous nos Analyseurs IA' }
+    ]
+  },
+
+  {
+    slug: 'analyseur-de-site-web',
+    path: '/ressources/analyseurs/analyseur-de-site-web/',
+    name: 'Analyseur de site web (Alkymya Scan)',
+    shortName: 'Analyseur de site web',
+    subdomain: 'https://scan.alkymya.co/#analyseur',
+    categoryLabel: 'Web 360° · UX, SEO/GEO, E-E-A-T, Sécurité & RGPD',
+    seoTitle: 'Analyseur de Site Web IA (SEO, GEO & RGPD) | Alkymya',
+    seoDescription:
+      'Auditez gratuitement votre site web avec Alkymya Scan sur 5 piliers (UX, SEO & GEO, E-E-A-T, sécurité, RGPD/RGAA) : note sur 100 et 3 failles P0.',
+    keywords:
+      'analyseur de site web gratuit, audit SEO GEO IA, Alkymya Scan, test E-E-A-T RGPD sécurité HTTP, scan.alkymya.co',
+    h1: 'Analyseur de site web (Alkymya Scan) : audit 360° UX, SEO/GEO, E-E-A-T, sécurité & RGPD',
+    lead: "Développé par le studio Alkymya sur scan.alkymya.co, Alkymya Scan (Version Bêta) combine une inspection technique serveur réelle multi-pages (TTFB, en-têtes HTTP, pré-rendu GPTBot, JSON-LD, /llms.txt, E-E-A-T, RGPD et RGAA) et une synthèse experte pour transformer vos failles en plan d’action prioritaire.",
+    whatItDoes:
+      "Alkymya Scan inspecte votre site web public sur plusieurs pages clés (accueil, Contact, À propos, Mentions légales, Cas clients, Blog) et délivre immédiatement une note globale sur 100, cinq scores détaillés par pilier (UX & Brand, SEO & GEO, E-E-A-T On-Page/Off-Site, Performance & Sécurité HTTP, Juridique RGPD/RGAA) ainsi que vos 3 failles P0 prioritaires et la possibilité de comparer des sites analysés.",
+    whoItIsFor: [
+      {
+        audience: 'Dirigeants de TPE/PME & responsables marketing',
+        useCase:
+          "Vérifier en quelques secondes si votre site est réellement lisible par Google et les moteurs d'IA (AI Overviews, ChatGPT Search, Perplexity), et identifier vos 3 urgences techniques ou légales."
+      },
+      {
+        audience: 'Équipes digitales, DSI & agences web',
+        useCase:
+          "Contrôler la présence effective des 6 en-têtes de sécurité HTTP (HSTS, CSP, X-Frame-Options…), le TTFB serveur, la dette CMS, les balises Schema.org JSON-LD et la cohérence Consent Mode v2."
+      },
+      {
+        audience: 'Étudiants, créateurs & porteurs de MVP (New Business)',
+        useCase:
+          "Évaluer la maturité UX, E-E-A-T et accessibilité RGAA/WCAG d'un site fraîchement publié avant de lancer l'acquisition ou de comparer son positionnement."
+      }
+    ],
+    howToUse: [
+      {
+        step: '1',
+        title: 'Saisissez l’URL de votre site',
+        detail:
+          "Ouvrez scan.alkymya.co/#analyseur gratuitement sans création de compte et entrez l'adresse publique du site à auditer."
+      },
+      {
+        step: '2',
+        title: 'Consultez vos 5 scores & 3 failles P0',
+        detail:
+          "Obtenez votre note sur 100, le détail des 5 piliers (UX, SEO/GEO, E-E-A-T, Sécurité, RGPD/RGAA), le périmètre multi-pages inspecté et les 3 actions prioritaires."
+      },
+      {
+        step: '3',
+        title: 'Arbitrez entre patch ciblé ou refonte',
+        detail:
+          "Corrigez directement les failles techniques et éditoriales grâce au guide FAQ SEO/GEO intégré (24 questions) ou échangez 20 min avec Cyril Garnier pour décider entre patch chirurgical et refonte pré-rendue."
+      }
+    ],
+    whatItDoesNotDo: [
+      "Diagnostic automatisé indicatif (Version Bêta) : les sites protégés par pare-feu anti-bot (Cloudflare, DataDome, Akamai…) sont signalés comme bloqués pour éviter tout faux diagnostic.",
+      "Il ne remplace pas un audit juridique formel réalisé par un avocat ou un DPO, ni un test d'intrusion (pentest) offensif ou une labellisation RGAA officielle.",
+      "Il fonctionne en lecture seule sur vos pages publiques et ne modifie jamais le code ou la configuration de votre site."
+    ],
+    privacy:
+      "Accès gratuit sans inscription et politique Consent Mode v2 sans traceurs publicitaires tiers sur scan.alkymya.co. Seules les pages publiques accessibles à un robot standard sont analysées : ne soumettez pas d'URL contenant des jetons privés ou des paramètres confidentiels.",
+    crossLinks: [
+      { href: '/oeuvres/', label: 'Voir nos études de cas SEO & GEO (TheLittle77, 75, 83)' },
+      { href: '/ressources/analyseurs/', label: 'Retour à tous nos Analyseurs IA' },
+      { href: '/contact/', label: 'Réserver un diagnostic 20 min avec Cyril Garnier' }
     ]
   }
 ];

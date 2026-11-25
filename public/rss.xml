@@ -5,8 +5,32 @@
     <link>https://alkymya.co/</link>
     <description>Actualités, réalisations concrètes en intelligence artificielle, médias éditoriaux (TheLittle77, TheLittle83, TheLittle75) et formations professionnelles par Alkymya, finançables OPCO via nos partenaires certifiés Qualiopi.</description>
     <language>fr-FR</language>
-    <lastBuildDate>Mon, 23 Nov 2026 14:30:00 +0100</lastBuildDate>
+    <lastBuildDate>Wed, 25 Nov 2026 16:30:00 +0100</lastBuildDate>
     <atom:link href="https://alkymya.co/rss.xml" rel="self" type="application/rss+xml"/>
+
+    <item>
+      <title>Mise en conformité RGPD, accessibilité RGAA, sécurité CSP et fiche Google Maps vérifiée</title>
+      <link>https://alkymya.co/politique-confidentialite/</link>
+      <guid isPermaLink="true">https://alkymya.co/politique-confidentialite/#maj-2026-11</guid>
+      <pubDate>Wed, 25 Nov 2026 16:30:00 +0100</pubDate>
+      <description><![CDATA[Publication de la Politique de confidentialité et gestion des cookies RGPD (/politique-confidentialite/) et de la Déclaration d'accessibilité RGAA &amp; WCAG (/accessibilite/), déploiement d'une Content-Security-Policy (CSP), ajout du lien d'évitement clavier et intégration de la fiche Google Business Profile (5,0/5 sur 11 avis).]]></description>
+    </item>
+
+    <item>
+      <title>Mise à jour SEO &amp; GEO de la FAQ Alkymya : formations IA 77/Paris, agents sur mesure, Google AI &amp; OPCO</title>
+      <link>https://alkymya.co/faq/</link>
+      <guid isPermaLink="true">https://alkymya.co/faq/#maj-2026-11</guid>
+      <pubDate>Wed, 25 Nov 2026 09:00:00 +0100</pubDate>
+      <description><![CDATA[Refonte complète et dédoublonnage de la FAQ Alkymya avec réponses structurées et schéma JSON-LD FAQPage sur le studio IA, les formations en Seine-et-Marne et à Paris, la création d'agents IA sur mesure, la stratégie SEO/GEO Google AI, le financement OPCO via partenaires Qualiopi et les avis clients (99,3 % de recommandation).]]></description>
+    </item>
+
+    <item>
+      <title>Analyseur de site web (Alkymya Scan) : audit web 360° gratuit UX, SEO/GEO, E-E-A-T, sécurité &amp; RGPD</title>
+      <link>https://alkymya.co/ressources/analyseurs/analyseur-de-site-web/</link>
+      <guid isPermaLink="true">https://alkymya.co/ressources/analyseurs/analyseur-de-site-web/</guid>
+      <pubDate>Tue, 24 Nov 2026 09:00:00 +0100</pubDate>
+      <description><![CDATA[Ajout de notre 4e analyseur IA gratuit sans inscription : Analyseur de site web (Alkymya Scan sur https://scan.alkymya.co/#analyseur) pour auditer tout site sur 5 piliers (UX &amp; Brand, SEO &amp; GEO, E-E-A-T, sécurité HTTP, RGPD/RGAA) avec note sur 100 et 3 failles P0.]]></description>
+    </item>
 
     <item>
       <title>Ré-optimisation SEO &amp; GEO des 44 pages canoniques, schémas JSON-LD FAQPage et base llms.txt</title>

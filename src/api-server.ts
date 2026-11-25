@@ -196,7 +196,15 @@ export function createApiApp(): Express {
   const app = express();
   app.use(express.json());
 
-  // HTTP X-Robots-Tag protection for APIs and internal mockup assets
+  // Content-Security-Policy (CSP) and X-Robots-Tag protection
+  app.use((_req, res, next) => {
+    res.setHeader(
+      'Content-Security-Policy',
+      "default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com https://ssl.google-analytics.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; img-src 'self' data: blob: https://res.cloudinary.com https://www.google-analytics.com https://*.google-analytics.com https://www.googletagmanager.com https://*.googletagmanager.com; media-src 'self' https://res.cloudinary.com; connect-src 'self' https://www.google-analytics.com https://analytics.google.com https://region1.google-analytics.com https://*.google-analytics.com https://*.analytics.google.com https://www.googletagmanager.com https://*.googletagmanager.com; object-src 'none'; base-uri 'self'; form-action 'self'"
+    );
+    next();
+  });
+
   app.use('/api', (_req, res, next) => {
     res.setHeader('X-Robots-Tag', 'noindex, nofollow');
     next();
@@ -317,6 +325,7 @@ export function createApiApp(): Express {
     'ressources/analyseurs/analyseur-de-photo',
     'ressources/analyseurs/analyseur-de-cv',
     'ressources/analyseurs/analyseur-de-memoire',
+    'ressources/analyseurs/analyseur-de-site-web',
     'ressources/business-game',
     'alchimistes',
     ...alchimistes.map((person) => `alchimistes/${person.id}`),
@@ -340,7 +349,9 @@ export function createApiApp(): Express {
     'faq',
     'rejoindre',
     'newbusiness',
-    'mentions-legales'
+    'mentions-legales',
+    'politique-confidentialite',
+    'accessibilite'
   ]);
 
   // Serve pre-rendered HTML files from dist for valid routes (or handle 404 for unknown routes)
@@ -918,6 +929,126 @@ export function createApiApp(): Express {
       res.status(500).json({ 
         error: !isFsError && rawMsg ? rawMsg : 'Une erreur est survenue lors de l\'inscription. Veuillez réessayer ultérieurement.' 
       });
+    }
+  });
+
+  // =========================================================================
+  // ROUTE API : GET /api/google-reviews (Google Places API New + Fallback)
+  // =========================================================================
+  const GOOGLE_MAPS_CID_URL = 'https://www.google.com/maps?cid=10471291206194913670';
+  let cachedPlacesPlaceId: string | null = process.env.GOOGLE_MAPS_PLACE_ID?.trim() || null;
+  let googleReviewsCache: { expiresAt: number; payload: any } | null = null;
+  const GOOGLE_REVIEWS_CACHE_TTL_MS = 15 * 60 * 1000;
+
+  app.get('/api/google-reviews', async (_req, res) => {
+    const fallbackPayload = {
+      source: 'fallback',
+      rating: 5.0,
+      userRatingCount: 11,
+      googleMapsUri: GOOGLE_MAPS_CID_URL,
+      reviews: [],
+    };
+
+    const apiKey = (process.env.GOOGLE_MAPS_API_KEY || process.env.VITE_GOOGLE_MAPS_API_KEY || '').trim();
+    if (!apiKey) {
+      return res.status(200).json(fallbackPayload);
+    }
+
+    if (googleReviewsCache && Date.now() < googleReviewsCache.expiresAt) {
+      return res.status(200).json(googleReviewsCache.payload);
+    }
+
+    try {
+      let placeData: any = null;
+      const solutionHeader = { 'X-Goog-Maps-Solution-ID': 'gmp_mcp_codeassist_v1_aistudio' };
+
+      if (cachedPlacesPlaceId) {
+        const detailsRes = await fetch(
+          `https://places.googleapis.com/v1/places/${encodeURIComponent(cachedPlacesPlaceId)}?languageCode=fr`,
+          {
+            method: 'GET',
+            headers: {
+              'Content-Type': 'application/json',
+              'X-Goog-Api-Key': apiKey,
+              'X-Goog-FieldMask': 'id,displayName,rating,userRatingCount,googleMapsUri,reviews',
+              ...solutionHeader,
+            },
+          },
+        );
+        if (detailsRes.ok) {
+          placeData = await detailsRes.json();
+        }
+      }
+
+      if (!placeData) {
+        const searchRes = await fetch('https://places.googleapis.com/v1/places:searchText', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'X-Goog-Api-Key': apiKey,
+            'X-Goog-FieldMask':
+              'places.id,places.displayName,places.rating,places.userRatingCount,places.googleMapsUri,places.reviews',
+            ...solutionHeader,
+          },
+          body: JSON.stringify({
+            textQuery: 'Alkymya CYRIL GARNIER CONSULTING 2 rue Sacha Guitry Ozoir-la-Ferrière',
+            languageCode: 'fr',
+            maxResultCount: 1,
+          }),
+        });
+
+        if (!searchRes.ok) {
+          return res.status(200).json(fallbackPayload);
+        }
+
+        const searchJson: any = await searchRes.json();
+        placeData = Array.isArray(searchJson?.places) ? searchJson.places[0] : null;
+        if (placeData?.id) {
+          cachedPlacesPlaceId = placeData.id;
+        }
+      }
+
+      if (!placeData) {
+        return res.status(200).json(fallbackPayload);
+      }
+
+      const rawReviews = Array.isArray(placeData.reviews) ? placeData.reviews : [];
+      const mappedReviews = rawReviews
+        .map((r: any, idx: number) => {
+          const quoteText = r?.originalText?.text || r?.text?.text || '';
+          if (!quoteText.trim()) return null;
+          return {
+            id: typeof r?.name === 'string' ? r.name : `places-${idx}`,
+            author: r?.authorAttribution?.displayName || 'Client Google',
+            authorUri: r?.authorAttribution?.uri || undefined,
+            reviewUri: r?.googleMapsUri || undefined,
+            context: r?.relativePublishTimeDescription
+              ? `Avis Google · ${r.relativePublishTimeDescription}`
+              : 'Avis Google vérifié',
+            rating: typeof r?.rating === 'number' ? r.rating : 5,
+            quote: quoteText.trim(),
+          };
+        })
+        .filter(Boolean);
+
+      const payload = {
+        source: 'google_places',
+        rating: typeof placeData.rating === 'number' ? placeData.rating : 5.0,
+        userRatingCount:
+          typeof placeData.userRatingCount === 'number' ? placeData.userRatingCount : 11,
+        googleMapsUri: placeData.googleMapsUri || GOOGLE_MAPS_CID_URL,
+        reviews: mappedReviews,
+      };
+
+      googleReviewsCache = {
+        expiresAt: Date.now() + GOOGLE_REVIEWS_CACHE_TTL_MS,
+        payload,
+      };
+
+      return res.status(200).json(payload);
+    } catch (err) {
+      console.warn('Google Places reviews fetch fallback:', err);
+      return res.status(200).json(fallbackPayload);
     }
   });
 

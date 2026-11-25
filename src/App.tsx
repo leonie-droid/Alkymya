@@ -22,6 +22,8 @@ import Contact from './pages/Contact';
 import FAQ from './pages/FAQ';
 import JoinUs from './pages/JoinUs';
 import MentionsLegales from './pages/MentionsLegales';
+import PolitiqueConfidentialite from './pages/PolitiqueConfidentialite';
+import Accessibilite from './pages/Accessibilite';
 import NewBusiness from './pages/NewBusiness';
 import { SEO } from './components/SEO';
 import CookieBanner from './components/CookieBanner';
@@ -44,9 +46,15 @@ export default function App() {
        <ScrollToTop />
        <AnalyticsTracker />
        <div className="min-h-screen flex flex-col selection:bg-accent selection:text-white">
+         <a
+           href="#main-content"
+           className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[100] focus:px-5 focus:py-3 focus:rounded-lg focus:bg-[#1F4F6E] focus:text-white focus:font-medium focus:text-sm focus:shadow-lg focus:outline-none focus:ring-2 focus:ring-[#02ADAB]"
+         >
+           Aller au contenu principal
+         </a>
          <SEO type="LocalBusiness" />
          <Header />
-         <main className="flex-grow">
+         <main id="main-content" tabIndex={-1} className="flex-grow outline-none">
            <Routes>
              <Route path="/" element={<Home />} />
              <Route path="/ia" element={<GenerateurIA />} />
@@ -79,6 +87,8 @@ export default function App() {
              <Route path="/newbusiness" element={<NewBusiness />} />
              <Route path="/new-business" element={<Navigate to="/newbusiness/" replace />} />
              <Route path="/mentions-legales" element={<MentionsLegales />} />
+             <Route path="/politique-confidentialite" element={<PolitiqueConfidentialite />} />
+             <Route path="/accessibilite" element={<Accessibilite />} />
            </Routes>
          </main>
          <Footer />

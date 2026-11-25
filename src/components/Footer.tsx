@@ -212,6 +212,20 @@ export default function Footer() {
             <Link to="/mentions-legales/" className="hover:text-accent transition-colors">
               Mentions Légales
             </Link>
+            <Link to="/politique-confidentialite/" className="hover:text-accent transition-colors">
+              Confidentialité &amp; Cookies
+            </Link>
+            <Link to="/accessibilite/" className="hover:text-accent transition-colors">
+              Accessibilité RGAA
+            </Link>
+            <a
+              href="https://www.google.com/maps?cid=10471291206194913670"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-accent transition-colors"
+            >
+              Google Maps &amp; Avis (5,0/5)
+            </a>
             <a
               href="https://cyrilgarnier.fr/"
               target="_blank"

@@ -13,6 +13,7 @@ import {
 } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { SEO } from '../components/SEO';
+import { GoogleReviewsShowcase } from '../components/GoogleReviewsShowcase';
 
 export default function Ateliers() {
   const [activeTab, setActiveTab] = useState<'individuels' | 'collectifs'>('individuels');
@@ -364,8 +365,20 @@ export default function Ateliers() {
                 <span>Partenaires certifiés Qualiopi · Financement OPCO jusqu'à 100 %</span>
               </div>
 
-              <p className="text-[0.9rem] text-[#7a9ab0] leading-[1.6]">
+              <p className="text-[0.9rem] text-[#7a9ab0] leading-[1.6] mb-4">
                 HETIC, Ynov, l'IÉSEG, le CFA Itis nous confient régulièrement leurs promotions. Nos formations s'adaptent à vos locaux, à distance ou en mode hybride.
+              </p>
+
+              <p className="text-[0.88rem] text-[#4a6a80] leading-[1.6]">
+                Fiche Google Business Profile vérifiée : <strong className="font-medium text-[#1F4F6E]">5,0/5 sur 11 avis</strong>. Déjà participant ?{' '}
+                <a
+                  href="https://www.google.com/maps?cid=10471291206194913670"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-[#037971] font-medium underline"
+                >
+                  Déposer un avis post-atelier sur Google →
+                </a>
               </p>
             </div>
 
@@ -431,6 +444,19 @@ export default function Ateliers() {
           </div>
         </div>
       </div>
+
+      {/* SÉPARATEUR */}
+      <hr className="border-none border-t border-[rgba(31,79,110,0.1)] mx-6 max-w-[1100px] md:mx-auto" />
+
+      {/* SECTION AVIS VÉRIFIÉS GOOGLE */}
+      <section id="avis-clients" className="max-w-[1100px] mx-auto py-[70px] px-6">
+        <GoogleReviewsShowcase
+          variant="light"
+          kicker="Avis clients vérifiés · Formations & Accompagnements"
+          headingPrefix="Retours vérifiés &"
+          headingStrong="5,0 / 5 sur Google"
+        />
+      </section>
 
       {/* CTA FINAL — Exact Maquette Orange #C06721 */}
       <div className="bg-[#C06721] text-white text-center py-[70px] px-10">

@@ -33,7 +33,7 @@ export default function Ressources() {
         name: 'Ressources IA, Études & Analyseurs Gratuits | Alkymya',
         headline: 'La bibliothèque ouverte d’Alkymya : 4 portes d’entrée opérationnelles',
         description:
-          "Accédez à nos 5 études longitudinales et prospectives (Génération IA 2024–2026, Gemini 4, La Doctrine IAG), nos 3 analyseurs IA gratuits, le Business Game NoNo BanaBa et nos partenaires technologiques souverains.",
+          "Accédez à nos 5 études longitudinales et prospectives (Génération IA 2024–2026, Gemini 4, La Doctrine IAG), nos 4 analyseurs IA gratuits, le Business Game NoNo BanaBa et nos partenaires technologiques souverains.",
         inLanguage: 'fr-FR',
         isPartOf: { '@id': 'https://alkymya.co/#website' },
         publisher: { '@id': 'https://alkymya.co/#organization' },
@@ -67,7 +67,7 @@ export default function Ressources() {
     <div className="bg-[#f4f6f9] text-[#1F4F6E] min-h-screen font-['Roboto',sans-serif] selection:bg-[#C06721] selection:text-white">
       <SEO
         title="Ressources IA, Études & Analyseurs Gratuits | Alkymya"
-        description="Découvrez nos 5 études (Génération IA 2024–2026, Gemini 4, Doctrine IAG), 3 analyseurs IA gratuits, Business Game NoNo BanaBa et outils."
+        description="Découvrez nos 5 études (Génération IA 2024–2026, Gemini 4, Doctrine IAG), 4 analyseurs IA gratuits, Business Game NoNo BanaBa et outils."
         keywords="études IA Alkymya, Génération IA 2026 1082 étudiants, analyseurs IA gratuits, Business Game NoNo BanaBa, Doctrine IAG"
         canonicalPath="/ressources/"
         ogImage="https://alkymya.co/og-ressources.jpg"
@@ -109,7 +109,7 @@ export default function Ressources() {
               <div className="text-xs text-white/70 uppercase tracking-wider">Études en HTML &amp; PDF</div>
             </div>
             <div>
-              <div className="text-2xl sm:text-3xl font-light text-white">3</div>
+              <div className="text-2xl sm:text-3xl font-light text-white">4</div>
               <div className="text-xs text-white/70 uppercase tracking-wider">Analyseurs gratuits</div>
             </div>
             <div>
@@ -176,7 +176,7 @@ export default function Ressources() {
               Accès Direct aux Pages Publiées
             </p>
             <h2 className="text-[1.75rem] sm:text-[1.95rem] font-light text-[#1F4F6E]">
-              Les <strong className="font-medium">9 publications &amp; outils</strong> en un coup d’œil
+              Les <strong className="font-medium">10 publications &amp; outils</strong> en un coup d’œil
             </h2>
           </div>
           <NewsletterButton variant="primary" size="sm" label="Suivre nos projets" />
